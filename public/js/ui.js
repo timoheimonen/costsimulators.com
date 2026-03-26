@@ -62,6 +62,16 @@ SOFTWARE.
                 handleClick.call(this, true);
             });
 
+            minusBtn.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                handleClick.call(this, false);
+            }, { passive: false });
+
+            plusBtn.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                handleClick.call(this, true);
+            }, { passive: false });
+
             this._adjustButtons = this._adjustButtons || {};
             this._adjustButtons[config.inputId] = { minus: minusBtn, plus: plusBtn, input: input };
         },
@@ -126,6 +136,12 @@ SOFTWARE.
             };
 
             button.addEventListener('click', controller.handleClick);
+
+            button.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                controller.handleClick();
+            }, { passive: false });
+
             return controller;
         },
 
