@@ -4,17 +4,19 @@ A simple web application to help you see how much money you are spending.
 
 ## Features
 
-- Cost simulators for various scenarios (coming)
-- Meetings cost calculator
+- **Meetings cost calculator** - Track real-time meeting costs with timer
+- **Coffee cost calculator** - See long-term coffee expenses (1/5/10 year projections)
 - Simple, fast, and easy to use
+- No tracking or data collection - everything runs locally in your browser
 
 ## Project Structure
 
 - `public/` - All production files and deployable assets
   - `index.html` - Home page
-  - `css/` - Stylesheets
-  - `js/` - JavaScript files
-  - `meetings/` - Meetings cost calculator module
+  - `css/` - Shared stylesheets
+  - `js/` - Shared JavaScript modules (calculators, UI, timer, utilities)
+  - `meetings/` - Meetings cost calculator
+  - `coffee/` - Coffee cost calculator
 
 
 ## Privacy
