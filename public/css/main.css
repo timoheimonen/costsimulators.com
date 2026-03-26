@@ -77,6 +77,17 @@ h1, h2, h3, h4, h5, h6, p, a, span, label, input, button {
     text-transform: none;
 }
 
+.site-footer a {
+    color: inherit;
+    pointer-events: auto;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: rgba(255, 255, 255, 0.3);
+}
+
 /* Navigation Links
    ========================================================================== */
 .nav-link {
