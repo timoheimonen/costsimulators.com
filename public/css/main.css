@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, label, input, button {
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.2em;
     min-height: 44px;
 }
 
@@ -209,9 +209,12 @@ input {
     background: transparent;
     border: 2px solid #ffffff;
     color: inherit;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.2em;
     text-align: center;
-    width: clamp(200px, 50vw, 400px);
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+    min-width: 44px;
+    min-height: 44px;
     outline: none;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
@@ -228,6 +231,13 @@ input::placeholder {
 
 input:focus::placeholder {
     opacity: 0;
+}
+
+@media (max-width: 600px) {
+    input {
+        width: clamp(140px, 45vw, 280px);
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
 }
 
 /* Display Elements
