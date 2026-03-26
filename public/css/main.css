@@ -248,10 +248,12 @@ input:focus::placeholder {
     /* No additional styles needed - uses base container */
 }
 
-/* Meetings page specific */
-.meetings-container {
+/* Simulator pages shared styles */
+.simulator-container {
     margin-bottom: 4rem;
 }
+
+/* Meetings page specific */
 
 .start-button {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -278,4 +280,42 @@ input:focus::placeholder {
         text-shadow: 0 0 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
         -webkit-text-stroke: none;
     }
+}
+
+/* Coffee page specific
+   ========================================================================== */
+.results-container {
+    margin-top: 3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.results-container.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.result-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.result-label {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    min-width: 120px;
+    text-align: right;
+}
+
+.result-value {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    min-width: 250px;
+    text-align: left;
 }

@@ -51,13 +51,12 @@ SOFTWARE.
             return monthlyCost * months;
         },
 
-        dailyCost: function(params) {
-            const dailyRate = parseFloat(params.dailyRate) || 0;
-            const days = parseInt(params.days) || 0;
-            const elapsedMs = parseFloat(params.elapsedMs) || 0;
+        weeklyCost: function(params) {
+            const price = parseFloat(params.price) || 0;
+            const perWeek = parseInt(params.perWeek) || 0;
+            const years = parseInt(params.years) || 1;
             
-            const partialDays = elapsedMs / (1000 * 60 * 60 * 24);
-            return dailyRate * (days + partialDays);
+            return price * perWeek * 52 * years;
         }
     };
 
