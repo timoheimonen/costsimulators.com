@@ -22,34 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-(function(global) {
+(function (global) {
     'use strict';
 
     const CostSimulators = {
         version: '1.0.0'
     };
 
-    CostSimulators.formatTime = function(elapsedMs) {
+    CostSimulators.formatTime = function (elapsedMs) {
         const totalSeconds = Math.floor(elapsedMs / 1000);
         const hundredths = Math.floor((elapsedMs % 1000) / 10);
-        const minutes = Math.floor(totalSeconds / 60);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
-        return String(minutes).padStart(2, '0') + ':' + 
-               String(seconds).padStart(2, '0') + ':' + 
-               String(hundredths).padStart(2, '0');
+        return String(hours).padStart(2, '0') + ':' +
+            String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0') + ':' +
+            String(hundredths).padStart(2, '0');
     };
 
-    CostSimulators.formatCurrency = function(value) {
+    CostSimulators.formatCurrency = function (value) {
         return '$' + value.toFixed(2);
     };
 
     CostSimulators.URLParams = {
-        get: function(key) {
+        get: function (key) {
             const params = new URLSearchParams(window.location.search);
             return params.get(key);
         },
 
-        set: function(params) {
+        set: function (params) {
             const urlParams = new URLSearchParams();
             Object.keys(params).forEach(key => {
                 if (params[key] !== null && params[key] !== undefined && params[key] !== '') {
