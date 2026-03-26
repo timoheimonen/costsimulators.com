@@ -31,3 +31,4 @@ A simple web application to help you see how much money you are spending.
 ## License
 
 MIT License - Copyright (c) 2026 Timo Heimonen
+
