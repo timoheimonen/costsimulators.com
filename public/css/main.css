@@ -249,6 +249,11 @@ input:focus::placeholder {
 .cost-display {
     font-size: clamp(4rem, 12vw, 10rem);
     margin-top: 2rem;
+    transition: transform 0.15s ease-out;
+}
+
+.cost-display.bump {
+    transform: scale(1.15);
 }
 
 .timer-display {

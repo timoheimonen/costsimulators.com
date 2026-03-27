@@ -78,12 +78,34 @@ SOFTWARE.
 
             const state = {
                 isRunning: false,
-                totalBurned: 0
+                totalBurned: 0,
+                lastFullDollar: 0
             };
 
             const { Timer, Calculators, UI, formatTime, formatCurrency } = window.CostSimulators;
 
             const timer = new Timer();
+            let wakeLockSentinel = null;
+
+            function requestWakeLock() {
+                if (!navigator.wakeLock || wakeLockSentinel) return;
+
+                navigator.wakeLock.request('screen').then(function (sentinel) {
+                    wakeLockSentinel = sentinel;
+                    sentinel.addEventListener('release', function () {
+                        wakeLockSentinel = null;
+                    });
+                }).catch(function () {
+                    wakeLockSentinel = null;
+                });
+            }
+
+            function releaseWakeLock() {
+                if (!wakeLockSentinel) return;
+
+                wakeLockSentinel.release().catch(function () { });
+                wakeLockSentinel = null;
+            }
 
             timer.onTick(function (elapsedMs) {
                 const inputs = UI.getInputValues(['costPerHour', 'persons']);
@@ -92,6 +114,16 @@ SOFTWARE.
                     quantity: inputs.persons,
                     elapsedMs: elapsedMs
                 });
+
+                const currentFullDollar = Math.floor(state.totalBurned);
+                if (currentFullDollar > state.lastFullDollar) {
+                    state.lastFullDollar = currentFullDollar;
+                    const costDisplay = document.getElementById('cost');
+                    costDisplay.classList.add('bump');
+                    setTimeout(function () {
+                        costDisplay.classList.remove('bump');
+                    }, 150);
+                }
 
                 UI.updateDisplays({
                     timerId: 'timer',
@@ -133,16 +165,20 @@ SOFTWARE.
                         UI.setTimerRunning('#simulatorContainer', true);
                         UI.toggleElement('copyBtn', false);
                         timer.start();
+                        requestWakeLock();
                         return true;
                     },
                     onStop: function () {
                         state.isRunning = false;
                         timer.stop();
+                        releaseWakeLock();
                         UI.toggleElement('copyBtn', true);
                     },
                     onReset: function () {
+                        releaseWakeLock();
                         timer.reset();
                         state.totalBurned = 0;
+                        state.lastFullDollar = 0;
                         UI.setAdjustButtonsEnabled(true);
                         UI.setTimerRunning('#simulatorContainer', false);
                         UI.updateDisplays({
@@ -164,6 +200,12 @@ SOFTWARE.
                     'Simulated via costsimulators.com';
 
                 UI.copyToClipboard(report, 'copyBtn', 'COPIED!', 'COPY AGAIN?');
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'visible' && state.isRunning) {
+                    requestWakeLock();
+                }
             });
         })();
     </script>
