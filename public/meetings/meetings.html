@@ -85,6 +85,27 @@ SOFTWARE.
             const { Timer, Calculators, UI, formatTime, formatCurrency } = window.CostSimulators;
 
             const timer = new Timer();
+            let wakeLockSentinel = null;
+
+            function requestWakeLock() {
+                if (!navigator.wakeLock || wakeLockSentinel) return;
+
+                navigator.wakeLock.request('screen').then(function (sentinel) {
+                    wakeLockSentinel = sentinel;
+                    sentinel.addEventListener('release', function () {
+                        wakeLockSentinel = null;
+                    });
+                }).catch(function () {
+                    wakeLockSentinel = null;
+                });
+            }
+
+            function releaseWakeLock() {
+                if (!wakeLockSentinel) return;
+
+                wakeLockSentinel.release().catch(function () { });
+                wakeLockSentinel = null;
+            }
 
             timer.onTick(function (elapsedMs) {
                 const inputs = UI.getInputValues(['costPerHour', 'persons']);
@@ -144,14 +165,17 @@ SOFTWARE.
                         UI.setTimerRunning('#simulatorContainer', true);
                         UI.toggleElement('copyBtn', false);
                         timer.start();
+                        requestWakeLock();
                         return true;
                     },
                     onStop: function () {
                         state.isRunning = false;
                         timer.stop();
+                        releaseWakeLock();
                         UI.toggleElement('copyBtn', true);
                     },
                     onReset: function () {
+                        releaseWakeLock();
                         timer.reset();
                         state.totalBurned = 0;
                         state.lastFullDollar = 0;
@@ -176,6 +200,12 @@ SOFTWARE.
                     'Simulated via costsimulators.com';
 
                 UI.copyToClipboard(report, 'copyBtn', 'COPIED!', 'COPY AGAIN?');
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'visible' && state.isRunning) {
+                    requestWakeLock();
+                }
             });
         })();
     </script>
