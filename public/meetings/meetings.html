@@ -78,7 +78,8 @@ SOFTWARE.
 
             const state = {
                 isRunning: false,
-                totalBurned: 0
+                totalBurned: 0,
+                lastFullDollar: 0
             };
 
             const { Timer, Calculators, UI, formatTime, formatCurrency } = window.CostSimulators;
@@ -92,6 +93,16 @@ SOFTWARE.
                     quantity: inputs.persons,
                     elapsedMs: elapsedMs
                 });
+
+                const currentFullDollar = Math.floor(state.totalBurned);
+                if (currentFullDollar > state.lastFullDollar) {
+                    state.lastFullDollar = currentFullDollar;
+                    const costDisplay = document.getElementById('cost');
+                    costDisplay.classList.add('bump');
+                    setTimeout(function () {
+                        costDisplay.classList.remove('bump');
+                    }, 150);
+                }
 
                 UI.updateDisplays({
                     timerId: 'timer',
@@ -143,6 +154,7 @@ SOFTWARE.
                     onReset: function () {
                         timer.reset();
                         state.totalBurned = 0;
+                        state.lastFullDollar = 0;
                         UI.setAdjustButtonsEnabled(true);
                         UI.setTimerRunning('#simulatorContainer', false);
                         UI.updateDisplays({
