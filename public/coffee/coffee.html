@@ -26,32 +26,33 @@ SOFTWARE.
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
     <title>Coffee - Costsimulators.com</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
-    <div class="container simulator-container" id="simulatorContainer">
+    <main class="container simulator-container" id="simulatorContainer">
         <div class="form-group">
-            <label>COFFEE PRICE $</label>
+            <label for="coffeePrice">COFFEE PRICE $</label>
             <div class="input-with-buttons">
-                <button class="adjust-btn minus" data-target="coffeePrice" data-step="0.5">-</button>
-                <input type="number" id="coffeePrice" placeholder="0.00" min="0.01" step="0.01" value="3.08">
-                <button class="adjust-btn plus" data-target="coffeePrice" data-step="0.5">+</button>
+                <button class="adjust-btn minus" data-target="coffeePrice" data-step="0.5" aria-label="Decrease coffee price">-</button>
+                <input type="number" id="coffeePrice" placeholder="0.00" min="0.01" step="0.01" value="3.08" inputmode="decimal">
+                <button class="adjust-btn plus" data-target="coffeePrice" data-step="0.5" aria-label="Increase coffee price">+</button>
             </div>
         </div>
 
         <div class="form-group">
-            <label>PER WEEK</label>
+            <label for="perWeek">PER WEEK</label>
             <div class="input-with-buttons">
-                <button class="adjust-btn minus" data-target="perWeek" data-step="1">-</button>
-                <input type="number" id="perWeek" placeholder="0" min="1" step="1" value="4">
-                <button class="adjust-btn plus" data-target="perWeek" data-step="1">+</button>
+                <button class="adjust-btn minus" data-target="perWeek" data-step="1" aria-label="Decrease coffees per week">-</button>
+                <input type="number" id="perWeek" placeholder="0" min="1" step="1" value="4" inputmode="numeric">
+                <button class="adjust-btn plus" data-target="perWeek" data-step="1" aria-label="Increase coffees per week">+</button>
             </div>
         </div>
 
-        <div class="results-container" id="resultsContainer">
+        <div class="results-container" id="resultsContainer" aria-live="polite">
             <div class="result-row">
                 <span class="result-label">1 YEAR</span>
                 <span class="result-value" id="year1">$0.00</span>
@@ -65,7 +66,7 @@ SOFTWARE.
                 <span class="result-value" id="year10">$0.00</span>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="site-footer">
         Copyright (c) 2026 Timo Heimonen (timo.heimonen@proton.me) | <a
