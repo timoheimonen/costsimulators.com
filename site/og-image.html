@@ -68,6 +68,24 @@
             color: #3ddc97;
         }
 
+        /* Regional fonts for Chinese, Japanese and Korean, as in main.css. */
+        :lang(zh) h1 {
+            font-family: system-ui, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+        }
+
+        :lang(zh-Hant) h1 {
+            font-family: system-ui, "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", "Noto Sans TC", sans-serif;
+        }
+
+        :lang(ja) h1 {
+            font-family: system-ui, "Hiragino Sans", "Yu Gothic UI", Meiryo, "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+        }
+
+        :lang(ko) h1 {
+            font-family: system-ui, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
+            word-break: keep-all;
+        }
+
         .tools {
             display: flex;
             gap: 18px;
