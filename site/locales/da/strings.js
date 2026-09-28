@@ -240,8 +240,8 @@ module.exports = {
           month: 'kr. pr. måned',
           year: 'kr. pr. år'
         },
-        days: { one: '{n} dag', other: '{n} dage' },
-        weeks: { one: '{n} uge', other: '{n} uger' },
+        days: { one: '{n} dage', other: '{n} dage' },
+        weeks: { one: '{n} uger', other: '{n} uger' },
         note: {
           empty: 'Indtast din løn, dine timer om ugen og en pris for at se, hvor længe du skal arbejde for det.',
           result: 'Beregnet med arbejdsdage på {hours} timer, {days} dage om ugen.'
@@ -405,7 +405,7 @@ module.exports = {
       description: 'Læg streaming, fitnesscenter, mobil og alle andre abonnementer sammen. Se den samlede pris pr. måned, pr. år og over 10 år – og hvilket abonnement der koster mest.',
       card: 'Læg streaming, fitness og alle andre faste betalinger sammen ét sted.',
       tag: 'Budget',
-      lead: 'Skriv alt det op, du betaler for fast, og se, hvad det løber op i tilsammen. Månedlig, årlig og ugentlig betaling kan alle bruges.',
+      lead: 'Skriv alt det op, du betaler for fast, og se, hvad det løber op i tilsammen. Både månedlig, årlig og ugentlig betaling kan bruges.',
       listTitle: 'Dine abonnementer',
       empty: 'Ingen abonnementer endnu. Tilføj et nedenfor, eller vælg et af hurtigvalgene.',
       add: 'Tilføj abonnement',
@@ -524,7 +524,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Indtast effekten, timer om dagen (højst 24), dage om ugen (højst 7) og din elpris.',
-          result: 'Bruger ca. {day} hver dag, det er tændt, og omkring {year} om året.'
+          result: 'Apparatet bruger ca. {day} pr. brugsdag og omkring {year} om året.'
         }
       },
       about: {
@@ -637,7 +637,7 @@ module.exports = {
       about: {
         title: 'Sådan beregnes turens pris',
         paragraphs: [
-          'Brændstofforbruget er afstanden × forbruget ÷ 100. Er der 25 km hver vej til arbejde (50 km om dagen), og bruger bilen 6,5 l/100 km, går der 3,25 liter brændstof. Gang med literprisen for at få turens pris, og divider med antallet af personer for at dele den.',
+          'Brændstofforbruget er afstanden × forbruget ÷ 100. Er der 25 km hver vej til arbejde (50 km om dagen), og bruger bilen 6,5 l/100 km, går der 3,25 liter brændstof om dagen. Gang med literprisen for at få turens pris, og divider med antallet af personer for at dele den.',
           'I Danmark oplyses bilers forbrug ofte i km/l: 100 ÷ km/l giver l/100 km, så 20 km/l svarer til 5 l/100 km. Med miles og gallons divideres afstanden med bilens mpg (miles pr. gallon). Når du skifter enheder, omregnes de værdier, du har indtastet, så du kan sammenligne tal fra begge systemer.',
           'Beløbene pr. måned og pr. år bygger på antallet af ture om ugen – 5 ture frem og tilbage om ugen er typisk pendling. Kører du elbil, så indtast i stedet forbruget i kWh/100 km og prisen pr. kWh.'
         ]
