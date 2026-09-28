@@ -137,7 +137,7 @@ module.exports = {
       },
       perMinute: 'Per minut',
       perHour: 'Per timme',
-      note: 'Du kan ändra värdena medan timern går. Deltagare som ansluter eller går räknas från och med det ögonblicket.',
+      note: 'Du kan ändra värdena medan timern går. Deltagare som ansluter eller lämnar mötet räknas från och med det ögonblicket.',
       total: 'Total kostnad',
       elapsed: 'Förfluten tid',
       reset: 'Nollställ',
@@ -311,7 +311,7 @@ module.exports = {
       about: {
         title: 'Så räknas kaffekostnaden ut',
         paragraphs: [
-          'Årskostnaden är priset per kopp × koppar per vecka × 52 veckor. Månadskostnaden är årskostnaden delad med 12, och summorna för 5 och 10 år multiplicerar årskostnaden utan inflation eller prishöjningar.',
+          'Årskostnaden är priset per kopp × koppar per vecka × 52 veckor. Månadskostnaden är årskostnaden delad med 12, och summorna för 5 och 10 år är årskostnaden gånger fem och tio, utan inflation eller prishöjningar.',
           'En kaffe för 45 kr varje arbetsdag blir 11 700 kr om året och 117 000 kr på tio år. Att brygga hemma eller ta med en egen termosmugg är enkla sätt att få ner kostnaden om summan förvånar dig.',
           'Räknaren fungerar för alla små, regelbundna köp: en energidryck, en lunchmacka eller en kanelbulle till fikat. Ange priset och hur många du köper i veckan.'
         ]
@@ -379,7 +379,7 @@ module.exports = {
         title: 'Så räknas kostnaden för rökning ut',
         paragraphs: [
           'Priset för en cigarett är paketpriset delat med antalet cigaretter i paketet. Det multipliceras med antalet cigaretter per dag och med 365 dagar för årskostnaden. Månadskostnaden är en tolftedel av det, och summorna för 5 och 10 år utgår från dagens priser.',
-          'Ett halvt paket om dagen för 80 kr paketet blir 14 600 kr om året och 146 000 kr på tio år. Att se summan kan vara en stark motivation: samma pengar kunde gå till en resa, ett sparande eller att betala av skulder.',
+          'Ett halvt paket om dagen för 80 kr paketet blir 14 600 kr om året och 146 000 kr på tio år. Att se summan kan vara en stark motivation: samma pengar skulle kunna gå till en resa, ett sparande eller att betala av skulder.',
           'Räknaren tar bara med priset på cigaretterna. Vårdkostnader, högre försäkringspremier och sjukdagar kommer ovanpå. Vill du ha hjälp att sluta kan du ringa den kostnadsfria Sluta-röka-linjen på 020-84 00 00 eller vända dig till din vårdcentral. Mer stöd finns på 1177.se.'
         ]
       },
@@ -467,7 +467,7 @@ module.exports = {
         },
         {
           q: 'Är en årsprenumeration billigare än en månadsprenumeration?',
-          a: 'Ofta, med 15–20 %, men bara om du ändå skulle behålla tjänsten hela året. Lägg till båda varianterna i listan för att jämföra årskostnaden.'
+          a: 'Ofta är den 15–20 % billigare, men det lönar sig bara om du ändå skulle behålla tjänsten hela året. Lägg till båda varianterna i listan för att jämföra årskostnaden.'
         },
         {
           q: 'Sparas min lista?',
@@ -525,7 +525,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Ange effekt, timmar per dag (högst 24), dagar per vecka (högst 7) och ditt elpris.',
-          result: 'Förbrukar cirka {day} varje dag den används, runt {year} om året.'
+          result: 'Apparaten förbrukar cirka {day} per användningsdag, runt {year} om året.'
         }
       },
       about: {
@@ -533,13 +533,13 @@ module.exports = {
         paragraphs: [
           'Energiförbrukningen i kilowattimmar (kWh) är effekten i watt × antal timmar ÷ 1 000. En tv på 100 W som är på i 4 timmar förbrukar 0,4 kWh om dagen. Multiplicerat med ditt elpris per kWh ger det kostnaden per användningsdag.',
           'Årskostnaden tar hänsyn till hur många dagar i veckan apparaten används, fördelat över årets 365 dagar. Månadskostnaden är en tolftedel av årskostnaden.',
-          'Effekten hittar du på apparatens typskylt eller i bruksanvisningen. Många apparater drar mindre än sin maxeffekt för det mesta, så resultatet är en övre uppskattning. För det mest exakta priset tar du med elnätsavgift, energiskatt och moms, inte bara själva elpriset.'
+          'Effekten hittar du på apparatens typskylt eller i bruksanvisningen. Många apparater drar för det mesta mindre än sin maxeffekt, så resultatet är en övre uppskattning. För det mest exakta priset tar du med elnätsavgift, energiskatt och moms, inte bara själva elpriset.'
         ]
       },
       faq: [
         {
           q: 'Hur räknar man ut vad en apparat kostar i el?',
-          a: 'Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar 1,5 kW × 3 h × 1,50 kr = 6,75 kr om dagen.'
+          a: 'Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar med elpriset 150 öre/kWh: 1,5 kW × 3 h × 1,50 kr/kWh = 6,75 kr om dagen.'
         },
         {
           q: 'Hur många kWh drar en apparat?',

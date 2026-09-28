@@ -66,7 +66,7 @@ module.exports = {
     suggestTitle: '¿Tienes una idea?',
     suggestText: 'Propón una nueva herramienta en GitHub.',
     whyTitle: 'Los pequeños gastos se acumulan',
-    whyText1: 'Una reunión, un café de camino al trabajo o una plataforma de streaming más rara vez parecen caros por sí solos. Súmalos a lo largo de un mes, un año o una década, y las cifras cambian por completo.',
+    whyText1: 'Una reunión, un café de camino al trabajo o una suscripción más de streaming casi nunca parecen caros por sí solos. Súmalos a lo largo de un mes, un año o una década, y las cifras cambian por completo.',
     whyText2: 'Cada calculadora hace una sola cosa, pide solo los datos que necesita y muestra el resultado al instante. Todo se calcula en tu navegador, así que tus números no salen de tu dispositivo.',
     aboutLink: 'Más sobre costsimulators.com',
     faq: [
@@ -96,7 +96,7 @@ module.exports = {
     about: {
       name: 'Acerca de',
       title: 'Sobre el proyecto – calculadoras de costes gratuitas y privadas | costsimulators.com',
-      description: 'Quién hace costsimulators.com y cómo funcionan las calculadoras. Calculadoras de costes gratuitas y privadas para reuniones, horas de trabajo, hábitos, suscripciones, luz y viajes.'
+      description: 'Quién hace costsimulators.com y cómo funcionan sus calculadoras de costes gratuitas y privadas para reuniones, horas de trabajo, hábitos, suscripciones, luz y viajes.'
     },
     privacy: {
       name: 'Política de privacidad',
@@ -275,7 +275,7 @@ module.exports = {
       name: 'Gasto en café',
       heading: 'Calculadora del gasto en café',
       title: 'Cuánto gasto en café al año – calculadora del gasto en café | costsimulators.com',
-      description: 'Descubre cuánto te cuesta tu café diario al mes y en 1, 5 y 10 años. Introduce el precio por taza y las tazas por semana: gratis y privado.',
+      description: 'Descubre cuánto te cuesta tu café diario al mes y en 1, 5 y 10 años. Introduce el precio por taza y las tazas por semana. Gratis y privado.',
       card: 'Mira cuánto suma tu café de cada día en uno, cinco y diez años.',
       tag: 'Hábito',
       lead: 'Introduce lo que cuesta una taza y cada cuánto la compras para ver cuánto suma el hábito con los años.',
@@ -379,7 +379,7 @@ module.exports = {
         paragraphs: [
           'El precio de un cigarrillo es el precio del paquete dividido entre los cigarrillos que trae. Ese precio se multiplica por los cigarrillos que fumas al día y por 365 días para obtener el coste anual. El coste mensual es la doceava parte, y los totales a 5 y 10 años usan los precios actuales.',
           'Medio paquete al día a 6 € el paquete son unos 1100 € al año y casi 11.000 € en diez años. Ver el total puede ser una gran motivación: ese mismo dinero podría ir a un viaje, al ahorro o a pagar deudas.',
-          'La calculadora solo cuenta el precio de los cigarrillos. Los gastos de salud y las bajas por enfermedad van aparte. Si quieres ayuda para dejarlo, pide cita en tu centro de salud: la sanidad pública financia el tratamiento para dejar de fumar.'
+          'La calculadora solo cuenta el precio de los cigarrillos. Los gastos de salud y las bajas por enfermedad van aparte. Si quieres ayuda para dejarlo, pide cita en tu centro de salud: la sanidad pública financia tratamientos para dejar de fumar.'
         ]
       },
       faq: [
@@ -638,7 +638,7 @@ module.exports = {
         title: 'Cómo se calcula el coste del viaje',
         paragraphs: [
           'En kilómetros y litros, el combustible consumido es la distancia × el consumo ÷ 100. Un trayecto al trabajo de 25 km en cada sentido (50 km al día) con un coche que gasta 6,5 l/100 km consume 3,25 litros. Multiplica por el precio del litro para obtener el coste del viaje y divide entre el número de personas para repartirlo.',
-          'En millas y galones, el consumo se calcula dividiendo la distancia entre las millas por galón (mpg) del coche. Al cambiar de unidades se convierten los valores que has introducido, así que puedes comparar cifras de cualquiera de los dos sistemas.',
+          'En millas y galones, el combustible consumido es la distancia dividida entre las millas por galón (mpg) del coche. Al cambiar de unidades se convierten los valores que has introducido, así que puedes comparar cifras de cualquiera de los dos sistemas.',
           'Los totales mensuales y anuales se basan en los viajes por semana: 5 viajes de ida y vuelta a la semana es lo típico para ir al trabajo. Para un coche eléctrico, introduce el consumo en kWh/100 km y el precio del kWh.'
         ]
       },

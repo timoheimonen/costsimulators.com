@@ -238,7 +238,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"it-IT","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link copiato","copyFailed":"Copia non riuscita","copied":"Copiato!","calculatedWith":"Calcolato con costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"Solo andata","round":"Andata e ritorno"},"unit":{"metric":{"distance":"km solo andata","consumption":"l/100 km","price":"€ al litro","perDistance":"km","fuel":"l"},"us":{"distance":"miglia solo andata","consumption":"mpg","price":"€ al gallone","perDistance":"miglio","fuel":"gal"}},"note":{"empty":"Inserisci la distanza, il consumo e il prezzo del carburante per vedere il costo.","result":"Consuma {fuel} di carburante per viaggio, circa {price} al {distance}."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"it-IT","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link copiato","copyFailed":"Copia non riuscita","copied":"Copiato!","calculatedWith":"Calcolato con costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"Solo andata","round":"Andata e ritorno"},"unit":{"metric":{"distance":"km solo andata","consumption":"l/100 km","price":"€ al litro","perDistance":"km","fuel":"l"},"us":{"distance":"miglia solo andata","consumption":"mpg","price":"€ al gallone","perDistance":"miglio","fuel":"gal"}},"note":{"empty":"Inserisci la distanza, il consumo e il prezzo del carburante per vedere il costo.","result":"Servono {fuel} di carburante per viaggio, circa {price} al {distance}."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/trip.js" defer></script>
@@ -440,8 +440,8 @@ SOFTWARE.
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Come si calcola il costo del viaggio</h2>
-            <p>Il carburante consumato è la distanza × il consumo ÷ 100. Per un tragitto casa-lavoro di 25 km a tratta (50 km al giorno) con un’auto che consuma 6,5 l/100 km servono 3,25 litri. Moltiplicando per il prezzo al litro si ottiene il costo del viaggio, e dividendo per il numero di persone lo si ripartisce tra chi viaggia.</p>
-            <p>In miglia e galloni, il carburante consumato è la distanza divisa per le miglia per gallone (mpg) dell’auto. Cambiando unità, i valori inseriti vengono convertiti, così puoi confrontare dati di entrambi i sistemi. Se sei abituato ai chilometri con un litro (km/l), dividi 100 per quel valore: 15 km/l corrispondono a circa 6,7 l/100 km.</p>
+            <p>Il carburante consumato è la distanza × il consumo ÷ 100. Per un tragitto casa-lavoro di 25 km a tratta (50 km al giorno) con un’auto che consuma 6,5 l/100 km servono 3,25 litri al giorno. Moltiplicando per il prezzo al litro si ottiene il costo del viaggio, e dividendo per il numero di persone lo si ripartisce tra chi viaggia.</p>
+            <p>In miglia e galloni, il carburante consumato è la distanza divisa per le miglia per gallone (mpg) dell’auto. Cambiando unità, i valori inseriti vengono convertiti, così puoi confrontare dati di entrambi i sistemi. Se sei abituato a ragionare in chilometri al litro (km/l), dividi 100 per quel valore: 15 km/l corrispondono a circa 6,7 l/100 km.</p>
             <p>I totali mensili e annuali si basano sui viaggi a settimana: 5 viaggi di andata e ritorno a settimana sono un tipico tragitto casa-lavoro. Per un’auto elettrica, inserisci invece il consumo in kWh/100 km e il prezzo al kWh.</p>
         </section>
 

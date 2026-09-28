@@ -206,7 +206,7 @@ SOFTWARE.
                         "name": "Hur räknar man ut vad en apparat kostar i el?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar 1,5 kW × 3 h × 1,50 kr = 6,75 kr om dagen."
+                            "text": "Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar med elpriset 150 öre/kWh: 1,5 kW × 3 h × 1,50 kr/kWh = 6,75 kr om dagen."
                         }
                     },
                     {
@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"sv-SE","currency":"SEK","decimals":2,"strings":{"share":{"linkCopied":"Länken har kopierats","copyFailed":"Det gick inte att kopiera","copied":"Kopierat!","calculatedWith":"Beräknat med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} tim","hoursMinutes":"{h} tim {m} min"},"note":{"empty":"Ange effekt, timmar per dag (högst 24), dagar per vecka (högst 7) och ditt elpris.","result":"Förbrukar cirka {day} varje dag den används, runt {year} om året."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"sv-SE","currency":"SEK","decimals":2,"strings":{"share":{"linkCopied":"Länken har kopierats","copyFailed":"Det gick inte att kopiera","copied":"Kopierat!","calculatedWith":"Beräknat med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} tim","hoursMinutes":"{h} tim {m} min"},"note":{"empty":"Ange effekt, timmar per dag (högst 24), dagar per vecka (högst 7) och ditt elpris.","result":"Apparaten förbrukar cirka {day} per användningsdag, runt {year} om året."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/electricity.js" defer></script>
@@ -424,7 +424,7 @@ SOFTWARE.
             <h2 class="info-title" id="aboutTitle">Så räknas elkostnaden ut</h2>
             <p>Energiförbrukningen i kilowattimmar (kWh) är effekten i watt × antal timmar ÷ 1 000. En tv på 100 W som är på i 4 timmar förbrukar 0,4 kWh om dagen. Multiplicerat med ditt elpris per kWh ger det kostnaden per användningsdag.</p>
             <p>Årskostnaden tar hänsyn till hur många dagar i veckan apparaten används, fördelat över årets 365 dagar. Månadskostnaden är en tolftedel av årskostnaden.</p>
-            <p>Effekten hittar du på apparatens typskylt eller i bruksanvisningen. Många apparater drar mindre än sin maxeffekt för det mesta, så resultatet är en övre uppskattning. För det mest exakta priset tar du med elnätsavgift, energiskatt och moms, inte bara själva elpriset.</p>
+            <p>Effekten hittar du på apparatens typskylt eller i bruksanvisningen. Många apparater drar för det mesta mindre än sin maxeffekt, så resultatet är en övre uppskattning. För det mest exakta priset tar du med elnätsavgift, energiskatt och moms, inte bara själva elpriset.</p>
         </section>
 
         <section class="info-section reveal" aria-labelledby="faqTitle">
@@ -432,7 +432,7 @@ SOFTWARE.
             <div class="faq-list">
             <details class="faq-item">
                 <summary>Hur räknar man ut vad en apparat kostar i el?</summary>
-                <p>Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar 1,5 kW × 3 h × 1,50 kr = 6,75 kr om dagen.</p>
+                <p>Multiplicera effekten i kilowatt med antalet timmar och med priset per kWh. Ett elelement på 1 500 W som är på i 3 timmar kostar med elpriset 150 öre/kWh: 1,5 kW × 3 h × 1,50 kr/kWh = 6,75 kr om dagen.</p>
             </details>
             <details class="faq-item">
                 <summary>Hur många kWh drar en apparat?</summary>

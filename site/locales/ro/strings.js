@@ -27,7 +27,7 @@ module.exports = {
     allTools: 'Toate instrumentele',
     share: 'Distribuie',
     settings: 'Setări',
-    quickPicks: 'Alegeri rapide',
+    quickPicks: 'Opțiuni rapide',
     faqTitle: 'Întrebări frecvente',
     relatedTools: 'Alte calculatoare',
     imageAlt: 'costsimulators.com – calculatoare gratuite pentru întrebările de zi cu zi despre bani'
@@ -116,7 +116,7 @@ module.exports = {
       heading: 'Calculator pentru costul ședințelor',
       title: 'Calculator cost ședință – cât costă o ședință, în timp real | costsimulators.com',
       description: 'Calculator gratuit pentru costul unei ședințe, cu cronometru live. Introdu tariful orar și numărul de participanți și vezi cât costă ședința, secundă cu secundă.',
-      card: 'Urmărește în timp real cum crește prețul unei ședințe în timp ce vorbiți.',
+      card: 'Urmărește în timp real cum crește costul unei ședințe cât timp vorbiți.',
       tag: 'Cronometru live',
       lead: 'Setează tariful orar și numărul de participanți, apasă Start și urmărește cât costă ședința pe măsură ce se desfășoară.',
       pulseEvery: '1',
@@ -180,7 +180,7 @@ module.exports = {
         },
         {
           q: 'Cronometrul continuă dacă schimb tabul?',
-          a: 'Da. Cronometrul se bazează pe ceas, așa că totalul rămâne corect și într-un tab din fundal. Cât timp cronometrul merge, pagina îi cere browserului și să țină ecranul aprins.'
+          a: 'Da. Cronometrul se bazează pe ceas, așa că totalul rămâne corect și într-un tab din fundal. Cât timp cronometrul merge, pagina îi cere totodată browserului să țină ecranul aprins.'
         }
       ]
     },
@@ -276,9 +276,9 @@ module.exports = {
       heading: 'Calculator pentru costul cafelei',
       title: 'Calculator cost cafea – cât te costă cafeaua pe an? | costsimulators.com',
       description: 'Vezi cât te costă cafeaua zilnică pe lună și în 1, 5 și 10 ani. Introdu prețul unei cești și câte cești bei pe săptămână – gratuit și privat.',
-      card: 'Vezi cât adună cafeaua de zi cu zi în unu, cinci și zece ani.',
+      card: 'Vezi cât te costă cafeaua de zi cu zi într-un an, în cinci și în zece ani.',
       tag: 'Obicei',
-      lead: 'Introdu cât costă o ceașcă și cât de des cumperi una ca să vezi cât adună obiceiul de-a lungul anilor.',
+      lead: 'Introdu cât costă o ceașcă și cât de des cumperi una ca să vezi cât te costă obiceiul de-a lungul anilor.',
       price: {
         label: 'Preț pe ceașcă',
         unit: 'lei',
@@ -389,7 +389,7 @@ module.exports = {
         },
         {
           q: 'Câți bani economisesc dacă mă las de fumat?',
-          a: 'Tot ce arată acest calculator. Introdu cât fumezi acum: totalurile lunare și anuale sunt exact banii pe care îi economisești dacă renunți.'
+          a: 'Exact cât arată acest calculator. Introdu cât fumezi acum: totalurile lunare și anuale sunt exact banii pe care îi economisești dacă renunți.'
         },
         {
           q: 'Funcționează și pentru tutunul de rulat?',
@@ -407,7 +407,7 @@ module.exports = {
       tag: 'Buget',
       lead: 'Fă o listă cu tot ce plătești regulat și vezi cât se adună. Sunt acceptate plățile lunare, anuale și săptămânale.',
       listTitle: 'Abonamentele tale',
-      empty: 'Niciun abonament încă. Adaugă unul mai jos sau folosește adăugarea rapidă.',
+      empty: 'Încă nu ai niciun abonament. Adaugă unul mai jos sau folosește adăugarea rapidă.',
       add: 'Adaugă abonament',
       quickAdd: 'Adăugare rapidă',
       quick: {
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Costul curentului',
       heading: 'Calculator pentru costul curentului electric',
-      title: 'Calculator consum curent – cât costă un aparat electric pornit | costsimulators.com',
+      title: 'Calculator consum curent – cât consumă și cât costă un aparat electric | costsimulators.com',
       description: 'Calculează cât costă funcționarea unui aparat pe zi, pe lună și pe an, după putere, ore de utilizare și prețul energiei. Calculator gratuit al costului pe kWh.',
       card: 'Vezi cât costă un aparat lăsat pornit pe zi, pe lună și pe an.',
       tag: 'Casă',
@@ -532,7 +532,7 @@ module.exports = {
         paragraphs: [
           'Consumul de energie în kilowați-oră (kWh) este puterea în wați × orele de utilizare ÷ 1.000. Un televizor de 100 W folosit 4 ore consumă 0,4 kWh pe zi. Înmulțit cu prețul curentului pe kWh, rezultă costul pe zi de utilizare.',
           'Costul anual ține cont de câte zile pe săptămână funcționează aparatul, repartizate pe cele 365 de zile ale anului. Costul lunar este a douăsprezecea parte din costul anual.',
-          'Puterea o găsești pe eticheta aparatului sau în manualul de utilizare. Multe aparate consumă de cele mai multe ori mai puțin decât puterea maximă, așa că rezultatul este o estimare acoperitoare. Pentru prețul cel mai exact, folosește prețul final de pe factură, cu distribuție, taxe și TVA, nu doar prețul energiei.'
+          'Puterea o găsești pe eticheta aparatului sau în manualul de utilizare. Multe aparate consumă în mod obișnuit mai puțin decât puterea maximă, așa că rezultatul este mai degrabă o estimare acoperitoare. Pentru prețul cel mai exact, folosește prețul final de pe factură, cu distribuție, taxe și TVA, nu doar prețul energiei.'
         ]
       },
       faq: [
@@ -557,7 +557,7 @@ module.exports = {
 
     trip: {
       name: 'Costul drumului',
-      heading: 'Calculator pentru costul carburantului pe drum',
+      heading: 'Calculator pentru costul drumului cu mașina',
       title: 'Calculator cost benzină – cât costă drumul sau naveta cu mașina | costsimulators.com',
       description: 'Calculează costul carburantului pentru o călătorie sau pentru naveta zilnică și împarte-l între pasageri. Funcționează în kilometri și litri sau în mile și galoane.',
       card: 'Află cât costă carburantul pentru un drum sau pentru navetă și împarte costul cu ceilalți.',
@@ -637,7 +637,7 @@ module.exports = {
       about: {
         title: 'Cum se calculează costul drumului',
         paragraphs: [
-          'Carburantul consumat este distanța × consumul ÷ 100. Dacă naveta are 25 km într-un sens (50 km pe zi) și mașina consumă 6,5 l/100 km, se consumă 3,25 litri. Înmulțește cu prețul pe litru pentru costul drumului și împarte la numărul de persoane ca să-l împărțiți.',
+          'Carburantul consumat este distanța × consumul ÷ 100. Dacă naveta are 25 km într-un sens (50 km pe zi) și mașina consumă 6,5 l/100 km, se consumă 3,25 litri. Înmulțește cu prețul pe litru ca să afli costul drumului, apoi împarte-l la numărul de persoane dacă mergeți mai mulți.',
           'În mile și galoane, consumul se calculează împărțind distanța la numărul de mile pe galon (mpg) al mașinii. Dacă schimbi unitățile, valorile introduse sunt convertite, așa că poți compara cifre din oricare sistem.',
           'Totalurile lunare și anuale se bazează pe drumurile pe săptămână – 5 drumuri dus-întors pe săptămână înseamnă o navetă obișnuită. Pentru o mașină electrică, introdu consumul în kWh/100 km și prețul pe kWh.'
         ]

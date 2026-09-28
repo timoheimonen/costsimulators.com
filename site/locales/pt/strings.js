@@ -137,7 +137,7 @@ module.exports = {
       },
       perMinute: 'Por minuto',
       perHour: 'Por hora',
-      note: 'Você pode ajustar os valores com o cronômetro rodando. Quem entra ou sai passa a contar a partir daquele momento.',
+      note: 'Você pode ajustar os valores com o cronômetro rodando. Entradas e saídas de participantes contam a partir daquele momento.',
       total: 'Custo total',
       elapsed: 'Tempo decorrido',
       reset: 'Zerar',
@@ -313,7 +313,7 @@ module.exports = {
         paragraphs: [
           'O custo anual é o preço por xícara × xícaras por semana × 52 semanas. O custo mensal é o anual dividido por 12, e os totais de 5 e 10 anos multiplicam o custo anual sem inflação nem aumentos de preço.',
           'Um expresso de R$ 7 todo dia útil dá R$ 1.820 por ano e R$ 18.200 em dez anos. Se o número assustar, passar o café em casa ou levar uma garrafinha térmica são jeitos fáceis de gastar menos.',
-          'A calculadora serve para qualquer compra pequena e frequente: um pão de queijo, um energético ou uma garrafa de água. Informe o preço e quantos você compra por semana.'
+          'A calculadora serve para qualquer compra pequena e frequente: um pão de queijo, um energético ou uma garrafa de água. Informe o preço e quantas vezes por semana você compra.'
         ]
       },
       faq: [
@@ -380,7 +380,7 @@ module.exports = {
         paragraphs: [
           'O preço de um cigarro é o preço do maço dividido pelo número de cigarros no maço. Esse valor é multiplicado pelos cigarros fumados por dia e por 365 dias para chegar ao custo anual. O custo mensal é um doze avos disso, e os totais de 5 e 10 anos usam os preços de hoje.',
           'Meio maço por dia, a R$ 12 o maço, dá R$ 2.190 por ano e quase R$ 22.000 em dez anos. Ver o total pode ser uma motivação forte: o mesmo dinheiro poderia ir para uma viagem, para a poupança ou para quitar dívidas.',
-          'A calculadora conta só o preço dos cigarros. Gastos com saúde, seguros mais caros e dias de trabalho perdidos vêm por cima. Se você quer ajuda para parar, o SUS oferece tratamento gratuito, e o Disque Saúde 136 informa onde procurar.'
+          'A calculadora conta só o preço dos cigarros. Gastos com saúde, seguros mais caros e dias de trabalho perdidos se somam a isso. Se você quer ajuda para parar, o SUS oferece tratamento gratuito, e o Disque Saúde 136 informa onde procurar.'
         ]
       },
       faq: [
@@ -467,7 +467,7 @@ module.exports = {
         },
         {
           q: 'O plano anual sai mais barato que o mensal?',
-          a: 'Muitas vezes, de 15% a 20%, mas só se você fosse manter o serviço o ano inteiro de qualquer forma. Adicione as duas versões à lista para comparar o custo anual.'
+          a: 'Muitas vezes sim, de 15% a 20%, mas só compensa se você for manter o serviço o ano inteiro de qualquer forma. Adicione as duas versões à lista para comparar o custo anual.'
         },
         {
           q: 'Minha lista fica salva?',
@@ -525,7 +525,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Informe a potência, as horas por dia (até 24), os dias por semana (até 7) e o preço da energia.',
-          result: 'Consome cerca de {day} em cada dia de uso, aproximadamente {year} por ano.'
+          result: 'O aparelho consome cerca de {day} por dia de uso, aproximadamente {year} por ano.'
         }
       },
       about: {
@@ -632,7 +632,7 @@ module.exports = {
         },
         note: {
           empty: 'Informe a distância, o consumo e o preço do combustível para ver o custo.',
-          result: 'Usa {fuel} de combustível por viagem, cerca de {price} por {distance}.'
+          result: 'O carro gasta {fuel} de combustível por viagem, cerca de {price} por {distance}.'
         }
       },
       about: {
@@ -654,7 +654,7 @@ module.exports = {
         },
         {
           q: 'A calculadora inclui desgaste, estacionamento ou pedágio?',
-          a: 'Não, ela considera só o combustível. Desgaste do carro, seguro, estacionamento e pedágio vêm por cima, então o custo total de dirigir é maior.'
+          a: 'Não, ela considera só o combustível. Desgaste do carro, seguro, estacionamento e pedágio se somam a isso, então o custo total de dirigir é maior.'
         }
       ]
     }

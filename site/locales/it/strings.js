@@ -66,7 +66,7 @@ module.exports = {
     suggestTitle: 'Hai un’idea?',
     suggestText: 'Proponi un nuovo strumento su GitHub.',
     whyTitle: 'Le piccole spese si accumulano',
-    whyText1: 'Una riunione, un caffè al bar prima del lavoro o un servizio di streaming in più raramente sembrano costosi, presi da soli. Sommali su un mese, un anno o dieci anni, e i numeri cambiano parecchio.',
+    whyText1: 'Una riunione, un caffè al bar prima del lavoro o un servizio di streaming in più raramente sembrano costosi, presi da soli. Sommali nell’arco di un mese, di un anno o di dieci anni e i numeri cambiano parecchio.',
     whyText2: 'Ogni calcolatore fa una cosa sola, chiede solo i numeri che servono e mostra subito il risultato. Tutto viene calcolato nel tuo browser, quindi i tuoi dati restano sul tuo dispositivo.',
     aboutLink: 'Scopri di più su costsimulators.com',
     faq: [
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Ore di lavoro',
       heading: 'Calcolatore del prezzo in ore di lavoro',
-      title: 'Prezzo in ore di lavoro – quanto devi lavorare per comprarlo | costsimulators.com',
+      title: 'Prezzo in ore di lavoro – quanto devi lavorare per comprare qualcosa | costsimulators.com',
       description: 'Trasforma qualsiasi prezzo in ore, giorni e settimane di lavoro. Inserisci la tua paga oraria o lo stipendio mensile o annuale e scopri quanto ti costa davvero un acquisto in tempo di lavoro.',
       card: 'Trasforma qualsiasi prezzo nelle ore, nei giorni e nelle settimane di lavoro che servono per pagarlo.',
       tag: 'Lavoro',
@@ -444,7 +444,7 @@ module.exports = {
         note: {
           empty: 'Aggiungi un abbonamento con il relativo prezzo per vedere i totali.',
           single: '{name} ti costa {cost} all’anno.',
-          biggest: 'La spesa più alta è {name}: {cost} all’anno, il {percent}% del totale.'
+          biggest: 'La spesa più alta è {name}: {cost} all’anno ({percent}% del totale).'
         },
         summary: {
           item: '{name} – {price} / {cycle}',
@@ -466,7 +466,7 @@ module.exports = {
         },
         {
           q: 'Un piano annuale costa meno di uno mensile?',
-          a: 'Spesso sì, del 15–20%, ma solo se terresti comunque il servizio per tutto l’anno. Aggiungi entrambe le versioni alla lista per confrontarne il costo annuale.'
+          a: 'Spesso sì, del 15–20%, ma conviene solo se intendi comunque tenere il servizio per tutto l’anno. Aggiungi entrambe le versioni alla lista per confrontarne il costo annuale.'
         },
         {
           q: 'La mia lista viene salvata?',
@@ -479,7 +479,7 @@ module.exports = {
       name: 'Consumo elettrico',
       heading: 'Calcolatore del consumo elettrico',
       title: 'Calcolo consumo elettrico – quanto costa usare un elettrodomestico | costsimulators.com',
-      description: 'Calcola quanto costa far funzionare un apparecchio al giorno, al mese e all’anno in base a potenza, ore di utilizzo e prezzo dell’energia. Calcolatore gratuito del costo in kWh.',
+      description: 'Calcola quanto costa far funzionare un apparecchio al giorno, al mese e all’anno in base a potenza, ore di utilizzo e prezzo dell’energia. Calcolatore gratuito di consumi in kWh e costi.',
       card: 'Scopri quanto costa tenere acceso un apparecchio al giorno, al mese e all’anno.',
       tag: 'Casa',
       lead: 'Inserisci la potenza di un apparecchio, per quanto tempo lo usi e quanto paghi l’elettricità per vedere quanto costa davvero tenerlo acceso.',
@@ -524,7 +524,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Inserisci la potenza, le ore al giorno (fino a 24), i giorni a settimana (fino a 7) e il prezzo dell’elettricità.',
-          result: 'Consuma circa {day} per ogni giorno di utilizzo, circa {year} all’anno.'
+          result: 'L’apparecchio consuma circa {day} per ogni giorno di utilizzo e circa {year} all’anno.'
         }
       },
       about: {
@@ -631,14 +631,14 @@ module.exports = {
         },
         note: {
           empty: 'Inserisci la distanza, il consumo e il prezzo del carburante per vedere il costo.',
-          result: 'Consuma {fuel} di carburante per viaggio, circa {price} al {distance}.'
+          result: 'Servono {fuel} di carburante per viaggio, circa {price} al {distance}.'
         }
       },
       about: {
         title: 'Come si calcola il costo del viaggio',
         paragraphs: [
-          'Il carburante consumato è la distanza × il consumo ÷ 100. Per un tragitto casa-lavoro di 25 km a tratta (50 km al giorno) con un’auto che consuma 6,5 l/100 km servono 3,25 litri. Moltiplicando per il prezzo al litro si ottiene il costo del viaggio, e dividendo per il numero di persone lo si ripartisce tra chi viaggia.',
-          'In miglia e galloni, il carburante consumato è la distanza divisa per le miglia per gallone (mpg) dell’auto. Cambiando unità, i valori inseriti vengono convertiti, così puoi confrontare dati di entrambi i sistemi. Se sei abituato ai chilometri con un litro (km/l), dividi 100 per quel valore: 15 km/l corrispondono a circa 6,7 l/100 km.',
+          'Il carburante consumato è la distanza × il consumo ÷ 100. Per un tragitto casa-lavoro di 25 km a tratta (50 km al giorno) con un’auto che consuma 6,5 l/100 km servono 3,25 litri al giorno. Moltiplicando per il prezzo al litro si ottiene il costo del viaggio, e dividendo per il numero di persone lo si ripartisce tra chi viaggia.',
+          'In miglia e galloni, il carburante consumato è la distanza divisa per le miglia per gallone (mpg) dell’auto. Cambiando unità, i valori inseriti vengono convertiti, così puoi confrontare dati di entrambi i sistemi. Se sei abituato a ragionare in chilometri al litro (km/l), dividi 100 per quel valore: 15 km/l corrispondono a circa 6,7 l/100 km.',
           'I totali mensili e annuali si basano sui viaggi a settimana: 5 viaggi di andata e ritorno a settimana sono un tipico tragitto casa-lavoro. Per un’auto elettrica, inserisci invece il consumo in kWh/100 km e il prezzo al kWh.'
         ]
       },

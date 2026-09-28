@@ -80,7 +80,7 @@ module.exports = {
       },
       {
         q: 'Megoszthatok egy számítást?',
-        a: 'Igen. A beállításaid az oldal címében tárolódnak. Nyomd meg a Megosztás gombot a link kimásolásához, és aki megnyitja, ugyanazt a számítást látja.'
+        a: 'Igen. A beállításaid az oldal webcímében tárolódnak. Nyomd meg a Megosztás gombot a link kimásolásához, és aki megnyitja, ugyanazt a számítást látja.'
       }
     ]
   },
@@ -180,7 +180,7 @@ module.exports = {
         },
         {
           q: 'Tovább fut az időzítő, ha másik fülre váltok?',
-          a: 'Igen. Az időzítő az órához igazodik, így a végösszeg háttérben lévő fülön is pontos marad. Amíg az időzítő fut, az oldal azt is kéri a böngészőtől, hogy ne kapcsolja ki a képernyőt.'
+          a: 'Igen. Az időzítő a rendszeróra alapján számol, így a végösszeg háttérben lévő fülön is pontos marad. Amíg az időzítő fut, az oldal azt is kéri a böngészőtől, hogy ne kapcsolja ki a képernyőt.'
         }
       ]
     },
@@ -206,7 +206,7 @@ module.exports = {
         step: '100',
         monthStep: '10000',
         yearStep: '100000',
-        hint: 'A legőszintébb eredményhez az adózás utáni, nettó fizetéseddel számolj.',
+        hint: 'A legreálisabb eredményhez az adózás utáni, nettó fizetéseddel számolj.',
         decrease: 'Fizetés csökkentése',
         increase: 'Fizetés növelése'
       },
@@ -252,7 +252,7 @@ module.exports = {
         paragraphs: [
           'Először a fizetésedet órabérre váltjuk. A havi fizetést megszorozzuk 12-vel, és elosztjuk az éves munkaóráid számával (heti órák × 52); az éves fizetést közvetlenül ezzel osztjuk el. Ezután az árat elosztjuk az órabérrel.',
           'A munkanapokat ötnapos munkahéttel számoljuk, így a heti 40 óra 8 órás napokat jelent. Például 3000 Ft-os órabérrel egy 249 990 Ft-os telefon nagyjából 83 munkaórádba kerül – ez valamivel több mint két teljes munkahét.',
-          'A legőszintébb eredményt a nettó, adózás utáni fizetéseddel kapod, hiszen valójában azt költöd el. Ha az árakat munkaórában nézed, könnyebb eldönteni, hogy valami tényleg megéri-e.'
+          'A legreálisabb eredményt a nettó, adózás utáni fizetéseddel kapod, hiszen valójában azt költöd el. Ha az árakat munkaórában nézed, könnyebb eldönteni, hogy valami tényleg megéri-e.'
         ]
       },
       faq: [
@@ -266,7 +266,7 @@ module.exports = {
         },
         {
           q: 'Hogyan számolom át a havi fizetést órabérre?',
-          a: 'Szorozd meg a havi fizetést 12-vel, és oszd el az éves munkaóráid számával. Heti 40 órával ez 2080 óra, így a havi 450 000 Ft nettó fizetés kb. 2600 Ft-os órabérnek felel meg. A kalkulátor ezt elvégzi helyetted, ha a Havi bér lehetőséget választod.'
+          a: 'Szorozd meg a havi fizetést 12-vel, és oszd el az éves munkaóráid számával. Heti 40 órával számolva ez évi 2080 óra, így a havi 450 000 Ft nettó fizetés kb. 2600 Ft-os órabérnek felel meg. A kalkulátor ezt elvégzi helyetted, ha a Havi bér lehetőséget választod.'
         }
       ]
     },
@@ -276,9 +276,9 @@ module.exports = {
       heading: 'Kávékalkulátor',
       title: 'Kávékalkulátor – mennyibe kerül évente a napi kávé? | costsimulators.com',
       description: 'Nézd meg, mennyibe kerül a napi kávéd havonta, valamint 1, 5 és 10 év alatt. Add meg egy csésze árát és a heti kávék számát – ingyenes és privát.',
-      card: 'Mennyi pénz lesz a napi kávédból egy, öt és tíz év alatt? Itt kiderül.',
+      card: 'Mennyibe kerül a napi kávéd egy, öt és tíz év alatt? Itt kiderül.',
       tag: 'Szokás',
-      lead: 'Add meg, mennyibe kerül egy csésze kávé, és milyen gyakran veszel, és megmutatjuk, mennyit tesz ki ez a szokás az évek során.',
+      lead: 'Add meg, mennyibe kerül egy csésze kávé és milyen gyakran veszel, mi pedig megmutatjuk, mennyit tesz ki ez a szokás az évek során.',
       price: {
         label: 'Egy csésze ára',
         unit: 'Ft',
@@ -310,7 +310,7 @@ module.exports = {
       about: {
         title: 'Így számoljuk a kávé költségét',
         paragraphs: [
-          'Az éves költség: egy csésze ára × heti csészék száma × 52 hét. A havi költség az éves költség tizenketted része, az 5 és 10 éves összegek pedig infláció és áremelkedés nélkül szorozzák meg az éves költséget.',
+          'Az éves költség: egy csésze ára × heti csészék száma × 52 hét. A havi költség az éves költség tizenketted része, az 5 és 10 éves összeg pedig az éves költség ötszöröse, illetve tízszerese, infláció és áremelkedés nélkül.',
           'Ha minden munkanapon veszel egy 990 Ft-os kávét, az évente kb. 257 000 Ft, tíz év alatt pedig több mint 2,5 millió forint. Ha meglep a szám, az otthon főzött kávé vagy egy saját termoszbögre egyszerű módja a spórolásnak.',
           'A kalkulátor bármilyen kis, rendszeres vásárláshoz jó: energiaitalhoz, ebédre vett szendvicshez vagy egy üveg ásványvízhez. Add meg az árát, és azt, hogy hetente hányat veszel belőle.'
         ]
@@ -338,7 +338,7 @@ module.exports = {
       description: 'Számold ki, mennyibe kerül a dohányzás havonta, valamint 1, 5 és 10 év alatt – és mennyit spórolsz, ha leszoksz. Add meg a doboz árát és a napi szálak számát.',
       card: 'Tudd meg, mennyi pénz megy füstbe havonta és az évek során.',
       tag: 'Szokás',
-      lead: 'Add meg, mennyibe kerül egy doboz cigaretta, és mennyit szívsz, és megmutatjuk, mennyi pénz megy füstbe az évek alatt.',
+      lead: 'Add meg, mennyibe kerül egy doboz cigaretta és mennyit szívsz, mi pedig megmutatjuk, mennyi pénz megy füstbe az évek alatt.',
       packPrice: {
         label: 'Doboz ára',
         unit: 'Ft',
@@ -377,7 +377,7 @@ module.exports = {
       about: {
         title: 'Így számoljuk a dohányzás költségét',
         paragraphs: [
-          'Egy szál ára a doboz ára osztva a dobozban lévő szálak számával. Ezt megszorozzuk a naponta elszívott szálak számával és 365 nappal, így kapjuk az éves költséget. A havi költség ennek tizenketted része, az 5 és 10 éves összegek pedig mai árakkal számolnak.',
+          'Egy szál ára a doboz ára osztva a dobozban lévő szálak számával. Ezt megszorozzuk a naponta elszívott szálak számával és 365 nappal, így kapjuk az éves költséget. A havi költség ennek tizenketted része, az 5 és 10 éves összeget pedig mai árakon számoljuk.',
           'Napi fél doboz 2800 Ft-os dobozárral évente kb. 511 000 Ft-ba kerül, tíz év alatt pedig több mint 5 millió forintba. Az összeg látványa komoly motiváció lehet: ugyanebből a pénzből utazhatnál, félretehetnél, vagy törleszthetnéd a tartozásaidat.',
           'A kalkulátor csak a cigaretta árát számolja. Az egészségügyi kiadások és a betegség miatt kiesett munkanapok még erre jönnek. Ha segítség kell a leszokáshoz, fordulj a háziorvosodhoz – a gyógyszertárban is szívesen adnak tanácsot.'
         ]
@@ -418,7 +418,7 @@ module.exports = {
         5: { name: 'Mobil-előfizetés', price: '5990' },
         6: { name: 'Hírportál-előfizetés', price: '2490' }
       },
-      note: 'A listád az oldal címében tárolódik, így elmentheted könyvjelzőként, vagy megoszthatod. Soha nem kerül el sehová.',
+      note: 'A listád az oldal webcímében tárolódik, így elmentheted könyvjelzőként, vagy megoszthatod. Soha nem kerül el sehová.',
       row: {
         name: 'Név',
         nameLabel: 'Előfizetés neve',
@@ -456,7 +456,7 @@ module.exports = {
         paragraphs: [
           'Minden előfizetést éves költségre váltunk: a havi árakat 12-vel, a heti árakat 52-vel szorozzuk, az éves árakat pedig változatlanul használjuk. Az éves végösszeget 12-vel osztva kapjuk a havi, 365-tel osztva a napi költséget.',
           'A részletezés a legdrágábbtól a legolcsóbbig sorba rendezi az előfizetéseidet, és megmutatja, mekkora részt tesz ki mindegyik a teljes összegből, így könnyen kiszúrhatod, mit érdemes lemondani vagy olcsóbbra cserélni.',
-          'A listád az oldal címében tárolódik, nem szerveren. Mentsd el az oldalt könyvjelzőként, ha később vissza akarsz térni hozzá, vagy küldd el a linket, és nézzétek át együtt a család közös előfizetéseit.'
+          'A listád az oldal webcímében tárolódik, nem szerveren. Mentsd el az oldalt könyvjelzőként, ha később vissza akarsz térni hozzá, vagy küldd el a linket, és nézzétek át együtt a család közös előfizetéseit.'
         ]
       },
       faq: [
@@ -470,7 +470,7 @@ module.exports = {
         },
         {
           q: 'Megmarad a listám?',
-          a: 'A listád csak az oldal címében tárolódik. Ha meg akarod tartani, mentsd el a linket könyvjelzőként, vagy oszd meg; semmi sem kerül szerverre vagy sütikbe.'
+          a: 'A listád csak az oldal webcímében tárolódik. Ha meg akarod tartani, mentsd el a linket könyvjelzőként, vagy oszd meg; semmi sem kerül szerverre vagy sütikbe.'
         }
       ]
     },
@@ -538,7 +538,7 @@ module.exports = {
       faq: [
         {
           q: 'Hogyan számolom ki egy készülék áramköltségét?',
-          a: 'Szorozd össze a kilowattban megadott teljesítményt a használati órákkal és a kilowattóránkénti árral. Egy 1500 W-os hősugárzó napi 3 órás használattal 1,5 kW × 3 óra × 36 Ft = 162 Ft-ba kerül naponta.'
+          a: 'Szorozd össze a kilowattban megadott teljesítményt a használati órákkal és a kilowattóránkénti árral. Egy 1500 W-os hősugárzó napi 3 órás használat mellett naponta 1,5 kW × 3 óra × 36 Ft/kWh = 162 Ft-ba kerül.'
         },
         {
           q: 'Hány kWh-t fogyaszt egy készülék?',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Útiköltség',
       heading: 'Útiköltség-kalkulátor',
-      title: 'Benzinköltség-kalkulátor – utazás és ingázás költsége | costsimulators.com',
+      title: 'Útiköltség-kalkulátor – benzinköltség utazáshoz és ingázáshoz | costsimulators.com',
       description: 'Számold ki egy utazás vagy a napi ingázás üzemanyagköltségét, és oszd el az utasok között. Kilométerrel és literrel, vagy mérfölddel és gallonnal is működik.',
       card: 'Számold ki egy út vagy az ingázás benzinköltségét, és oszd el a többiekkel.',
       tag: 'Utazás',

@@ -161,7 +161,7 @@ module.exports = {
       about: {
         title: 'Cara menghitung biaya rapat',
         paragraphs: [
-          'Kalkulator ini mengalikan jumlah peserta dengan tarif per jam mereka dan dengan waktu yang sudah berjalan. Rapat satu jam dengan 5 orang bertarif Rp 100.000 per jam menghabiskan Rp 500.000 – sekitar Rp 8.333 setiap menit.',
+          'Kalkulator ini mengalikan jumlah peserta dengan tarif per jam mereka dan dengan waktu yang sudah berjalan. Rapat satu jam dengan 5 orang bertarif Rp 100.000 per jam memakan biaya Rp 500.000 – sekitar Rp 8.333 setiap menit.',
           'Sebagai tarif per jam, gunakan biaya sebenarnya satu jam kerja bagi perusahaan, bukan hanya gaji. Di atas gaji kotor, perusahaan juga membayar iuran BPJS Kesehatan dan BPJS Ketenagakerjaan (sekitar 10–12% dari gaji), THR, dan tunjangan lainnya. Jika tidak tahu tarif setiap orang, rata-rata tim sudah cukup.',
           'Timer tetap menghitung dengan benar di tab latar belakang, dan biaya yang terus berjalan ditampilkan di judul tab browser, jadi Anda bisa memantaunya sambil berbagi layar. Saat rapat selesai, jeda timer dan salin laporan singkat untuk notula rapat.'
         ]
@@ -181,7 +181,7 @@ module.exports = {
         },
         {
           q: 'Apakah timer tetap berjalan jika saya pindah tab?',
-          a: 'Ya. Timer berpatokan pada jam, jadi totalnya tetap benar di tab latar belakang. Selama timer berjalan, halaman juga meminta browser agar layar tetap menyala.'
+          a: 'Ya. Timer mengacu pada jam perangkat, jadi totalnya tetap benar di tab latar belakang. Selama timer berjalan, halaman juga meminta browser agar layar tetap menyala.'
         }
       ]
     },
@@ -444,7 +444,7 @@ module.exports = {
         cycle: { monthly: 'bulan', yearly: 'tahun', weekly: 'minggu' },
         note: {
           empty: 'Tambahkan langganan beserta harganya untuk melihat totalnya.',
-          single: '{name} menghabiskan {cost} setahun.',
+          single: 'Itu berarti {cost} setahun untuk {name}.',
           biggest: 'Biaya terbesar Anda adalah {name}, yaitu {cost} setahun atau {percent}% dari total.'
         },
         summary: {
@@ -525,7 +525,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Masukkan daya, jam per hari (maksimal 24), hari per minggu (maksimal 7), dan tarif listrik Anda.',
-          result: 'Memakai sekitar {day} pada setiap hari pemakaian, sekitar {year} setahun.'
+          result: 'Memakai sekitar {day} per hari pemakaian, atau sekitar {year} setahun.'
         }
       },
       about: {
@@ -533,7 +533,7 @@ module.exports = {
         paragraphs: [
           'Pemakaian energi dalam kilowatt-jam (kWh) adalah daya dalam watt × lama pemakaian dalam jam ÷ 1.000. TV 100 W yang menyala 4 jam memakai 0,4 kWh sehari. Kalikan angka itu dengan tarif listrik per kWh untuk mendapatkan biaya per hari pemakaian.',
           'Biaya tahunan memperhitungkan berapa hari dalam seminggu alat itu menyala, disebar ke 365 hari dalam setahun. Biaya bulanan adalah seperdua belas dari biaya tahunan.',
-          'Daya alat biasanya tertera di label spesifikasi atau di buku panduannya. Banyak alat memakai daya lebih kecil dari daya maksimalnya hampir sepanjang waktu, jadi hasilnya adalah perkiraan batas atas. Tarif PLN untuk rumah tangga berdaya 1.300 VA ke atas sekitar Rp 1.445 per kWh; untuk hasil paling akurat, tambahkan juga pajak penerangan jalan (PPJ).'
+          'Daya alat biasanya tertera di label spesifikasi atau di buku panduannya. Banyak alat memakai daya lebih kecil dari daya maksimalnya hampir sepanjang waktu, jadi hasilnya adalah perkiraan batas atas. Tarif PLN untuk rumah tangga berdaya 1.300 VA dan 2.200 VA sekitar Rp 1.445 per kWh (3.500 VA ke atas sekitar Rp 1.700); untuk hasil paling akurat, tambahkan juga pajak penerangan jalan (PPJ).'
         ]
       },
       faq: [
@@ -547,7 +547,7 @@ module.exports = {
         },
         {
           q: 'Tarif listrik berapa yang sebaiknya saya pakai?',
-          a: 'Gunakan tarif per kWh sesuai golongan daya di rumah Anda. Untuk daya 1.300 VA ke atas, tarif PLN sekitar Rp 1.445 per kWh, ditambah PPJ. Pelanggan pascabayar bisa membagi total tagihan dengan jumlah kWh yang terpakai untuk mendapatkan rata-rata yang baik.'
+          a: 'Gunakan tarif per kWh sesuai golongan daya di rumah Anda. Untuk daya 1.300 VA dan 2.200 VA, tarif PLN sekitar Rp 1.445 per kWh, dan untuk 3.500 VA ke atas sekitar Rp 1.700, ditambah PPJ. Pelanggan pascabayar bisa membagi total tagihan dengan jumlah kWh yang terpakai untuk mendapatkan rata-rata yang baik.'
         },
         {
           q: 'Apakah mode standby memakai listrik?',
@@ -638,7 +638,7 @@ module.exports = {
       about: {
         title: 'Cara menghitung biaya perjalanan',
         paragraphs: [
-          'Dengan kilometer dan liter, BBM yang terpakai adalah jarak × konsumsi ÷ 100. Jika jarak ke kantor 25 km sekali jalan (50 km sehari) dan mobil Anda memakai 6,5 l/100 km, BBM yang terpakai 3,25 liter. Kalikan dengan harga per liter untuk mendapatkan biaya perjalanan, lalu bagi dengan jumlah orang untuk patungan.',
+          'Dengan kilometer dan liter, BBM yang terpakai adalah jarak × konsumsi ÷ 100. Jika jarak ke kantor 25 km sekali jalan (50 km sehari) dan mobil Anda memakai 6,5 l/100 km, BBM yang terpakai 3,25 liter sehari. Kalikan dengan harga per liter untuk mendapatkan biaya perjalanan, lalu bagi dengan jumlah orang untuk patungan.',
           'Jika Anda terbiasa dengan km/l, ubah dulu ke l/100 km dengan menghitung 100 ÷ km/l: 12 km/l setara dengan sekitar 8,3 l/100 km, dan motor irit yang menempuh 50 km/l hanya memakai 2 l/100 km. Dengan mil dan galon, BBM yang terpakai adalah jarak dibagi mpg (mil per galon). Saat Anda mengganti satuan, nilai yang sudah dimasukkan ikut dikonversi, jadi Anda bisa membandingkan angka dari kedua sistem.',
           'Total bulanan dan tahunan dihitung dari jumlah perjalanan per minggu – 5 kali pulang-pergi seminggu adalah pola yang umum untuk ke kantor. Untuk mobil listrik, masukkan konsumsi dalam kWh/100 km dan tarif listrik per kWh.'
         ]

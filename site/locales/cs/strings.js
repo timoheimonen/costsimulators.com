@@ -34,7 +34,7 @@ module.exports = {
   },
 
   footer: {
-    privacy: 'Běží celé ve vašem prohlížeči. Žádné cookies, žádné sledování.',
+    privacy: 'Vše běží ve vašem prohlížeči. Žádné cookies, žádné sledování.',
     about: 'O projektu',
     contact: 'Kontakt',
     privacyPolicy: 'Ochrana soukromí',
@@ -141,14 +141,14 @@ module.exports = {
       elapsed: 'Uplynulý čas',
       reset: 'Vynulovat',
       copyReport: 'Kopírovat zprávu',
-      kbdHint: 'Klávesou <kbd>Mezerník</kbd> spustíte nebo pozastavíte',
+      kbdHint: 'Klávesou <kbd>Mezerník</kbd> časovač spustíte nebo pozastavíte',
       runtime: {
         mode: { start: 'Spustit', pause: 'Pozastavit', resume: 'Pokračovat' },
         status: { ready: 'Připraveno', live: 'Běží', paused: 'Pozastaveno' },
         announce: {
           invalid: 'Pro spuštění zadejte hodinovou sazbu a počet účastníků.',
           started: 'Časovač spuštěn.',
-          paused: 'Pozastaveno na {cost} po {time}.',
+          paused: 'Pozastaveno po {time} na částce {cost}.',
           reset: 'Časovač vynulován.'
         },
         report: {
@@ -180,7 +180,7 @@ module.exports = {
         },
         {
           q: 'Běží časovač dál, i když přepnu na jinou kartu?',
-          a: 'Ano. Časovač vychází z hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku.'
+          a: 'Ano. Časovač vychází ze systémových hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku.'
         }
       ]
     },
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Hodiny práce',
       heading: 'Kalkulačka ceny v hodinách práce',
-      title: 'Přepočet ceny na hodiny práce – kolik hodin na to musím pracovat | costsimulators.com',
+      title: 'Přepočet ceny na hodiny práce – kolik hodin na to musím odpracovat | costsimulators.com',
       description: 'Převeďte jakoukoli cenu na hodiny, dny a týdny práce. Zadejte hodinovou, měsíční nebo roční mzdu a zjistěte, kolik pracovního času vás nákup doopravdy stojí.',
       card: 'Převeďte jakoukoli cenu na hodiny, dny a týdny, které na ni musíte odpracovat.',
       tag: 'Práce',
@@ -266,7 +266,7 @@ module.exports = {
         },
         {
           q: 'Jak převést měsíční mzdu na hodinovou?',
-          a: 'Vynásobte měsíční mzdu 12 a vydělte ji počtem hodin odpracovaných za rok. Při 40hodinovém týdnu je to 2 080 hodin, takže čistých 35 000 Kč měsíčně odpovídá zhruba 202 Kč za hodinu. Kalkulačka to spočítá za vás, když zvolíte Za měsíc.'
+          a: 'Vynásobte měsíční mzdu 12 a výsledek vydělte počtem hodin odpracovaných za rok. Při 40hodinovém týdnu je to 2 080 hodin, takže čistých 35 000 Kč měsíčně odpovídá zhruba 202 Kč za hodinu. Kalkulačka to spočítá za vás, když zvolíte Za měsíc.'
         }
       ]
     },
@@ -312,7 +312,7 @@ module.exports = {
         paragraphs: [
           'Roční cena je cena šálku × počet šálků týdně × 52 týdnů. Měsíční cena je roční cena vydělená 12 a součty za 5 a 10 let násobí roční cenu bez inflace a zdražování.',
           'Káva za 75 Kč každý pracovní den vyjde na 19 500 Kč ročně a 195 000 Kč za deset let. Pokud vás to číslo překvapí, snadno ušetříte s kávou uvařenou doma nebo s vlastním termohrnkem.',
-          'Kalkulačka funguje pro jakýkoli malý pravidelný nákup: energetický nápoj, bagetu k obědu nebo lahev vody. Zadejte cenu a kolikrát týdně si ji kupujete.'
+          'Kalkulačka funguje pro jakýkoli malý pravidelný nákup: energetický nápoj, bagetu k obědu nebo lahev vody. Zadejte jeho cenu a počet nákupů týdně.'
         ]
       },
       faq: [
@@ -405,7 +405,7 @@ module.exports = {
       description: 'Sečtěte streamovací služby, posilovnu, mobilní tarif a všechna další předplatná. Uvidíte součet za měsíc, rok i 10 let a které předplatné je nejdražší.',
       card: 'Sečtěte streaming, posilovnu a všechny další pravidelné platby na jednom místě.',
       tag: 'Rozpočet',
-      lead: 'Vypište všechno, za co pravidelně platíte, a uvidíte, kolik to dělá dohromady. Funguje měsíční, roční i týdenní platba.',
+      lead: 'Vypište všechno, za co pravidelně platíte, a uvidíte, kolik to dělá dohromady. Počítá s měsíčními, ročními i týdenními platbami.',
       listTitle: 'Vaše předplatná',
       empty: 'Zatím žádná předplatná. Přidejte nějaké níže nebo použijte rychlé přidání.',
       add: 'Přidat předplatné',
@@ -456,7 +456,7 @@ module.exports = {
         paragraphs: [
           'Každé předplatné se převede na roční cenu: měsíční ceny se násobí 12, týdenní 52 a roční se použijí tak, jak jsou. Roční součet se pak vydělí 12 pro měsíční cenu a 365 pro denní cenu.',
           'Přehled seřadí předplatná od nejdražšího po nejlevnější a u každého ukáže jeho podíl na celku, takže snadno poznáte, co zrušit nebo přepnout na levnější tarif.',
-          'Seznam se ukládá do adresy stránky, nikdy na server. Uložte si stránku do záložek, abyste se k seznamu mohli později vrátit, nebo pošlete odkaz rodině a projděte společná předplatná spolu.'
+          'Seznam se ukládá do adresy stránky, nikdy na server. Uložte si stránku do záložek, abyste se k seznamu mohli později vrátit, nebo pošlete odkaz rodině a projděte si společně, za co všechno platíte.'
         ]
       },
       faq: [
@@ -531,7 +531,7 @@ module.exports = {
         title: 'Jak se počítá cena elektřiny',
         paragraphs: [
           'Spotřeba energie v kilowatthodinách (kWh) je příkon ve wattech × doba provozu v hodinách ÷ 1 000. Televize s příkonem 100 W zapnutá 4 hodiny denně spotřebuje 0,4 kWh. Když to vynásobíte cenou elektřiny za kWh, dostanete cenu za den provozu.',
-          'Roční cena zohledňuje, kolik dní v týdnu spotřebič běží, rozpočítaných na 365 dní v roce. Měsíční cena je dvanáctina roční ceny.',
+          'Roční cena zohledňuje, kolik dní v týdnu spotřebič běží, a počítá s 365 dny v roce. Měsíční cena je dvanáctina roční ceny.',
           'Příkon najdete na typovém štítku spotřebiče nebo v návodu. Mnoho spotřebičů většinu času odebírá méně než svůj maximální příkon, takže výsledek je horní odhad. Nejpřesnější cenu dostanete, když kromě ceny silové elektřiny započítáte i distribuci, poplatky a daně.'
         ]
       },
@@ -560,7 +560,7 @@ module.exports = {
       heading: 'Kalkulačka nákladů na palivo',
       title: 'Kalkulačka nákladů na benzín – kolik stojí cesta autem a dojíždění | costsimulators.com',
       description: 'Spočítejte náklady na palivo za cestu nebo každodenní dojíždění a rozdělte je mezi spolucestující. Funguje v kilometrech a litrech i v mílích a galonech.',
-      card: 'Spočítejte cenu paliva za cestu nebo dojíždění a rozdělte ji s ostatními.',
+      card: 'Spočítejte náklady na palivo za cestu nebo dojíždění a rozdělte je s ostatními.',
       tag: 'Cestování',
       lead: 'Spočítejte náklady na palivo za jednu cestu nebo každodenní dojíždění do práce a rozdělte je mezi všechny v autě.',
       unit: {
@@ -637,7 +637,7 @@ module.exports = {
       about: {
         title: 'Jak se počítá cena cesty',
         paragraphs: [
-          'Spotřebované palivo je vzdálenost × spotřeba ÷ 100. Když dojíždíte 25 km jedním směrem (50 km denně) autem se spotřebou 6,5 l/100 km, spotřebujete 3,25 litru paliva. Vynásobením cenou za litr získáte cenu cesty a vydělením počtem lidí ji rozdělíte mezi spolucestující.',
+          'Spotřebované palivo je vzdálenost × spotřeba ÷ 100. Když dojíždíte 25 km jedním směrem (50 km denně) autem se spotřebou 6,5 l/100 km, spotřebujete denně 3,25 litru paliva. Vynásobením cenou za litr získáte cenu cesty a vydělením počtem lidí ji rozdělíte mezi spolucestující.',
           'V mílích a galonech se spotřebované palivo počítá jako vzdálenost vydělená hodnotou mpg (míle na galon). Přepnutím jednotek se zadané hodnoty převedou, takže můžete porovnávat údaje z obou soustav.',
           'Měsíční a roční součty vycházejí z počtu cest týdně – 5 cest tam a zpět týdně odpovídá běžnému dojíždění do práce. U elektromobilu zadejte místo toho spotřebu v kWh/100 km a cenu za kWh.'
         ]

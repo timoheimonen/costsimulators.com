@@ -238,7 +238,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"nl-NL","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link gekopieerd","copyFailed":"Kopiëren mislukt","copied":"Gekopieerd!","calculatedWith":"Berekend met costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} uur","hoursMinutes":"{h} uur {m} min"},"direction":{"one":"Enkele reis","round":"Heen en terug"},"unit":{"metric":{"distance":"km enkele reis","consumption":"l/100 km","price":"€ per liter","perDistance":"km","fuel":"l"},"us":{"distance":"mijl enkele reis","consumption":"mpg","price":"€ per gallon","perDistance":"mijl","fuel":"gal"}},"note":{"empty":"Vul de afstand, het verbruik en de brandstofprijs in om de kosten te zien.","result":"Verbruikt {fuel} brandstof per rit, ongeveer {price} per {distance}."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"nl-NL","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link gekopieerd","copyFailed":"Kopiëren mislukt","copied":"Gekopieerd!","calculatedWith":"Berekend met costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} uur","hoursMinutes":"{h} uur {m} min"},"direction":{"one":"Enkele reis","round":"Heen en terug"},"unit":{"metric":{"distance":"km enkele reis","consumption":"l/100 km","price":"€ per liter","perDistance":"km","fuel":"l"},"us":{"distance":"mijl enkele reis","consumption":"mpg","price":"€ per gallon","perDistance":"mijl","fuel":"gal"}},"note":{"empty":"Vul de afstand, het verbruik en de brandstofprijs in om de kosten te zien.","result":"Je verbruikt {fuel} brandstof per rit, dat is ongeveer {price} per {distance}."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/trip.js" defer></script>
@@ -441,7 +441,7 @@ SOFTWARE.
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Zo worden de ritkosten berekend</h2>
             <p>Het brandstofverbruik is de afstand × het verbruik ÷ 100. Is je woon-werkafstand 25 km enkele reis (50 km per dag) en verbruikt je auto 6,5 l/100 km, dan gebruik je 3,25 liter per dag. Vermenigvuldig dat met de literprijs voor de kosten van de rit, en deel door het aantal personen om de kosten te verdelen.</p>
-            <p>Ken je het verbruik alleen als ‘1 op 15’? Reken het om met 100 ÷ 15 ≈ 6,7 l/100 km. In mijlen en gallons is het verbruik de afstand gedeeld door het aantal mijlen per gallon (mpg). Als je van eenheid wisselt, worden de ingevulde waarden omgerekend, zodat je cijfers uit beide systemen kunt vergelijken.</p>
+            <p>Ken je het verbruik alleen als ‘1 op 15’? Reken het om met 100 ÷ 15 ≈ 6,7 l/100 km. In mijlen en gallons is de verbruikte brandstof de afstand gedeeld door het aantal mijlen per gallon (mpg). Als je van eenheid wisselt, worden de ingevulde waarden omgerekend, zodat je cijfers uit beide systemen kunt vergelijken.</p>
             <p>De totalen per maand en per jaar gaan uit van het aantal ritten per week – 5 keer heen en terug per week is gebruikelijk voor woon-werkverkeer. Rijd je elektrisch, vul dan het verbruik in kWh/100 km en de prijs per kWh in.</p>
         </section>
 

@@ -66,7 +66,7 @@ module.exports = {
     suggestTitle: 'Bir fikriniz mi var?',
     suggestText: 'GitHub’da yeni bir araç önerin.',
     whyTitle: 'Küçük harcamalar birikir',
-    whyText1: 'Tek bir toplantı, işe giderken alınan bir kahve ya da bir dijital platform aboneliği daha tek başına pek pahalı görünmez. Bunları bir ay, bir yıl ya da on yıl boyunca toplayınca rakamlar bambaşka bir hâl alır.',
+    whyText1: 'Bir toplantı, işe giderken alınan bir kahve ya da yeni bir dijital abonelik tek başına pek pahalı görünmez. Bunları bir ay, bir yıl ya da on yıl boyunca toplayınca rakamlar bambaşka bir hâl alır.',
     whyText2: 'Her hesaplama aracı tek bir iş yapar, yalnızca gereken rakamları sorar ve sonucu anında gösterir. Tüm hesaplamalar tarayıcınızda yapılır, yani rakamlarınız cihazınızdan çıkmaz.',
     aboutLink: 'costsimulators.com hakkında daha fazlası',
     faq: [
@@ -180,7 +180,7 @@ module.exports = {
         },
         {
           q: 'Sekme değiştirirsem sayaç çalışmaya devam eder mi?',
-          a: 'Evet. Sayaç saate dayalı çalıştığı için toplam, arka plandaki bir sekmede de doğru kalır. Sayaç çalışırken sayfa, tarayıcıdan ekranın açık kalmasını da ister.'
+          a: 'Evet. Sayaç cihazın saatine göre çalıştığı için toplam, arka plandaki bir sekmede de doğru kalır. Sayaç çalışırken sayfa ayrıca tarayıcıdan ekranın kapanmamasını ister.'
         }
       ]
     },
@@ -266,7 +266,7 @@ module.exports = {
         },
         {
           q: 'Aylık maaşı saatlik ücrete nasıl çeviririm?',
-          a: 'Aylık maaşı 12 ile çarpın ve yıllık çalışma saatinize bölün. Haftada 45 saat çalışıyorsanız bu yılda 2.340 saat eder; yani ayda net 45.000 TL, saatte yaklaşık 230 TL demektir. Ücret türü olarak Aylık’ı seçtiğinizde hesaplama aracı bunu sizin yerinize yapar.'
+          a: 'Aylık maaşı 12 ile çarpın ve yıllık çalışma saatinize bölün. Haftada 45 saat çalışıyorsanız bu yılda 2.340 saat eder; yani ayda net 45.000 TL, saatte yaklaşık 231 TL demektir. Ücret türü olarak Aylık’ı seçtiğinizde hesaplama aracı bunu sizin yerinize yapar.'
         }
       ]
     },
@@ -379,7 +379,7 @@ module.exports = {
         paragraphs: [
           'Bir dal sigaranın fiyatı, paket fiyatının paketteki sigara sayısına bölünmesiyle bulunur. Bu tutar, günde içilen sigara sayısıyla ve yıllık maliyet için 365 günle çarpılır. Aylık maliyet bunun on ikide biridir; 5 ve 10 yıllık toplamlar bugünkü fiyatlarla hesaplanır.',
           'Paketi 110 TL olan sigaradan günde yarım paket içmek yılda yaklaşık 20.000 TL, on yılda ise 200.000 TL’den fazla eder. Toplamı görmek güçlü bir motivasyon olabilir: aynı para bir tatile, birikime ya da borç kapatmaya gidebilir.',
-          'Hesaplama aracı yalnızca sigaranın fiyatını sayar. Sağlık harcamaları, daha yüksek sigorta primleri ve hastalık izinleri bunun üstüne eklenir. Bırakmak için destek isterseniz ALO 171 Sigara Bırakma Danışma Hattı’nı arayabilir ya da aile hekiminize başvurabilirsiniz.'
+          'Hesaplama aracı yalnızca sigaranın fiyatını sayar. Sağlık harcamaları, daha yüksek sigorta primleri ve hastalık izinleri bunun üstüne eklenir. Bırakmak için destek isterseniz ALO 171 Sigara Bırakma Danışma Hattını arayabilir ya da aile hekiminize başvurabilirsiniz.'
         ]
       },
       faq: [
@@ -402,7 +402,7 @@ module.exports = {
       name: 'Abonelikler',
       heading: 'Abonelik maliyeti hesaplama',
       title: 'Abonelik hesaplama – aylık ve yıllık toplam abonelik gideri | costsimulators.com',
-      description: 'Dizi platformu, spor salonu, mobil hat ve diğer tüm aboneliklerinizi toplayın. Aylık, yıllık ve 10 yıllık toplamı ve en çok hangi aboneliğe ödediğinizi görün.',
+      description: 'Dizi platformu, spor salonu, mobil hat ve diğer tüm aboneliklerinizi toplayın. Aylık, yıllık ve 10 yıllık toplamı görün, en çok hangi aboneliğe para ödediğinizi öğrenin.',
       card: 'Dijital platformları, spor salonunu ve diğer tüm düzenli ödemeleri tek yerde toplayın.',
       tag: 'Bütçe',
       lead: 'Düzenli olarak ödediğiniz her şeyi listeleyin ve toplamda ne tuttuğunu görün. Aylık, yıllık ve haftalık ödemelerin hepsi desteklenir.',
@@ -466,7 +466,7 @@ module.exports = {
         },
         {
           q: 'Yıllık paket aylık paketten daha mı ucuz?',
-          a: 'Çoğu zaman %15–20 daha ucuzdur, ama yalnızca hizmeti zaten bütün yıl kullanacaksanız. Yıllık maliyetlerini karşılaştırmak için iki seçeneği de listeye ekleyin.'
+          a: 'Genellikle %15–20 daha ucuzdur, ama bu yalnızca hizmeti zaten bütün yıl kullanacaksanız avantajlıdır. Yıllık maliyetlerini karşılaştırmak için iki seçeneği de listeye ekleyin.'
         },
         {
           q: 'Listem kaydediliyor mu?',
@@ -546,7 +546,7 @@ module.exports = {
         },
         {
           q: 'Hangi elektrik fiyatını kullanmalıyım?',
-          a: 'Elektrik faturanızdaki kWh başına toplam fiyatı kullanın: enerji bedeli, dağıtım bedeli ve vergiler dahil. Fatura tutarını tüketilen kWh’ye bölmek iyi bir ortalama verir.'
+          a: 'Elektrik faturanızdaki kWh başına toplam fiyatı kullanın: enerji bedeli, dağıtım bedeli ve vergiler dahil. Fatura tutarını tüketilen kWh’e bölmek iyi bir ortalama verir.'
         },
         {
           q: 'Bekleme modu elektrik harcar mı?',
@@ -560,7 +560,7 @@ module.exports = {
       heading: 'Yakıt maliyeti hesaplama',
       title: 'Yakıt maliyeti hesaplama – yol ve işe gidiş gelişte benzin masrafı | costsimulators.com',
       description: 'Bir yolculuğun ya da her gün işe gidip gelmenin yakıt maliyetini hesaplayın ve yolcular arasında paylaştırın. Kilometre ve litreyle ya da mil ve galonla çalışır.',
-      card: 'Bir yolculuğun ya da işe gidiş gelişin yakıt maliyetini hesaplayın ve başkalarıyla paylaşın.',
+      card: 'Bir yolculuğun ya da işe gidiş gelişin yakıt maliyetini hesaplayın ve masrafı yolcularla bölüşün.',
       tag: 'Yolculuk',
       lead: 'Tek bir yolculuğun ya da her gün işe gidip gelmenin yakıt maliyetini hesaplayın ve araçtaki herkes arasında paylaştırın.',
       unit: {

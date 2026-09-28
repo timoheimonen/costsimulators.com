@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Darmowe i prywatne kalkulatory, które pokazują, ile naprawdę kosztują spotkania, godziny pracy, kawa, palenie, subskrypcje, prąd i paliwo. Bez rejestracji, działa w przeglądarce.",
+                "description": "Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, kawa, palenie, subskrypcje, prąd i paliwo oraz ile godzin pracy kosztuje zakup. Bez rejestracji, w przeglądarce.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -206,7 +206,7 @@ SOFTWARE.
                         "name": "Jak obliczyć koszt prądu zużywanego przez urządzenie?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny kosztuje 1,5 kW × 3 h × 1,10 zł = 4,95 zł dziennie."
+                            "text": "Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny dziennie kosztuje 1,5 kW × 3 h × 1,10 zł/kWh = 4,95 zł dziennie."
                         }
                     },
                     {
@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"pl-PL","currency":"PLN","decimals":2,"strings":{"share":{"linkCopied":"Link skopiowany","copyFailed":"Nie udało się skopiować","copied":"Skopiowano!","calculatedWith":"Obliczono w costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"note":{"empty":"Wpisz moc, liczbę godzin dziennie (maks. 24), dni w tygodniu (maks. 7) i cenę prądu.","result":"Zużywa około {day} w każdym dniu użytkowania i około {year} rocznie."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"pl-PL","currency":"PLN","decimals":2,"strings":{"share":{"linkCopied":"Link skopiowany","copyFailed":"Nie udało się skopiować","copied":"Skopiowano!","calculatedWith":"Obliczono w costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"note":{"empty":"Wpisz moc, liczbę godzin dziennie (maks. 24), dni w tygodniu (maks. 7) i cenę prądu.","result":"Urządzenie zużywa około {day} w każdym dniu użytkowania i około {year} rocznie."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/electricity.js" defer></script>
@@ -424,7 +424,7 @@ SOFTWARE.
             <h2 class="info-title" id="aboutTitle">Jak liczony jest koszt prądu</h2>
             <p>Zużycie energii w kilowatogodzinach (kWh) to moc w watach × czas pracy w godzinach ÷ 1000. Telewizor o mocy 100 W włączony przez 4 godziny zużywa 0,4 kWh dziennie. Po pomnożeniu przez cenę za kWh otrzymujesz koszt jednego dnia użytkowania.</p>
             <p>Koszt roczny uwzględnia, ile dni w tygodniu urządzenie pracuje, w przeliczeniu na 365 dni w roku. Koszt miesięczny to dwunasta część kosztu rocznego.</p>
-            <p>Moc znajdziesz na tabliczce znamionowej urządzenia lub w instrukcji obsługi. Wiele urządzeń przez większość czasu pobiera mniej niż maksymalną moc, więc wynik jest górnym oszacowaniem. Aby cena była najdokładniejsza, uwzględnij nie tylko cenę energii, ale też opłaty dystrybucyjne i podatki.</p>
+            <p>Moc znajdziesz na tabliczce znamionowej urządzenia lub w instrukcji obsługi. Wiele urządzeń przez większość czasu pobiera mniej niż maksymalną moc, więc wynik jest górnym oszacowaniem. Aby wynik był jak najdokładniejszy, uwzględnij nie tylko cenę energii, ale też opłaty dystrybucyjne i podatki.</p>
         </section>
 
         <section class="info-section reveal" aria-labelledby="faqTitle">
@@ -432,7 +432,7 @@ SOFTWARE.
             <div class="faq-list">
             <details class="faq-item">
                 <summary>Jak obliczyć koszt prądu zużywanego przez urządzenie?</summary>
-                <p>Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny kosztuje 1,5 kW × 3 h × 1,10 zł = 4,95 zł dziennie.</p>
+                <p>Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny dziennie kosztuje 1,5 kW × 3 h × 1,10 zł/kWh = 4,95 zł dziennie.</p>
             </details>
             <details class="faq-item">
                 <summary>Ile kWh zużywa urządzenie?</summary>

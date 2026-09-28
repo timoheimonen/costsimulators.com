@@ -161,8 +161,8 @@ module.exports = {
       about: {
         title: 'Comment le coût d’une réunion est calculé',
         paragraphs: [
-          'Le calculateur multiplie le nombre de participants par leur taux horaire et par le temps écoulé. Une réunion d’une heure à 5 personnes, à 50 € de l’heure, coûte 250 €, soit environ 4,17 € par minute.',
-          'Comme taux horaire, prenez ce qu’une heure de travail coûte réellement à l’employeur, et pas seulement le salaire. En France, les charges patronales (cotisations sociales, retraite complémentaire, assurance chômage…) représentent souvent 40 à 45 % du salaire brut : ajoutez-les au salaire horaire brut. Si vous ne connaissez pas le taux de chacun, une moyenne pour l’équipe suffit.',
+          'Le calculateur multiplie le nombre de participants par leur taux horaire et par le temps écoulé. Une réunion d’une heure à 5 personnes, à 50 € de l’heure par personne, coûte 250 €, soit environ 4,17 € par minute.',
+          'Comme taux horaire, prenez ce qu’une heure de travail coûte réellement à l’employeur, et pas seulement le salaire. En France, les charges patronales (assurance maladie, retraite, assurance chômage…) représentent souvent 40 à 45 % du salaire brut : ajoutez-les au salaire horaire brut. Si vous ne connaissez pas le taux de chacun, une moyenne pour l’équipe suffit.',
           'Le chronomètre continue de compter correctement dans un onglet en arrière-plan, et le coût courant s’affiche dans le titre de l’onglet : vous pouvez le surveiller même en partageant votre écran. À la fin de la réunion, mettez le chronomètre en pause et copiez un court compte rendu à coller dans vos notes de réunion.'
         ]
       },
@@ -267,7 +267,7 @@ module.exports = {
         },
         {
           q: 'Comment convertir un salaire mensuel en salaire horaire ?',
-          a: 'Multipliez le salaire mensuel par 12 et divisez-le par le nombre d’heures travaillées dans l’année. Avec une semaine de 35 heures, cela fait 1 820 heures, donc 2 200 € net par mois correspondent à environ 14,50 € de l’heure. Le calculateur le fait pour vous si vous choisissez Mensuel.'
+          a: 'Multipliez le salaire mensuel par 12, puis divisez le résultat par le nombre d’heures travaillées dans l’année. Avec une semaine de 35 heures, cela fait 1 820 heures, donc 2 200 € net par mois correspondent à environ 14,50 € de l’heure. Le calculateur le fait pour vous si vous choisissez Mensuel.'
         }
       ]
     },
@@ -463,11 +463,11 @@ module.exports = {
       faq: [
         {
           q: 'Comment retrouver tous mes abonnements ?',
-          a: 'Parcourez vos relevés bancaires et de carte des derniers mois à la recherche de prélèvements récurrents. Vérifiez aussi les abonnements dans les réglages de l’App Store, de Google Play et de PayPal.'
+          a: 'Parcourez vos relevés de compte et de carte bancaire des derniers mois à la recherche de prélèvements récurrents. Vérifiez aussi les abonnements dans les réglages de l’App Store, de Google Play et de PayPal.'
         },
         {
           q: 'Un abonnement annuel est-il moins cher qu’un abonnement mensuel ?',
-          a: 'Souvent, de 15 à 20 %, mais seulement si vous comptiez de toute façon garder le service toute l’année. Ajoutez les deux formules à la liste pour comparer leur coût annuel.'
+          a: 'Souvent oui, de 15 à 20 %, mais seulement si vous comptiez de toute façon garder le service toute l’année. Ajoutez les deux formules à la liste pour comparer leur coût annuel.'
         },
         {
           q: 'Ma liste est-elle enregistrée ?',
@@ -639,7 +639,7 @@ module.exports = {
         title: 'Comment le coût du trajet est calculé',
         paragraphs: [
           'La quantité de carburant consommée correspond à la distance × la consommation ÷ 100. Pour un trajet domicile-travail de 25 km dans chaque sens (50 km par jour) avec une voiture qui consomme 6,5 l/100 km, il faut 3,25 litres de carburant. Multipliez par le prix du litre pour obtenir le coût du trajet, puis divisez par le nombre de personnes pour le partager.',
-          'En miles et gallons, la consommation se calcule en divisant la distance par le nombre de miles parcourus avec un gallon (mpg). Changer d’unités convertit les valeurs saisies : vous pouvez ainsi comparer des chiffres de l’un ou l’autre système.',
+          'En miles et gallons, la quantité de carburant s’obtient en divisant la distance par le nombre de miles parcourus avec un gallon (mpg). Changer d’unités convertit les valeurs saisies : vous pouvez ainsi comparer des chiffres de l’un ou l’autre système.',
           'Les totaux mensuels et annuels reposent sur le nombre de trajets par semaine – 5 allers-retours par semaine correspondent à des trajets domicile-travail classiques. Pour une voiture électrique, indiquez plutôt la consommation en kWh/100 km et le prix du kWh.'
         ]
       },

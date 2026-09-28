@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"nb-NO","currency":"NOK","decimals":2,"strings":{"share":{"linkCopied":"Lenken er kopiert","copyFailed":"Kunne ikke kopiere","copied":"Kopiert!","calculatedWith":"Beregnet med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} t","hoursMinutes":"{h} t {m} min"},"mode":{"start":"Start","pause":"Pause","resume":"Fortsett"},"status":{"ready":"Klar","live":"Pågår","paused":"Pauset"},"announce":{"invalid":"Skriv inn timepris og antall deltakere for å starte.","started":"Tidtakeren er startet.","paused":"Pauset på {cost} etter {time}.","reset":"Tidtakeren er nullstilt."},"report":{"cost":"Møtekostnad: {cost}","duration":"Varighet: {time}","participants":"Deltakere: {persons} × {rate}/t"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"nb-NO","currency":"NOK","decimals":2,"strings":{"share":{"linkCopied":"Lenken er kopiert","copyFailed":"Kunne ikke kopiere","copied":"Kopiert!","calculatedWith":"Beregnet med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} t","hoursMinutes":"{h} t {m} min"},"mode":{"start":"Start","pause":"Pause","resume":"Fortsett"},"status":{"ready":"Klar","live":"Pågår","paused":"Pauset"},"announce":{"invalid":"Skriv inn timepris og antall deltakere for å starte.","started":"Tidtakeren er startet.","paused":"Pauset ved {cost} etter {time}.","reset":"Tidtakeren er nullstilt."},"report":{"cost":"Møtekostnad: {cost}","duration":"Varighet: {time}","participants":"Deltakere: {persons} × {rate}/t"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/timer.js" defer></script>
     <script src="/js/ui.js" defer></script>
@@ -399,7 +399,7 @@ SOFTWARE.
                     </button>
                 </div>
 
-                <p class="kbd-hint">Trykk på <kbd>mellomrom</kbd> for å starte eller pause</p>
+                <p class="kbd-hint">Trykk på <kbd>mellomromstasten</kbd> for å starte eller pause</p>
                 <p class="visually-hidden" id="announcer" role="status" aria-live="polite"></p>
             </section>
         </div>
@@ -407,7 +407,7 @@ SOFTWARE.
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Slik beregnes møtekostnaden</h2>
             <p>Kalkulatoren ganger antall deltakere med timeprisen deres og med tiden som har gått. Et møte på én time med 5 personer til 600 kr i timen koster 3 000 kr – det er 50 kr hvert minutt.</p>
-            <p>Som timepris bør du bruke det en arbeidstime faktisk koster arbeidsgiveren, ikke bare lønnen. Arbeidsgiveravgiften er 14,1 % for de fleste arbeidsgivere, og med feriepenger og pensjon kommer det ofte 30–40 % på toppen av bruttotimelønnen. Vet du ikke timeprisen til alle, holder det fint med et snitt for teamet.</p>
+            <p>Som timepris bør du bruke det en arbeidstime faktisk koster arbeidsgiveren, ikke bare lønnen. Arbeidsgiveravgiften er 14,1 % for de fleste arbeidsgivere, og med feriepenger og pensjon kommer det ofte 30–40 % i tillegg til bruttotimelønnen. Vet du ikke timeprisen til alle, holder det fint med et snitt for teamet.</p>
             <p>Tidtakeren teller riktig også i en bakgrunnsfane, og den løpende kostnaden vises i fanetittelen i nettleseren, så du kan følge med selv når du deler skjermen. Når møtet er ferdig, setter du tidtakeren på pause og kopierer en kort rapport til referatet.</p>
         </section>
 

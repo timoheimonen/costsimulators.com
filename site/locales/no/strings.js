@@ -142,14 +142,14 @@ module.exports = {
       elapsed: 'Medgått tid',
       reset: 'Nullstill',
       copyReport: 'Kopier rapport',
-      kbdHint: 'Trykk på <kbd>mellomrom</kbd> for å starte eller pause',
+      kbdHint: 'Trykk på <kbd>mellomromstasten</kbd> for å starte eller pause',
       runtime: {
         mode: { start: 'Start', pause: 'Pause', resume: 'Fortsett' },
         status: { ready: 'Klar', live: 'Pågår', paused: 'Pauset' },
         announce: {
           invalid: 'Skriv inn timepris og antall deltakere for å starte.',
           started: 'Tidtakeren er startet.',
-          paused: 'Pauset på {cost} etter {time}.',
+          paused: 'Pauset ved {cost} etter {time}.',
           reset: 'Tidtakeren er nullstilt.'
         },
         report: {
@@ -162,7 +162,7 @@ module.exports = {
         title: 'Slik beregnes møtekostnaden',
         paragraphs: [
           'Kalkulatoren ganger antall deltakere med timeprisen deres og med tiden som har gått. Et møte på én time med 5 personer til 600 kr i timen koster 3 000 kr – det er 50 kr hvert minutt.',
-          'Som timepris bør du bruke det en arbeidstime faktisk koster arbeidsgiveren, ikke bare lønnen. Arbeidsgiveravgiften er 14,1 % for de fleste arbeidsgivere, og med feriepenger og pensjon kommer det ofte 30–40 % på toppen av bruttotimelønnen. Vet du ikke timeprisen til alle, holder det fint med et snitt for teamet.',
+          'Som timepris bør du bruke det en arbeidstime faktisk koster arbeidsgiveren, ikke bare lønnen. Arbeidsgiveravgiften er 14,1 % for de fleste arbeidsgivere, og med feriepenger og pensjon kommer det ofte 30–40 % i tillegg til bruttotimelønnen. Vet du ikke timeprisen til alle, holder det fint med et snitt for teamet.',
           'Tidtakeren teller riktig også i en bakgrunnsfane, og den løpende kostnaden vises i fanetittelen i nettleseren, så du kan følge med selv når du deler skjermen. Når møtet er ferdig, setter du tidtakeren på pause og kopierer en kort rapport til referatet.'
         ]
       },
@@ -390,7 +390,7 @@ module.exports = {
         },
         {
           q: 'Hvor mye sparer jeg på å slutte å røyke?',
-          a: 'Alt denne kalkulatoren viser. Skriv inn det du røyker i dag: måneds- og årssummene er det du sparer ved å slutte.'
+          a: 'Akkurat det kalkulatoren viser. Skriv inn det du røyker i dag: måneds- og årssummene er det du sparer ved å slutte.'
         },
         {
           q: 'Fungerer dette for rulletobakk og snus?',
@@ -491,7 +491,7 @@ module.exports = {
         chip2: 'Bærbar PC 60 W',
         chip3: 'TV 100 W',
         chip4: 'Gaming-PC 400 W',
-        chip5: 'Panelovn 1500 W',
+        chip5: 'Panelovn 1 500 W',
         decrease: 'Senk effekten',
         increase: 'Øk effekten'
       },

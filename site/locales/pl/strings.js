@@ -57,7 +57,7 @@ module.exports = {
 
   home: {
     title: 'Darmowe kalkulatory kosztów na co dzień | costsimulators.com',
-    description: 'Darmowe i prywatne kalkulatory, które pokazują, ile naprawdę kosztują spotkania, godziny pracy, kawa, palenie, subskrypcje, prąd i paliwo. Bez rejestracji, działa w przeglądarce.',
+    description: 'Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, kawa, palenie, subskrypcje, prąd i paliwo oraz ile godzin pracy kosztuje zakup. Bez rejestracji, w przeglądarce.',
     eyebrow: 'Za darmo · Prywatnie · Od razu',
     heading: 'Małe narzędzia na codzienne pytania o <span class="accent-text">pieniądze</span>.',
     lead: 'Szybkie kalkulatory, które pokazują, ile naprawdę kosztują różne rzeczy. Bez rejestracji i śledzenia – wszystko działa bezpośrednio w Twojej przeglądarce.',
@@ -67,7 +67,7 @@ module.exports = {
     suggestText: 'Zaproponuj nowe narzędzie na GitHubie.',
     whyTitle: 'Drobne wydatki się sumują',
     whyText1: 'Jedno spotkanie, kawa w drodze do pracy czy kolejny serwis streamingowy rzadko wydają się drogie same w sobie. Gdy jednak zsumujesz je w skali miesiąca, roku albo dekady, liczby wyglądają zupełnie inaczej.',
-    whyText2: 'Każdy kalkulator robi jedną rzecz, pyta tylko o potrzebne liczby i od razu pokazuje wynik. Wszystko jest liczone w przeglądarce, więc Twoje liczby nie opuszczają urządzenia.',
+    whyText2: 'Każdy kalkulator robi jedną rzecz, pyta tylko o potrzebne liczby i od razu pokazuje wynik. Wszystkie obliczenia odbywają się w przeglądarce, więc Twoje dane nie opuszczają urządzenia.',
     aboutLink: 'Więcej o costsimulators.com',
     faq: [
       {
@@ -162,7 +162,7 @@ module.exports = {
         paragraphs: [
           'Kalkulator mnoży liczbę uczestników przez ich stawkę godzinową i czas, który upłynął. Godzinne spotkanie 5 osób przy stawce 120 zł za godzinę kosztuje 600 zł – to 10 zł za każdą minutę.',
           'Jako stawkę godzinową wpisz to, ile godzina pracy naprawdę kosztuje pracodawcę, a nie samo wynagrodzenie. Do wynagrodzenia brutto pracodawca dolicza swoją część składek ZUS oraz składki na Fundusz Pracy i FGŚP – zwykle łącznie około 20–22% pensji. Jeśli nie znasz stawek wszystkich osób, wystarczy średnia dla zespołu.',
-          'Licznik liczy poprawnie także w karcie w tle, a bieżący koszt widać w tytule karty przeglądarki, więc możesz go śledzić nawet podczas udostępniania ekranu. Po spotkaniu zatrzymaj licznik i skopiuj krótki raport do notatek.'
+          'Licznik działa poprawnie także w karcie w tle, a bieżący koszt widać w tytule karty przeglądarki, więc możesz go śledzić nawet podczas udostępniania ekranu. Po spotkaniu zatrzymaj licznik i skopiuj krótki raport do notatek.'
         ]
       },
       faq: [
@@ -251,7 +251,7 @@ module.exports = {
         title: 'Jak liczony jest czas pracy',
         paragraphs: [
           'Najpierw wynagrodzenie jest przeliczane na stawkę godzinową. Pensję miesięczną mnoży się przez 12 i dzieli przez liczbę godzin przepracowanych w roku (godziny tygodniowo × 52), a roczną dzieli się bezpośrednio przez te godziny. Następnie cena jest dzielona przez stawkę godzinową.',
-          'Dni pracy liczone są dla pięciodniowego tygodnia, więc 40 godzin tygodniowo oznacza 8-godzinne dni. Na przykład przy stawce 35 zł za godzinę telefon za 3999 zł kosztuje ponad 114 godzin pracy, czyli prawie trzy tygodnie.',
+          'Dni pracy liczone są dla pięciodniowego tygodnia, więc 40 godzin tygodniowo oznacza ośmiogodzinny dzień pracy. Na przykład przy stawce 35 zł za godzinę telefon za 3999 zł kosztuje ponad 114 godzin pracy, czyli prawie trzy tygodnie.',
           'Najuczciwszy wynik da wynagrodzenie netto, bo to te pieniądze faktycznie wydajesz. Myślenie o cenach w godzinach pracy to prosty sposób, by ocenić, czy coś jest naprawdę warte swojej ceny.'
         ]
       },
@@ -378,7 +378,7 @@ module.exports = {
         title: 'Jak liczony jest koszt palenia',
         paragraphs: [
           'Cena jednego papierosa to cena paczki podzielona przez liczbę papierosów w paczce. Mnoży się ją przez liczbę papierosów wypalanych dziennie i przez 365 dni, co daje koszt roczny. Koszt miesięczny to jego dwunasta część, a sumy dla 5 i 10 lat są liczone w dzisiejszych cenach.',
-          'Pół paczki dziennie przy cenie 21 zł za paczkę to około 3830 zł rocznie i ponad 38 000 zł w ciągu dziesięciu lat. Zobaczenie tej sumy potrafi mocno zmotywować: te same pieniądze mogłyby pójść na wyjazd, oszczędności albo spłatę długów.',
+          'Pół paczki dziennie przy cenie 21 zł za paczkę to około 3830 zł rocznie i ponad 38 000 zł w ciągu dziesięciu lat. Świadomość tej kwoty potrafi mocno zmotywować: te same pieniądze mogłyby pójść na wyjazd, oszczędności albo spłatę długów.',
           'Kalkulator liczy tylko cenę papierosów. Do tego dochodzą koszty leczenia, wyższe składki ubezpieczeniowe i dni spędzone na zwolnieniu lekarskim. Jeśli chcesz rzucić palenie, pomoc znajdziesz u lekarza rodzinnego i w Telefonicznej Poradni Pomocy Palącym (801 108 108).'
         ]
       },
@@ -389,7 +389,7 @@ module.exports = {
         },
         {
           q: 'Ile zaoszczędzę, jeśli rzucę palenie?',
-          a: 'Wszystko, co pokazuje ten kalkulator. Wpisz, ile palisz dziś: sumy miesięczne i roczne to kwota, którą zaoszczędzisz, rzucając palenie.'
+          a: 'Dokładnie tyle, ile pokazuje ten kalkulator. Wpisz, ile palisz dziś: sumy miesięczne i roczne to kwota, którą zaoszczędzisz, rzucając palenie.'
         },
         {
           q: 'Czy to działa także w przypadku tytoniu do skręcania?',
@@ -454,7 +454,7 @@ module.exports = {
       about: {
         title: 'Jak liczona jest suma subskrypcji',
         paragraphs: [
-          'Każda subskrypcja jest przeliczana na koszt roczny: ceny miesięczne mnoży się przez 12, tygodniowe przez 52, a roczne przyjmuje bez zmian. Sumę roczną dzieli się następnie przez 12, co daje koszt miesięczny, i przez 365, co daje koszt dzienny.',
+          'Każda subskrypcja jest przeliczana na koszt roczny: ceny miesięczne mnoży się przez 12, tygodniowe przez 52, a roczne przyjmuje się bez zmian. Sumę roczną dzieli się następnie przez 12, co daje koszt miesięczny, i przez 365, co daje koszt dzienny.',
           'Zestawienie porządkuje subskrypcje od najdroższej do najtańszej i pokazuje udział każdej z nich w całości, dzięki czemu łatwo zauważyć, co warto anulować lub zmienić na tańszy plan.',
           'Lista jest zapisywana w adresie strony, nigdy na serwerze. Dodaj stronę do zakładek, aby wrócić do listy później, albo udostępnij link, by przejrzeć wspólne subskrypcje z rodziną.'
         ]
@@ -524,7 +524,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Wpisz moc, liczbę godzin dziennie (maks. 24), dni w tygodniu (maks. 7) i cenę prądu.',
-          result: 'Zużywa około {day} w każdym dniu użytkowania i około {year} rocznie.'
+          result: 'Urządzenie zużywa około {day} w każdym dniu użytkowania i około {year} rocznie.'
         }
       },
       about: {
@@ -532,13 +532,13 @@ module.exports = {
         paragraphs: [
           'Zużycie energii w kilowatogodzinach (kWh) to moc w watach × czas pracy w godzinach ÷ 1000. Telewizor o mocy 100 W włączony przez 4 godziny zużywa 0,4 kWh dziennie. Po pomnożeniu przez cenę za kWh otrzymujesz koszt jednego dnia użytkowania.',
           'Koszt roczny uwzględnia, ile dni w tygodniu urządzenie pracuje, w przeliczeniu na 365 dni w roku. Koszt miesięczny to dwunasta część kosztu rocznego.',
-          'Moc znajdziesz na tabliczce znamionowej urządzenia lub w instrukcji obsługi. Wiele urządzeń przez większość czasu pobiera mniej niż maksymalną moc, więc wynik jest górnym oszacowaniem. Aby cena była najdokładniejsza, uwzględnij nie tylko cenę energii, ale też opłaty dystrybucyjne i podatki.'
+          'Moc znajdziesz na tabliczce znamionowej urządzenia lub w instrukcji obsługi. Wiele urządzeń przez większość czasu pobiera mniej niż maksymalną moc, więc wynik jest górnym oszacowaniem. Aby wynik był jak najdokładniejszy, uwzględnij nie tylko cenę energii, ale też opłaty dystrybucyjne i podatki.'
         ]
       },
       faq: [
         {
           q: 'Jak obliczyć koszt prądu zużywanego przez urządzenie?',
-          a: 'Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny kosztuje 1,5 kW × 3 h × 1,10 zł = 4,95 zł dziennie.'
+          a: 'Pomnóż moc w kilowatach przez liczbę godzin pracy i cenę za kWh. Grzejnik o mocy 1500 W włączony na 3 godziny dziennie kosztuje 1,5 kW × 3 h × 1,10 zł/kWh = 4,95 zł dziennie.'
         },
         {
           q: 'Ile kWh zużywa urządzenie?',
@@ -637,7 +637,7 @@ module.exports = {
       about: {
         title: 'Jak liczony jest koszt przejazdu',
         paragraphs: [
-          'Zużycie paliwa to odległość × spalanie ÷ 100. Jeśli do pracy masz 25 km w jedną stronę (50 km dziennie), a auto spala 6,5 l/100 km, zużyjesz 3,25 litra paliwa. Po pomnożeniu przez cenę litra otrzymujesz koszt przejazdu, a po podzieleniu go przez liczbę osób – kwotę na osobę.',
+          'Zużycie paliwa to odległość × spalanie ÷ 100. Jeśli do pracy masz 25 km w jedną stronę (50 km dziennie), a auto spala 6,5 l/100 km, zużyjesz dziennie 3,25 litra paliwa. Po pomnożeniu przez cenę litra otrzymujesz koszt przejazdu, a po podzieleniu go przez liczbę osób – kwotę na osobę.',
           'W milach i galonach zużycie paliwa oblicza się, dzieląc odległość przez liczbę mil, które auto przejeżdża na jednym galonie (mpg). Zmiana jednostek przelicza wpisane wartości, więc możesz porównywać dane z obu systemów.',
           'Sumy miesięczne i roczne wynikają z liczby przejazdów w tygodniu – typowy dojazd do pracy to 5 przejazdów tam i z powrotem tygodniowo. Przy aucie na LPG wpisz spalanie i cenę autogazu, a przy elektrycznym – zużycie w kWh/100 km i cenę za kWh.'
         ]
@@ -652,8 +652,8 @@ module.exports = {
           a: 'Wpisz liczbę osób, które dzielą koszt. Kalkulator podzieli koszt przejazdu równo między wszystkich, łącznie z kierowcą.'
         },
         {
-          q: 'Czy kalkulator uwzględnia zużycie auta, parkowanie i opłaty za autostrady?',
-          a: 'Nie, liczy tylko paliwo. Zużycie auta, ubezpieczenie, parkowanie i opłaty za autostrady dochodzą do tego, więc pełny koszt jazdy jest wyższy.'
+          q: 'Czy kalkulator uwzględnia eksploatację auta, parkowanie i opłaty za autostrady?',
+          a: 'Nie, liczy tylko paliwo. Eksploatacja auta (serwis, opony), ubezpieczenie, parkowanie i opłaty za autostrady dochodzą do tego, więc pełny koszt jazdy jest wyższy.'
         }
       ]
     }

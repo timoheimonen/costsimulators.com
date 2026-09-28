@@ -525,7 +525,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Gib die Leistung, die Stunden pro Tag (bis 24), die Tage pro Woche (bis 7) und deinen Strompreis ein.',
-          result: 'Verbraucht an jedem Nutzungstag rund {day}, im Jahr etwa {year}.'
+          result: 'Das Gerät verbraucht an jedem Nutzungstag rund {day}, im Jahr etwa {year}.'
         }
       },
       about: {
@@ -557,7 +557,7 @@ module.exports = {
     },
 
     trip: {
-      name: 'Fahrtkosten',
+      name: 'Spritkosten',
       heading: 'Spritkostenrechner',
       title: 'Spritkostenrechner – Fahrtkosten und Pendelkosten berechnen | costsimulators.com',
       description: 'Berechne die Spritkosten einer Fahrt oder deines täglichen Arbeitswegs und teile sie unter allen Mitfahrenden auf. Mit Kilometern und Litern oder Meilen und Gallonen.',
@@ -632,7 +632,7 @@ module.exports = {
         },
         note: {
           empty: 'Gib Strecke, Verbrauch und Spritpreis ein, um die Kosten zu sehen.',
-          result: 'Verbraucht {fuel} Kraftstoff pro Fahrt, rund {price} pro {distance}.'
+          result: 'Pro Fahrt werden {fuel} Kraftstoff verbraucht, das sind rund {price} pro {distance}.'
         }
       },
       about: {

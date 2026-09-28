@@ -230,7 +230,7 @@ SOFTWARE.
                         "name": "Běží časovač dál, i když přepnu na jinou kartu?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ano. Časovač vychází z hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku."
+                            "text": "Ano. Časovač vychází ze systémových hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku."
                         }
                     }
                 ]
@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"cs-CZ","currency":"CZK","decimals":0,"strings":{"share":{"linkCopied":"Odkaz zkopírován","copyFailed":"Kopírování se nezdařilo","copied":"Zkopírováno!","calculatedWith":"Spočítáno na costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"mode":{"start":"Spustit","pause":"Pozastavit","resume":"Pokračovat"},"status":{"ready":"Připraveno","live":"Běží","paused":"Pozastaveno"},"announce":{"invalid":"Pro spuštění zadejte hodinovou sazbu a počet účastníků.","started":"Časovač spuštěn.","paused":"Pozastaveno na {cost} po {time}.","reset":"Časovač vynulován."},"report":{"cost":"Cena porady: {cost}","duration":"Délka: {time}","participants":"Účastníci: {persons} × {rate}/h"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"cs-CZ","currency":"CZK","decimals":0,"strings":{"share":{"linkCopied":"Odkaz zkopírován","copyFailed":"Kopírování se nezdařilo","copied":"Zkopírováno!","calculatedWith":"Spočítáno na costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"mode":{"start":"Spustit","pause":"Pozastavit","resume":"Pokračovat"},"status":{"ready":"Připraveno","live":"Běží","paused":"Pozastaveno"},"announce":{"invalid":"Pro spuštění zadejte hodinovou sazbu a počet účastníků.","started":"Časovač spuštěn.","paused":"Pozastaveno po {time} na částce {cost}.","reset":"Časovač vynulován."},"report":{"cost":"Cena porady: {cost}","duration":"Délka: {time}","participants":"Účastníci: {persons} × {rate}/h"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/timer.js" defer></script>
     <script src="/js/ui.js" defer></script>
@@ -399,7 +399,7 @@ SOFTWARE.
                     </button>
                 </div>
 
-                <p class="kbd-hint">Klávesou <kbd>Mezerník</kbd> spustíte nebo pozastavíte</p>
+                <p class="kbd-hint">Klávesou <kbd>Mezerník</kbd> časovač spustíte nebo pozastavíte</p>
                 <p class="visually-hidden" id="announcer" role="status" aria-live="polite"></p>
             </section>
         </div>
@@ -428,7 +428,7 @@ SOFTWARE.
             </details>
             <details class="faq-item">
                 <summary>Běží časovač dál, i když přepnu na jinou kartu?</summary>
-                <p>Ano. Časovač vychází z hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku.</p>
+                <p>Ano. Časovač vychází ze systémových hodin, takže součet zůstane správný i na kartě na pozadí. Dokud časovač běží, stránka také žádá prohlížeč, aby nezhasínal obrazovku.</p>
             </details>
             </div>
         </section>
@@ -492,7 +492,7 @@ SOFTWARE.
         <div class="container footer-inner">
             <p class="footer-privacy">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7.5-3.6 7.5-9.5V5.5L12 2.5l-7.5 3V12c0 5.9 7.5 9.5 7.5 9.5z"/><path d="M9 12l2 2 4-4"/></svg>
-                Běží celé ve vašem prohlížeči. Žádné cookies, žádné sledování.
+                Vše běží ve vašem prohlížeči. Žádné cookies, žádné sledování.
             </p>
             <p>© 2026 Timo Heimonen · <a href="/cs/about/">O projektu</a> · <a href="mailto:timo.heimonen@proton.me">Kontakt</a> · <a href="/cs/privacy/">Ochrana soukromí</a> · <a href="/cs/terms/">Podmínky</a> · <a href="https://github.com/timoheimonen/costsimulators.com" target="_blank" rel="noopener noreferrer">GitHub</a></p>
         </div>

@@ -106,7 +106,7 @@ module.exports = {
     terms: {
       name: 'Gebruiksvoorwaarden',
       title: 'Gebruiksvoorwaarden | costsimulators.com',
-      description: 'Gebruiksvoorwaarden van costsimulators.com: gratis voor persoonlijk en zakelijk gebruik, geleverd zoals hij is, met open source code onder de MIT-licentie.'
+      description: 'Gebruiksvoorwaarden van costsimulators.com: gratis voor persoonlijk en zakelijk gebruik, zonder garanties en met open source code onder de MIT-licentie.'
     }
   },
 
@@ -148,7 +148,7 @@ module.exports = {
         announce: {
           invalid: 'Vul een uurtarief en het aantal deelnemers in om te starten.',
           started: 'Timer gestart.',
-          paused: 'Gepauzeerd op {cost} na {time}.',
+          paused: 'Gepauzeerd bij {cost} na {time}.',
           reset: 'Timer gereset.'
         },
         report: {
@@ -415,7 +415,7 @@ module.exports = {
         2: { name: 'Muziekstreaming', price: '11.99' },
         3: { name: 'Sportschool', price: '29.99' },
         4: { name: 'Cloudopslag', price: '2.99' },
-        5: { name: 'Sim-only abonnement', price: '15' },
+        5: { name: 'Sim-only-abonnement', price: '15' },
         6: { name: 'Nieuws', price: '14.99' }
       },
       note: 'Je lijst staat in het adres van de pagina, dus je kunt hem als bladwijzer opslaan of delen. Hij wordt nergens naartoe gestuurd.',
@@ -524,7 +524,7 @@ module.exports = {
       runtime: {
         note: {
           empty: 'Vul het vermogen, de uren per dag (maximaal 24), de dagen per week (maximaal 7) en je stroomprijs in.',
-          result: 'Verbruikt zo’n {day} op elke dag dat het aanstaat, ongeveer {year} per jaar.'
+          result: 'Het apparaat verbruikt zo’n {day} per dag dat het aanstaat, ongeveer {year} per jaar.'
         }
       },
       about: {
@@ -538,7 +538,7 @@ module.exports = {
       faq: [
         {
           q: 'Hoe bereken ik de stroomkosten van een apparaat?',
-          a: 'Vermenigvuldig het vermogen in kilowatt met het aantal gebruiksuren en met de prijs per kWh. Een kachel van 1.500 W die 3 uur aanstaat, kost 1,5 kW × 3 uur × € 0,27 = € 1,22 per dag.'
+          a: 'Vermenigvuldig het vermogen in kilowatt met het aantal gebruiksuren en met de prijs per kWh. Een kachel van 1.500 W die 3 uur aanstaat, kost 1,5 kW × 3 uur × € 0,27 ≈ € 1,22 per dag.'
         },
         {
           q: 'Hoeveel kWh verbruikt een apparaat?',
@@ -631,14 +631,14 @@ module.exports = {
         },
         note: {
           empty: 'Vul de afstand, het verbruik en de brandstofprijs in om de kosten te zien.',
-          result: 'Verbruikt {fuel} brandstof per rit, ongeveer {price} per {distance}.'
+          result: 'Je verbruikt {fuel} brandstof per rit, dat is ongeveer {price} per {distance}.'
         }
       },
       about: {
         title: 'Zo worden de ritkosten berekend',
         paragraphs: [
           'Het brandstofverbruik is de afstand × het verbruik ÷ 100. Is je woon-werkafstand 25 km enkele reis (50 km per dag) en verbruikt je auto 6,5 l/100 km, dan gebruik je 3,25 liter per dag. Vermenigvuldig dat met de literprijs voor de kosten van de rit, en deel door het aantal personen om de kosten te verdelen.',
-          'Ken je het verbruik alleen als ‘1 op 15’? Reken het om met 100 ÷ 15 ≈ 6,7 l/100 km. In mijlen en gallons is het verbruik de afstand gedeeld door het aantal mijlen per gallon (mpg). Als je van eenheid wisselt, worden de ingevulde waarden omgerekend, zodat je cijfers uit beide systemen kunt vergelijken.',
+          'Ken je het verbruik alleen als ‘1 op 15’? Reken het om met 100 ÷ 15 ≈ 6,7 l/100 km. In mijlen en gallons is de verbruikte brandstof de afstand gedeeld door het aantal mijlen per gallon (mpg). Als je van eenheid wisselt, worden de ingevulde waarden omgerekend, zodat je cijfers uit beide systemen kunt vergelijken.',
           'De totalen per maand en per jaar gaan uit van het aantal ritten per week – 5 keer heen en terug per week is gebruikelijk voor woon-werkverkeer. Rijd je elektrisch, vul dan het verbruik in kWh/100 km en de prijs per kWh in.'
         ]
       },
