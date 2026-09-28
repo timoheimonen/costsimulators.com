@@ -25,12 +25,12 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Timer, Calculators, UI, formatCurrency, formatDuration } = window.CostSimulators;
+    const { Timer, Calculators, UI, formatCurrency, formatDuration, t } = window.CostSimulators;
 
     const MODES = {
-        idle: { button: 'Start', status: 'Ready' },
-        running: { button: 'Pause', status: 'Live' },
-        paused: { button: 'Resume', status: 'Paused' }
+        idle: { button: t('mode.start'), status: t('status.ready') },
+        running: { button: t('mode.pause'), status: t('status.live') },
+        paused: { button: t('mode.resume'), status: t('status.paused') }
     };
 
     const els = {
@@ -141,14 +141,14 @@ SOFTWARE.
 
         if (invalid.length) {
             UI.flagInvalid(invalid);
-            announce('Enter an hourly rate and the number of participants to start.');
+            announce(t('announce.invalid'));
             return;
         }
 
         timer.start();
         requestWakeLock();
         setMode('running');
-        announce('Timer started.');
+        announce(t('announce.started'));
     }
 
     function pause() {
@@ -157,7 +157,10 @@ SOFTWARE.
         state.lastTitleSecond = -1;
         updateTitle(state.lastElapsed);
         setMode('paused');
-        announce('Paused at ' + formatCurrency(state.total) + ' after ' + formatDuration(state.lastElapsed).clock + '.');
+        announce(t('announce.paused', {
+            cost: formatCurrency(state.total),
+            time: formatDuration(state.lastElapsed).clock
+        }));
     }
 
     function reset() {
@@ -171,7 +174,7 @@ SOFTWARE.
         setMode('idle');
         UI.resetLabel(els.copy);
         els.primary.focus();
-        announce('Timer reset.');
+        announce(t('announce.reset'));
     }
 
     function toggleRunning() {
@@ -182,10 +185,10 @@ SOFTWARE.
     function buildReport() {
         const inputs = readInputs();
         return [
-            'Meeting cost: ' + formatCurrency(state.total),
-            'Duration: ' + formatDuration(state.lastElapsed).clock,
-            'Participants: ' + inputs.persons + ' × ' + formatCurrency(inputs.rate) + '/h',
-            'Calculated with costsimulators.com'
+            t('report.cost', { cost: formatCurrency(state.total) }),
+            t('report.duration', { time: formatDuration(state.lastElapsed).clock }),
+            t('report.participants', { persons: inputs.persons, rate: formatCurrency(inputs.rate) }),
+            t('share.calculatedWith')
         ].join('\n');
     }
 
@@ -196,7 +199,7 @@ SOFTWARE.
     els.primary.addEventListener('click', toggleRunning);
     els.reset.addEventListener('click', reset);
     els.copy.addEventListener('click', function () {
-        UI.copyWithFeedback(els.copy, buildReport(), 'Copied!');
+        UI.copyWithFeedback(els.copy, buildReport(), t('share.copied'));
     });
 
     document.addEventListener('keydown', function (event) {

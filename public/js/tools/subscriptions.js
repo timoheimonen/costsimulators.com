@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Units, UI, formatCurrency, formatInteger } = window.CostSimulators;
+    const { Calculators, Units, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const URL_KEY = 's';
     const URL_SEPARATOR = '*';
@@ -33,13 +33,8 @@ SOFTWARE.
     const MAX_ITEMS = 50;
     const MAX_NAME_LENGTH = 40;
     const EMPTY_VALUE = '—';
-    const CYCLE_LABELS = { monthly: 'month', yearly: 'year', weekly: 'week' };
     const CYCLE_CODES = { monthly: 'm', yearly: 'y', weekly: 'w' };
-    const EXAMPLES = [
-        { name: 'Video streaming', price: '15.49', cycle: 'monthly' },
-        { name: 'Music streaming', price: '11.99', cycle: 'monthly' },
-        { name: 'Gym', price: '39.99', cycle: 'monthly' }
-    ];
+    const EXAMPLE_COUNT = 3;
 
     const els = {
         list: document.getElementById('subList'),
@@ -65,7 +60,7 @@ SOFTWARE.
         return {
             name: typeof source.name === 'string' ? source.name.slice(0, MAX_NAME_LENGTH) : '',
             price: Number.isFinite(price) && price >= 0 ? String(price) : '',
-            cycle: Object.prototype.hasOwnProperty.call(CYCLE_LABELS, source.cycle) ? source.cycle : 'monthly'
+            cycle: Object.prototype.hasOwnProperty.call(CYCLE_CODES, source.cycle) ? source.cycle : 'monthly'
         };
     }
 
@@ -86,9 +81,17 @@ SOFTWARE.
         return sanitize({ name: parts.join(URL_SEPARATOR), price: price, cycle: cycle });
     }
 
+    // Without a list in the address, the first quick adds are shown as an
+    // example. Their names and prices are in the page language and currency.
+    function examples() {
+        return Array.from(els.quickAdd.querySelectorAll('[data-name]')).slice(0, EXAMPLE_COUNT).map(function (chip) {
+            return sanitize({ name: chip.dataset.name, price: chip.dataset.price, cycle: 'monthly' });
+        });
+    }
+
     function load() {
         const entries = new URLSearchParams(window.location.search).getAll(URL_KEY);
-        if (!entries.length) return EXAMPLES;
+        if (!entries.length) return examples();
         return entries.map(decode).filter(Boolean).slice(0, MAX_ITEMS);
     }
 
@@ -120,7 +123,7 @@ SOFTWARE.
         return items.map(function (item) {
             const price = parseFloat(item.price) || 0;
             return {
-                name: item.name.trim() || 'Untitled',
+                name: item.name.trim() || t('untitled'),
                 price: price,
                 cycle: item.cycle,
                 yearly: Calculators.yearlyFromBilling(price, item.cycle)
@@ -150,7 +153,10 @@ SOFTWARE.
             value.className = 'breakdown-value';
             bar.className = 'breakdown-bar';
             name.textContent = item.name;
-            value.textContent = formatCurrency(item.yearly) + ' / year · ' + formatInteger((item.yearly / total) * 100) + '%';
+            value.textContent = t('breakdown', {
+                cost: formatCurrency(item.yearly),
+                percent: formatInteger((item.yearly / total) * 100)
+            });
             fill.style.width = ((item.yearly / largest) * 100).toFixed(1) + '%';
 
             head.append(name, value);
@@ -168,7 +174,7 @@ SOFTWARE.
 
         rows().forEach(function (row, index) {
             const name = items[index].name.trim();
-            row.querySelector('.sub-remove').setAttribute('aria-label', 'Remove ' + (name || 'subscription'));
+            row.querySelector('.sub-remove').setAttribute('aria-label', name ? t('remove', { name: name }) : t('removeUnnamed'));
         });
 
         const active = priced(items);
@@ -185,7 +191,7 @@ SOFTWARE.
                 UI.clearNumber(element, EMPTY_VALUE);
             });
             els.breakdown.replaceChildren();
-            els.note.textContent = 'Add a subscription with a price to see the totals.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -199,9 +205,12 @@ SOFTWARE.
             return item.yearly > top.yearly ? item : top;
         });
         els.note.textContent = active.length === 1
-            ? 'That’s ' + formatCurrency(total) + ' a year for ' + biggest.name + '.'
-            : 'Your biggest cost is ' + biggest.name + ' at ' + formatCurrency(biggest.yearly) + ' a year, ' +
-            formatInteger((biggest.yearly / total) * 100) + '% of the total.';
+            ? t('note.single', { cost: formatCurrency(total), name: biggest.name })
+            : t('note.biggest', {
+                name: biggest.name,
+                cost: formatCurrency(biggest.yearly),
+                percent: formatInteger((biggest.yearly / total) * 100)
+            });
     }
 
     function handleChange() {
@@ -239,13 +248,13 @@ SOFTWARE.
             return sum + item.yearly;
         }, 0);
         const lines = active.map(function (item) {
-            return item.name + ' – ' + formatCurrency(item.price) + ' / ' + CYCLE_LABELS[item.cycle];
+            return t('summary.item', { name: item.name, price: formatCurrency(item.price), cycle: t('cycle.' + item.cycle) });
         });
 
         return lines.concat([
             '',
-            'Total: ' + formatCurrency(total / 12) + ' per month, ' + formatCurrency(total) + ' per year',
-            'Calculated with costsimulators.com'
+            t('summary.total', { month: formatCurrency(total / 12), year: formatCurrency(total) }),
+            t('share.calculatedWith')
         ]).join('\n');
     }
 
@@ -269,7 +278,7 @@ SOFTWARE.
     UI.bindShare(document.getElementById('shareBtn'), writeURL);
 
     els.copy.addEventListener('click', function () {
-        UI.copyWithFeedback(els.copy, buildSummary(), 'Copied!');
+        UI.copyWithFeedback(els.copy, buildSummary(), t('share.copied'));
     });
 
     const initial = load();

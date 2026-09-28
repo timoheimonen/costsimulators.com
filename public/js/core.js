@@ -29,10 +29,16 @@ SOFTWARE.
     const WEEKS_PER_YEAR = 52;
     const DAYS_PER_YEAR = 365;
 
-    const currencyFormatter = new Intl.NumberFormat('en-US', {
+    // Every page carries its locale, currency and interface strings in a JSON
+    // block written by scripts/build-site.js. English in US dollars is the
+    // fallback when a page has none.
+    const i18n = readI18n();
+
+    const currencyFormatter = new Intl.NumberFormat(i18n.locale, {
         style: 'currency',
-        currency: 'USD'
+        currency: i18n.currency
     });
+    const pluralRules = new Intl.PluralRules(i18n.locale);
 
     const KM_PER_MILE = 1.609344;
     const LITERS_PER_GALLON = 3.785411784;
@@ -40,11 +46,47 @@ SOFTWARE.
 
     const numberFormatters = {};
 
+    function readI18n() {
+        const fallback = { locale: 'en-US', currency: 'USD', strings: {} };
+        const element = document.getElementById('i18n');
+        if (!element) return fallback;
+
+        try {
+            return Object.assign(fallback, JSON.parse(element.textContent));
+        } catch (error) {
+            return fallback;
+        }
+    }
+
+    function lookup(key) {
+        return key.split('.').reduce(function (value, part) {
+            return value && typeof value === 'object' ? value[part] : undefined;
+        }, i18n.strings);
+    }
+
     function pad(value) {
         return String(value).padStart(2, '0');
     }
 
     const CostSimulators = global.CostSimulators || {};
+
+    CostSimulators.locale = i18n.locale;
+
+    // Returns the interface string for a key such as 'status.live', with
+    // {name} placeholders filled from vars. A string with plural forms
+    // ({ one, other }) is picked by vars.count.
+    CostSimulators.t = function (key, vars) {
+        let value = lookup(key);
+        if (value && typeof value === 'object') {
+            const count = vars && Number.isFinite(vars.count) ? vars.count : 0;
+            value = value[pluralRules.select(count)] || value.other;
+        }
+        if (typeof value !== 'string') return key;
+
+        return value.replace(/\{(\w+)\}/g, function (match, name) {
+            return vars && Object.prototype.hasOwnProperty.call(vars, name) ? String(vars[name]) : match;
+        });
+    };
 
     CostSimulators.formatCurrency = function (value) {
         return currencyFormatter.format(Number.isFinite(value) ? value : 0);
@@ -53,7 +95,7 @@ SOFTWARE.
     CostSimulators.formatNumber = function (value, digits) {
         const key = digits || 0;
         if (!numberFormatters[key]) {
-            numberFormatters[key] = new Intl.NumberFormat('en-US', {
+            numberFormatters[key] = new Intl.NumberFormat(i18n.locale, {
                 minimumFractionDigits: key,
                 maximumFractionDigits: key
             });
@@ -70,9 +112,11 @@ SOFTWARE.
         const wholeHours = Math.floor(totalMinutes / 60);
         const minutes = totalMinutes % 60;
 
-        if (wholeHours === 0) return minutes + ' min';
-        if (wholeHours >= 100) return CostSimulators.formatInteger(wholeHours) + ' h';
-        return wholeHours + ' h ' + minutes + ' min';
+        const t = CostSimulators.t;
+
+        if (wholeHours === 0) return t('workTime.minutes', { m: minutes });
+        if (wholeHours >= 100) return t('workTime.hours', { h: CostSimulators.formatInteger(wholeHours) });
+        return t('workTime.hoursMinutes', { h: wholeHours, m: minutes });
     };
 
     CostSimulators.formatDuration = function (elapsedMs) {

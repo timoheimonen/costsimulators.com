@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatInteger } = window.CostSimulators;
+    const { Calculators, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -55,7 +55,7 @@ SOFTWARE.
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
-            els.note.textContent = 'Enter the pack price, how many you smoke a day and the pack size to see the totals.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -73,9 +73,11 @@ SOFTWARE.
         });
 
         const cigarettesPerYear = Calculators.perYearDaily(perDay);
-        els.note.textContent = 'That’s about ' + formatInteger(cigarettesPerYear) + ' cigarettes (' +
-            formatInteger(cigarettesPerYear / perPack) + ' packs) a year at ' +
-            formatCurrency(pricePerCigarette) + ' each.';
+        els.note.textContent = t('note.result', {
+            cigarettes: formatInteger(cigarettesPerYear),
+            packs: formatInteger(cigarettesPerYear / perPack),
+            price: formatCurrency(pricePerCigarette)
+        });
     }
 
     UI.bindSteppers(document);

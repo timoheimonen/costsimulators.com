@@ -25,27 +25,27 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Units, UI, formatCurrency, formatNumber } = window.CostSimulators;
+    const { Calculators, Units, UI, formatCurrency, formatNumber, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
     const MPG_TIMES_L_PER_100KM = (100 * Units.LITERS_PER_GALLON) / Units.KM_PER_MILE;
 
     const UNITS = {
         metric: {
-            distance: 'km one way',
-            consumption: 'l/100 km',
-            price: 'USD per liter',
-            perDistance: 'km',
-            fuel: 'l',
+            distance: t('unit.metric.distance'),
+            consumption: t('unit.metric.consumption'),
+            price: t('unit.metric.price'),
+            perDistance: t('unit.metric.perDistance'),
+            fuel: t('unit.metric.fuel'),
             consumptionStep: 0.5,
             priceStep: 0.05
         },
         us: {
-            distance: 'miles one way',
-            consumption: 'mpg',
-            price: 'USD per gallon',
-            perDistance: 'mile',
-            fuel: 'gal',
+            distance: t('unit.us.distance'),
+            consumption: t('unit.us.consumption'),
+            price: t('unit.us.price'),
+            perDistance: t('unit.us.perDistance'),
+            fuel: t('unit.us.fuel'),
             consumptionStep: 1,
             priceStep: 0.1
         }
@@ -120,14 +120,14 @@ SOFTWARE.
         const tripsPerWeek = UI.readNumber(els.tripsPerWeek);
         const valid = distance > 0 && consumption > 0 && price > 0 && people >= 1 && tripsPerWeek >= 0;
 
-        els.tripLabel.textContent = direction === 'round' ? 'Round trip' : 'One way';
+        els.tripLabel.textContent = direction === 'round' ? t('direction.round') : t('direction.one');
         els.panel.dataset.empty = String(!valid);
 
         if (!valid) {
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
-            els.note.textContent = 'Enter the distance, fuel consumption and fuel price to see the cost.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -142,8 +142,11 @@ SOFTWARE.
         UI.animateNumber(els.results.month, yearly / 12, formatCurrency);
         UI.animateNumber(els.results.year, yearly, formatCurrency);
 
-        els.note.textContent = 'Uses ' + formatNumber(fuel, 1) + ' ' + labels.fuel + ' of fuel per trip, about ' +
-            formatCurrency(fuelPerDistance * price) + ' per ' + labels.perDistance + '.';
+        els.note.textContent = t('note.result', {
+            fuel: formatNumber(fuel, 1) + ' ' + labels.fuel,
+            price: formatCurrency(fuelPerDistance * price),
+            distance: labels.perDistance
+        });
     }
 
     UI.bindSteppers(document);

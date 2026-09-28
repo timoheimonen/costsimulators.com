@@ -1,0 +1,122 @@
+    <main id="main" class="container page">
+        <a class="back-link reveal" href="{{url.home}}">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            {{common.allTools}}
+        </a>
+
+        <div class="tool-head reveal" style="--i: 1">
+            <span class="tool-icon tool-icon--lg tool--electricity" aria-hidden="true">
+                {{{icon}}}
+            </span>
+            <div class="tool-head-text">
+                <h1>{{tool.heading}}</h1>
+                <p class="lead">{{tool.lead}}</p>
+            </div>
+            <button type="button" class="btn btn-secondary share-btn" id="shareBtn">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+                <span class="btn-label">{{common.share}}</span>
+            </button>
+        </div>
+
+        <div class="tool-layout">
+            <section class="panel reveal" style="--i: 2" aria-labelledby="settingsTitle">
+                <h2 class="panel-title" id="settingsTitle">{{common.settings}}</h2>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="power">{{tool.power.label}}</label>
+                        <span class="field-unit" id="powerUnit">{{tool.power.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="10">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.power.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="power" value="100" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="powerUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.power.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                    <div class="chips" role="group" aria-label="{{common.quickPicks}}" data-presets-for="power">
+                        <button type="button" class="chip" data-preset="9" aria-pressed="false">{{tool.power.chip1}}</button>
+                        <button type="button" class="chip" data-preset="60" aria-pressed="false">{{tool.power.chip2}}</button>
+                        <button type="button" class="chip" data-preset="100" aria-pressed="false">{{tool.power.chip3}}</button>
+                        <button type="button" class="chip" data-preset="400" aria-pressed="false">{{tool.power.chip4}}</button>
+                        <button type="button" class="chip" data-preset="1500" aria-pressed="false">{{tool.power.chip5}}</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-head">
+                        <label for="hours">{{tool.hours.label}}</label>
+                        <span class="field-unit" id="hoursUnit">{{tool.hours.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.hours.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="hours" value="4" min="0" max="24" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="hoursUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.hours.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-head">
+                        <label for="days">{{tool.days.label}}</label>
+                        <span class="field-unit" id="daysUnit">{{tool.days.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.days.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="days" value="7" min="1" max="7" step="any" inputmode="numeric" placeholder="0" autocomplete="off" aria-describedby="daysUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.days.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-head">
+                        <label for="kwhPrice">{{tool.kwhPrice.label}}</label>
+                        <span class="field-unit" id="kwhPriceUnit">{{tool.kwhPrice.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.kwhPrice.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="kwhPrice" value="{{tool.kwhPrice.value}}" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="kwhPriceUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.kwhPrice.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                    <p class="field-hint" id="kwhPriceHint">{{tool.kwhPrice.hint}}</p>
+                </div>
+            </section>
+
+            <section class="panel panel--result tool--electricity reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
+                <h2 class="panel-title" id="resultsTitle">{{tool.resultsTitle}}</h2>
+
+                <div class="hero-stat">
+                    <span class="hero-stat-label">{{tool.perYear}}</span>
+                    <div class="big-number" id="year">{{money.zero}}</div>
+                </div>
+
+                <dl class="stat-grid">
+                    <div class="stat">
+                        <dt>{{tool.perDayOfUse}}</dt>
+                        <dd id="day">{{money.zero}}</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>{{tool.perMonth}}</dt>
+                        <dd id="month">{{money.zero}}</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>{{tool.energyPerYear}}</dt>
+                        <dd id="energy">{{money.zero}}</dd>
+                    </div>
+                </dl>
+                <p class="result-note" id="resultNote" aria-live="polite"></p>
+            </section>
+        </div>
+
+{{{toolInfo}}}
+    </main>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Social sharing image (1200 × 630). Rendered to public/og-image.png and
+     public/<lang>/og-image.png by scripts/render-images.js. -->
+<html lang="{{lang}}">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            padding: 72px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #0c0e12 radial-gradient(ellipse 900px 460px at 50% -120px, rgb(61 220 151 / 0.16), transparent);
+            color: #eceef1;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+
+        .mark {
+            display: grid;
+            place-items: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: #3ddc97;
+            color: #05281a;
+        }
+
+        svg {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .mark svg {
+            width: 40px;
+            height: 40px;
+            stroke-width: 2.4;
+        }
+
+        h1 {
+            max-width: 980px;
+            font-size: 76px;
+            line-height: 1.04;
+            letter-spacing: -0.035em;
+        }
+
+        .accent-text {
+            color: #3ddc97;
+        }
+
+        .tools {
+            display: flex;
+            gap: 18px;
+        }
+
+        .tool {
+            display: grid;
+            place-items: center;
+            width: 76px;
+            height: 76px;
+            border-radius: 22px;
+            background: var(--soft);
+            color: var(--color);
+        }
+
+        .tool svg {
+            width: 38px;
+            height: 38px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M4.5 16.5a7.5 7.5 0 1 1 15 0"/><path d="M12 16.5l3.6-4.6"/></svg></span>
+        costsimulators.com
+    </div>
+    <h1>{{{home.heading}}}</h1>
+    <div class="tools">
+{{{toolIcons}}}
+    </div>
+</body>
+
+</html>

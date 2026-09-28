@@ -25,15 +25,15 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatNumber, formatWorkTime } = window.CostSimulators;
+    const { Calculators, UI, formatCurrency, formatNumber, formatWorkTime, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
     const WORK_DAYS_PER_WEEK = 5;
 
     const PERIODS = {
-        hour: { unit: 'USD per hour', step: 1, digits: 2 },
-        month: { unit: 'USD per month', step: 100, digits: 0 },
-        year: { unit: 'USD per year', step: 1000, digits: 0 }
+        hour: { unit: t('unit.hour'), step: 1, digits: 2 },
+        month: { unit: t('unit.month'), step: 100, digits: 0 },
+        year: { unit: t('unit.year'), step: 1000, digits: 0 }
     };
 
     const els = {
@@ -58,11 +58,11 @@ SOFTWARE.
     }
 
     function formatDays(value) {
-        return formatNumber(value, 1) + (value === 1 ? ' day' : ' days');
+        return t('days', { count: value, n: formatNumber(value, 1) });
     }
 
     function formatWeeks(value) {
-        return formatNumber(value, 1) + (value === 1 ? ' week' : ' weeks');
+        return t('weeks', { count: value, n: formatNumber(value, 1) });
     }
 
     function applyPeriod() {
@@ -93,7 +93,7 @@ SOFTWARE.
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
-            els.note.textContent = 'Enter your pay, weekly hours and a price to see how long you need to work for it.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -106,8 +106,7 @@ SOFTWARE.
         UI.animateNumber(els.results.workWeeks, hours / hoursPerWeek, formatWeeks);
         UI.animateNumber(els.results.hourlyRate, hourly, formatCurrency);
 
-        els.note.textContent = 'Based on ' + formatHours(hoursPerDay) + '-hour work days, ' +
-            WORK_DAYS_PER_WEEK + ' days a week.';
+        els.note.textContent = t('note.result', { hours: formatHours(hoursPerDay), days: WORK_DAYS_PER_WEEK });
     }
 
     UI.bindSteppers(document);

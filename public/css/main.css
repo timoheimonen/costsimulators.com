@@ -358,6 +358,73 @@ h3 {
     display: block;
 }
 
+.lang-menu {
+    position: relative;
+}
+
+.lang-toggle {
+    display: flex;
+    gap: 6px;
+    width: auto;
+    padding: 0 12px 0 10px;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lang-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.lang-toggle .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.lang-code {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.lang-menu[open] .lang-toggle {
+    color: var(--text);
+    border-color: var(--border-strong);
+}
+
+.lang-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 60;
+    min-width: 168px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    animation: rise 0.25s var(--ease-out);
+}
+
+.lang-list a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 0.9375rem;
+    text-decoration: none;
+}
+
+.lang-list a:hover {
+    background: var(--surface-2);
+}
+
+.lang-list a[aria-current] {
+    color: var(--accent);
+    font-weight: 600;
+}
+
 .hero {
     max-width: 760px;
     padding: clamp(48px, 9vw, 96px) 0 clamp(32px, 5vw, 56px);
@@ -1479,6 +1546,140 @@ kbd {
     font-size: 0.9375rem;
 }
 
+.hero-actions {
+    margin-top: 28px;
+}
+
+.hero-actions .btn {
+    text-decoration: none;
+}
+
+.info-section {
+    max-width: 760px;
+    margin-top: 64px;
+}
+
+.info-section + .info-section {
+    margin-top: 48px;
+}
+
+.info-title {
+    font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.info-prose p {
+    margin-top: 12px;
+    color: var(--text-muted);
+    text-wrap: pretty;
+}
+
+.info-prose a {
+    color: var(--accent);
+    text-underline-offset: 3px;
+}
+
+.info-prose a:hover {
+    color: var(--accent-hover);
+}
+
+.faq-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.faq-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: border-color 0.15s;
+}
+
+.faq-item:hover,
+.faq-item[open] {
+    border-color: var(--border-strong);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.25s var(--ease-out);
+}
+
+.faq-item[open] summary::after {
+    transform: translateY(2px) rotate(-135deg);
+}
+
+.faq-item p {
+    padding: 0 18px 16px;
+    color: var(--text-muted);
+    text-wrap: pretty;
+}
+
+.related-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: 10px;
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.related-tool {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    padding: 10px 14px 10px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s, background-color 0.2s, transform 0.25s var(--ease-out);
+}
+
+.related-tool:hover {
+    border-color: var(--border-strong);
+    background: var(--tool-soft);
+    transform: translateY(-2px);
+}
+
+.related-tool .tool-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+}
+
+.related-tool .tool-icon .icon {
+    width: 20px;
+    height: 20px;
+}
+
 .reveal {
     animation: rise 0.7s var(--ease-out) backwards;
     animation-delay: calc(var(--i, 0) * 70ms);
@@ -1596,6 +1797,26 @@ kbd {
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-inner {
+        gap: 8px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .lang-toggle {
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .lang-code {
+        display: none;
     }
 }
 

@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Units, UI, formatCurrency, formatNumber } = window.CostSimulators;
+    const { Calculators, Units, UI, formatCurrency, formatNumber, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -61,7 +61,7 @@ SOFTWARE.
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
-            els.note.textContent = 'Enter the power, daily hours (up to 24), days per week (up to 7) and your electricity price.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -75,8 +75,7 @@ SOFTWARE.
         UI.animateNumber(els.results.month, yearly / 12, formatCurrency);
         UI.animateNumber(els.results.energy, kwhPerYear, formatEnergy);
 
-        els.note.textContent = 'Uses about ' + formatEnergy(kwhPerDay) + ' on each day it runs, around ' +
-            formatEnergy(kwhPerYear) + ' a year.';
+        els.note.textContent = t('note.result', { day: formatEnergy(kwhPerDay), year: formatEnergy(kwhPerYear) });
     }
 
     UI.bindSteppers(document);

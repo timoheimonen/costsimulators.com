@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatInteger } = window.CostSimulators;
+    const { Calculators, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -53,7 +53,7 @@ SOFTWARE.
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
-            els.note.textContent = 'Enter a price and how many cups you have per week to see the totals.';
+            els.note.textContent = t('note.empty');
             return;
         }
 
@@ -69,8 +69,10 @@ SOFTWARE.
             UI.animateNumber(els.results[key], values[key], formatCurrency);
         });
 
-        els.note.textContent = 'That’s about ' + formatInteger(Calculators.perYear(perWeek)) +
-            ' cups a year at ' + formatCurrency(price) + ' each.';
+        els.note.textContent = t('note.result', {
+            cups: formatInteger(Calculators.perYear(perWeek)),
+            price: formatCurrency(price)
+        });
     }
 
     UI.bindSteppers(document);

@@ -1,47 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://costsimulators.com/</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/meetings/meetings.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/coffee/coffee.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/smoking/smoking.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/privacy.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/terms.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/workhours/workhours.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/subscriptions/subscriptions.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/electricity/electricity.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/trip/trip.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
-    <url>
-        <loc>https://costsimulators.com/about.html</loc>
-        <lastmod>2026-09-28</lastmod>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://costsimulators.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/meeting-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/meeting-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/meeting-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/meeting-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/meeting-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/meeting-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/meeting-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/meeting-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/work-hours-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/work-hours-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/work-hours-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/work-hours-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/work-hours-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/work-hours-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/work-hours-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/work-hours-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/coffee-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/coffee-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/coffee-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/coffee-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/coffee-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/coffee-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/coffee-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/coffee-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/smoking-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/smoking-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/smoking-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/smoking-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/smoking-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/smoking-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/smoking-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/smoking-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/subscription-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/subscription-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/subscription-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/subscription-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/subscription-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/subscription-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/subscription-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/subscription-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/electricity-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/electricity-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/electricity-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/electricity-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/electricity-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/electricity-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/electricity-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/electricity-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/trip-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/trip-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/trip-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/trip-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/trip-cost-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/trip-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/trip-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/trip-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/about/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/about/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/terms/"/>
+  </url>
+  <url>
+    <loc>https://costsimulators.com/fi/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costsimulators.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://costsimulators.com/fi/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costsimulators.com/terms/"/>
+  </url>
 </urlset>

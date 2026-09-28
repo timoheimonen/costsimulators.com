@@ -6,6 +6,16 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ### Added
 
+- Language support. Every page is pre-rendered in each language at its own address, with `hreflang` alternates, a canonical URL and a sitemap that lists every language version. English stays at the root and is the default.
+- Finnish (`/fi/`), with prices in euros, Finnish number formatting and typical Finnish default prices.
+- Language menu in the header. It keeps the current tool settings when switching language, and English pages open in the visitor's language on the first visit.
+- Explanation of how each calculation works, frequently asked questions and links to the other calculators on every tool page, and a short introduction and FAQ on the home page.
+- Structured data on every page: `WebApplication` for the calculators, `FAQPage`, `BreadcrumbList`, `WebSite` and the author.
+- Social sharing image for each language, large image cards for social media and an Apple touch icon.
+- 404 page in each language.
+- `llms.txt`, a plain-text summary of the site for AI assistants.
+- `npm run build` generates the pages from `site/`, and `npm test` checks them. Tests run on GitHub Actions.
+
 - New tools:
   - **Work hours** – turns any price into the hours, days and weeks of work it takes, from hourly, monthly or yearly pay
   - **Subscriptions** – list recurring payments with weekly, monthly or yearly billing and see the total per month, per year and over 10 years, with a breakdown of the biggest costs
@@ -23,6 +33,8 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ### Changed
 
+- Clearer page addresses such as `/meeting-cost-calculator/` and `/about/`. The old `.html` addresses redirect permanently to the new ones.
+- Page titles and descriptions name what each calculator does, and each tool page has a descriptive main heading such as "Meeting cost calculator".
 - Complete redesign: new home page with a tool grid, shared tool page layout with settings and results side by side, and a mobile-friendly layout
 - Brand name is written as costsimulators.com everywhere
 - Money amounts are shown with thousands separators, for example $16,380.00
