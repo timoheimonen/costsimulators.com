@@ -27,13 +27,20 @@ function readPage(lang, page) {
 }
 
 // Key paths of an object; arrays count as one value, so their length may
-// differ between languages.
+// differ between languages. So do plural strings, since languages need
+// different forms ({ one, other } in English, { one, few, many, other } in
+// Polish).
 function keyPaths(object, prefix = '') {
   return Object.entries(object).flatMap(([key, value]) => (
-    value && typeof value === 'object' && !Array.isArray(value)
+    value && typeof value === 'object' && !Array.isArray(value) && !isPlural(value)
       ? keyPaths(value, `${prefix}${key}.`)
       : [`${prefix}${key}`]
   ));
+}
+
+function isPlural(value) {
+  const keys = Object.keys(value);
+  return keys.includes('other') && keys.every(name => PLURAL_CATEGORIES.includes(name));
 }
 
 function lookup(object, key) {
@@ -44,8 +51,7 @@ function lookup(object, key) {
 function pluralObjects(object, prefix = '') {
   return Object.entries(object).flatMap(([key, value]) => {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
-    const keys = Object.keys(value);
-    if (keys.includes('other') && keys.every(name => PLURAL_CATEGORIES.includes(name))) return [[`${prefix}${key}`, value]];
+    if (isPlural(value)) return [[`${prefix}${key}`, value]];
     return pluralObjects(value, `${prefix}${key}.`);
   });
 }
