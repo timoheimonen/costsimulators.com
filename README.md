@@ -13,7 +13,7 @@ A simple web application to help you see how much money you are spending.
 - **Trip cost calculator** - Fuel cost per trip, per person and per year, in metric or US units
 - Light and dark theme - follows your operating system by default, your choice is remembered
 - Shareable links - tool settings are kept in the URL
-- Available in English and Finnish, with local currency and number formats
+- Available in 22 languages, each with its local currency, number formats and typical local prices
 - Simple, fast, and easy to use
 - No tracking or data collection - everything runs locally in your browser
 
@@ -25,10 +25,16 @@ Every page is pre-rendered in every language at its own address: English at the 
 and English pages open in the visitor's language on the first visit. Each language uses its own
 number format, currency and typical default prices.
 
-Supported languages: English, Finnish (`/fi/`).
+Supported languages, in the order of the language menu: English, Spanish (`/es/`), French (`/fr/`),
+German (`/de/`), Italian (`/it/`), Finnish (`/fi/`), Swedish (`/sv/`), Norwegian (`/no/`), Danish (`/da/`),
+Simplified Chinese (`/zh/`), Japanese (`/ja/`), Korean (`/ko/`), Brazilian Portuguese (`/pt/`),
+Dutch (`/nl/`), Polish (`/pl/`), Turkish (`/tr/`), Indonesian (`/id/`), Traditional Chinese
+(`/zh-hant/`), Czech (`/cs/`), Romanian (`/ro/`), Hungarian (`/hu/`) and Greek (`/el/`).
 
 Paths use lower-case codes; `<html lang>`, `hreflang`, the sitemap and structured data use the BCP 47
-tag where it differs (`zh-Hant` for a `/zh-hant/` path, set in `LANGUAGE_TAGS`).
+tag where it differs (`zh-Hant` for `/zh-hant/`, set in `LANGUAGE_TAGS`). Visitors whose browser is set
+to Chinese for Taiwan, Hong Kong or Macau get traditional Chinese, and Norwegian Bokmål and Nynorsk get
+`/no/`.
 
 ### Adding a language
 
