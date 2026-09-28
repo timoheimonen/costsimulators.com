@@ -62,15 +62,24 @@
             font-size: 76px;
             line-height: 1.04;
             letter-spacing: -0.035em;
+            text-wrap: balance;
         }
 
         .accent-text {
             color: #3ddc97;
         }
 
-        /* Regional fonts for Chinese, Japanese and Korean, as in main.css. */
+        /* Regional fonts for Chinese, Japanese and Korean, as in main.css.
+           Chinese and Japanese wrap only at the <wbr> break points of the
+           heading, Korean between words. */
         :lang(zh) h1 {
             font-family: system-ui, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+        }
+
+        :lang(zh) h1,
+        :lang(ja) h1 {
+            word-break: keep-all;
+            overflow-wrap: anywhere;
         }
 
         :lang(zh-Hant) h1 {

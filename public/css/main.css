@@ -505,6 +505,15 @@ h3 {
     text-wrap: balance;
 }
 
+/* Chinese and Japanese headings wrap only between phrases, at the <wbr>
+   break points in the text, and break inside a phrase only when it would
+   not fit at all. */
+:lang(zh) .hero-title,
+:lang(ja) .hero-title {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
 .accent-text {
     color: var(--accent);
 }
