@@ -16,8 +16,15 @@ All calculators are free, need no account and run entirely in the browser. Nothi
 
 ## Languages
 
+- Español: https://costsimulators.com/es/
 - Deutsch: https://costsimulators.com/de/
+- Italiano: https://costsimulators.com/it/
 - Suomi: https://costsimulators.com/fi/
+- Dansk: https://costsimulators.com/da/
+- Português (Brasil): https://costsimulators.com/pt/
+- Nederlands: https://costsimulators.com/nl/
+- Türkçe: https://costsimulators.com/tr/
+- Bahasa Indonesia: https://costsimulators.com/id/
 
 ## About
 

@@ -33,7 +33,7 @@ const AUTHOR = {
 // language lives under /<code>/ and needs a site/locales/<code>/ folder with
 // the same files and keys as site/locales/en/. The order is the order of the
 // language menu.
-const LANGUAGES = ['en', 'de', 'fi'];
+const LANGUAGES = ['en', 'es', 'de', 'it', 'fi', 'da', 'pt', 'nl', 'tr', 'id'];
 
 // BCP 47 tags for <html lang>, hreflang, the sitemap and structured data,
 // where they differ from the lower-case code used in the path.
