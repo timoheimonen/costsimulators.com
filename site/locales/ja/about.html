@@ -1,0 +1,108 @@
+        <article class="legal">
+            <header class="legal-head reveal" style="--i: 1">
+                <h1>costsimulators.comについて</h1>
+                <p class="lead">costsimulators.comは、1時間の会議から毎日の1杯のコーヒーまで、身近なものに本当はいくらかかっているのかを示す小さな計算ツールを集めた、無料のサイトです。登録もトラッキングもなく、計算はすべてブラウザの中で行われます。</p>
+            </header>
+
+            <section class="panel legal-summary reveal" style="--i: 2" aria-labelledby="summaryTitle">
+                <h2 class="panel-title" id="summaryTitle">ポイント</h2>
+                <ul>
+                    <li>仕事や暮らしに役立つ{{toolCount}}種類の無料計算ツール。今後も追加予定です。</li>
+                    <li>プライバシーを前提にした設計：入力した数字が端末の外に出ることはありません。</li>
+                    <li>個人でも商用でも無料で使え、アカウントも必要ありません。</li>
+                    <li>MITライセンスのオープンソースです。</li>
+                </ul>
+            </section>
+
+            <div class="legal-body reveal" style="--i: 3">
+                <section aria-labelledby="why">
+                    <h2 id="why">costsimulators.comをつくった理由</h2>
+                    <p>小さな出費は見過ごしがちです。1回の会議、出勤前のコーヒー、もうひとつ増えた動画配信サービス。どれも単体ではそれほど高く感じません。でも1か月、1年、10年と積み重ねると、数字はまったく違って見えてきます。</p>
+                    <p>costsimulators.comは、そんな身近なお金の疑問に、わかりやすい答えをすぐに返します。どのツールもできることはひとつだけ。必要な数字だけを尋ね、結果をすぐに表示するので、表計算ソフトや会員登録なしで、時間とお金についてより良い判断ができます。</p>
+                </section>
+
+                <section aria-labelledby="tools">
+                    <h2 id="tools">ツール一覧</h2>
+                    <ul class="about-tools" role="list">
+                        <li>
+                            <a class="about-tool tool--meetings" href="{{url.meetings}}">
+                                <h3>会議コスト計算ツール</h3>
+                                <p>参加人数と時給をもとに、会議のコストをリアルタイムで表示するタイマーです。一時停止したり、会議の途中で人数や時給を変更したりできます。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--workhours" href="{{url.workhours}}">
+                                <h3>労働時間換算ツール</h3>
+                                <p>時給・月給・年収をもとに、どんな値段でも、それを払うために働く必要がある時間・日数・週数に換算します。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--coffee" href="{{url.coffee}}">
+                                <h3>コーヒー代計算ツール</h3>
+                                <p>コーヒー代が1か月、そして1年・5年・10年でいくらになるかがわかります。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--smoking" href="{{url.smoking}}">
+                                <h3>タバコ代計算ツール</h3>
+                                <p>タバコにかかるお金が毎月、そして1年・5年・10年でいくらになるかがわかります。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--subscriptions" href="{{url.subscriptions}}">
+                                <h3>サブスク料金計算ツール</h3>
+                                <p>動画配信サービスやジムの会費など、定期的な支払いを週払い・月払い・年払いで登録し、月額・年額・10年間の合計を確認できます。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--electricity" href="{{url.electricity}}">
+                                <h3>電気代計算ツール</h3>
+                                <p>家電の消費電力、使用時間、電気料金単価から、1日・1か月・1年の電気代を計算します。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="about-tool tool--trip" href="{{url.trip}}">
+                                <h3>ガソリン代・通勤費計算ツール</h3>
+                                <p>ドライブや毎日の通勤にかかるガソリン代をkmとリットル、またはマイルとガロンで計算し、同乗者全員で割り勘できます。</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>欲しい計算ツールが見つかりませんか？<a href="https://github.com/timoheimonen/costsimulators.com/issues" target="_blank" rel="noopener noreferrer">GitHubで新しいツールを提案</a>してください。</p>
+                </section>
+
+                <section aria-labelledby="how">
+                    <h2 id="how">計算ツールの仕組み</h2>
+                    <p>計算ツールは、シンプルでわかりやすい計算式を使っています。年間の数字は1年を52週または365日として計算し、将来の予測は同じ習慣を1年・5年・10年分掛け合わせたもので、インフレや価格の変動は含みません。結果は全体像をつかむための目安であり、金融上のアドバイスではありません。</p>
+                    <p>日本語版では金額を日本円で表示しますが、計算の仕組みはどの通貨でも同じです。普段お使いの通貨で値段を入力するだけで計算できます。設定はページのURLに保存されるので、計算結果をブックマークしたり、リンクで共有したりできます。</p>
+                </section>
+
+                <section aria-labelledby="privacy">
+                    <h2 id="privacy">プライバシーを前提にした設計</h2>
+                    <p>すべての計算は、お使いのブラウザ内でローカルに行われます。アカウント、アクセス解析、広告、第三者のスクリプトは一切なく、このサイトはCookieも使用しません。端末に保存されるのは、テーマと言語の設定だけです。詳しくは<a href="{{url.privacy}}">プライバシーポリシー</a>をご覧ください。</p>
+                </section>
+
+                <section aria-labelledby="free">
+                    <h2 id="free">企業も含め、どなたでも無料</h2>
+                    <p>costsimulators.comは、個人でも商用でも無料でご利用いただけます。チームの会議で会議コスト計算ツールを使ったり、結果をプレゼン資料に載せたり、お客様にツールを紹介したりするのに、許可は必要ありません。詳しくは<a href="{{url.terms}}">利用規約</a>をご覧ください。</p>
+                    <p>ソースコードはMITライセンスのオープンソースとして、<a href="https://github.com/timoheimonen/costsimulators.com" target="_blank" rel="noopener noreferrer">GitHub</a>で公開しています。</p>
+                </section>
+
+                <section aria-labelledby="maker">
+                    <h2 id="maker">運営者</h2>
+                    <p>costsimulators.comは、Timo Heimonenが個人で開発・運営している独立したプロジェクトです。サイトはCloudflare上でホストされており、軽量で高速に動作し、スマートフォン、タブレット、パソコンのいずれでも、ライトモードとダークモードの両方で使えます。</p>
+                    <p>ご質問、ご意見、アイデアは、いつでも<a href="mailto:timo.heimonen@proton.me">timo.heimonen@proton.me</a>までお寄せください。</p>
+                </section>
+
+                <section aria-labelledby="faq">
+                    <h2 id="faq">よくある質問</h2>
+                    <h3>costsimulators.comは無料ですか？</h3>
+                    <p>はい。すべてのツールを完全に無料でお使いいただけます。登録も課金も広告もありません。</p>
+                    <h3>入力した数字は保存・送信されますか？</h3>
+                    <p>いいえ。入力した内容はすべてブラウザ内で計算され、サーバーに送信されることはありません。リンクを共有した場合は、そのリンクに含まれる設定が、リンクを開いた人に見えます。</p>
+                    <h3>仕事で計算ツールを使ってもいいですか？</h3>
+                    <p>はい。会議、報告書、プレゼン資料、クライアントワークなどでの商用利用も認められています。</p>
+                    <h3>結果はどのくらい正確ですか？</h3>
+                    <p>結果の正確さは、入力した数字の正確さ次第です。計算ツールはシンプルな計算式を使っており、税金、インフレ、価格の変動は考慮していないので、長期的な予測は目安として捉えてください。</p>
+                </section>
+            </div>
+        </article>
