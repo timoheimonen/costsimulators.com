@@ -42,6 +42,9 @@ to Chinese for Taiwan, Hong Kong or Macau get traditional Chinese, and Norwegian
 2. Translate `strings.js`, `about.html`, `privacy.html` and `terms.html`. In `strings.js`, also set
    `meta` (name, locale, currency, Open Graph locale), `money` and the local default prices (`value`
    and `quick`). Keep the keys the same; the tests check that every language has the same keys as English.
+   Write page titles without the site name and keep them to about 60 characters (30 for Chinese, Japanese
+   and Korean), so that they fit in search results; the build adds " | costsimulators.com" when it fits.
+   In the translated `privacy.html` and `terms.html`, keep the note that the English version prevails.
 3. Set the numbers that depend on the currency (see the comment at the top of `site/locales/en/strings.js`):
    `money.decimals` (0 for yen or forints), the `step` values of the +/− buttons, the electricity price
    `divisor` (100 for cents, 1 for whole currency units) and `pulseEvery` for the meeting timer. Plural

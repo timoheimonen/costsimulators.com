@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: '免费在线费用计算器——会议成本、电费、油费等日常开销一算便知 | costsimulators.com',
+    title: '免费在线费用计算器——会议成本、电费、油费等日常开销一算便知',
     description: '免费、保护隐私的在线计算器，帮你算清开会、喝咖啡、吸烟、订阅、用电和开车的真实花费，还能把价格换算成工作时间。无需注册，打开浏览器即可使用。',
     eyebrow: '免费 · 私密 · 即时',
     heading: '几个小工具，<wbr>算清日常<span class="accent-text">开销</span>',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: '页面未找到 | costsimulators.com',
+    title: '页面未找到',
     description: '你要找的页面不存在。请返回首页，查看会议成本、电费、油费等全部免费计算器。',
     heading: '页面不存在',
     lead: '网址可能输入有误，或者页面已经移动。所有计算器都在首页。'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: '关于',
-      title: '关于我们——免费、保护隐私的费用计算器 | costsimulators.com',
+      title: '关于我们——免费、保护隐私的费用计算器',
       description: '了解 costsimulators.com 由谁制作、计算器如何工作。免费且保护隐私的计算器，涵盖会议、工时、生活习惯、订阅、电费和出行。'
     },
     privacy: {
       name: '隐私政策',
-      title: '隐私政策 | costsimulators.com',
+      title: '隐私政策',
       description: '了解 costsimulators.com 如何处理你的数据：所有计算都在浏览器中完成，不跟踪、不做统计分析，也没有用户账户。'
     },
     terms: {
       name: '使用条款',
-      title: '使用条款 | costsimulators.com',
+      title: '使用条款',
       description: 'costsimulators.com 使用条款：可免费用于个人和商业用途，按“现状”提供，源代码以 MIT 许可证开源。'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: '会议成本',
       heading: '会议成本计算器',
-      title: '会议成本计算器——实时计时，算清开会成本 | costsimulators.com',
+      title: '会议成本计算器——实时计时，算清开会成本',
       description: '免费的会议成本计算器，带实时计时器。输入每人时薪和参会人数，逐秒查看这场会议花了多少钱。',
       card: '边开会边看会议成本实时上涨。',
       tag: '实时计时',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: '工时换算',
       heading: '价格换算工时计算器',
-      title: '工时换算计算器——买一样东西要工作多久？ | costsimulators.com',
+      title: '工时换算计算器——买一样东西要工作多久？',
       description: '把任何价格换算成需要工作的小时数、天数和周数。输入时薪、月薪或年薪，看看一件商品实际要花掉你多少工作时间。',
       card: '把任何价格换算成需要工作的小时数、天数和周数。',
       tag: '工作',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: '咖啡花费',
       heading: '咖啡花费计算器',
-      title: '咖啡花费计算器——每天一杯咖啡，一年要花多少钱？ | costsimulators.com',
+      title: '咖啡花费计算器——每天一杯咖啡，一年要花多少钱？',
       description: '看看每天喝咖啡每月要花多少钱，1 年、5 年和 10 年下来又是多少。输入每杯价格和每周杯数即可，免费且保护隐私。',
       card: '看看每天一杯咖啡，一年、五年、十年下来要花多少钱。',
       tag: '习惯',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: '吸烟花费',
       heading: '吸烟花费计算器',
-      title: '烟钱计算器——抽烟一年要花多少钱？ | costsimulators.com',
+      title: '烟钱计算器——抽烟一年要花多少钱？',
       description: '算算抽烟每月要花多少钱，1 年、5 年和 10 年下来又是多少，以及戒烟能省下多少。输入每包价格和每天抽几支即可。',
       card: '看看每个月、每一年有多少钱化成了烟。',
       tag: '习惯',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: '订阅费用',
       heading: '订阅费用计算器',
-      title: '订阅费用计算器——会员月费、年费一键合计 | costsimulators.com',
+      title: '订阅费用计算器——会员月费、年费一键合计',
       description: '把视频会员、健身房、手机套餐等所有订阅加在一起，查看每月、每年和 10 年的总花费，看看哪项订阅最花钱。',
       card: '把视频会员、健身房和其他所有定期付款集中算一算。',
       tag: '预算',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: '电费',
       heading: '电费计算器',
-      title: '电费计算器——电器耗电量和电费在线计算 | costsimulators.com',
+      title: '电费计算器——电器耗电量和电费在线计算',
       description: '根据功率、使用时长和电价，计算电器每天、每月和每年要花多少电费。免费在线电费计算器，1 度电即 1 千瓦时。',
       card: '看看一台电器开着每天、每月、每年要花多少电费。',
       tag: '家用',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: '油费',
       heading: '油费计算器',
-      title: '油费计算器——自驾出行和通勤油费计算、AA 分摊 | costsimulators.com',
+      title: '油费计算器——自驾出行和通勤油费计算、AA 分摊',
       description: '计算一次自驾出行或日常通勤的油费，并在同车人之间平摊。支持公里和升，也支持英里和加仑。',
       card: '算出一趟行程或通勤的油费，和同车人一起分摊。',
       tag: '出行',

@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Gratis calculators voor alledaagse kosten | costsimulators.com',
+    title: 'Gratis calculators voor alledaagse kosten',
     description: 'Gratis, privacyvriendelijke calculators die laten zien wat dingen echt kosten: vergaderingen, werkuren, koffie, roken, abonnementen, stroom en brandstof. Zonder account, in je browser.',
     eyebrow: 'Gratis · Privé · Direct',
     heading: 'Kleine tools voor alledaagse vragen over <span class="accent-text">geld</span>.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Pagina niet gevonden | costsimulators.com',
+    title: 'Pagina niet gevonden',
     description: 'De pagina die je zoekt, bestaat niet.',
     heading: 'Deze pagina bestaat niet.',
     lead: 'Misschien is het adres verkeerd getypt of is de pagina verplaatst. Alle calculators staan op de startpagina.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Over deze site',
-      title: 'Over deze site – gratis kostencalculators zonder tracking | costsimulators.com',
+      title: 'Over deze site – gratis kostencalculators zonder tracking',
       description: 'Wie costsimulators.com maakt en hoe de calculators werken. Gratis kostencalculators zonder tracking voor vergaderingen, werkuren, gewoontes, abonnementen, stroom en ritten.'
     },
     privacy: {
       name: 'Privacyverklaring',
-      title: 'Privacyverklaring | costsimulators.com',
+      title: 'Privacyverklaring',
       description: 'Hoe costsimulators.com met je gegevens omgaat: berekeningen gebeuren in je browser, zonder tracking, zonder analysetools en zonder accounts.'
     },
     terms: {
       name: 'Gebruiksvoorwaarden',
-      title: 'Gebruiksvoorwaarden | costsimulators.com',
+      title: 'Gebruiksvoorwaarden',
       description: 'Gebruiksvoorwaarden van costsimulators.com: gratis voor persoonlijk en zakelijk gebruik, zonder garanties en met open source code onder de MIT-licentie.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Vergaderkosten',
       heading: 'Vergaderkostencalculator',
-      title: 'Vergaderkosten berekenen – wat kost een vergadering? | costsimulators.com',
+      title: 'Vergaderkosten berekenen – wat kost een vergadering?',
       description: 'Gratis vergaderkostencalculator met live timer. Vul het uurtarief en het aantal deelnemers in en zie seconde voor seconde wat de vergadering kost.',
       card: 'Zie de kosten van een vergadering live oplopen terwijl jullie praten.',
       tag: 'Live timer',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Prijs in werkuren',
       heading: 'Prijs omrekenen naar werkuren',
-      title: 'Prijs in werkuren berekenen – hoe lang moet je ervoor werken? | costsimulators.com',
+      title: 'Prijs in werkuren – hoe lang moet je ervoor werken?',
       description: 'Reken elke prijs om naar de uren, dagen en weken werk die het kost. Vul je uur-, maand- of jaarloon in en zie wat een aankoop echt kost in werktijd.',
       card: 'Reken elke prijs om naar de uren, dagen en weken die je ervoor moet werken.',
       tag: 'Werk',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Koffiekosten',
       heading: 'Koffiecalculator',
-      title: 'Koffiekosten berekenen – wat kost je koffie per jaar? | costsimulators.com',
+      title: 'Koffiekosten berekenen – wat kost je koffie per jaar?',
       description: 'Zie wat je dagelijkse koffie kost per maand en over 1, 5 en 10 jaar. Vul de prijs per kopje en het aantal kopjes per week in – gratis en privé.',
       card: 'Zie wat je dagelijkse kopje koffie kost over één, vijf en tien jaar.',
       tag: 'Gewoonte',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Rookkosten',
       heading: 'Rookkostencalculator',
-      title: 'Kosten van roken berekenen – wat kost roken per jaar? | costsimulators.com',
+      title: 'Kosten van roken berekenen – wat kost roken per jaar?',
       description: 'Bereken wat roken kost per maand en over 1, 5 en 10 jaar – en hoeveel je bespaart als je stopt. Vul de prijs per pakje en het aantal sigaretten per dag in.',
       card: 'Zie hoeveel geld er elke maand en in de loop der jaren in rook opgaat.',
       tag: 'Gewoonte',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonnementen',
       heading: 'Abonnementencalculator',
-      title: 'Abonnementen berekenen – totale kosten per maand en jaar | costsimulators.com',
+      title: 'Abonnementen berekenen – totale kosten per maand en jaar',
       description: 'Tel streaming, sportschool, telefoon en al je andere abonnementen bij elkaar op. Zie je totaal per maand, per jaar en over 10 jaar, en welk abonnement het duurst is.',
       card: 'Tel streaming, sportschool en alle andere terugkerende betalingen op één plek bij elkaar op.',
       tag: 'Budget',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Stroomkosten',
       heading: 'Stroomkostencalculator',
-      title: 'Stroomkosten berekenen – stroomverbruik per apparaat | costsimulators.com',
+      title: 'Stroomkosten berekenen – stroomverbruik per apparaat',
       description: 'Bereken wat een apparaat per dag, maand en jaar aan stroom kost op basis van het vermogen, de gebruiksduur en je stroomprijs. Gratis kWh-calculator.',
       card: 'Zie wat het kost om een apparaat aan te laten staan, per dag, maand en jaar.',
       tag: 'Thuis',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Ritkosten',
       heading: 'Brandstofkostencalculator',
-      title: 'Brandstofkosten berekenen – kosten per rit en woon-werkverkeer | costsimulators.com',
+      title: 'Brandstofkosten berekenen – per rit en woon-werkverkeer',
       description: 'Bereken de brandstofkosten van een rit of je dagelijkse woon-werkverkeer en verdeel ze over de inzittenden. Werkt met kilometers en liters of met mijlen en gallons.',
       card: 'Bereken de brandstofkosten van een rit of woon-werkverkeer en deel ze met anderen.',
       tag: 'Reizen',

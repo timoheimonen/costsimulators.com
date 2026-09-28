@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: '무료 생활 비용 계산기 모음 | costsimulators.com',
+    title: '무료 생활 비용 계산기 모음',
     description: '회의, 노동시간, 커피, 담배, 구독료, 전기요금, 기름값이 실제로 얼마인지 보여 주는 무료 계산기예요. 가입 없이 브라우저에서 바로 계산해요.',
     eyebrow: '무료 · 개인정보 안심 · 즉시 계산',
     heading: '일상 속 <span class="accent-text">돈</span> 고민을 위한 작은 계산기',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: '페이지를 찾을 수 없어요 | costsimulators.com',
+    title: '페이지를 찾을 수 없어요',
     description: '찾으시는 페이지가 존재하지 않아요.',
     heading: '존재하지 않는 페이지예요.',
     lead: '주소를 잘못 입력했거나 페이지가 옮겨졌을 수 있어요. 모든 계산기는 첫 페이지에 있어요.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: '소개',
-      title: '서비스 소개 – 개인정보 수집 없는 무료 비용 계산기 | costsimulators.com',
+      title: '서비스 소개 – 개인정보 수집 없는 무료 비용 계산기',
       description: 'costsimulators.com을 누가 만들고 계산기가 어떻게 작동하는지 소개해요. 회의, 노동시간, 생활 습관, 구독, 전기, 이동 비용을 위한 무료 계산기예요.'
     },
     privacy: {
       name: '개인정보처리방침',
-      title: '개인정보처리방침 | costsimulators.com',
+      title: '개인정보처리방침',
       description: 'costsimulators.com의 개인정보 처리 방식을 안내해요. 계산은 브라우저에서 이루어지며 추적, 분석 도구, 회원 계정이 없어요.'
     },
     terms: {
       name: '이용약관',
-      title: '이용약관 | costsimulators.com',
+      title: '이용약관',
       description: 'costsimulators.com 이용약관이에요. 개인·상업적 용도로 무료로 쓸 수 있고, 있는 그대로 제공되며, 소스 코드는 MIT 라이선스로 공개되어 있어요.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: '회의 비용',
       heading: '회의 비용 계산기',
-      title: '회의 비용 계산기 – 실시간 타이머로 보는 회의 인건비 | costsimulators.com',
+      title: '회의 비용 계산기 – 실시간 타이머로 보는 회의 인건비',
       description: '실시간 타이머가 있는 무료 회의 비용 계산기예요. 시간당 인건비와 참석 인원을 입력하면 회의 비용이 1초마다 올라가는 걸 볼 수 있어요.',
       card: '회의하는 동안 비용이 실시간으로 올라가는 걸 지켜보세요.',
       tag: '실시간 타이머',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: '노동시간 환산',
       heading: '노동시간 환산 계산기',
-      title: '노동시간 환산 계산기 – 이 가격, 몇 시간 일해야 벌까? | costsimulators.com',
+      title: '노동시간 환산 계산기 – 이 가격, 몇 시간 일해야 벌까?',
       description: '어떤 가격이든 몇 시간, 며칠, 몇 주를 일해야 하는지로 바꿔 보여 줘요. 시급, 월급, 연봉 중 하나를 넣고 물건값을 노동시간으로 확인하세요.',
       card: '어떤 가격이든 그 돈을 벌려면 몇 시간, 며칠, 몇 주를 일해야 하는지 알려 줘요.',
       tag: '노동',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: '커피값',
       heading: '커피값 계산기',
-      title: '커피값 계산기 – 매일 마시는 커피, 1년이면 얼마? | costsimulators.com',
+      title: '커피값 계산기 – 매일 마시는 커피, 1년이면 얼마?',
       description: '매일 마시는 커피에 한 달, 1년, 5년, 10년 동안 얼마가 드는지 계산해 보세요. 한 잔 가격과 주당 잔 수만 넣으면 돼요.',
       card: '하루 한 잔이 1년, 5년, 10년 동안 얼마가 되는지 확인하세요.',
       tag: '습관',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: '담뱃값',
       heading: '담뱃값 계산기',
-      title: '담뱃값 계산기 – 흡연 비용, 1년·10년이면 얼마? | costsimulators.com',
+      title: '담뱃값 계산기 – 흡연 비용, 1년·10년이면 얼마?',
       description: '담배에 한 달, 1년, 5년, 10년 동안 얼마를 쓰는지, 끊으면 얼마를 아끼는지 계산해 보세요. 한 갑 가격과 하루 흡연량만 넣으면 돼요.',
       card: '한 달, 그리고 몇 년 동안 연기로 사라지는 돈을 확인하세요.',
       tag: '습관',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: '구독료',
       heading: '구독료 계산기',
-      title: '구독료 계산기 – 월 구독료와 연간 총액 한눈에 보기 | costsimulators.com',
+      title: '구독료 계산기 – 월 구독료와 연간 총액 한눈에 보기',
       description: 'OTT, 음악, 헬스장, 휴대폰 요금까지 모든 구독료를 더해 보세요. 한 달·1년·10년 총액과 가장 비싼 구독을 한눈에 볼 수 있어요.',
       card: '스트리밍, 헬스장 등 매달 나가는 돈을 한곳에서 모두 더해 보세요.',
       tag: '가계부',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: '전기요금',
       heading: '전기요금 계산기',
-      title: '전기요금 계산기 – 가전제품 전기세 얼마나 나올까? | costsimulators.com',
+      title: '전기요금 계산기 – 가전제품 전기세 얼마나 나올까?',
       description: '소비전력, 사용 시간, kWh당 요금으로 가전제품의 하루·한 달·1년 전기요금을 계산해 보세요. 무료 전기세 계산기예요.',
       card: '기기를 켜 두면 하루, 한 달, 1년에 전기요금이 얼마나 나오는지 확인하세요.',
       tag: '생활',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: '기름값',
       heading: '기름값 계산기',
-      title: '기름값 계산기 – 출퇴근·여행 주유비 계산 | costsimulators.com',
+      title: '기름값 계산기 – 출퇴근·여행 주유비 계산',
       description: '여행이나 매일 출퇴근에 드는 기름값을 계산하고 함께 탄 사람끼리 나눠 보세요. 킬로미터와 리터, 마일과 갤런 모두 지원해요.',
       card: '여행이나 출퇴근 기름값을 계산하고 동승자와 나눠 보세요.',
       tag: '이동',

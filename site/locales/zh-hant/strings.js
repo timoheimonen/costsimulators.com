@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: '免費生活花費計算機：日常開銷一算就清楚 | costsimulators.com',
+    title: '免費生活花費計算機：日常開銷一算就清楚',
     description: '免費又保護隱私的計算機，算出開會、工時、咖啡、抽菸、訂閱、電費和油錢的真實花費。免註冊，直接在瀏覽器中計算。',
     eyebrow: '免費 · 隱私 · 即時',
     heading: '生活中的<span class="accent-text">花費</span>，<wbr>小工具幫你算清楚。',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: '找不到這個網頁 | costsimulators.com',
+    title: '找不到這個網頁',
     description: '你要找的網頁不存在。',
     heading: '這個網頁不存在。',
     lead: '網址可能打錯了，或是網頁已經搬家。所有計算機都在首頁。'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: '關於我們',
-      title: '關於我們：免費、保護隱私的生活花費計算機 | costsimulators.com',
+      title: '關於我們：免費、保護隱私的生活花費計算機',
       description: '認識 costsimulators.com 的作者與計算方式。免費、保護隱私的計算機，涵蓋會議、工時、生活習慣、訂閱、電費和交通油錢。'
     },
     privacy: {
       name: '隱私權政策',
-      title: '隱私權政策 | costsimulators.com',
+      title: '隱私權政策',
       description: 'costsimulators.com 如何處理你的資料：所有計算都在瀏覽器中進行，沒有追蹤、沒有分析工具，也不需要帳號。'
     },
     terms: {
       name: '使用條款',
-      title: '使用條款 | costsimulators.com',
+      title: '使用條款',
       description: 'costsimulators.com 使用條款：個人與商業用途皆可免費使用，服務依現狀提供，原始碼以 MIT 授權條款開放。'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: '會議成本',
       heading: '會議成本計算機',
-      title: '會議成本計算機：即時計算開會花了多少錢 | costsimulators.com',
+      title: '會議成本計算機：即時計算開會花了多少錢',
       description: '免費的會議成本計算機，附即時計時器。輸入每人時薪和開會人數，這場會議每一秒花了多少錢，即時跳給你看。',
       card: '一邊開會，一邊看著會議成本即時往上跳。',
       tag: '即時計時',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: '價格換算工時',
       heading: '價格換算工時計算機',
-      title: '價格換算工時：買東西要工作多久？時薪、月薪都能算 | costsimulators.com',
+      title: '價格換算工時：買東西要工作多久？時薪、月薪都能算',
       description: '把任何價格換算成要工作幾小時、幾天、幾週。輸入時薪、月薪或年薪，看看一樣東西實際要花掉你多少工作時間。',
       card: '把任何價格換算成要工作的小時、天數和週數。',
       tag: '工作',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: '咖啡花費',
       heading: '咖啡花費計算機',
-      title: '咖啡花費計算機：每天一杯咖啡，一年花多少錢？ | costsimulators.com',
+      title: '咖啡花費計算機：每天一杯咖啡，一年花多少錢？',
       description: '算算每天喝咖啡每月花多少，1 年、5 年、10 年又累積多少。輸入每杯價格和每週杯數即可，免費又保護隱私。',
       card: '看看每天一杯咖啡，一年、五年、十年累積起來是多少。',
       tag: '習慣',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: '菸錢計算',
       heading: '菸錢計算機',
-      title: '菸錢計算機：抽菸一年花多少錢？戒菸能省多少 | costsimulators.com',
+      title: '菸錢計算機：抽菸一年花多少錢？戒菸能省多少',
       description: '算出抽菸每月花多少錢，1 年、5 年和 10 年累積多少，以及戒菸能省下多少。輸入每包價格和每天抽幾根即可。',
       card: '看看每個月、每一年有多少錢跟著煙一起燒掉。',
       tag: '習慣',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: '訂閱費用',
       heading: '訂閱費用計算機',
-      title: '訂閱費用計算機：每月、每年訂閱總花費一次算清 | costsimulators.com',
+      title: '訂閱費用計算機：每月、每年訂閱總花費一次算清',
       description: '把影音串流、健身房、手機資費等所有訂閱加總，看看每月、每年和 10 年的總花費，以及哪一項最貴。',
       card: '把串流、健身房和所有定期扣款集中起來一次加總。',
       tag: '預算',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: '電費計算',
       heading: '電費計算機',
-      title: '電費計算機：電器用電度數與電費試算 | costsimulators.com',
+      title: '電費計算機：電器用電度數與電費試算',
       description: '依電器功率、使用時數和每度電價，算出一天、一個月和一年的電費。免費的用電度數與電費試算工具。',
       card: '看看電器開著，每天、每月、每年要花多少電費。',
       tag: '居家',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: '油錢計算',
       heading: '開車油錢計算機',
-      title: '油錢計算機：開車油資與通勤油錢試算 | costsimulators.com',
+      title: '油錢計算機：開車油資與通勤油錢試算',
       description: '計算一趟車程或每天通勤的油錢，並由同車的人分攤。可用公里與公升，也可用英里與加侖計算。',
       card: '算出一趟車程或通勤的油錢，和同車的人一起分攤。',
       tag: '交通',

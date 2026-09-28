@@ -2,7 +2,7 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
-## 2026-09-28
+## 2026-09-28b
 
 ### Added
 
@@ -15,10 +15,21 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 - Language menu in the header, in two scrolling columns that fit a phone screen and work with the keyboard. It keeps the current tool settings when switching language, and English pages open in the visitor's language on the first visit.
 - Explanation of how each calculation works, frequently asked questions and links to the other calculators on every tool page, and a short introduction and FAQ on the home page.
 - Structured data on every page: `WebApplication` for the calculators, `FAQPage`, `BreadcrumbList`, `WebSite` and the author.
+- The translated privacy policy and terms of use say that the English version prevails if the versions differ.
 - Social sharing image for each language, large image cards for social media and an Apple touch icon.
 - 404 page in each language.
 - `llms.txt`, a plain-text summary of the site for AI assistants.
 - `npm run build` generates the pages from `site/`, and `npm test` checks them. Tests run on GitHub Actions.
+
+### Changed
+
+- Clearer page addresses such as `/meeting-cost-calculator/` and `/about/`. The old `.html` addresses redirect permanently to the new ones.
+- Page titles fit in search results: they are about 60 characters at most, and " | costsimulators.com" is added only when it fits.
+- Page titles and descriptions name what each calculator does, and each tool page has a descriptive main heading such as "Meeting cost calculator".
+
+## 2026-09-28
+
+### Added
 
 - New tools:
   - **Work hours** – turns any price into the hours, days and weeks of work it takes, from hourly, monthly or yearly pay
@@ -37,8 +48,6 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ### Changed
 
-- Clearer page addresses such as `/meeting-cost-calculator/` and `/about/`. The old `.html` addresses redirect permanently to the new ones.
-- Page titles and descriptions name what each calculator does, and each tool page has a descriptive main heading such as "Meeting cost calculator".
 - Complete redesign: new home page with a tool grid, shared tool page layout with settings and results side by side, and a mobile-friendly layout
 - Brand name is written as costsimulators.com everywhere
 - Money amounts are shown with thousands separators, for example $16,380.00

@@ -9,7 +9,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 
-const { LANGUAGES, TOOLS, PAGES, ORIGIN, buildSite, languageTag, loadLocale, pagePath, pageUrl } = require('../scripts/build-site');
+const {
+  LANGUAGES, TOOLS, PAGES, ORIGIN, buildSite, languageTag, loadLocale, pagePath, pageTitle, pageUrl, textWidth
+} = require('../scripts/build-site');
+const SITE_NAME = 'costsimulators.com';
 
 const repoRoot = path.resolve(__dirname, '..');
 const publicDir = path.join(repoRoot, 'public');
@@ -179,6 +182,30 @@ test('every page has its language, canonical URL and hreflang alternates', () =>
         `${name} x-default`
       );
       assert.match(html, /<meta name="robots" content="index, follow/, name);
+    }
+  }
+});
+
+test('translated privacy and terms pages say that the English version prevails', () => {
+  for (const { lang, documents } of locales.slice(1)) {
+    for (const doc of ['privacy', 'terms']) {
+      assert.match(documents[doc], new RegExp(`class="legal-meta legal-translation">[^\\n]*<a href="/${doc}/" hreflang="en">`), `${lang}/${doc}.html`);
+    }
+  }
+});
+
+test('titles fit in search results', () => {
+  for (const { lang, strings } of locales) {
+    const titles = [
+      strings.home.title,
+      strings.notFound.title,
+      ...Object.values(strings.tools).map(tool => tool.title),
+      ...Object.values(strings.documents).map(doc => doc.title)
+    ];
+    for (const title of titles) {
+      assert.ok(!title.endsWith(`| ${SITE_NAME}`), `${lang}: leave the site name out of "${title}", the build adds it`);
+      assert.ok(textWidth(title) <= 60, `${lang}: "${title}" is too long for search results`);
+      assert.ok(textWidth(pageTitle(title)) <= 65, `${lang}: "${pageTitle(title)}"`);
     }
   }
 });

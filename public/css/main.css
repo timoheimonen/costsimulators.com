@@ -1475,6 +1475,15 @@ kbd {
     font-size: 0.875rem;
 }
 
+.legal-meta a {
+    color: inherit;
+    text-underline-offset: 3px;
+}
+
+.legal-meta a:hover {
+    color: var(--text);
+}
+
 .legal-summary ul {
     display: grid;
     gap: 10px;

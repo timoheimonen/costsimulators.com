@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Gratis kostnadskalkulatorer for hverdagen | costsimulators.com',
+    title: 'Gratis kostnadskalkulatorer for hverdagen',
     description: 'Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, kaffe, røyking, abonnementer, strøm og drivstoff. Ingen registrering, alt skjer i nettleseren.',
     eyebrow: 'Gratis · Privat · Lynraskt',
     heading: 'Små verktøy for hverdagens <span class="accent-text">penge</span>spørsmål.',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Fant ikke siden | costsimulators.com',
+    title: 'Fant ikke siden',
     description: 'Siden du lette etter, finnes ikke.',
     heading: 'Denne siden finnes ikke.',
     lead: 'Adressen kan være feilskrevet, eller siden kan ha blitt flyttet. Alle kalkulatorene finner du på forsiden.'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Om oss',
-      title: 'Om oss – gratis og private kostnadskalkulatorer | costsimulators.com',
+      title: 'Om oss – gratis og private kostnadskalkulatorer',
       description: 'Hvem som lager costsimulators.com, og hvordan kalkulatorene virker. Gratis og private kalkulatorer for møter, arbeidstimer, vaner, abonnementer, strøm og bilturer.'
     },
     privacy: {
       name: 'Personvernerklæring',
-      title: 'Personvernerklæring | costsimulators.com',
+      title: 'Personvernerklæring',
       description: 'Slik behandler costsimulators.com opplysningene dine: beregningene skjer i nettleseren, uten sporing, uten analyseverktøy og uten brukerkontoer.'
     },
     terms: {
       name: 'Brukervilkår',
-      title: 'Brukervilkår | costsimulators.com',
+      title: 'Brukervilkår',
       description: 'Brukervilkår for costsimulators.com: gratis til både privat og kommersiell bruk, leveres som den er, med åpen kildekode under MIT-lisensen.'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: 'Møtekostnad',
       heading: 'Møtekalkulator',
-      title: 'Møtekalkulator – se hva et møte koster i sanntid | costsimulators.com',
+      title: 'Møtekalkulator – se hva et møte koster i sanntid',
       description: 'Gratis møtekalkulator med tidtaker. Skriv inn timepris og antall deltakere, og se hva møtet koster, sekund for sekund.',
       card: 'Se prisen på et møte tikke oppover i sanntid mens dere snakker.',
       tag: 'Sanntid',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: 'Arbeidstimer',
       heading: 'Kalkulator for pris i arbeidstimer',
-      title: 'Pris i arbeidstimer – hvor lenge må du jobbe for det? | costsimulators.com',
+      title: 'Pris i arbeidstimer – hvor lenge må du jobbe for det?',
       description: 'Gjør om en hvilken som helst pris til timer, dager og uker med arbeid. Skriv inn timelønn, månedslønn eller årslønn og se hva et kjøp egentlig koster i arbeidstid.',
       card: 'Gjør om en pris til timene, dagene og ukene du må jobbe for den.',
       tag: 'Jobb',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: 'Kaffevane',
       heading: 'Kaffekalkulator',
-      title: 'Kaffekalkulator – hva koster kaffevanen din i året? | costsimulators.com',
+      title: 'Kaffekalkulator – hva koster kaffevanen din i året?',
       description: 'Se hva den daglige kaffen koster per måned og over 1, 5 og 10 år. Skriv inn pris per kopp og antall kopper i uken – gratis og privat.',
       card: 'Se hva den daglige koppen blir til over ett, fem og ti år.',
       tag: 'Vane',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: 'Røykekostnad',
       heading: 'Røykekalkulator',
-      title: 'Røykekalkulator – hva koster røykingen din? | costsimulators.com',
+      title: 'Røykekalkulator – hva koster røykingen din?',
       description: 'Finn ut hva røyking koster per måned og over 1, 5 og 10 år – og hvor mye du sparer på å slutte. Skriv inn pakkepris og antall sigaretter per dag.',
       card: 'Se hvor mye penger som går opp i røyk hver måned og over årene.',
       tag: 'Vane',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonnementer',
       heading: 'Abonnementskalkulator',
-      title: 'Abonnementskalkulator – totalpris per måned og år | costsimulators.com',
+      title: 'Abonnementskalkulator – totalpris per måned og år',
       description: 'Legg sammen strømmetjenester, treningssenter, mobilabonnement og alle andre abonnementer. Se totalen per måned, per år og over 10 år, og hvilket abonnement som koster mest.',
       card: 'Legg sammen strømming, trening og alle andre faste betalinger på ett sted.',
       tag: 'Budsjett',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: 'Strømkostnad',
       heading: 'Strømkalkulator',
-      title: 'Strømkalkulator – beregn strømforbruk og strømkostnad | costsimulators.com',
+      title: 'Strømkalkulator – beregn strømforbruk og strømkostnad',
       description: 'Regn ut hva et apparat koster i strøm per dag, måned og år ut fra watt, brukstid og strømpris. Gratis kalkulator for strømforbruk og kWh-pris.',
       card: 'Se hva det koster å ha et apparat påslått per dag, måned og år.',
       tag: 'Hjem',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: 'Drivstoffkostnad',
       heading: 'Drivstoffkalkulator for bilturer',
-      title: 'Drivstoffkalkulator – bensinkostnad for tur og pendling | costsimulators.com',
+      title: 'Drivstoffkalkulator – bensinkostnad for tur og pendling',
       description: 'Regn ut drivstoffkostnaden for en biltur eller daglig pendling, og del den mellom passasjerene. Fungerer med kilometer og liter eller miles og gallon.',
       card: 'Regn ut drivstoffkostnaden for en tur eller pendling, og del den med andre.',
       tag: 'Reise',

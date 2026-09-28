@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Calculatoare de costuri gratuite pentru viața de zi cu zi | costsimulators.com',
+    title: 'Calculatoare de costuri gratuite pentru viața de zi cu zi',
     description: 'Calculatoare gratuite și private care arată cât costă de fapt lucrurile: ședințe, ore de muncă, cafea, fumat, abonamente, curent și benzină. Fără cont, direct în browser.',
     eyebrow: 'Gratuit · Privat · Instant',
     heading: 'Instrumente mici pentru întrebările de zi cu zi despre <span class="accent-text">bani</span>.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Pagina nu a fost găsită | costsimulators.com',
+    title: 'Pagina nu a fost găsită',
     description: 'Pagina pe care o căutai nu există.',
     heading: 'Această pagină nu există.',
     lead: 'Este posibil ca adresa să fie greșită sau ca pagina să fi fost mutată. Toate calculatoarele se găsesc pe prima pagină.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Despre',
-      title: 'Despre noi – calculatoare de costuri gratuite și private | costsimulators.com',
+      title: 'Despre noi – calculatoare de costuri gratuite și private',
       description: 'Cine face costsimulators.com și cum funcționează calculatoarele. Calculatoare gratuite și private pentru ședințe, ore de muncă, obiceiuri, abonamente, curent și drumuri.'
     },
     privacy: {
       name: 'Politica de confidențialitate',
-      title: 'Politica de confidențialitate | costsimulators.com',
+      title: 'Politica de confidențialitate',
       description: 'Cum tratează costsimulators.com datele tale: calculele rulează în browser, fără urmărire, fără instrumente de analiză și fără conturi de utilizator.'
     },
     terms: {
       name: 'Termeni de utilizare',
-      title: 'Termeni de utilizare | costsimulators.com',
+      title: 'Termeni de utilizare',
       description: 'Termenii de utilizare ai costsimulators.com: gratuit pentru uz personal și comercial, oferit „ca atare”, cu cod sursă deschis sub licența MIT.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Costul ședinței',
       heading: 'Calculator pentru costul ședințelor',
-      title: 'Calculator cost ședință – cât costă o ședință, în timp real | costsimulators.com',
+      title: 'Calculator cost ședință – cât costă o ședință, în timp real',
       description: 'Calculator gratuit pentru costul unei ședințe, cu cronometru live. Introdu tariful orar și numărul de participanți și vezi cât costă ședința, secundă cu secundă.',
       card: 'Urmărește în timp real cum crește costul unei ședințe cât timp vorbiți.',
       tag: 'Cronometru live',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Ore de muncă',
       heading: 'Calculator pentru prețul în ore de muncă',
-      title: 'Calculator ore de muncă – câte ore muncești ca să cumperi ceva? | costsimulators.com',
+      title: 'Calculator ore de muncă – cât muncești ca să cumperi ceva',
       description: 'Transformă orice preț în orele, zilele și săptămânile de muncă necesare. Introdu salariul pe oră, pe lună sau pe an și vezi cât costă de fapt o achiziție în timp de muncă.',
       card: 'Transformă orice preț în orele, zilele și săptămânile pe care trebuie să le muncești pentru el.',
       tag: 'Muncă',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Costul cafelei',
       heading: 'Calculator pentru costul cafelei',
-      title: 'Calculator cost cafea – cât te costă cafeaua pe an? | costsimulators.com',
+      title: 'Calculator cost cafea – cât te costă cafeaua pe an?',
       description: 'Vezi cât te costă cafeaua zilnică pe lună și în 1, 5 și 10 ani. Introdu prețul unei cești și câte cești bei pe săptămână – gratuit și privat.',
       card: 'Vezi cât te costă cafeaua de zi cu zi într-un an, în cinci și în zece ani.',
       tag: 'Obicei',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Costul fumatului',
       heading: 'Calculator pentru costul fumatului',
-      title: 'Calculator cost fumat – cât te costă țigările pe an? | costsimulators.com',
+      title: 'Calculator cost fumat – cât te costă țigările pe an?',
       description: 'Află cât costă fumatul pe lună și în 1, 5 și 10 ani – și cât economisești dacă renunți. Introdu prețul pachetului și câte țigări fumezi pe zi.',
       card: 'Află câți bani se duc în fum în fiecare lună și de-a lungul anilor.',
       tag: 'Obicei',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonamente',
       heading: 'Calculator pentru costul abonamentelor',
-      title: 'Calculator abonamente – cât plătești lunar și anual | costsimulators.com',
+      title: 'Calculator abonamente – cât plătești lunar și anual',
       description: 'Adună streamingul, sala de fitness, abonamentul de telefon și orice alt abonament. Vezi totalul pe lună, pe an și în 10 ani, plus care abonament costă cel mai mult.',
       card: 'Adună streamingul, sala și orice altă plată recurentă într-un singur loc.',
       tag: 'Buget',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Costul curentului',
       heading: 'Calculator pentru costul curentului electric',
-      title: 'Calculator consum curent – cât consumă și cât costă un aparat electric | costsimulators.com',
+      title: 'Calculator consum curent – cât costă un aparat electric',
       description: 'Calculează cât costă funcționarea unui aparat pe zi, pe lună și pe an, după putere, ore de utilizare și prețul energiei. Calculator gratuit al costului pe kWh.',
       card: 'Vezi cât costă un aparat lăsat pornit pe zi, pe lună și pe an.',
       tag: 'Casă',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Costul drumului',
       heading: 'Calculator pentru costul drumului cu mașina',
-      title: 'Calculator cost benzină – cât costă drumul sau naveta cu mașina | costsimulators.com',
+      title: 'Calculator cost benzină – cât costă drumul cu mașina',
       description: 'Calculează costul carburantului pentru o călătorie sau pentru naveta zilnică și împarte-l între pasageri. Funcționează în kilometri și litri sau în mile și galoane.',
       card: 'Află cât costă carburantul pentru un drum sau pentru navetă și împarte costul cu ceilalți.',
       tag: 'Călătorii',

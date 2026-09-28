@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Kalkulator Biaya Gratis untuk Kebutuhan Sehari-hari | costsimulators.com',
+    title: 'Kalkulator Biaya Gratis untuk Kebutuhan Sehari-hari',
     description: 'Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kopi, rokok, langganan, listrik, dan bensin. Tanpa daftar, langsung di browser Anda.',
     eyebrow: 'Gratis · Privat · Instan',
     heading: 'Alat kecil untuk urusan <span class="accent-text">uang</span> sehari-hari.',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Halaman Tidak Ditemukan | costsimulators.com',
+    title: 'Halaman Tidak Ditemukan',
     description: 'Halaman yang Anda cari tidak ada.',
     heading: 'Halaman ini tidak ada.',
     lead: 'Mungkin ada salah ketik di alamatnya, atau halamannya sudah dipindahkan. Semua kalkulator ada di halaman depan.'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Tentang',
-      title: 'Tentang Kami – Kalkulator Biaya Gratis dan Privat | costsimulators.com',
+      title: 'Tentang Kami – Kalkulator Biaya Gratis dan Privat',
       description: 'Siapa pembuat costsimulators.com dan cara kerja kalkulatornya. Kalkulator biaya gratis dan privat untuk rapat, jam kerja, kebiasaan, langganan, listrik, dan perjalanan.'
     },
     privacy: {
       name: 'Kebijakan privasi',
-      title: 'Kebijakan Privasi | costsimulators.com',
+      title: 'Kebijakan Privasi',
       description: 'Cara costsimulators.com menangani data Anda: perhitungan berjalan di browser Anda, tanpa pelacakan, tanpa analitik, dan tanpa akun pengguna.'
     },
     terms: {
       name: 'Ketentuan penggunaan',
-      title: 'Ketentuan Penggunaan | costsimulators.com',
+      title: 'Ketentuan Penggunaan',
       description: 'Ketentuan penggunaan costsimulators.com: bebas dipakai untuk keperluan pribadi maupun komersial, disediakan apa adanya, dengan kode sumber terbuka berlisensi MIT.'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: 'Biaya rapat',
       heading: 'Kalkulator biaya rapat',
-      title: 'Kalkulator Biaya Rapat – Hitung Biaya Meeting secara Langsung | costsimulators.com',
+      title: 'Kalkulator Biaya Rapat – Hitung Biaya Meeting Langsung',
       description: 'Kalkulator biaya rapat gratis dengan timer langsung. Masukkan tarif per jam dan jumlah peserta, lalu lihat berapa biaya rapat Anda detik demi detik.',
       card: 'Lihat biaya rapat terus bertambah detik demi detik selama Anda berdiskusi.',
       tag: 'Timer langsung',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: 'Jam kerja',
       heading: 'Kalkulator harga dalam jam kerja',
-      title: 'Harga dalam Jam Kerja – Berapa Lama Harus Bekerja untuk Membelinya? | costsimulators.com',
+      title: 'Harga dalam Jam Kerja – Berapa Lama Harus Bekerja?',
       description: 'Ubah harga apa pun menjadi jam, hari, dan minggu kerja. Masukkan gaji per jam, per bulan, atau per tahun, lalu lihat berapa harga sebuah barang dalam waktu kerja.',
       card: 'Ubah harga apa pun menjadi jam, hari, dan minggu kerja yang dibutuhkan untuk membelinya.',
       tag: 'Kerja',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: 'Kebiasaan ngopi',
       heading: 'Kalkulator biaya kopi',
-      title: 'Kalkulator Biaya Kopi – Berapa Biaya Ngopi Setiap Hari? | costsimulators.com',
+      title: 'Kalkulator Biaya Kopi – Berapa Biaya Ngopi Setiap Hari?',
       description: 'Lihat berapa biaya kopi harian Anda per bulan serta dalam 1, 5, dan 10 tahun. Masukkan harga per gelas dan jumlah gelas per minggu – gratis dan privat.',
       card: 'Lihat berapa total biaya kopi harian Anda dalam satu, lima, dan sepuluh tahun.',
       tag: 'Kebiasaan',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: 'Biaya merokok',
       heading: 'Kalkulator biaya merokok',
-      title: 'Kalkulator Biaya Merokok – Berapa Uang yang Habis untuk Rokok? | costsimulators.com',
+      title: 'Kalkulator Biaya Merokok – Berapa Uang Habis untuk Rokok?',
       description: 'Hitung biaya merokok per bulan serta dalam 1, 5, dan 10 tahun – dan berapa yang bisa Anda hemat dengan berhenti. Masukkan harga per bungkus dan jumlah batang per hari.',
       card: 'Lihat berapa banyak uang yang habis jadi asap setiap bulan dan dari tahun ke tahun.',
       tag: 'Kebiasaan',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: 'Langganan',
       heading: 'Kalkulator biaya langganan',
-      title: 'Kalkulator Langganan – Total Biaya Bulanan dan Tahunan | costsimulators.com',
+      title: 'Kalkulator Langganan – Total Biaya Bulanan dan Tahunan',
       description: 'Jumlahkan streaming, gym, paket data, dan semua langganan lainnya. Lihat totalnya per bulan, per tahun, dan dalam 10 tahun, serta langganan mana yang paling mahal.',
       card: 'Jumlahkan streaming, gym, dan semua pembayaran rutin lainnya di satu tempat.',
       tag: 'Anggaran',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: 'Biaya listrik',
       heading: 'Kalkulator biaya listrik',
-      title: 'Kalkulator Listrik – Hitung Biaya Listrik Peralatan Rumah | costsimulators.com',
+      title: 'Kalkulator Listrik – Hitung Biaya Listrik Peralatan Rumah',
       description: 'Hitung biaya listrik sebuah alat per hari, per bulan, dan per tahun dari dayanya (watt), lama pemakaian, dan tarif listrik PLN. Kalkulator kWh gratis.',
       card: 'Lihat berapa biaya menyalakan sebuah alat per hari, per bulan, dan per tahun.',
       tag: 'Rumah',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: 'Biaya perjalanan',
       heading: 'Kalkulator biaya bensin perjalanan',
-      title: 'Hitung Biaya Bensin – Kalkulator BBM untuk Perjalanan dan Mudik | costsimulators.com',
+      title: 'Hitung Biaya Bensin – Kalkulator BBM Perjalanan dan Mudik',
       description: 'Hitung biaya bensin untuk perjalanan, mudik, atau pulang-pergi kerja setiap hari, lalu bagi rata dengan penumpang. Bisa dengan kilometer dan liter atau mil dan galon.',
       card: 'Hitung biaya bensin perjalanan atau pulang-pergi kerja dan bagi rata dengan yang lain.',
       tag: 'Perjalanan',

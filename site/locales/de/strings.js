@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Kostenrechner für den Alltag – kostenlos und privat | costsimulators.com',
+    title: 'Kostenrechner für den Alltag – kostenlos und privat',
     description: 'Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Kaffee, Rauchen, Abos, Strom und Sprit. Ohne Anmeldung, direkt im Browser.',
     eyebrow: 'Kostenlos · Privat · Sofort',
     heading: 'Kleine Rechner für alltägliche <span class="accent-text">Geld</span>fragen.',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Seite nicht gefunden | costsimulators.com',
+    title: 'Seite nicht gefunden',
     description: 'Die gesuchte Seite existiert nicht.',
     heading: 'Diese Seite gibt es nicht.',
     lead: 'Vielleicht hat sich in der Adresse ein Tippfehler eingeschlichen, oder die Seite ist umgezogen. Alle Rechner findest du auf der Startseite.'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Über uns',
-      title: 'Über uns – kostenlose, private Kostenrechner | costsimulators.com',
+      title: 'Über uns – kostenlose, private Kostenrechner',
       description: 'Wer hinter costsimulators.com steckt und wie die Rechner funktionieren. Kostenlose, private Kostenrechner für Meetings, Arbeitszeit, Gewohnheiten, Abos, Strom und Fahrten.'
     },
     privacy: {
       name: 'Datenschutzerklärung',
-      title: 'Datenschutzerklärung | costsimulators.com',
+      title: 'Datenschutzerklärung',
       description: 'Wie costsimulators.com mit deinen Daten umgeht: Die Berechnungen laufen in deinem Browser, ohne Tracking, ohne Analysetools und ohne Benutzerkonten.'
     },
     terms: {
       name: 'Nutzungsbedingungen',
-      title: 'Nutzungsbedingungen | costsimulators.com',
+      title: 'Nutzungsbedingungen',
       description: 'Nutzungsbedingungen von costsimulators.com: kostenlos für private und gewerbliche Zwecke, ohne Gewähr, mit offenem Quellcode unter der MIT-Lizenz.'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: 'Meetingkosten',
       heading: 'Meetingkosten-Rechner',
-      title: 'Meetingkosten-Rechner – Besprechungskosten live berechnen | costsimulators.com',
+      title: 'Meetingkosten-Rechner – Besprechungskosten live berechnen',
       description: 'Kostenloser Meetingkosten-Rechner mit Live-Timer: Stundensatz und Teilnehmerzahl eingeben und sehen, was die Besprechung kostet – Sekunde für Sekunde.',
       card: 'Sieh live zu, wie die Kosten eines Meetings steigen, während ihr redet.',
       tag: 'Live-Timer',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: 'Arbeitszeit',
       heading: 'Preis in Arbeitszeit umrechnen',
-      title: 'Arbeitszeit-Rechner – wie lange muss ich dafür arbeiten? | costsimulators.com',
+      title: 'Arbeitszeit-Rechner – wie lange muss ich dafür arbeiten?',
       description: 'Rechne jeden Preis in Arbeitsstunden, -tage und -wochen um. Gib deinen Stunden-, Monats- oder Jahresverdienst ein und sieh, was ein Kauf dich wirklich an Arbeitszeit kostet.',
       card: 'Rechne jeden Preis in die Stunden, Tage und Wochen um, die du dafür arbeiten musst.',
       tag: 'Arbeit',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: 'Kaffeekosten',
       heading: 'Kaffeekosten-Rechner',
-      title: 'Kaffeekosten-Rechner – was kostet dein Kaffee im Jahr? | costsimulators.com',
+      title: 'Kaffeekosten-Rechner – was kostet dein Kaffee im Jahr?',
       description: 'Sieh, was dein täglicher Kaffee pro Monat und in 1, 5 und 10 Jahren kostet. Preis pro Tasse und Tassen pro Woche eingeben – kostenlos und privat.',
       card: 'Sieh, was dein täglicher Kaffee in einem, fünf und zehn Jahren ausmacht.',
       tag: 'Gewohnheit',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: 'Zigarettenkosten',
       heading: 'Raucherrechner',
-      title: 'Raucherrechner – was kostet Rauchen im Jahr? | costsimulators.com',
+      title: 'Raucherrechner – was kostet Rauchen im Jahr?',
       description: 'Finde heraus, was Rauchen pro Monat und in 1, 5 und 10 Jahren kostet – und wie viel du sparst, wenn du aufhörst. Packungspreis und Zigaretten pro Tag eingeben.',
       card: 'Sieh, wie viel Geld jeden Monat und über die Jahre in Rauch aufgeht.',
       tag: 'Gewohnheit',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: 'Abos',
       heading: 'Abo-Rechner',
-      title: 'Abo-Rechner – monatliche und jährliche Abokosten | costsimulators.com',
+      title: 'Abo-Rechner – monatliche und jährliche Abokosten',
       description: 'Rechne Streaming, Fitnessstudio, Handyvertrag und alle anderen Abos zusammen. Sieh deine Kosten pro Monat, pro Jahr und in 10 Jahren – und welches Abo am meisten kostet.',
       card: 'Rechne Streaming, Fitnessstudio und alle anderen laufenden Zahlungen an einem Ort zusammen.',
       tag: 'Budget',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: 'Stromkosten',
       heading: 'Stromkostenrechner',
-      title: 'Stromkostenrechner – Stromverbrauch von Geräten berechnen | costsimulators.com',
+      title: 'Stromkostenrechner – Stromverbrauch von Geräten berechnen',
       description: 'Berechne, was ein Gerät pro Tag, Monat und Jahr an Strom kostet – aus Leistung in Watt, Nutzungsdauer und Strompreis. Kostenloser Rechner für kWh und Stromkosten.',
       card: 'Sieh, was es pro Tag, Monat und Jahr kostet, ein Gerät eingeschaltet zu lassen.',
       tag: 'Zuhause',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: 'Spritkosten',
       heading: 'Spritkostenrechner',
-      title: 'Spritkostenrechner – Fahrtkosten und Pendelkosten berechnen | costsimulators.com',
+      title: 'Spritkostenrechner – Fahrtkosten und Pendelkosten berechnen',
       description: 'Berechne die Spritkosten einer Fahrt oder deines täglichen Arbeitswegs und teile sie unter allen Mitfahrenden auf. Mit Kilometern und Litern oder Meilen und Gallonen.',
       card: 'Berechne die Spritkosten einer Fahrt oder des Arbeitswegs und teile sie mit anderen.',
       tag: 'Unterwegs',

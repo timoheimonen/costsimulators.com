@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Günlük hayat için ücretsiz maliyet hesaplama araçları | costsimulators.com',
+    title: 'Günlük hayat için ücretsiz maliyet hesaplama araçları',
     description: 'Toplantı, çalışma saati, kahve, sigara, abonelik, elektrik ve yakıt için ücretsiz maliyet hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.',
     eyebrow: 'Ücretsiz · Gizlilik dostu · Anında',
     heading: 'Günlük <span class="accent-text">para</span> soruları için küçük araçlar.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Sayfa bulunamadı | costsimulators.com',
+    title: 'Sayfa bulunamadı',
     description: 'Aradığınız sayfa mevcut değil.',
     heading: 'Bu sayfa mevcut değil.',
     lead: 'Adres yanlış yazılmış ya da sayfa taşınmış olabilir. Tüm hesaplama araçlarını ana sayfada bulabilirsiniz.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Hakkında',
-      title: 'Hakkında – ücretsiz ve gizlilik dostu maliyet hesaplama araçları | costsimulators.com',
+      title: 'Hakkında – ücretsiz ve gizlilik dostu hesaplama araçları',
       description: 'costsimulators.com’u kim yapıyor ve hesaplama araçları nasıl çalışıyor? Toplantı, çalışma saati, alışkanlıklar, abonelikler, elektrik ve yol masrafı için ücretsiz araçlar.'
     },
     privacy: {
       name: 'Gizlilik politikası',
-      title: 'Gizlilik politikası | costsimulators.com',
+      title: 'Gizlilik politikası',
       description: 'costsimulators.com verilerinizi nasıl işliyor: hesaplamalar tarayıcınızda yapılır; takip, analiz aracı ya da kullanıcı hesabı yoktur.'
     },
     terms: {
       name: 'Kullanım koşulları',
-      title: 'Kullanım koşulları | costsimulators.com',
+      title: 'Kullanım koşulları',
       description: 'costsimulators.com kullanım koşulları: kişisel ve ticari amaçlarla ücretsiz kullanılabilir, olduğu gibi sunulur, kaynak kodu MIT Lisansı ile açıktır.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Toplantı maliyeti',
       heading: 'Toplantı maliyeti hesaplama',
-      title: 'Toplantı maliyeti hesaplama – canlı toplantı sayacı | costsimulators.com',
+      title: 'Toplantı maliyeti hesaplama – canlı toplantı sayacı',
       description: 'Canlı sayaçlı ücretsiz toplantı maliyeti hesaplama aracı. Saatlik ücreti ve katılımcı sayısını girin, toplantının kaça mal olduğunu saniye saniye izleyin.',
       card: 'Siz konuşurken toplantının maliyetinin gerçek zamanlı olarak nasıl arttığını izleyin.',
       tag: 'Canlı sayaç',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Çalışma saati',
       heading: 'Fiyatın çalışma saati karşılığı',
-      title: 'Fiyatı çalışma saatine çevirme – kaç saat çalışmanız gerekir? | costsimulators.com',
+      title: 'Fiyatı çalışma saatine çevirme – kaç saat çalışmalısınız?',
       description: 'Herhangi bir fiyatı kaç saat, gün ve hafta çalışmanız gerektiğine çevirin. Saatlik, aylık ya da yıllık ücretinizi girin, bir alışverişin iş zamanı olarak gerçek bedelini görün.',
       card: 'Herhangi bir fiyatı, karşılığında çalışmanız gereken saate, güne ve haftaya çevirin.',
       tag: 'İş',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Kahve alışkanlığı',
       heading: 'Kahve maliyeti hesaplama',
-      title: 'Kahve maliyeti hesaplama – kahveye yılda ne kadar harcıyorsunuz? | costsimulators.com',
+      title: 'Kahve maliyeti hesaplama – yıllık kahve harcamanız',
       description: 'Günlük kahvenizin aylık maliyetini ve 1, 5 ve 10 yılda neye mal olduğunu görün. Fincan fiyatını ve haftada kaç kahve içtiğinizi girin – ücretsiz ve gizlilik dostu.',
       card: 'Günlük kahvenizin bir, beş ve on yılda ne tuttuğunu görün.',
       tag: 'Alışkanlık',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Sigara maliyeti',
       heading: 'Sigara maliyeti hesaplama',
-      title: 'Sigara maliyeti hesaplama – sigaraya ne kadar para harcıyorsunuz? | costsimulators.com',
+      title: 'Sigara maliyeti hesaplama – yıllık sigara harcamanız',
       description: 'Sigaranın size ayda ve 1, 5 ve 10 yılda kaça mal olduğunu ve bırakırsanız ne kadar tasarruf edeceğinizi öğrenin. Paket fiyatını ve günde kaç sigara içtiğinizi girin.',
       card: 'Her ay ve yıllar içinde ne kadar paranın duman olup gittiğini görün.',
       tag: 'Alışkanlık',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonelikler',
       heading: 'Abonelik maliyeti hesaplama',
-      title: 'Abonelik hesaplama – aylık ve yıllık toplam abonelik gideri | costsimulators.com',
+      title: 'Abonelik hesaplama – aylık ve yıllık toplam abonelik gideri',
       description: 'Dizi platformu, spor salonu, mobil hat ve diğer tüm aboneliklerinizi toplayın. Aylık, yıllık ve 10 yıllık toplamı görün, en çok hangi aboneliğe para ödediğinizi öğrenin.',
       card: 'Dijital platformları, spor salonunu ve diğer tüm düzenli ödemeleri tek yerde toplayın.',
       tag: 'Bütçe',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Elektrik maliyeti',
       heading: 'Elektrik tüketimi hesaplama',
-      title: 'Elektrik tüketimi hesaplama – cihaz ne kadar elektrik yakar? | costsimulators.com',
+      title: 'Elektrik tüketimi hesaplama – cihaz ne kadar elektrik yakar?',
       description: 'Bir cihazın günlük, aylık ve yıllık elektrik maliyetini gücüne, kullanım süresine ve kWh fiyatına göre hesaplayın. Ücretsiz elektrik tüketimi hesaplama aracı.',
       card: 'Bir cihazı açık tutmanın günlük, aylık ve yıllık maliyetini görün.',
       tag: 'Ev',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Yol masrafı',
       heading: 'Yakıt maliyeti hesaplama',
-      title: 'Yakıt maliyeti hesaplama – yol ve işe gidiş gelişte benzin masrafı | costsimulators.com',
+      title: 'Yakıt maliyeti hesaplama – yolculuk başına benzin masrafı',
       description: 'Bir yolculuğun ya da her gün işe gidip gelmenin yakıt maliyetini hesaplayın ve yolcular arasında paylaştırın. Kilometre ve litreyle ya da mil ve galonla çalışır.',
       card: 'Bir yolculuğun ya da işe gidiş gelişin yakıt maliyetini hesaplayın ve masrafı yolcularla bölüşün.',
       tag: 'Yolculuk',

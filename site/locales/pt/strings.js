@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Calculadoras de custo grátis para o dia a dia | costsimulators.com',
+    title: 'Calculadoras de custo grátis para o dia a dia',
     description: 'Calculadoras grátis e privadas que mostram quanto as coisas custam de verdade: reuniões, horas de trabalho, café, cigarro, assinaturas, energia e combustível. Sem cadastro.',
     eyebrow: 'Grátis · Privado · Instantâneo',
     heading: 'Pequenas ferramentas para as questões de <span class="accent-text">dinheiro</span> do dia a dia.',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Página não encontrada | costsimulators.com',
+    title: 'Página não encontrada',
     description: 'A página que você procura não existe.',
     heading: 'Esta página não existe.',
     lead: 'O endereço pode ter sido digitado errado, ou a página mudou de lugar. Todas as calculadoras estão na página inicial.'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Sobre',
-      title: 'Sobre nós – calculadoras de custo grátis e privadas | costsimulators.com',
+      title: 'Sobre nós – calculadoras de custo grátis e privadas',
       description: 'Quem faz o costsimulators.com e como as calculadoras funcionam. Calculadoras de custo grátis e privadas para reuniões, horas de trabalho, hábitos, assinaturas, energia e viagens.'
     },
     privacy: {
       name: 'Política de privacidade',
-      title: 'Política de privacidade | costsimulators.com',
+      title: 'Política de privacidade',
       description: 'Como o costsimulators.com trata os seus dados: os cálculos rodam no seu navegador, sem rastreamento, sem ferramentas de análise e sem contas de usuário.'
     },
     terms: {
       name: 'Termos de uso',
-      title: 'Termos de uso | costsimulators.com',
+      title: 'Termos de uso',
       description: 'Termos de uso do costsimulators.com: uso livre para fins pessoais e comerciais, oferecido no estado em que se encontra, com código aberto sob a Licença MIT.'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: 'Custo de reunião',
       heading: 'Calculadora de custo de reunião',
-      title: 'Calculadora de custo de reunião – quanto custa uma reunião | costsimulators.com',
+      title: 'Calculadora de custo de reunião – quanto custa uma reunião',
       description: 'Calculadora de custo de reunião grátis, com cronômetro ao vivo. Informe o valor por hora e o número de participantes e veja quanto a reunião custa, segundo a segundo.',
       card: 'Veja o preço de uma reunião subir em tempo real enquanto vocês conversam.',
       tag: 'Cronômetro',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: 'Horas de trabalho',
       heading: 'Calculadora de preço em horas de trabalho',
-      title: 'Preço em horas de trabalho – quantas horas você precisa trabalhar? | costsimulators.com',
+      title: 'Preço em horas de trabalho – quanto você precisa trabalhar',
       description: 'Transforme qualquer preço em horas, dias e semanas de trabalho. Informe seu salário por hora, por mês ou por ano e veja quanto uma compra custa de verdade em tempo de trabalho.',
       card: 'Transforme qualquer preço nas horas, dias e semanas que você precisa trabalhar para pagar.',
       tag: 'Trabalho',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: 'Gasto com café',
       heading: 'Calculadora de gasto com café',
-      title: 'Calculadora de gasto com café – quanto custa seu cafezinho por ano | costsimulators.com',
+      title: 'Calculadora do café – quanto custa seu cafezinho por ano',
       description: 'Veja quanto o seu café de todo dia custa por mês e em 1, 5 e 10 anos. Informe o preço da xícara e quantas você toma por semana – grátis e privado.',
       card: 'Veja quanto o cafezinho de todo dia soma em um, cinco e dez anos.',
       tag: 'Hábito',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: 'Custo do cigarro',
       heading: 'Calculadora do custo de fumar',
-      title: 'Quanto custa fumar – calculadora de gasto com cigarro | costsimulators.com',
+      title: 'Quanto custa fumar – calculadora de gasto com cigarro',
       description: 'Descubra quanto o cigarro custa por mês e em 1, 5 e 10 anos – e quanto você economiza ao parar de fumar. Informe o preço do maço e quantos cigarros fuma por dia.',
       card: 'Descubra quanto dinheiro vira fumaça todo mês e ao longo dos anos.',
       tag: 'Hábito',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: 'Assinaturas',
       heading: 'Calculadora de assinaturas',
-      title: 'Calculadora de assinaturas – total por mês e por ano | costsimulators.com',
+      title: 'Calculadora de assinaturas – total por mês e por ano',
       description: 'Some streaming, academia, plano de celular e todas as outras assinaturas. Veja o total por mês, por ano e em 10 anos, e qual assinatura pesa mais no bolso.',
       card: 'Some streaming, academia e todos os outros pagamentos recorrentes em um só lugar.',
       tag: 'Orçamento',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: 'Custo de energia',
       heading: 'Calculadora de consumo de energia',
-      title: 'Calculadora de consumo de energia – quanto gasta cada aparelho | costsimulators.com',
+      title: 'Calculadora de consumo de energia dos aparelhos',
       description: 'Calcule quanto um aparelho custa por dia, mês e ano a partir da potência, das horas de uso e do preço do kWh. Calculadora de consumo de energia elétrica grátis.',
       card: 'Veja quanto custa manter um aparelho ligado por dia, mês e ano.',
       tag: 'Casa',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: 'Custo da viagem',
       heading: 'Calculadora de combustível para viagem',
-      title: 'Calculadora de combustível – gasto com gasolina por viagem | costsimulators.com',
+      title: 'Calculadora de combustível – gasto com gasolina por viagem',
       description: 'Calcule o gasto com combustível de uma viagem ou do trajeto diário para o trabalho e divida entre os passageiros. Funciona em quilômetros e litros ou em milhas e galões.',
       card: 'Calcule o gasto com combustível de uma viagem ou do trajeto diário e divida com quem vai junto.',
       tag: 'Viagem',

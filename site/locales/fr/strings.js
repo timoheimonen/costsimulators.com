@@ -57,7 +57,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Calculateurs de coûts gratuits pour le quotidien | costsimulators.com',
+    title: 'Calculateurs de coûts gratuits pour le quotidien',
     description: 'Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, café, tabac, abonnements, électricité et carburant. Sans inscription.',
     eyebrow: 'Gratuit · Privé · Instantané',
     heading: 'De petits outils pour les questions d’<span class="accent-text">argent</span> du quotidien.',
@@ -87,7 +87,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Page introuvable | costsimulators.com',
+    title: 'Page introuvable',
     description: 'La page que vous cherchez n’existe pas.',
     heading: 'Cette page n’existe pas.',
     lead: 'L’adresse contient peut-être une faute de frappe, ou la page a été déplacée. Tous les calculateurs se trouvent sur la page d’accueil.'
@@ -96,17 +96,17 @@ module.exports = {
   documents: {
     about: {
       name: 'À propos',
-      title: 'À propos – calculateurs de coûts gratuits et privés | costsimulators.com',
+      title: 'À propos – calculateurs de coûts gratuits et privés',
       description: 'Qui crée costsimulators.com et comment fonctionnent les calculateurs : des outils gratuits et privés pour les réunions, le travail, les habitudes, les abonnements, l’électricité et les trajets.'
     },
     privacy: {
       name: 'Politique de confidentialité',
-      title: 'Politique de confidentialité | costsimulators.com',
+      title: 'Politique de confidentialité',
       description: 'Comment costsimulators.com traite vos données : les calculs se font dans votre navigateur, sans pistage, sans mesure d’audience et sans compte utilisateur.'
     },
     terms: {
       name: 'Conditions d’utilisation',
-      title: 'Conditions d’utilisation | costsimulators.com',
+      title: 'Conditions d’utilisation',
       description: 'Conditions d’utilisation de costsimulators.com : usage gratuit à titre personnel et commercial, service fourni en l’état, code source ouvert sous licence MIT.'
     }
   },
@@ -115,7 +115,7 @@ module.exports = {
     meetings: {
       name: 'Coût d’une réunion',
       heading: 'Calculateur de coût de réunion',
-      title: 'Calculateur de coût de réunion – combien coûte une réunion ? | costsimulators.com',
+      title: 'Calculateur de coût de réunion – combien coûte une réunion ?',
       description: 'Calculateur gratuit du coût d’une réunion avec chronomètre en direct. Saisissez le taux horaire et le nombre de participants, et voyez ce que coûte la réunion, seconde après seconde.',
       card: 'Regardez le prix d’une réunion grimper en temps réel pendant que vous parlez.',
       tag: 'Chronomètre',
@@ -189,7 +189,7 @@ module.exports = {
     workhours: {
       name: 'Heures de travail',
       heading: 'Calculateur du prix en heures de travail',
-      title: 'Prix en heures de travail – combien d’heures pour se l’offrir ? | costsimulators.com',
+      title: 'Convertir un prix en heures de travail',
       description: 'Convertissez n’importe quel prix en heures, jours et semaines de travail. Indiquez votre salaire horaire, mensuel ou annuel et voyez ce qu’un achat coûte vraiment en temps de travail.',
       card: 'Convertissez un prix en heures, jours et semaines de travail nécessaires pour le payer.',
       tag: 'Travail',
@@ -275,7 +275,7 @@ module.exports = {
     coffee: {
       name: 'Budget café',
       heading: 'Calculateur du budget café',
-      title: 'Calculateur budget café – combien coûte votre café par an ? | costsimulators.com',
+      title: 'Calculateur budget café – combien coûte votre café par an ?',
       description: 'Découvrez ce que votre café quotidien vous coûte par mois et sur 1, 5 et 10 ans. Indiquez le prix d’un café et le nombre de cafés par semaine – gratuit et privé.',
       card: 'Voyez ce que votre café quotidien représente sur un, cinq et dix ans.',
       tag: 'Habitude',
@@ -335,7 +335,7 @@ module.exports = {
     smoking: {
       name: 'Coût du tabac',
       heading: 'Calculateur du coût du tabac',
-      title: 'Calculateur coût du tabac – combien coûte la cigarette par an ? | costsimulators.com',
+      title: 'Calculateur coût du tabac – combien coûte la cigarette ?',
       description: 'Découvrez combien le tabac vous coûte par mois et sur 1, 5 et 10 ans – et combien vous économisez en arrêtant de fumer. Indiquez le prix du paquet et les cigarettes par jour.',
       card: 'Découvrez combien d’argent part en fumée chaque mois et au fil des ans.',
       tag: 'Habitude',
@@ -402,7 +402,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonnements',
       heading: 'Calculateur d’abonnements',
-      title: 'Calculateur d’abonnements – total par mois et par an | costsimulators.com',
+      title: 'Calculateur d’abonnements – total par mois et par an',
       description: 'Additionnez streaming, salle de sport, forfait mobile et tous vos autres abonnements. Voyez le total par mois, par an et sur 10 ans, et l’abonnement qui vous coûte le plus cher.',
       card: 'Additionnez streaming, salle de sport et tous vos prélèvements réguliers au même endroit.',
       tag: 'Budget',
@@ -479,7 +479,7 @@ module.exports = {
     electricity: {
       name: 'Coût de l’électricité',
       heading: 'Calculateur de consommation électrique',
-      title: 'Calcul consommation électrique – combien coûte un appareil ? | costsimulators.com',
+      title: 'Calcul consommation électrique – combien coûte un appareil ?',
       description: 'Calculez ce que coûte un appareil par jour, par mois et par an selon sa puissance, sa durée d’utilisation et le prix du kWh. Calculateur de consommation électrique gratuit.',
       card: 'Voyez ce que coûte un appareil allumé par jour, par mois et par an.',
       tag: 'Maison',
@@ -559,7 +559,7 @@ module.exports = {
     trip: {
       name: 'Coût d’un trajet',
       heading: 'Calculateur du coût de carburant d’un trajet',
-      title: 'Calcul coût trajet essence – budget carburant et domicile-travail | costsimulators.com',
+      title: 'Calcul du coût d’un trajet en voiture – budget carburant',
       description: 'Calculez le coût en carburant d’un trajet ou de vos trajets domicile-travail et partagez-le entre passagers. Fonctionne en kilomètres et litres ou en miles et gallons.',
       card: 'Calculez le coût en carburant d’un trajet et partagez-le avec vos passagers.',
       tag: 'Déplacements',

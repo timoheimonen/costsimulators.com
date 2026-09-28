@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Kalkulačky nákladů zdarma pro každý den | costsimulators.com',
+    title: 'Kalkulačky nákladů zdarma pro každý den',
     description: 'Bezplatné a soukromé kalkulačky, které ukážou, kolik věci doopravdy stojí: porady, hodiny práce, káva, kouření, předplatné, elektřina a benzín. Bez registrace, přímo v prohlížeči.',
     eyebrow: 'Zdarma · Soukromě · Okamžitě',
     heading: 'Malé nástroje na každodenní otázky kolem <span class="accent-text">peněz</span>.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Stránka nenalezena | costsimulators.com',
+    title: 'Stránka nenalezena',
     description: 'Stránka, kterou hledáte, neexistuje.',
     heading: 'Tato stránka neexistuje.',
     lead: 'Adresa může obsahovat překlep, nebo se stránka přesunula. Všechny kalkulačky najdete na úvodní stránce.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'O projektu',
-      title: 'O projektu – bezplatné a soukromé kalkulačky nákladů | costsimulators.com',
+      title: 'O projektu – bezplatné a soukromé kalkulačky nákladů',
       description: 'Kdo stojí za costsimulators.com a jak kalkulačky fungují. Bezplatné a soukromé kalkulačky nákladů na porady, hodiny práce, zvyky, předplatné, elektřinu a cesty.'
     },
     privacy: {
       name: 'Zásady ochrany osobních údajů',
-      title: 'Zásady ochrany osobních údajů | costsimulators.com',
+      title: 'Zásady ochrany osobních údajů',
       description: 'Jak costsimulators.com nakládá s vašimi údaji: výpočty probíhají ve vašem prohlížeči, bez sledování, bez analytiky a bez uživatelských účtů.'
     },
     terms: {
       name: 'Podmínky použití',
-      title: 'Podmínky použití | costsimulators.com',
+      title: 'Podmínky použití',
       description: 'Podmínky použití costsimulators.com: zdarma pro osobní i komerční účely, poskytováno tak, jak je, s otevřeným zdrojovým kódem pod licencí MIT.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Cena porady',
       heading: 'Kalkulačka nákladů na poradu',
-      title: 'Kalkulačka nákladů na poradu – kolik stojí porada v reálném čase | costsimulators.com',
+      title: 'Kalkulačka nákladů na poradu – kolik stojí porada',
       description: 'Bezplatná kalkulačka nákladů na poradu s živým časovačem. Zadejte hodinovou sazbu a počet účastníků a sledujte, kolik porada stojí, sekundu po sekundě.',
       card: 'Sledujte, jak cena porady roste v reálném čase, zatímco mluvíte.',
       tag: 'Živý časovač',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Hodiny práce',
       heading: 'Kalkulačka ceny v hodinách práce',
-      title: 'Přepočet ceny na hodiny práce – kolik hodin na to musím odpracovat | costsimulators.com',
+      title: 'Přepočet ceny na hodiny práce – kolik musím odpracovat',
       description: 'Převeďte jakoukoli cenu na hodiny, dny a týdny práce. Zadejte hodinovou, měsíční nebo roční mzdu a zjistěte, kolik pracovního času vás nákup doopravdy stojí.',
       card: 'Převeďte jakoukoli cenu na hodiny, dny a týdny, které na ni musíte odpracovat.',
       tag: 'Práce',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Cena kávy',
       heading: 'Kalkulačka ceny kávy',
-      title: 'Kalkulačka ceny kávy – kolik utratíte za kávu za rok | costsimulators.com',
+      title: 'Kalkulačka ceny kávy – kolik utratíte za kávu za rok',
       description: 'Zjistěte, kolik vás denní káva stojí měsíčně a za 1, 5 a 10 let. Zadejte cenu jednoho šálku a počet šálků týdně – zdarma a soukromě.',
       card: 'Podívejte se, na kolik vás denní šálek kávy vyjde za rok, pět a deset let.',
       tag: 'Zvyk',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Cena kouření',
       heading: 'Kalkulačka nákladů na kouření',
-      title: 'Kalkulačka kouření – kolik stojí cigarety a kolik ušetříte | costsimulators.com',
+      title: 'Kalkulačka kouření – kolik stojí cigarety a kolik ušetříte',
       description: 'Spočítejte, kolik vás kouření stojí měsíčně a za 1, 5 a 10 let – a kolik ušetříte, když přestanete. Zadejte cenu krabičky a počet cigaret denně.',
       card: 'Zjistěte, kolik peněz vám každý měsíc a v průběhu let doslova shoří.',
       tag: 'Zvyk',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Předplatné',
       heading: 'Kalkulačka předplatného',
-      title: 'Kalkulačka předplatného – kolik platíte měsíčně a ročně | costsimulators.com',
+      title: 'Kalkulačka předplatného – kolik platíte měsíčně a ročně',
       description: 'Sečtěte streamovací služby, posilovnu, mobilní tarif a všechna další předplatná. Uvidíte součet za měsíc, rok i 10 let a které předplatné je nejdražší.',
       card: 'Sečtěte streaming, posilovnu a všechny další pravidelné platby na jednom místě.',
       tag: 'Rozpočet',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Cena elektřiny',
       heading: 'Kalkulačka spotřeby elektřiny',
-      title: 'Kalkulačka spotřeby elektřiny – kolik stojí provoz spotřebiče | costsimulators.com',
+      title: 'Kalkulačka spotřeby elektřiny – cena provozu spotřebiče',
       description: 'Spočítejte, kolik stojí provoz spotřebiče za den, měsíc a rok podle jeho příkonu, doby používání a ceny elektřiny. Bezplatná kalkulačka ceny za kWh.',
       card: 'Podívejte se, kolik stojí nechat spotřebič zapnutý – za den, měsíc i rok.',
       tag: 'Domácnost',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Cena cesty',
       heading: 'Kalkulačka nákladů na palivo',
-      title: 'Kalkulačka nákladů na benzín – kolik stojí cesta autem a dojíždění | costsimulators.com',
+      title: 'Kalkulačka nákladů na benzín – cesta autem a dojíždění',
       description: 'Spočítejte náklady na palivo za cestu nebo každodenní dojíždění a rozdělte je mezi spolucestující. Funguje v kilometrech a litrech i v mílích a galonech.',
       card: 'Spočítejte náklady na palivo za cestu nebo dojíždění a rozdělte je s ostatními.',
       tag: 'Cestování',

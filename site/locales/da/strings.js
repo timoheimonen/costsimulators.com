@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Gratis beregnere til hverdagens udgifter | costsimulators.com',
+    title: 'Gratis beregnere til hverdagens udgifter',
     description: 'Gratis og private beregnere, der viser, hvad ting reelt koster: møder, arbejdstimer, kaffe, rygning, abonnementer, el og brændstof. Uden login – alt kører i din browser.',
     eyebrow: 'Gratis · Privat · Lynhurtigt',
     heading: 'Små værktøjer til hverdagens <span class="accent-text">penge</span>spørgsmål.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Siden findes ikke | costsimulators.com',
+    title: 'Siden findes ikke',
     description: 'Den side, du leder efter, findes ikke.',
     heading: 'Denne side findes ikke.',
     lead: 'Adressen kan være skrevet forkert, eller siden er flyttet. Alle beregnere finder du på forsiden.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Om siden',
-      title: 'Om costsimulators.com – gratis og private beregnere | costsimulators.com',
+      title: 'Om costsimulators.com – gratis og private beregnere',
       description: 'Hvem står bag costsimulators.com, og hvordan virker beregnerne? Gratis og private beregnere til møder, arbejdstid, vaner, abonnementer, elforbrug og kørsel.'
     },
     privacy: {
       name: 'Privatlivspolitik',
-      title: 'Privatlivspolitik | costsimulators.com',
+      title: 'Privatlivspolitik',
       description: 'Sådan behandler costsimulators.com dine data: beregningerne foregår i din browser – ingen sporing, ingen webanalyse og ingen brugerkonti.'
     },
     terms: {
       name: 'Brugsvilkår',
-      title: 'Brugsvilkår | costsimulators.com',
+      title: 'Brugsvilkår',
       description: 'Brugsvilkår for costsimulators.com: gratis til både privat og kommerciel brug, leveres som den er og har åben kildekode under MIT-licensen.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Mødets pris',
       heading: 'Mødeberegner',
-      title: 'Mødeberegner – hvad koster et møde? Se prisen live | costsimulators.com',
+      title: 'Mødeberegner – hvad koster et møde? Se prisen live',
       description: 'Gratis mødeberegner med live-timer. Indtast timeprisen og antallet af deltagere, og se, hvad mødet koster – sekund for sekund.',
       card: 'Se prisen på et møde tikke op i realtid, mens I taler.',
       tag: 'Live-timer',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Arbejdstimer',
       heading: 'Prisen i arbejdstimer',
-      title: 'Pris i arbejdstimer – hvor længe skal du arbejde for det? | costsimulators.com',
+      title: 'Pris i arbejdstimer – hvor længe skal du arbejde for det?',
       description: 'Omregn enhver pris til de timer, dage og uger, du skal arbejde for den. Indtast din time-, måneds- eller årsløn, og se, hvad et køb reelt koster i arbejdstid.',
       card: 'Se, hvor mange timer, dage og uger du skal arbejde for at have råd til noget.',
       tag: 'Arbejde',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Kaffevanen',
       heading: 'Kaffeberegner',
-      title: 'Kaffeberegner – hvad koster din kaffe om året? | costsimulators.com',
+      title: 'Kaffeberegner – hvad koster din kaffe om året?',
       description: 'Se, hvad din daglige kaffe koster om måneden og over 1, 5 og 10 år. Indtast prisen pr. kop og antal kopper om ugen – gratis og privat.',
       card: 'Se, hvad din daglige kop kaffe løber op i over et, fem og ti år.',
       tag: 'Vane',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Rygningens pris',
       heading: 'Rygeberegner',
-      title: 'Rygeberegner – hvad koster det at ryge? | costsimulators.com',
+      title: 'Rygeberegner – hvad koster det at ryge?',
       description: 'Find ud af, hvad rygning koster om måneden og over 1, 5 og 10 år – og hvor meget du sparer ved at stoppe. Indtast pakkeprisen og cigaretter om dagen.',
       card: 'Se, hvor mange penge der går op i røg hver måned og gennem årene.',
       tag: 'Vane',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Abonnementer',
       heading: 'Abonnementsberegner',
-      title: 'Abonnementsberegner – samlet pris pr. måned og år | costsimulators.com',
+      title: 'Abonnementsberegner – samlet pris pr. måned og år',
       description: 'Læg streaming, fitnesscenter, mobil og alle andre abonnementer sammen. Se den samlede pris pr. måned, pr. år og over 10 år – og hvilket abonnement der koster mest.',
       card: 'Læg streaming, fitness og alle andre faste betalinger sammen ét sted.',
       tag: 'Budget',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Elforbrug',
       heading: 'Elforbrugsberegner',
-      title: 'Beregn elforbrug – hvad koster strømmen til dit apparat? | costsimulators.com',
+      title: 'Beregn elforbrug – hvad koster strømmen til dit apparat?',
       description: 'Beregn, hvad et apparat koster i strøm pr. dag, måned og år ud fra watt, brugstid og elpris. Gratis beregner til elforbrug og pris pr. kWh.',
       card: 'Se, hvad det koster at have et apparat tændt pr. dag, måned og år.',
       tag: 'Hjem',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Turens pris',
       heading: 'Brændstofberegner',
-      title: 'Benzinberegner – beregn benzinudgifter til tur og pendling | costsimulators.com',
+      title: 'Benzinberegner – beregn benzinudgifter til tur og pendling',
       description: 'Beregn brændstofudgiften til en tur eller den daglige pendling, og del den mellem passagererne. Virker med kilometer og liter eller miles og gallons.',
       card: 'Regn ud, hvad en tur eller din pendling koster i brændstof, og del udgiften med andre.',
       tag: 'Transport',

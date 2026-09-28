@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Darmowe kalkulatory kosztów na co dzień | costsimulators.com',
+    title: 'Darmowe kalkulatory kosztów na co dzień',
     description: 'Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, kawa, palenie, subskrypcje, prąd i paliwo oraz ile godzin pracy kosztuje zakup. Bez rejestracji, w przeglądarce.',
     eyebrow: 'Za darmo · Prywatnie · Od razu',
     heading: 'Małe narzędzia na codzienne pytania o <span class="accent-text">pieniądze</span>.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Nie znaleziono strony | costsimulators.com',
+    title: 'Nie znaleziono strony',
     description: 'Strona, której szukasz, nie istnieje.',
     heading: 'Ta strona nie istnieje.',
     lead: 'Adres mógł zostać błędnie wpisany albo strona została przeniesiona. Wszystkie kalkulatory znajdziesz na stronie głównej.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'O serwisie',
-      title: 'O serwisie – darmowe i prywatne kalkulatory kosztów | costsimulators.com',
+      title: 'O serwisie – darmowe i prywatne kalkulatory kosztów',
       description: 'Kto tworzy costsimulators.com i jak działają kalkulatory. Darmowe, prywatne kalkulatory kosztów spotkań, czasu pracy, nawyków, subskrypcji, prądu i podróży.'
     },
     privacy: {
       name: 'Polityka prywatności',
-      title: 'Polityka prywatności | costsimulators.com',
+      title: 'Polityka prywatności',
       description: 'Jak costsimulators.com traktuje Twoje dane: obliczenia odbywają się w przeglądarce, bez śledzenia, bez narzędzi analitycznych i bez kont użytkowników.'
     },
     terms: {
       name: 'Warunki korzystania',
-      title: 'Warunki korzystania | costsimulators.com',
+      title: 'Warunki korzystania',
       description: 'Warunki korzystania z costsimulators.com: bezpłatnie do użytku prywatnego i komercyjnego, bez gwarancji („tak jak jest”), otwarty kod źródłowy na licencji MIT.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Koszt spotkania',
       heading: 'Kalkulator kosztów spotkania',
-      title: 'Kalkulator kosztów spotkania – ile kosztuje spotkanie? | costsimulators.com',
+      title: 'Kalkulator kosztów spotkania – ile kosztuje spotkanie?',
       description: 'Darmowy kalkulator kosztów spotkania z licznikiem na żywo. Wpisz stawkę godzinową i liczbę uczestników, a zobaczysz, ile kosztuje spotkanie – sekunda po sekundzie.',
       card: 'Zobacz, jak koszt spotkania rośnie na żywo, gdy rozmawiacie.',
       tag: 'Na żywo',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Godziny pracy',
       heading: 'Kalkulator ceny w godzinach pracy',
-      title: 'Cena w godzinach pracy – ile trzeba pracować na zakup? | costsimulators.com',
+      title: 'Cena w godzinach pracy – ile trzeba pracować na zakup?',
       description: 'Przelicz dowolną cenę na godziny, dni i tygodnie pracy. Podaj stawkę godzinową, pensję miesięczną lub roczną i zobacz, ile naprawdę kosztuje zakup w czasie pracy.',
       card: 'Przelicz dowolną cenę na godziny, dni i tygodnie, które musisz na nią przepracować.',
       tag: 'Praca',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Koszt kawy',
       heading: 'Kalkulator kosztów kawy',
-      title: 'Kalkulator kosztów kawy – ile wydajesz na kawę rocznie? | costsimulators.com',
+      title: 'Kalkulator kosztów kawy – ile wydajesz na kawę rocznie?',
       description: 'Sprawdź, ile kosztuje Cię codzienna kawa miesięcznie oraz w ciągu 1, 5 i 10 lat. Wpisz cenę kawy i liczbę kaw w tygodniu – za darmo i prywatnie.',
       card: 'Zobacz, ile kosztuje codzienna kawa w ciągu roku, pięciu i dziesięciu lat.',
       tag: 'Nawyk',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Koszt palenia',
       heading: 'Kalkulator kosztów palenia',
-      title: 'Kalkulator kosztów palenia – ile kosztują papierosy? | costsimulators.com',
+      title: 'Kalkulator kosztów palenia – ile kosztują papierosy?',
       description: 'Sprawdź, ile kosztuje palenie miesięcznie oraz w ciągu 1, 5 i 10 lat – i ile zaoszczędzisz, rzucając palenie. Wpisz cenę paczki i liczbę papierosów dziennie.',
       card: 'Zobacz, ile pieniędzy idzie z dymem co miesiąc i przez lata.',
       tag: 'Nawyk',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Subskrypcje',
       heading: 'Kalkulator kosztów subskrypcji',
-      title: 'Kalkulator subskrypcji – ile płacisz miesięcznie i rocznie? | costsimulators.com',
+      title: 'Kalkulator subskrypcji – ile płacisz miesięcznie i rocznie?',
       description: 'Zsumuj streaming, siłownię, abonament telefoniczny i inne subskrypcje. Zobacz łączny koszt miesięcznie, rocznie i przez 10 lat oraz to, która subskrypcja kosztuje najwięcej.',
       card: 'Zsumuj streaming, siłownię i wszystkie inne stałe opłaty w jednym miejscu.',
       tag: 'Budżet',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Koszt prądu',
       heading: 'Kalkulator zużycia prądu',
-      title: 'Kalkulator zużycia prądu – ile kosztuje praca urządzenia? | costsimulators.com',
+      title: 'Kalkulator zużycia prądu – ile kosztuje praca urządzenia?',
       description: 'Oblicz, ile kosztuje praca urządzenia dziennie, miesięcznie i rocznie na podstawie mocy, czasu użytkowania i ceny prądu. Darmowy kalkulator zużycia energii i kosztu kWh.',
       card: 'Zobacz, ile kosztuje używanie urządzenia dziennie, miesięcznie i rocznie.',
       tag: 'Dom',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Koszt przejazdu',
       heading: 'Kalkulator kosztów paliwa',
-      title: 'Kalkulator kosztów paliwa – koszt przejazdu i dojazdów | costsimulators.com',
+      title: 'Kalkulator kosztów paliwa – koszt przejazdu i dojazdów',
       description: 'Oblicz koszt paliwa na trasę lub codzienne dojazdy do pracy i podziel go między pasażerów. Działa w kilometrach i litrach albo w milach i galonach.',
       card: 'Oblicz koszt paliwa na podróż lub dojazd do pracy i podziel go z innymi.',
       tag: 'Podróże',

@@ -70,7 +70,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Free Cost Calculators for Everyday Life | costsimulators.com',
+    title: 'Free Cost Calculators for Everyday Life',
     description: 'Free, private calculators that show what things really cost: meetings, work hours, coffee, smoking, subscriptions, electricity and fuel. No sign-up, runs in your browser.',
     eyebrow: 'Free · Private · Instant',
     heading: 'Small tools for everyday <span class="accent-text">money</span> questions.',
@@ -100,7 +100,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Page not found | costsimulators.com',
+    title: 'Page not found',
     description: 'The page you were looking for does not exist.',
     heading: 'This page does not exist.',
     lead: 'The address may be mistyped, or the page has moved. All calculators are on the front page.'
@@ -114,12 +114,12 @@ module.exports = {
     },
     privacy: {
       name: 'Privacy policy',
-      title: 'Privacy Policy | costsimulators.com',
+      title: 'Privacy Policy',
       description: 'How costsimulators.com handles your data: calculations run in your browser, no tracking, no analytics and no accounts.'
     },
     terms: {
       name: 'Terms of use',
-      title: 'Terms of Use | costsimulators.com',
+      title: 'Terms of Use',
       description: 'Terms of use for costsimulators.com: free to use for personal and commercial purposes, provided as is, with open source code under the MIT License.'
     }
   },
@@ -128,7 +128,7 @@ module.exports = {
     meetings: {
       name: 'Meeting cost',
       heading: 'Meeting cost calculator',
-      title: 'Meeting Cost Calculator – Live Meeting Timer | costsimulators.com',
+      title: 'Meeting Cost Calculator – Live Meeting Timer',
       description: 'Free meeting cost calculator with a live timer. Enter the hourly rate and number of participants and watch what the meeting costs, second by second.',
       card: 'Watch the price of a meeting tick up in real time while you talk.',
       tag: 'Live timer',
@@ -202,7 +202,7 @@ module.exports = {
     workhours: {
       name: 'Work hours',
       heading: 'Price in work hours calculator',
-      title: 'Price in Work Hours Calculator – How Long to Work for It | costsimulators.com',
+      title: 'Price in Work Hours Calculator – How Long to Work for It',
       description: 'Turn any price into the hours, days and weeks of work it takes. Enter your hourly, monthly or yearly pay and see what a purchase really costs in work time.',
       card: 'Turn any price into the hours, days and weeks you need to work for it.',
       tag: 'Work',
@@ -288,7 +288,7 @@ module.exports = {
     coffee: {
       name: 'Coffee habit',
       heading: 'Coffee cost calculator',
-      title: 'Coffee Cost Calculator – What Your Coffee Habit Costs | costsimulators.com',
+      title: 'Coffee Cost Calculator – What Your Coffee Habit Costs',
       description: 'See what your daily coffee costs per month and over 1, 5 and 10 years. Enter the price per cup and cups per week – free and private.',
       card: 'See what your daily cup adds up to over one, five and ten years.',
       tag: 'Habit',
@@ -348,7 +348,7 @@ module.exports = {
     smoking: {
       name: 'Smoking cost',
       heading: 'Smoking cost calculator',
-      title: 'Smoking Cost Calculator – What Cigarettes Cost You | costsimulators.com',
+      title: 'Smoking Cost Calculator – What Cigarettes Cost You',
       description: 'Find out how much smoking costs per month and over 1, 5 and 10 years – and how much you save by quitting. Enter pack price and cigarettes per day.',
       card: 'Find out how much money goes up in smoke each month and over the years.',
       tag: 'Habit',
@@ -415,7 +415,7 @@ module.exports = {
     subscriptions: {
       name: 'Subscriptions',
       heading: 'Subscription cost calculator',
-      title: 'Subscription Cost Calculator – Monthly & Yearly Total | costsimulators.com',
+      title: 'Subscription Cost Calculator – Monthly & Yearly Total',
       description: 'Add up streaming, gym, phone and every other subscription. See your total per month, per year and over 10 years, and which subscription costs the most.',
       card: 'Add up streaming, gym and every other recurring payment in one place.',
       tag: 'Budget',
@@ -492,7 +492,7 @@ module.exports = {
     electricity: {
       name: 'Electricity cost',
       heading: 'Electricity cost calculator',
-      title: 'Electricity Cost Calculator – Appliance Running Cost | costsimulators.com',
+      title: 'Electricity Cost Calculator – Appliance Running Cost',
       description: 'Calculate what a device costs to run per day, month and year from its wattage, hours of use and electricity price. Free kWh cost calculator.',
       card: 'See what keeping a device switched on costs per day, month and year.',
       tag: 'Home',
@@ -572,7 +572,7 @@ module.exports = {
     trip: {
       name: 'Trip cost',
       heading: 'Trip fuel cost calculator',
-      title: 'Trip Fuel Cost Calculator – Gas Cost per Trip & Commute | costsimulators.com',
+      title: 'Trip Fuel Cost Calculator – Gas Cost per Trip & Commute',
       description: 'Calculate the fuel cost of a trip or daily commute and split it between passengers. Works in miles and gallons or kilometers and liters.',
       card: 'Work out the fuel cost of a trip or commute and split it with others.',
       tag: 'Travel',

@@ -92,6 +92,24 @@ function jsonLd(data) {
   return `    <script type="application/ld+json">\n${indent(json, 4)}\n    </script>`;
 }
 
+// Search results show roughly the first 60 characters of a title; Chinese,
+// Japanese and Korean characters are about twice as wide. Titles in the
+// language files leave out the site name, which is added when it still fits.
+const TITLE_MAX_WIDTH = 65;
+const TITLE_SUFFIX = ` | ${SITE_NAME}`;
+
+function textWidth(text) {
+  return [...String(text)].reduce((width, char) => (
+    width + (/[\u1100-\u11ff\u2e80-\u9fff\uac00-\ud7af\uf900-\ufaff\uff00-\uffef]/.test(char) ? 2 : 1)
+  ), 0);
+}
+
+function pageTitle(title) {
+  if (title.includes(SITE_NAME)) return title;
+  const full = title + TITLE_SUFFIX;
+  return textWidth(full) <= TITLE_MAX_WIDTH ? full : title;
+}
+
 function lookup(object, key) {
   return key.split('.').reduce((value, part) => (value == null ? undefined : value[part]), object);
 }
@@ -168,7 +186,7 @@ function renderHead(locales, locale, page, strings) {
   const meta = locale.strings.meta;
   const indexable = !page.file;
   const canonical = pageUrl(lang, page);
-  const title = escapeHtml(strings.title);
+  const title = escapeHtml(pageTitle(strings.title));
   const description = escapeHtml(strings.description);
   const image = `${ORIGIN}${pagePath(lang, PAGES[0])}og-image.png`;
   const lines = [
@@ -587,5 +605,5 @@ if (require.main === module) {
 
 module.exports = {
   LANGUAGES, TOOLS, DOCUMENTS, PAGES, ORIGIN,
-  buildSite, languageTag, loadLocale, pagePath, pageUrl, readIcon, render
+  buildSite, languageTag, loadLocale, pagePath, pageTitle, pageUrl, readIcon, render, textWidth
 };

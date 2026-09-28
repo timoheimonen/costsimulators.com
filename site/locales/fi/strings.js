@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Ilmaiset kustannuslaskurit arkeen | costsimulators.com',
+    title: 'Ilmaiset kustannuslaskurit arkeen',
     description: 'Ilmaiset ja yksityiset laskurit, jotka näyttävät, mitä asiat oikeasti maksavat: kokoukset, työtunnit, kahvi, tupakointi, tilaukset, sähkö ja polttoaine. Ei rekisteröitymistä.',
     eyebrow: 'Ilmainen · Yksityinen · Heti',
     heading: 'Pieniä työkaluja arjen <span class="accent-text">raha</span>kysymyksiin.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Sivua ei löytynyt | costsimulators.com',
+    title: 'Sivua ei löytynyt',
     description: 'Etsimääsi sivua ei ole olemassa.',
     heading: 'Tätä sivua ei ole olemassa.',
     lead: 'Osoitteessa voi olla kirjoitusvirhe, tai sivu on siirtynyt. Kaikki laskurit löytyvät etusivulta.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Tietoa',
-      title: 'Tietoa costsimulators.comista – ilmaiset ja yksityiset laskurit',
+      title: 'Tietoa costsimulators.comista – ilmaiset laskurit',
       description: 'Kuka tekee costsimulators.comin ja miten laskurit toimivat. Ilmaiset ja yksityiset laskurit kokouksille, työtunneille, tavoille, tilauksille, sähkölle ja matkoille.'
     },
     privacy: {
       name: 'Tietosuojaseloste',
-      title: 'Tietosuojaseloste | costsimulators.com',
+      title: 'Tietosuojaseloste',
       description: 'Miten costsimulators.com käsittelee tietojasi: laskut tehdään selaimessasi, ei seurantaa, ei analytiikkaa eikä käyttäjätilejä.'
     },
     terms: {
       name: 'Käyttöehdot',
-      title: 'Käyttöehdot | costsimulators.com',
+      title: 'Käyttöehdot',
       description: 'costsimulators.comin käyttöehdot: vapaasti käytettävissä henkilökohtaiseen ja kaupalliseen käyttöön, tarjotaan sellaisenaan, avoin lähdekoodi MIT-lisenssillä.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Kokouksen hinta',
       heading: 'Kokouksen hintalaskuri',
-      title: 'Kokouksen hintalaskuri – palaverin kustannukset reaaliajassa | costsimulators.com',
+      title: 'Kokouksen hintalaskuri – palaverin kustannukset reaaliajassa',
       description: 'Ilmainen kokouslaskuri ajastimella. Syötä tuntihinta ja osallistujien määrä ja näe, mitä palaveri maksaa sekunti sekunnilta.',
       card: 'Katso, miten palaverin hinta kasvaa reaaliajassa puhuessanne.',
       tag: 'Ajastin',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Työtunnit',
       heading: 'Hinta työtunteina -laskuri',
-      title: 'Hinta työtunteina – montako tuntia pitää tehdä töitä? | costsimulators.com',
+      title: 'Hinta työtunteina – montako tuntia pitää tehdä töitä?',
       description: 'Muuta mikä tahansa hinta työtunneiksi, -päiviksi ja -viikoiksi. Syötä tunti-, kuukausi- tai vuosipalkkasi ja näe, mitä ostos oikeasti maksaa työaikana.',
       card: 'Muuta mikä tahansa hinta tunneiksi, päiviksi ja viikoiksi, jotka sen eteen pitää tehdä töitä.',
       tag: 'Työ',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Kahvin hinta',
       heading: 'Kahvilaskuri',
-      title: 'Kahvilaskuri – paljonko kahvi maksaa vuodessa? | costsimulators.com',
+      title: 'Kahvilaskuri – paljonko kahvi maksaa vuodessa?',
       description: 'Katso, mitä päivittäinen kahvisi maksaa kuukaudessa sekä 1, 5 ja 10 vuodessa. Syötä kupin hinta ja kupit viikossa – ilmainen ja yksityinen.',
       card: 'Katso, mitä päivän kahvikuppi maksaa vuodessa, viidessä ja kymmenessä vuodessa.',
       tag: 'Tapa',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Tupakoinnin hinta',
       heading: 'Tupakkalaskuri',
-      title: 'Tupakkalaskuri – paljonko tupakointi maksaa? | costsimulators.com',
+      title: 'Tupakkalaskuri – paljonko tupakointi maksaa?',
       description: 'Laske, paljonko tupakointi maksaa kuukaudessa sekä 1, 5 ja 10 vuodessa – ja paljonko säästät lopettamalla. Syötä askin hinta ja savukkeet päivässä.',
       card: 'Katso, paljonko rahaa menee savuna ilmaan kuukaudessa ja vuosien mittaan.',
       tag: 'Tapa',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Tilaukset',
       heading: 'Tilausten ja kuukausimaksujen laskuri',
-      title: 'Tilauslaskuri – kuukausimaksujen yhteishinta vuodessa | costsimulators.com',
+      title: 'Tilauslaskuri – kuukausimaksujen yhteishinta vuodessa',
       description: 'Laske yhteen suoratoistopalvelut, kuntosali, puhelinliittymä ja muut kuukausimaksut. Näe kokonaishinta kuukaudessa, vuodessa ja 10 vuodessa sekä kallein tilaus.',
       card: 'Laske suoratoisto, kuntosali ja kaikki muut toistuvat maksut yhteen.',
       tag: 'Budjetti',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Sähkön hinta',
       heading: 'Sähkönkulutuslaskuri',
-      title: 'Sähkönkulutuslaskuri – paljonko laitteen käyttö maksaa? | costsimulators.com',
+      title: 'Sähkönkulutuslaskuri – paljonko laitteen käyttö maksaa?',
       description: 'Laske, mitä laitteen käyttö maksaa päivässä, kuukaudessa ja vuodessa tehon, käyttötuntien ja sähkön hinnan perusteella. Ilmainen kWh-laskuri.',
       card: 'Katso, mitä laitteen pitäminen päällä maksaa päivässä, kuukaudessa ja vuodessa.',
       tag: 'Koti',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Matkan hinta',
       heading: 'Matkan polttoainekululaskuri',
-      title: 'Polttoainelaskuri – matkan ja työmatkan bensakulut | costsimulators.com',
+      title: 'Polttoainelaskuri – matkan ja työmatkan bensakulut',
       description: 'Laske matkan tai työmatkan polttoainekulut ja jaa ne kyydissä olevien kesken. Toimii kilometreillä ja litroilla tai maileilla ja gallonoilla.',
       card: 'Laske matkan tai työmatkan polttoainekulut ja jaa ne muiden kanssa.',
       tag: 'Matkat',

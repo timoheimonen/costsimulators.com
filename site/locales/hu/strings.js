@@ -56,7 +56,7 @@ module.exports = {
   },
 
   home: {
-    title: 'Ingyenes költségkalkulátorok a mindennapokhoz | costsimulators.com',
+    title: 'Ingyenes költségkalkulátorok a mindennapokhoz',
     description: 'Ingyenes, privát kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok: meetingek, munkaórák, kávé, dohányzás, előfizetések, áram és benzin. Regisztráció nélkül, a böngésződben.',
     eyebrow: 'Ingyenes · Privát · Azonnali',
     heading: 'Kis eszközök a hétköznapi <span class="accent-text">pénz</span>ügyekhez.',
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   notFound: {
-    title: 'Az oldal nem található | costsimulators.com',
+    title: 'Az oldal nem található',
     description: 'A keresett oldal nem létezik.',
     heading: 'Ez az oldal nem létezik.',
     lead: 'Lehet, hogy elírtad a címet, vagy az oldal máshová költözött. Az összes kalkulátort megtalálod a főoldalon.'
@@ -95,17 +95,17 @@ module.exports = {
   documents: {
     about: {
       name: 'Az oldalról',
-      title: 'Az oldalról – ingyenes, privát költségkalkulátorok | costsimulators.com',
+      title: 'Az oldalról – ingyenes, privát költségkalkulátorok',
       description: 'Ki készíti a costsimulators.com-ot, és hogyan működnek a kalkulátorok. Ingyenes, privát költségkalkulátorok meetingekhez, munkaórákhoz, szokásokhoz, előfizetésekhez, áramhoz és utazáshoz.'
     },
     privacy: {
       name: 'Adatvédelmi tájékoztató',
-      title: 'Adatvédelmi tájékoztató | costsimulators.com',
+      title: 'Adatvédelmi tájékoztató',
       description: 'Hogyan kezeli a costsimulators.com az adataidat: a számítások a böngésződben futnak, nincs követés, nincs analitika, és nincsenek felhasználói fiókok.'
     },
     terms: {
       name: 'Felhasználási feltételek',
-      title: 'Felhasználási feltételek | costsimulators.com',
+      title: 'Felhasználási feltételek',
       description: 'A costsimulators.com felhasználási feltételei: szabadon használható magán- és üzleti célra is, „ahogy van” alapon, nyílt forráskóddal, MIT-licenc alatt.'
     }
   },
@@ -114,7 +114,7 @@ module.exports = {
     meetings: {
       name: 'Meeting költsége',
       heading: 'Meetingköltség-kalkulátor',
-      title: 'Meetingköltség-kalkulátor – mennyibe kerül egy értekezlet? | costsimulators.com',
+      title: 'Meetingköltség-kalkulátor – mennyibe kerül egy értekezlet?',
       description: 'Ingyenes meetingköltség-kalkulátor élő időzítővel. Add meg az óradíjat és a résztvevők számát, és kövesd másodpercről másodpercre, mennyibe kerül a megbeszélés.',
       card: 'Kövesd élőben, ahogy percről percre nő egy meeting ára.',
       tag: 'Élő időzítő',
@@ -188,7 +188,7 @@ module.exports = {
     workhours: {
       name: 'Munkaórák',
       heading: 'Ár munkaórában',
-      title: 'Ár munkaórában – hány órát kell dolgoznod érte? | costsimulators.com',
+      title: 'Ár munkaórában – hány órát kell dolgoznod érte?',
       description: 'Váltsd át bármilyen árat munkaórákra, munkanapokra és munkahetekre. Add meg az órabéred, havi vagy éves fizetésed, és nézd meg, mennyi munkaidőbe kerül egy vásárlás.',
       card: 'Váltsd át bármilyen árat munkaórákra, munkanapokra és munkahetekre.',
       tag: 'Munka',
@@ -274,7 +274,7 @@ module.exports = {
     coffee: {
       name: 'Kávézás költsége',
       heading: 'Kávékalkulátor',
-      title: 'Kávékalkulátor – mennyibe kerül évente a napi kávé? | costsimulators.com',
+      title: 'Kávékalkulátor – mennyibe kerül évente a napi kávé?',
       description: 'Nézd meg, mennyibe kerül a napi kávéd havonta, valamint 1, 5 és 10 év alatt. Add meg egy csésze árát és a heti kávék számát – ingyenes és privát.',
       card: 'Mennyibe kerül a napi kávéd egy, öt és tíz év alatt? Itt kiderül.',
       tag: 'Szokás',
@@ -334,7 +334,7 @@ module.exports = {
     smoking: {
       name: 'Dohányzás költsége',
       heading: 'Cigarettakalkulátor',
-      title: 'Cigarettakalkulátor – mennyibe kerül a dohányzás? | costsimulators.com',
+      title: 'Cigarettakalkulátor – mennyibe kerül a dohányzás?',
       description: 'Számold ki, mennyibe kerül a dohányzás havonta, valamint 1, 5 és 10 év alatt – és mennyit spórolsz, ha leszoksz. Add meg a doboz árát és a napi szálak számát.',
       card: 'Tudd meg, mennyi pénz megy füstbe havonta és az évek során.',
       tag: 'Szokás',
@@ -401,7 +401,7 @@ module.exports = {
     subscriptions: {
       name: 'Előfizetések',
       heading: 'Előfizetés-kalkulátor',
-      title: 'Előfizetés-kalkulátor – havi és éves díjak összesítve | costsimulators.com',
+      title: 'Előfizetés-kalkulátor – havi és éves díjak összesítve',
       description: 'Add össze a streaminget, az edzőtermet, a mobilt és minden más előfizetést. Nézd meg a havi, éves és 10 éves végösszeget, és azt, hogy melyik előfizetés a legdrágább.',
       card: 'Add össze a streaminget, az edzőtermet és minden más rendszeres kiadást egy helyen.',
       tag: 'Költségvetés',
@@ -478,7 +478,7 @@ module.exports = {
     electricity: {
       name: 'Áramköltség',
       heading: 'Áramfogyasztás-kalkulátor',
-      title: 'Áramfogyasztás-kalkulátor – mennyibe kerül egy készülék? | costsimulators.com',
+      title: 'Áramfogyasztás-kalkulátor – mennyibe kerül egy készülék?',
       description: 'Számold ki, mennyibe kerül egy készülék működtetése naponta, havonta és évente a teljesítménye, a használati idő és az áramár alapján. Ingyenes kWh-kalkulátor.',
       card: 'Nézd meg, mennyibe kerül egy készülék bekapcsolva tartása naponta, havonta és évente.',
       tag: 'Otthon',
@@ -558,7 +558,7 @@ module.exports = {
     trip: {
       name: 'Útiköltség',
       heading: 'Útiköltség-kalkulátor',
-      title: 'Útiköltség-kalkulátor – benzinköltség utazáshoz és ingázáshoz | costsimulators.com',
+      title: 'Útiköltség-kalkulátor – benzinköltség utazáshoz, ingázáshoz',
       description: 'Számold ki egy utazás vagy a napi ingázás üzemanyagköltségét, és oszd el az utasok között. Kilométerrel és literrel, vagy mérfölddel és gallonnal is működik.',
       card: 'Számold ki egy út vagy az ingázás benzinköltségét, és oszd el a többiekkel.',
       tag: 'Utazás',
