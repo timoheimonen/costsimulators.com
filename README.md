@@ -27,14 +27,22 @@ number format, currency and typical default prices.
 
 Supported languages: English, Finnish (`/fi/`).
 
+Paths use lower-case codes; `<html lang>`, `hreflang`, the sitemap and structured data use the BCP 47
+tag where it differs (`zh-Hant` for a `/zh-hant/` path, set in `LANGUAGE_TAGS`).
+
 ### Adding a language
 
 1. Copy `site/locales/en/` to `site/locales/<code>/`, for example `site/locales/sv/` for Swedish.
 2. Translate `strings.js`, `about.html`, `privacy.html` and `terms.html`. In `strings.js`, also set
    `meta` (name, locale, currency, Open Graph locale), `money` and the local default prices (`value`
    and `quick`). Keep the keys the same; the tests check that every language has the same keys as English.
-3. Add the code to `LANGUAGES` in `scripts/build-site.js`.
-4. Run `npm run build`, `npm run images` and `npm test`.
+3. Set the numbers that depend on the currency (see the comment at the top of `site/locales/en/strings.js`):
+   `money.decimals` (0 for yen or forints), the `step` values of the +/− buttons, the electricity price
+   `divisor` (100 for cents, 1 for whole currency units) and `pulseEvery` for the meeting timer. Plural
+   strings need every form the language uses (`one`, `few`, `many`, `other`, ...).
+4. Add the code to `LANGUAGES` in `scripts/build-site.js`. If the BCP 47 tag differs from the lower-case
+   path code, also add it to `LANGUAGE_TAGS`.
+5. Run `npm run build`, `npm run images -- <code>` and `npm test`.
 
 ## Development
 
@@ -61,6 +69,9 @@ Playwright, which is not installed by default:
 npm install --no-save playwright && npx playwright install chromium && npm run images
 ```
 
+`npm run images -- de fr` renders only the images of those languages. Chinese, Japanese, Korean and
+Greek need fonts with those scripts, for example `fonts-noto-cjk` and `fonts-noto-core` on Linux.
+
 ## Project Structure
 
 - `CHANGELOG.md` - Changes by release date
@@ -75,7 +86,7 @@ npm install --no-save playwright && npx playwright install chromium && npm run i
 - `tests/` - Checks for the generated site (`npm test`)
 - `public/` - All production files and deployable assets
   - `index.html`, `<tool>/`, `about/`, `privacy/`, `terms/` - Generated English pages
-  - `fi/` - Generated Finnish pages
+  - `<lang>/` - Generated pages of the other languages, for example `fi/` or `zh-hant/`
   - `_redirects` - Permanent redirects from the old `.html` addresses
   - `css/` - Shared stylesheets
   - `js/` - Shared JavaScript modules

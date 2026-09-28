@@ -3,7 +3,8 @@
 // public/<lang>/og-image.png) from site/og-image.html, and the home screen
 // icon (public/apple-touch-icon.png) from public/favicon.svg.
 //
-//   npm run images
+//   npm run images          every language and the icon
+//   npm run images -- de fr  only these languages
 //
 // Needs Playwright with Chromium, which is not a dependency of the site:
 //   npm install --no-save playwright && npx playwright install chromium
@@ -50,8 +51,11 @@ async function main() {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
   const template = fs.readFileSync(path.join(repoRoot, 'site', 'og-image.html'), 'utf8');
+  const only = process.argv.slice(2);
+  const unknown = only.filter(lang => !LANGUAGES.includes(lang));
+  if (unknown.length) throw new Error(`Unknown language: ${unknown.join(', ')}`);
 
-  for (const lang of LANGUAGES) {
+  for (const lang of only.length ? only : LANGUAGES) {
     const locale = loadLocale(lang);
     const html = render(template, { ...locale.strings, lang: languageTag(lang), toolIcons: toolIcons() }, `${lang}/og-image.html`);
     await page.setContent(html);
@@ -60,11 +64,13 @@ async function main() {
     console.log(`Wrote ${path.relative(repoRoot, file)}`);
   }
 
-  const favicon = fs.readFileSync(path.join(publicDir, 'favicon.svg'), 'utf8').replace(' rx="8"', '');
-  await page.setViewportSize({ width: 180, height: 180 });
-  await page.setContent(`<style>*{margin:0}svg{display:block;width:180px;height:180px}</style>${favicon}`);
-  await page.screenshot({ path: path.join(publicDir, 'apple-touch-icon.png') });
-  console.log('Wrote public/apple-touch-icon.png');
+  if (!only.length) {
+    const favicon = fs.readFileSync(path.join(publicDir, 'favicon.svg'), 'utf8').replace(' rx="8"', '');
+    await page.setViewportSize({ width: 180, height: 180 });
+    await page.setContent(`<style>*{margin:0}svg{display:block;width:180px;height:180px}</style>${favicon}`);
+    await page.screenshot({ path: path.join(publicDir, 'apple-touch-icon.png') });
+    console.log('Wrote public/apple-touch-icon.png');
+  }
 
   await browser.close();
 }
