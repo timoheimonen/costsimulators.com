@@ -27,23 +27,23 @@ SOFTWARE.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Coffee habit – costsimulators.com</title>
-    <meta name="description" content="Coffee habit calculator. See what your coffee costs per month and over one, five and ten years.">
+    <title>Smoking cost – costsimulators.com</title>
+    <meta name="description" content="Smoking cost calculator. See what cigarettes cost you per month and over one, five and ten years.">
     <meta name="author" content="Timo Heimonen">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#f5f6f8">
     <script src="../js/theme.js"></script>
-    <link rel="canonical" href="https://costsimulators.com/coffee/coffee.html">
+    <link rel="canonical" href="https://costsimulators.com/smoking/smoking.html">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/main.css">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Coffee habit – costsimulators.com">
-    <meta property="og:description" content="See what your coffee habit adds up to over the years.">
-    <meta property="og:url" content="https://costsimulators.com/coffee/coffee.html">
+    <meta property="og:title" content="Smoking cost – costsimulators.com">
+    <meta property="og:description" content="See how much money goes up in smoke over the years.">
+    <meta property="og:url" content="https://costsimulators.com/smoking/smoking.html">
     <meta property="og:site_name" content="costsimulators.com">
     <script src="../js/core.js" defer></script>
     <script src="../js/ui.js" defer></script>
-    <script src="coffee.js" defer></script>
+    <script src="smoking.js" defer></script>
 </head>
 
 <body>
@@ -71,12 +71,12 @@ SOFTWARE.
         </a>
 
         <div class="tool-head reveal" style="--i: 1">
-            <span class="tool-icon tool-icon--lg tool--coffee" aria-hidden="true">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
+            <span class="tool-icon tool-icon--lg tool--smoking" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
             </span>
             <div class="tool-head-text">
-                <h1>Coffee habit</h1>
-                <p class="lead">Enter what a cup costs and how often you buy one to see what the habit adds up to over the years.</p>
+                <h1>Smoking cost</h1>
+                <p class="lead">Enter what a pack costs and how much you smoke to see how much money goes up in smoke over the years.</p>
             </div>
             <button type="button" class="btn btn-secondary share-btn" id="shareBtn">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
@@ -90,15 +90,15 @@ SOFTWARE.
 
                 <div class="field">
                     <div class="field-head">
-                        <label for="coffeePrice">Price per cup</label>
-                        <span class="field-unit" id="coffeePriceUnit">USD</span>
+                        <label for="packPrice">Pack price</label>
+                        <span class="field-unit" id="packPriceUnit">USD</span>
                     </div>
                     <div class="stepper" data-stepper data-step="0.5">
-                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease coffee price">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease pack price">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
-                        <input type="number" id="coffeePrice" value="3.08" min="0.01" step="any" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-describedby="coffeePriceUnit">
-                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase coffee price">
+                        <input type="number" id="packPrice" value="9" min="0.01" step="any" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-describedby="packPriceUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase pack price">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>
                     </div>
@@ -106,28 +106,44 @@ SOFTWARE.
 
                 <div class="field">
                     <div class="field-head">
-                        <label for="perWeek">Cups per week</label>
-                        <span class="field-unit" id="perWeekUnit">cups</span>
+                        <label for="perDay">Cigarettes per day</label>
+                        <span class="field-unit" id="perDayUnit">cigarettes</span>
                     </div>
                     <div class="stepper" data-stepper data-step="1">
-                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease cups per week">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease cigarettes per day">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
-                        <input type="number" id="perWeek" value="4" min="1" step="any" inputmode="numeric" placeholder="0" autocomplete="off" aria-describedby="perWeekUnit">
-                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase cups per week">
+                        <input type="number" id="perDay" value="10" min="1" step="any" inputmode="numeric" placeholder="0" autocomplete="off" aria-describedby="perDayUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase cigarettes per day">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>
                     </div>
-                    <div class="chips" role="group" aria-label="Quick picks" data-presets-for="perWeek">
-                        <button type="button" class="chip" data-preset="5" aria-pressed="false">Workdays</button>
-                        <button type="button" class="chip" data-preset="7" aria-pressed="false">Every day</button>
-                        <button type="button" class="chip" data-preset="14" aria-pressed="false">Twice a day</button>
+                    <div class="chips" role="group" aria-label="Quick picks" data-presets-for="perDay">
+                        <button type="button" class="chip" data-preset="5" aria-pressed="false">5 a day</button>
+                        <button type="button" class="chip" data-preset="10" aria-pressed="false">10 a day</button>
+                        <button type="button" class="chip" data-preset="20" aria-pressed="false">20 a day</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="perPack">Cigarettes per pack</label>
+                        <span class="field-unit" id="perPackUnit">pack size</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease cigarettes per pack">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="perPack" value="20" min="1" step="any" inputmode="numeric" placeholder="20" autocomplete="off" aria-describedby="perPackUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase cigarettes per pack">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <section class="panel panel--result tool--coffee reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
-                <h2 class="panel-title" id="resultsTitle">What it adds up to</h2>
+            <section class="panel panel--result tool--smoking reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
+                <h2 class="panel-title" id="resultsTitle">Up in smoke</h2>
 
                 <div class="hero-stat">
                     <span class="hero-stat-label">In 10 years</span>
