@@ -290,7 +290,7 @@ SOFTWARE.
         copyText(text).then(function () {
             flashLabel(button, successText);
         }, function () {
-            flashLabel(button, 'Copy failed');
+            flashLabel(button, global.CostSimulators.t('share.copyFailed'));
         });
     }
 
@@ -300,15 +300,16 @@ SOFTWARE.
         button.addEventListener('click', function () {
             if (beforeShare) beforeShare();
             const url = global.location.href;
+            const linkCopied = global.CostSimulators.t('share.linkCopied');
 
             if (navigator.share && coarsePointer.matches) {
                 navigator.share({ title: document.title, url: url }).catch(function (error) {
-                    if (error.name !== 'AbortError') copyWithFeedback(button, url, 'Link copied');
+                    if (error.name !== 'AbortError') copyWithFeedback(button, url, linkCopied);
                 });
                 return;
             }
 
-            copyWithFeedback(button, url, 'Link copied');
+            copyWithFeedback(button, url, linkCopied);
         });
     }
 

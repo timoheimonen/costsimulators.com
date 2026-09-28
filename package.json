@@ -1,0 +1,16 @@
+{
+  "name": "costsimulators.com",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "build:check": "node scripts/build-site.js --check",
+    "test": "node --test tests/*.test.js",
+    "serve": "python3 -m http.server 4173 -d public",
+    "images": "node scripts/render-images.js"
+  }
+}

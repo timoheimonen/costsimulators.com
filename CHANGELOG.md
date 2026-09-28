@@ -2,6 +2,31 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-09-28b
+
+### Added
+
+- Language support. Every page is pre-rendered in each language at its own address, with `hreflang` alternates, a canonical URL and a sitemap that lists every language version. English stays at the root and is the default.
+- Finnish (`/fi/`), with prices in euros, Finnish number formatting and typical Finnish default prices.
+- 20 more languages, each with local currency, number formatting, typical local default prices, examples recalculated in that currency and translated about, privacy and terms pages: Spanish (`/es/`, euros), French (`/fr/`, euros), German (`/de/`, euros), Italian (`/it/`, euros), Swedish (`/sv/`, kronor), Norwegian (`/no/`, kroner), Danish (`/da/`, kroner), Simplified Chinese (`/zh/`, yuan), Japanese (`/ja/`, yen), Korean (`/ko/`, won), Brazilian Portuguese (`/pt/`, reais), Dutch (`/nl/`, euros), Polish (`/pl/`, złoty), Turkish (`/tr/`, lira), Indonesian (`/id/`, rupiah), Traditional Chinese (`/zh-hant/`, New Taiwan dollars), Czech (`/cs/`, koruna), Romanian (`/ro/`, lei), Hungarian (`/hu/`, forints) and Greek (`/el/`, euros).
+- Currencies without small units: yen, won, rupiah, forints, koruna and New Taiwan dollars are shown without decimals, and the +/− steps, the electricity price unit (cents or whole currency units) and the other money settings suit each currency.
+- Plural forms for every language, chosen for the number as it is shown (1,5 dne in Czech, 1,5 dnia in Polish).
+- Browsers set to Chinese for Taiwan, Hong Kong or Macau open the traditional Chinese version; Chinese, Japanese and Korean pages use regional fonts.
+- Language menu in the header, in two scrolling columns that fit a phone screen and work with the keyboard. It keeps the current tool settings when switching language, and English pages open in the visitor's language on the first visit.
+- Explanation of how each calculation works, frequently asked questions and links to the other calculators on every tool page, and a short introduction and FAQ on the home page.
+- Structured data on every page: `WebApplication` for the calculators, `FAQPage`, `BreadcrumbList`, `WebSite` and the author.
+- The translated privacy policy and terms of use say that the English version prevails if the versions differ.
+- Social sharing image for each language, large image cards for social media and an Apple touch icon.
+- 404 page in each language.
+- `llms.txt`, a plain-text summary of the site for AI assistants.
+- `npm run build` generates the pages from `site/`, and `npm test` checks them. Tests run on GitHub Actions.
+
+### Changed
+
+- Clearer page addresses such as `/meeting-cost-calculator/` and `/about/`. The old `.html` addresses redirect permanently to the new ones.
+- Page titles fit in search results: they are about 60 characters at most, and " | costsimulators.com" is added only when it fits.
+- Page titles and descriptions name what each calculator does, and each tool page has a descriptive main heading such as "Meeting cost calculator".
+
 ## 2026-09-28
 
 ### Added

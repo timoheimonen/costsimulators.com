@@ -6,7 +6,11 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    // Pages live at /<page>/index.html. Unknown addresses get the nearest
+    // 404.html, so /fi/... shows the Finnish one.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
   },
   "compatibility_flags": [
     "nodejs_compat"
