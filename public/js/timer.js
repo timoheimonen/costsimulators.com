@@ -22,79 +22,69 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-(function(global) {
+(function (global) {
     'use strict';
 
-    global.CostSimulators = global.CostSimulators || {};
+    const TICK_MS = 10;
+    const BACKGROUND_TICK_MS = 1000;
 
     class Timer {
-        constructor() {
-            this.startTime = null;
-            this.isRunning = false;
-            this.animationFrame = null;
-            this.onTickCallbacks = [];
-            this.onStartCallbacks = [];
-            this.onStopCallbacks = [];
-            this._lastHundredths = -1;
+        constructor(onTick) {
+            this.onTick = onTick;
+            this.accumulated = 0;
+            this.startedAt = null;
+            this.frame = 0;
+            this.interval = 0;
+            this.lastBucket = -1;
+            this.loop = this.loop.bind(this);
+            this.emit = this.emit.bind(this);
         }
 
-        onTick(fn) {
-            this.onTickCallbacks.push(fn);
-            return this;
+        get running() {
+            return this.startedAt !== null;
         }
 
-        onStart(fn) {
-            this.onStartCallbacks.push(fn);
-            return this;
-        }
-
-        onStop(fn) {
-            this.onStopCallbacks.push(fn);
-            return this;
-        }
-
-        getElapsed() {
-            if (!this.startTime) return 0;
-            return Date.now() - this.startTime;
+        elapsed() {
+            const current = this.running ? performance.now() - this.startedAt : 0;
+            return this.accumulated + current;
         }
 
         start() {
-            if (this.isRunning) return;
-            this.startTime = Date.now();
-            this.isRunning = true;
-            this.onStartCallbacks.forEach(fn => fn());
-            this._tick();
+            if (this.running) return;
+            this.startedAt = performance.now();
+            this.interval = setInterval(this.emit, BACKGROUND_TICK_MS);
+            this.loop();
         }
 
-        stop() {
-            if (!this.isRunning) return;
-            this.isRunning = false;
-            if (this.animationFrame) {
-                cancelAnimationFrame(this.animationFrame);
-                this.animationFrame = null;
-            }
-            const elapsed = this.getElapsed();
-            this.onStopCallbacks.forEach(fn => fn(elapsed));
+        pause() {
+            if (!this.running) return;
+            this.accumulated = this.elapsed();
+            this.startedAt = null;
+            cancelAnimationFrame(this.frame);
+            clearInterval(this.interval);
+            this.emit(true);
         }
 
         reset() {
-            this.stop();
-            this.startTime = null;
-            this._lastHundredths = -1;
+            this.pause();
+            this.accumulated = 0;
+            this.lastBucket = -1;
         }
 
-        _tick() {
-            if (!this.isRunning) return;
-            const elapsed = this.getElapsed();
-            const hundredths = Math.floor(elapsed / 10);
-            if (hundredths !== this._lastHundredths) {
-                this._lastHundredths = hundredths;
-                this.onTickCallbacks.forEach(fn => fn(elapsed));
-            }
-            this.animationFrame = requestAnimationFrame(() => this._tick());
+        emit(force) {
+            const elapsed = this.elapsed();
+            const bucket = Math.floor(elapsed / TICK_MS);
+            if (force !== true && bucket === this.lastBucket) return;
+            this.lastBucket = bucket;
+            this.onTick(elapsed);
+        }
+
+        loop() {
+            this.emit();
+            this.frame = requestAnimationFrame(this.loop);
         }
     }
 
+    global.CostSimulators = global.CostSimulators || {};
     global.CostSimulators.Timer = Timer;
-
 })(window);

@@ -27,23 +27,23 @@ SOFTWARE.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Coffee habit – costsimulators.com</title>
-    <meta name="description" content="Coffee habit calculator. See what your coffee costs per month and over one, five and ten years.">
+    <title>Work hours – costsimulators.com</title>
+    <meta name="description" content="Price in work hours calculator. Turn any price into the hours, days and weeks you need to work to pay for it.">
     <meta name="author" content="Timo Heimonen">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#f5f6f8">
     <script src="../js/theme.js"></script>
-    <link rel="canonical" href="https://costsimulators.com/coffee/coffee.html">
+    <link rel="canonical" href="https://costsimulators.com/workhours/workhours.html">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/main.css">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Coffee habit – costsimulators.com">
-    <meta property="og:description" content="See what your coffee habit adds up to over the years.">
-    <meta property="og:url" content="https://costsimulators.com/coffee/coffee.html">
+    <meta property="og:title" content="Work hours – costsimulators.com">
+    <meta property="og:description" content="Turn any price into the time you need to work to pay for it.">
+    <meta property="og:url" content="https://costsimulators.com/workhours/workhours.html">
     <meta property="og:site_name" content="costsimulators.com">
     <script src="../js/core.js" defer></script>
     <script src="../js/ui.js" defer></script>
-    <script src="coffee.js" defer></script>
+    <script src="workhours.js" defer></script>
 </head>
 
 <body>
@@ -71,12 +71,12 @@ SOFTWARE.
         </a>
 
         <div class="tool-head reveal" style="--i: 1">
-            <span class="tool-icon tool-icon--lg tool--coffee" aria-hidden="true">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
+            <span class="tool-icon tool-icon--lg tool--workhours" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             </span>
             <div class="tool-head-text">
-                <h1>Coffee habit</h1>
-                <p class="lead">Enter what a cup costs and how often you buy one to see what the habit adds up to over the years.</p>
+                <h1>Work hours</h1>
+                <p class="lead">Enter your pay and a price to see how long you have to work to afford it.</p>
             </div>
             <button type="button" class="btn btn-secondary share-btn" id="shareBtn">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
@@ -90,62 +90,86 @@ SOFTWARE.
 
                 <div class="field">
                     <div class="field-head">
-                        <label for="coffeePrice">Price per cup</label>
-                        <span class="field-unit" id="coffeePriceUnit">USD</span>
+                        <span class="field-label" id="periodLabel">I know my pay</span>
                     </div>
-                    <div class="stepper" data-stepper data-step="0.5">
-                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease coffee price">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
-                        </button>
-                        <input type="number" id="coffeePrice" value="3.08" min="0.01" step="any" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-describedby="coffeePriceUnit">
-                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase coffee price">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-                        </button>
+                    <div class="segmented" role="radiogroup" aria-labelledby="periodLabel">
+                        <label><input type="radio" name="period" value="hour" checked><span>Per hour</span></label>
+                        <label><input type="radio" name="period" value="month"><span>Per month</span></label>
+                        <label><input type="radio" name="period" value="year"><span>Per year</span></label>
                     </div>
                 </div>
-
                 <div class="field">
                     <div class="field-head">
-                        <label for="perWeek">Cups per week</label>
-                        <span class="field-unit" id="perWeekUnit">cups</span>
+                        <label for="pay">Pay</label>
+                        <span class="field-unit" id="payUnit">USD per hour</span>
                     </div>
                     <div class="stepper" data-stepper data-step="1">
-                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease cups per week">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease pay">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
-                        <input type="number" id="perWeek" value="4" min="1" step="any" inputmode="numeric" placeholder="0" autocomplete="off" aria-describedby="perWeekUnit">
-                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase cups per week">
+                        <input type="number" id="pay" value="25" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="payUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase pay">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>
                     </div>
-                    <div class="chips" role="group" aria-label="Quick picks" data-presets-for="perWeek">
-                        <button type="button" class="chip" data-preset="5" aria-pressed="false">Workdays</button>
-                        <button type="button" class="chip" data-preset="7" aria-pressed="false">Every day</button>
-                        <button type="button" class="chip" data-preset="14" aria-pressed="false">Twice a day</button>
+                    <p class="field-hint" id="payHint">Use your take-home pay after taxes for the most honest answer.</p>
+                </div>
+                <div class="field">
+                    <div class="field-head">
+                        <label for="hoursPerWeek">Hours per week</label>
+                        <span class="field-unit" id="hoursPerWeekUnit">hours</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="0.5">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease hours per week">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="hoursPerWeek" value="40" min="1" max="168" step="any" inputmode="decimal" placeholder="40" autocomplete="off" aria-describedby="hoursPerWeekUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase hours per week">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                    <div class="chips" role="group" aria-label="Quick picks" data-presets-for="hoursPerWeek">
+                        <button type="button" class="chip" data-preset="37.5" aria-pressed="false">37.5 h</button>
+                        <button type="button" class="chip" data-preset="40" aria-pressed="false">40 h</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-head">
+                        <label for="price">Price</label>
+                        <span class="field-unit" id="priceUnit">USD</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="10">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Decrease price">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="price" value="999" min="0" step="any" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-describedby="priceUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Increase price">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <section class="panel panel--result tool--coffee reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
-                <h2 class="panel-title" id="resultsTitle">What it adds up to</h2>
+            <section class="panel panel--result tool--workhours reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
+                <h2 class="panel-title" id="resultsTitle">Price in work time</h2>
 
                 <div class="hero-stat">
-                    <span class="hero-stat-label">In 10 years</span>
-                    <div class="big-number" id="year10">$0.00</div>
+                    <span class="hero-stat-label">You need to work</span>
+                    <div class="big-number" id="workTime">$0.00</div>
                 </div>
 
                 <dl class="stat-grid">
                     <div class="stat">
-                        <dt>Per month</dt>
-                        <dd id="month">$0.00</dd>
+                        <dt>Work days</dt>
+                        <dd id="workDays">$0.00</dd>
                     </div>
                     <div class="stat">
-                        <dt>1 year</dt>
-                        <dd id="year1">$0.00</dd>
+                        <dt>Work weeks</dt>
+                        <dd id="workWeeks">$0.00</dd>
                     </div>
                     <div class="stat">
-                        <dt>5 years</dt>
-                        <dd id="year5">$0.00</dd>
+                        <dt>Your hourly rate</dt>
+                        <dd id="hourlyRate">$0.00</dd>
                     </div>
                 </dl>
 
