@@ -79,11 +79,11 @@
                         <label for="kwhPrice">{{tool.kwhPrice.label}}</label>
                         <span class="field-unit" id="kwhPriceUnit">{{tool.kwhPrice.unit}}</span>
                     </div>
-                    <div class="stepper" data-stepper data-step="1">
+                    <div class="stepper" data-stepper data-step="{{tool.kwhPrice.step}}">
                         <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.kwhPrice.decrease}}">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
-                        <input type="number" id="kwhPrice" value="{{tool.kwhPrice.value}}" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="kwhPriceUnit">
+                        <input type="number" id="kwhPrice" value="{{tool.kwhPrice.value}}" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="kwhPriceUnit" data-divisor="{{tool.kwhPrice.divisor}}">
                         <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.kwhPrice.increase}}">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>

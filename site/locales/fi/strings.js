@@ -13,7 +13,8 @@ module.exports = {
   money: {
     symbol: '€',
     zero: '0,00 €',
-    placeholder: '0,00'
+    placeholder: '0,00',
+    decimals: '2'
   },
 
   common: {
@@ -118,6 +119,7 @@ module.exports = {
       card: 'Katso, miten palaverin hinta kasvaa reaaliajassa puhuessanne.',
       tag: 'Ajastin',
       lead: 'Aseta tuntihinta ja osallistujamäärä, paina Aloita ja seuraa, mitä kokous maksaa sitä mukaa kuin se etenee.',
+      pulseEvery: '1',
       rate: {
         label: 'Tuntihinta',
         unit: '€ / henkilö',
@@ -201,6 +203,9 @@ module.exports = {
         label: 'Palkka',
         unit: '€ / tunti',
         value: '20',
+        step: '1',
+        monthStep: '100',
+        yearStep: '1000',
         hint: 'Käytä nettopalkkaa verojen jälkeen, niin saat rehellisimmän vastauksen.',
         decrease: 'Pienennä palkkaa',
         increase: 'Suurenna palkkaa'
@@ -211,6 +216,8 @@ module.exports = {
         value: '37.5',
         chip1: '37,5 h',
         chip2: '40 h',
+        preset1: '37.5',
+        preset2: '40',
         decrease: 'Vähennä viikkotunteja',
         increase: 'Lisää viikkotunteja'
       },
@@ -218,6 +225,7 @@ module.exports = {
         label: 'Hinta',
         unit: '€',
         value: '999',
+        step: '10',
         decrease: 'Pienennä hintaa',
         increase: 'Suurenna hintaa'
       },
@@ -351,6 +359,7 @@ module.exports = {
       perPack: {
         label: 'Savukkeita askissa',
         unit: 'askin koko',
+        value: '20',
         decrease: 'Vähennä savukkeita askissa',
         increase: 'Lisää savukkeita askissa'
       },
@@ -501,6 +510,8 @@ module.exports = {
         label: 'Sähkön hinta',
         unit: 'snt / kWh',
         value: '15',
+        step: '1',
+        divisor: '100',
         hint: 'Ota mukaan siirtomaksut ja verot, niin tulos on tarkin.',
         decrease: 'Pienennä sähkön hintaa',
         increase: 'Suurenna sähkön hintaa'
@@ -579,6 +590,8 @@ module.exports = {
         label: 'Polttoaineen hinta',
         unit: '€ / litra',
         value: '1.85',
+        step: '0.05',
+        usStep: '0.1',
         decrease: 'Pienennä polttoaineen hintaa',
         increase: 'Suurenna polttoaineen hintaa'
       },

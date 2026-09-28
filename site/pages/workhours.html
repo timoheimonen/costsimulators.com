@@ -27,9 +27,9 @@
                         <span class="field-label" id="periodLabel">{{tool.period.label}}</span>
                     </div>
                     <div class="segmented" role="radiogroup" aria-labelledby="periodLabel">
-                        <label><input type="radio" name="period" value="hour" checked><span>{{tool.period.hour}}</span></label>
-                        <label><input type="radio" name="period" value="month"><span>{{tool.period.month}}</span></label>
-                        <label><input type="radio" name="period" value="year"><span>{{tool.period.year}}</span></label>
+                        <label><input type="radio" name="period" value="hour" data-step="{{tool.pay.step}}" checked><span>{{tool.period.hour}}</span></label>
+                        <label><input type="radio" name="period" value="month" data-step="{{tool.pay.monthStep}}"><span>{{tool.period.month}}</span></label>
+                        <label><input type="radio" name="period" value="year" data-step="{{tool.pay.yearStep}}"><span>{{tool.period.year}}</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -37,7 +37,7 @@
                         <label for="pay">{{tool.pay.label}}</label>
                         <span class="field-unit" id="payUnit">{{tool.pay.unit}}</span>
                     </div>
-                    <div class="stepper" data-stepper data-step="1">
+                    <div class="stepper" data-stepper data-step="{{tool.pay.step}}">
                         <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.pay.decrease}}">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
@@ -63,8 +63,8 @@
                         </button>
                     </div>
                     <div class="chips" role="group" aria-label="{{common.quickPicks}}" data-presets-for="hoursPerWeek">
-                        <button type="button" class="chip" data-preset="37.5" aria-pressed="false">{{tool.hoursPerWeek.chip1}}</button>
-                        <button type="button" class="chip" data-preset="40" aria-pressed="false">{{tool.hoursPerWeek.chip2}}</button>
+                        <button type="button" class="chip" data-preset="{{tool.hoursPerWeek.preset1}}" aria-pressed="false">{{tool.hoursPerWeek.chip1}}</button>
+                        <button type="button" class="chip" data-preset="{{tool.hoursPerWeek.preset2}}" aria-pressed="false">{{tool.hoursPerWeek.chip2}}</button>
                     </div>
                 </div>
                 <div class="field">
@@ -72,7 +72,7 @@
                         <label for="price">{{tool.price.label}}</label>
                         <span class="field-unit" id="priceUnit">{{tool.price.unit}}</span>
                     </div>
-                    <div class="stepper" data-stepper data-step="10">
+                    <div class="stepper" data-stepper data-step="{{tool.price.step}}">
                         <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.price.decrease}}">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>

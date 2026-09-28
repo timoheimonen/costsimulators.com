@@ -25,10 +25,17 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Units, UI, formatCurrency, formatNumber, t } = window.CostSimulators;
+    const { Calculators, Units, UI, currencyDigits, formatCurrency, formatNumber, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
     const MPG_TIMES_L_PER_100KM = (100 * Units.LITERS_PER_GALLON) / Units.KM_PER_MILE;
+
+    // The fuel price step suits the local currency and is set on the unit
+    // choices by the page.
+    function priceStep(value) {
+        const radio = document.querySelector('input[name="unit"][value="' + value + '"]');
+        return parseFloat(radio && radio.dataset.priceStep) || 0.1;
+    }
 
     const UNITS = {
         metric: {
@@ -38,7 +45,7 @@ SOFTWARE.
             perDistance: t('unit.metric.perDistance'),
             fuel: t('unit.metric.fuel'),
             consumptionStep: 0.5,
-            priceStep: 0.05
+            priceStep: priceStep('metric')
         },
         us: {
             distance: t('unit.us.distance'),
@@ -47,7 +54,7 @@ SOFTWARE.
             perDistance: t('unit.us.perDistance'),
             fuel: t('unit.us.fuel'),
             consumptionStep: 1,
-            priceStep: 0.1
+            priceStep: priceStep('us')
         }
     };
 
@@ -98,7 +105,7 @@ SOFTWARE.
             setValue(els.consumption, round(MPG_TIMES_L_PER_100KM / consumption, 1));
         }
         if (price > 0) {
-            setValue(els.fuelPrice, round(toUs ? price * Units.LITERS_PER_GALLON : price / Units.LITERS_PER_GALLON, 2));
+            setValue(els.fuelPrice, round(toUs ? price * Units.LITERS_PER_GALLON : price / Units.LITERS_PER_GALLON, currencyDigits));
         }
     }
 

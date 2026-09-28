@@ -25,15 +25,23 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatNumber, formatWorkTime, t } = window.CostSimulators;
+    const { Calculators, UI, currencyDigits, formatCurrency, formatNumber, formatWorkTime, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
     const WORK_DAYS_PER_WEEK = 5;
+    const DAY_DIGITS = 1;
+
+    // The stepper steps suit the local currency and are set on the period
+    // choices by the page; hourly pay is shown with the currency's decimals.
+    function periodStep(value) {
+        const radio = document.querySelector('input[name="period"][value="' + value + '"]');
+        return parseFloat(radio && radio.dataset.step) || 1;
+    }
 
     const PERIODS = {
-        hour: { unit: t('unit.hour'), step: 1, digits: 2 },
-        month: { unit: t('unit.month'), step: 100, digits: 0 },
-        year: { unit: t('unit.year'), step: 1000, digits: 0 }
+        hour: { unit: t('unit.hour'), step: periodStep('hour'), digits: currencyDigits },
+        month: { unit: t('unit.month'), step: periodStep('month'), digits: 0 },
+        year: { unit: t('unit.year'), step: periodStep('year'), digits: 0 }
     };
 
     const els = {
@@ -58,11 +66,11 @@ SOFTWARE.
     }
 
     function formatDays(value) {
-        return t('days', { count: value, n: formatNumber(value, 1) });
+        return t('days', { count: value, digits: DAY_DIGITS, n: formatNumber(value, DAY_DIGITS) });
     }
 
     function formatWeeks(value) {
-        return t('weeks', { count: value, n: formatNumber(value, 1) });
+        return t('weeks', { count: value, digits: DAY_DIGITS, n: formatNumber(value, DAY_DIGITS) });
     }
 
     function applyPeriod() {

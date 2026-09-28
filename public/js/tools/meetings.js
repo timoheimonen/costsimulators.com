@@ -51,8 +51,12 @@ SOFTWARE.
         announcer: document.getElementById('announcer')
     };
 
+    // The total pulses every time it passes a multiple of this amount: every
+    // dollar or euro, but only every 100 yen.
+    const PULSE_EVERY = parseFloat(els.cost.dataset.pulse) || 1;
+
     const baseTitle = document.title;
-    const state = { total: 0, lastElapsed: 0, lastDollar: 0, lastTitleSecond: -1 };
+    const state = { total: 0, lastElapsed: 0, lastPulse: 0, lastTitleSecond: -1 };
     let wakeLock = null;
 
     function readInputs() {
@@ -93,9 +97,9 @@ SOFTWARE.
         state.total += Calculators.hourlyCost(inputs.rate, inputs.persons, elapsed - state.lastElapsed);
         state.lastElapsed = elapsed;
 
-        const dollars = Math.floor(state.total);
-        if (dollars > state.lastDollar) {
-            state.lastDollar = dollars;
+        const pulses = Math.floor(state.total / PULSE_EVERY);
+        if (pulses > state.lastPulse) {
+            state.lastPulse = pulses;
             UI.pulse(els.cost);
         }
 
@@ -168,7 +172,7 @@ SOFTWARE.
         releaseWakeLock();
         state.total = 0;
         state.lastElapsed = 0;
-        state.lastDollar = 0;
+        state.lastPulse = 0;
         state.lastTitleSecond = -1;
         render(0);
         setMode('idle');

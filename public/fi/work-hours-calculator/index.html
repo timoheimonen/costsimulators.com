@@ -178,7 +178,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"unit":{"hour":"€ / tunti","month":"€ / kuukausi","year":"€ / vuosi"},"days":{"one":"{n} päivä","other":"{n} päivää"},"weeks":{"one":"{n} viikko","other":"{n} viikkoa"},"note":{"empty":"Syötä palkkasi, viikkotuntisi ja hinta, niin näet, kuinka kauan sen eteen pitää tehdä töitä.","result":"Laskettu {hours} tunnin työpäivillä, {days} päivää viikossa."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"unit":{"hour":"€ / tunti","month":"€ / kuukausi","year":"€ / vuosi"},"days":{"one":"{n} päivä","other":"{n} päivää"},"weeks":{"one":"{n} viikko","other":"{n} viikkoa"},"note":{"empty":"Syötä palkkasi, viikkotuntisi ja hinta, niin näet, kuinka kauan sen eteen pitää tehdä töitä.","result":"Laskettu {hours} tunnin työpäivillä, {days} päivää viikossa."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/workhours.js" defer></script>
@@ -200,7 +200,7 @@ SOFTWARE.
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">FI</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: 2">
                     <li><a href="/work-hours-calculator/" hreflang="en" lang="en">English</a></li>
                     <li><a href="/fi/work-hours-calculator/" hreflang="fi" lang="fi" aria-current="true">Suomi</a></li>
                 </ul>
@@ -241,9 +241,9 @@ SOFTWARE.
                         <span class="field-label" id="periodLabel">Tiedän palkkani</span>
                     </div>
                     <div class="segmented" role="radiogroup" aria-labelledby="periodLabel">
-                        <label><input type="radio" name="period" value="hour" checked><span>Tunnilta</span></label>
-                        <label><input type="radio" name="period" value="month"><span>Kuukaudelta</span></label>
-                        <label><input type="radio" name="period" value="year"><span>Vuodelta</span></label>
+                        <label><input type="radio" name="period" value="hour" data-step="1" checked><span>Tunnilta</span></label>
+                        <label><input type="radio" name="period" value="month" data-step="100"><span>Kuukaudelta</span></label>
+                        <label><input type="radio" name="period" value="year" data-step="1000"><span>Vuodelta</span></label>
                     </div>
                 </div>
                 <div class="field">

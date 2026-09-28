@@ -178,7 +178,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"Yhteen suuntaan","round":"Meno-paluu"},"unit":{"metric":{"distance":"km yhteen suuntaan","consumption":"l/100 km","price":"€ / litra","perDistance":"km","fuel":"l"},"us":{"distance":"mailia yhteen suuntaan","consumption":"mpg","price":"€ / gallona","perDistance":"maili","fuel":"gal"}},"note":{"empty":"Syötä matka, kulutus ja polttoaineen hinta, niin näet kulut.","result":"Matkaan kuluu {fuel} polttoainetta, noin {price} / {distance}."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"Yhteen suuntaan","round":"Meno-paluu"},"unit":{"metric":{"distance":"km yhteen suuntaan","consumption":"l/100 km","price":"€ / litra","perDistance":"km","fuel":"l"},"us":{"distance":"mailia yhteen suuntaan","consumption":"mpg","price":"€ / gallona","perDistance":"maili","fuel":"gal"}},"note":{"empty":"Syötä matka, kulutus ja polttoaineen hinta, niin näet kulut.","result":"Matkaan kuluu {fuel} polttoainetta, noin {price} / {distance}."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/trip.js" defer></script>
@@ -200,7 +200,7 @@ SOFTWARE.
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">FI</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: 2">
                     <li><a href="/trip-cost-calculator/" hreflang="en" lang="en">English</a></li>
                     <li><a href="/fi/trip-cost-calculator/" hreflang="fi" lang="fi" aria-current="true">Suomi</a></li>
                 </ul>
@@ -241,8 +241,8 @@ SOFTWARE.
                         <span class="field-label" id="unitLabel">Yksiköt</span>
                     </div>
                     <div class="segmented" role="radiogroup" aria-labelledby="unitLabel">
-                        <label><input type="radio" name="unit" value="metric" checked><span>Kilometrit ja litrat</span></label>
-                        <label><input type="radio" name="unit" value="us"><span>Mailit ja gallonat</span></label>
+                        <label><input type="radio" name="unit" value="metric" data-price-step="0.05" checked><span>Kilometrit ja litrat</span></label>
+                        <label><input type="radio" name="unit" value="us" data-price-step="0.1"><span>Mailit ja gallonat</span></label>
                     </div>
                 </div>
                 <div class="field">

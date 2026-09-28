@@ -53,14 +53,30 @@ SOFTWARE.
         return document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
     }
 
+    // The hreflang of the site version for a browser language such as
+    // "de-AT" or "zh-TW". Norwegian Bokmål and Nynorsk share the Norwegian
+    // version; Chinese in Taiwan, Hong Kong and Macau, or written in
+    // traditional characters, gets the traditional Chinese version.
+    function siteLang(tag) {
+        const parts = String(tag).toLowerCase().split(/[-_]/);
+        const code = parts[0];
+
+        if (code === 'nb' || code === 'nn') return 'no';
+        if (code === 'zh') {
+            const traditional = parts.indexOf('hant') !== -1 || (parts.indexOf('hans') === -1 &&
+                (parts.indexOf('tw') !== -1 || parts.indexOf('hk') !== -1 || parts.indexOf('mo') !== -1));
+            return traditional ? 'zh-Hant' : 'zh';
+        }
+        return code;
+    }
+
     function browserLang() {
         const preferred = navigator.languages && navigator.languages.length
             ? navigator.languages
             : [navigator.language || 'en'];
 
         for (let i = 0; i < preferred.length; i++) {
-            let code = String(preferred[i]).toLowerCase().split('-')[0];
-            if (code === 'nb' || code === 'nn') code = 'no';
+            const code = siteLang(preferred[i]);
             if (code === 'en' || alternate(code)) return code;
         }
         return null;
@@ -79,6 +95,19 @@ SOFTWARE.
     }
 
     function bindMenu(menu) {
+        const summary = menu.querySelector('summary');
+        const links = Array.from(menu.querySelectorAll('a[hreflang]'));
+
+        function focusLink(index) {
+            const count = links.length;
+            links[((index % count) + count) % count].focus();
+        }
+
+        function close() {
+            menu.open = false;
+            summary.focus();
+        }
+
         menu.addEventListener('click', function (event) {
             const link = event.target.closest('a[hreflang]');
             if (!link) return;
@@ -92,10 +121,37 @@ SOFTWARE.
             if (menu.open && !menu.contains(event.target)) menu.open = false;
         });
 
+        // Tab moves through the languages as usual; the arrow keys, Home and
+        // End also work, and Escape or leaving the menu closes it.
         menu.addEventListener('keydown', function (event) {
-            if (event.key !== 'Escape' || !menu.open) return;
-            menu.open = false;
-            menu.querySelector('summary').focus();
+            if (!menu.open) return;
+            const index = links.indexOf(document.activeElement);
+            const rows = Math.ceil(links.length / 2);
+            const current = links.findIndex(function (link) {
+                return link.hasAttribute('aria-current');
+            });
+
+            if (event.key === 'Escape') {
+                close();
+            } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                const step = event.key === 'ArrowDown' ? 1 : -1;
+                focusLink(index === -1 ? Math.max(current, 0) : index + step);
+            } else if ((event.key === 'ArrowRight' || event.key === 'ArrowLeft') && index !== -1 && links.length > 8) {
+                const target = index + (event.key === 'ArrowRight' ? rows : -rows);
+                if (target < 0 || target >= links.length) return;
+                focusLink(target);
+            } else if (event.key === 'Home' && index !== -1) {
+                focusLink(0);
+            } else if (event.key === 'End' && index !== -1) {
+                focusLink(links.length - 1);
+            } else {
+                return;
+            }
+            event.preventDefault();
+        });
+
+        menu.addEventListener('focusout', function (event) {
+            if (menu.open && event.relatedTarget && !menu.contains(event.relatedTarget)) menu.open = false;
         });
     }
 

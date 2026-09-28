@@ -5,6 +5,16 @@
 // Every language folder has exactly the same keys and files as this one.
 // Money values (`value`, `quick`) are typical prices in the language's own
 // currency, so each language starts from sensible local defaults.
+//
+// Numbers that depend on the currency are set here too, so that a currency
+// without small units (yen, won, forint) works as well as dollars:
+// - money.decimals: decimals shown in amounts, 0 for yen or forints
+// - `step`, `monthStep`, `yearStep`, `usStep`: how much the +/− buttons change
+//   a money field
+// - tools.electricity.kwhPrice.divisor: 100 when the price per kWh is entered
+//   in cents, 1 when it is entered in whole currency units
+// - tools.meetings.pulseEvery: the running meeting cost pulses every time it
+//   passes a multiple of this amount
 
 module.exports = {
   meta: {
@@ -17,7 +27,8 @@ module.exports = {
   money: {
     symbol: '$',
     zero: '$0.00',
-    placeholder: '0.00'
+    placeholder: '0.00',
+    decimals: '2'
   },
 
   common: {
@@ -122,6 +133,7 @@ module.exports = {
       card: 'Watch the price of a meeting tick up in real time while you talk.',
       tag: 'Live timer',
       lead: 'Set the hourly rate and headcount, press start and watch what the meeting costs as it happens.',
+      pulseEvery: '1',
       rate: {
         label: 'Hourly rate',
         unit: 'USD per person',
@@ -205,6 +217,9 @@ module.exports = {
         label: 'Pay',
         unit: 'USD per hour',
         value: '25',
+        step: '1',
+        monthStep: '100',
+        yearStep: '1000',
         hint: 'Use your take-home pay after taxes for the most honest answer.',
         decrease: 'Decrease pay',
         increase: 'Increase pay'
@@ -215,6 +230,8 @@ module.exports = {
         value: '40',
         chip1: '37.5 h',
         chip2: '40 h',
+        preset1: '37.5',
+        preset2: '40',
         decrease: 'Decrease hours per week',
         increase: 'Increase hours per week'
       },
@@ -222,6 +239,7 @@ module.exports = {
         label: 'Price',
         unit: 'USD',
         value: '999',
+        step: '10',
         decrease: 'Decrease price',
         increase: 'Increase price'
       },
@@ -355,6 +373,7 @@ module.exports = {
       perPack: {
         label: 'Cigarettes per pack',
         unit: 'pack size',
+        value: '20',
         decrease: 'Decrease cigarettes per pack',
         increase: 'Increase cigarettes per pack'
       },
@@ -505,6 +524,8 @@ module.exports = {
         label: 'Electricity price',
         unit: '¢ per kWh',
         value: '17',
+        step: '1',
+        divisor: '100',
         hint: 'Include transfer fees and taxes for the most accurate result.',
         decrease: 'Decrease electricity price',
         increase: 'Increase electricity price'
@@ -583,6 +604,8 @@ module.exports = {
         label: 'Fuel price',
         unit: 'USD per liter',
         value: '1.8',
+        step: '0.05',
+        usStep: '0.1',
         decrease: 'Decrease fuel price',
         increase: 'Increase fuel price'
       },

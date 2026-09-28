@@ -186,7 +186,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"en-US","currency":"USD","strings":{"share":{"linkCopied":"Link copied","copyFailed":"Copy failed","copied":"Copied!","calculatedWith":"Calculated with costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"mode":{"start":"Start","pause":"Pause","resume":"Resume"},"status":{"ready":"Ready","live":"Live","paused":"Paused"},"announce":{"invalid":"Enter an hourly rate and the number of participants to start.","started":"Timer started.","paused":"Paused at {cost} after {time}.","reset":"Timer reset."},"report":{"cost":"Meeting cost: {cost}","duration":"Duration: {time}","participants":"Participants: {persons} × {rate}/h"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"en-US","currency":"USD","decimals":2,"strings":{"share":{"linkCopied":"Link copied","copyFailed":"Copy failed","copied":"Copied!","calculatedWith":"Calculated with costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"mode":{"start":"Start","pause":"Pause","resume":"Resume"},"status":{"ready":"Ready","live":"Live","paused":"Paused"},"announce":{"invalid":"Enter an hourly rate and the number of participants to start.","started":"Timer started.","paused":"Paused at {cost} after {time}.","reset":"Timer reset."},"report":{"cost":"Meeting cost: {cost}","duration":"Duration: {time}","participants":"Participants: {persons} × {rate}/h"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/timer.js" defer></script>
     <script src="/js/ui.js" defer></script>
@@ -209,7 +209,7 @@ SOFTWARE.
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">EN</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: 2">
                     <li><a href="/meeting-cost-calculator/" hreflang="en" lang="en" aria-current="true">English</a></li>
                     <li><a href="/fi/meeting-cost-calculator/" hreflang="fi" lang="fi">Suomi</a></li>
                 </ul>
@@ -300,7 +300,7 @@ SOFTWARE.
                     </span>
                 </div>
 
-                <div class="big-number" id="cost">$0.00</div>
+                <div class="big-number" id="cost" data-pulse="1">$0.00</div>
                 <p class="timer"><span class="visually-hidden">Elapsed time </span><span id="timerClock">00:00:00</span><span class="timer-fraction" id="timerFraction" aria-hidden="true">.00</span></p>
 
                 <div class="actions">

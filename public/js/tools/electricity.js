@@ -44,6 +44,10 @@ SOFTWARE.
         }
     };
 
+    // The price is entered in the unit people use locally: cents (divisor
+    // 100) in the US, whole yen (divisor 1) in Japan.
+    const priceDivisor = parseFloat(els.kwhPrice.dataset.divisor) || 1;
+
     function formatEnergy(kwh) {
         return formatNumber(kwh, kwh < 10 ? 1 : 0) + ' kWh';
     }
@@ -52,8 +56,8 @@ SOFTWARE.
         const power = UI.readNumber(els.power);
         const hours = UI.readNumber(els.hours);
         const days = UI.readNumber(els.days);
-        const centsPerKwh = UI.readNumber(els.kwhPrice);
-        const valid = power > 0 && hours > 0 && hours <= 24 && days > 0 && days <= 7 && centsPerKwh > 0;
+        const enteredPrice = UI.readNumber(els.kwhPrice);
+        const valid = power > 0 && hours > 0 && hours <= 24 && days > 0 && days <= 7 && enteredPrice > 0;
 
         els.panel.dataset.empty = String(!valid);
 
@@ -65,7 +69,7 @@ SOFTWARE.
             return;
         }
 
-        const pricePerKwh = centsPerKwh / 100;
+        const pricePerKwh = enteredPrice / priceDivisor;
         const kwhPerDay = Calculators.energyKwh(power, hours);
         const kwhPerYear = (kwhPerDay * days * Units.DAYS_PER_YEAR) / 7;
         const yearly = kwhPerYear * pricePerKwh;

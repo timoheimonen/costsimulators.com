@@ -285,6 +285,7 @@ h3 {
 }
 
 .header-inner {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -358,8 +359,10 @@ h3 {
     display: block;
 }
 
+/* The list opens under the header, aligned with its right edge, so that it
+   fits on a 360 px phone even though the toggle is not at the edge. */
 .lang-menu {
-    position: relative;
+    position: static;
 }
 
 .lang-toggle {
@@ -374,6 +377,10 @@ h3 {
 
 .lang-toggle::-webkit-details-marker {
     display: none;
+}
+
+.header-inner .icon-btn {
+    flex-shrink: 0;
 }
 
 .lang-toggle .icon {
@@ -392,12 +399,24 @@ h3 {
     border-color: var(--border-strong);
 }
 
+/* Two columns filled top to bottom (--rows is set by the page), scrolling
+   when the screen is too short to show every language. */
 .lang-list {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% - 4px);
     right: 0;
     z-index: 60;
+    display: grid;
+    grid-template-rows: repeat(var(--rows, 1), auto);
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    column-gap: 2px;
+    width: max-content;
     min-width: 168px;
+    max-width: 100%;
+    max-height: calc(100dvh - var(--header-h) - env(safe-area-inset-top, 0px) - 16px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 6px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -413,7 +432,12 @@ h3 {
     border-radius: var(--radius-sm);
     color: var(--text);
     font-size: 0.9375rem;
+    line-height: 1.35;
     text-decoration: none;
+}
+
+.lang-list a:focus-visible {
+    outline-offset: -2px;
 }
 
 .lang-list a:hover {
@@ -700,6 +724,7 @@ h3 {
 
 .tool-layout {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
     gap: 16px;
 }
@@ -923,6 +948,7 @@ h3 {
     font-size: 0.9375rem;
     font-weight: 600;
     text-align: center;
+    overflow-wrap: anywhere;
     transition: background-color 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
@@ -1785,6 +1811,16 @@ kbd {
 }
 
 @media (max-width: 479px) {
+    /* Long single words such as "Kuukaudelta" get the room they need. */
+    .segmented label {
+        flex: 1 1 auto;
+    }
+
+    .segmented span {
+        padding: 0 6px;
+        font-size: 0.875rem;
+    }
+
     .actions .btn-primary {
         flex: 1 1 100%;
     }
@@ -1800,9 +1836,27 @@ kbd {
     }
 }
 
+/* Codes longer than two letters (ZH-HANT) do not fit next to the brand on
+   small phones. */
+@media (max-width: 419px) {
+    .lang-toggle--long {
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .lang-toggle--long .lang-code {
+        display: none;
+    }
+}
+
 @media (max-width: 380px) {
     .header-inner {
         gap: 8px;
+    }
+
+    .lang-list a {
+        padding: 8px 10px;
     }
 
     .brand {

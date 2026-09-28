@@ -35,6 +35,10 @@ const AUTHOR = {
 // language menu.
 const LANGUAGES = ['en', 'fi'];
 
+// BCP 47 tags for <html lang>, hreflang, the sitemap and structured data,
+// where they differ from the lower-case code used in the path.
+const LANGUAGE_TAGS = { 'zh-hant': 'zh-Hant' };
+
 // Slugs stay in English in every language, so a page has the same path in
 // every language apart from the language prefix. `legacy` is the old address
 // that now redirects to the page.
@@ -123,8 +127,12 @@ function loadLocale(lang) {
   return { lang, strings, documents };
 }
 
+function languageTag(lang) {
+  return LANGUAGE_TAGS[lang] || lang;
+}
+
 function htmlLang(locale) {
-  return locale.lang;
+  return languageTag(locale.lang);
 }
 
 function pagePath(lang, page) {
@@ -249,7 +257,7 @@ function structuredData(locale, page, strings) {
       url: homeUrl,
       name: SITE_NAME,
       description: s.home.description,
-      inLanguage: LANGUAGES.slice(),
+      inLanguage: LANGUAGES.map(languageTag),
       publisher: { '@id': authorId }
     },
     {
@@ -314,19 +322,24 @@ function structuredData(locale, page, strings) {
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
+// A long list is shown in two columns of `--rows` languages, see .lang-list
+// in public/css/main.css.
 function renderLangMenu(locales, locale, page) {
   const current = locale.strings.meta;
+  const rows = locales.length > 8 ? Math.ceil(locales.length / 2) : locales.length;
   const items = locales.map(other => {
     const selected = other === locale ? ' aria-current="true"' : '';
     return `                    <li><a href="${pagePath(other.lang, page)}" hreflang="${htmlLang(other)}" lang="${htmlLang(other)}"${selected}>${escapeHtml(other.strings.meta.name)}</a></li>`;
   }).join('\n');
 
+  const long = locale.lang.length > 2 ? ' lang-toggle--long' : '';
+
   return `            <details class="lang-menu" data-lang-menu>
-                <summary class="icon-btn lang-toggle" aria-label="${escapeHtml(locale.strings.common.language)}: ${escapeHtml(current.name)}">
+                <summary class="icon-btn lang-toggle${long}" aria-label="${escapeHtml(locale.strings.common.language)}: ${escapeHtml(current.name)}">
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">${escapeHtml(locale.lang.toUpperCase())}</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: ${rows}">
 ${items}
                 </ul>
             </details>`;
@@ -343,7 +356,7 @@ function renderRuntime(locale, page) {
       strings[key] = own[key];
     }
   }
-  const data = { locale: s.meta.locale, currency: s.meta.currency, strings };
+  const data = { locale: s.meta.locale, currency: s.meta.currency, decimals: Number(s.money.decimals), strings };
   const json = JSON.stringify(data).replace(/</g, '\\u003c');
   return `    <script type="application/json" id="i18n">${json}</script>`;
 }
@@ -574,5 +587,5 @@ if (require.main === module) {
 
 module.exports = {
   LANGUAGES, TOOLS, DOCUMENTS, PAGES, ORIGIN,
-  buildSite, loadLocale, pagePath, pageUrl, readIcon, render
+  buildSite, languageTag, loadLocale, pagePath, pageUrl, readIcon, render
 };

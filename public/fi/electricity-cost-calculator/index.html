@@ -186,7 +186,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"note":{"empty":"Syötä teho, tunnit päivässä (enintään 24), päivät viikossa (enintään 7) ja sähkön hinta.","result":"Kuluttaa noin {day} jokaisena käyttöpäivänä, noin {year} vuodessa."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"fi-FI","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Linkki kopioitu","copyFailed":"Kopiointi epäonnistui","copied":"Kopioitu!","calculatedWith":"Laskettu costsimulators.comilla"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"note":{"empty":"Syötä teho, tunnit päivässä (enintään 24), päivät viikossa (enintään 7) ja sähkön hinta.","result":"Kuluttaa noin {day} jokaisena käyttöpäivänä, noin {year} vuodessa."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/electricity.js" defer></script>
@@ -208,7 +208,7 @@ SOFTWARE.
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">FI</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: 2">
                     <li><a href="/electricity-cost-calculator/" hreflang="en" lang="en">English</a></li>
                     <li><a href="/fi/electricity-cost-calculator/" hreflang="fi" lang="fi" aria-current="true">Suomi</a></li>
                 </ul>
@@ -305,7 +305,7 @@ SOFTWARE.
                         <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="Pienennä sähkön hintaa">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>
-                        <input type="number" id="kwhPrice" value="15" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="kwhPriceUnit">
+                        <input type="number" id="kwhPrice" value="15" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="kwhPriceUnit" data-divisor="100">
                         <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="Suurenna sähkön hintaa">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>

@@ -12,7 +12,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { LANGUAGES, TOOLS, loadLocale, pagePath, readIcon, render } = require('./build-site');
+const { LANGUAGES, TOOLS, languageTag, loadLocale, pagePath, readIcon, render } = require('./build-site');
 
 const repoRoot = path.resolve(__dirname, '..');
 const publicDir = path.join(repoRoot, 'public');
@@ -53,7 +53,7 @@ async function main() {
 
   for (const lang of LANGUAGES) {
     const locale = loadLocale(lang);
-    const html = render(template, { ...locale.strings, lang, toolIcons: toolIcons() }, `${lang}/og-image.html`);
+    const html = render(template, { ...locale.strings, lang: languageTag(lang), toolIcons: toolIcons() }, `${lang}/og-image.html`);
     await page.setContent(html);
     const file = path.join(publicDir, pagePath(lang, { slug: '' }), 'og-image.png');
     await page.screenshot({ path: file });

@@ -178,7 +178,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"en-US","currency":"USD","strings":{"share":{"linkCopied":"Link copied","copyFailed":"Copy failed","copied":"Copied!","calculatedWith":"Calculated with costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"One way","round":"Round trip"},"unit":{"metric":{"distance":"km one way","consumption":"l/100 km","price":"USD per liter","perDistance":"km","fuel":"l"},"us":{"distance":"miles one way","consumption":"mpg","price":"USD per gallon","perDistance":"mile","fuel":"gal"}},"note":{"empty":"Enter the distance, fuel consumption and fuel price to see the cost.","result":"Uses {fuel} of fuel per trip, about {price} per {distance}."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"en-US","currency":"USD","decimals":2,"strings":{"share":{"linkCopied":"Link copied","copyFailed":"Copy failed","copied":"Copied!","calculatedWith":"Calculated with costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"One way","round":"Round trip"},"unit":{"metric":{"distance":"km one way","consumption":"l/100 km","price":"USD per liter","perDistance":"km","fuel":"l"},"us":{"distance":"miles one way","consumption":"mpg","price":"USD per gallon","perDistance":"mile","fuel":"gal"}},"note":{"empty":"Enter the distance, fuel consumption and fuel price to see the cost.","result":"Uses {fuel} of fuel per trip, about {price} per {distance}."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/trip.js" defer></script>
@@ -200,7 +200,7 @@ SOFTWARE.
                     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
                     <span class="lang-code" aria-hidden="true">EN</span>
                 </summary>
-                <ul class="lang-list" role="list">
+                <ul class="lang-list" role="list" style="--rows: 2">
                     <li><a href="/trip-cost-calculator/" hreflang="en" lang="en" aria-current="true">English</a></li>
                     <li><a href="/fi/trip-cost-calculator/" hreflang="fi" lang="fi">Suomi</a></li>
                 </ul>
@@ -241,8 +241,8 @@ SOFTWARE.
                         <span class="field-label" id="unitLabel">Units</span>
                     </div>
                     <div class="segmented" role="radiogroup" aria-labelledby="unitLabel">
-                        <label><input type="radio" name="unit" value="metric" checked><span>Kilometers &amp; liters</span></label>
-                        <label><input type="radio" name="unit" value="us"><span>Miles &amp; gallons</span></label>
+                        <label><input type="radio" name="unit" value="metric" data-price-step="0.05" checked><span>Kilometers &amp; liters</span></label>
+                        <label><input type="radio" name="unit" value="us" data-price-step="0.1"><span>Miles &amp; gallons</span></label>
                     </div>
                 </div>
                 <div class="field">

@@ -27,8 +27,8 @@
                         <span class="field-label" id="unitLabel">{{tool.unit.label}}</span>
                     </div>
                     <div class="segmented" role="radiogroup" aria-labelledby="unitLabel">
-                        <label><input type="radio" name="unit" value="metric" checked><span>{{tool.unit.metric}}</span></label>
-                        <label><input type="radio" name="unit" value="us"><span>{{tool.unit.us}}</span></label>
+                        <label><input type="radio" name="unit" value="metric" data-price-step="{{tool.fuelPrice.step}}" checked><span>{{tool.unit.metric}}</span></label>
+                        <label><input type="radio" name="unit" value="us" data-price-step="{{tool.fuelPrice.usStep}}"><span>{{tool.unit.us}}</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -76,7 +76,7 @@
                         <label for="fuelPrice">{{tool.fuelPrice.label}}</label>
                         <span class="field-unit" id="fuelPriceUnit">{{tool.fuelPrice.unit}}</span>
                     </div>
-                    <div class="stepper" data-stepper data-step="0.05">
+                    <div class="stepper" data-stepper data-step="{{tool.fuelPrice.step}}">
                         <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.fuelPrice.decrease}}">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
                         </button>

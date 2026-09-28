@@ -9,12 +9,18 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 
-const { LANGUAGES, TOOLS, PAGES, ORIGIN, buildSite, loadLocale, pagePath, pageUrl } = require('../scripts/build-site');
+const { LANGUAGES, TOOLS, PAGES, ORIGIN, buildSite, languageTag, loadLocale, pagePath, pageUrl } = require('../scripts/build-site');
 
 const repoRoot = path.resolve(__dirname, '..');
 const publicDir = path.join(repoRoot, 'public');
 const locales = LANGUAGES.map(loadLocale);
 const files = buildSite();
+
+// Chinese, Japanese and Korean say the same in far fewer characters, and
+// search results show fewer of them, so their descriptions are shorter.
+const DESCRIPTION_LENGTH = { default: [70, 200], cjk: [30, 120] };
+const CJK = ['zh', 'zh-hant', 'ja', 'ko'];
+const PLURAL_CATEGORIES = ['zero', 'one', 'two', 'few', 'many', 'other'];
 
 function readPage(lang, page) {
   return fs.readFileSync(path.join(publicDir, pagePath(lang, page), 'index.html'), 'utf8');
@@ -32,6 +38,20 @@ function keyPaths(object, prefix = '') {
 
 function lookup(object, key) {
   return key.split('.').reduce((value, part) => (value == null ? undefined : value[part]), object);
+}
+
+// Objects such as { one: '{n} day', other: '{n} days' } in the runtime strings.
+function pluralObjects(object, prefix = '') {
+  return Object.entries(object).flatMap(([key, value]) => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
+    const keys = Object.keys(value);
+    if (keys.includes('other') && keys.every(name => PLURAL_CATEGORIES.includes(name))) return [[`${prefix}${key}`, value]];
+    return pluralObjects(value, `${prefix}${key}.`);
+  });
+}
+
+function sameSpaces(text) {
+  return text.replace(/[\s\u00a0\u202f]/g, ' ');
 }
 
 function localAssetPath(url) {
@@ -58,6 +78,69 @@ test('FAQ and explanation texts are present for every tool in every language', (
   }
 });
 
+test('language tags are valid BCP 47 and match the locale', () => {
+  for (const { lang, strings } of locales) {
+    const tag = languageTag(lang);
+    assert.equal(Intl.getCanonicalLocales(tag)[0], tag, `${lang}: ${tag}`);
+    assert.equal(Intl.getCanonicalLocales(strings.meta.locale)[0], strings.meta.locale, `${lang}: meta.locale`);
+    assert.match(strings.meta.ogLocale, /^[a-z]{2,3}_[A-Z]{2}$/, `${lang}: meta.ogLocale`);
+  }
+});
+
+test('plural strings have every form the language needs', () => {
+  for (const { lang, strings } of locales) {
+    const needed = new Intl.PluralRules(strings.meta.locale).resolvedOptions().pluralCategories;
+    const runtimes = [['runtime', strings.runtime], ...TOOLS.map(tool => [`tools.${tool.key}.runtime`, strings.tools[tool.key].runtime || {}])];
+    for (const [prefix, runtime] of runtimes) {
+      for (const [key, forms] of pluralObjects(runtime, `${prefix}.`)) {
+        for (const category of needed) assert.equal(typeof forms[category], 'string', `${lang}: ${key}.${category}`);
+      }
+    }
+  }
+});
+
+test('money placeholders match how the page scripts format amounts', () => {
+  for (const { lang, strings } of locales) {
+    const decimals = Number(strings.money.decimals);
+    assert.ok(Number.isInteger(decimals) && decimals >= 0 && decimals <= 2, `${lang}: money.decimals`);
+    const zero = new Intl.NumberFormat(strings.meta.locale, {
+      style: 'currency',
+      currency: strings.meta.currency,
+      currencyDisplay: 'narrowSymbol',
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    }).format(0);
+    assert.equal(sameSpaces(strings.money.zero), sameSpaces(zero), `${lang}: money.zero`);
+  }
+});
+
+test('currency-dependent settings are positive numbers', () => {
+  for (const { lang, strings } of locales) {
+    const t = strings.tools;
+    const settings = {
+      'meetings.pulseEvery': t.meetings.pulseEvery,
+      'meetings.rate.step': t.meetings.rate.step,
+      'workhours.pay.step': t.workhours.pay.step,
+      'workhours.pay.monthStep': t.workhours.pay.monthStep,
+      'workhours.pay.yearStep': t.workhours.pay.yearStep,
+      'workhours.price.step': t.workhours.price.step,
+      'workhours.hoursPerWeek.preset1': t.workhours.hoursPerWeek.preset1,
+      'workhours.hoursPerWeek.preset2': t.workhours.hoursPerWeek.preset2,
+      'coffee.price.step': t.coffee.price.step,
+      'smoking.packPrice.step': t.smoking.packPrice.step,
+      'smoking.perPack.value': t.smoking.perPack.value,
+      'electricity.kwhPrice.step': t.electricity.kwhPrice.step,
+      'electricity.kwhPrice.divisor': t.electricity.kwhPrice.divisor,
+      'trip.fuelPrice.step': t.trip.fuelPrice.step,
+      'trip.fuelPrice.usStep': t.trip.fuelPrice.usStep
+    };
+    for (const [key, value] of Object.entries(settings)) {
+      assert.match(value, /^\d+(\.\d+)?$/, `${lang}: ${key}`);
+      assert.ok(Number(value) > 0, `${lang}: ${key}`);
+    }
+  }
+});
+
 test('committed pages are up to date with site/', () => {
   const stale = [...files].filter(([file, contents]) => (
     !fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== contents
@@ -77,12 +160,12 @@ test('every page has its language, canonical URL and hreflang alternates', () =>
       const html = readPage(lang, page);
       const name = pagePath(lang, page);
 
-      assert.match(html, new RegExp(`<html lang="${lang}">`), name);
+      assert.ok(html.includes(`<html lang="${languageTag(lang)}">`), `${name} html lang`);
       assert.ok(html.includes(`<link rel="canonical" href="${pageUrl(lang, page)}">`), `${name} canonical`);
       for (const other of LANGUAGES) {
         assert.ok(
-          html.includes(`<link rel="alternate" hreflang="${other}" href="${pageUrl(other, page)}">`),
-          `${name} hreflang ${other}`
+          html.includes(`<link rel="alternate" hreflang="${languageTag(other)}" href="${pageUrl(other, page)}">`),
+          `${name} hreflang ${languageTag(other)}`
         );
       }
       assert.ok(
@@ -103,7 +186,8 @@ test('titles and descriptions are unique and of a sensible length', () => {
       const description = html.match(/<meta name="description" content="([^"]+)">/)[1];
       const name = pagePath(lang, page);
 
-      assert.ok(description.length >= 70 && description.length <= 200, `${name} description is ${description.length} characters`);
+      const [min, max] = DESCRIPTION_LENGTH[CJK.includes(lang) ? 'cjk' : 'default'];
+      assert.ok(description.length >= min && description.length <= max, `${name} description is ${description.length} characters`);
       for (const value of [title, description]) {
         assert.ok(!seen.has(value), `${name} repeats "${value}" from ${seen.get(value)}`);
         seen.set(value, name);
@@ -187,6 +271,12 @@ test('the sitemap lists every page in every language', () => {
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
   assert.equal(locs.length, PAGES.length * LANGUAGES.length);
   for (const { lang } of locales) {
-    for (const page of PAGES) assert.ok(locs.includes(pageUrl(lang, page)), pageUrl(lang, page));
+    for (const page of PAGES) {
+      assert.ok(locs.includes(pageUrl(lang, page)), pageUrl(lang, page));
+      assert.ok(
+        sitemap.includes(`<xhtml:link rel="alternate" hreflang="${languageTag(lang)}" href="${pageUrl(lang, page)}"/>`),
+        `sitemap hreflang ${languageTag(lang)} ${pageUrl(lang, page)}`
+      );
+    }
   }
 });
