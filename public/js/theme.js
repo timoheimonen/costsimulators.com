@@ -58,8 +58,10 @@ SOFTWARE.
         const meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', THEME_COLORS[theme]);
 
-        const label = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+        // The generated pages carry the translated labels on the button.
         document.querySelectorAll('[data-theme-toggle]').forEach(function (button) {
+            const label = theme === 'dark' ? button.dataset.labelLight : button.dataset.labelDark;
+            if (!label) return;
             button.setAttribute('aria-label', label);
             button.setAttribute('title', label);
         });

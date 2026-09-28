@@ -1,0 +1,37 @@
+    <main id="main" class="container">
+        <section class="hero reveal">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{home.eyebrow}}</p>
+            <h1 class="hero-title">{{{home.heading}}}</h1>
+            <p class="hero-lead">{{home.lead}}</p>
+        </section>
+
+        <section aria-labelledby="toolsTitle">
+            <div class="section-head reveal" style="--i: 1">
+                <h2 class="section-title" id="toolsTitle">{{home.toolsTitle}}</h2>
+                <span class="section-meta">{{home.toolCount}}</span>
+            </div>
+
+            <ul class="tool-grid" role="list">
+{{{toolCards}}}
+                <li class="reveal" style="--i: 9">
+                    <a class="tool-card tool-card--suggest" href="https://github.com/timoheimonen/costsimulators.com/issues" target="_blank" rel="noopener noreferrer">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                        <span>
+                            <h3>{{home.suggestTitle}}</h3>
+                            <p>{{home.suggestText}}</p>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="info-section info-prose reveal" aria-labelledby="whyTitle">
+            <h2 class="info-title" id="whyTitle">{{home.whyTitle}}</h2>
+            <p>{{home.whyText1}}</p>
+            <p>{{home.whyText2}} <a href="{{url.about}}">{{home.aboutLink}}</a></p>
+        </section>
+
+{{{homeFaq}}}
+    </main>
