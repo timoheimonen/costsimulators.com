@@ -2,6 +2,23 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-10-19
+
+### Added
+
+- New tools, in every language:
+  - **Alcohol cost** – what beer, wine and other drinks cost per month and over 1, 5 and 10 years, from the price per drink and drinks per week
+  - **Cost per use** – the price minus the resale value, divided by every use, from how often (per week, month or year) and for how many years the thing is used, with the cost per month and per year
+  - **Lottery & betting** – what lottery tickets and bets cost per month, per year and over 10 years, and the average loss from the payout rate, with quick picks for lottery, sports betting and casino games
+- "If you invested it instead" on the coffee, smoking, alcohol, lottery and subscription calculators: what the same money would grow to in 10 years if it were invested every month at a 4% yearly return, compounded monthly, with the money paid in and the returns. The money goes in at the same pace as it would be spent, not as one sum at the start
+- A FAQ answer about the invested amount on those calculators, and the new tools on the about pages
+
+### Changed
+
+- On narrow screens a long result label wraps, and the amount next to it is always shown in full
+- German, Finnish and Danish texts keep the percent sign on the same line as its number
+- The sharing images show the new tools
+
 ## 2026-09-28b
 
 ### Added

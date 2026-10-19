@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Pilihan cepat',
     faqTitle: 'Pertanyaan yang sering diajukan',
     relatedTools: 'Kalkulator lainnya',
-    imageAlt: 'costsimulators.com – kalkulator biaya gratis untuk urusan uang sehari-hari'
+    imageAlt: 'costsimulators.com – kalkulator biaya gratis untuk urusan uang sehari-hari',
+    invest: {
+      label: 'Jika uangnya diinvestasikan'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} menit',
       hours: '{h} jam',
       hoursMinutes: '{h} jam {m} menit'
+    },
+    invest: {
+      note: '{monthly} per bulan selama 10 tahun dengan imbal hasil {rate} per tahun: {paid} uang Anda sendiri dan {gain} hasil investasi.'
     }
   },
 
   home: {
     title: 'Kalkulator Biaya Gratis untuk Kebutuhan Sehari-hari',
-    description: 'Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kopi, rokok, langganan, listrik, dan bensin. Tanpa daftar, langsung di browser Anda.',
+    description: 'Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kebiasaan, langganan, listrik, bensin, dan biaya per pemakaian. Tanpa daftar, langsung di browser Anda.',
     eyebrow: 'Gratis · Privat · Instan',
     heading: 'Alat kecil untuk urusan <span class="accent-text">uang</span> sehari-hari.',
     lead: 'Kalkulator cepat yang menunjukkan berapa biaya sebenarnya. Tanpa daftar, tanpa pelacakan – semuanya berjalan langsung di browser Anda.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'Tentang',
       title: 'Tentang Kami – Kalkulator Biaya Gratis dan Privat',
-      description: 'Siapa pembuat costsimulators.com dan cara kerja kalkulatornya. Kalkulator biaya gratis dan privat untuk rapat, jam kerja, kebiasaan, langganan, listrik, dan perjalanan.'
+      description: 'Siapa pembuat costsimulators.com dan cara kerja kalkulatornya. Kalkulator biaya gratis dan privat untuk rapat, jam kerja, kebiasaan, pembelian, langganan, listrik, dan perjalanan.'
     },
     privacy: {
       name: 'Kebijakan privasi',
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Biaya per pemakaian',
+      heading: 'Kalkulator biaya per pemakaian',
+      title: 'Kalkulator Biaya per Pemakaian – Sepadan dengan Harganya?',
+      description: 'Hitung biaya sebenarnya dari sebuah barang setiap kali Anda memakainya: harga dikurangi nilai jual kembali, dibagi seberapa sering dan berapa lama Anda memakainya.',
+      card: 'Bagi harga sebuah barang ke setiap kali Anda memakainya untuk melihat apakah sepadan.',
+      tag: 'Belanja',
+      lead: 'Masukkan harga, seberapa sering Anda akan memakai barangnya, dan untuk berapa lama, lalu lihat biaya sebenarnya setiap kali pakai.',
+      price: {
+        label: 'Harga',
+        unit: 'Rp',
+        value: '8000000',
+        step: '100000',
+        decrease: 'Kurangi harga',
+        increase: 'Tambah harga'
+      },
+      period: {
+        label: 'Seberapa sering dipakai',
+        week: 'Mingguan',
+        month: 'Bulanan',
+        year: 'Tahunan'
+      },
+      uses: {
+        label: 'Pemakaian',
+        unit: 'kali seminggu',
+        decrease: 'Kurangi pemakaian',
+        increase: 'Tambah pemakaian'
+      },
+      years: {
+        label: 'Lama pemakaian',
+        unit: 'tahun',
+        chip1: '1 tahun',
+        chip2: '3 tahun',
+        chip3: '5 tahun',
+        decrease: 'Kurangi lama pemakaian',
+        increase: 'Tambah lama pemakaian'
+      },
+      resale: {
+        label: 'Nilai jual kembali',
+        unit: 'Rp, opsional',
+        hint: 'Perkiraan uang yang Anda dapat saat menjualnya nanti. Biarkan 0 jika tidak ada.',
+        decrease: 'Kurangi nilai jual kembali',
+        increase: 'Tambah nilai jual kembali'
+      },
+      resultsTitle: 'Biaya per pemakaian',
+      perUse: 'Setiap kali pakai',
+      totalUses: 'Total pemakaian',
+      perMonth: 'Per bulan',
+      perYear: 'Per tahun',
+      runtime: {
+        unit: {
+          week: 'kali seminggu',
+          month: 'kali sebulan',
+          year: 'kali setahun'
+        },
+        note: {
+          empty: 'Masukkan harga, seberapa sering Anda memakainya, dan berapa tahun. Nilai jual kembali harus lebih rendah dari harga.',
+          result: 'Jika dipakai setahun lagi, biaya per pemakaian turun menjadi {next}.'
+        }
+      },
+      about: {
+        title: 'Cara menghitung biaya per pemakaian',
+        paragraphs: [
+          'Biaya per pemakaian adalah harga dikurangi uang yang Anda dapat kembali saat menjualnya, lalu dibagi jumlah pemakaian. Jumlah pemakaian adalah seberapa sering Anda memakainya × jumlah minggu, bulan, atau tahun pemakaian. Barang seharga Rp 8.000.000 yang dipakai 3 kali seminggu selama 3 tahun terpakai 468 kali, jadi biayanya Rp 17.094 per pemakaian.',
+          'Biaya bulanan dan tahunan membagi jumlah yang sama ke seluruh masa Anda memiliki barang itu, sehingga mudah membandingkan membeli dengan menyewa, leasing, atau berlangganan.',
+          'Biaya per pemakaian adalah cara sederhana untuk membandingkan barang murah yang cepat rusak dengan barang mahal yang awet. Sepatu seharga Rp 300.000 yang dipakai 50 kali berarti Rp 6.000 sekali pakai; sepatu seharga Rp 1.000.000 yang dipakai 400 kali hanya Rp 2.500.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Bagaimana cara menghitung biaya per pemakaian?',
+          a: 'Bagi harga barang dengan berapa kali Anda memakainya. Jika nanti Anda menjualnya, kurangi dulu harganya dengan nilai jual kembali. Jaket seharga Rp 400.000 yang dipakai 80 kali berarti Rp 5.000 sekali pakai.'
+        },
+        {
+          q: 'Berapa biaya per pemakaian yang wajar?',
+          a: 'Tergantung berapa biaya alternatifnya. Bandingkan dengan menyewa, meminjam, atau membayar setiap kali datang: jika sekali masuk gym tanpa keanggotaan biayanya Rp 50.000, keanggotaan Rp 300.000 per bulan mulai menguntungkan sejak kunjungan ketujuh dalam sebulan.'
+        },
+        {
+          q: 'Apakah bisa dipakai untuk langganan dan keanggotaan?',
+          a: 'Bisa. Masukkan harga tahunan sebagai harga, seberapa sering Anda memakainya, dan 1 tahun. Untuk keanggotaan gym Rp 300.000 per bulan, masukkan Rp 3.600.000 dan jumlah kunjungan Anda per minggu.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kebiasaan ngopi',
       heading: 'Kalkulator biaya kopi',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'Apakah kalkulator ini memperhitungkan inflasi?',
           a: 'Tidak. Proyeksinya mengasumsikan harga tetap sama, jadi hasilnya menunjukkan biaya kebiasaan ini dengan harga saat ini. Jika harga naik, biaya jangka panjang yang sebenarnya lebih tinggi.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang itu Anda investasikan setiap bulan alih-alih dibelanjakan, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Kopi seharga Rp 25.000 setiap hari kerja berarti sekitar Rp 541.700 sebulan, yang tumbuh menjadi sekitar Rp 79,5 juta dalam 10 tahun – Rp 65 juta dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Apakah kalkulator ini bisa dipakai untuk tembakau linting (tingwe)?',
           a: 'Bisa. Masukkan harga sebungkus tembakau sebagai harga per bungkus, jumlah batang yang bisa Anda linting darinya sebagai isi bungkus, dan berapa batang yang Anda isap per hari.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang itu Anda investasikan setiap bulan alih-alih dipakai untuk merokok, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Setengah bungkus sehari (8 batang dari bungkus isi 16) dengan harga Rp 35.000 per bungkus berarti sekitar Rp 532.300 sebulan, yang tumbuh menjadi sekitar Rp 78,1 juta dalam 10 tahun – Rp 63.875.000 dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Biaya alkohol',
+      heading: 'Kalkulator biaya alkohol',
+      title: 'Kalkulator Biaya Alkohol – Berapa Biaya Kebiasaan Minum?',
+      description: 'Lihat berapa biaya bir, anggur, dan minuman beralkohol lainnya per bulan serta dalam 1, 5, dan 10 tahun, dan berapa hasilnya jika uang itu diinvestasikan.',
+      card: 'Lihat berapa total biaya minuman Anda setiap minggu dalam satu, lima, dan sepuluh tahun.',
+      tag: 'Kebiasaan',
+      lead: 'Masukkan harga satu minuman dan berapa banyak Anda minum dalam seminggu untuk melihat totalnya dari tahun ke tahun.',
+      price: {
+        label: 'Harga per minuman',
+        unit: 'Rp',
+        step: '1000',
+        value: '50000',
+        hint: 'Minum di rumah dan di luar? Gunakan harga rata-rata.',
+        decrease: 'Kurangi harga minuman',
+        increase: 'Tambah harga minuman'
+      },
+      perWeek: {
+        label: 'Minuman per minggu',
+        unit: 'minuman',
+        chip1: '3 seminggu',
+        chip2: '7 seminggu',
+        chip3: '14 seminggu',
+        decrease: 'Kurangi minuman per minggu',
+        increase: 'Tambah minuman per minggu'
+      },
+      resultsTitle: 'Total biayanya',
+      in10Years: 'Dalam 10 tahun',
+      perMonth: 'Per bulan',
+      year1: '1 tahun',
+      year5: '5 tahun',
+      runtime: {
+        note: {
+          empty: 'Masukkan harga dan jumlah minuman per minggu untuk melihat totalnya.',
+          result: 'Itu sekitar {drinks} minuman setahun dengan harga {price} per minuman.'
+        }
+      },
+      about: {
+        title: 'Cara menghitung biaya minum alkohol',
+        paragraphs: [
+          'Biaya tahunan adalah harga per minuman × jumlah minuman per minggu × 52 minggu. Biaya bulanan adalah seperdua belasnya, dan total 5 serta 10 tahun memakai harga saat ini tanpa inflasi.',
+          'Enam botol bir seharga Rp 50.000 seminggu berarti Rp 15,6 juta setahun dan Rp 156 juta dalam sepuluh tahun. Jika Anda minum di bar maupun di rumah, gunakan harga rata-rata, atau hitung masing-masing secara terpisah lalu jumlahkan.',
+          'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang yang sama diinvestasikan setiap bulan dengan imbal hasil 4% per tahun selama 10 tahun. Kalkulator ini hanya menghitung harga minumannya; dampak kesehatan belum termasuk. Jika Anda ingin mengurangi minum, dokter Anda atau puskesmas terdekat bisa membantu.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Berapa uang yang saya habiskan untuk alkohol dalam setahun?',
+          a: 'Kalikan harga satu minuman dengan jumlah minuman per minggu dan dengan 52. Enam minuman seharga Rp 50.000 seminggu berarti Rp 15.600.000 setahun.'
+        },
+        {
+          q: 'Berapa yang bisa saya hemat jika minum lebih sedikit?',
+          a: 'Masukkan jumlah minuman yang ingin Anda capai, lalu bandingkan. Mengurangi dari 6 menjadi 3 minuman seminggu dengan harga Rp 50.000 per minuman menghemat Rp 7.800.000 setahun dan Rp 78.000.000 dalam sepuluh tahun.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa yang Anda miliki setelah 10 tahun jika uang itu diinvestasikan setiap bulan alih-alih dibelanjakan, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Enam minuman seharga Rp 50.000 seminggu berarti Rp 1.300.000 sebulan, yang tumbuh menjadi sekitar Rp 190,7 juta – Rp 156 juta dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Biaya lotre & taruhan',
+      heading: 'Kalkulator biaya lotre dan taruhan',
+      title: 'Kalkulator Biaya Lotre & Taruhan – Berapa Biaya Berjudi?',
+      description: 'Lihat berapa biaya tiket lotre dan taruhan per bulan dan dalam 10 tahun, berapa rata-rata uang yang hilang, dan berapa hasilnya jika uang itu diinvestasikan.',
+      card: 'Lihat berapa total biaya tiket lotre dan taruhan serta berapa rata-rata uang yang hilang.',
+      tag: 'Kebiasaan',
+      lead: 'Masukkan nilai taruhan dan seberapa sering Anda bermain untuk melihat berapa biaya tiket lotre dan taruhan dari tahun ke tahun – dan berapa bagian yang rata-rata kembali sebagai hadiah.',
+      stake: {
+        label: 'Taruhan per permainan',
+        unit: 'Rp',
+        step: '10000',
+        value: '150000',
+        decrease: 'Kurangi nilai taruhan',
+        increase: 'Tambah nilai taruhan'
+      },
+      perWeek: {
+        label: 'Permainan per minggu',
+        unit: 'kali',
+        chip1: 'Seminggu sekali',
+        chip2: 'Dua kali seminggu',
+        chip3: 'Setiap hari',
+        decrease: 'Kurangi permainan per minggu',
+        increase: 'Tambah permainan per minggu'
+      },
+      payout: {
+        label: 'Tingkat pengembalian',
+        unit: '% kembali',
+        chip1: 'Lotre',
+        chip2: 'Taruhan olahraga',
+        chip3: 'Kasino',
+        hint: 'Bagian dari seluruh taruhan yang dibayarkan kembali sebagai hadiah. Lotre biasanya mengembalikan sekitar separuhnya, taruhan olahraga dan permainan kasino 90–97%.',
+        decrease: 'Kurangi tingkat pengembalian',
+        increase: 'Tambah tingkat pengembalian'
+      },
+      resultsTitle: 'Berapa biayanya',
+      in10Years: 'Total taruhan dalam 10 tahun',
+      perMonth: 'Per bulan',
+      perYear: 'Per tahun',
+      lossPerYear: 'Rata-rata kerugian setahun',
+      runtime: {
+        note: {
+          empty: 'Masukkan nilai taruhan, berapa kali seminggu Anda bermain, dan tingkat pengembalian (0–100).',
+          result: 'Rata-rata sekitar {back} setahun kembali sebagai hadiah, jadi Anda kehilangan sekitar {loss} setahun dan {loss10} dalam 10 tahun.'
+        }
+      },
+      about: {
+        title: 'Cara menghitung biaya lotre dan taruhan',
+        paragraphs: [
+          'Biaya tahunan adalah nilai taruhan × jumlah permainan per minggu × 52 minggu. Biaya bulanan adalah seperdua belasnya, dan total 10 tahun memakai nilai taruhan saat ini.',
+          'Tingkat pengembalian adalah bagian dari seluruh taruhan yang dibayarkan kembali sebagai hadiah. Dengan tingkat pengembalian 50%, taruhan Rp 150.000 dua kali seminggu berarti Rp 15,6 juta setahun, dan rata-rata sekitar Rp 7,8 juta di antaranya kembali sebagai hadiah – kerugian rata-rata Rp 7,8 juta setahun. Satu pemain bisa menang besar atau kehilangan semuanya, tetapi makin banyak permainan, makin dekat hasilnya ke rata-rata.',
+          'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang taruhan itu diinvestasikan setiap bulan dengan imbal hasil 4% per tahun selama 10 tahun. Jika kebiasaan berjudi terasa sulit dikendalikan, dokter Anda, puskesmas terdekat, atau layanan konseling setempat bisa membantu.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Berapa uang yang saya habiskan untuk lotre dalam setahun?',
+          a: 'Kalikan nilai taruhan dengan jumlah permainan per minggu dan dengan 52. Taruhan Rp 150.000 dua kali seminggu berarti Rp 15.600.000 setahun dan Rp 156.000.000 dalam sepuluh tahun.'
+        },
+        {
+          q: 'Apa itu tingkat pengembalian?',
+          a: 'Tingkat pengembalian adalah bagian dari seluruh taruhan yang dibayarkan kembali kepada pemain sebagai hadiah. Lotre biasanya mengembalikan sekitar separuh dari total taruhan, sedangkan taruhan olahraga dan permainan kasino mengembalikan 90–97%. Sisanya menjadi bagian penyelenggara – dan itulah yang rata-rata hilang dari pemain.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa yang Anda miliki setelah 10 tahun jika uang taruhan itu diinvestasikan setiap bulan, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Taruhan Rp 150.000 dua kali seminggu berarti Rp 1.300.000 sebulan, yang tumbuh menjadi sekitar Rp 190,7 juta – Rp 156 juta dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
         }
       ]
     },
@@ -472,6 +701,10 @@ module.exports = {
         {
           q: 'Apakah daftar saya disimpan?',
           a: 'Daftar Anda hanya tersimpan di alamat halaman. Tandai atau bagikan tautannya untuk menyimpannya; tidak ada yang disimpan di server atau di cookie.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika jumlah yang sama Anda investasikan setiap bulan alih-alih untuk langganan, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Rp 500.000 sebulan tumbuh menjadi sekitar Rp 73,3 juta dalam 10 tahun – Rp 60 juta dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
         }
       ]
     },

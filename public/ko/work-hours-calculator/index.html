@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "회의, 노동시간, 커피, 담배, 구독료, 전기요금, 기름값이 실제로 얼마인지 보여 주는 무료 계산기예요. 가입 없이 브라우저에서 바로 계산해요.",
+                "description": "회의, 노동시간, 생활 습관, 구독료, 전기요금, 기름값, 1회당 비용까지 실제로 얼마인지 보여 주는 무료 계산기예요. 가입 없이 브라우저에서 바로 계산해요.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -238,7 +238,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"ko-KR","currency":"KRW","decimals":0,"strings":{"share":{"linkCopied":"링크를 복사했어요","copyFailed":"복사하지 못했어요","copied":"복사했어요!","calculatedWith":"costsimulators.com에서 계산"},"workTime":{"minutes":"{m}분","hours":"{h}시간","hoursMinutes":"{h}시간 {m}분"},"unit":{"hour":"원/시간","month":"원/월","year":"원/년"},"days":{"other":"{n}일"},"weeks":{"other":"{n}주"},"note":{"empty":"급여, 주당 근로시간, 가격을 입력하면 얼마나 일해야 하는지 알 수 있어요.","result":"하루 {hours}시간, 주 {days}일 근무 기준이에요."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"ko-KR","currency":"KRW","decimals":0,"strings":{"share":{"linkCopied":"링크를 복사했어요","copyFailed":"복사하지 못했어요","copied":"복사했어요!","calculatedWith":"costsimulators.com에서 계산"},"workTime":{"minutes":"{m}분","hours":"{h}시간","hoursMinutes":"{h}시간 {m}분"},"invest":{"note":"매달 {monthly}씩 10년 동안 연 {rate} 수익률로 투자하면 원금 {paid}, 수익 {gain}이에요."},"unit":{"hour":"원/시간","month":"원/월","year":"원/년"},"days":{"other":"{n}일"},"weeks":{"other":"{n}주"},"note":{"empty":"급여, 주당 근로시간, 가격을 입력하면 얼마나 일해야 하는지 알 수 있어요.","result":"하루 {hours}시간, 주 {days}일 근무 기준이에요."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/workhours.js" defer></script>
@@ -441,6 +441,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/ko/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>1회당 비용</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/ko/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -454,6 +462,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>담뱃값</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/ko/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>술값</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/ko/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>복권·베팅 비용</span>
                     </a>
                 </li>
                 <li>

@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Schnellauswahl',
     faqTitle: 'Häufig gestellte Fragen',
     relatedTools: 'Weitere Rechner',
-    imageAlt: 'costsimulators.com – kostenlose Kostenrechner für Geldfragen im Alltag'
+    imageAlt: 'costsimulators.com – kostenlose Kostenrechner für Geldfragen im Alltag',
+    invest: {
+      label: 'Wenn du das Geld stattdessen anlegst'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} Min.',
       hours: '{h} Std.',
       hoursMinutes: '{h} Std. {m} Min.'
+    },
+    invest: {
+      note: '{monthly} pro Monat über 10 Jahre bei {rate} Rendite im Jahr: {paid} eingezahlt und {gain} an Erträgen.'
     }
   },
 
   home: {
     title: 'Kostenrechner für den Alltag – kostenlos und privat',
-    description: 'Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Kaffee, Rauchen, Abos, Strom und Sprit. Ohne Anmeldung, direkt im Browser.',
+    description: 'Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Gewohnheiten, Abos, Strom, Sprit und Kosten pro Nutzung. Ohne Anmeldung, direkt im Browser.',
     eyebrow: 'Kostenlos · Privat · Sofort',
     heading: 'Kleine Rechner für alltägliche <span class="accent-text">Geld</span>fragen.',
     lead: 'Schnelle Rechner, die zeigen, was Dinge wirklich kosten. Ohne Anmeldung, ohne Tracking – alles läuft direkt in deinem Browser.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'Über uns',
       title: 'Über uns – kostenlose, private Kostenrechner',
-      description: 'Wer hinter costsimulators.com steckt und wie die Rechner funktionieren. Kostenlose, private Kostenrechner für Meetings, Arbeitszeit, Gewohnheiten, Abos, Strom und Fahrten.'
+      description: 'Wer hinter costsimulators.com steckt und wie die Rechner funktionieren. Kostenlose, private Kostenrechner für Meetings, Arbeitszeit, Gewohnheiten, Anschaffungen, Abos, Strom und Fahrten.'
     },
     privacy: {
       name: 'Datenschutzerklärung',
@@ -162,7 +168,7 @@ module.exports = {
         title: 'So werden die Meetingkosten berechnet',
         paragraphs: [
           'Der Rechner multipliziert die Zahl der Teilnehmer mit ihrem Stundensatz und der verstrichenen Zeit. Ein einstündiges Meeting mit 5 Personen zu je 55 € pro Stunde kostet 275 € – das sind rund 4,58 € pro Minute.',
-          'Nimm als Stundensatz, was eine Arbeitsstunde den Arbeitgeber tatsächlich kostet, nicht nur den Lohn. Zum Bruttolohn kommen der Arbeitgeberanteil zur Sozialversicherung von rund 21 % und weitere Kosten wie bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall und der Arbeitsplatz selbst. Wenn du nicht alle Stundensätze kennst, reicht ein Durchschnittswert für das Team völlig aus.',
+          'Nimm als Stundensatz, was eine Arbeitsstunde den Arbeitgeber tatsächlich kostet, nicht nur den Lohn. Zum Bruttolohn kommen der Arbeitgeberanteil zur Sozialversicherung von rund 21 % und weitere Kosten wie bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall und der Arbeitsplatz selbst. Wenn du nicht alle Stundensätze kennst, reicht ein Durchschnittswert für das Team völlig aus.',
           'Der Timer zählt auch in einem Hintergrund-Tab korrekt weiter, und die laufenden Kosten erscheinen im Titel des Browser-Tabs – so behältst du sie im Blick, auch wenn du deinen Bildschirm teilst. Ist das Meeting vorbei, pausiere den Timer und kopiere einen kurzen Bericht fürs Protokoll.'
         ]
       },
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Kosten pro Nutzung',
+      heading: 'Kosten pro Nutzung berechnen',
+      title: 'Kosten pro Nutzung berechnen – lohnt sich der Kauf?',
+      description: 'Rechne aus, was ein Kauf dich bei jeder Nutzung wirklich kostet: Preis minus Wiederverkaufswert, geteilt durch Häufigkeit und Dauer der Nutzung.',
+      card: 'Verteile einen Preis auf jede Nutzung und sieh, ob sich der Kauf lohnt.',
+      tag: 'Einkaufen',
+      lead: 'Gib einen Preis ein, wie oft und wie lange du die Sache nutzen wirst, und sieh, was jede Nutzung wirklich kostet.',
+      price: {
+        label: 'Preis',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Preis senken',
+        increase: 'Preis erhöhen'
+      },
+      period: {
+        label: 'Wie oft du es nutzt',
+        week: 'Wöchentlich',
+        month: 'Monatlich',
+        year: 'Jährlich'
+      },
+      uses: {
+        label: 'Nutzungen',
+        unit: 'Mal pro Woche',
+        decrease: 'Weniger Nutzungen',
+        increase: 'Mehr Nutzungen'
+      },
+      years: {
+        label: 'Nutzungsdauer',
+        unit: 'Jahre',
+        chip1: '1 Jahr',
+        chip2: '3 Jahre',
+        chip3: '5 Jahre',
+        decrease: 'Nutzungsdauer verkürzen',
+        increase: 'Nutzungsdauer verlängern'
+      },
+      resale: {
+        label: 'Wiederverkaufswert',
+        unit: '€, optional',
+        hint: 'Was du beim Verkauf voraussichtlich noch bekommst. Lass 0 stehen, wenn du nichts erwartest.',
+        decrease: 'Wiederverkaufswert senken',
+        increase: 'Wiederverkaufswert erhöhen'
+      },
+      resultsTitle: 'Kosten pro Nutzung',
+      perUse: 'Jede Nutzung kostet',
+      totalUses: 'Nutzungen insgesamt',
+      perMonth: 'Pro Monat',
+      perYear: 'Pro Jahr',
+      runtime: {
+        unit: {
+          week: 'Mal pro Woche',
+          month: 'Mal pro Monat',
+          year: 'Mal pro Jahr'
+        },
+        note: {
+          empty: 'Gib den Preis ein, wie oft du die Sache nutzt und wie viele Jahre lang. Der Wiederverkaufswert muss unter dem Preis liegen.',
+          result: 'Nutzt du es ein Jahr länger, sinken die Kosten pro Nutzung auf {next}.'
+        }
+      },
+      about: {
+        title: 'So werden die Kosten pro Nutzung berechnet',
+        paragraphs: [
+          'Die Kosten pro Nutzung sind der Preis minus das, was du beim Verkauf zurückbekommst, geteilt durch die Zahl der Nutzungen. Die Zahl der Nutzungen ist die Häufigkeit × die Wochen, Monate oder Jahre, in denen du die Sache nutzt. Ein Kauf für 500 €, den du 3 Jahre lang 3-mal pro Woche nutzt, kommt auf 468 Nutzungen und kostet 1,07 € pro Nutzung.',
+          'Die Monats- und Jahreskosten verteilen denselben Betrag auf die Zeit, in der du die Sache besitzt. So lässt sich ein Kauf leicht mit Mieten, Leasing oder einem Abo vergleichen.',
+          'Die Kosten pro Nutzung sind ein einfacher Weg, etwas Günstiges, das schnell verschleißt, mit etwas Teurem zu vergleichen, das lange hält. Ein Paar Schuhe für 60 €, das du 50-mal trägst, kostet 1,20 € pro Tragen; ein Paar für 200 €, das du 400-mal trägst, kostet 0,50 €.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Wie berechne ich die Kosten pro Nutzung?',
+          a: 'Teile den Preis durch die Zahl der Nutzungen. Wenn du die Sache später verkaufst, zieh vorher den Wiederverkaufswert vom Preis ab. Eine Jacke für 120 €, die du 80-mal trägst, kostet 1,50 € pro Tragen.'
+        },
+        {
+          q: 'Was sind gute Kosten pro Nutzung?',
+          a: 'Das hängt davon ab, was die Alternative kostet. Vergleiche mit Mieten, Ausleihen oder Bezahlen pro Besuch: Kostet eine Tageskarte im Fitnessstudio 15 €, lohnt sich eine Mitgliedschaft für 35 € im Monat ab dem dritten Besuch im Monat.'
+        },
+        {
+          q: 'Funktioniert das auch für Abos und Mitgliedschaften?',
+          a: 'Ja. Gib den Jahrespreis als Preis ein, dazu deine Nutzungshäufigkeit und 1 Jahr. Bei einer Fitnessstudio-Mitgliedschaft für 35 € im Monat gibst du 420 € und deine Besuche pro Woche ein.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kaffeekosten',
       heading: 'Kaffeekosten-Rechner',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'Berücksichtigt der Rechner die Inflation?',
           a: 'Nein. Die Hochrechnungen gehen von gleichbleibenden Preisen aus und zeigen, was die Gewohnheit zu heutigen Preisen kostet. Steigen die Preise, sind die tatsächlichen Kosten auf lange Sicht höher.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus dem Geld würde, wenn du es jeden Monat anlegst, statt es auszugeben – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. Ein Kaffee für 3,50 € an jedem Arbeitstag sind 75,83 € im Monat; daraus werden in 10 Jahren rund 11.120 € – 9.100 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Funktioniert der Rechner auch für Drehtabak?',
           a: 'Ja. Gib den Preis eines Päckchens Tabak als Packungspreis ein, die Zahl der Zigaretten, die du daraus drehst, als Packungsgröße und dazu, wie viele du am Tag rauchst.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus dem Geld würde, wenn du es jeden Monat anlegst, statt es für Zigaretten auszugeben – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. Eine halbe Packung am Tag bei 9,50 € pro Packung sind rund 144 € im Monat; daraus werden in 10 Jahren rund 21.190 € – 17.337,50 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkoholkosten',
+      heading: 'Alkoholkosten-Rechner',
+      title: 'Alkoholkosten-Rechner – was kostet dich Alkohol im Jahr?',
+      description: 'Sieh, was Bier, Wein und andere Getränke dich pro Monat und in 1, 5 und 10 Jahren kosten – und was aus demselben Geld würde, wenn du es anlegst.',
+      card: 'Sieh, was deine wöchentlichen Getränke in einem, fünf und zehn Jahren ausmachen.',
+      tag: 'Gewohnheit',
+      lead: 'Gib ein, was ein Getränk kostet und wie viele du pro Woche trinkst, und sieh, was über die Jahre zusammenkommt.',
+      price: {
+        label: 'Preis pro Getränk',
+        unit: '€',
+        step: '0.1',
+        value: '5',
+        hint: 'Du trinkst zu Hause und unterwegs? Nimm einen Durchschnittspreis.',
+        decrease: 'Getränkepreis senken',
+        increase: 'Getränkepreis erhöhen'
+      },
+      perWeek: {
+        label: 'Getränke pro Woche',
+        unit: 'Getränke',
+        chip1: '3 pro Woche',
+        chip2: '7 pro Woche',
+        chip3: '14 pro Woche',
+        decrease: 'Weniger Getränke pro Woche',
+        increase: 'Mehr Getränke pro Woche'
+      },
+      resultsTitle: 'Das kommt zusammen',
+      in10Years: 'In 10 Jahren',
+      perMonth: 'Pro Monat',
+      year1: '1 Jahr',
+      year5: '5 Jahre',
+      runtime: {
+        note: {
+          empty: 'Gib einen Preis ein und wie viele Getränke du pro Woche trinkst, um die Summen zu sehen.',
+          result: 'Das sind rund {drinks} Getränke im Jahr zu je {price}.'
+        }
+      },
+      about: {
+        title: 'So werden die Kosten für Alkohol berechnet',
+        paragraphs: [
+          'Die Jahreskosten sind Preis pro Getränk × Getränke pro Woche × 52 Wochen. Die Monatskosten sind ein Zwölftel davon, und die Summen für 5 und 10 Jahre beruhen auf heutigen Preisen ohne Inflation.',
+          'Sechs Bier pro Woche zu je 5 € machen 1.560 € im Jahr und 15.600 € in zehn Jahren. Wenn du sowohl in der Kneipe als auch zu Hause trinkst, nimm einen Durchschnittspreis oder rechne beides getrennt aus und zähle es zusammen.',
+          'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus demselben Geld würde, wenn du es jeden Monat anlegst – bei 4 % Rendite im Jahr über 10 Jahre. Der Rechner zählt nur, was die Getränke kosten; gesundheitliche Folgen kommen noch hinzu. Wenn du weniger trinken möchtest, helfen dir deine Hausarztpraxis oder eine Suchtberatungsstelle in deiner Nähe.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Wie viel gebe ich im Jahr für Alkohol aus?',
+          a: 'Multipliziere den Preis eines Getränks mit der Zahl der Getränke pro Woche und mit 52. Sechs Getränke pro Woche zu je 5 € sind 1.560 € im Jahr.'
+        },
+        {
+          q: 'Wie viel spare ich, wenn ich weniger trinke?',
+          a: 'Gib die Zahl der Getränke ein, auf die du reduzieren möchtest, und vergleiche. Trinkst du statt 6 nur noch 3 Getränke pro Woche zu je 5 €, sparst du 780 € im Jahr und 7.800 € in zehn Jahren.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was du nach 10 Jahren hättest, wenn du das Geld jeden Monat anlegst, statt es auszugeben – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. Sechs Getränke zu je 5 € pro Woche sind 130 € im Monat; daraus werden rund 19.070 € – 15.600 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotto & Wetten',
+      heading: 'Lotto- und Wettkosten-Rechner',
+      title: 'Lotto- und Wettkosten-Rechner – was kostet Glücksspiel?',
+      description: 'Sieh, was Lottoscheine und Wetten pro Monat und in 10 Jahren kosten, wie viel du im Schnitt verlierst und was aus den Einsätzen würde, wenn du sie anlegst.',
+      card: 'Sieh, was Lottoscheine und Wetten ausmachen und wie viel du im Schnitt verlierst.',
+      tag: 'Gewohnheit',
+      lead: 'Gib ein, wie viel du einsetzt und wie oft du spielst, und sieh, was Lotto und Wetten über die Jahre kosten – und wie viel davon im Schnitt als Gewinn zurückfließt.',
+      stake: {
+        label: 'Einsatz pro Spiel',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Einsatz senken',
+        increase: 'Einsatz erhöhen'
+      },
+      perWeek: {
+        label: 'Spiele pro Woche',
+        unit: 'Spiele',
+        chip1: 'Einmal pro Woche',
+        chip2: 'Zweimal pro Woche',
+        chip3: 'Jeden Tag',
+        decrease: 'Weniger Spiele pro Woche',
+        increase: 'Mehr Spiele pro Woche'
+      },
+      payout: {
+        label: 'Ausschüttungsquote',
+        unit: '% ausgezahlt',
+        chip1: 'Lotto',
+        chip2: 'Sportwetten',
+        chip3: 'Casino',
+        hint: 'Der Anteil aller Einsätze, der als Gewinne wieder ausgezahlt wird. Lotterien zahlen meist etwa die Hälfte aus, Sportwetten und Casinospiele 90–97 %.',
+        decrease: 'Ausschüttungsquote senken',
+        increase: 'Ausschüttungsquote erhöhen'
+      },
+      resultsTitle: 'Das kostet es dich',
+      in10Years: 'Eingesetzt in 10 Jahren',
+      perMonth: 'Pro Monat',
+      perYear: 'Pro Jahr',
+      lossPerYear: 'Durchschnittsverlust pro Jahr',
+      runtime: {
+        note: {
+          empty: 'Gib deinen Einsatz, die Zahl der Spiele pro Woche und die Ausschüttungsquote (0–100) ein.',
+          result: 'Im Schnitt fließen rund {back} im Jahr als Gewinne zurück – du verlierst also rund {loss} im Jahr und {loss10} in 10 Jahren.'
+        }
+      },
+      about: {
+        title: 'So werden die Kosten für Lotto und Wetten berechnet',
+        paragraphs: [
+          'Die Jahreskosten sind Einsatz × Spiele pro Woche × 52 Wochen. Die Monatskosten sind ein Zwölftel davon, und die Summe für 10 Jahre beruht auf heutigen Einsätzen.',
+          'Die Ausschüttungsquote ist der Anteil aller Einsätze, der als Gewinne wieder ausgezahlt wird. Bei einer Ausschüttungsquote von 50 % ergeben 10 € Einsatz zweimal pro Woche 1.040 € im Jahr, von denen im Schnitt rund 520 € als Gewinne zurückfließen – ein durchschnittlicher Verlust von 520 € im Jahr. Im Einzelfall kann man groß gewinnen oder alles verlieren, aber über viele Spiele hinweg nähert sich das Ergebnis dem Durchschnitt an.',
+          'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus den Einsätzen würde, wenn du sie stattdessen jeden Monat anlegst – bei 4 % Rendite im Jahr über 10 Jahre. Wenn es dir schwerfällt, das Spielen im Griff zu behalten, helfen dir deine Hausarztpraxis oder eine Suchtberatungsstelle in deiner Nähe.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Wie viel gebe ich im Jahr für Lotto aus?',
+          a: 'Multipliziere den Einsatz mit der Zahl der Spiele pro Woche und mit 52. Wer zweimal pro Woche 10 € einsetzt, gibt dafür 1.040 € im Jahr und 10.400 € in zehn Jahren aus.'
+        },
+        {
+          q: 'Was ist eine Ausschüttungsquote?',
+          a: 'Das ist der Anteil aller Einsätze, der als Gewinne an die Spielerinnen und Spieler zurückgezahlt wird. Lotterien zahlen meist etwa die Hälfte der Einsätze aus, Sportwetten und Casinospiele dagegen 90–97 %. Der Rest bleibt beim Anbieter – und genau das verliert man beim Spielen im Schnitt.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was du nach 10 Jahren hättest, wenn du deine Einsätze stattdessen jeden Monat anlegst – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. 10 € Einsatz zweimal pro Woche sind rund 86,67 € im Monat; daraus werden rund 12.710 € – 10.400 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
         }
       ]
     },
@@ -467,11 +696,15 @@ module.exports = {
         },
         {
           q: 'Ist ein Jahresabo günstiger als ein Monatsabo?',
-          a: 'Oft um 15–20 %, aber nur, wenn du den Dienst ohnehin das ganze Jahr nutzen würdest. Trag beide Varianten in die Liste ein und vergleiche ihre Jahreskosten.'
+          a: 'Oft um 15–20 %, aber nur, wenn du den Dienst ohnehin das ganze Jahr nutzen würdest. Trag beide Varianten in die Liste ein und vergleiche ihre Jahreskosten.'
         },
         {
           q: 'Wird meine Liste gespeichert?',
           a: 'Deine Liste steht nur in der Adresse der Seite. Speichere den Link als Lesezeichen oder teile ihn, um sie zu behalten; auf einem Server oder in Cookies wird nichts gespeichert.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus dem Geld für deine Abos würde, wenn du denselben Betrag stattdessen jeden Monat anlegst – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. 50 € im Monat werden in 10 Jahren zu rund 7.335 € – 6.000 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
         }
       ]
     },

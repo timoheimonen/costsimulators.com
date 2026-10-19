@@ -45,8 +45,11 @@ const LANGUAGE_TAGS = { 'zh-hant': 'zh-Hant' };
 const TOOLS = [
   { key: 'meetings', slug: 'meeting-cost-calculator', legacy: 'meetings/meetings', scripts: ['timer'] },
   { key: 'workhours', slug: 'work-hours-calculator', legacy: 'workhours/workhours' },
+  { key: 'costperuse', slug: 'cost-per-use-calculator' },
   { key: 'coffee', slug: 'coffee-cost-calculator', legacy: 'coffee/coffee' },
   { key: 'smoking', slug: 'smoking-cost-calculator', legacy: 'smoking/smoking' },
+  { key: 'alcohol', slug: 'alcohol-cost-calculator' },
+  { key: 'gambling', slug: 'lottery-betting-cost-calculator' },
   { key: 'subscriptions', slug: 'subscription-cost-calculator', legacy: 'subscriptions/subscriptions' },
   { key: 'electricity', slug: 'electricity-cost-calculator', legacy: 'electricity/electricity' },
   { key: 'trip', slug: 'trip-cost-calculator', legacy: 'trip/trip' }

@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "会議の人件費、労働時間換算、コーヒー代、タバコ代、サブスク、電気代、ガソリン代を計算できる無料ツール集。本当にかかるお金がすぐにわかります。登録不要で、ブラウザ内だけで計算します。",
+                "description": "会議の人件費、労働時間換算、習慣にかかるお金、サブスク、電気代、ガソリン代、1回あたりのコストを計算できる無料ツール集。本当にかかるお金がすぐにわかります。登録不要で、ブラウザ内だけで計算します。",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "リストはページのURLの中にだけ保持されます。残しておくには、リンクをブックマークするか共有してください。サーバーやCookieには何も保存されません。"
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "そのお金を投資に回したらどうなりますか？",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "「そのお金を投資に回したら」の欄には、サブスクに払っている金額を毎月そのまま積み立てて投資し、年率4%・月複利で運用した場合にいくらになるかを表示します。月7,000円なら、10年後には約103万円になります。そのうち84万円は自分で積み立てた元本で、残りが運用益です。税金、手数料、インフレは考慮していません。あくまで一例であり、投資の助言ではありません。"
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"ja-JP","currency":"JPY","decimals":0,"strings":{"share":{"linkCopied":"リンクをコピーしました","copyFailed":"コピーできませんでした","copied":"コピーしました！","calculatedWith":"costsimulators.comで計算しました"},"workTime":{"minutes":"{m}分","hours":"{h}時間","hoursMinutes":"{h}時間{m}分"},"untitled":"名称未設定","remove":"{name}を削除","removeUnnamed":"サブスクを削除","breakdown":"{cost}/年（{percent}%）","cycle":{"monthly":"月","yearly":"年","weekly":"週"},"note":{"empty":"料金を入力したサブスクを追加すると、合計が表示されます。","single":"{name}は年間{cost}です。","biggest":"いちばん大きな出費は{name}で、年間{cost}（合計の{percent}%）です。"},"summary":{"item":"{name}：{price}/{cycle}","total":"合計：月額{month}、年額{year}"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"ja-JP","currency":"JPY","decimals":0,"strings":{"share":{"linkCopied":"リンクをコピーしました","copyFailed":"コピーできませんでした","copied":"コピーしました！","calculatedWith":"costsimulators.comで計算しました"},"workTime":{"minutes":"{m}分","hours":"{h}時間","hoursMinutes":"{h}時間{m}分"},"invest":{"note":"毎月{monthly}を年率{rate}で10年間積み立てると、元本{paid}に対して運用益は{gain}です。"},"untitled":"名称未設定","remove":"{name}を削除","removeUnnamed":"サブスクを削除","breakdown":"{cost}/年（{percent}%）","cycle":{"monthly":"月","yearly":"年","weekly":"週"},"note":{"empty":"料金を入力したサブスクを追加すると、合計が表示されます。","single":"{name}は年間{cost}です。","biggest":"いちばん大きな出費は{name}で、年間{cost}（合計の{percent}%）です。"},"summary":{"item":"{name}：{price}/{cycle}","total":"合計：月額{month}、年額{year}"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/subscriptions.js" defer></script>
@@ -379,6 +387,17 @@ SOFTWARE.
                     </div>
                 </dl>
 
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            そのお金を投資に回したら
+                        </span>
+                        <span class="invest-value" data-invest-value>￥0</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
+
                 <ol class="breakdown" id="breakdown" aria-label="サブスクごとの年額"></ol>
 
                 <div class="actions actions--start">
@@ -414,6 +433,10 @@ SOFTWARE.
                 <summary>リストは保存されますか？</summary>
                 <p>リストはページのURLの中にだけ保持されます。残しておくには、リンクをブックマークするか共有してください。サーバーやCookieには何も保存されません。</p>
             </details>
+            <details class="faq-item">
+                <summary>そのお金を投資に回したらどうなりますか？</summary>
+                <p>「そのお金を投資に回したら」の欄には、サブスクに払っている金額を毎月そのまま積み立てて投資し、年率4%・月複利で運用した場合にいくらになるかを表示します。月7,000円なら、10年後には約103万円になります。そのうち84万円は自分で積み立てた元本で、残りが運用益です。税金、手数料、インフレは考慮していません。あくまで一例であり、投資の助言ではありません。</p>
+            </details>
             </div>
         </section>
 
@@ -437,6 +460,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/ja/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>1回あたりのコスト</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/ja/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -450,6 +481,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>タバコ代</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/ja/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>お酒代</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/ja/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>宝くじ・ギャンブル代</span>
                     </a>
                 </li>
                 <li>

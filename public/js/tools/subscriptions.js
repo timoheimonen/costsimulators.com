@@ -46,6 +46,7 @@ SOFTWARE.
         copy: document.getElementById('copyBtn'),
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
+        invest: document.getElementById('invest'),
         results: {
             year: document.getElementById('year'),
             month: document.getElementById('month'),
@@ -191,6 +192,7 @@ SOFTWARE.
                 UI.clearNumber(element, EMPTY_VALUE);
             });
             els.breakdown.replaceChildren();
+            UI.showInvested(els.invest, 0);
             els.note.textContent = t('note.empty');
             return;
         }
@@ -199,6 +201,7 @@ SOFTWARE.
         UI.animateNumber(els.results.month, total / 12, formatCurrency);
         UI.animateNumber(els.results.day, total / Units.DAYS_PER_YEAR, formatCurrency);
         UI.animateNumber(els.results.year10, total * 10, formatCurrency);
+        UI.showInvested(els.invest, total);
         renderBreakdown(active, total);
 
         const biggest = active.reduce(function (top, item) {

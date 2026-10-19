@@ -42,7 +42,13 @@ SOFTWARE.
     const LITERS_PER_GALLON = 3.785411784;
     const BILLING_PER_YEAR = { weekly: 52, monthly: 12, yearly: 1 };
 
+    // The habit calculators compare the spending with investing the same
+    // money every month at this yearly return for this many years.
+    const INVEST_RATE = 0.04;
+    const INVEST_YEARS = 10;
+
     const numberFormatters = {};
+    let percentFormatter = null;
 
     function readI18n() {
         const fallback = { locale: 'en-US', currency: 'USD', decimals: 2, strings: {} };
@@ -138,6 +144,14 @@ SOFTWARE.
         return CostSimulators.formatNumber(value, 0);
     };
 
+    // 0.05 is "5%" in English, "5 %" in Finnish and "%5" in Turkish.
+    CostSimulators.formatPercent = function (value) {
+        if (!percentFormatter) {
+            percentFormatter = new Intl.NumberFormat(i18n.locale, { style: 'percent', maximumFractionDigits: 1 });
+        }
+        return percentFormatter.format(Number.isFinite(value) ? value : 0);
+    };
+
     CostSimulators.formatWorkTime = function (hours) {
         const totalMinutes = Math.round(Math.max(0, hours) * 60);
         const wholeHours = Math.floor(totalMinutes / 60);
@@ -166,7 +180,9 @@ SOFTWARE.
         KM_PER_MILE: KM_PER_MILE,
         LITERS_PER_GALLON: LITERS_PER_GALLON,
         WEEKS_PER_YEAR: WEEKS_PER_YEAR,
-        DAYS_PER_YEAR: DAYS_PER_YEAR
+        DAYS_PER_YEAR: DAYS_PER_YEAR,
+        INVEST_RATE: INVEST_RATE,
+        INVEST_YEARS: INVEST_YEARS
     };
 
     CostSimulators.Calculators = {
@@ -212,6 +228,22 @@ SOFTWARE.
             if (period === 'hour') return hourly;
             const yearly = hourly * hoursPerWeek * WEEKS_PER_YEAR;
             return period === 'month' ? yearly / 12 : yearly;
+        },
+
+        // What a deposit at the end of every month grows to in the given
+        // years, at a yearly return compounded monthly. The money goes in at
+        // the same pace as it would be spent, not as one sum at the start.
+        investedMonthly: function (monthly, yearlyRate, years) {
+            const months = Math.round(years * 12);
+            const rate = Math.pow(1 + yearlyRate, 1 / 12) - 1;
+            if (rate === 0) return monthly * months;
+            return monthly * (Math.pow(1 + rate, months) - 1) / rate;
+        },
+
+        // Price of one use: what the purchase costs once the resale value is
+        // taken off, spread over every time it is used.
+        costPerUse: function (price, resale, uses) {
+            return (price - resale) / uses;
         }
     };
 

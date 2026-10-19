@@ -58,6 +58,12 @@ SOFTWARE.
     --subscriptions-soft: #efe9fd;
     --workhours: #b02a7f;
     --workhours-soft: #fbe8f4;
+    --alcohol: #8f36b3;
+    --alcohol-soft: #f4e8fa;
+    --costperuse: #5b7710;
+    --costperuse-soft: #edf3dc;
+    --gambling: #c2410c;
+    --gambling-soft: #fdece4;
     --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05);
     --shadow-md: 0 1px 2px rgb(16 24 40 / 0.04), 0 12px 32px -12px rgb(16 24 40 / 0.18);
 
@@ -107,6 +113,12 @@ SOFTWARE.
         --subscriptions-soft: rgb(180 156 255 / 0.15);
         --workhours: #f38fcf;
         --workhours-soft: rgb(243 143 207 / 0.14);
+        --alcohol: #d69af2;
+        --alcohol-soft: rgb(214 154 242 / 0.14);
+        --costperuse: #bfdb6a;
+        --costperuse-soft: rgb(191 219 106 / 0.14);
+        --gambling: #ff8f66;
+        --gambling-soft: rgb(255 143 102 / 0.14);
         --shadow-sm: none;
         --shadow-md: 0 16px 40px -16px rgb(0 0 0 / 0.7);
     }
@@ -148,6 +160,12 @@ SOFTWARE.
     --subscriptions-soft: rgb(180 156 255 / 0.15);
     --workhours: #f38fcf;
     --workhours-soft: rgb(243 143 207 / 0.14);
+    --alcohol: #d69af2;
+    --alcohol-soft: rgb(214 154 242 / 0.14);
+    --costperuse: #bfdb6a;
+    --costperuse-soft: rgb(191 219 106 / 0.14);
+    --gambling: #ff8f66;
+    --gambling-soft: rgb(255 143 102 / 0.14);
     --shadow-sm: none;
     --shadow-md: 0 16px 40px -16px rgb(0 0 0 / 0.7);
 }
@@ -698,6 +716,21 @@ h3 {
 .tool--workhours {
     --tool: var(--workhours);
     --tool-soft: var(--workhours-soft);
+}
+
+.tool--alcohol {
+    --tool: var(--alcohol);
+    --tool-soft: var(--alcohol-soft);
+}
+
+.tool--costperuse {
+    --tool: var(--costperuse);
+    --tool-soft: var(--costperuse-soft);
+}
+
+.tool--gambling {
+    --tool: var(--gambling);
+    --tool-soft: var(--gambling-soft);
 }
 
 .page {
@@ -1414,6 +1447,59 @@ kbd {
     text-wrap: pretty;
 }
 
+.invest {
+    margin-top: 10px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+}
+
+.invest-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2px 12px;
+}
+
+.invest-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.invest-label .icon {
+    width: 18px;
+    height: 18px;
+    align-self: center;
+}
+
+.invest-value {
+    color: var(--accent);
+    font-size: clamp(1.125rem, 5cqi, 1.5rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.invest-note {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    text-wrap: pretty;
+}
+
+.invest-note:empty {
+    display: none;
+}
+
+.panel--result[data-empty="true"] .invest-value {
+    color: var(--text-faint);
+}
+
 .site-footer {
     margin-top: 72px;
     padding: 24px 0 calc(24px + env(safe-area-inset-bottom, 0px));
@@ -1811,7 +1897,12 @@ kbd {
         gap: 12px;
     }
 
+    .stat dt {
+        min-width: 0;
+    }
+
     .stat dd {
+        flex: none;
         margin-top: 0;
         font-size: 1.125rem;
     }

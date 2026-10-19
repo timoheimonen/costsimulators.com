@@ -1,0 +1,134 @@
+    <main id="main" class="container page">
+        <a class="back-link reveal" href="{{url.home}}">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            {{common.allTools}}
+        </a>
+
+        <div class="tool-head reveal" style="--i: 1">
+            <span class="tool-icon tool-icon--lg tool--costperuse" aria-hidden="true">
+                {{{icon}}}
+            </span>
+            <div class="tool-head-text">
+                <h1>{{tool.heading}}</h1>
+                <p class="lead">{{tool.lead}}</p>
+            </div>
+            <button type="button" class="btn btn-secondary share-btn" id="shareBtn">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+                <span class="btn-label">{{common.share}}</span>
+            </button>
+        </div>
+
+        <div class="tool-layout">
+            <section class="panel reveal" style="--i: 2" aria-labelledby="settingsTitle">
+                <h2 class="panel-title" id="settingsTitle">{{common.settings}}</h2>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="price">{{tool.price.label}}</label>
+                        <span class="field-unit" id="priceUnit">{{tool.price.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="{{tool.price.step}}">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.price.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="price" value="{{tool.price.value}}" min="0" step="any" inputmode="decimal" placeholder="{{money.placeholder}}" autocomplete="off" aria-describedby="priceUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.price.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-head">
+                        <span class="field-label" id="periodLabel">{{tool.period.label}}</span>
+                    </div>
+                    <div class="segmented" role="radiogroup" aria-labelledby="periodLabel">
+                        <label><input type="radio" name="period" value="week" checked><span>{{tool.period.week}}</span></label>
+                        <label><input type="radio" name="period" value="month"><span>{{tool.period.month}}</span></label>
+                        <label><input type="radio" name="period" value="year"><span>{{tool.period.year}}</span></label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="uses">{{tool.uses.label}}</label>
+                        <span class="field-unit" id="usesUnit">{{tool.uses.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.uses.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="uses" value="3" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="usesUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.uses.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="years">{{tool.years.label}}</label>
+                        <span class="field-unit" id="yearsUnit">{{tool.years.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="1">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.years.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="years" value="3" min="0" max="100" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="yearsUnit">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.years.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                    <div class="chips" role="group" aria-label="{{common.quickPicks}}" data-presets-for="years">
+                        <button type="button" class="chip" data-preset="1" aria-pressed="false">{{tool.years.chip1}}</button>
+                        <button type="button" class="chip" data-preset="3" aria-pressed="false">{{tool.years.chip2}}</button>
+                        <button type="button" class="chip" data-preset="5" aria-pressed="false">{{tool.years.chip3}}</button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-head">
+                        <label for="resale">{{tool.resale.label}}</label>
+                        <span class="field-unit" id="resaleUnit">{{tool.resale.unit}}</span>
+                    </div>
+                    <div class="stepper" data-stepper data-step="{{tool.price.step}}">
+                        <button type="button" class="stepper-btn" data-direction="down" tabindex="-1" aria-label="{{tool.resale.decrease}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                        </button>
+                        <input type="number" id="resale" value="0" min="0" step="any" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="resaleUnit resaleHint">
+                        <button type="button" class="stepper-btn" data-direction="up" tabindex="-1" aria-label="{{tool.resale.increase}}">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                    <p class="field-hint" id="resaleHint">{{tool.resale.hint}}</p>
+                </div>
+            </section>
+
+            <section class="panel panel--result tool--costperuse reveal" style="--i: 3" id="resultPanel" data-empty="false" aria-labelledby="resultsTitle">
+                <h2 class="panel-title" id="resultsTitle">{{tool.resultsTitle}}</h2>
+
+                <div class="hero-stat">
+                    <span class="hero-stat-label">{{tool.perUse}}</span>
+                    <div class="big-number" id="perUse">{{money.zero}}</div>
+                </div>
+
+                <dl class="stat-grid">
+                    <div class="stat">
+                        <dt>{{tool.totalUses}}</dt>
+                        <dd id="totalUses">0</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>{{tool.perMonth}}</dt>
+                        <dd id="month">{{money.zero}}</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>{{tool.perYear}}</dt>
+                        <dd id="year">{{money.zero}}</dd>
+                    </div>
+                </dl>
+                <p class="result-note" id="resultNote" aria-live="polite"></p>
+            </section>
+        </div>
+
+{{{toolInfo}}}
+    </main>

@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Snelkeuze',
     faqTitle: 'Veelgestelde vragen',
     relatedTools: 'Meer calculators',
-    imageAlt: 'costsimulators.com – gratis calculators voor alledaagse vragen over geld'
+    imageAlt: 'costsimulators.com – gratis calculators voor alledaagse vragen over geld',
+    invest: {
+      label: 'Als je het geld zou beleggen'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} uur',
       hoursMinutes: '{h} uur {m} min'
+    },
+    invest: {
+      note: '{monthly} per maand, 10 jaar lang, tegen {rate} per jaar: {paid} ingelegd en {gain} aan rendement.'
     }
   },
 
   home: {
     title: 'Gratis calculators voor alledaagse kosten',
-    description: 'Gratis, privacyvriendelijke calculators die laten zien wat dingen echt kosten: vergaderingen, werkuren, koffie, roken, abonnementen, stroom en brandstof. Zonder account, in je browser.',
+    description: 'Gratis, privacyvriendelijke calculators die laten zien wat dingen echt kosten: vergaderingen, werkuren, gewoontes, abonnementen, stroom, brandstof en kosten per gebruik. Zonder account, in je browser.',
     eyebrow: 'Gratis · Privé · Direct',
     heading: 'Kleine tools voor alledaagse vragen over <span class="accent-text">geld</span>.',
     lead: 'Snelle calculators die laten zien wat dingen echt kosten. Geen account, geen tracking – alles werkt gewoon in je browser.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Over deze site',
       title: 'Over deze site – gratis kostencalculators zonder tracking',
-      description: 'Wie costsimulators.com maakt en hoe de calculators werken. Gratis kostencalculators zonder tracking voor vergaderingen, werkuren, gewoontes, abonnementen, stroom en ritten.'
+      description: 'Wie costsimulators.com maakt en hoe de calculators werken. Gratis kostencalculators zonder tracking voor vergaderingen, werkuren, gewoontes, aankopen, abonnementen, stroom en ritten.'
     },
     privacy: {
       name: 'Privacyverklaring',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Kosten per gebruik',
+      heading: 'Kosten per gebruik berekenen',
+      title: 'Kosten per gebruik berekenen – is het de prijs waard?',
+      description: 'Bereken wat een aankoop je echt kost per keer dat je hem gebruikt: de prijs min de restwaarde, gedeeld door hoe vaak en hoe lang je hem gebruikt.',
+      card: 'Verdeel een prijs over elke keer dat je iets gebruikt en zie of het de moeite waard is.',
+      tag: 'Winkelen',
+      lead: 'Vul een prijs in en hoe vaak en hoe lang je iets gaat gebruiken, en zie wat het per keer echt kost.',
+      price: {
+        label: 'Prijs',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Prijs verlagen',
+        increase: 'Prijs verhogen'
+      },
+      period: {
+        label: 'Hoe vaak je het gebruikt',
+        week: 'Wekelijks',
+        month: 'Maandelijks',
+        year: 'Jaarlijks'
+      },
+      uses: {
+        label: 'Aantal keer',
+        unit: 'keer per week',
+        decrease: 'Aantal keer verlagen',
+        increase: 'Aantal keer verhogen'
+      },
+      years: {
+        label: 'Gebruiksduur',
+        unit: 'jaar',
+        chip1: '1 jaar',
+        chip2: '3 jaar',
+        chip3: '5 jaar',
+        decrease: 'Gebruiksduur verkorten',
+        increase: 'Gebruiksduur verlengen'
+      },
+      resale: {
+        label: 'Restwaarde',
+        unit: '€, optioneel',
+        hint: 'Wat je verwacht te krijgen als je het verkoopt. Laat op 0 staan als je niets verwacht.',
+        decrease: 'Restwaarde verlagen',
+        increase: 'Restwaarde verhogen'
+      },
+      resultsTitle: 'Kosten per gebruik',
+      perUse: 'Elke keer kost',
+      totalUses: 'Aantal keer in totaal',
+      perMonth: 'Per maand',
+      perYear: 'Per jaar',
+      runtime: {
+        unit: {
+          week: 'keer per week',
+          month: 'keer per maand',
+          year: 'keer per jaar'
+        },
+        note: {
+          empty: 'Vul de prijs in, hoe vaak je het gebruikt en hoeveel jaar. De restwaarde moet lager zijn dan de prijs.',
+          result: 'Gebruik je het een jaar langer, dan dalen de kosten per keer naar {next}.'
+        }
+      },
+      about: {
+        title: 'Zo worden de kosten per gebruik berekend',
+        paragraphs: [
+          'De kosten per gebruik zijn de prijs min wat je terugkrijgt als je het verkoopt, gedeeld door het aantal keer dat je het gebruikt. Dat aantal is hoe vaak je het gebruikt × het aantal weken, maanden of jaren dat je het gebruikt. Een aankoop van € 500 die je 3 jaar lang 3 keer per week gebruikt, gebruik je in totaal 468 keer; elke keer kost dan € 1,07.',
+          'De kosten per maand en per jaar verdelen hetzelfde bedrag over de tijd dat je het bezit. Zo kun je kopen makkelijk vergelijken met huren, leasen of een abonnement.',
+          'Kosten per gebruik zijn een simpele manier om iets goedkoops dat snel slijt te vergelijken met iets duurs dat lang meegaat. Schoenen van € 60 die je 50 keer draagt, kosten € 1,20 per keer; schoenen van € 200 die je 400 keer draagt, kosten € 0,50.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hoe bereken ik de kosten per gebruik?',
+          a: 'Deel de prijs door het aantal keer dat je iets gebruikt. Verkoop je het daarna, trek dan eerst de restwaarde van de prijs af. Een jas van € 120 die je 80 keer draagt, kost € 1,50 per keer.'
+        },
+        {
+          q: 'Wat zijn goede kosten per gebruik?',
+          a: 'Dat hangt af van wat het alternatief kost. Vergelijk met huren, lenen of per keer betalen: kost een dagpas voor de sportschool € 12, dan is een abonnement van € 30 per maand vanaf het derde bezoek per maand voordeliger.'
+        },
+        {
+          q: 'Werkt dit ook voor abonnementen en lidmaatschappen?',
+          a: 'Ja. Vul de jaarprijs in als prijs, hoe vaak je het gebruikt en 1 jaar. Voor een sportschoolabonnement van € 30 per maand vul je € 360 in, plus het aantal keer per week dat je gaat.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Koffiekosten',
       heading: 'Koffiecalculator',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Houdt de calculator rekening met inflatie?',
           a: 'Nee. De berekeningen gaan ervan uit dat de prijs gelijk blijft, dus ze laten zien wat de gewoonte kost tegen de prijzen van nu. Als de prijzen stijgen, zijn de werkelijke kosten op lange termijn hoger.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je zou hebben als je het geld elke maand zou beleggen in plaats van het uit te geven, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. Een koffie van € 3,50 op elke werkdag is € 75,83 per maand; dat groeit in 10 jaar uit tot zo’n € 11.120 – € 9.100 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Werkt dit ook voor shag?',
           a: 'Ja. Vul de prijs van een pakje shag in als pakjesprijs, het aantal sigaretten dat je ervan draait als aantal per pakje, en hoeveel je er per dag rookt.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je zou hebben als je het geld elke maand zou beleggen in plaats van het aan sigaretten uit te geven, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. Een half pakje per dag à € 12 per pakje is € 182,50 per maand; dat groeit in 10 jaar uit tot zo’n € 26.770 – € 21.900 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alcoholkosten',
+      heading: 'Alcoholkostencalculator',
+      title: 'Kosten van alcohol berekenen – wat kost drinken per jaar?',
+      description: 'Zie wat bier, wijn en andere drankjes je kosten per maand en over 1, 5 en 10 jaar, en hoeveel hetzelfde geld zou opleveren als je het belegt.',
+      card: 'Zie wat je drankjes per week kosten over één, vijf en tien jaar.',
+      tag: 'Gewoonte',
+      lead: 'Vul in wat een drankje kost en hoeveel je er per week drinkt, en zie wat dat in de loop der jaren kost.',
+      price: {
+        label: 'Prijs per drankje',
+        unit: '€',
+        step: '0.1',
+        value: '3.5',
+        hint: 'Drink je zowel thuis als in de kroeg? Gebruik een gemiddelde prijs.',
+        decrease: 'Prijs per drankje verlagen',
+        increase: 'Prijs per drankje verhogen'
+      },
+      perWeek: {
+        label: 'Drankjes per week',
+        unit: 'drankjes',
+        chip1: '3 per week',
+        chip2: '7 per week',
+        chip3: '14 per week',
+        decrease: 'Minder drankjes per week',
+        increase: 'Meer drankjes per week'
+      },
+      resultsTitle: 'Dit kost het je',
+      in10Years: 'In 10 jaar',
+      perMonth: 'Per maand',
+      year1: '1 jaar',
+      year5: '5 jaar',
+      runtime: {
+        note: {
+          empty: 'Vul een prijs in en hoeveel drankjes je per week drinkt om de totalen te zien.',
+          result: 'Dat zijn zo’n {drinks} drankjes per jaar à {price}.'
+        }
+      },
+      about: {
+        title: 'Zo worden de kosten van alcohol berekend',
+        paragraphs: [
+          'De kosten per jaar zijn de prijs per drankje × drankjes per week × 52 weken. De kosten per maand zijn een twaalfde daarvan, en de totalen over 5 en 10 jaar gaan uit van de prijzen van nu, zonder inflatie.',
+          'Zes biertjes per week à € 3,50 kosten € 1.092 per jaar en € 10.920 in tien jaar. Drink je zowel in de kroeg als thuis, gebruik dan een gemiddelde prijs, of reken beide apart uit en tel ze bij elkaar op.',
+          'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel hetzelfde geld zou opleveren als je het elke maand belegt, tegen een rendement van 4% per jaar over 10 jaar. De calculator telt alleen wat de drankjes kosten; de gevolgen voor je gezondheid komen daar nog bij. Wil je minder gaan drinken? Dan kunnen je huisarts of een instelling voor verslavingszorg bij jou in de buurt je helpen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hoeveel geef ik per jaar uit aan alcohol?',
+          a: 'Vermenigvuldig de prijs van een drankje met het aantal drankjes per week en met 52. Zes drankjes per week à € 3,50 is € 1.092 per jaar.'
+        },
+        {
+          q: 'Hoeveel bespaar ik als ik minder drink?',
+          a: 'Vul het aantal drankjes in waar je naartoe wilt en vergelijk. Van 6 naar 3 drankjes per week à € 3,50 scheelt € 546 per jaar en € 5.460 in tien jaar.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je na 10 jaar zou hebben als je het geld elke maand zou beleggen in plaats van het uit te geven, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. Zes drankjes van € 3,50 per week is € 91 per maand; dat groeit uit tot zo’n € 13.350 – € 10.920 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loterij & gokken',
+      heading: 'Kostencalculator voor loterij en gokken',
+      title: 'Kosten van loterij en gokken berekenen – wat kost het je?',
+      description: 'Zie wat loten en weddenschappen kosten per maand en over 10 jaar, hoeveel je gemiddeld verliest en hoeveel je inzet zou opleveren als je die belegt.',
+      card: 'Zie wat loten en weddenschappen kosten en hoeveel je er gemiddeld op verliest.',
+      tag: 'Gewoonte',
+      lead: 'Vul je inzet in en hoe vaak je speelt, en zie wat loten en weddenschappen in de loop der jaren kosten – en hoeveel daarvan gemiddeld als winst terugkomt.',
+      stake: {
+        label: 'Inzet per keer',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Inzet verlagen',
+        increase: 'Inzet verhogen'
+      },
+      perWeek: {
+        label: 'Hoe vaak per week',
+        unit: 'keer',
+        chip1: 'Eén keer per week',
+        chip2: 'Twee keer per week',
+        chip3: 'Elke dag',
+        decrease: 'Minder vaak per week spelen',
+        increase: 'Vaker per week spelen'
+      },
+      payout: {
+        label: 'Uitbetalingspercentage',
+        unit: '% uitbetaald',
+        chip1: 'Loterij',
+        chip2: 'Sportwedden',
+        chip3: 'Casino',
+        hint: 'Het deel van alle inzetten dat als winst wordt uitbetaald. Loterijen betalen meestal ongeveer de helft uit, sportwedden en casinospellen 90–97%.',
+        decrease: 'Uitbetalingspercentage verlagen',
+        increase: 'Uitbetalingspercentage verhogen'
+      },
+      resultsTitle: 'Dit kost het je',
+      in10Years: 'Ingezet in 10 jaar',
+      perMonth: 'Per maand',
+      perYear: 'Per jaar',
+      lossPerYear: 'Gemiddeld verlies per jaar',
+      runtime: {
+        note: {
+          empty: 'Vul je inzet in, hoe vaak je per week speelt en het uitbetalingspercentage (0–100).',
+          result: 'Gemiddeld komt er zo’n {back} per jaar terug als winst, dus je verliest zo’n {loss} per jaar en {loss10} in 10 jaar.'
+        }
+      },
+      about: {
+        title: 'Zo worden de kosten van loterij en gokken berekend',
+        paragraphs: [
+          'De kosten per jaar zijn de inzet × aantal keer per week × 52 weken. De kosten per maand zijn een twaalfde daarvan, en het totaal over 10 jaar gaat uit van je inzet van nu.',
+          'Het uitbetalingspercentage is het deel van alle inzetten dat als winst wordt uitbetaald. Zet je twee keer per week € 10 in, dan is dat € 1.040 per jaar. Bij een uitbetalingspercentage van 50% komt daarvan gemiddeld zo’n € 520 terug als winst – een gemiddeld verlies van € 520 per jaar. Een individuele speler kan flink winnen of alles kwijtraken, maar hoe vaker je speelt, hoe dichter de uitkomst bij het gemiddelde komt.',
+          'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je inzet zou opleveren als je die in plaats daarvan elke maand belegt, tegen een rendement van 4% per jaar over 10 jaar. Merk je dat je het gokken moeilijk onder controle houdt? Dan kunnen je huisarts of een instelling voor verslavingszorg bij jou in de buurt je helpen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hoeveel geef ik per jaar uit aan de loterij?',
+          a: 'Vermenigvuldig de inzet met het aantal keer dat je per week speelt en met 52. Wie twee keer per week € 10 inzet, geeft daar € 1.040 per jaar en € 10.400 in tien jaar aan uit.'
+        },
+        {
+          q: 'Wat is een uitbetalingspercentage?',
+          a: 'Dat is het deel van alle inzetten dat als winst aan de spelers wordt terugbetaald. Loterijen betalen meestal ongeveer de helft van de inzetten uit, terwijl sportwedden en casinospellen 90–97% uitbetalen. De rest gaat naar de aanbieder – en dat is wat spelers gemiddeld verliezen.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je na 10 jaar zou hebben als je je inzet in plaats daarvan elke maand zou beleggen, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. Twee keer per week € 10 inzetten is zo’n € 86,67 per maand; dat groeit uit tot zo’n € 12.710 – € 10.400 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Wordt mijn lijst opgeslagen?',
           a: 'Je lijst staat alleen in het adres van de pagina. Sla de link op als bladwijzer of deel hem om de lijst te bewaren; er wordt niets opgeslagen op een server of in cookies.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je zou hebben als je hetzelfde bedrag als voor je abonnementen elke maand zou beleggen, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. € 50 per maand groeit in 10 jaar uit tot zo’n € 7.335 – € 6.000 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
         }
       ]
     },

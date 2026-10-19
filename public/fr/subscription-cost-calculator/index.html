@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, café, tabac, abonnements, électricité et carburant. Sans inscription.",
+                "description": "Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, habitudes, abonnements, électricité, carburant et coût par utilisation.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "Votre liste est conservée uniquement dans l’adresse de la page. Ajoutez le lien à vos favoris ou partagez-le pour la garder ; rien n’est stocké sur un serveur ni dans des cookies."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Et si j’investissais plutôt cet argent ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait le montant de vos abonnements si vous investissiez la même somme chaque mois, avec un rendement de 4 % par an capitalisé mensuellement. 50 € par mois deviennent environ 7 335 € en 10 ans – dont 6 000 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement."
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"fr-FR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Lien copié","copyFailed":"Échec de la copie","copied":"Copié !","calculatedWith":"Calculé avec costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"untitled":"Sans nom","remove":"Supprimer {name}","removeUnnamed":"Supprimer l’abonnement","breakdown":"{cost} / an · {percent} %","cycle":{"monthly":"mois","yearly":"an","weekly":"semaine"},"note":{"empty":"Ajoutez un abonnement avec son prix pour voir les totaux.","single":"Soit {cost} par an pour {name}.","biggest":"Votre plus grosse dépense : {name}, à {cost} par an, soit {percent} % du total."},"summary":{"item":"{name} – {price} par {cycle}","total":"Total : {month} par mois, {year} par an"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"fr-FR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Lien copié","copyFailed":"Échec de la copie","copied":"Copié !","calculatedWith":"Calculé avec costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement."},"untitled":"Sans nom","remove":"Supprimer {name}","removeUnnamed":"Supprimer l’abonnement","breakdown":"{cost} / an · {percent} %","cycle":{"monthly":"mois","yearly":"an","weekly":"semaine"},"note":{"empty":"Ajoutez un abonnement avec son prix pour voir les totaux.","single":"Soit {cost} par an pour {name}.","biggest":"Votre plus grosse dépense : {name}, à {cost} par an, soit {percent} % du total."},"summary":{"item":"{name} – {price} par {cycle}","total":"Total : {month} par mois, {year} par an"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/subscriptions.js" defer></script>
@@ -379,6 +387,17 @@ SOFTWARE.
                     </div>
                 </dl>
 
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            Si vous investissiez plutôt cet argent
+                        </span>
+                        <span class="invest-value" data-invest-value>0,00 €</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
+
                 <ol class="breakdown" id="breakdown" aria-label="Coût annuel par abonnement"></ol>
 
                 <div class="actions actions--start">
@@ -414,6 +433,10 @@ SOFTWARE.
                 <summary>Ma liste est-elle enregistrée ?</summary>
                 <p>Votre liste est conservée uniquement dans l’adresse de la page. Ajoutez le lien à vos favoris ou partagez-le pour la garder ; rien n’est stocké sur un serveur ni dans des cookies.</p>
             </details>
+            <details class="faq-item">
+                <summary>Et si j’investissais plutôt cet argent ?</summary>
+                <p>L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait le montant de vos abonnements si vous investissiez la même somme chaque mois, avec un rendement de 4 % par an capitalisé mensuellement. 50 € par mois deviennent environ 7 335 € en 10 ans – dont 6 000 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.</p>
+            </details>
             </div>
         </section>
 
@@ -437,6 +460,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/fr/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Coût par utilisation</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/fr/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -450,6 +481,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>Coût du tabac</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/fr/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Coût de l’alcool</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/fr/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Loterie et paris</span>
                     </a>
                 </li>
                 <li>

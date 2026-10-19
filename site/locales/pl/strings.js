@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Szybki wybór',
     faqTitle: 'Najczęściej zadawane pytania',
     relatedTools: 'Więcej kalkulatorów',
-    imageAlt: 'costsimulators.com – darmowe kalkulatory do codziennych pytań o pieniądze'
+    imageAlt: 'costsimulators.com – darmowe kalkulatory do codziennych pytań o pieniądze',
+    invest: {
+      label: 'Gdyby te pieniądze zainwestować'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} miesięcznie przez 10 lat przy stopie zwrotu {rate} rocznie: łącznie wpłacasz {paid}, a zysk wynosi {gain}.'
     }
   },
 
   home: {
     title: 'Darmowe kalkulatory kosztów na co dzień',
-    description: 'Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, kawa, palenie, subskrypcje, prąd i paliwo oraz ile godzin pracy kosztuje zakup. Bez rejestracji, w przeglądarce.',
+    description: 'Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, nawyki, subskrypcje, prąd i paliwo, ile godzin pracy kosztuje zakup i ile każde jego użycie. Bez rejestracji, w przeglądarce.',
     eyebrow: 'Za darmo · Prywatnie · Od razu',
     heading: 'Małe narzędzia na codzienne pytania o <span class="accent-text">pieniądze</span>.',
     lead: 'Szybkie kalkulatory, które pokazują, ile naprawdę kosztują różne rzeczy. Bez rejestracji i śledzenia – wszystko działa bezpośrednio w Twojej przeglądarce.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'O serwisie',
       title: 'O serwisie – darmowe i prywatne kalkulatory kosztów',
-      description: 'Kto tworzy costsimulators.com i jak działają kalkulatory. Darmowe, prywatne kalkulatory kosztów spotkań, czasu pracy, nawyków, subskrypcji, prądu i podróży.'
+      description: 'Kto tworzy costsimulators.com i jak działają kalkulatory. Darmowe, prywatne kalkulatory kosztów spotkań, czasu pracy, nawyków, zakupów, subskrypcji, prądu i podróży.'
     },
     privacy: {
       name: 'Polityka prywatności',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Koszt użycia',
+      heading: 'Kalkulator kosztu jednego użycia',
+      title: 'Kalkulator kosztu użycia – czy zakup się opłaca?',
+      description: 'Oblicz, ile naprawdę kosztuje zakup przy każdym użyciu: cena minus wartość odsprzedaży, podzielona przez to, jak często i jak długo z niego korzystasz.',
+      card: 'Rozłóż cenę na wszystkie użycia i sprawdź, czy zakup się opłaca.',
+      tag: 'Zakupy',
+      lead: 'Wpisz cenę oraz to, jak często i jak długo będziesz z danej rzeczy korzystać, a zobaczysz, ile naprawdę kosztuje każde użycie.',
+      price: {
+        label: 'Cena',
+        unit: 'zł',
+        value: '2000',
+        step: '100',
+        decrease: 'Zmniejsz cenę',
+        increase: 'Zwiększ cenę'
+      },
+      period: {
+        label: 'Jak często używasz',
+        week: 'Tygodniowo',
+        month: 'Miesięcznie',
+        year: 'Rocznie'
+      },
+      uses: {
+        label: 'Liczba użyć',
+        unit: 'razy w tygodniu',
+        decrease: 'Zmniejsz liczbę użyć',
+        increase: 'Zwiększ liczbę użyć'
+      },
+      years: {
+        label: 'Okres używania',
+        unit: 'lat',
+        chip1: '1 rok',
+        chip2: '3 lata',
+        chip3: '5 lat',
+        decrease: 'Skróć okres używania',
+        increase: 'Wydłuż okres używania'
+      },
+      resale: {
+        label: 'Wartość odsprzedaży',
+        unit: 'zł, opcjonalnie',
+        hint: 'Kwota, którą spodziewasz się dostać przy sprzedaży. Jeśli nic, zostaw 0.',
+        decrease: 'Zmniejsz wartość odsprzedaży',
+        increase: 'Zwiększ wartość odsprzedaży'
+      },
+      resultsTitle: 'Koszt użycia',
+      perUse: 'Jedno użycie kosztuje',
+      totalUses: 'Liczba użyć łącznie',
+      perMonth: 'Miesięcznie',
+      perYear: 'Rocznie',
+      runtime: {
+        unit: {
+          week: 'razy w tygodniu',
+          month: 'razy w miesiącu',
+          year: 'razy w roku'
+        },
+        note: {
+          empty: 'Wpisz cenę, częstotliwość używania i liczbę lat. Wartość odsprzedaży musi być niższa niż cena.',
+          result: 'Rok dłuższego używania obniżyłby koszt jednego użycia do {next}.'
+        }
+      },
+      about: {
+        title: 'Jak liczony jest koszt jednego użycia',
+        paragraphs: [
+          'Koszt jednego użycia to cena pomniejszona o kwotę, którą odzyskasz przy sprzedaży, podzielona przez liczbę użyć. Liczba użyć to częstotliwość używania × liczba tygodni, miesięcy lub lat, przez które korzystasz z danej rzeczy. Zakup za 2000 zł używany 3 razy w tygodniu przez 3 lata to 468 użyć, czyli 4,27 zł za każde użycie.',
+          'Koszt miesięczny i roczny rozkłada tę samą kwotę na czas, przez który masz daną rzecz, dzięki czemu łatwo porównać zakup z wypożyczeniem, leasingiem lub abonamentem.',
+          'Koszt jednego użycia to prosty sposób, by porównać tanią rzecz, która szybko się zużywa, z droższą, która posłuży dłużej. Buty za 200 zł założone 50 razy kosztują 4 zł za każde wyjście, a para za 600 zł noszona 400 razy – 1,50 zł.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Jak obliczyć koszt jednego użycia?',
+          a: 'Podziel cenę przez liczbę użyć. Jeśli później sprzedasz daną rzecz, najpierw odejmij od ceny wartość odsprzedaży. Kurtka za 400 zł noszona 80 razy kosztuje 5 zł za każde założenie.'
+        },
+        {
+          q: 'Jaki koszt jednego użycia jest dobry?',
+          a: 'To zależy od tego, ile kosztuje alternatywa. Porównaj go z wypożyczeniem, pożyczeniem albo płaceniem za każdym razem: jeśli jednorazowe wejście na siłownię kosztuje 40 zł, karnet za 150 zł miesięcznie opłaca się od czwartej wizyty w miesiącu.'
+        },
+        {
+          q: 'Czy to działa także w przypadku subskrypcji i karnetów?',
+          a: 'Tak. Jako cenę wpisz koszt roczny, do tego to, jak często korzystasz z usługi, i 1 rok. Przy karnecie na siłownię za 150 zł miesięcznie wpisz 1800 zł i liczbę wizyt w tygodniu.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Koszt kawy',
       heading: 'Kalkulator kosztów kawy',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Czy kalkulator uwzględnia inflację?',
           a: 'Nie. Prognozy zakładają, że cena się nie zmienia, więc pokazują koszt nawyku w dzisiejszych cenach. Gdy ceny rosną, rzeczywisty koszt w długim okresie jest wyższy.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby pieniądze, gdyby zamiast je wydawać, co miesiąc je inwestować przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Kawa za 15 zł w każdy dzień roboczy to 325 zł miesięcznie, co w ciągu 10 lat urośnie do około 47 700 zł – z czego 39 000 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Czy to działa także w przypadku tytoniu do skręcania?',
           a: 'Tak. Jako cenę paczki wpisz cenę opakowania tytoniu, jako rozmiar paczki – liczbę papierosów, które z niego skręcasz, a do tego liczbę papierosów wypalanych dziennie.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby pieniądze, gdyby zamiast wydawać je na papierosy, co miesiąc je inwestować przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Pół paczki dziennie przy cenie 21 zł za paczkę to około 319 zł miesięcznie, co w ciągu 10 lat urośnie do około 46 900 zł – z czego 38 325 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Koszt alkoholu',
+      heading: 'Kalkulator kosztów alkoholu',
+      title: 'Kalkulator kosztów alkoholu – ile wydajesz na alkohol?',
+      description: 'Sprawdź, ile kosztują Cię piwo, wino i inne napoje miesięcznie oraz w ciągu 1, 5 i 10 lat – i do jakiej kwoty urosłyby te pieniądze, gdyby je zainwestować.',
+      card: 'Zobacz, ile kosztuje cotygodniowy alkohol w ciągu roku, pięciu i dziesięciu lat.',
+      tag: 'Nawyk',
+      lead: 'Wpisz cenę jednego napoju i to, ile wypijasz w tygodniu, a zobaczysz, ile to kosztuje przez lata.',
+      price: {
+        label: 'Cena jednego napoju',
+        unit: 'zł',
+        step: '1',
+        value: '15',
+        hint: 'Pijesz i w domu, i na mieście? Wpisz średnią cenę.',
+        decrease: 'Zmniejsz cenę napoju',
+        increase: 'Zwiększ cenę napoju'
+      },
+      perWeek: {
+        label: 'Napoje w tygodniu',
+        unit: 'szt.',
+        chip1: '3 tygodniowo',
+        chip2: '7 tygodniowo',
+        chip3: '14 tygodniowo',
+        decrease: 'Zmniejsz liczbę napojów w tygodniu',
+        increase: 'Zwiększ liczbę napojów w tygodniu'
+      },
+      resultsTitle: 'Ile to kosztuje w sumie',
+      in10Years: 'Przez 10 lat',
+      perMonth: 'Miesięcznie',
+      year1: '1 rok',
+      year5: '5 lat',
+      runtime: {
+        note: {
+          empty: 'Wpisz cenę i liczbę napojów w tygodniu, aby zobaczyć sumy.',
+          result: 'Rocznie to około {drinks} szt., po {price} za sztukę.'
+        }
+      },
+      about: {
+        title: 'Jak liczony jest koszt alkoholu',
+        paragraphs: [
+          'Koszt roczny to cena jednego napoju × liczba napojów w tygodniu × 52 tygodnie. Koszt miesięczny to jego dwunasta część, a sumy dla 5 i 10 lat są liczone w dzisiejszych cenach, bez inflacji.',
+          'Sześć piw tygodniowo po 15 zł to 4680 zł rocznie i 46 800 zł w ciągu dziesięciu lat. Jeśli pijesz zarówno w barze, jak i w domu, wpisz średnią cenę albo policz oba przypadki osobno i dodaj wyniki.',
+          'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby te same pieniądze, gdyby co miesiąc je inwestować przy stopie zwrotu 4% rocznie przez 10 lat. Kalkulator liczy tylko koszt samych napojów – skutki zdrowotne dochodzą do tego osobno. Jeśli chcesz ograniczyć picie, pomoże Ci lekarz rodzinny lub lokalny alkoholowy telefon zaufania.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Ile rocznie wydaję na alkohol?',
+          a: 'Pomnóż cenę jednego napoju przez liczbę napojów w tygodniu i przez 52. Sześć napojów tygodniowo po 15 zł to 4680 zł rocznie.'
+        },
+        {
+          q: 'Ile zaoszczędzę, jeśli będę pić mniej?',
+          a: 'Wpisz liczbę napojów, do której chcesz ograniczyć picie, i porównaj wyniki. Przejście z 6 na 3 napoje tygodniowo po 15 zł to oszczędność 2340 zł rocznie i 23 400 zł w ciągu dziesięciu lat.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, jaka kwota uzbierałaby się po 10 latach, gdyby zamiast wydawać pieniądze, co miesiąc je inwestować przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Sześć napojów po 15 zł tygodniowo to 390 zł miesięcznie, co urośnie do około 57 200 zł – z czego 46 800 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loterie i zakłady',
+      heading: 'Kalkulator kosztów loterii i zakładów',
+      title: 'Kalkulator kosztów loterii i zakładów – ile kosztuje hazard?',
+      description: 'Sprawdź, ile kosztują Cię kupony Lotto i zakłady miesięcznie oraz w ciągu 10 lat, ile średnio tracisz i do jakiej kwoty urosłyby stawki, gdyby je zainwestować.',
+      card: 'Zobacz, ile w sumie kosztują kupony Lotto oraz zakłady i ile średnio na nich tracisz.',
+      tag: 'Nawyk',
+      lead: 'Wpisz stawkę i to, jak często grasz, a zobaczysz, ile kupony Lotto i zakłady kosztują przez lata – i ile z tego średnio wraca w postaci wygranych.',
+      stake: {
+        label: 'Stawka za jedną grę',
+        unit: 'zł',
+        step: '5',
+        value: '40',
+        decrease: 'Zmniejsz stawkę',
+        increase: 'Zwiększ stawkę'
+      },
+      perWeek: {
+        label: 'Gry w tygodniu',
+        unit: 'gier',
+        chip1: 'Raz w tygodniu',
+        chip2: 'Dwa razy w tygodniu',
+        chip3: 'Codziennie',
+        decrease: 'Zmniejsz liczbę gier w tygodniu',
+        increase: 'Zwiększ liczbę gier w tygodniu'
+      },
+      payout: {
+        label: 'Wskaźnik wypłat',
+        unit: '% stawek wraca',
+        chip1: 'Loteria',
+        chip2: 'Zakłady sportowe',
+        chip3: 'Kasyno',
+        hint: 'Część wszystkich stawek, która wraca do graczy w postaci wygranych. Loterie wypłacają zwykle około połowy, a zakłady sportowe i gry kasynowe 90–97%.',
+        decrease: 'Zmniejsz wskaźnik wypłat',
+        increase: 'Zwiększ wskaźnik wypłat'
+      },
+      resultsTitle: 'Ile to kosztuje',
+      in10Years: 'Stawki przez 10 lat',
+      perMonth: 'Miesięcznie',
+      perYear: 'Rocznie',
+      lossPerYear: 'Średnia strata rocznie',
+      runtime: {
+        note: {
+          empty: 'Wpisz stawkę, liczbę gier w tygodniu i wskaźnik wypłat (0–100).',
+          result: 'W wygranych wraca średnio około {back} rocznie, więc tracisz około {loss} na rok, a w ciągu 10 lat {loss10}.'
+        }
+      },
+      about: {
+        title: 'Jak liczony jest koszt loterii i zakładów',
+        paragraphs: [
+          'Koszt roczny to stawka × liczba gier w tygodniu × 52 tygodnie. Koszt miesięczny to jego dwunasta część, a suma dla 10 lat jest liczona według dzisiejszych stawek.',
+          'Wskaźnik wypłat to część wszystkich stawek, która wraca do graczy w postaci wygranych. Przy wskaźniku 50% gra za 40 zł dwa razy w tygodniu to 4160 zł stawek rocznie, z czego średnio około 2080 zł wraca w wygranych – średnia strata wynosi więc 2080 zł rocznie. Pojedynczy gracz może dużo wygrać albo stracić wszystko, ale im więcej gier, tym bardziej wynik zbliża się do średniej.',
+          'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby stawki, gdyby zamiast grać, co miesiąc je inwestować przy stopie zwrotu 4% rocznie przez 10 lat. Jeśli trudno Ci zapanować nad graniem, pomoże Ci lekarz rodzinny lub telefon zaufania dla osób z problemem hazardowym.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Ile rocznie wydaję na Lotto?',
+          a: 'Pomnóż stawkę przez liczbę gier w tygodniu i przez 52. Gra za 40 zł dwa razy w tygodniu to 4160 zł rocznie i 41 600 zł w ciągu dziesięciu lat.'
+        },
+        {
+          q: 'Czym jest wskaźnik wypłat?',
+          a: 'To część wszystkich stawek, którą gracze odzyskują w postaci wygranych. Loterie wypłacają zwykle około połowy stawek, a zakłady sportowe i gry kasynowe 90–97%. Reszta trafia do organizatora – i właśnie tyle gracze średnio tracą.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, jaka kwota uzbierałaby się po 10 latach, gdyby zamiast grać, co miesiąc inwestować stawki przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Gra za 40 zł dwa razy w tygodniu to około 347 zł miesięcznie, co urośnie do około 50 900 zł – z czego 41 600 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Czy moja lista jest zapisywana?',
           a: 'Lista istnieje tylko w adresie strony. Aby ją zachować, dodaj link do zakładek lub go udostępnij – nic nie jest zapisywane na serwerze ani w plikach cookie.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby pieniądze, gdyby co miesiąc inwestować tyle, ile kosztują Twoje subskrypcje, przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Przy 200 zł miesięcznie po 10 latach uzbiera się około 29 300 zł – z czego 24 000 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
         }
       ]
     },

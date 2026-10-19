@@ -355,6 +355,32 @@ SOFTWARE.
         );
     }
 
+    // The "if you invested it instead" box of the habit calculators: the
+    // yearly spending invested a twelfth at a time every month. A yearly
+    // amount of 0 empties the box.
+    function showInvested(box, yearly) {
+        const value = box.querySelector('[data-invest-value]');
+        const note = box.querySelector('[data-invest-note]');
+        const app = global.CostSimulators;
+        const years = app.Units.INVEST_YEARS;
+
+        if (!(yearly > 0)) {
+            clearNumber(value, '—');
+            note.textContent = '';
+            return;
+        }
+
+        const monthly = yearly / 12;
+        const invested = app.Calculators.investedMonthly(monthly, app.Units.INVEST_RATE, years);
+        animateNumber(value, invested, app.formatCurrency);
+        note.textContent = app.t('invest.note', {
+            monthly: app.formatCurrency(monthly),
+            rate: app.formatPercent(app.Units.INVEST_RATE),
+            paid: app.formatCurrency(yearly * years),
+            gain: app.formatCurrency(invested - yearly * years)
+        });
+    }
+
     function flagInvalid(inputs) {
         inputs.forEach(function (input) {
             const field = input.closest('.field');
@@ -386,6 +412,7 @@ SOFTWARE.
         animateNumber: animateNumber,
         clearNumber: clearNumber,
         pulse: pulse,
+        showInvested: showInvested,
         flagInvalid: flagInvalid
     };
 })(window);

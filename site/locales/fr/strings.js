@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Choix rapides',
     faqTitle: 'Questions fréquentes',
     relatedTools: 'Autres calculateurs',
-    imageAlt: 'costsimulators.com – calculateurs de coûts gratuits pour les questions d’argent du quotidien'
+    imageAlt: 'costsimulators.com – calculateurs de coûts gratuits pour les questions d’argent du quotidien',
+    invest: {
+      label: 'Si vous investissiez plutôt cet argent'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement.'
     }
   },
 
   home: {
     title: 'Calculateurs de coûts gratuits pour le quotidien',
-    description: 'Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, café, tabac, abonnements, électricité et carburant. Sans inscription.',
+    description: 'Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, habitudes, abonnements, électricité, carburant et coût par utilisation.',
     eyebrow: 'Gratuit · Privé · Instantané',
     heading: 'De petits outils pour les questions d’<span class="accent-text">argent</span> du quotidien.',
     lead: 'Des calculateurs rapides qui montrent ce que les choses coûtent vraiment. Sans inscription, sans pistage – tout fonctionne directement dans votre navigateur.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'À propos',
       title: 'À propos – calculateurs de coûts gratuits et privés',
-      description: 'Qui crée costsimulators.com et comment fonctionnent les calculateurs : des outils gratuits et privés pour les réunions, le travail, les habitudes, les abonnements, l’électricité et les trajets.'
+      description: 'Qui crée costsimulators.com et comment fonctionnent ses calculateurs gratuits et privés : réunions, travail, habitudes, achats, abonnements, électricité et trajets.'
     },
     privacy: {
       name: 'Politique de confidentialité',
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Coût par utilisation',
+      heading: 'Calculateur de coût par utilisation',
+      title: 'Calculateur de coût par utilisation – ça vaut le coup ?',
+      description: 'Calculez ce qu’un achat vous coûte vraiment à chaque utilisation : le prix moins la valeur de revente, divisé par la fréquence et la durée d’utilisation.',
+      card: 'Répartissez un prix sur chaque utilisation pour voir si l’achat en vaut la peine.',
+      tag: 'Achats',
+      lead: 'Indiquez un prix, la fréquence à laquelle vous utiliserez l’objet et pendant combien de temps, et voyez ce que coûte vraiment chaque utilisation.',
+      price: {
+        label: 'Prix',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Diminuer le prix',
+        increase: 'Augmenter le prix'
+      },
+      period: {
+        label: 'Fréquence d’utilisation',
+        week: 'Par semaine',
+        month: 'Par mois',
+        year: 'Par an'
+      },
+      uses: {
+        label: 'Utilisations',
+        unit: 'fois par semaine',
+        decrease: 'Diminuer le nombre d’utilisations',
+        increase: 'Augmenter le nombre d’utilisations'
+      },
+      years: {
+        label: 'Durée d’utilisation',
+        unit: 'ans',
+        chip1: '1 an',
+        chip2: '3 ans',
+        chip3: '5 ans',
+        decrease: 'Diminuer la durée d’utilisation',
+        increase: 'Augmenter la durée d’utilisation'
+      },
+      resale: {
+        label: 'Valeur de revente',
+        unit: '€, facultatif',
+        hint: 'Le prix auquel vous pensez le revendre. Laissez 0 si vous ne le revendrez pas.',
+        decrease: 'Diminuer la valeur de revente',
+        increase: 'Augmenter la valeur de revente'
+      },
+      resultsTitle: 'Coût par utilisation',
+      perUse: 'Chaque utilisation coûte',
+      totalUses: 'Utilisations au total',
+      perMonth: 'Par mois',
+      perYear: 'Par an',
+      runtime: {
+        unit: {
+          week: 'fois par semaine',
+          month: 'fois par mois',
+          year: 'fois par an'
+        },
+        note: {
+          empty: 'Indiquez le prix, la fréquence d’utilisation et le nombre d’années. La valeur de revente doit être inférieure au prix.',
+          result: 'Une année d’utilisation de plus ferait baisser le coût par utilisation à {next}.'
+        }
+      },
+      about: {
+        title: 'Comment le coût par utilisation est calculé',
+        paragraphs: [
+          'Le coût par utilisation correspond au prix, moins ce que vous récupérez en revendant l’objet, divisé par le nombre d’utilisations. Ce nombre est la fréquence d’utilisation × le nombre de semaines, de mois ou d’années pendant lesquels vous utilisez l’objet. Un achat de 500 € utilisé 3 fois par semaine pendant 3 ans sert 468 fois et coûte 1,07 € par utilisation.',
+          'Les coûts mensuel et annuel répartissent la même somme sur la durée pendant laquelle vous possédez l’objet : il est ainsi facile de comparer l’achat avec la location, le leasing ou un abonnement.',
+          'Le coût par utilisation permet de comparer simplement un objet bon marché qui s’use vite et un objet plus cher qui dure. Une paire de chaussures à 60 € portée 50 fois revient à 1,20 € chaque fois que vous la portez ; une paire à 200 € portée 400 fois, à 0,50 €.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Comment calculer le coût par utilisation ?',
+          a: 'Divisez le prix par le nombre de fois où vous utilisez l’objet. Si vous le revendez ensuite, déduisez d’abord la valeur de revente du prix. Une veste à 120 € portée 80 fois revient à 1,50 € chaque fois que vous la portez.'
+        },
+        {
+          q: 'Qu’est-ce qu’un bon coût par utilisation ?',
+          a: 'Tout dépend de ce que coûte l’alternative. Comparez-le avec une location, un prêt ou un paiement à l’unité : si une séance de salle de sport coûte 12 € à l’unité, un abonnement à 30 € par mois devient rentable dès la troisième séance du mois.'
+        },
+        {
+          q: 'Le calculateur fonctionne-t-il pour les abonnements et les adhésions ?',
+          a: 'Oui. Saisissez le prix annuel comme prix, votre fréquence d’utilisation et 1 an. Pour un abonnement à la salle de sport à 30 € par mois, saisissez 360 € et vos séances par semaine.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Budget café',
       heading: 'Calculateur du budget café',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'Le calculateur tient-il compte de l’inflation ?',
           a: 'Non. Les projections supposent que le prix reste le même : elles montrent ce que coûte l’habitude aux prix d’aujourd’hui. Avec la hausse des prix, le coût réel à long terme est plus élevé.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait cette somme si vous la placiez chaque mois au lieu de la dépenser, avec un rendement de 4 % par an capitalisé mensuellement. Un café à 2 € chaque jour de travail représente 43,33 € par mois, qui deviennent environ 6 360 € en 10 ans – dont 5 200 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Le calculateur fonctionne-t-il pour le tabac à rouler ?',
           a: 'Oui. Indiquez le prix d’une pochette de tabac comme prix du paquet, le nombre de cigarettes que vous en roulez comme taille du paquet, et combien vous en fumez par jour.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait cette somme si vous l’investissiez chaque mois au lieu de fumer, avec un rendement de 4 % par an capitalisé mensuellement. Un demi-paquet par jour à 13 € le paquet représente environ 198 € par mois, qui deviennent environ 29 000 € en 10 ans – dont 23 725 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Coût de l’alcool',
+      heading: 'Calculateur du coût de l’alcool',
+      title: 'Calculateur coût de l’alcool – combien coûtent vos verres ?',
+      description: 'Découvrez ce que la bière, le vin et les autres boissons vous coûtent par mois et sur 1, 5 et 10 ans, et ce que la même somme deviendrait si vous l’investissiez.',
+      card: 'Voyez ce que vos verres de la semaine représentent sur un, cinq et dix ans.',
+      tag: 'Habitude',
+      lead: 'Indiquez le prix d’un verre et combien vous en buvez par semaine pour voir ce que cela représente au fil des ans.',
+      price: {
+        label: 'Prix du verre',
+        unit: '€',
+        step: '0.1',
+        value: '7',
+        hint: 'Vous buvez à la maison et à l’extérieur ? Prenez un prix moyen.',
+        decrease: 'Diminuer le prix du verre',
+        increase: 'Augmenter le prix du verre'
+      },
+      perWeek: {
+        label: 'Verres par semaine',
+        unit: 'verres',
+        chip1: '3 par semaine',
+        chip2: '7 par semaine',
+        chip3: '14 par semaine',
+        decrease: 'Diminuer le nombre de verres par semaine',
+        increase: 'Augmenter le nombre de verres par semaine'
+      },
+      resultsTitle: 'Ce que ça représente',
+      in10Years: 'En 10 ans',
+      perMonth: 'Par mois',
+      year1: '1 an',
+      year5: '5 ans',
+      runtime: {
+        note: {
+          empty: 'Indiquez un prix et le nombre de verres que vous buvez par semaine pour voir les totaux.',
+          result: 'Soit environ {drinks} verres par an, à {price} le verre.'
+        }
+      },
+      about: {
+        title: 'Comment le coût de l’alcool est calculé',
+        paragraphs: [
+          'Le coût annuel correspond au prix d’un verre × le nombre de verres par semaine × 52 semaines. Le coût mensuel en est le douzième, et les totaux sur 5 et 10 ans sont calculés aux prix actuels, sans inflation.',
+          'Six pintes de bière par semaine à 7 € l’une représentent environ 2 180 € par an et près de 22 000 € en dix ans. Si vous buvez à la fois au bar et à la maison, prenez un prix moyen, ou calculez chaque cas séparément et additionnez les résultats.',
+          'L’encadré « Si vous investissiez plutôt cet argent » montre ce que la même somme deviendrait si vous l’investissiez chaque mois, avec un rendement de 4 % par an pendant 10 ans. Le calculateur ne compte que le prix des boissons ; les effets sur la santé viennent s’y ajouter. Si vous souhaitez réduire votre consommation, votre médecin ou Alcool Info Service peuvent vous aider.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Combien me coûte l’alcool par an ?',
+          a: 'Multipliez le prix d’un verre par le nombre de verres que vous buvez par semaine, puis par 52. Six verres par semaine à 7 € l’unité, cela fait 2 184 € par an.'
+        },
+        {
+          q: 'Combien économiserais-je en buvant moins ?',
+          a: 'Indiquez le nombre de verres auquel vous aimeriez vous limiter et comparez. Passer de 6 à 3 verres par semaine à 7 € l’unité fait économiser 1 092 € par an et 10 920 € en dix ans.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que vous auriez au bout de 10 ans si vous investissiez cet argent chaque mois au lieu de le dépenser, avec un rendement de 4 % par an capitalisé mensuellement. Six verres à 7 € par semaine représentent 182 € par mois, qui deviennent environ 26 700 € – dont 21 840 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loterie et paris',
+      heading: 'Calculateur du coût de la loterie et des paris',
+      title: 'Calculateur loterie et paris – combien vous coûte le jeu ?',
+      description: 'Découvrez ce que la loterie et les paris vous coûtent par mois et sur 10 ans, combien vous perdez en moyenne et ce que vos mises deviendraient si vous les investissiez.',
+      card: 'Voyez ce que représentent vos jeux de loterie et vos paris, et combien vous perdez en moyenne.',
+      tag: 'Habitude',
+      lead: 'Indiquez votre mise et la fréquence à laquelle vous jouez pour voir ce que la loterie et les paris vous coûtent au fil des ans – et quelle part vous revient en moyenne sous forme de gains.',
+      stake: {
+        label: 'Mise par partie',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Diminuer la mise',
+        increase: 'Augmenter la mise'
+      },
+      perWeek: {
+        label: 'Parties par semaine',
+        unit: 'parties',
+        chip1: '1 fois par semaine',
+        chip2: '2 fois par semaine',
+        chip3: 'Tous les jours',
+        decrease: 'Diminuer le nombre de parties par semaine',
+        increase: 'Augmenter le nombre de parties par semaine'
+      },
+      payout: {
+        label: 'Taux de retour aux joueurs',
+        unit: '% des mises',
+        chip1: 'Loterie',
+        chip2: 'Paris sportifs',
+        chip3: 'Casino',
+        hint: 'La part de l’ensemble des mises reversée aux joueurs sous forme de gains. Les loteries en reversent en général environ la moitié, les paris sportifs et les jeux de casino de 90 à 97 %.',
+        decrease: 'Diminuer le taux de retour aux joueurs',
+        increase: 'Augmenter le taux de retour aux joueurs'
+      },
+      resultsTitle: 'Ce que ça coûte',
+      in10Years: 'Total misé en 10 ans',
+      perMonth: 'Par mois',
+      perYear: 'Par an',
+      lossPerYear: 'Perte moyenne par an',
+      runtime: {
+        note: {
+          empty: 'Indiquez la mise, le nombre de parties par semaine et le taux de retour aux joueurs (0–100).',
+          result: 'En moyenne, vous récupérez environ {back} par an sous forme de gains : vous perdez donc environ {loss} par an et {loss10} en 10 ans.'
+        }
+      },
+      about: {
+        title: 'Comment le coût de la loterie et des paris est calculé',
+        paragraphs: [
+          'Le coût annuel correspond à la mise × le nombre de parties par semaine × 52 semaines. Le coût mensuel en est le douzième, et le total sur 10 ans est calculé avec les mises actuelles.',
+          'Le taux de retour aux joueurs est la part de l’ensemble des mises qui est reversée sous forme de gains. Avec un taux de 50 %, miser 10 € deux fois par semaine représente 1 040 € de mises par an, dont environ 520 € vous reviennent en moyenne sous forme de gains – soit une perte moyenne de 520 € par an. Un joueur peut gagner gros ou tout perdre, mais sur un grand nombre de parties, le résultat se rapproche de la moyenne.',
+          'L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendraient vos mises si vous les investissiez chaque mois, avec un rendement de 4 % par an pendant 10 ans. Si vous avez du mal à contrôler votre pratique du jeu, votre médecin ou Joueurs Info Service peuvent vous aider.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Combien me coûte la loterie par an ?',
+          a: 'Multipliez la mise par le nombre de parties par semaine, puis par 52. Miser 10 € deux fois par semaine revient à 1 040 € par an et à 10 400 € en dix ans.'
+        },
+        {
+          q: 'Qu’est-ce que le taux de retour aux joueurs ?',
+          a: 'C’est la part de l’ensemble des mises reversée aux joueurs sous forme de gains. Les loteries reversent en général environ la moitié des mises, tandis que les paris sportifs et les jeux de casino en reversent de 90 à 97 %. Le reste revient à l’opérateur – et correspond à ce que les joueurs perdent en moyenne.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que vous auriez au bout de 10 ans si vous investissiez vos mises chaque mois, avec un rendement de 4 % par an capitalisé mensuellement. Miser 10 € deux fois par semaine représente environ 86,67 € par mois, qui deviennent environ 12 710 € – dont 10 400 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
         }
       ]
     },
@@ -472,6 +701,10 @@ module.exports = {
         {
           q: 'Ma liste est-elle enregistrée ?',
           a: 'Votre liste est conservée uniquement dans l’adresse de la page. Ajoutez le lien à vos favoris ou partagez-le pour la garder ; rien n’est stocké sur un serveur ni dans des cookies.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait le montant de vos abonnements si vous investissiez la même somme chaque mois, avec un rendement de 4 % par an capitalisé mensuellement. 50 € par mois deviennent environ 7 335 € en 10 ans – dont 6 000 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
         }
       ]
     },

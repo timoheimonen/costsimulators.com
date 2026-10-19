@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Toplantı, çalışma saati, kahve, sigara, abonelik, elektrik ve yakıt için ücretsiz maliyet hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.",
+                "description": "Toplantı, çalışma saati, alışkanlıklar, abonelikler, elektrik, yakıt ve kullanım başına maliyet için ücretsiz hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"tr-TR","currency":"TRY","decimals":2,"strings":{"share":{"linkCopied":"Bağlantı kopyalandı","copyFailed":"Kopyalanamadı","copied":"Kopyalandı!","calculatedWith":"costsimulators.com ile hesaplandı"},"workTime":{"minutes":"{m} dk","hours":"{h} sa","hoursMinutes":"{h} sa {m} dk"},"mode":{"start":"Başlat","pause":"Duraklat","resume":"Devam et"},"status":{"ready":"Hazır","live":"Canlı","paused":"Duraklatıldı"},"announce":{"invalid":"Başlamak için saatlik ücreti ve katılımcı sayısını girin.","started":"Sayaç başladı.","paused":"Duraklatıldı: {time} içinde {cost} birikti.","reset":"Sayaç sıfırlandı."},"report":{"cost":"Toplantı maliyeti: {cost}","duration":"Süre: {time}","participants":"Katılımcılar: {persons} × {rate}/saat"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"tr-TR","currency":"TRY","decimals":2,"strings":{"share":{"linkCopied":"Bağlantı kopyalandı","copyFailed":"Kopyalanamadı","copied":"Kopyalandı!","calculatedWith":"costsimulators.com ile hesaplandı"},"workTime":{"minutes":"{m} dk","hours":"{h} sa","hoursMinutes":"{h} sa {m} dk"},"invest":{"note":"10 yıl boyunca ayda {monthly}, yıllık {rate} getiriyle: {paid} sizin paranız, {gain} getiri."},"mode":{"start":"Başlat","pause":"Duraklat","resume":"Devam et"},"status":{"ready":"Hazır","live":"Canlı","paused":"Duraklatıldı"},"announce":{"invalid":"Başlamak için saatlik ücreti ve katılımcı sayısını girin.","started":"Sayaç başladı.","paused":"Duraklatıldı: {time} içinde {cost} birikti.","reset":"Sayaç sıfırlandı."},"report":{"cost":"Toplantı maliyeti: {cost}","duration":"Süre: {time}","participants":"Katılımcılar: {persons} × {rate}/saat"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/timer.js" defer></script>
     <script src="/js/ui.js" defer></script>
@@ -445,6 +445,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/tr/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Kullanım başına maliyet</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/tr/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -458,6 +466,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>Sigara maliyeti</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/tr/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Alkol maliyeti</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/tr/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Piyango ve bahis maliyeti</span>
                     </a>
                 </li>
                 <li>
