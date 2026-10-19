@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const vm = require('node:vm');
 
 const {
   LANGUAGES, TOOLS, PAGES, ORIGIN, buildSite, languageTag, loadLocale, pagePath, pageTitle, pageUrl, textWidth
@@ -57,6 +58,38 @@ function pluralObjects(object, prefix = '') {
     if (isPlural(value)) return [[`${prefix}${key}`, value]];
     return pluralObjects(value, `${prefix}${key}.`);
   });
+}
+
+// A regional version such as en-GB shares most of its texts with the main
+// version of its language (en), so it may repeat its titles on the same page.
+function mainLanguage(lang) {
+  const locale = new Intl.Locale(languageTag(lang));
+  return locale.region ? locale.language : lang;
+}
+
+// Runs js/lang.js on the English home page with the given browser languages
+// and returns the address it sends the visitor to, or null if it stays.
+function redirectFor(languages, stored = null) {
+  const html = readPage('en', PAGES[0]);
+  const links = new Map([...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">/g)]
+    .map(match => [match[1], match[2]]));
+  let target = null;
+  const context = {
+    URL,
+    navigator: { languages },
+    localStorage: { getItem: () => stored, setItem() {} },
+    location: { href: `${ORIGIN}/`, pathname: '/', search: '', hash: '', replace(url) { target = url; } },
+    document: {
+      documentElement: { lang: 'en' },
+      addEventListener() {},
+      querySelector(selector) {
+        const href = links.get(selector.match(/hreflang="([^"]+)"/)[1]);
+        return href ? { getAttribute: () => href } : null;
+      }
+    }
+  };
+  vm.runInNewContext(fs.readFileSync(path.join(publicDir, 'js', 'lang.js'), 'utf8'), context);
+  return target;
 }
 
 function sameSpaces(text) {
@@ -228,8 +261,10 @@ test('titles and descriptions are unique and of a sensible length', () => {
       const [min, max] = DESCRIPTION_LENGTH[CJK.includes(lang) ? 'cjk' : 'default'];
       assert.ok(description.length >= min && description.length <= max, `${name} description is ${description.length} characters`);
       for (const value of [title, description]) {
-        assert.ok(!seen.has(value), `${name} repeats "${value}" from ${seen.get(value)}`);
-        seen.set(value, name);
+        const other = seen.get(value);
+        const variant = other && other.key === page.key && mainLanguage(other.lang) === mainLanguage(lang);
+        assert.ok(!other || variant, `${name} repeats "${value}" from ${other && other.name}`);
+        if (!other) seen.set(value, { name, lang, key: page.key });
       }
     }
   }
@@ -294,6 +329,25 @@ test('every string the page scripts ask for exists in every language', () => {
       }
     }
   }
+});
+
+test('English pages open in the version for the browser language and region', () => {
+  assert.equal(redirectFor(['en-US', 'en']), null);
+  assert.equal(redirectFor(['en-GB', 'en']), '/en-gb/');
+  assert.equal(redirectFor(['en-AU', 'en']), null);
+  assert.equal(redirectFor(['es-ES', 'es']), '/es/');
+  assert.equal(redirectFor(['es-MX']), '/es-mx/');
+  assert.equal(redirectFor(['es-AR', 'es']), '/es-mx/');
+  assert.equal(redirectFor(['es-419']), '/es-mx/');
+  assert.equal(redirectFor(['es-US']), '/es/');
+  assert.equal(redirectFor(['es']), '/es/');
+  assert.equal(redirectFor(['de-AT', 'de']), '/de/');
+  assert.equal(redirectFor(['nb-NO']), '/no/');
+  assert.equal(redirectFor(['zh-TW']), '/zh-hant/');
+  assert.equal(redirectFor(['zh-Hans-HK']), '/zh/');
+  assert.equal(redirectFor(['xx-YY', 'fi-FI']), '/fi/');
+  assert.equal(redirectFor(['en-GB'], 'en'), null);
+  assert.equal(redirectFor(['en-US'], 'es-MX'), '/es-mx/');
 });
 
 test('every language has a sharing image and a 404 page', () => {

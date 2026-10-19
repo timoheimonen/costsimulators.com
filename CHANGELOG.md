@@ -2,6 +2,19 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-10-19b
+
+### Added
+
+- Regional versions, each with its own currency, typical local prices and wording:
+  - **English (UK)** (`/en-gb/`) – prices in pounds, British terms such as petrol, return journeys, National Insurance and the electricity unit rate in pence, and help with entering UK mpg in the trip calculator
+  - **Español (México)** (`/es-mx/`) – Mexican Spanish, with prices in Mexican pesos
+- English pages open the UK version in browsers set to English for the UK, and the Mexican version in browsers set to Spanish for Mexico or another Spanish-speaking country in Latin America
+
+### Changed
+
+- The language menu names the versions of English and Spanish: English (US), English (UK), Español (España) and Español (México)
+
 ## 2026-10-19
 
 ### Added

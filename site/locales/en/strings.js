@@ -18,7 +18,7 @@
 
 module.exports = {
   meta: {
-    name: 'English',
+    name: 'English (US)',
     locale: 'en-US',
     currency: 'USD',
     ogLocale: 'en_US'

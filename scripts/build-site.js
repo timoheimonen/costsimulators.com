@@ -33,11 +33,11 @@ const AUTHOR = {
 // language lives under /<code>/ and needs a site/locales/<code>/ folder with
 // the same files and keys as site/locales/en/. The order is the order of the
 // language menu.
-const LANGUAGES = ['en', 'es', 'fr', 'de', 'it', 'fi', 'sv', 'no', 'da', 'zh', 'ja', 'ko', 'pt', 'nl', 'pl', 'tr', 'id', 'zh-hant', 'cs', 'ro', 'hu', 'el'];
+const LANGUAGES = ['en', 'en-gb', 'es', 'es-mx', 'fr', 'de', 'it', 'fi', 'sv', 'no', 'da', 'zh', 'ja', 'ko', 'pt', 'nl', 'pl', 'tr', 'id', 'zh-hant', 'cs', 'ro', 'hu', 'el'];
 
 // BCP 47 tags for <html lang>, hreflang, the sitemap and structured data,
 // where they differ from the lower-case code used in the path.
-const LANGUAGE_TAGS = { 'zh-hant': 'zh-Hant' };
+const LANGUAGE_TAGS = { 'en-gb': 'en-GB', 'es-mx': 'es-MX', 'zh-hant': 'zh-Hant' };
 
 // Slugs stay in English in every language, so a page has the same path in
 // every language apart from the language prefix. `legacy` is the old address

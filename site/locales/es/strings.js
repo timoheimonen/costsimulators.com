@@ -4,7 +4,7 @@
 
 module.exports = {
   meta: {
-    name: 'Español',
+    name: 'Español (España)',
     locale: 'es-ES',
     currency: 'EUR',
     ogLocale: 'es_ES'
