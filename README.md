@@ -17,7 +17,7 @@ A simple web application to help you see how much money you are spending.
 - Invested instead - the coffee, smoking, alcohol, lottery and subscription calculators show what the same money would grow to if it were invested every month at a 4% yearly return for 10 years
 - Light and dark theme - follows your operating system by default, your choice is remembered
 - Shareable links - tool settings are kept in the URL
-- Available in 22 languages, with separate versions for the UK and Mexico, each with its local currency, number formats and typical local prices
+- Available in 29 languages, with separate versions for the UK and Mexico, each with its local currency, number formats and typical local prices
 - Simple, fast, and easy to use
 - No tracking or data collection - everything runs locally in your browser
 
@@ -34,7 +34,8 @@ Supported languages, in the order of the language menu: English (US English at t
 German (`/de/`), Italian (`/it/`), Finnish (`/fi/`), Swedish (`/sv/`), Norwegian (`/no/`), Danish (`/da/`),
 Simplified Chinese (`/zh/`), Japanese (`/ja/`), Korean (`/ko/`), Brazilian Portuguese (`/pt/`),
 Dutch (`/nl/`), Polish (`/pl/`), Turkish (`/tr/`), Indonesian (`/id/`), Traditional Chinese
-(`/zh-hant/`), Czech (`/cs/`), Romanian (`/ro/`), Hungarian (`/hu/`) and Greek (`/el/`).
+(`/zh-hant/`), Czech (`/cs/`), Romanian (`/ro/`), Hungarian (`/hu/`), Greek (`/el/`), Vietnamese (`/vi/`),
+Ukrainian (`/uk/`), Russian (`/ru/`), Slovak (`/sk/`), Croatian (`/hr/`), Bulgarian (`/bg/`) and Estonian (`/et/`).
 
 Paths use lower-case codes; `<html lang>`, `hreflang`, the sitemap and structured data use the BCP 47
 tag where it differs (`en-GB` for `/en-gb/`, `zh-Hant` for `/zh-hant/`, set in `LANGUAGE_TAGS`).
@@ -91,8 +92,9 @@ Playwright, which is not installed by default:
 npm install --no-save playwright && npx playwright install chromium && npm run images
 ```
 
-`npm run images -- de fr` renders only the images of those languages. Chinese, Japanese, Korean and
-Greek need fonts with those scripts, for example `fonts-noto-cjk` and `fonts-noto-core` on Linux.
+`npm run images -- de fr` renders only the images of those languages. Chinese, Japanese, Korean, Greek,
+Cyrillic (Ukrainian, Russian, Bulgarian) and Vietnamese need fonts with those scripts, for example
+`fonts-noto-cjk` and `fonts-noto-core` on Linux.
 
 ## Project Structure
 

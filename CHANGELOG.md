@@ -9,6 +9,7 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 - Regional versions, each with its own currency, typical local prices and wording:
   - **English (UK)** (`/en-gb/`) – prices in pounds, British terms such as petrol, return journeys, National Insurance and the electricity unit rate in pence, and help with entering UK mpg in the trip calculator
   - **Español (México)** (`/es-mx/`) – Mexican Spanish, with prices in Mexican pesos
+- 7 more languages, each with local currency, number formatting, typical local default prices, examples recalculated in that currency and translated about, privacy and terms pages: Vietnamese (`/vi/`, dong), Ukrainian (`/uk/`, hryvnias), Russian (`/ru/`, rubles), Slovak (`/sk/`, euros), Croatian (`/hr/`, euros), Bulgarian (`/bg/`, euros) and Estonian (`/et/`, euros)
 - English pages open the UK version in browsers set to English for the UK, and the Mexican version in browsers set to Spanish for Mexico or another Spanish-speaking country in Latin America
 
 ### Changed
