@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, kaffe, røyking, abonnementer, strøm og drivstoff. Ingen registrering, alt skjer i nettleseren.",
+                "description": "Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, vaner, abonnementer, strøm, drivstoff og kostnad per bruk. Ingen registrering, alt skjer i nettleseren.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "Ja. For rulletobakk skriver du inn prisen på en pakke tobakk som pakkepris og hvor mange sigaretter du ruller av den som pakkestørrelse. For snus bruker du prisen på en boks og antall porsjoner i den. Legg så inn hvor mange du bruker om dagen."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hva om jeg investerte pengene i stedet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Boksen «Hvis du investerte pengene i stedet» viser hva pengene kunne vokst til om du investerte dem hver måned i stedet for å røyke, med 4 % årlig avkastning og månedlig rentes rente. En halv pakke om dagen til 150 kr pakken blir omtrent 2 280 kr i måneden, som vokser til omtrent 335 000 kr på 10 år – 273 750 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd."
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"nb-NO","currency":"NOK","decimals":2,"strings":{"share":{"linkCopied":"Lenken er kopiert","copyFailed":"Kunne ikke kopiere","copied":"Kopiert!","calculatedWith":"Beregnet med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} t","hoursMinutes":"{h} t {m} min"},"note":{"empty":"Skriv inn pakkeprisen, hvor mange du røyker om dagen og pakkestørrelsen for å se summene.","result":"Det blir omtrent {cigarettes} sigaretter ({packs} pakker) i året til {price} stykket."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"nb-NO","currency":"NOK","decimals":2,"strings":{"share":{"linkCopied":"Lenken er kopiert","copyFailed":"Kunne ikke kopiere","copied":"Kopiert!","calculatedWith":"Beregnet med costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} t","hoursMinutes":"{h} t {m} min"},"invest":{"note":"{monthly} i måneden i 10 år med {rate} årlig avkastning: {paid} i egne innskudd og {gain} i avkastning."},"note":{"empty":"Skriv inn pakkeprisen, hvor mange du røyker om dagen og pakkestørrelsen for å se summene.","result":"Det blir omtrent {cigarettes} sigaretter ({packs} pakker) i året til {price} stykket."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/smoking.js" defer></script>
@@ -392,6 +400,17 @@ SOFTWARE.
                         <dd id="year5">0,00 kr</dd>
                     </div>
                 </dl>
+
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            Hvis du investerte pengene i stedet
+                        </span>
+                        <span class="invest-value" data-invest-value>0,00 kr</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
@@ -418,6 +437,10 @@ SOFTWARE.
                 <summary>Fungerer dette for rulletobakk og snus?</summary>
                 <p>Ja. For rulletobakk skriver du inn prisen på en pakke tobakk som pakkepris og hvor mange sigaretter du ruller av den som pakkestørrelse. For snus bruker du prisen på en boks og antall porsjoner i den. Legg så inn hvor mange du bruker om dagen.</p>
             </details>
+            <details class="faq-item">
+                <summary>Hva om jeg investerte pengene i stedet?</summary>
+                <p>Boksen «Hvis du investerte pengene i stedet» viser hva pengene kunne vokst til om du investerte dem hver måned i stedet for å røyke, med 4 % årlig avkastning og månedlig rentes rente. En halv pakke om dagen til 150 kr pakken blir omtrent 2 280 kr i måneden, som vokser til omtrent 335 000 kr på 10 år – 273 750 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.</p>
+            </details>
             </div>
         </section>
 
@@ -441,11 +464,35 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/no/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Kostnad per bruk</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/no/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
                         </span>
                         <span>Kaffevane</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/no/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Alkoholkostnad</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/no/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Lotto og betting</span>
                     </a>
                 </li>
                 <li>

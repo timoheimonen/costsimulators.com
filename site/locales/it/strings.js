@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Scelte rapide',
     faqTitle: 'Domande frequenti',
     relatedTools: 'Altri calcolatori',
-    imageAlt: 'costsimulators.com – calcolatori gratuiti per fare i conti con le spese di tutti i giorni'
+    imageAlt: 'costsimulators.com – calcolatori gratuiti per fare i conti con le spese di tutti i giorni',
+    invest: {
+      label: 'Se invece lo investissi'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} al mese per 10 anni al {rate} annuo: {paid} versati e {gain} di rendimento.'
     }
   },
 
   home: {
     title: 'Calcolatori di costi gratuiti per la vita di tutti i giorni',
-    description: 'Calcolatori gratuiti e rispettosi della privacy che mostrano quanto costano davvero riunioni, ore di lavoro, caffè, fumo, abbonamenti, elettricità e benzina. Senza registrazione.',
+    description: 'Calcolatori gratuiti e privati che mostrano quanto costano davvero le cose: riunioni, ore di lavoro, abitudini, abbonamenti, elettricità, benzina e costo per utilizzo. Senza registrazione.',
     eyebrow: 'Gratis · Privato · Immediato',
     heading: 'Piccoli strumenti per fare i <span class="accent-text">conti</span> di tutti i giorni.',
     lead: 'Calcolatori rapidi che mostrano quanto costano davvero le cose. Nessuna registrazione, nessun tracciamento: tutto funziona direttamente nel tuo browser.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Informazioni',
       title: 'Informazioni – calcolatori di costi gratuiti e privati',
-      description: 'Chi realizza costsimulators.com e come funzionano i calcolatori: strumenti gratuiti e rispettosi della privacy per riunioni, ore di lavoro, abitudini, abbonamenti, elettricità e viaggi.'
+      description: 'Chi realizza costsimulators.com e come funzionano i calcolatori: strumenti gratuiti e rispettosi della privacy per riunioni, ore di lavoro, abitudini, acquisti, abbonamenti, elettricità e viaggi.'
     },
     privacy: {
       name: 'Informativa sulla privacy',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Costo per utilizzo',
+      heading: 'Calcolatore del costo per utilizzo',
+      title: 'Calcolatore costo per utilizzo – vale davvero il prezzo?',
+      description: 'Calcola quanto ti costa davvero un acquisto ogni volta che lo usi: il prezzo meno il valore di rivendita, diviso per quanto spesso e per quanto tempo lo usi.',
+      card: 'Distribuisci un prezzo su tutte le volte che usi un oggetto per capire se ne vale la pena.',
+      tag: 'Acquisti',
+      lead: 'Inserisci un prezzo, quanto spesso userai l’oggetto e per quanto tempo, e scopri quanto costa davvero ogni utilizzo.',
+      price: {
+        label: 'Prezzo',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Diminuisci il prezzo',
+        increase: 'Aumenta il prezzo'
+      },
+      period: {
+        label: 'Quanto spesso lo usi',
+        week: 'A settimana',
+        month: 'Al mese',
+        year: 'All’anno'
+      },
+      uses: {
+        label: 'Utilizzi',
+        unit: 'volte a settimana',
+        decrease: 'Diminuisci gli utilizzi',
+        increase: 'Aumenta gli utilizzi'
+      },
+      years: {
+        label: 'Anni di utilizzo',
+        unit: 'anni',
+        chip1: '1 anno',
+        chip2: '3 anni',
+        chip3: '5 anni',
+        decrease: 'Diminuisci gli anni di utilizzo',
+        increase: 'Aumenta gli anni di utilizzo'
+      },
+      resale: {
+        label: 'Valore di rivendita',
+        unit: '€, facoltativo',
+        hint: 'Quanto pensi di ricavare quando lo rivendi. Lascia 0 se non pensi di rivenderlo.',
+        decrease: 'Diminuisci il valore di rivendita',
+        increase: 'Aumenta il valore di rivendita'
+      },
+      resultsTitle: 'Costo per utilizzo',
+      perUse: 'Ogni utilizzo costa',
+      totalUses: 'Utilizzi in totale',
+      perMonth: 'Al mese',
+      perYear: 'All’anno',
+      runtime: {
+        unit: {
+          week: 'volte a settimana',
+          month: 'volte al mese',
+          year: 'volte all’anno'
+        },
+        note: {
+          empty: 'Inserisci il prezzo, quanto spesso lo usi e per quanti anni. Il valore di rivendita deve essere inferiore al prezzo.',
+          result: 'Usandolo per un altro anno, il costo per utilizzo scenderebbe a {next}.'
+        }
+      },
+      about: {
+        title: 'Come si calcola il costo per utilizzo',
+        paragraphs: [
+          'Il costo per utilizzo è il prezzo meno quanto ricavi rivendendo l’oggetto, diviso per il numero di volte che lo usi. Il numero di utilizzi è la frequenza d’uso × le settimane, i mesi o gli anni in cui lo usi. Un acquisto da 500 € usato 3 volte a settimana per 3 anni fa 468 utilizzi e costa 1,07 € a utilizzo.',
+          'Il costo mensile e quello annuale distribuiscono la stessa cifra sul periodo in cui possiedi l’oggetto, così è facile confrontare l’acquisto con il noleggio, il leasing o un abbonamento.',
+          'Il costo per utilizzo è un modo semplice per confrontare un oggetto economico che si consuma in fretta con uno costoso che dura. Un paio di scarpe da 60 € che metti 50 volte costa 1,20 € a utilizzo; un paio da 200 € che metti 400 volte costa 0,50 €.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Come si calcola il costo per utilizzo?',
+          a: 'Dividi il prezzo per il numero di volte che usi l’oggetto. Se poi lo rivendi, sottrai prima dal prezzo il valore di rivendita. Una giacca da 120 € indossata 80 volte costa 1,50 € a utilizzo.'
+        },
+        {
+          q: 'Qual è un buon costo per utilizzo?',
+          a: 'Dipende da quanto costa l’alternativa. Confrontalo con il noleggio, il prestito o il pagamento a ogni utilizzo: se un ingresso singolo in palestra costa 15 €, un abbonamento mensile da 40 € conviene dal terzo ingresso al mese.'
+        },
+        {
+          q: 'Funziona anche per abbonamenti e iscrizioni?',
+          a: 'Sì. Inserisci come prezzo il costo annuale, quanto spesso lo usi e 1 anno. Per un abbonamento in palestra da 40 € al mese, inserisci 480 € e quante volte ci vai a settimana.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Costo del caffè',
       heading: 'Calcolatore della spesa per il caffè',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Il calcolatore tiene conto dell’inflazione?',
           a: 'No. Le proiezioni presuppongono che il prezzo resti invariato, quindi mostrano quanto costa l’abitudine ai prezzi di oggi. Se i prezzi aumentano, il costo reale nel lungo periodo è più alto.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti se investissi i soldi ogni mese invece di spenderli, con un rendimento del 4% annuo e capitalizzazione mensile. Un caffè da 1,30 € ogni giorno lavorativo fa 28,17 € al mese, che in 10 anni diventano circa 4130 €: 3380 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Funziona anche con il tabacco da rollare?',
           a: 'Sì. Inserisci il prezzo della busta di tabacco come prezzo del pacchetto, il numero di sigarette che ne ricavi come formato del pacchetto e quante ne fumi al giorno.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti se investissi i soldi ogni mese invece di spenderli in sigarette, con un rendimento del 4% annuo e capitalizzazione mensile. Mezzo pacchetto al giorno a 6,50 € il pacchetto fa circa 99 € al mese, che in 10 anni diventano circa 14.500 €: 11.862,50 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Costo dell’alcol',
+      heading: 'Calcolatore della spesa per l’alcol',
+      title: 'Calcolatore spesa alcol – quanto costa bere in un anno',
+      description: 'Scopri quanto ti costano birra, vino e altre bevande al mese e in 1, 5 e 10 anni, e quanto avresti se investissi invece gli stessi soldi.',
+      card: 'Scopri quanto costano i bicchieri di ogni settimana in uno, cinque e dieci anni.',
+      tag: 'Abitudini',
+      lead: 'Inserisci quanto costa un bicchiere e quanti ne bevi a settimana per vedere quanto spendi negli anni.',
+      price: {
+        label: 'Prezzo a bicchiere',
+        unit: '€',
+        step: '0.1',
+        value: '5',
+        hint: 'Bevi sia a casa sia fuori? Usa un prezzo medio.',
+        decrease: 'Diminuisci il prezzo a bicchiere',
+        increase: 'Aumenta il prezzo a bicchiere'
+      },
+      perWeek: {
+        label: 'Bicchieri a settimana',
+        unit: 'bicchieri',
+        chip1: '3 a settimana',
+        chip2: '7 a settimana',
+        chip3: '14 a settimana',
+        decrease: 'Diminuisci i bicchieri a settimana',
+        increase: 'Aumenta i bicchieri a settimana'
+      },
+      resultsTitle: 'Quanto spendi in totale',
+      in10Years: 'In 10 anni',
+      perMonth: 'Al mese',
+      year1: '1 anno',
+      year5: '5 anni',
+      runtime: {
+        note: {
+          empty: 'Inserisci un prezzo e quanti bicchieri bevi a settimana per vedere i totali.',
+          result: 'Sono circa {drinks} bicchieri all’anno a {price} l’uno.'
+        }
+      },
+      about: {
+        title: 'Come si calcola la spesa per l’alcol',
+        paragraphs: [
+          'La spesa annuale è il prezzo a bicchiere × i bicchieri a settimana × 52 settimane. La spesa mensile ne è un dodicesimo, e i totali a 5 e 10 anni usano i prezzi di oggi, senza inflazione.',
+          'Sei birre medie a settimana a 5 € l’una fanno 1560 € all’anno e 15.600 € in dieci anni. Se bevi sia al bar sia a casa, usa un prezzo medio, oppure calcola le due spese separatamente e sommale.',
+          'Il riquadro «Se invece lo investissi» mostra quanto avresti se investissi gli stessi soldi ogni mese, con un rendimento del 4% annuo per 10 anni. Il calcolatore considera solo quanto costano le bevande: gli effetti sulla salute vanno aggiunti. Se vuoi bere meno, il tuo medico di famiglia o il servizio di alcologia della tua ASL possono aiutarti.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto spendo in alcol in un anno?',
+          a: 'Moltiplica il prezzo di un bicchiere per i bicchieri che bevi a settimana e per 52. Sei bicchieri a settimana a 5 € l’uno fanno 1560 € all’anno.'
+        },
+        {
+          q: 'Quanto risparmierei bevendo meno?',
+          a: 'Inserisci il numero di bicchieri a cui vorresti scendere e confronta. Passando da 6 a 3 bicchieri a settimana a 5 € l’uno risparmi 780 € all’anno e 7800 € in dieci anni.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti dopo 10 anni se investissi i soldi ogni mese invece di spenderli, con un rendimento del 4% annuo e capitalizzazione mensile. Sei bicchieri da 5 € a settimana fanno 130 € al mese, che diventano circa 19.070 €: 15.600 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotterie e scommesse',
+      heading: 'Calcolatore della spesa per lotterie e scommesse',
+      title: 'Calcolatore spesa lotterie e scommesse – il costo del gioco',
+      description: 'Scopri quanto ti costano lotterie e scommesse al mese e in 10 anni, quanto perdi in media e quanto avresti se investissi invece le puntate.',
+      card: 'Scopri quanto ti costano lotterie e scommesse e quanto perdi in media.',
+      tag: 'Abitudini',
+      lead: 'Inserisci quanto punti e quanto spesso giochi per vedere quanto ti costano lotterie e scommesse negli anni, e quanto ti torna in media sotto forma di vincite.',
+      stake: {
+        label: 'Puntata per giocata',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Diminuisci la puntata',
+        increase: 'Aumenta la puntata'
+      },
+      perWeek: {
+        label: 'Giocate a settimana',
+        unit: 'giocate',
+        chip1: 'Una a settimana',
+        chip2: 'Due a settimana',
+        chip3: 'Tutti i giorni',
+        decrease: 'Diminuisci le giocate a settimana',
+        increase: 'Aumenta le giocate a settimana'
+      },
+      payout: {
+        label: 'Payout',
+        unit: '% restituito',
+        chip1: 'Lotterie',
+        chip2: 'Scommesse sportive',
+        chip3: 'Casinò',
+        hint: 'La quota di tutte le puntate restituita in vincite. Le lotterie restituiscono di solito circa la metà, le scommesse sportive e i giochi da casinò il 90–97%.',
+        decrease: 'Diminuisci il payout',
+        increase: 'Aumenta il payout'
+      },
+      resultsTitle: 'Quanto costa',
+      in10Years: 'Giocato in 10 anni',
+      perMonth: 'Al mese',
+      perYear: 'All’anno',
+      lossPerYear: 'Perdita media all’anno',
+      runtime: {
+        note: {
+          empty: 'Inserisci la puntata, quante volte giochi a settimana e il payout (0–100).',
+          result: 'In media ti tornano circa {back} all’anno in vincite, quindi perdi circa {loss} all’anno e {loss10} in 10 anni.'
+        }
+      },
+      about: {
+        title: 'Come si calcola la spesa per lotterie e scommesse',
+        paragraphs: [
+          'La spesa annuale è la puntata × le giocate a settimana × 52 settimane. La spesa mensile ne è un dodicesimo, e il totale a 10 anni usa le puntate di oggi.',
+          'Il payout, o percentuale di restituzione, è la quota di tutte le puntate che torna ai giocatori come vincite. Con un payout del 50%, giocando 10 € due volte a settimana punti 1040 € all’anno, di cui in media circa 520 € tornano in vincite: una perdita media di 520 € all’anno. Un singolo giocatore può vincere molto o perdere tutto, ma su molte giocate il risultato si avvicina alla media.',
+          'Il riquadro «Se invece lo investissi» mostra quanto diventerebbero le puntate se le investissi ogni mese, con un rendimento del 4% annuo per 10 anni. Se senti che il gioco è difficile da controllare, il tuo medico di famiglia o il SerD (Servizio per le dipendenze) della tua ASL possono aiutarti.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto spendo in lotterie e scommesse in un anno?',
+          a: 'Moltiplica la puntata per le giocate a settimana e per 52. Giocando 10 € due volte a settimana spendi 1040 € all’anno e 10.400 € in dieci anni.'
+        },
+        {
+          q: 'Che cos’è il payout?',
+          a: 'È la percentuale di restituzione in vincite, cioè la quota di tutte le puntate che torna ai giocatori sotto forma di vincite. Le lotterie restituiscono di solito circa la metà delle puntate, mentre scommesse sportive e giochi da casinò restituiscono il 90–97%. Il resto va all’operatore, ed è quello che i giocatori perdono in media.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti dopo 10 anni se investissi le puntate ogni mese, con un rendimento del 4% annuo e capitalizzazione mensile. Giocando 10 € due volte a settimana spendi circa 86,67 € al mese, che diventano circa 12.710 €: 10.400 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'La mia lista viene salvata?',
           a: 'La lista resta solo nell’indirizzo della pagina. Per conservarla, aggiungi il link ai preferiti o condividilo: nulla viene salvato su un server o nei cookie.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti se investissi ogni mese la stessa cifra che spendi in abbonamenti, con un rendimento del 4% annuo e capitalizzazione mensile. Con 50 € al mese, in 10 anni avresti circa 7335 €: 6000 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
         }
       ]
     },

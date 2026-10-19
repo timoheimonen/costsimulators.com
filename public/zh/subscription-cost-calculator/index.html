@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "免费、保护隐私的在线计算器，帮你算清开会、喝咖啡、吸烟、订阅、用电和开车的真实花费，还能把价格换算成工作时间。无需注册，打开浏览器即可使用。",
+                "description": "免费、保护隐私的在线计算器，帮你算清开会、生活习惯、订阅、用电和油费的真实花费，还能把价格换算成工作时间、算出每次使用的成本。无需注册，打开浏览器即可使用。",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "列表只保存在网页地址中。收藏或分享链接即可保留；服务器和 Cookie 中都不会存储任何内容。"
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "如果把这笔钱拿去投资会怎样？",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "“如果把这笔钱拿去投资”一栏显示的是：如果每月把同样多的钱拿去投资，而不是花在订阅上，按年化 4% 的收益率、按月复利计算，这笔钱会增长到多少。每月 300 元，10 年后约增长到 44,000 元——其中 36,000 元是你自己投入的本金，其余是投资收益。计算未扣除税费和手续费，也未考虑通货膨胀。这只是一个示例，不构成投资建议。"
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"untitled":"未命名","remove":"删除“{name}”","removeUnnamed":"删除订阅","breakdown":"{cost}/年 · {percent}%","cycle":{"monthly":"月","yearly":"年","weekly":"周"},"note":{"empty":"添加一项带价格的订阅，即可查看总额。","single":"“{name}”每年花费 {cost}。","biggest":"开销最大的是“{name}”，每年 {cost}，占总额的 {percent}%。"},"summary":{"item":"{name}：{price}/{cycle}","total":"合计：每月 {month}，每年 {year}"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"invest":{"note":"每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。"},"untitled":"未命名","remove":"删除“{name}”","removeUnnamed":"删除订阅","breakdown":"{cost}/年 · {percent}%","cycle":{"monthly":"月","yearly":"年","weekly":"周"},"note":{"empty":"添加一项带价格的订阅，即可查看总额。","single":"“{name}”每年花费 {cost}。","biggest":"开销最大的是“{name}”，每年 {cost}，占总额的 {percent}%。"},"summary":{"item":"{name}：{price}/{cycle}","total":"合计：每月 {month}，每年 {year}"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/subscriptions.js" defer></script>
@@ -379,6 +387,17 @@ SOFTWARE.
                     </div>
                 </dl>
 
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            如果把这笔钱拿去投资
+                        </span>
+                        <span class="invest-value" data-invest-value>¥0.00</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
+
                 <ol class="breakdown" id="breakdown" aria-label="各项订阅的年费"></ol>
 
                 <div class="actions actions--start">
@@ -414,6 +433,10 @@ SOFTWARE.
                 <summary>我的列表会被保存吗？</summary>
                 <p>列表只保存在网页地址中。收藏或分享链接即可保留；服务器和 Cookie 中都不会存储任何内容。</p>
             </details>
+            <details class="faq-item">
+                <summary>如果把这笔钱拿去投资会怎样？</summary>
+                <p>“如果把这笔钱拿去投资”一栏显示的是：如果每月把同样多的钱拿去投资，而不是花在订阅上，按年化 4% 的收益率、按月复利计算，这笔钱会增长到多少。每月 300 元，10 年后约增长到 44,000 元——其中 36,000 元是你自己投入的本金，其余是投资收益。计算未扣除税费和手续费，也未考虑通货膨胀。这只是一个示例，不构成投资建议。</p>
+            </details>
             </div>
         </section>
 
@@ -437,6 +460,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/zh/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>单次使用成本</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/zh/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -450,6 +481,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>吸烟花费</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/zh/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>饮酒花费</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/zh/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>彩票与博彩花费</span>
                     </a>
                 </li>
                 <li>

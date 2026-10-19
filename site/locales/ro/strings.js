@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Opțiuni rapide',
     faqTitle: 'Întrebări frecvente',
     relatedTools: 'Alte calculatoare',
-    imageAlt: 'costsimulators.com – calculatoare gratuite pentru întrebările de zi cu zi despre bani'
+    imageAlt: 'costsimulators.com – calculatoare gratuite pentru întrebările de zi cu zi despre bani',
+    invest: {
+      label: 'Dacă ai investi banii în schimb'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} pe lună timp de 10 ani, la {rate} pe an: ai depus {paid}, iar randamentul adaugă {gain}.'
     }
   },
 
   home: {
     title: 'Calculatoare de costuri gratuite pentru viața de zi cu zi',
-    description: 'Calculatoare gratuite și private care arată cât costă de fapt lucrurile: ședințe, ore de muncă, cafea, fumat, abonamente, curent și benzină. Fără cont, direct în browser.',
+    description: 'Calculatoare gratuite și private care arată cât costă de fapt lucrurile: ședințe, ore de muncă, obiceiuri, abonamente, curent, benzină și cost pe utilizare. Fără cont, direct în browser.',
     eyebrow: 'Gratuit · Privat · Instant',
     heading: 'Instrumente mici pentru întrebările de zi cu zi despre <span class="accent-text">bani</span>.',
     lead: 'Calculatoare rapide care arată cât costă de fapt lucrurile. Fără cont, fără urmărire – totul rulează direct în browserul tău.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Despre',
       title: 'Despre noi – calculatoare de costuri gratuite și private',
-      description: 'Cine face costsimulators.com și cum funcționează calculatoarele. Calculatoare gratuite și private pentru ședințe, ore de muncă, obiceiuri, abonamente, curent și drumuri.'
+      description: 'Cine face costsimulators.com și cum funcționează calculatoarele. Calculatoare gratuite și private pentru ședințe, ore de muncă, obiceiuri, cumpărături, abonamente, curent și drumuri.'
     },
     privacy: {
       name: 'Politica de confidențialitate',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Cost pe utilizare',
+      heading: 'Calculator pentru costul pe utilizare',
+      title: 'Calculator cost pe utilizare – merită prețul?',
+      description: 'Află cât te costă de fapt o achiziție de fiecare dată când o folosești: prețul minus valoarea de revânzare, împărțit la cât de des și cât timp o folosești.',
+      card: 'Împarte un preț la toate utilizările ca să vezi dacă merită banii.',
+      tag: 'Cumpărături',
+      lead: 'Introdu un preț, cât de des vei folosi lucrul respectiv și cât timp, și vezi cât costă de fapt fiecare utilizare.',
+      price: {
+        label: 'Preț',
+        unit: 'lei',
+        value: '2500',
+        step: '100',
+        decrease: 'Scade prețul',
+        increase: 'Crește prețul'
+      },
+      period: {
+        label: 'Cât de des îl folosești',
+        week: 'Săptămânal',
+        month: 'Lunar',
+        year: 'Anual'
+      },
+      uses: {
+        label: 'Utilizări',
+        unit: 'ori pe săptămână',
+        decrease: 'Scade numărul de utilizări',
+        increase: 'Crește numărul de utilizări'
+      },
+      years: {
+        label: 'Ani de utilizare',
+        unit: 'ani',
+        chip1: '1 an',
+        chip2: '3 ani',
+        chip3: '5 ani',
+        decrease: 'Scade anii de utilizare',
+        increase: 'Crește anii de utilizare'
+      },
+      resale: {
+        label: 'Valoare de revânzare',
+        unit: 'lei, opțional',
+        hint: 'Cât te aștepți să primești când îl vinzi. Lasă 0 dacă nu-l vei vinde.',
+        decrease: 'Scade valoarea de revânzare',
+        increase: 'Crește valoarea de revânzare'
+      },
+      resultsTitle: 'Cost pe utilizare',
+      perUse: 'O utilizare costă',
+      totalUses: 'Utilizări în total',
+      perMonth: 'Pe lună',
+      perYear: 'Pe an',
+      runtime: {
+        unit: {
+          week: 'ori pe săptămână',
+          month: 'ori pe lună',
+          year: 'ori pe an'
+        },
+        note: {
+          empty: 'Introdu prețul, cât de des îl folosești și câți ani. Valoarea de revânzare trebuie să fie mai mică decât prețul.',
+          result: 'Încă un an de utilizare ar reduce costul pe utilizare la {next}.'
+        }
+      },
+      about: {
+        title: 'Cum se calculează costul pe utilizare',
+        paragraphs: [
+          'Costul pe utilizare este prețul minus suma pe care o primești când revinzi lucrul respectiv, împărțit la numărul de utilizări. Numărul de utilizări este frecvența de utilizare × săptămânile, lunile sau anii în care îl folosești. O achiziție de 2.500 de lei folosită de 3 ori pe săptămână timp de 3 ani înseamnă 468 de utilizări și costă 5,34 lei pe utilizare.',
+          'Costurile lunare și anuale împart aceeași sumă pe perioada în care deții lucrul respectiv, așa că poți compara ușor cumpărarea cu închirierea, leasingul sau un abonament.',
+          'Costul pe utilizare este o metodă simplă de a compara un lucru ieftin, care se uzează repede, cu unul scump, care durează. O pereche de pantofi de 250 de lei, purtată de 50 de ori, te costă 5 lei la fiecare purtare; o pereche de 800 de lei, purtată de 400 de ori, doar 2 lei.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Cum calculez costul pe utilizare?',
+          a: 'Împarte prețul la numărul de utilizări. Dacă vinzi lucrul respectiv după aceea, scade mai întâi valoarea de revânzare din preț. O geacă de 600 de lei purtată de 80 de ori te costă 7,50 lei la fiecare purtare.'
+        },
+        {
+          q: 'Ce înseamnă un cost pe utilizare bun?',
+          a: 'Depinde cât costă alternativa. Compară-l cu închirierea, împrumutul sau plata la fiecare utilizare: dacă o intrare la sală costă 60 de lei, un abonament de 200 de lei pe lună devine rentabil de la a patra vizită pe lună.'
+        },
+        {
+          q: 'Funcționează și pentru abonamente, de exemplu la sală?',
+          a: 'Da. Introdu prețul anual ca preț, cât de des îl folosești și 1 an. Pentru un abonament la sală de 200 de lei pe lună, introdu 2.400 de lei și numărul de vizite pe săptămână.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Costul cafelei',
       heading: 'Calculator pentru costul cafelei',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Calculatorul ține cont de inflație?',
           a: 'Nu. Estimările presupun că prețul rămâne același, deci arată cât costă obiceiul la prețurile de azi. Dacă prețurile cresc, costul real pe termen lung este mai mare.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni banii dacă i-ai investi în fiecare lună în loc să-i cheltuiești, cu un randament de 4 % pe an, capitalizat lunar. O cafea de 15 lei în fiecare zi lucrătoare înseamnă 325 de lei pe lună, care ajung la circa 47.700 de lei în 10 ani – din care 39.000 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Funcționează și pentru tutunul de rulat?',
           a: 'Da. Introdu prețul unei pungi de tutun ca preț al pachetului, numărul de țigări pe care le rulezi din ea ca mărime a pachetului și câte fumezi pe zi.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni banii dacă i-ai investi în fiecare lună în loc să fumezi, cu un randament de 4 % pe an, capitalizat lunar. O jumătate de pachet pe zi, la 30 de lei pachetul, înseamnă circa 456 de lei pe lună, care ajung la circa 66.900 de lei în 10 ani – din care 54.750 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Costul alcoolului',
+      heading: 'Calculator pentru costul alcoolului',
+      title: 'Calculator cost alcool – cât te costă băutura pe an?',
+      description: 'Vezi cât te costă berea, vinul și alte băuturi pe lună și în 1, 5 și 10 ani, plus cât ar deveni aceiași bani dacă i-ai investi.',
+      card: 'Vezi cât se adună băuturile din fiecare săptămână într-un an, în cinci și în zece ani.',
+      tag: 'Obicei',
+      lead: 'Introdu cât costă o băutură și câte bei pe săptămână ca să vezi cât se adună de-a lungul anilor.',
+      price: {
+        label: 'Preț pe băutură',
+        unit: 'lei',
+        step: '1',
+        value: '15',
+        hint: 'Bei și acasă, și în oraș? Folosește un preț mediu.',
+        decrease: 'Scade prețul băuturii',
+        increase: 'Crește prețul băuturii'
+      },
+      perWeek: {
+        label: 'Băuturi pe săptămână',
+        unit: 'băuturi',
+        chip1: '3 pe săptămână',
+        chip2: '7 pe săptămână',
+        chip3: '14 pe săptămână',
+        decrease: 'Scade numărul de băuturi pe săptămână',
+        increase: 'Crește numărul de băuturi pe săptămână'
+      },
+      resultsTitle: 'Cât se adună',
+      in10Years: 'În 10 ani',
+      perMonth: 'Pe lună',
+      year1: '1 an',
+      year5: '5 ani',
+      runtime: {
+        note: {
+          empty: 'Introdu un preț și câte băuturi bei pe săptămână ca să vezi totalurile.',
+          result: 'Numărul de băuturi pe an: circa {drinks}, la {price} bucata.'
+        }
+      },
+      about: {
+        title: 'Cum se calculează costul alcoolului',
+        paragraphs: [
+          'Costul anual este prețul pe băutură × băuturile pe săptămână × 52 de săptămâni. Costul lunar este a douăsprezecea parte din el, iar totalurile pe 5 și 10 ani folosesc prețurile de azi, fără inflație.',
+          'Șase beri pe săptămână, la 15 lei bucata, adună circa 4.700 de lei pe an și aproape 47.000 de lei în zece ani. Dacă bei și în baruri, și acasă, folosește un preț mediu sau calculează separat fiecare variantă și adună rezultatele.',
+          'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni aceiași bani dacă i-ai investi în fiecare lună, cu un randament de 4 % pe an, timp de 10 ani. Calculatorul ia în calcul doar cât costă băuturile; efectele asupra sănătății vin pe deasupra. Dacă vrei să bei mai puțin, medicul de familie sau o linie de consiliere pentru consumul de alcool te pot ajuta.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Cât cheltuiesc pe alcool într-un an?',
+          a: 'Înmulțește prețul unei băuturi cu numărul de băuturi pe săptămână și cu 52. Șase băuturi pe săptămână, la 15 lei bucata, înseamnă 4.680 de lei pe an.'
+        },
+        {
+          q: 'Cât aș economisi dacă aș bea mai puțin?',
+          a: 'Introdu numărul de băuturi la care ai vrea să te limitezi și compară. Dacă treci de la 6 la 3 băuturi pe săptămână, la 15 lei bucata, economisești 2.340 de lei pe an și 23.400 de lei în zece ani.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ai avea după 10 ani dacă ai investi banii în fiecare lună în loc să-i cheltuiești, cu un randament de 4 % pe an, capitalizat lunar. Șase băuturi de 15 lei pe săptămână înseamnă 390 de lei pe lună, care ajung la circa 57.200 de lei – din care 46.800 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loto și pariuri',
+      heading: 'Calculator pentru costul loteriei și al pariurilor',
+      title: 'Calculator loto și pariuri – cât te costă jocurile de noroc?',
+      description: 'Vezi cât te costă biletele de loto și pariurile pe lună și în 10 ani, cât pierzi în medie și cât ar deveni mizele dacă le-ai investi.',
+      card: 'Vezi cât se adună biletele de loto și pariurile și cât pierzi în medie.',
+      tag: 'Obicei',
+      lead: 'Introdu cât mizezi și cât de des joci ca să vezi cât te costă biletele de loto și pariurile de-a lungul anilor – și cât din bani se întoarce în medie sub formă de câștiguri.',
+      stake: {
+        label: 'Miză pe joc',
+        unit: 'lei',
+        step: '5',
+        value: '50',
+        decrease: 'Scade miza',
+        increase: 'Crește miza'
+      },
+      perWeek: {
+        label: 'Jocuri pe săptămână',
+        unit: 'jocuri',
+        chip1: '1 pe săptămână',
+        chip2: '2 pe săptămână',
+        chip3: 'În fiecare zi',
+        decrease: 'Scade numărul de jocuri pe săptămână',
+        increase: 'Crește numărul de jocuri pe săptămână'
+      },
+      payout: {
+        label: 'Rata de returnare',
+        unit: '% din mize',
+        chip1: 'Loto',
+        chip2: 'Pariuri sportive',
+        chip3: 'Cazinou',
+        hint: 'Partea din totalul mizelor care se întoarce la jucători sub formă de câștiguri. Loteriile returnează de obicei cam jumătate, pariurile sportive și jocurile de cazinou 90–97 %.',
+        decrease: 'Scade rata de returnare',
+        increase: 'Crește rata de returnare'
+      },
+      resultsTitle: 'Cât te costă',
+      in10Years: 'Mizat în 10 ani',
+      perMonth: 'Pe lună',
+      perYear: 'Pe an',
+      lossPerYear: 'Pierdere medie pe an',
+      runtime: {
+        note: {
+          empty: 'Introdu miza, de câte ori joci pe săptămână și rata de returnare (0–100).',
+          result: 'În medie, primești înapoi circa {back} pe an sub formă de câștiguri, deci pierzi circa {loss} pe an și {loss10} în 10 ani.'
+        }
+      },
+      about: {
+        title: 'Cum se calculează costul loteriei și al pariurilor',
+        paragraphs: [
+          'Costul anual este miza × jocurile pe săptămână × 52 de săptămâni. Costul lunar este a douăsprezecea parte din el, iar totalul pe 10 ani folosește mizele de azi.',
+          'Rata de returnare este partea din totalul mizelor care se întoarce la jucători sub formă de câștiguri. La o rată de returnare de 50 %, dacă joci 50 de lei de două ori pe săptămână, mizezi 5.200 de lei pe an, din care circa 2.600 de lei se întorc în medie sub formă de câștiguri – o pierdere medie de 2.600 de lei pe an. Un jucător poate câștiga mult sau poate pierde tot, dar pe parcursul multor jocuri rezultatul se apropie de medie.',
+          'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni mizele dacă le-ai investi în fiecare lună, cu un randament de 4 % pe an, timp de 10 ani. Dacă simți că jocurile de noroc îți scapă de sub control, medicul de familie sau o linie de consiliere pentru jocuri de noroc te pot ajuta.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Cât cheltuiesc pe loto într-un an?',
+          a: 'Înmulțește miza cu numărul de jocuri pe săptămână și cu 52. Dacă joci 50 de lei de două ori pe săptămână, asta înseamnă 5.200 de lei pe an și 52.000 de lei în zece ani.'
+        },
+        {
+          q: 'Ce este rata de returnare?',
+          a: 'Este partea din totalul mizelor care se întoarce la jucători sub formă de câștiguri. Loteriile returnează de obicei cam jumătate din mize, iar pariurile sportive și jocurile de cazinou 90–97 %. Restul rămâne la operator – și reprezintă ce pierd jucătorii în medie.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ai avea după 10 ani dacă ai investi mizele în fiecare lună, cu un randament de 4 % pe an, capitalizat lunar. Dacă joci 50 de lei de două ori pe săptămână, asta înseamnă circa 433 de lei pe lună, care ajung la circa 63.570 de lei – din care 52.000 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Lista mea este salvată?',
           a: 'Lista este păstrată doar în adresa paginii. Salvează linkul la marcaje sau distribuie-l ca s-o păstrezi; nimic nu este stocat pe un server sau în cookie-uri.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni banii dați pe abonamente dacă ai investi aceeași sumă în fiecare lună, cu un randament de 4 % pe an, capitalizat lunar. 250 de lei pe lună ajung la circa 36.700 de lei în 10 ani – din care 30.000 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
         }
       ]
     },

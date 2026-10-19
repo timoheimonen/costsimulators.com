@@ -7,10 +7,14 @@ A simple web application to help you see how much money you are spending.
 - **Meetings cost calculator** - Track real-time meeting costs with a pausable timer; participants and rate can change mid-meeting
 - **Coffee cost calculator** - See long-term coffee expenses (monthly and 1/5/10 year projections)
 - **Smoking cost calculator** - See what cigarettes cost per month and over 1/5/10 years
+- **Alcohol cost calculator** - See what drinks cost per month and over 1/5/10 years
+- **Lottery and betting cost calculator** - See what lottery tickets and bets cost and how much is lost on average at a given payout rate
 - **Work hours calculator** - Turn any price into the hours, days and weeks of work it takes
+- **Cost per use calculator** - Spread a price, minus its resale value, over every time you use the thing
 - **Subscriptions calculator** - List recurring payments and see the monthly, yearly and 10-year total
 - **Electricity cost calculator** - See what running a device costs from its wattage, usage and electricity price
 - **Trip cost calculator** - Fuel cost per trip, per person and per year, in metric or US units
+- Invested instead - the coffee, smoking, alcohol, lottery and subscription calculators show what the same money would grow to if it were invested every month at a 4% yearly return for 10 years
 - Light and dark theme - follows your operating system by default, your choice is remembered
 - Shareable links - tool settings are kept in the URL
 - Available in 22 languages, each with its local currency, number formats and typical local prices

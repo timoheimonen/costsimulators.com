@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Kaffee, Rauchen, Abos, Strom und Sprit. Ohne Anmeldung, direkt im Browser.",
+                "description": "Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Gewohnheiten, Abos, Strom, Sprit und Kosten pro Nutzung. Ohne Anmeldung, direkt im Browser.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -246,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"de-DE","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link kopiert","copyFailed":"Kopieren fehlgeschlagen","copied":"Kopiert!","calculatedWith":"Berechnet mit costsimulators.com"},"workTime":{"minutes":"{m} Min.","hours":"{h} Std.","hoursMinutes":"{h} Std. {m} Min."},"mode":{"start":"Start","pause":"Pause","resume":"Weiter"},"status":{"ready":"Bereit","live":"Läuft","paused":"Pausiert"},"announce":{"invalid":"Gib einen Stundensatz und die Teilnehmerzahl ein, um zu starten.","started":"Timer gestartet.","paused":"Pausiert bei {cost} nach {time}.","reset":"Timer zurückgesetzt."},"report":{"cost":"Meetingkosten: {cost}","duration":"Dauer: {time}","participants":"Teilnehmer: {persons} × {rate}/h"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"de-DE","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Link kopiert","copyFailed":"Kopieren fehlgeschlagen","copied":"Kopiert!","calculatedWith":"Berechnet mit costsimulators.com"},"workTime":{"minutes":"{m} Min.","hours":"{h} Std.","hoursMinutes":"{h} Std. {m} Min."},"invest":{"note":"{monthly} pro Monat über 10 Jahre bei {rate} Rendite im Jahr: {paid} eingezahlt und {gain} an Erträgen."},"mode":{"start":"Start","pause":"Pause","resume":"Weiter"},"status":{"ready":"Bereit","live":"Läuft","paused":"Pausiert"},"announce":{"invalid":"Gib einen Stundensatz und die Teilnehmerzahl ein, um zu starten.","started":"Timer gestartet.","paused":"Pausiert bei {cost} nach {time}.","reset":"Timer zurückgesetzt."},"report":{"cost":"Meetingkosten: {cost}","duration":"Dauer: {time}","participants":"Teilnehmer: {persons} × {rate}/h"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/timer.js" defer></script>
     <script src="/js/ui.js" defer></script>
@@ -407,7 +407,7 @@ SOFTWARE.
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">So werden die Meetingkosten berechnet</h2>
             <p>Der Rechner multipliziert die Zahl der Teilnehmer mit ihrem Stundensatz und der verstrichenen Zeit. Ein einstündiges Meeting mit 5 Personen zu je 55 € pro Stunde kostet 275 € – das sind rund 4,58 € pro Minute.</p>
-            <p>Nimm als Stundensatz, was eine Arbeitsstunde den Arbeitgeber tatsächlich kostet, nicht nur den Lohn. Zum Bruttolohn kommen der Arbeitgeberanteil zur Sozialversicherung von rund 21 % und weitere Kosten wie bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall und der Arbeitsplatz selbst. Wenn du nicht alle Stundensätze kennst, reicht ein Durchschnittswert für das Team völlig aus.</p>
+            <p>Nimm als Stundensatz, was eine Arbeitsstunde den Arbeitgeber tatsächlich kostet, nicht nur den Lohn. Zum Bruttolohn kommen der Arbeitgeberanteil zur Sozialversicherung von rund 21 % und weitere Kosten wie bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall und der Arbeitsplatz selbst. Wenn du nicht alle Stundensätze kennst, reicht ein Durchschnittswert für das Team völlig aus.</p>
             <p>Der Timer zählt auch in einem Hintergrund-Tab korrekt weiter, und die laufenden Kosten erscheinen im Titel des Browser-Tabs – so behältst du sie im Blick, auch wenn du deinen Bildschirm teilst. Ist das Meeting vorbei, pausiere den Timer und kopiere einen kurzen Bericht fürs Protokoll.</p>
         </section>
 
@@ -445,6 +445,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/de/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Kosten pro Nutzung</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/de/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -458,6 +466,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>Zigarettenkosten</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/de/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Alkoholkosten</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/de/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Lotto &amp; Wetten</span>
                     </a>
                 </li>
                 <li>

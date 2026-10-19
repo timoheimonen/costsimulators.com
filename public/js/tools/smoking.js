@@ -35,6 +35,7 @@ SOFTWARE.
         perPack: document.getElementById('perPack'),
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
+        invest: document.getElementById('invest'),
         results: {
             year10: document.getElementById('year10'),
             month: document.getElementById('month'),
@@ -55,6 +56,7 @@ SOFTWARE.
             Object.values(els.results).forEach(function (element) {
                 UI.clearNumber(element, EMPTY_VALUE);
             });
+            UI.showInvested(els.invest, 0);
             els.note.textContent = t('note.empty');
             return;
         }
@@ -71,6 +73,7 @@ SOFTWARE.
         Object.keys(values).forEach(function (key) {
             UI.animateNumber(els.results[key], values[key], formatCurrency);
         });
+        UI.showInvested(els.invest, yearly);
 
         const cigarettesPerYear = Calculators.perYearDaily(perDay);
         els.note.textContent = t('note.result', {

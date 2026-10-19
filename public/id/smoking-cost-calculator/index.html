@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kopi, rokok, langganan, listrik, dan bensin. Tanpa daftar, langsung di browser Anda.",
+                "description": "Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kebiasaan, langganan, listrik, bensin, dan biaya per pemakaian. Tanpa daftar, langsung di browser Anda.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "Bisa. Masukkan harga sebungkus tembakau sebagai harga per bungkus, jumlah batang yang bisa Anda linting darinya sebagai isi bungkus, dan berapa batang yang Anda isap per hari."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Bagaimana jika uangnya saya investasikan?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang itu Anda investasikan setiap bulan alih-alih dipakai untuk merokok, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Setengah bungkus sehari (8 batang dari bungkus isi 16) dengan harga Rp 35.000 per bungkus berarti sekitar Rp 532.300 sebulan, yang tumbuh menjadi sekitar Rp 78,1 juta dalam 10 tahun – Rp 63.875.000 dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi."
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"id-ID","currency":"IDR","decimals":0,"strings":{"share":{"linkCopied":"Tautan disalin","copyFailed":"Gagal menyalin","copied":"Tersalin!","calculatedWith":"Dihitung dengan costsimulators.com"},"workTime":{"minutes":"{m} menit","hours":"{h} jam","hoursMinutes":"{h} jam {m} menit"},"note":{"empty":"Masukkan harga per bungkus, jumlah batang per hari, dan isi bungkus untuk melihat totalnya.","result":"Itu sekitar {cigarettes} batang ({packs} bungkus) setahun dengan harga {price} per batang."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"id-ID","currency":"IDR","decimals":0,"strings":{"share":{"linkCopied":"Tautan disalin","copyFailed":"Gagal menyalin","copied":"Tersalin!","calculatedWith":"Dihitung dengan costsimulators.com"},"workTime":{"minutes":"{m} menit","hours":"{h} jam","hoursMinutes":"{h} jam {m} menit"},"invest":{"note":"{monthly} per bulan selama 10 tahun dengan imbal hasil {rate} per tahun: {paid} uang Anda sendiri dan {gain} hasil investasi."},"note":{"empty":"Masukkan harga per bungkus, jumlah batang per hari, dan isi bungkus untuk melihat totalnya.","result":"Itu sekitar {cigarettes} batang ({packs} bungkus) setahun dengan harga {price} per batang."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/smoking.js" defer></script>
@@ -392,6 +400,17 @@ SOFTWARE.
                         <dd id="year5">Rp 0</dd>
                     </div>
                 </dl>
+
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            Jika uangnya diinvestasikan
+                        </span>
+                        <span class="invest-value" data-invest-value>Rp 0</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
@@ -418,6 +437,10 @@ SOFTWARE.
                 <summary>Apakah kalkulator ini bisa dipakai untuk tembakau linting (tingwe)?</summary>
                 <p>Bisa. Masukkan harga sebungkus tembakau sebagai harga per bungkus, jumlah batang yang bisa Anda linting darinya sebagai isi bungkus, dan berapa batang yang Anda isap per hari.</p>
             </details>
+            <details class="faq-item">
+                <summary>Bagaimana jika uangnya saya investasikan?</summary>
+                <p>Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya jika uang itu Anda investasikan setiap bulan alih-alih dipakai untuk merokok, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Setengah bungkus sehari (8 batang dari bungkus isi 16) dengan harga Rp 35.000 per bungkus berarti sekitar Rp 532.300 sebulan, yang tumbuh menjadi sekitar Rp 78,1 juta dalam 10 tahun – Rp 63.875.000 dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.</p>
+            </details>
             </div>
         </section>
 
@@ -441,11 +464,35 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/id/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Biaya per pemakaian</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/id/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
                         </span>
                         <span>Kebiasaan ngopi</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/id/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Biaya alkohol</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/id/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Biaya lotre &amp; taruhan</span>
                     </a>
                 </li>
                 <li>

@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Hurtigvalg',
     faqTitle: 'Ofte stillede spørgsmål',
     relatedTools: 'Flere beregnere',
-    imageAlt: 'costsimulators.com – gratis beregnere til hverdagens pengespørgsmål'
+    imageAlt: 'costsimulators.com – gratis beregnere til hverdagens pengespørgsmål',
+    invest: {
+      label: 'Hvis du investerede pengene i stedet'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min.',
       hours: '{h} timer',
       hoursMinutes: '{h} t. {m} min.'
+    },
+    invest: {
+      note: '{monthly} om måneden i 10 år med {rate} om året: {paid} indbetalt og {gain} i afkast.'
     }
   },
 
   home: {
     title: 'Gratis beregnere til hverdagens udgifter',
-    description: 'Gratis og private beregnere, der viser, hvad ting reelt koster: møder, arbejdstimer, kaffe, rygning, abonnementer, el og brændstof. Uden login – alt kører i din browser.',
+    description: 'Gratis og private beregnere, der viser, hvad ting reelt koster: møder, arbejdstimer, vaner, abonnementer, el, brændstof og pris pr. brug. Uden login – alt kører i din browser.',
     eyebrow: 'Gratis · Privat · Lynhurtigt',
     heading: 'Små værktøjer til hverdagens <span class="accent-text">penge</span>spørgsmål.',
     lead: 'Hurtige beregnere, der viser, hvad ting reelt koster. Ingen tilmelding, ingen sporing – alt kører direkte i din browser.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Om siden',
       title: 'Om costsimulators.com – gratis og private beregnere',
-      description: 'Hvem står bag costsimulators.com, og hvordan virker beregnerne? Gratis og private beregnere til møder, arbejdstid, vaner, abonnementer, elforbrug og kørsel.'
+      description: 'Hvem står bag costsimulators.com, og hvordan virker beregnerne? Gratis og private beregnere til møder, arbejdstid, vaner, køb, abonnementer, elforbrug og kørsel.'
     },
     privacy: {
       name: 'Privatlivspolitik',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Pris pr. brug',
+      heading: 'Prisen pr. brug',
+      title: 'Pris pr. brug – er købet pengene værd?',
+      description: 'Regn ud, hvad et køb reelt koster, hver gang du bruger det: prisen minus gensalgsværdien divideret med, hvor tit og hvor længe du bruger det.',
+      card: 'Fordel en pris over hver gang, du bruger tingen, og se, om den er pengene værd.',
+      tag: 'Indkøb',
+      lead: 'Indtast en pris, hvor tit du vil bruge tingen, og hvor længe, og se, hvad hver gang reelt koster.',
+      price: {
+        label: 'Pris',
+        unit: 'kr.',
+        value: '3500',
+        step: '100',
+        decrease: 'Sænk prisen',
+        increase: 'Hæv prisen'
+      },
+      period: {
+        label: 'Hvor tit du bruger den',
+        week: 'Ugentligt',
+        month: 'Månedligt',
+        year: 'Årligt'
+      },
+      uses: {
+        label: 'Antal gange',
+        unit: 'gange om ugen',
+        decrease: 'Færre gange',
+        increase: 'Flere gange'
+      },
+      years: {
+        label: 'År i brug',
+        unit: 'år',
+        chip1: '1 år',
+        chip2: '3 år',
+        chip3: '5 år',
+        decrease: 'Færre år i brug',
+        increase: 'Flere år i brug'
+      },
+      resale: {
+        label: 'Gensalgsværdi',
+        unit: 'kr., valgfrit',
+        hint: 'Det, du regner med at få, når du sælger tingen. Lad den stå på 0, hvis du ikke forventer noget.',
+        decrease: 'Sænk gensalgsværdien',
+        increase: 'Hæv gensalgsværdien'
+      },
+      resultsTitle: 'Pris pr. brug',
+      perUse: 'Hver gang koster',
+      totalUses: 'Antal gange i alt',
+      perMonth: 'Pr. måned',
+      perYear: 'Pr. år',
+      runtime: {
+        unit: {
+          week: 'gange om ugen',
+          month: 'gange om måneden',
+          year: 'gange om året'
+        },
+        note: {
+          empty: 'Indtast prisen, hvor tit du bruger tingen, og i hvor mange år. Gensalgsværdien skal være lavere end prisen.',
+          result: 'Bruger du den et år mere, falder prisen pr. gang til {next}.'
+        }
+      },
+      about: {
+        title: 'Sådan beregnes prisen pr. brug',
+        paragraphs: [
+          'Prisen pr. brug er prisen minus det, du får tilbage, når du sælger tingen, divideret med antallet af gange, du bruger den. Antallet af gange er, hvor tit du bruger den × de uger, måneder eller år, du bruger den. Et køb til 3.500 kr., som du bruger 3 gange om ugen i 3 år, bliver brugt 468 gange og koster 7,48 kr. pr. gang.',
+          'Beløbene pr. måned og pr. år fordeler det samme beløb over den tid, du ejer tingen, så det er nemt at sammenligne et køb med at leje, lease eller abonnere.',
+          'Pris pr. brug er en enkel måde at sammenligne noget billigt, der hurtigt bliver slidt, med noget dyrt, der holder længe. Et par sko til 400 kr., der bliver brugt 50 gange, koster 8 kr. pr. gang; et par til 1.600 kr., der bliver brugt 400 gange, koster 4 kr.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvordan beregner man prisen pr. brug?',
+          a: 'Divider prisen med antallet af gange, du bruger tingen. Sælger du den bagefter, så træk først gensalgsværdien fra prisen. En jakke til 800 kr., som du har på 80 gange, koster 10 kr. pr. gang.'
+        },
+        {
+          q: 'Hvad er en god pris pr. brug?',
+          a: 'Det afhænger af, hvad alternativet koster. Sammenlign med at leje, låne eller betale for hver gang: koster et dagskort i fitnesscentret 120 kr., kan et medlemskab til 300 kr. om måneden betale sig fra tredje besøg om måneden.'
+        },
+        {
+          q: 'Virker det også til abonnementer og medlemskaber?',
+          a: 'Ja. Indtast årsprisen som pris, hvor tit du bruger det, og 1 år. For et fitnessmedlemskab til 300 kr. om måneden indtaster du 3.600 kr. og dine besøg om ugen.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kaffevanen',
       heading: 'Kaffeberegner',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Tager beregneren højde for inflation?',
           a: 'Nej. Fremskrivningerne går ud fra, at prisen er uændret, så de viser, hvad vanen koster med dagens priser. Når priserne stiger, bliver den reelle udgift på lang sigt højere.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad pengene kunne vokse til, hvis du investerede dem hver måned i stedet for at bruge dem, med et afkast på 4 % om året og månedlig rentes rente. En kaffe til 45 kr. hver arbejdsdag er 975 kr. om måneden, som på 10 år vokser til ca. 143.000 kr. – heraf er 117.000 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Virker beregneren også til rulletobak?',
           a: 'Ja. Indtast prisen på en pakke tobak som pakkepris, antallet af cigaretter, du ruller af den, som pakkestørrelse, og hvor mange du ryger om dagen.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad pengene kunne vokse til, hvis du investerede dem hver måned i stedet for at bruge dem på cigaretter, med et afkast på 4 % om året og månedlig rentes rente. En halv pakke om dagen til 75 kr. pakken er ca. 1.141 kr. om måneden, som på 10 år vokser til ca. 167.300 kr. – heraf er 136.875 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkoholens pris',
+      heading: 'Alkoholberegner',
+      title: 'Alkoholberegner – hvad koster det at drikke?',
+      description: 'Se, hvad øl, vin og andre drikkevarer koster dig om måneden og over 1, 5 og 10 år – og hvad de samme penge kunne vokse til, hvis du investerede dem.',
+      card: 'Se, hvad dine genstande om ugen løber op i over et, fem og ti år.',
+      tag: 'Vane',
+      lead: 'Indtast, hvad en genstand koster, og hvor mange du drikker om ugen, så ser du, hvad det løber op i gennem årene.',
+      price: {
+        label: 'Pris pr. genstand',
+        unit: 'kr.',
+        step: '5',
+        value: '50',
+        hint: 'Drikker du både derhjemme og i byen? Brug en gennemsnitspris.',
+        decrease: 'Sænk prisen pr. genstand',
+        increase: 'Hæv prisen pr. genstand'
+      },
+      perWeek: {
+        label: 'Genstande om ugen',
+        unit: 'genstande',
+        chip1: '3 om ugen',
+        chip2: '7 om ugen',
+        chip3: '14 om ugen',
+        decrease: 'Færre genstande om ugen',
+        increase: 'Flere genstande om ugen'
+      },
+      resultsTitle: 'Det løber op i',
+      in10Years: 'På 10 år',
+      perMonth: 'Pr. måned',
+      year1: '1 år',
+      year5: '5 år',
+      runtime: {
+        note: {
+          empty: 'Indtast en pris, og hvor mange genstande du drikker om ugen, for at se beløbene.',
+          result: 'Det er ca. {drinks} genstande om året til {price} stykket.'
+        }
+      },
+      about: {
+        title: 'Sådan beregnes prisen på alkohol',
+        paragraphs: [
+          'Årsprisen er prisen pr. genstand × genstande om ugen × 52 uger. Månedsprisen er en tolvtedel af den, og beløbene for 5 og 10 år er regnet med dagens priser uden inflation.',
+          'Seks fadøl om ugen til 50 kr. stykket løber op i 15.600 kr. om året og 156.000 kr. på ti år. Drikker du både i byen og derhjemme, så brug en gennemsnitspris, eller regn de to dele ud hver for sig, og læg dem sammen.',
+          'Feltet »Hvis du investerede pengene i stedet« viser, hvad de samme penge kunne vokse til, hvis du investerede dem hver måned, med et afkast på 4 % om året over 10 år. Beregneren tæller kun, hvad drikkevarerne koster; følgerne for helbredet kommer oveni. Vil du skære ned, kan din læge eller din kommunes alkoholrådgivning hjælpe.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvor mange penge bruger jeg på alkohol om året?',
+          a: 'Gang prisen pr. genstand med antallet af genstande om ugen og med 52. Seks genstande om ugen til 50 kr. stykket er 15.600 kr. om året.'
+        },
+        {
+          q: 'Hvor meget sparer jeg ved at drikke mindre?',
+          a: 'Indtast det antal genstande, du gerne vil ned på, og sammenlign. Går du fra 6 til 3 genstande om ugen til 50 kr. stykket, sparer du 7.800 kr. om året og 78.000 kr. på ti år.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad du ville have efter 10 år, hvis du investerede pengene hver måned i stedet for at bruge dem, med et afkast på 4 % om året og månedlig rentes rente. Seks genstande til 50 kr. om ugen er 1.300 kr. om måneden, som vokser til ca. 190.700 kr. – heraf er 156.000 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotto og betting',
+      heading: 'Lotto- og bettingberegner',
+      title: 'Lotto- og bettingberegner – hvad koster det at spille?',
+      description: 'Se, hvad lottokuponer og væddemål koster om måneden og over 10 år, hvor meget du i gennemsnit taber, og hvad indsatsen kunne vokse til, hvis du investerede den.',
+      card: 'Se, hvad lottokuponer og væddemål løber op i, og hvor meget du i gennemsnit taber.',
+      tag: 'Vane',
+      lead: 'Indtast din indsats, og hvor tit du spiller, så ser du, hvad lotto og betting koster gennem årene – og hvor meget af det der i gennemsnit kommer tilbage som gevinster.',
+      stake: {
+        label: 'Indsats pr. spil',
+        unit: 'kr.',
+        step: '5',
+        value: '50',
+        decrease: 'Sænk indsatsen',
+        increase: 'Hæv indsatsen'
+      },
+      perWeek: {
+        label: 'Spil om ugen',
+        unit: 'spil',
+        chip1: 'Én gang om ugen',
+        chip2: 'To gange om ugen',
+        chip3: 'Hver dag',
+        decrease: 'Færre spil om ugen',
+        increase: 'Flere spil om ugen'
+      },
+      payout: {
+        label: 'Tilbagebetalingsprocent',
+        unit: '% udbetalt',
+        chip1: 'Lotto',
+        chip2: 'Sportsbetting',
+        chip3: 'Casino',
+        hint: 'Den andel af alle indsatser, der udbetales som gevinster. Lotterier betaler typisk omkring halvdelen tilbage, sportsbetting og casinospil 90–97 %.',
+        decrease: 'Sænk tilbagebetalingsprocenten',
+        increase: 'Hæv tilbagebetalingsprocenten'
+      },
+      resultsTitle: 'Hvad spillet koster',
+      in10Years: 'Samlet indsats på 10 år',
+      perMonth: 'Pr. måned',
+      perYear: 'Pr. år',
+      lossPerYear: 'Gennemsnitligt tab pr. år',
+      runtime: {
+        note: {
+          empty: 'Indtast indsatsen, hvor mange gange om ugen du spiller, og tilbagebetalingsprocenten (0–100).',
+          result: 'I gennemsnit kommer ca. {back} om året tilbage som gevinster, så du taber ca. {loss} om året og {loss10} på 10 år.'
+        }
+      },
+      about: {
+        title: 'Sådan beregnes prisen på lotto og betting',
+        paragraphs: [
+          'Årsprisen er indsatsen × spil om ugen × 52 uger. Månedsprisen er en tolvtedel af den, og beløbet for 10 år er regnet med dagens indsatser.',
+          'Tilbagebetalingsprocenten er den andel af alle indsatser, der udbetales som gevinster. Spiller du for 50 kr. to gange om ugen, er det 5.200 kr. i indsats om året. Med en tilbagebetalingsprocent på 50 % kommer ca. 2.600 kr. af det i gennemsnit tilbage som gevinster – et gennemsnitligt tab på 2.600 kr. om året. Den enkelte spiller kan vinde stort eller tabe det hele, men over mange spil nærmer resultatet sig gennemsnittet.',
+          'Feltet »Hvis du investerede pengene i stedet« viser, hvad indsatserne kunne vokse til, hvis du i stedet investerede dem hver måned, med et afkast på 4 % om året over 10 år. Har du svært ved at styre dit spil, kan din læge eller et behandlingstilbud for ludomani hjælpe.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvor mange penge bruger jeg på lotto om året?',
+          a: 'Gang indsatsen med antallet af spil om ugen og med 52. Spiller du for 50 kr. to gange om ugen, er det 5.200 kr. om året og 52.000 kr. på ti år.'
+        },
+        {
+          q: 'Hvad er en tilbagebetalingsprocent?',
+          a: 'Det er den andel af alle indsatser, der betales tilbage til spillerne som gevinster. Lotterier betaler typisk omkring halvdelen af indsatserne tilbage, mens sportsbetting og casinospil betaler 90–97 % tilbage. Resten går til udbyderen – og det er det, spillerne i gennemsnit taber.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad du ville have efter 10 år, hvis du i stedet investerede dine indsatser hver måned, med et afkast på 4 % om året og månedlig rentes rente. Spil for 50 kr. to gange om ugen er ca. 433 kr. om måneden, som vokser til ca. 63.570 kr. – heraf er 52.000 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Bliver min liste gemt?',
           a: 'Din liste findes kun i sidens adresse. Gem linket som bogmærke, eller del det for at beholde listen; intet gemmes på en server eller i cookies.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad pengene til dine abonnementer kunne vokse til, hvis du i stedet investerede det samme beløb hver måned, med et afkast på 4 % om året og månedlig rentes rente. 500 kr. om måneden vokser på 10 år til ca. 73.350 kr. – heraf er 60.000 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
         }
       ]
     },

@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Snabbval',
     faqTitle: 'Vanliga frågor',
     relatedTools: 'Fler räknare',
-    imageAlt: 'costsimulators.com – gratis kostnadsräknare för vardagens pengafrågor'
+    imageAlt: 'costsimulators.com – gratis kostnadsräknare för vardagens pengafrågor',
+    invest: {
+      label: 'Om du investerade pengarna i stället'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} tim',
       hoursMinutes: '{h} tim {m} min'
+    },
+    invest: {
+      note: '{monthly} per månad i 10 år med {rate} årlig avkastning: {paid} i insättningar och {gain} i avkastning.'
     }
   },
 
   home: {
     title: 'Gratis kostnadsräknare för vardagen',
-    description: 'Gratis och privata räknare som visar vad saker egentligen kostar: möten, arbetstimmar, kaffe, rökning, prenumerationer, el och bensin. Ingen registrering, allt körs i webbläsaren.',
+    description: 'Gratis och privata räknare som visar vad saker egentligen kostar: möten, arbetstimmar, vanor, prenumerationer, el, bensin och kostnad per användning. Ingen registrering, allt körs i webbläsaren.',
     eyebrow: 'Gratis · Privat · Direkt',
     heading: 'Små verktyg för vardagens <span class="accent-text">pengafrågor</span>.',
     lead: 'Snabba räknare som visar vad saker egentligen kostar. Ingen registrering, ingen spårning – allt körs direkt i din webbläsare.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'Om webbplatsen',
       title: 'Om webbplatsen – gratis och privata kostnadsräknare',
-      description: 'Vem som står bakom costsimulators.com och hur räknarna fungerar. Gratis och privata kostnadsräknare för möten, arbetstid, vanor, prenumerationer, el och resor.'
+      description: 'Vem som står bakom costsimulators.com och hur räknarna fungerar. Gratis och privata kostnadsräknare för möten, arbetstid, vanor, köp, prenumerationer, el och resor.'
     },
     privacy: {
       name: 'Integritetspolicy',
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Kostnad per användning',
+      heading: 'Räknare för kostnad per användning',
+      title: 'Kostnad per användning – är köpet värt pengarna?',
+      description: 'Räkna ut vad ett köp egentligen kostar varje gång du använder det: priset minus andrahandsvärdet, delat med hur ofta och hur länge du använder det.',
+      card: 'Fördela priset på alla gånger du använder saken och se om den är värd pengarna.',
+      tag: 'Inköp',
+      lead: 'Ange ett pris, hur ofta du kommer att använda saken och hur länge, så ser du vad varje användning egentligen kostar.',
+      price: {
+        label: 'Pris',
+        unit: 'kr',
+        value: '5000',
+        step: '100',
+        decrease: 'Sänk priset',
+        increase: 'Höj priset'
+      },
+      period: {
+        label: 'Hur ofta du använder den',
+        week: 'Per vecka',
+        month: 'Per månad',
+        year: 'Per år'
+      },
+      uses: {
+        label: 'Antal gånger',
+        unit: 'gånger i veckan',
+        decrease: 'Färre gånger',
+        increase: 'Fler gånger'
+      },
+      years: {
+        label: 'Användningstid',
+        unit: 'år',
+        chip1: '1 år',
+        chip2: '3 år',
+        chip3: '5 år',
+        decrease: 'Kortare användningstid',
+        increase: 'Längre användningstid'
+      },
+      resale: {
+        label: 'Andrahandsvärde',
+        unit: 'kr, valfritt',
+        hint: 'Vad du räknar med att få när du säljer den. Låt det stå 0 om du inte får något.',
+        decrease: 'Sänk andrahandsvärdet',
+        increase: 'Höj andrahandsvärdet'
+      },
+      resultsTitle: 'Kostnad per användning',
+      perUse: 'Varje användning kostar',
+      totalUses: 'Antal gånger totalt',
+      perMonth: 'Per månad',
+      perYear: 'Per år',
+      runtime: {
+        unit: {
+          week: 'gånger i veckan',
+          month: 'gånger i månaden',
+          year: 'gånger om året'
+        },
+        note: {
+          empty: 'Ange priset, hur ofta du använder saken och i hur många år. Andrahandsvärdet måste vara lägre än priset.',
+          result: 'Använder du den ett år till sjunker kostnaden per användning till {next}.'
+        }
+      },
+      about: {
+        title: 'Så räknas kostnaden per användning ut',
+        paragraphs: [
+          'Kostnaden per användning är priset minus det du får tillbaka när du säljer saken, delat med antalet gånger du använder den. Antalet gånger är hur ofta du använder den × antalet veckor, månader eller år du använder den. Ett köp för 5 000 kr som används 3 gånger i veckan i 3 år används 468 gånger och kostar 10,68 kr per gång.',
+          'Månads- och årskostnaden fördelar samma belopp över tiden du äger saken, vilket gör det lätt att jämföra ett köp med att hyra, leasa eller betala för en prenumeration.',
+          'Kostnad per användning är ett enkelt sätt att jämföra en billig sak som snabbt slits ut med en dyr som håller. Ett par skor för 600 kr som används 50 gånger kostar 12 kr per gång; ett par för 2 000 kr som används 400 gånger kostar 5 kr.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hur räknar man ut kostnad per användning?',
+          a: 'Dela priset med antalet gånger du använder saken. Om du säljer den efteråt drar du först av andrahandsvärdet från priset. En jacka för 1 200 kr som används 80 gånger kostar 15 kr per gång.'
+        },
+        {
+          q: 'Vad är en bra kostnad per användning?',
+          a: 'Det beror på vad alternativet kostar. Jämför med att hyra, låna eller betala per gång: om ett gympass kostar 150 kr styck lönar sig ett gymkort för 400 kr i månaden redan från det tredje passet i månaden.'
+        },
+        {
+          q: 'Fungerar det för prenumerationer och medlemskap?',
+          a: 'Ja. Ange årspriset som pris, hur ofta du använder det och 1 år. För ett gymkort för 400 kr i månaden anger du 4 800 kr och hur många gånger i veckan du tränar.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kaffekostnad',
       heading: 'Kaffekalkylator',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'Tar räknaren hänsyn till inflation?',
           a: 'Nej. Beräkningarna utgår från att priset är detsamma, så de visar vad vanan kostar med dagens priser. Om priserna stiger blir den verkliga kostnaden på lång sikt högre.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad pengarna skulle växa till om du investerade dem varje månad i stället för att göra av med dem, med 4 % årlig avkastning och ränta på ränta varje månad. En kaffe för 45 kr varje arbetsdag blir 975 kr i månaden, som på 10 år växer till cirka 143 000 kr – varav 117 000 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Fungerar räknaren för rulltobak och snus?',
           a: 'Ja. Ange priset för ett paket rulltobak som paketpris, hur många cigaretter du rullar av det som paketstorlek och hur många du röker per dag. För snus anger du dosans pris, antalet prillor i dosan och hur många prillor du tar per dag.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad pengarna skulle växa till om du investerade dem varje månad i stället för att röka, med 4 % årlig avkastning och ränta på ränta varje månad. Ett halvt paket om dagen för 80 kr paketet blir cirka 1 217 kr i månaden, som på 10 år växer till cirka 178 000 kr – varav 146 000 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkoholkostnad',
+      heading: 'Alkoholkalkylator',
+      title: 'Alkoholkalkylator – vad kostar alkoholen dig per år?',
+      description: 'Se vad öl, vin och andra drycker kostar dig per månad och på 1, 5 och 10 år – och vad samma pengar kunde ha vuxit till om du investerat dem.',
+      card: 'Se vad dina glas varje vecka kostar på ett, fem och tio år.',
+      tag: 'Vana',
+      lead: 'Ange vad ett glas kostar och hur många du dricker i veckan, så ser du vad det blir med åren.',
+      price: {
+        label: 'Pris per glas',
+        unit: 'kr',
+        step: '5',
+        value: '80',
+        hint: 'Dricker du både hemma och ute? Använd ett genomsnittspris.',
+        decrease: 'Sänk priset per glas',
+        increase: 'Höj priset per glas'
+      },
+      perWeek: {
+        label: 'Glas per vecka',
+        unit: 'glas',
+        chip1: '3 i veckan',
+        chip2: '7 i veckan',
+        chip3: '14 i veckan',
+        decrease: 'Färre glas per vecka',
+        increase: 'Fler glas per vecka'
+      },
+      resultsTitle: 'Så mycket blir det',
+      in10Years: 'På 10 år',
+      perMonth: 'Per månad',
+      year1: '1 år',
+      year5: '5 år',
+      runtime: {
+        note: {
+          empty: 'Ange ett pris och hur många glas du dricker i veckan för att se summorna.',
+          result: 'Det blir cirka {drinks} glas om året för {price} styck.'
+        }
+      },
+      about: {
+        title: 'Så räknas alkoholkostnaden ut',
+        paragraphs: [
+          'Årskostnaden är priset per glas × glas per vecka × 52 veckor. Månadskostnaden är en tolftedel av det, och summorna för 5 och 10 år utgår från dagens priser utan inflation.',
+          'Sex öl i veckan för 80 kr styck blir cirka 25 000 kr om året och nästan 250 000 kr på tio år. Dricker du både på krogen och hemma kan du använda ett genomsnittspris eller räkna på var sak för sig och lägga ihop summorna.',
+          'Rutan ”Om du investerade pengarna i stället” visar vad samma pengar skulle växa till om du investerade dem varje månad, med 4 % årlig avkastning i 10 år. Räknaren tar bara med vad dryckerna kostar; hälsoeffekterna kommer ovanpå. Vill du dra ner på alkoholen kan du prata med din läkare eller vårdcentral. Mer stöd finns på 1177.se.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hur mycket lägger jag på alkohol per år?',
+          a: 'Multiplicera priset per glas med antalet glas i veckan och med 52. Sex glas i veckan för 80 kr styck blir 24 960 kr om året.'
+        },
+        {
+          q: 'Hur mycket sparar jag på att dricka mindre?',
+          a: 'Ange hur många glas du vill dra ner till och jämför. Går du från 6 till 3 glas i veckan för 80 kr styck sparar du 12 480 kr om året och 124 800 kr på tio år.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad du skulle ha efter 10 år om du investerade pengarna varje månad i stället för att göra av med dem, med 4 % årlig avkastning och ränta på ränta varje månad. Sex glas i veckan för 80 kr styck blir 2 080 kr i månaden, som växer till cirka 305 000 kr – varav 249 600 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotto och betting',
+      heading: 'Lotto- och bettingkalkylator',
+      title: 'Lotto- och bettingkalkylator – vad kostar ditt spelande?',
+      description: 'Se vad lotter och betting kostar per månad och på 10 år, hur mycket du förlorar i snitt och vad insatserna kunde ha vuxit till om du investerat dem.',
+      card: 'Se vad lotter och betting kostar totalt och hur mycket du i snitt förlorar.',
+      tag: 'Vana',
+      lead: 'Ange din insats och hur ofta du spelar, så ser du vad lotter och betting kostar med åren – och hur mycket av det som i snitt kommer tillbaka som vinster.',
+      stake: {
+        label: 'Insats per spel',
+        unit: 'kr',
+        step: '10',
+        value: '100',
+        decrease: 'Sänk insatsen',
+        increase: 'Höj insatsen'
+      },
+      perWeek: {
+        label: 'Spel per vecka',
+        unit: 'spel',
+        chip1: 'En gång i veckan',
+        chip2: 'Två gånger i veckan',
+        chip3: 'Varje dag',
+        decrease: 'Färre spel per vecka',
+        increase: 'Fler spel per vecka'
+      },
+      payout: {
+        label: 'Återbetalningsprocent',
+        unit: '% tillbaka',
+        chip1: 'Lotto',
+        chip2: 'Sportbetting',
+        chip3: 'Casino',
+        hint: 'Andelen av alla insatser som betalas tillbaka som vinster. Lotterier betalar oftast tillbaka ungefär hälften, sportbetting och casinospel 90–97 %.',
+        decrease: 'Sänk återbetalningsprocenten',
+        increase: 'Höj återbetalningsprocenten'
+      },
+      resultsTitle: 'Vad det kostar',
+      in10Years: 'Insatser på 10 år',
+      perMonth: 'Per månad',
+      perYear: 'Per år',
+      lossPerYear: 'Snittförlust per år',
+      runtime: {
+        note: {
+          empty: 'Ange insatsen, hur många gånger i veckan du spelar och återbetalningsprocenten (0–100).',
+          result: 'I snitt kommer cirka {back} om året tillbaka som vinster, så du förlorar cirka {loss} om året och {loss10} på 10 år.'
+        }
+      },
+      about: {
+        title: 'Så räknas kostnaden för lotto och betting ut',
+        paragraphs: [
+          'Årskostnaden är insatsen × spel per vecka × 52 veckor. Månadskostnaden är en tolftedel av det, och summan för 10 år utgår från dagens insatser.',
+          'Återbetalningsprocenten är den andel av alla insatser som betalas tillbaka som vinster. Med 50 % återbetalning blir 100 kr två gånger i veckan 10 400 kr i insatser om året, varav i snitt cirka 5 200 kr kommer tillbaka som vinster – en genomsnittlig förlust på 5 200 kr om året. En enskild spelare kan vinna stort eller förlora allt, men ju fler spel det blir, desto närmare genomsnittet hamnar resultatet.',
+          'Rutan ”Om du investerade pengarna i stället” visar vad insatserna skulle växa till om du i stället investerade dem varje månad, med 4 % årlig avkastning i 10 år. Känns spelandet svårt att kontrollera kan du prata med din läkare eller vårdcentral. Stöd vid spelproblem finns också hos Stödlinjen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hur mycket lägger jag på lotto per år?',
+          a: 'Multiplicera insatsen med antalet spel i veckan och med 52. 100 kr två gånger i veckan blir 10 400 kr om året och 104 000 kr på tio år.'
+        },
+        {
+          q: 'Vad är återbetalningsprocent?',
+          a: 'Det är den andel av alla insatser som betalas tillbaka till spelarna som vinster. Lotterier betalar oftast tillbaka ungefär hälften av insatserna, medan sportbetting och casinospel betalar tillbaka 90–97 %. Resten går till spelbolaget – och är vad spelarna i snitt förlorar.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad du skulle ha efter 10 år om du i stället investerade insatserna varje månad, med 4 % årlig avkastning och ränta på ränta varje månad. 100 kr två gånger i veckan blir cirka 867 kr i månaden, som växer till cirka 127 000 kr – varav 104 000 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
         }
       ]
     },
@@ -472,6 +701,10 @@ module.exports = {
         {
           q: 'Sparas min lista?',
           a: 'Din lista finns bara i sidans adress. Bokmärk eller dela länken för att spara den; ingenting lagras på en server eller i kakor.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad dina prenumerationer skulle växa till om du i stället investerade samma belopp varje månad, med 4 % årlig avkastning och ränta på ränta varje månad. 500 kr i månaden växer på 10 år till cirka 73 300 kr – varav 60 000 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
         }
       ]
     },

@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Gyors választás',
     faqTitle: 'Gyakori kérdések',
     relatedTools: 'További kalkulátorok',
-    imageAlt: 'costsimulators.com – ingyenes költségkalkulátorok a hétköznapi pénzügyekhez'
+    imageAlt: 'costsimulators.com – ingyenes költségkalkulátorok a hétköznapi pénzügyekhez',
+    invest: {
+      label: 'Ha inkább befektetnéd'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} perc',
       hours: '{h} óra',
       hoursMinutes: '{h} óra {m} perc'
+    },
+    invest: {
+      note: 'Havi {monthly} 10 éven át, évi {rate} hozammal: ebből {paid} a befizetés, {gain} a hozam.'
     }
   },
 
   home: {
     title: 'Ingyenes költségkalkulátorok a mindennapokhoz',
-    description: 'Ingyenes, privát kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok: meetingek, munkaórák, kávé, dohányzás, előfizetések, áram és benzin. Regisztráció nélkül, a böngésződben.',
+    description: 'Ingyenes, privát kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok: meetingek, munkaórák, szokások, előfizetések, áram, benzin és használatonkénti költség. Regisztráció nélkül.',
     eyebrow: 'Ingyenes · Privát · Azonnali',
     heading: 'Kis eszközök a hétköznapi <span class="accent-text">pénz</span>ügyekhez.',
     lead: 'Gyors kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok. Nincs regisztráció, nincs követés – minden közvetlenül a böngésződben fut.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Az oldalról',
       title: 'Az oldalról – ingyenes, privát költségkalkulátorok',
-      description: 'Ki készíti a costsimulators.com-ot, és hogyan működnek a kalkulátorok. Ingyenes, privát költségkalkulátorok meetingekhez, munkaórákhoz, szokásokhoz, előfizetésekhez, áramhoz és utazáshoz.'
+      description: 'Ki készíti a costsimulators.com-ot, és hogyan működnek a kalkulátorok. Ingyenes, privát kalkulátorok meetingekhez, munkaórákhoz, szokásokhoz, vásárlásokhoz, előfizetésekhez, áramhoz és utazáshoz.'
     },
     privacy: {
       name: 'Adatvédelmi tájékoztató',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Használatonkénti költség',
+      heading: 'Használatonkénti költség kiszámítása',
+      title: 'Használatonkénti költség – megéri az árát a vásárlás?',
+      description: 'Számold ki, mennyibe kerül valójában egy vásárlás minden egyes használatkor: az ár mínusz a továbbeladási ár, elosztva azzal, milyen gyakran és meddig használod.',
+      card: 'Oszd el az árat az összes használat között, és nézd meg, megéri-e.',
+      tag: 'Vásárlás',
+      lead: 'Add meg az árat, azt, hogy milyen gyakran és meddig fogod használni a dolgot, és megmutatjuk, mennyibe kerül valójában egy-egy használat.',
+      price: {
+        label: 'Ár',
+        unit: 'Ft',
+        value: '180000',
+        step: '1000',
+        decrease: 'Ár csökkentése',
+        increase: 'Ár növelése'
+      },
+      period: {
+        label: 'Milyen gyakran használod',
+        week: 'Hetente',
+        month: 'Havonta',
+        year: 'Évente'
+      },
+      uses: {
+        label: 'Használat',
+        unit: 'alkalom hetente',
+        decrease: 'Használatok számának csökkentése',
+        increase: 'Használatok számának növelése'
+      },
+      years: {
+        label: 'Használat időtartama',
+        unit: 'év',
+        chip1: '1 év',
+        chip2: '3 év',
+        chip3: '5 év',
+        decrease: 'Használat időtartamának csökkentése',
+        increase: 'Használat időtartamának növelése'
+      },
+      resale: {
+        label: 'Továbbeladási ár',
+        unit: 'Ft, nem kötelező',
+        hint: 'Amennyit várhatóan kapsz érte, ha eladod. Ha semmit, hagyd 0-n.',
+        decrease: 'Továbbeladási ár csökkentése',
+        increase: 'Továbbeladási ár növelése'
+      },
+      resultsTitle: 'Használatonkénti költség',
+      perUse: 'Egy használat ára',
+      totalUses: 'Összes használat',
+      perMonth: 'Havonta',
+      perYear: 'Évente',
+      runtime: {
+        unit: {
+          week: 'alkalom hetente',
+          month: 'alkalom havonta',
+          year: 'alkalom évente'
+        },
+        note: {
+          empty: 'Add meg az árat, azt, hogy milyen gyakran használod, és hány évig. A továbbeladási árnak kisebbnek kell lennie az árnál.',
+          result: 'Ha még egy évig használnád, egy használat ára ennyire csökkenne: {next}.'
+        }
+      },
+      about: {
+        title: 'Így számoljuk a használatonkénti költséget',
+        paragraphs: [
+          'A használatonkénti költség az ár mínusz az, amit eladáskor visszakapsz, elosztva a használatok számával. A használatok száma: milyen gyakran használod × ahány hétig, hónapig vagy évig használod. Egy 180 000 Ft-os vásárlás heti 3 használattal 3 éven át 468 használatot jelent, így egy használat kb. 385 Ft-ba kerül.',
+          'A havi és az éves költség ugyanezt az összeget arra az időre osztja el, amíg a tiéd a dolog, így könnyű összevetni a vásárlást a bérléssel, a lízinggel vagy egy előfizetéssel.',
+          'A használatonkénti költséggel egyszerűen összehasonlíthatsz egy olcsó, gyorsan elkopó dolgot egy drágább, tartós darabbal. Egy 15 000 Ft-os cipő 50 viseléssel alkalmanként 300 Ft-ba kerül, egy 40 000 Ft-os pedig 400 viseléssel csak 100 Ft-ba.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hogyan számolom ki a használatonkénti költséget?',
+          a: 'Oszd el az árat azzal, ahányszor használod a dolgot. Ha később eladod, előbb vond le az árból a továbbeladási árat. Egy 32 000 Ft-os kabát 80 viseléssel alkalmanként 400 Ft-ba kerül.'
+        },
+        {
+          q: 'Mennyi a jó használatonkénti költség?',
+          a: 'Attól függ, mennyibe kerül az alternatíva. Hasonlítsd össze a bérléssel, a kölcsönkéréssel vagy az alkalmankénti fizetéssel: ha egy edzőtermi napijegy 3000 Ft, egy havi 20 000 Ft-os bérlet a hónap hetedik edzésétől éri meg.'
+        },
+        {
+          q: 'Előfizetésekre és bérletekre is működik?',
+          a: 'Igen. Árként add meg az éves díjat, mellé azt, hogy milyen gyakran használod, és 1 évet. Egy havi 20 000 Ft-os edzőtermi bérletnél írj be 240 000 Ft-ot és a heti edzések számát.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kávézás költsége',
       heading: 'Kávékalkulátor',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Számol a kalkulátor az inflációval?',
           a: 'Nem. Az előrejelzések változatlan árral számolnak, így azt mutatják, mennyibe kerül a szokás mai árakon. Emelkedő árak mellett a valós hosszú távú költség ennél magasabb.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne a pénz, ha elköltés helyett minden hónapban befektetnéd, évi 4%-os hozammal, havi tőkésítéssel. Ha minden munkanapon veszel egy 990 Ft-os kávét, az havonta 21 450 Ft, ami 10 év alatt kb. 3,1 millió forintra nő – ebből 2 574 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Sodort cigarettára is működik?',
           a: 'Igen. Add meg egy csomag dohány árát dobozárként, a belőle sodort cigaretták számát dobozméretként, és azt, hogy naponta hányat szívsz el.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne a pénz, ha cigaretta helyett minden hónapban befektetnéd, évi 4%-os hozammal, havi tőkésítéssel. Napi fél doboz 2800 Ft-os dobozárral havonta kb. 42 600 Ft, ami 10 év alatt kb. 6,2 millió forintra nő – ebből 5 110 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkohol költsége',
+      heading: 'Alkoholkalkulátor',
+      title: 'Alkoholkalkulátor – mennyibe kerülnek az italok?',
+      description: 'Nézd meg, mennyibe kerül a sör, a bor és a többi ital havonta, valamint 1, 5 és 10 év alatt, és mekkora összegre nőne ugyanez a pénz, ha befektetnéd.',
+      card: 'Nézd meg, mennyit tesznek ki a heti italaid egy, öt és tíz év alatt.',
+      tag: 'Szokás',
+      lead: 'Add meg, mennyibe kerül egy ital, és hetente hányat iszol, mi pedig megmutatjuk, mennyit tesz ki ez az évek során.',
+      price: {
+        label: 'Egy ital ára',
+        unit: 'Ft',
+        step: '50',
+        value: '1000',
+        hint: 'Otthon és szórakozóhelyen is iszol? Adj meg egy átlagárat.',
+        decrease: 'Ital árának csökkentése',
+        increase: 'Ital árának növelése'
+      },
+      perWeek: {
+        label: 'Heti italok',
+        unit: 'ital',
+        chip1: 'Heti 3',
+        chip2: 'Heti 7',
+        chip3: 'Heti 14',
+        decrease: 'Heti italok számának csökkentése',
+        increase: 'Heti italok számának növelése'
+      },
+      resultsTitle: 'Ennyit tesz ki',
+      in10Years: '10 év alatt',
+      perMonth: 'Havonta',
+      year1: '1 év',
+      year5: '5 év',
+      runtime: {
+        note: {
+          empty: 'Add meg az árat és azt, hogy hetente hány italt iszol, és megmutatjuk az összegeket.',
+          result: 'Ez évente kb. {drinks} ital, italonként {price}.'
+        }
+      },
+      about: {
+        title: 'Így számoljuk az alkohol költségét',
+        paragraphs: [
+          'Az éves költség: egy ital ára × heti italok száma × 52 hét. A havi költség ennek tizenketted része, az 5 és 10 éves összeget pedig mai árakon, infláció nélkül számoljuk.',
+          'Heti hat korsó sör 1000 Ft-os áron évente 312 000 Ft, tíz év alatt pedig 3 120 000 Ft. Ha kocsmában és otthon is iszol, adj meg egy átlagárat, vagy számold ki a kettőt külön, és add össze őket.',
+          'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne ugyanez a pénz, ha minden hónapban befektetnéd, évi 4%-os hozammal, 10 éven át. A kalkulátor csak az italok árát számolja; az egészségre gyakorolt hatások ezen felül jelentkeznek. Ha szeretnél kevesebbet inni, a háziorvosod vagy egy alkohollal foglalkozó segélyvonal is segíthet.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Mennyit költök egy évben alkoholra?',
+          a: 'Szorozd meg egy ital árát a heti italok számával, majd 52-vel. Heti hat ital 1000 Ft-os áron évente 312 000 Ft.'
+        },
+        {
+          q: 'Mennyit spórolok, ha kevesebbet iszom?',
+          a: 'Add meg, hány italra szeretnéd csökkenteni a heti mennyiséget, és hasonlítsd össze. Ha heti 6 helyett 3 italt iszol 1000 Ft-os áron, évente 156 000 Ft-ot, tíz év alatt pedig 1 560 000 Ft-ot spórolsz.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mennyi pénzed lenne 10 év múlva, ha elköltés helyett minden hónapban befektetnéd, évi 4%-os hozammal, havi tőkésítéssel. Heti hat 1000 Ft-os ital havonta 26 000 Ft, ami kb. 3,8 millió forintra nő – ebből 3 120 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lottó és fogadás',
+      heading: 'Lottó- és fogadáskalkulátor',
+      title: 'Lottó- és fogadáskalkulátor – mennyibe kerül a játék?',
+      description: 'Nézd meg, mennyibe kerül a lottó és a fogadás havonta és 10 év alatt, mennyit veszítesz rajta átlagosan, és mekkora összegre nőne a feltett pénz, ha befektetnéd.',
+      card: 'Nézd meg, mennyit tesz ki a lottó és a fogadás, és mennyit veszítesz rajta átlagosan.',
+      tag: 'Szokás',
+      lead: 'Add meg, mennyi a tét és milyen gyakran játszol, mi pedig megmutatjuk, mennyibe kerül a lottó és a fogadás az évek során – és átlagosan mennyi jön vissza belőle nyereményként.',
+      stake: {
+        label: 'Tét játékonként',
+        unit: 'Ft',
+        step: '100',
+        value: '2000',
+        decrease: 'Tét csökkentése',
+        increase: 'Tét növelése'
+      },
+      perWeek: {
+        label: 'Heti játékok',
+        unit: 'játék',
+        chip1: 'Hetente egyszer',
+        chip2: 'Hetente kétszer',
+        chip3: 'Minden nap',
+        decrease: 'Heti játékok számának csökkentése',
+        increase: 'Heti játékok számának növelése'
+      },
+      payout: {
+        label: 'Kifizetési arány',
+        unit: '% visszajár',
+        chip1: 'Lottó',
+        chip2: 'Sportfogadás',
+        chip3: 'Kaszinó',
+        hint: 'Az összes tétnek az a része, amelyet nyereményként visszafizetnek. A lottók általában nagyjából a felét fizetik vissza, a sportfogadás és a kaszinójátékok 90–97%-ot.',
+        decrease: 'Kifizetési arány csökkentése',
+        increase: 'Kifizetési arány növelése'
+      },
+      resultsTitle: 'Ennyibe kerül',
+      in10Years: 'Megtett tétek 10 év alatt',
+      perMonth: 'Havonta',
+      perYear: 'Évente',
+      lossPerYear: 'Átlagos veszteség évente',
+      runtime: {
+        note: {
+          empty: 'Add meg a tétet, azt, hogy hetente hányszor játszol, és a kifizetési arányt (0–100).',
+          result: 'Átlagosan évente kb. {back} jön vissza nyereményként, így a veszteséged évente kb. {loss}, 10 év alatt pedig {loss10}.'
+        }
+      },
+      about: {
+        title: 'Így számoljuk a lottó és a fogadás költségét',
+        paragraphs: [
+          'Az éves költség: tét × heti játékok száma × 52 hét. A havi költség ennek tizenketted része, a 10 éves összeget pedig a mai tétekkel számoljuk.',
+          'A kifizetési arány az összes tétnek az a része, amelyet nyereményként visszafizetnek. Ha hetente kétszer teszel meg 2000 Ft-ot, az évente 208 000 Ft tét, amelyből 50%-os kifizetési aránnyal átlagosan kb. 104 000 Ft jön vissza nyereményként – ez évi 104 000 Ft átlagos veszteség. Egy-egy játékos nagyot nyerhet vagy mindent elveszíthet, de minél több játékról van szó, annál közelebb kerül az eredmény az átlaghoz.',
+          'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne a feltett pénz, ha játék helyett minden hónapban befektetnéd, évi 4%-os hozammal, 10 éven át. Ha úgy érzed, nehezen tudod kordában tartani a játékot, a háziorvosod vagy egy szerencsejáték-függőséggel foglalkozó segélyvonal is segíthet.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Mennyit költök egy évben lottóra?',
+          a: 'Szorozd meg a tétet a heti játékok számával, majd 52-vel. Ha hetente kétszer teszel meg 2000 Ft-ot, az évente 208 000 Ft, tíz év alatt pedig 2 080 000 Ft.'
+        },
+        {
+          q: 'Mi az a kifizetési arány?',
+          a: 'Az összes tétnek az a része, amelyet a játékosok nyereményként visszakapnak. A lottók általában a tétek nagyjából felét fizetik vissza, a sportfogadás és a kaszinójátékok 90–97%-ot. A többi a szervezőnél marad – és átlagosan ennyit veszítenek a játékosok.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mennyi pénzed lenne 10 év múlva, ha a tétet játék helyett minden hónapban befektetnéd, évi 4%-os hozammal, havi tőkésítéssel. A hetente kétszer feltett 2000 Ft havonta kb. 17 300 Ft, ami kb. 2,5 millió forintra nő – ebből 2 080 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Megmarad a listám?',
           a: 'A listád csak az oldal webcímében tárolódik. Ha meg akarod tartani, mentsd el a linket könyvjelzőként, vagy oszd meg; semmi sem kerül szerverre vagy sütikbe.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne a pénz, ha az előfizetéseid havi díját inkább minden hónapban befektetnéd, évi 4%-os hozammal, havi tőkésítéssel. Havi 20 000 Ft 10 év alatt kb. 2,9 millió forintra nő – ebből 2 400 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
         }
       ]
     },

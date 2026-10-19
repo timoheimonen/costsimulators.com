@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Rychlá volba',
     faqTitle: 'Časté dotazy',
     relatedTools: 'Další kalkulačky',
-    imageAlt: 'costsimulators.com – bezplatné kalkulačky pro každodenní otázky kolem peněz'
+    imageAlt: 'costsimulators.com – bezplatné kalkulačky pro každodenní otázky kolem peněz',
+    invest: {
+      label: 'Kdybyste peníze místo toho investovali'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} měsíčně po dobu 10 let při zhodnocení {rate} ročně: vložíte celkem {paid} a výnos bude {gain}.'
     }
   },
 
   home: {
     title: 'Kalkulačky nákladů zdarma pro každý den',
-    description: 'Bezplatné a soukromé kalkulačky, které ukážou, kolik věci doopravdy stojí: porady, hodiny práce, káva, kouření, předplatné, elektřina a benzín. Bez registrace, přímo v prohlížeči.',
+    description: 'Bezplatné a soukromé kalkulačky, které ukážou, kolik věci doopravdy stojí: porady, hodiny práce, zvyky, předplatné, elektřina, benzín a cena za použití. Bez registrace, přímo v prohlížeči.',
     eyebrow: 'Zdarma · Soukromě · Okamžitě',
     heading: 'Malé nástroje na každodenní otázky kolem <span class="accent-text">peněz</span>.',
     lead: 'Rychlé kalkulačky, které ukážou, kolik věci doopravdy stojí. Bez registrace a bez sledování – všechno běží přímo ve vašem prohlížeči.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'O projektu',
       title: 'O projektu – bezplatné a soukromé kalkulačky nákladů',
-      description: 'Kdo stojí za costsimulators.com a jak kalkulačky fungují. Bezplatné a soukromé kalkulačky nákladů na porady, hodiny práce, zvyky, předplatné, elektřinu a cesty.'
+      description: 'Kdo stojí za costsimulators.com a jak kalkulačky fungují. Bezplatné a soukromé kalkulačky nákladů na porady, hodiny práce, zvyky, nákupy, předplatné, elektřinu a cesty.'
     },
     privacy: {
       name: 'Zásady ochrany osobních údajů',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Cena za použití',
+      heading: 'Kalkulačka ceny za použití',
+      title: 'Kalkulačka ceny za použití – vyplatí se nákup?',
+      description: 'Spočítejte, kolik vás nákup doopravdy stojí při každém použití: cena minus částka, za kterou věc prodáte, vydělená tím, jak často a jak dlouho ji používáte.',
+      card: 'Rozpočítejte cenu na každé použití a zjistěte, jestli se nákup vyplatí.',
+      tag: 'Nákupy',
+      lead: 'Zadejte cenu a to, jak často a jak dlouho budete věc používat, a uvidíte, kolik doopravdy stojí každé použití.',
+      price: {
+        label: 'Cena',
+        unit: 'Kč',
+        value: '10000',
+        step: '100',
+        decrease: 'Snížit cenu',
+        increase: 'Zvýšit cenu'
+      },
+      period: {
+        label: 'Jak často věc používáte',
+        week: 'Týdně',
+        month: 'Měsíčně',
+        year: 'Ročně'
+      },
+      uses: {
+        label: 'Počet použití',
+        unit: 'krát týdně',
+        decrease: 'Snížit počet použití',
+        increase: 'Zvýšit počet použití'
+      },
+      years: {
+        label: 'Doba používání',
+        unit: 'let',
+        chip1: '1 rok',
+        chip2: '3 roky',
+        chip3: '5 let',
+        decrease: 'Zkrátit dobu používání',
+        increase: 'Prodloužit dobu používání'
+      },
+      resale: {
+        label: 'Hodnota při prodeji',
+        unit: 'Kč, nepovinné',
+        hint: 'Kolik za věc nejspíš dostanete, až ji prodáte. Pokud nic, nechte 0.',
+        decrease: 'Snížit hodnotu při prodeji',
+        increase: 'Zvýšit hodnotu při prodeji'
+      },
+      resultsTitle: 'Cena za použití',
+      perUse: 'Jedno použití stojí',
+      totalUses: 'Použití celkem',
+      perMonth: 'Za měsíc',
+      perYear: 'Za rok',
+      runtime: {
+        unit: {
+          week: 'krát týdně',
+          month: 'krát měsíčně',
+          year: 'krát ročně'
+        },
+        note: {
+          empty: 'Zadejte cenu, jak často věc používáte a kolik let. Hodnota při prodeji musí být nižší než cena.',
+          result: 'Kdybyste věc používali o rok déle, cena za použití by klesla na {next}.'
+        }
+      },
+      about: {
+        title: 'Jak se počítá cena za použití',
+        paragraphs: [
+          'Cena za použití je cena snížená o to, co dostanete zpět při prodeji, vydělená počtem použití. Počet použití je to, jak často věc používáte, × počet týdnů, měsíců nebo let, po které ji používáte. Nákup za 10 000 Kč používaný 3krát týdně po dobu 3 let se použije 468krát a jedno použití vyjde zhruba na 21 Kč.',
+          'Měsíční a roční náklady rozpočítávají stejnou částku na dobu, po kterou věc vlastníte, takže snadno porovnáte nákup s pronájmem, leasingem nebo předplatným.',
+          'Cena za použití je jednoduchý způsob, jak porovnat levnou věc, která se rychle opotřebí, s dražší, která vydrží. Boty za 1 500 Kč nošené 50krát vyjdou na 30 Kč za jedno nošení, boty za 4 000 Kč nošené 400krát na 10 Kč.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Jak spočítat cenu za použití?',
+          a: 'Vydělte cenu počtem použití. Pokud věc potom prodáte, nejdřív od ceny odečtěte částku, kterou za ni dostanete. Bunda za 2 000 Kč nošená 80krát vyjde na 25 Kč za jedno nošení.'
+        },
+        {
+          q: 'Jaká cena za použití je dobrá?',
+          a: 'Záleží na tom, kolik stojí alternativa. Porovnejte ji s pronájmem, vypůjčením nebo placením za každé použití: pokud jednorázový vstup do posilovny stojí 150 Kč, měsíční členství za 1 000 Kč se vyplatí od sedmé návštěvy v měsíci.'
+        },
+        {
+          q: 'Funguje to i pro předplatné a členství?',
+          a: 'Ano. Jako cenu zadejte roční cenu, dále to, jak často službu využíváte, a 1 rok. U měsíčního členství v posilovně za 1 000 Kč zadejte 12 000 Kč a počet návštěv týdně.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Cena kávy',
       heading: 'Kalkulačka ceny kávy',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Počítá kalkulačka s inflací?',
           a: 'Ne. Výpočty předpokládají, že cena zůstane stejná, takže ukazují cenu zvyku v dnešních cenách. Když ceny rostou, jsou skutečné dlouhodobé náklady vyšší.'
+        },
+        {
+          q: 'Co když budu peníze místo toho investovat?',
+          a: 'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, na kolik by peníze vyrostly, kdybyste je místo utrácení každý měsíc investovali s ročním zhodnocením 4 % a měsíční kapitalizací. Káva za 75 Kč každý pracovní den dělá 1 625 Kč měsíčně, což za 10 let vyroste zhruba na 238 400 Kč – z toho 195 000 Kč jsou vaše vlastní peníze a zbytek tvoří výnos. Daně, poplatky ani inflace se nezapočítávají. Jde jen o příklad, nikoli o investiční poradenství.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Funguje kalkulačka i pro tabák na balení?',
           a: 'Ano. Jako cenu krabičky zadejte cenu balíčku tabáku, jako počet cigaret v krabičce to, kolik cigaret z něj ubalíte, a nakonec počet cigaret, které denně vykouříte.'
+        },
+        {
+          q: 'Co když budu peníze místo toho investovat?',
+          a: 'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, na kolik by peníze vyrostly, kdybyste je místo kouření každý měsíc investovali s ročním zhodnocením 4 % a měsíční kapitalizací. Půl krabičky denně při ceně 170 Kč za krabičku je zhruba 2 585 Kč měsíčně, což za 10 let vyroste zhruba na 379 300 Kč – z toho 310 250 Kč jsou vaše vlastní peníze a zbytek tvoří výnos. Daně, poplatky ani inflace se nezapočítávají. Jde jen o příklad, nikoli o investiční poradenství.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Cena alkoholu',
+      heading: 'Kalkulačka nákladů na alkohol',
+      title: 'Kalkulačka nákladů na alkohol – kolik vás stojí pití',
+      description: 'Zjistěte, kolik vás pivo, víno a další nápoje stojí měsíčně a za 1, 5 a 10 let a na kolik by stejné peníze vyrostly, kdybyste je investovali.',
+      card: 'Podívejte se, na kolik vás alkohol vyjde za rok, pět a deset let.',
+      tag: 'Zvyk',
+      lead: 'Zadejte, kolik stojí jeden nápoj a kolik jich týdně vypijete, a uvidíte, kolik to dělá v průběhu let.',
+      price: {
+        label: 'Cena jednoho nápoje',
+        unit: 'Kč',
+        step: '5',
+        value: '60',
+        hint: 'Pijete doma i venku? Použijte průměrnou cenu.',
+        decrease: 'Snížit cenu nápoje',
+        increase: 'Zvýšit cenu nápoje'
+      },
+      perWeek: {
+        label: 'Nápojů týdně',
+        unit: 'nápojů',
+        chip1: '3 týdně',
+        chip2: '7 týdně',
+        chip3: '14 týdně',
+        decrease: 'Snížit počet nápojů týdně',
+        increase: 'Zvýšit počet nápojů týdně'
+      },
+      resultsTitle: 'Kolik to dělá',
+      in10Years: 'Za 10 let',
+      perMonth: 'Za měsíc',
+      year1: '1 rok',
+      year5: '5 let',
+      runtime: {
+        note: {
+          empty: 'Zadejte cenu a počet nápojů týdně a uvidíte součty.',
+          result: 'To je zhruba {drinks} nápojů ročně po {price}.'
+        }
+      },
+      about: {
+        title: 'Jak se počítají náklady na alkohol',
+        paragraphs: [
+          'Roční náklady jsou cena jednoho nápoje × počet nápojů týdně × 52 týdnů. Měsíční náklady jsou jejich dvanáctina a součty za 5 a 10 let počítají s dnešními cenami bez inflace.',
+          'Šest piv týdně po 60 Kč vyjde na 18 720 Kč ročně a 187 200 Kč za deset let. Pokud pijete v hospodě i doma, použijte průměrnou cenu, nebo spočítejte obojí zvlášť a výsledky sečtěte.',
+          'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, na kolik by stejné peníze vyrostly, kdybyste je každý měsíc investovali s ročním zhodnocením 4 % po dobu 10 let. Kalkulačka počítá jen s cenou nápojů; dopady na zdraví přicházejí navíc. Pokud chcete pít méně, pomůže vám praktický lékař nebo linka pomoci zaměřená na alkohol.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Kolik ročně utratím za alkohol?',
+          a: 'Vynásobte cenu jednoho nápoje počtem nápojů týdně a číslem 52. Šest nápojů týdně po 60 Kč dělá 18 720 Kč ročně.'
+        },
+        {
+          q: 'Kolik ušetřím, když budu pít méně?',
+          a: 'Zadejte počet nápojů, na který chcete pití omezit, a porovnejte. Když místo 6 nápojů týdně po 60 Kč vypijete jen 3, ušetříte 9 360 Kč ročně a 93 600 Kč za deset let.'
+        },
+        {
+          q: 'Co když budu peníze místo toho investovat?',
+          a: 'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, kolik byste měli po 10 letech, kdybyste peníze místo utrácení každý měsíc investovali s ročním zhodnocením 4 % a měsíční kapitalizací. Šest nápojů po 60 Kč týdně je 1 560 Kč měsíčně, což vyroste zhruba na 228 800 Kč – z toho 187 200 Kč jsou vaše vlastní peníze a zbytek tvoří výnos. Daně, poplatky ani inflace se nezapočítávají. Jde jen o příklad, nikoli o investiční poradenství.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loterie a sázky',
+      heading: 'Kalkulačka nákladů na loterie a sázky',
+      title: 'Kalkulačka loterií a sázek – kolik vás stojí hazard',
+      description: 'Zjistěte, kolik vás loterie a sázky stojí měsíčně a za 10 let, kolik v průměru prohrajete a na kolik by vsazené peníze vyrostly, kdybyste je investovali.',
+      card: 'Podívejte se, kolik dělají loterie a sázky dohromady a kolik v průměru prohrajete.',
+      tag: 'Zvyk',
+      lead: 'Zadejte, kolik vsadíte a jak často hrajete, a uvidíte, kolik vás loterie a sázky stojí v průběhu let – a kolik se vám z toho v průměru vrátí na výhrách.',
+      stake: {
+        label: 'Vklad na jednu hru',
+        unit: 'Kč',
+        step: '10',
+        value: '200',
+        decrease: 'Snížit vklad',
+        increase: 'Zvýšit vklad'
+      },
+      perWeek: {
+        label: 'Počet her týdně',
+        unit: 'her',
+        chip1: 'Jednou týdně',
+        chip2: 'Dvakrát týdně',
+        chip3: 'Každý den',
+        decrease: 'Snížit počet her týdně',
+        increase: 'Zvýšit počet her týdně'
+      },
+      payout: {
+        label: 'Výherní podíl',
+        unit: '% se vrátí',
+        chip1: 'Loterie',
+        chip2: 'Sportovní sázky',
+        chip3: 'Kasino',
+        hint: 'Podíl všech vkladů, který se hráčům vyplatí zpět na výhrách. Loterie obvykle vracejí zhruba polovinu, sportovní sázky a kasinové hry 90–97 %.',
+        decrease: 'Snížit výherní podíl',
+        increase: 'Zvýšit výherní podíl'
+      },
+      resultsTitle: 'Kolik to stojí',
+      in10Years: 'Vsazeno za 10 let',
+      perMonth: 'Za měsíc',
+      perYear: 'Za rok',
+      lossPerYear: 'Průměrná ztráta za rok',
+      runtime: {
+        note: {
+          empty: 'Zadejte vklad, počet her týdně a výherní podíl (0–100).',
+          result: 'V průměru se vám na výhrách vrátí zhruba {back} ročně, takže prohrajete asi {loss} ročně a {loss10} za 10 let.'
+        }
+      },
+      about: {
+        title: 'Jak se počítají náklady na loterie a sázky',
+        paragraphs: [
+          'Roční náklady jsou vklad × počet her týdně × 52 týdnů. Měsíční náklady jsou jejich dvanáctina a součet za 10 let počítá s dnešními vklady.',
+          'Výherní podíl je část všech vkladů, která se hráčům vyplatí zpět na výhrách. Při výherním podílu 50 % dělá vklad 200 Kč dvakrát týdně 20 800 Kč ročně, z čehož se v průměru vrátí zhruba 10 400 Kč na výhrách – průměrná ztráta je tedy 10 400 Kč ročně. Jednotlivý hráč může vyhrát hodně, nebo přijít o všechno, ale čím víc her, tím víc se výsledek blíží průměru.',
+          'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, na kolik by vklady vyrostly, kdybyste je místo sázení každý měsíc investovali s ročním zhodnocením 4 % po dobu 10 let. Pokud máte pocit, že hraní nemáte pod kontrolou, pomůže vám praktický lékař nebo linka pomoci zaměřená na hazardní hraní.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Kolik ročně utratím za loterii?',
+          a: 'Vynásobte vklad počtem her týdně a číslem 52. Při vkladu 200 Kč dvakrát týdně to dělá 20 800 Kč ročně a 208 000 Kč za deset let.'
+        },
+        {
+          q: 'Co je výherní podíl?',
+          a: 'Je to část všech vkladů, která se hráčům vyplatí zpět na výhrách. Loterie obvykle vracejí zhruba polovinu vkladů, sportovní sázky a kasinové hry 90–97 %. Zbytek si ponechá provozovatel – a právě o tolik hráči v průměru přijdou.'
+        },
+        {
+          q: 'Co když budu peníze místo toho investovat?',
+          a: 'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, kolik byste měli po 10 letech, kdybyste vklady místo sázení každý měsíc investovali s ročním zhodnocením 4 % a měsíční kapitalizací. Vklad 200 Kč dvakrát týdně je zhruba 1 733 Kč měsíčně, což vyroste zhruba na 254 300 Kč – z toho 208 000 Kč jsou vaše vlastní peníze a zbytek tvoří výnos. Daně, poplatky ani inflace se nezapočítávají. Jde jen o příklad, nikoli o investiční poradenství.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Ukládá se můj seznam?',
           a: 'Seznam je uložený jen v adrese stránky. Pokud si ho chcete ponechat, uložte si odkaz do záložek nebo ho sdílejte; nic se neukládá na server ani do cookies.'
+        },
+        {
+          q: 'Co když budu peníze místo toho investovat?',
+          a: 'Rámeček „Kdybyste peníze místo toho investovali“ ukazuje, na kolik by vyrostly peníze, které dáváte za předplatné, kdybyste stejnou částku místo toho každý měsíc investovali s ročním zhodnocením 4 % a měsíční kapitalizací. Částka 1 000 Kč měsíčně za 10 let vyroste zhruba na 146 700 Kč – z toho 120 000 Kč jsou vaše vlastní peníze a zbytek tvoří výnos. Daně, poplatky ani inflace se nezapočítávají. Jde jen o příklad, nikoli o investiční poradenství.'
         }
       ]
     },

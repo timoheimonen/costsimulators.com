@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Hızlı seçimler',
     faqTitle: 'Sıkça sorulan sorular',
     relatedTools: 'Diğer hesaplama araçları',
-    imageAlt: 'costsimulators.com – günlük para soruları için ücretsiz maliyet hesaplama araçları'
+    imageAlt: 'costsimulators.com – günlük para soruları için ücretsiz maliyet hesaplama araçları',
+    invest: {
+      label: 'Harcamak yerine yatırım yapsaydınız'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} dk',
       hours: '{h} sa',
       hoursMinutes: '{h} sa {m} dk'
+    },
+    invest: {
+      note: '10 yıl boyunca ayda {monthly}, yıllık {rate} getiriyle: {paid} sizin paranız, {gain} getiri.'
     }
   },
 
   home: {
     title: 'Günlük hayat için ücretsiz maliyet hesaplama araçları',
-    description: 'Toplantı, çalışma saati, kahve, sigara, abonelik, elektrik ve yakıt için ücretsiz maliyet hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.',
+    description: 'Toplantı, çalışma saati, alışkanlıklar, abonelikler, elektrik, yakıt ve kullanım başına maliyet için ücretsiz hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.',
     eyebrow: 'Ücretsiz · Gizlilik dostu · Anında',
     heading: 'Günlük <span class="accent-text">para</span> soruları için küçük araçlar.',
     lead: 'Bir şeyin size gerçekte kaça mal olduğunu hızlıca gösteren hesaplama araçları. Üyelik yok, takip yok – her şey doğrudan tarayıcınızda çalışır.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Hakkında',
       title: 'Hakkında – ücretsiz ve gizlilik dostu hesaplama araçları',
-      description: 'costsimulators.com’u kim yapıyor ve hesaplama araçları nasıl çalışıyor? Toplantı, çalışma saati, alışkanlıklar, abonelikler, elektrik ve yol masrafı için ücretsiz araçlar.'
+      description: 'costsimulators.com’u kim yapıyor ve hesaplama araçları nasıl çalışıyor? Toplantı, çalışma saati, alışkanlıklar, satın almalar, abonelikler, elektrik ve yol masrafı için ücretsiz araçlar.'
     },
     privacy: {
       name: 'Gizlilik politikası',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Kullanım başına maliyet',
+      heading: 'Kullanım başına maliyet hesaplama',
+      title: 'Kullanım başına maliyet hesaplama – parasına değer mi?',
+      description: 'Bir alışverişin her kullanımda size gerçekte kaça mal olduğunu hesaplayın: fiyattan ikinci el değeri düşülür, kalan tutar ne sıklıkla ve ne kadar süre kullandığınıza bölünür.',
+      card: 'Bir fiyatı her kullanıma bölün ve parasına değip değmediğini görün.',
+      tag: 'Alışveriş',
+      lead: 'Bir fiyat girin, ürünü ne sıklıkla ve ne kadar süre kullanacağınızı belirtin; her kullanımın gerçekte kaça mal olduğunu görün.',
+      price: {
+        label: 'Fiyat',
+        unit: 'TL',
+        value: '20000',
+        step: '1000',
+        decrease: 'Fiyatı azalt',
+        increase: 'Fiyatı artır'
+      },
+      period: {
+        label: 'Kullanım sıklığı',
+        week: 'Haftalık',
+        month: 'Aylık',
+        year: 'Yıllık'
+      },
+      uses: {
+        label: 'Kullanım sayısı',
+        unit: 'kez/hafta',
+        decrease: 'Kullanım sayısını azalt',
+        increase: 'Kullanım sayısını artır'
+      },
+      years: {
+        label: 'Kullanım süresi',
+        unit: 'yıl',
+        chip1: '1 yıl',
+        chip2: '3 yıl',
+        chip3: '5 yıl',
+        decrease: 'Kullanım süresini azalt',
+        increase: 'Kullanım süresini artır'
+      },
+      resale: {
+        label: 'İkinci el değeri',
+        unit: 'TL, isteğe bağlı',
+        hint: 'Satarken almayı beklediğiniz tutar. Hiçbir şey beklemiyorsanız 0 bırakın.',
+        decrease: 'İkinci el değerini azalt',
+        increase: 'İkinci el değerini artır'
+      },
+      resultsTitle: 'Kullanım başına maliyet',
+      perUse: 'Her kullanımın maliyeti',
+      totalUses: 'Toplam kullanım',
+      perMonth: 'Aylık',
+      perYear: 'Yıllık',
+      runtime: {
+        unit: {
+          week: 'kez/hafta',
+          month: 'kez/ay',
+          year: 'kez/yıl'
+        },
+        note: {
+          empty: 'Fiyatı, ne sıklıkla kullandığınızı ve kaç yıl kullanacağınızı girin. İkinci el değeri fiyattan düşük olmalıdır.',
+          result: 'Bir yıl daha kullanırsanız kullanım başına maliyet {next} düzeyine iner.'
+        }
+      },
+      about: {
+        title: 'Kullanım başına maliyet nasıl hesaplanıyor?',
+        paragraphs: [
+          'Kullanım başına maliyet, fiyattan ürünü satınca geri alacağınız tutar düşüldükten sonra kalanın kullanım sayısına bölünmesiyle bulunur. Kullanım sayısı, kullanım sıklığı × kullandığınız hafta, ay ya da yıl sayısıdır. Haftada 3 kez, 3 yıl boyunca kullanılan 20.000 TL’lik bir ürün 468 kez kullanılır ve kullanım başına 42,74 TL’ye mal olur.',
+          'Aylık ve yıllık maliyetler aynı tutarı ürüne sahip olduğunuz süreye yayar; böylece satın almayı kiralama, leasing ya da abonelikle karşılaştırmak kolaylaşır.',
+          'Kullanım başına maliyet, çabuk eskiyen ucuz bir ürünü uzun ömürlü pahalı bir ürünle karşılaştırmanın basit bir yoludur. 50 kez giyilen 2.000 TL’lik bir ayakkabı giyim başına 40 TL’ye, 400 kez giyilen 6.000 TL’lik bir ayakkabı ise 15 TL’ye gelir.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Kullanım başına maliyet nasıl hesaplanır?',
+          a: 'Fiyatı, ürünü kaç kez kullandığınıza bölün. Sonradan satacaksanız önce ikinci el değerini fiyattan düşün. 80 kez giyilen 4.000 TL’lik bir mont, giyim başına 50 TL’ye gelir.'
+        },
+        {
+          q: 'İyi bir kullanım başına maliyet ne kadardır?',
+          a: 'Alternatifin ne tuttuğuna bağlıdır. Kiralamak, ödünç almak ya da her seferinde ödemekle karşılaştırın: spor salonuna günlük giriş 750 TL ise aylık 2.000 TL’lik üyelik, ayda üçüncü gidişten itibaren kârlı olur.'
+        },
+        {
+          q: 'Abonelikler ve üyelikler için de kullanılabilir mi?',
+          a: 'Evet. Fiyat olarak yıllık ücreti, kullanım sıklığınızı ve süre olarak 1 yılı girin. Aylık 2.000 TL’lik bir spor salonu üyeliği için 24.000 TL’yi ve haftada kaç kez gittiğinizi girin.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kahve alışkanlığı',
       heading: 'Kahve maliyeti hesaplama',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Hesaplama enflasyonu hesaba katıyor mu?',
           a: 'Hayır. Hesaplamalar fiyatın aynı kaldığını varsayar, yani alışkanlığın bugünkü fiyatlarla maliyetini gösterir. Fiyatlar arttıkça uzun vadeli gerçek maliyet daha yüksek olur.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, parayı harcamak yerine her ay yatırıma yönlendirseydiniz ne kadar büyüyeceğini gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Her iş günü alınan 150 TL’lik bir kahve ayda 3.250 TL eder ve bu para 10 yılda yaklaşık 476.800 TL’ye ulaşır – bunun 390.000 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Sarma tütün için de kullanılabilir mi?',
           a: 'Evet. Paket fiyatı olarak bir paket tütünün fiyatını, paketteki sigara sayısı olarak ondan kaç sigara sardığınızı ve günde kaç tane içtiğinizi girin.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, sigaraya vermek yerine parayı her ay yatırıma yönlendirseydiniz ne kadar büyüyeceğini gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Paketi 110 TL olan sigaradan günde yarım paket içmek ayda yaklaşık 1.673 TL eder ve bu para 10 yılda yaklaşık 245.400 TL’ye ulaşır – bunun 200.750 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkol maliyeti',
+      heading: 'Alkol maliyeti hesaplama',
+      title: 'Alkol maliyeti hesaplama – içkiye yılda ne harcıyorsunuz?',
+      description: 'Bira, şarap ve diğer içkilerin size ayda ve 1, 5 ve 10 yılda kaça mal olduğunu ve aynı parayı yatırıma yönlendirseydiniz ne kadar büyüyeceğini görün.',
+      card: 'Haftalık içkilerinizin bir, beş ve on yılda ne tuttuğunu görün.',
+      tag: 'Alışkanlık',
+      lead: 'Bir içkinin fiyatını ve haftada kaç tane içtiğinizi girin; bunun yıllar içinde ne tuttuğunu görün.',
+      price: {
+        label: 'İçki başına fiyat',
+        unit: 'TL',
+        step: '10',
+        value: '250',
+        hint: 'Hem evde hem dışarıda mı içiyorsunuz? Ortalama bir fiyat girin.',
+        decrease: 'İçki fiyatını azalt',
+        increase: 'İçki fiyatını artır'
+      },
+      perWeek: {
+        label: 'Haftalık içki sayısı',
+        unit: 'içki',
+        chip1: 'Haftada 3',
+        chip2: 'Haftada 7',
+        chip3: 'Haftada 14',
+        decrease: 'Haftalık içki sayısını azalt',
+        increase: 'Haftalık içki sayısını artır'
+      },
+      resultsTitle: 'Toplamda ne tutuyor',
+      in10Years: '10 yılda',
+      perMonth: 'Aylık',
+      year1: '1 yıl',
+      year5: '5 yıl',
+      runtime: {
+        note: {
+          empty: 'Toplamları görmek için bir fiyat ve haftada kaç içki içtiğinizi girin.',
+          result: 'Bu, yılda tanesi {price} olan yaklaşık {drinks} içki demek.'
+        }
+      },
+      about: {
+        title: 'Alkol maliyeti nasıl hesaplanıyor?',
+        paragraphs: [
+          'Yıllık maliyet, içki başına fiyat × haftalık içki sayısı × 52 hafta olarak hesaplanır. Aylık maliyet bunun on ikide biridir; 5 ve 10 yıllık toplamlar enflasyon hesaba katılmadan bugünkü fiyatlarla hesaplanır.',
+          'Tanesi 250 TL olan biradan haftada altı tane içmek yılda 78.000 TL, on yılda 780.000 TL eder. Hem barda hem evde içiyorsanız ortalama bir fiyat girin ya da ikisini ayrı ayrı hesaplayıp toplayın.',
+          '“Harcamak yerine yatırım yapsaydınız” kutusu, aynı parayı her ay yatırıma yönlendirseydiniz yıllık %4 getiriyle 10 yılda ne kadar büyüyeceğini gösterir. Hesaplama aracı yalnızca içkilerin fiyatını sayar; sağlık üzerindeki etkiler bunun üstüne eklenir. Azaltmak isterseniz aile hekiminiz ya da Yeşilay Danışmanlık Merkezi (YEDAM) yardımcı olabilir.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Bir yılda alkole ne kadar harcıyorum?',
+          a: 'Bir içkinin fiyatını haftada içtiğiniz içki sayısıyla ve 52 ile çarpın. Tanesi 250 TL’den haftada altı içki, yılda 78.000 TL eder.'
+        },
+        {
+          q: 'Daha az içersem ne kadar tasarruf ederim?',
+          a: 'İnmek istediğiniz içki sayısını girin ve karşılaştırın. Tanesi 250 TL’den haftada 6 içkiden 3 içkiye inmek yılda 39.000 TL, on yılda 390.000 TL tasarruf sağlar.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, parayı harcamak yerine her ay yatırıma yönlendirseydiniz 10 yıl sonra ne kadarınız olacağını gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Tanesi 250 TL’den haftada altı içki ayda 6.500 TL eder ve bu para yaklaşık 953.500 TL’ye ulaşır – bunun 780.000 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Piyango ve bahis maliyeti',
+      heading: 'Piyango ve bahis maliyeti hesaplama',
+      title: 'Piyango ve bahis maliyeti hesaplama – kumarın bedeli',
+      description: 'Piyango biletlerinin ve bahislerin size ayda ve 10 yılda kaça mal olduğunu, ortalama ne kadar kaybettiğinizi ve aynı parayı yatırıma yönlendirseydiniz ne kadar büyüyeceğini görün.',
+      card: 'Piyango biletlerinin ve bahislerin ne tuttuğunu ve ortalama ne kadar kaybettiğinizi görün.',
+      tag: 'Alışkanlık',
+      lead: 'Oyun başına harcadığınız tutarı ve ne sıklıkla oynadığınızı girin; piyango biletlerinin ve bahislerin yıllar içinde neye mal olduğunu ve bunun ortalama ne kadarının ikramiye olarak geri döndüğünü görün.',
+      stake: {
+        label: 'Oyun başına tutar',
+        unit: 'TL',
+        step: '50',
+        value: '500',
+        decrease: 'Oyun başına tutarı azalt',
+        increase: 'Oyun başına tutarı artır'
+      },
+      perWeek: {
+        label: 'Haftalık oyun sayısı',
+        unit: 'oyun',
+        chip1: 'Haftada bir',
+        chip2: 'Haftada iki',
+        chip3: 'Her gün',
+        decrease: 'Haftalık oyun sayısını azalt',
+        increase: 'Haftalık oyun sayısını artır'
+      },
+      payout: {
+        label: 'Geri ödeme oranı',
+        unit: '% geri ödeme',
+        chip1: 'Piyango',
+        chip2: 'Spor bahisleri',
+        chip3: 'Kumarhane',
+        hint: 'Oynanan tüm tutarların ikramiye olarak geri ödenen payı. Piyangolar genellikle yaklaşık yarısını, spor bahisleri ve kumarhane oyunları %90–97’sini geri öder.',
+        decrease: 'Geri ödeme oranını azalt',
+        increase: 'Geri ödeme oranını artır'
+      },
+      resultsTitle: 'Neye mal oluyor',
+      in10Years: '10 yılda oynanan tutar',
+      perMonth: 'Aylık',
+      perYear: 'Yıllık',
+      lossPerYear: 'Yıllık ortalama kayıp',
+      runtime: {
+        note: {
+          empty: 'Oyun başına tutarı, haftada kaç kez oynadığınızı ve geri ödeme oranını (0–100) girin.',
+          result: 'Yılda ortalama yaklaşık {back} ikramiye olarak geri döner; yani yılda yaklaşık {loss}, 10 yılda ise {loss10} kaybedersiniz.'
+        }
+      },
+      about: {
+        title: 'Piyango ve bahis maliyeti nasıl hesaplanıyor?',
+        paragraphs: [
+          'Yıllık maliyet, oyun başına tutar × haftalık oyun sayısı × 52 hafta olarak hesaplanır. Aylık maliyet bunun on ikide biridir; 10 yıllık toplam bugünkü tutarlarla hesaplanır.',
+          'Geri ödeme oranı, oynanan tüm tutarların ikramiye olarak geri ödenen payıdır. %50 geri ödeme oranıyla haftada iki kez 500 TL oynamak yılda 52.000 TL eder; bunun ortalama 26.000 TL’si ikramiye olarak geri döner, yani yıllık ortalama kayıp 26.000 TL’dir. Tek bir oyuncu büyük kazanabilir ya da oynadığı paranın tamamını kaybedebilir, ancak oyun sayısı arttıkça sonuç ortalamaya yaklaşır.',
+          '“Harcamak yerine yatırım yapsaydınız” kutusu, oynanan parayı her ay yatırıma yönlendirseydiniz yıllık %4 getiriyle 10 yılda ne kadar büyüyeceğini gösterir. Kumarı kontrol etmekte zorlandığınızı hissediyorsanız aile hekiminiz ya da Yeşilay Danışmanlık Merkezi (YEDAM) yardımcı olabilir.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Bir yılda piyangoya ne kadar harcıyorum?',
+          a: 'Oyun başına tutarı haftalık oyun sayısıyla ve 52 ile çarpın. Haftada iki kez 500 TL, yılda 52.000 TL, on yılda 520.000 TL eder.'
+        },
+        {
+          q: 'Geri ödeme oranı nedir?',
+          a: 'Oynanan tüm tutarların oyunculara ikramiye olarak geri ödenen payıdır. Piyangolar genellikle oynanan paranın yaklaşık yarısını, spor bahisleri ve kumarhane oyunları ise %90–97’sini geri öder. Geri kalanı işletmeciye kalır – ve bu, oyuncuların ortalama olarak kaybettiği tutardır.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, oynadığınız parayı her ay yatırıma yönlendirseydiniz 10 yıl sonra ne kadarınız olacağını gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Haftada iki kez 500 TL ayda yaklaşık 4.333 TL eder ve bu para yaklaşık 635.700 TL’ye ulaşır – bunun 520.000 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: 'Listem kaydediliyor mu?',
           a: 'Listeniz yalnızca sayfa adresinde tutulur. Saklamak için bağlantıyı yer imlerine ekleyin ya da paylaşın; sunucuda veya çerezlerde hiçbir şey saklanmaz.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, aboneliklere giden tutarı her ay yatırıma yönlendirseydiniz ne kadar büyüyeceğini gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Ayda 2.000 TL, 10 yılda yaklaşık 293.400 TL’ye ulaşır – bunun 240.000 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
         }
       ]
     },

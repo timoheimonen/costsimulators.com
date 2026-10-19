@@ -1,6 +1,6 @@
 # costsimulators.com
 
-> Free, private calculators that show what things really cost: meetings, work hours, coffee, smoking, subscriptions, electricity and fuel. No sign-up, runs in your browser.
+> Free, private calculators that show what things really cost: meetings, work hours, habits, subscriptions, electricity, fuel and cost per use. No sign-up, runs in your browser.
 
 All calculators are free, need no account and run entirely in the browser. Nothing that is entered is sent to a server. Settings are kept in the page address, so a calculation can be shared as a link.
 
@@ -8,8 +8,11 @@ All calculators are free, need no account and run entirely in the browser. Nothi
 
 - [Meeting cost calculator](https://costsimulators.com/meeting-cost-calculator/): Free meeting cost calculator with a live timer. Enter the hourly rate and number of participants and watch what the meeting costs, second by second.
 - [Price in work hours calculator](https://costsimulators.com/work-hours-calculator/): Turn any price into the hours, days and weeks of work it takes. Enter your hourly, monthly or yearly pay and see what a purchase really costs in work time.
+- [Cost per use calculator](https://costsimulators.com/cost-per-use-calculator/): Work out what a purchase really costs each time you use it: the price minus the resale value, divided by how often and for how long you use it.
 - [Coffee cost calculator](https://costsimulators.com/coffee-cost-calculator/): See what your daily coffee costs per month and over 1, 5 and 10 years. Enter the price per cup and cups per week – free and private.
 - [Smoking cost calculator](https://costsimulators.com/smoking-cost-calculator/): Find out how much smoking costs per month and over 1, 5 and 10 years – and how much you save by quitting. Enter pack price and cigarettes per day.
+- [Alcohol cost calculator](https://costsimulators.com/alcohol-cost-calculator/): See what beer, wine and other drinks cost you per month and over 1, 5 and 10 years, and what the same money would grow to if you invested it.
+- [Lottery and betting cost calculator](https://costsimulators.com/lottery-betting-cost-calculator/): See what lottery tickets and bets cost per month and over 10 years, how much you lose on average and what the stakes would grow to if invested.
 - [Subscription cost calculator](https://costsimulators.com/subscription-cost-calculator/): Add up streaming, gym, phone and every other subscription. See your total per month, per year and over 10 years, and which subscription costs the most.
 - [Electricity cost calculator](https://costsimulators.com/electricity-cost-calculator/): Calculate what a device costs to run per day, month and year from its wattage, hours of use and electricity price. Free kWh cost calculator.
 - [Trip fuel cost calculator](https://costsimulators.com/trip-cost-calculator/): Calculate the fuel cost of a trip or daily commute and split it between passengers. Works in miles and gallons or kilometers and liters.

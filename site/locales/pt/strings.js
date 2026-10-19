@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Opções rápidas',
     faqTitle: 'Perguntas frequentes',
     relatedTools: 'Mais calculadoras',
-    imageAlt: 'costsimulators.com – calculadoras de custo grátis para as contas do dia a dia'
+    imageAlt: 'costsimulators.com – calculadoras de custo grátis para as contas do dia a dia',
+    invest: {
+      label: 'Se você investisse esse dinheiro'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} por mês durante 10 anos, a {rate} ao ano: {paid} em aportes e {gain} de rendimento.'
     }
   },
 
   home: {
     title: 'Calculadoras de custo grátis para o dia a dia',
-    description: 'Calculadoras grátis e privadas que mostram quanto as coisas custam de verdade: reuniões, horas de trabalho, café, cigarro, assinaturas, energia e combustível. Sem cadastro.',
+    description: 'Calculadoras grátis e privadas que mostram quanto as coisas custam de verdade: reuniões, horas de trabalho, hábitos, assinaturas, energia, combustível e custo por uso. Sem cadastro.',
     eyebrow: 'Grátis · Privado · Instantâneo',
     heading: 'Pequenas ferramentas para as questões de <span class="accent-text">dinheiro</span> do dia a dia.',
     lead: 'Calculadoras rápidas que mostram quanto as coisas custam de verdade. Sem cadastro, sem rastreamento – tudo funciona direto no seu navegador.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'Sobre',
       title: 'Sobre nós – calculadoras de custo grátis e privadas',
-      description: 'Quem faz o costsimulators.com e como as calculadoras funcionam. Calculadoras de custo grátis e privadas para reuniões, horas de trabalho, hábitos, assinaturas, energia e viagens.'
+      description: 'Quem faz o costsimulators.com e como as calculadoras funcionam. Calculadoras de custo grátis e privadas para reuniões, horas de trabalho, hábitos, compras, assinaturas, energia e viagens.'
     },
     privacy: {
       name: 'Política de privacidade',
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Custo por uso',
+      heading: 'Calculadora de custo por uso',
+      title: 'Calculadora de custo por uso – a compra vale a pena?',
+      description: 'Descubra quanto uma compra custa de verdade a cada uso: o preço menos o valor de revenda, dividido por quantas vezes e por quanto tempo você usa.',
+      card: 'Divida o preço de uma compra por todas as vezes que você usa e veja se vale a pena.',
+      tag: 'Compras',
+      lead: 'Informe um preço, com que frequência você vai usar o item e por quanto tempo, e veja quanto cada uso custa de verdade.',
+      price: {
+        label: 'Preço',
+        unit: 'R$',
+        value: '3000',
+        step: '100',
+        decrease: 'Diminuir preço',
+        increase: 'Aumentar preço'
+      },
+      period: {
+        label: 'Com que frequência você usa',
+        week: 'Por semana',
+        month: 'Por mês',
+        year: 'Por ano'
+      },
+      uses: {
+        label: 'Usos',
+        unit: 'vezes por semana',
+        decrease: 'Diminuir usos',
+        increase: 'Aumentar usos'
+      },
+      years: {
+        label: 'Anos de uso',
+        unit: 'anos',
+        chip1: '1 ano',
+        chip2: '3 anos',
+        chip3: '5 anos',
+        decrease: 'Diminuir anos de uso',
+        increase: 'Aumentar anos de uso'
+      },
+      resale: {
+        label: 'Valor de revenda',
+        unit: 'R$, opcional',
+        hint: 'Quanto você espera conseguir ao vender. Deixe 0 se não for vender.',
+        decrease: 'Diminuir valor de revenda',
+        increase: 'Aumentar valor de revenda'
+      },
+      resultsTitle: 'Custo por uso',
+      perUse: 'Cada uso custa',
+      totalUses: 'Usos no total',
+      perMonth: 'Por mês',
+      perYear: 'Por ano',
+      runtime: {
+        unit: {
+          week: 'vezes por semana',
+          month: 'vezes por mês',
+          year: 'vezes por ano'
+        },
+        note: {
+          empty: 'Informe o preço, com que frequência você usa e por quantos anos. O valor de revenda precisa ser menor que o preço.',
+          result: 'Usar por mais um ano baixaria o custo por uso para {next}.'
+        }
+      },
+      about: {
+        title: 'Como o custo por uso é calculado',
+        paragraphs: [
+          'O custo por uso é o preço menos o que você recebe ao vender, dividido pelo número de vezes que você usa o item. O número de usos é a frequência de uso × as semanas, meses ou anos em que você usa. Uma compra de R$ 3.000 usada 3 vezes por semana durante 3 anos soma 468 usos e custa R$ 6,41 por uso.',
+          'Os custos mensal e anual distribuem esse mesmo valor pelo tempo em que você fica com o item, o que facilita comparar a compra com alugar, fazer um leasing ou pagar uma assinatura.',
+          'O custo por uso é um jeito simples de comparar algo barato que se desgasta rápido com algo caro que dura. Um tênis de R$ 150 usado 50 vezes custa R$ 3,00 por uso; um de R$ 600 usado 400 vezes custa R$ 1,50.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Como calcular o custo por uso?',
+          a: 'Divida o preço pelo número de vezes que você usa o item. Se for vender depois, desconte antes o valor de revenda do preço. Uma jaqueta de R$ 400 usada 80 vezes custa R$ 5,00 por uso.'
+        },
+        {
+          q: 'O que é um bom custo por uso?',
+          a: 'Depende de quanto custa a alternativa. Compare com alugar, pegar emprestado ou pagar a cada vez: se a diária da academia custa R$ 40, uma mensalidade de R$ 100 compensa a partir da terceira ida no mês.'
+        },
+        {
+          q: 'Funciona para assinaturas e mensalidades?',
+          a: 'Sim. Informe o valor anual como preço, com que frequência você usa e 1 ano. Para uma academia de R$ 100 por mês, informe R$ 1.200 e quantas vezes você vai por semana.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Gasto com café',
       heading: 'Calculadora de gasto com café',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'A calculadora considera a inflação?',
           a: 'Não. As projeções supõem que o preço continua o mesmo, então mostram o custo do hábito pelos preços de hoje. Com os preços subindo, o custo real no longo prazo é maior.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de gastar?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria se investisse o dinheiro todo mês em vez de gastar, a 4% ao ano com juros compostos mensais. Um expresso de R$ 7 todo dia útil dá R$ 151,67 por mês, que viram cerca de R$ 22.250 em 10 anos – R$ 18.200 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Funciona para fumo de enrolar?',
           a: 'Sim. Informe o preço do pacote de fumo como preço do maço, quantos cigarros você enrola com ele como cigarros por maço e quantos fuma por dia.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de gastar?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria se investisse o dinheiro todo mês em vez de gastar com cigarro, a 4% ao ano com juros compostos mensais. Meio maço por dia, a R$ 12 o maço, dá R$ 182,50 por mês, que viram cerca de R$ 26.770 em 10 anos – R$ 21.900 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Gasto com bebida',
+      heading: 'Calculadora de gasto com bebida',
+      title: 'Calculadora de gasto com bebida – quanto custa beber',
+      description: 'Veja quanto cerveja, vinho e outras bebidas custam por mês e em 1, 5 e 10 anos – e quanto você teria se investisse esse mesmo dinheiro.',
+      card: 'Veja quanto as bebidas de cada semana somam em um, cinco e dez anos.',
+      tag: 'Hábito',
+      lead: 'Informe quanto custa uma bebida e quantas você toma por semana para ver quanto isso soma ao longo dos anos.',
+      price: {
+        label: 'Preço por bebida',
+        unit: 'R$',
+        step: '0.5',
+        value: '15',
+        hint: 'Bebe em casa e fora? Use um preço médio.',
+        decrease: 'Diminuir preço da bebida',
+        increase: 'Aumentar preço da bebida'
+      },
+      perWeek: {
+        label: 'Bebidas por semana',
+        unit: 'bebidas',
+        chip1: '3 por semana',
+        chip2: '7 por semana',
+        chip3: '14 por semana',
+        decrease: 'Diminuir bebidas por semana',
+        increase: 'Aumentar bebidas por semana'
+      },
+      resultsTitle: 'Quanto isso soma',
+      in10Years: 'Em 10 anos',
+      perMonth: 'Por mês',
+      year1: '1 ano',
+      year5: '5 anos',
+      runtime: {
+        note: {
+          empty: 'Informe um preço e quantas bebidas você toma por semana para ver os totais.',
+          result: 'São cerca de {drinks} bebidas por ano, a {price} cada.'
+        }
+      },
+      about: {
+        title: 'Como o gasto com bebida é calculado',
+        paragraphs: [
+          'O custo anual é o preço por bebida × bebidas por semana × 52 semanas. O custo mensal é um doze avos disso, e os totais de 5 e 10 anos usam os preços de hoje, sem inflação.',
+          'Seis cervejas por semana, a R$ 15 cada, dão R$ 4.680 por ano e R$ 46.800 em dez anos. Se você bebe tanto no bar quanto em casa, use um preço médio, ou calcule cada um separadamente e some os dois.',
+          'O quadro “Se você investisse esse dinheiro” mostra quanto você teria se investisse o mesmo dinheiro todo mês, a 4% ao ano durante 10 anos. A calculadora conta só o preço das bebidas; os efeitos na saúde se somam a isso. Se você quer diminuir, seu médico pode ajudar, e o Disque Saúde 136 informa onde procurar apoio pelo SUS.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto eu gasto com bebida por ano?',
+          a: 'Multiplique o preço de uma bebida pelo número de bebidas por semana e por 52. Seis bebidas por semana, a R$ 15 cada, dão R$ 4.680 por ano.'
+        },
+        {
+          q: 'Quanto eu economizo bebendo menos?',
+          a: 'Informe para quantas bebidas por semana você quer reduzir e compare. Passar de 6 para 3 bebidas por semana, a R$ 15 cada, economiza R$ 2.340 por ano e R$ 23.400 em dez anos.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de gastar?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria depois de 10 anos se investisse o dinheiro todo mês em vez de gastar, a 4% ao ano com juros compostos mensais. Seis bebidas de R$ 15 por semana dão R$ 390 por mês, que viram cerca de R$ 57.200 – R$ 46.800 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Loteria e apostas',
+      heading: 'Calculadora de gasto com loteria e apostas',
+      title: 'Gasto com loteria e apostas – quanto custa jogar',
+      description: 'Veja quanto a loteria e as apostas custam por mês e em 10 anos, quanto você perde em média e quanto o valor apostado renderia se fosse investido.',
+      card: 'Veja quanto a loteria e as apostas somam e quanto você perde em média.',
+      tag: 'Hábito',
+      lead: 'Informe quanto você aposta e com que frequência joga para ver quanto a loteria e as apostas custam ao longo dos anos – e quanto disso volta, em média, como prêmio.',
+      stake: {
+        label: 'Valor por jogo',
+        unit: 'R$',
+        step: '5',
+        value: '50',
+        decrease: 'Diminuir valor por jogo',
+        increase: 'Aumentar valor por jogo'
+      },
+      perWeek: {
+        label: 'Jogos por semana',
+        unit: 'jogos',
+        chip1: '1 vez por semana',
+        chip2: '2 vezes por semana',
+        chip3: 'Todo dia',
+        decrease: 'Diminuir jogos por semana',
+        increase: 'Aumentar jogos por semana'
+      },
+      payout: {
+        label: 'Taxa de retorno',
+        unit: '% devolvido',
+        chip1: 'Loteria',
+        chip2: 'Apostas esportivas',
+        chip3: 'Cassino',
+        hint: 'A parte de tudo o que é apostado que volta como prêmio. As loterias costumam devolver cerca da metade; apostas esportivas e jogos de cassino, de 90% a 97%.',
+        decrease: 'Diminuir taxa de retorno',
+        increase: 'Aumentar taxa de retorno'
+      },
+      resultsTitle: 'Quanto isso custa',
+      in10Years: 'Apostado em 10 anos',
+      perMonth: 'Por mês',
+      perYear: 'Por ano',
+      lossPerYear: 'Perda média por ano',
+      runtime: {
+        note: {
+          empty: 'Informe o valor por jogo, quantas vezes por semana você joga e a taxa de retorno (0–100).',
+          result: 'Em média, cerca de {back} por ano voltam como prêmio, então você perde cerca de {loss} por ano e {loss10} em 10 anos.'
+        }
+      },
+      about: {
+        title: 'Como o gasto com loteria e apostas é calculado',
+        paragraphs: [
+          'O custo anual é o valor por jogo × jogos por semana × 52 semanas. O custo mensal é um doze avos disso, e o total de 10 anos usa os valores de hoje.',
+          'A taxa de retorno é a parte de tudo o que é apostado que volta como prêmio. Com uma taxa de retorno de 50%, apostar R$ 50 duas vezes por semana dá R$ 5.200 por ano, dos quais cerca de R$ 2.600 voltam como prêmio, em média – uma perda média de R$ 2.600 por ano. Um jogador pode ganhar muito ou perder tudo, mas ao longo de muitos jogos o resultado se aproxima da média.',
+          'O quadro “Se você investisse esse dinheiro” mostra quanto o valor das apostas renderia se você o investisse todo mês, a 4% ao ano durante 10 anos. Se o jogo parece difícil de controlar, seu médico pode ajudar, e o Disque Saúde 136 informa onde procurar apoio pelo SUS.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto eu gasto com loteria por ano?',
+          a: 'Multiplique o valor por jogo pelo número de jogos por semana e por 52. Apostar R$ 50 duas vezes por semana dá R$ 5.200 por ano e R$ 52.000 em dez anos.'
+        },
+        {
+          q: 'O que é a taxa de retorno?',
+          a: 'É a parte de tudo o que é apostado que volta para os jogadores como prêmio. As loterias costumam devolver cerca da metade do valor apostado, enquanto apostas esportivas e jogos de cassino devolvem de 90% a 97%. O resto fica com a operadora – e é o que os jogadores perdem, em média.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de apostar?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria depois de 10 anos se investisse todo mês o valor das apostas, a 4% ao ano com juros compostos mensais. Apostar R$ 50 duas vezes por semana dá cerca de R$ 433,33 por mês, que viram cerca de R$ 63.570 – R$ 52.000 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
         }
       ]
     },
@@ -472,6 +701,10 @@ module.exports = {
         {
           q: 'Minha lista fica salva?',
           a: 'Sua lista fica apenas no endereço da página. Salve o link nos favoritos ou compartilhe para guardá-la; nada é armazenado em servidor ou em cookies.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de gastar?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria se investisse todo mês o mesmo valor das suas assinaturas, a 4% ao ano com juros compostos mensais. Com R$ 200 por mês, seriam cerca de R$ 29.340 em 10 anos – R$ 24.000 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
         }
       ]
     },

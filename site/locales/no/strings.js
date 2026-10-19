@@ -31,7 +31,10 @@ module.exports = {
     quickPicks: 'Hurtigvalg',
     faqTitle: 'Ofte stilte spørsmål',
     relatedTools: 'Flere kalkulatorer',
-    imageAlt: 'costsimulators.com – gratis kalkulatorer for hverdagens pengespørsmål'
+    imageAlt: 'costsimulators.com – gratis kalkulatorer for hverdagens pengespørsmål',
+    invest: {
+      label: 'Hvis du investerte pengene i stedet'
+    }
   },
 
   footer: {
@@ -53,12 +56,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} t',
       hoursMinutes: '{h} t {m} min'
+    },
+    invest: {
+      note: '{monthly} i måneden i 10 år med {rate} årlig avkastning: {paid} i egne innskudd og {gain} i avkastning.'
     }
   },
 
   home: {
     title: 'Gratis kostnadskalkulatorer for hverdagen',
-    description: 'Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, kaffe, røyking, abonnementer, strøm og drivstoff. Ingen registrering, alt skjer i nettleseren.',
+    description: 'Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, vaner, abonnementer, strøm, drivstoff og kostnad per bruk. Ingen registrering, alt skjer i nettleseren.',
     eyebrow: 'Gratis · Privat · Lynraskt',
     heading: 'Små verktøy for hverdagens <span class="accent-text">penge</span>spørsmål.',
     lead: 'Raske kalkulatorer som viser hva ting egentlig koster. Ingen registrering, ingen sporing – alt kjører rett i nettleseren din.',
@@ -97,7 +103,7 @@ module.exports = {
     about: {
       name: 'Om oss',
       title: 'Om oss – gratis og private kostnadskalkulatorer',
-      description: 'Hvem som lager costsimulators.com, og hvordan kalkulatorene virker. Gratis og private kalkulatorer for møter, arbeidstimer, vaner, abonnementer, strøm og bilturer.'
+      description: 'Hvem som lager costsimulators.com, og hvordan kalkulatorene virker. Gratis og private kalkulatorer for møter, arbeidstimer, vaner, kjøp, abonnementer, strøm og bilturer.'
     },
     privacy: {
       name: 'Personvernerklæring',
@@ -272,6 +278,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Kostnad per bruk',
+      heading: 'Kalkulator for kostnad per bruk',
+      title: 'Kostnad per bruk – er kjøpet verdt prisen?',
+      description: 'Regn ut hva et kjøp egentlig koster hver gang du bruker det: prisen minus videresalgsverdien, delt på hvor ofte og hvor lenge du bruker det.',
+      card: 'Fordel prisen på hver gang du bruker noe, og se om det er verdt pengene.',
+      tag: 'Kjøp',
+      lead: 'Skriv inn en pris, hvor ofte du kommer til å bruke tingen og hvor lenge, så ser du hva hver gang egentlig koster.',
+      price: {
+        label: 'Pris',
+        unit: 'kr',
+        value: '5000',
+        step: '100',
+        decrease: 'Senk prisen',
+        increase: 'Øk prisen'
+      },
+      period: {
+        label: 'Hvor ofte du bruker den',
+        week: 'Per uke',
+        month: 'Per måned',
+        year: 'Per år'
+      },
+      uses: {
+        label: 'Antall ganger',
+        unit: 'ganger i uken',
+        decrease: 'Færre ganger',
+        increase: 'Flere ganger'
+      },
+      years: {
+        label: 'Brukstid',
+        unit: 'år',
+        chip1: '1 år',
+        chip2: '3 år',
+        chip3: '5 år',
+        decrease: 'Kortere brukstid',
+        increase: 'Lengre brukstid'
+      },
+      resale: {
+        label: 'Videresalgsverdi',
+        unit: 'kr, valgfritt',
+        hint: 'Det du regner med å få når du selger den. La det stå 0 hvis du ikke får noe.',
+        decrease: 'Senk videresalgsverdien',
+        increase: 'Øk videresalgsverdien'
+      },
+      resultsTitle: 'Kostnad per bruk',
+      perUse: 'Hver gang koster',
+      totalUses: 'Antall ganger totalt',
+      perMonth: 'Per måned',
+      perYear: 'Per år',
+      runtime: {
+        unit: {
+          week: 'ganger i uken',
+          month: 'ganger i måneden',
+          year: 'ganger i året'
+        },
+        note: {
+          empty: 'Skriv inn prisen, hvor ofte du bruker tingen og i hvor mange år. Videresalgsverdien må være lavere enn prisen.',
+          result: 'Bruker du den ett år til, synker kostnaden per bruk til {next}.'
+        }
+      },
+      about: {
+        title: 'Slik beregnes kostnaden per bruk',
+        paragraphs: [
+          'Kostnaden per bruk er prisen minus det du får igjen når du selger tingen, delt på antall ganger du bruker den. Antall ganger er hvor ofte du bruker den × antall uker, måneder eller år du bruker den. Et kjøp til 5 000 kr som brukes 3 ganger i uken i 3 år, blir brukt 468 ganger og koster 10,68 kr per gang.',
+          'Måneds- og årskostnaden fordeler det samme beløpet over tiden du eier tingen, så det er lett å sammenligne et kjøp med leie, leasing eller abonnement.',
+          'Kostnad per bruk er en enkel måte å sammenligne en billig ting som fort blir utslitt, med en dyr ting som varer. Et par sko til 600 kr som brukes 50 ganger, koster 12 kr per gang; et par til 2 000 kr som brukes 400 ganger, koster 5 kr.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvordan regner jeg ut kostnad per bruk?',
+          a: 'Del prisen på antall ganger du bruker tingen. Selger du den etterpå, trekker du først videresalgsverdien fra prisen. En jakke til 1 200 kr som brukes 80 ganger, koster 15 kr per gang.'
+        },
+        {
+          q: 'Hva er en god kostnad per bruk?',
+          a: 'Det kommer an på hva alternativet koster. Sammenlign med å leie, låne eller betale per gang: koster et enkeltbesøk på treningssenteret 200 kr, lønner et medlemskap til 450 kr i måneden seg allerede fra tredje besøk i måneden.'
+        },
+        {
+          q: 'Fungerer det for abonnementer og medlemskap?',
+          a: 'Ja. Skriv inn årsprisen som pris, hvor ofte du bruker det, og 1 år. For et treningsmedlemskap til 450 kr i måneden skriver du inn 5 400 kr og hvor mange ganger i uken du trener.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kaffevane',
       heading: 'Kaffekalkulator',
@@ -328,6 +418,10 @@ module.exports = {
         {
           q: 'Tar kalkulatoren hensyn til inflasjon?',
           a: 'Nei. Beregningene forutsetter at prisen holder seg lik, så de viser hva vanen koster med dagens priser. Når prisene stiger, blir den reelle kostnaden over tid høyere.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva pengene kunne vokst til om du investerte dem hver måned i stedet for å bruke dem, med 4 % årlig avkastning og månedlig rentes rente. En kaffe til 50 kr hver arbeidsdag blir omtrent 1 083 kr i måneden, som vokser til omtrent 159 000 kr på 10 år – 130 000 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
         }
       ]
     },
@@ -395,6 +489,141 @@ module.exports = {
         {
           q: 'Fungerer dette for rulletobakk og snus?',
           a: 'Ja. For rulletobakk skriver du inn prisen på en pakke tobakk som pakkepris og hvor mange sigaretter du ruller av den som pakkestørrelse. For snus bruker du prisen på en boks og antall porsjoner i den. Legg så inn hvor mange du bruker om dagen.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva pengene kunne vokst til om du investerte dem hver måned i stedet for å røyke, med 4 % årlig avkastning og månedlig rentes rente. En halv pakke om dagen til 150 kr pakken blir omtrent 2 280 kr i måneden, som vokser til omtrent 335 000 kr på 10 år – 273 750 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkoholkostnad',
+      heading: 'Alkoholkalkulator',
+      title: 'Alkoholkalkulator – hva koster alkoholen deg i året?',
+      description: 'Se hva øl, vin og annen drikke koster deg per måned og over 1, 5 og 10 år – og hva de samme pengene kunne vokst til om du investerte dem.',
+      card: 'Se hva ukens glass blir til over ett, fem og ti år.',
+      tag: 'Vane',
+      lead: 'Skriv inn hva et glass koster og hvor mange du drikker i uken, så ser du hva det blir til over årene.',
+      price: {
+        label: 'Pris per glass',
+        unit: 'kr',
+        step: '5',
+        value: '120',
+        hint: 'Drikker du både hjemme og ute? Bruk en gjennomsnittspris.',
+        decrease: 'Senk prisen per glass',
+        increase: 'Øk prisen per glass'
+      },
+      perWeek: {
+        label: 'Glass per uke',
+        unit: 'glass',
+        chip1: '3 i uken',
+        chip2: '7 i uken',
+        chip3: '14 i uken',
+        decrease: 'Færre glass per uke',
+        increase: 'Flere glass per uke'
+      },
+      resultsTitle: 'Hva det blir til',
+      in10Years: 'På 10 år',
+      perMonth: 'Per måned',
+      year1: '1 år',
+      year5: '5 år',
+      runtime: {
+        note: {
+          empty: 'Skriv inn en pris og hvor mange glass du drikker i uken for å se summene.',
+          result: 'Det blir omtrent {drinks} glass i året til {price} glasset.'
+        }
+      },
+      about: {
+        title: 'Slik beregnes alkoholkostnaden',
+        paragraphs: [
+          'Årskostnaden er pris per glass × glass per uke × 52 uker. Månedskostnaden er en tolvtedel av dette, og summene for 5 og 10 år bruker dagens priser uten inflasjon.',
+          'Seks halvlitere i uken til 120 kr stykket blir omtrent 37 400 kr i året og nesten 375 000 kr på ti år. Drikker du både på byen og hjemme, kan du bruke en gjennomsnittspris eller regne ut hver for seg og legge sammen.',
+          'Boksen «Hvis du investerte pengene i stedet» viser hva de samme pengene kunne vokst til om du investerte dem hver måned, med 4 % årlig avkastning over 10 år. Kalkulatoren regner bare med hva drikken koster; helseeffektene kommer i tillegg. Vil du drikke mindre, kan fastlegen din eller kommunens rustjeneste hjelpe deg.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvor mye bruker jeg på alkohol i året?',
+          a: 'Gang prisen per glass med antall glass i uken og med 52. Seks glass i uken til 120 kr stykket blir 37 440 kr i året.'
+        },
+        {
+          q: 'Hvor mye sparer jeg på å drikke mindre?',
+          a: 'Skriv inn antallet du vil ned til, og sammenlign. Går du fra 6 til 3 glass i uken til 120 kr stykket, sparer du 18 720 kr i året og 187 200 kr på ti år.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva du ville hatt etter 10 år om du investerte pengene hver måned i stedet for å bruke dem, med 4 % årlig avkastning og månedlig rentes rente. Seks glass i uken til 120 kr stykket blir 3 120 kr i måneden, som vokser til omtrent 458 000 kr – 374 400 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotto og betting',
+      heading: 'Lotto- og bettingkalkulator',
+      title: 'Lotto- og bettingkalkulator – hva koster spillingen din?',
+      description: 'Se hva lotto og betting koster deg per måned og over 10 år, hvor mye du taper i snitt og hva innsatsene kunne vokst til om du investerte dem.',
+      card: 'Se hva lottokuponger og spill blir til, og hvor mye du taper i snitt.',
+      tag: 'Vane',
+      lead: 'Skriv inn innsatsen og hvor ofte du spiller, så ser du hva lotto og betting koster over årene – og hvor mye av det som i snitt kommer tilbake som gevinster.',
+      stake: {
+        label: 'Innsats per spill',
+        unit: 'kr',
+        step: '10',
+        value: '100',
+        decrease: 'Senk innsatsen',
+        increase: 'Øk innsatsen'
+      },
+      perWeek: {
+        label: 'Spill per uke',
+        unit: 'spill',
+        chip1: 'Én gang i uken',
+        chip2: 'To ganger i uken',
+        chip3: 'Hver dag',
+        decrease: 'Færre spill per uke',
+        increase: 'Flere spill per uke'
+      },
+      payout: {
+        label: 'Tilbakebetalingsprosent',
+        unit: '% tilbake',
+        chip1: 'Lotto',
+        chip2: 'Sportsbetting',
+        chip3: 'Kasino',
+        hint: 'Andelen av alle innsatser som betales tilbake som gevinster. Lotterier betaler vanligvis tilbake omtrent halvparten, sportsbetting og kasinospill 90–97 %.',
+        decrease: 'Senk tilbakebetalingsprosenten',
+        increase: 'Øk tilbakebetalingsprosenten'
+      },
+      resultsTitle: 'Hva det koster',
+      in10Years: 'Innsatser på 10 år',
+      perMonth: 'Per måned',
+      perYear: 'Per år',
+      lossPerYear: 'Gjennomsnittlig tap per år',
+      runtime: {
+        note: {
+          empty: 'Skriv inn innsatsen, hvor mange ganger i uken du spiller og tilbakebetalingsprosenten (0–100).',
+          result: 'I snitt kommer omtrent {back} i året tilbake som gevinster, så du taper omtrent {loss} i året og {loss10} på 10 år.'
+        }
+      },
+      about: {
+        title: 'Slik beregnes kostnaden ved lotto og betting',
+        paragraphs: [
+          'Årskostnaden er innsatsen × spill per uke × 52 uker. Månedskostnaden er en tolvtedel av dette, og summen for 10 år bruker dagens innsatser.',
+          'Tilbakebetalingsprosenten er andelen av alle innsatser som betales tilbake som gevinster. Med 50 % tilbakebetaling blir 100 kr to ganger i uken 10 400 kr i innsatser i året, og av dette kommer i snitt omtrent 5 200 kr tilbake som gevinster – et gjennomsnittlig tap på 5 200 kr i året. En enkelt spiller kan vinne stort eller tape alt, men jo flere spill det blir, desto nærmere gjennomsnittet havner resultatet.',
+          'Boksen «Hvis du investerte pengene i stedet» viser hva innsatsene kunne vokst til om du i stedet investerte dem hver måned, med 4 % årlig avkastning over 10 år. Føles spillingen vanskelig å kontrollere, kan fastlegen din eller Hjelpelinjen for spilleavhengige hjelpe deg.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvor mye bruker jeg på lotto i året?',
+          a: 'Gang innsatsen med antall spill i uken og med 52. 100 kr to ganger i uken blir 10 400 kr i året og 104 000 kr på ti år.'
+        },
+        {
+          q: 'Hva er tilbakebetalingsprosent?',
+          a: 'Det er andelen av alle innsatser som betales tilbake til spillerne som gevinster. Lotterier betaler vanligvis tilbake omtrent halvparten av innsatsene, mens sportsbetting og kasinospill betaler tilbake 90–97 %. Resten går til spillselskapet – og er det spillerne i snitt taper.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva du ville hatt etter 10 år om du i stedet investerte innsatsene hver måned, med 4 % årlig avkastning og månedlig rentes rente. 100 kr to ganger i uken blir omtrent 867 kr i måneden, som vokser til omtrent 127 000 kr – 104 000 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
         }
       ]
     },
@@ -472,6 +701,10 @@ module.exports = {
         {
           q: 'Blir listen min lagret?',
           a: 'Listen ligger bare i sideadressen. Bokmerk eller del lenken for å ta vare på den; ingenting lagres på en server eller i informasjonskapsler.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva abonnementene dine kunne vokst til om du i stedet investerte det samme beløpet hver måned, med 4 % årlig avkastning og månedlig rentes rente. 500 kr i måneden vokser til omtrent 73 300 kr på 10 år – 60 000 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
         }
       ]
     },

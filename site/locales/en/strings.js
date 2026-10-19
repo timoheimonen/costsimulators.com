@@ -44,7 +44,10 @@ module.exports = {
     quickPicks: 'Quick picks',
     faqTitle: 'Frequently asked questions',
     relatedTools: 'More calculators',
-    imageAlt: 'costsimulators.com – free cost calculators for everyday money questions'
+    imageAlt: 'costsimulators.com – free cost calculators for everyday money questions',
+    invest: {
+      label: 'If you invested it instead'
+    }
   },
 
   footer: {
@@ -66,12 +69,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} a month for 10 years at {rate} a year: {paid} paid in and {gain} in returns.'
     }
   },
 
   home: {
     title: 'Free Cost Calculators for Everyday Life',
-    description: 'Free, private calculators that show what things really cost: meetings, work hours, coffee, smoking, subscriptions, electricity and fuel. No sign-up, runs in your browser.',
+    description: 'Free, private calculators that show what things really cost: meetings, work hours, habits, subscriptions, electricity, fuel and cost per use. No sign-up, runs in your browser.',
     eyebrow: 'Free · Private · Instant',
     heading: 'Small tools for everyday <span class="accent-text">money</span> questions.',
     lead: 'Quick calculators that show what things really cost. No sign-up, no tracking – everything runs right in your browser.',
@@ -110,7 +116,7 @@ module.exports = {
     about: {
       name: 'About',
       title: 'About costsimulators.com – Free, Private Cost Calculators',
-      description: 'Who makes costsimulators.com and how the calculators work. Free, private cost calculators for meetings, work hours, habits, subscriptions, electricity and trips.'
+      description: 'Who makes costsimulators.com and how the calculators work. Free, private cost calculators for meetings, work hours, habits, purchases, subscriptions, electricity and trips.'
     },
     privacy: {
       name: 'Privacy policy',
@@ -285,6 +291,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Cost per use',
+      heading: 'Cost per use calculator',
+      title: 'Cost per Use Calculator – Is It Worth the Price?',
+      description: 'Work out what a purchase really costs each time you use it: the price minus the resale value, divided by how often and for how long you use it.',
+      card: 'Spread a price over every time you use it to see if it is worth it.',
+      tag: 'Shopping',
+      lead: 'Enter a price, how often you will use the thing and for how long, and see what each use really costs.',
+      price: {
+        label: 'Price',
+        unit: 'USD',
+        value: '500',
+        step: '10',
+        decrease: 'Decrease price',
+        increase: 'Increase price'
+      },
+      period: {
+        label: 'How often you use it',
+        week: 'Weekly',
+        month: 'Monthly',
+        year: 'Yearly'
+      },
+      uses: {
+        label: 'Uses',
+        unit: 'times a week',
+        decrease: 'Decrease uses',
+        increase: 'Increase uses'
+      },
+      years: {
+        label: 'Years of use',
+        unit: 'years',
+        chip1: '1 year',
+        chip2: '3 years',
+        chip3: '5 years',
+        decrease: 'Decrease years of use',
+        increase: 'Increase years of use'
+      },
+      resale: {
+        label: 'Resale value',
+        unit: 'USD, optional',
+        hint: 'What you expect to get when you sell it. Leave at 0 if nothing.',
+        decrease: 'Decrease resale value',
+        increase: 'Increase resale value'
+      },
+      resultsTitle: 'Cost per use',
+      perUse: 'Each use costs',
+      totalUses: 'Uses in total',
+      perMonth: 'Per month',
+      perYear: 'Per year',
+      runtime: {
+        unit: {
+          week: 'times a week',
+          month: 'times a month',
+          year: 'times a year'
+        },
+        note: {
+          empty: 'Enter the price, how often you use it and for how many years. The resale value must be lower than the price.',
+          result: 'Using it for one more year would bring the price per use down to {next}.'
+        }
+      },
+      about: {
+        title: 'How the cost per use is calculated',
+        paragraphs: [
+          'The cost per use is the price minus what you get back when you sell it, divided by the number of times you use it. The number of uses is how often you use it × the weeks, months or years you use it for. A $500 purchase used 3 times a week for 3 years is used 468 times and costs $1.07 a use.',
+          'The monthly and yearly costs spread the same amount over the time you own the thing, which makes it easy to compare buying with renting, leasing or a subscription.',
+          'Cost per use is a simple way to compare a cheap thing that wears out quickly with an expensive one that lasts. A $60 pair of shoes worn 50 times costs $1.20 a wear; a $200 pair worn 400 times costs $0.50.'
+        ]
+      },
+      faq: [
+        {
+          q: 'How do I calculate cost per use?',
+          a: 'Divide the price by the number of times you use the thing. If you sell it afterwards, take the resale value off the price first. A $120 jacket worn 80 times costs $1.50 a wear.'
+        },
+        {
+          q: 'What is a good cost per use?',
+          a: 'It depends on what the alternative costs. Compare it with renting, borrowing or paying each time: if a gym visit costs $15 at the door, a $40 monthly membership pays off from the third visit a month.'
+        },
+        {
+          q: 'Does it work for subscriptions and memberships?',
+          a: 'Yes. Enter the yearly price as the price, how often you use it and 1 year. For a $40 monthly gym membership, enter $480 and your visits per week.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Coffee habit',
       heading: 'Coffee cost calculator',
@@ -341,6 +431,10 @@ module.exports = {
         {
           q: 'Does the calculator include inflation?',
           a: 'No. The projections assume the price stays the same, so they show what the habit costs at today’s prices. With rising prices the real long-term cost is higher.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what the money would grow to if you put it into an investment every month instead of spending it, at a 4% yearly return compounded monthly. A $3.08 coffee every work day is $66.73 a month, which grows to about $9,790 in 10 years – $8,008 of your own money and the rest returns. Taxes, fees and inflation are left out. It is an example, not investment advice.'
         }
       ]
     },
@@ -408,6 +502,141 @@ module.exports = {
         {
           q: 'Does this work for rolling tobacco?',
           a: 'Yes. Enter the price of a pouch as the pack price, the number of cigarettes you roll from it as the pack size and how many you smoke a day.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what the money would grow to if you invested it every month instead of smoking, at a 4% yearly return compounded monthly. Half a pack a day at $9 a pack is about $137 a month, which grows to about $20,080 in 10 years – $16,425 of your own money and the rest returns. Taxes, fees and inflation are left out. It is an example, not investment advice.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alcohol cost',
+      heading: 'Alcohol cost calculator',
+      title: 'Alcohol Cost Calculator – What Drinking Costs You',
+      description: 'See what beer, wine and other drinks cost you per month and over 1, 5 and 10 years, and what the same money would grow to if you invested it.',
+      card: 'See what your weekly drinks add up to over one, five and ten years.',
+      tag: 'Habit',
+      lead: 'Enter what a drink costs and how many you have in a week to see what it adds up to over the years.',
+      price: {
+        label: 'Price per drink',
+        unit: 'USD',
+        step: '0.5',
+        value: '7',
+        hint: 'Drinking both at home and out? Use an average price.',
+        decrease: 'Decrease drink price',
+        increase: 'Increase drink price'
+      },
+      perWeek: {
+        label: 'Drinks per week',
+        unit: 'drinks',
+        chip1: '3 a week',
+        chip2: '7 a week',
+        chip3: '14 a week',
+        decrease: 'Decrease drinks per week',
+        increase: 'Increase drinks per week'
+      },
+      resultsTitle: 'What it adds up to',
+      in10Years: 'In 10 years',
+      perMonth: 'Per month',
+      year1: '1 year',
+      year5: '5 years',
+      runtime: {
+        note: {
+          empty: 'Enter a price and how many drinks you have per week to see the totals.',
+          result: 'That’s about {drinks} drinks a year at {price} each.'
+        }
+      },
+      about: {
+        title: 'How the cost of drinking is calculated',
+        paragraphs: [
+          'The yearly cost is the price per drink × drinks per week × 52 weeks. The monthly cost is a twelfth of that, and the 5- and 10-year totals use today’s prices without inflation.',
+          'Six beers a week at $7 each add up to about $2,180 a year and almost $22,000 in ten years. If you drink both at bars and at home, use an average price, or work out each separately and add them up.',
+          'The “If you invested it instead” box shows what the same money would grow to if you invested it every month, at a 4% yearly return over 10 years. The calculator counts only what the drinks cost; health effects come on top. If you want to cut down, your doctor or a local alcohol helpline can help.'
+        ]
+      },
+      faq: [
+        {
+          q: 'How much do I spend on alcohol in a year?',
+          a: 'Multiply the price of a drink by the drinks you have in a week and by 52. Six drinks a week at $7 each is $2,184 a year.'
+        },
+        {
+          q: 'How much would I save by drinking less?',
+          a: 'Enter the number of drinks you would like to cut down to and compare. Going from 6 to 3 drinks a week at $7 each saves $1,092 a year and $10,920 in ten years.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what you would have after 10 years if you invested the money every month instead of spending it, at a 4% yearly return compounded monthly. Six $7 drinks a week is $182 a month, which grows to about $26,700 – $21,840 of your own money and the rest returns. Taxes, fees and inflation are left out. It is an example, not investment advice.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lottery & betting',
+      heading: 'Lottery and betting cost calculator',
+      title: 'Lottery & Betting Cost Calculator – What Gambling Costs',
+      description: 'See what lottery tickets and bets cost per month and over 10 years, how much you lose on average and what the stakes would grow to if invested.',
+      card: 'See what lottery tickets and bets add up to and how much you lose on average.',
+      tag: 'Habit',
+      lead: 'Enter what you stake and how often you play to see what lottery tickets and bets cost over the years – and how much of it comes back as winnings on average.',
+      stake: {
+        label: 'Stake per game',
+        unit: 'USD',
+        step: '1',
+        value: '10',
+        decrease: 'Decrease stake',
+        increase: 'Increase stake'
+      },
+      perWeek: {
+        label: 'Games per week',
+        unit: 'games',
+        chip1: 'Once a week',
+        chip2: 'Twice a week',
+        chip3: 'Every day',
+        decrease: 'Decrease games per week',
+        increase: 'Increase games per week'
+      },
+      payout: {
+        label: 'Payout rate',
+        unit: '% paid back',
+        chip1: 'Lottery',
+        chip2: 'Sports betting',
+        chip3: 'Casino',
+        hint: 'The share of all stakes paid back as winnings. Lotteries usually pay back about half, sports betting and casino games 90–97%.',
+        decrease: 'Decrease payout rate',
+        increase: 'Increase payout rate'
+      },
+      resultsTitle: 'What it costs',
+      in10Years: 'Staked in 10 years',
+      perMonth: 'Per month',
+      perYear: 'Per year',
+      lossPerYear: 'Average loss a year',
+      runtime: {
+        note: {
+          empty: 'Enter the stake, how many times a week you play and the payout rate (0–100).',
+          result: 'On average about {back} a year comes back as winnings, so you lose about {loss} a year and {loss10} in 10 years.'
+        }
+      },
+      about: {
+        title: 'How the cost of lottery and betting is calculated',
+        paragraphs: [
+          'The yearly cost is the stake × games per week × 52 weeks. The monthly cost is a twelfth of that, and the 10-year total uses today’s stakes.',
+          'The payout rate is the share of all stakes that is paid back as winnings. With a 50% payout rate, $10 twice a week is $1,040 a year in stakes, of which about $520 comes back as winnings on average – an average loss of $520 a year. One player can win big or lose everything, but over many games the result moves towards the average.',
+          'The “If you invested it instead” box shows what the stakes would grow to if you invested them every month instead, at a 4% yearly return over 10 years. If gambling feels hard to control, your doctor or a local gambling helpline can help.'
+        ]
+      },
+      faq: [
+        {
+          q: 'How much do I spend on the lottery in a year?',
+          a: 'Multiply the stake by the number of games a week and by 52. $10 twice a week is $1,040 a year and $10,400 in ten years.'
+        },
+        {
+          q: 'What is a payout rate?',
+          a: 'It is the share of all stakes that is paid back to players as winnings. Lotteries usually pay back about half of the stakes, while sports betting and casino games pay back 90–97%. The rest goes to the operator – and is what players lose on average.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what you would have after 10 years if you invested your stakes every month instead, at a 4% yearly return compounded monthly. $10 twice a week is about $86.67 a month, which grows to about $12,710 – $10,400 of your own money and the rest returns. Taxes, fees and inflation are left out. It is an example, not investment advice.'
         }
       ]
     },
@@ -485,6 +714,10 @@ module.exports = {
         {
           q: 'Is my list saved?',
           a: 'Your list is kept only in the page address. Bookmark or share the link to keep it; nothing is stored on a server or in cookies.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what your subscriptions would grow to if you invested the same amount every month instead, at a 4% yearly return compounded monthly. $50 a month grows to about $7,335 in 10 years – $6,000 of your own money and the rest returns. Taxes, fees and inflation are left out. It is an example, not investment advice.'
         }
       ]
     },

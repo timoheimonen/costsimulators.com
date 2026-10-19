@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Calculadoras gratuitas y privadas que muestran lo que cuestan de verdad las cosas: reuniones, horas de trabajo, café, tabaco, suscripciones, luz y gasolina. Sin registro.",
+                "description": "Calculadoras gratuitas y privadas que muestran lo que cuestan de verdad las cosas: reuniones, horas de trabajo, hábitos, suscripciones, luz, gasolina y coste por uso. Sin registro.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -238,7 +238,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"es-ES","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Enlace copiado","copyFailed":"No se ha podido copiar","copied":"¡Copiado!","calculatedWith":"Calculado con costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"direction":{"one":"Solo ida","round":"Ida y vuelta"},"unit":{"metric":{"distance":"km solo ida","consumption":"l/100 km","price":"€ por litro","perDistance":"km","fuel":"l"},"us":{"distance":"millas solo ida","consumption":"mpg","price":"€ por galón","perDistance":"milla","fuel":"gal"}},"note":{"empty":"Introduce la distancia, el consumo y el precio del combustible para ver el coste.","result":"Gasta {fuel} de combustible por viaje, unos {price} por {distance}."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"es-ES","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Enlace copiado","copyFailed":"No se ha podido copiar","copied":"¡Copiado!","calculatedWith":"Calculado con costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} al mes durante 10 años al {rate} anual: {paid} aportados y {gain} de rendimientos."},"direction":{"one":"Solo ida","round":"Ida y vuelta"},"unit":{"metric":{"distance":"km solo ida","consumption":"l/100 km","price":"€ por litro","perDistance":"km","fuel":"l"},"us":{"distance":"millas solo ida","consumption":"mpg","price":"€ por galón","perDistance":"milla","fuel":"gal"}},"note":{"empty":"Introduce la distancia, el consumo y el precio del combustible para ver el coste.","result":"Gasta {fuel} de combustible por viaje, unos {price} por {distance}."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/trip.js" defer></script>
@@ -483,6 +483,14 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/es/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Coste por uso</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/es/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
@@ -496,6 +504,22 @@ SOFTWARE.
                             <svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="14" width="19" height="4.5" rx="1"/><path d="M7.5 14v4.5"/><path d="M16.5 11c0-1.4 1.5-1.6 1.5-3s-1.5-1.6-1.5-3"/><path d="M20 11c0-1.4 1.5-1.6 1.5-3S20 6.4 20 5"/></svg>
                         </span>
                         <span>Gasto en tabaco</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/es/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Gasto en alcohol</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/es/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Lotería y apuestas</span>
                     </a>
                 </li>
                 <li>

@@ -22,8 +22,11 @@ const publicDir = path.join(repoRoot, 'public');
 const TOOL_COLORS = {
   meetings: '134 170 255',
   workhours: '243 143 207',
+  costperuse: '191 219 106',
   coffee: '242 172 98',
   smoking: '255 138 155',
+  alcohol: '214 154 242',
+  gambling: '255 143 102',
   subscriptions: '180 156 255',
   electricity: '247 204 74',
   trip: '95 208 228'

@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Valores rápidos',
     faqTitle: 'Preguntas frecuentes',
     relatedTools: 'Más calculadoras',
-    imageAlt: 'costsimulators.com – calculadoras de costes gratuitas para las cuentas del día a día'
+    imageAlt: 'costsimulators.com – calculadoras de costes gratuitas para las cuentas del día a día',
+    invest: {
+      label: 'Si lo invirtieras'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} al mes durante 10 años al {rate} anual: {paid} aportados y {gain} de rendimientos.'
     }
   },
 
   home: {
     title: 'Calculadoras de costes gratis para el día a día',
-    description: 'Calculadoras gratuitas y privadas que muestran lo que cuestan de verdad las cosas: reuniones, horas de trabajo, café, tabaco, suscripciones, luz y gasolina. Sin registro.',
+    description: 'Calculadoras gratuitas y privadas que muestran lo que cuestan de verdad las cosas: reuniones, horas de trabajo, hábitos, suscripciones, luz, gasolina y coste por uso. Sin registro.',
     eyebrow: 'Gratis · Privado · Al instante',
     heading: 'Pequeñas herramientas para las <span class="accent-text">cuentas</span> del día a día.',
     lead: 'Calculadoras rápidas que muestran lo que cuestan de verdad las cosas. Sin registro ni rastreo: todo funciona directamente en tu navegador.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Acerca de',
       title: 'Sobre el proyecto – calculadoras gratuitas y privadas',
-      description: 'Quién hace costsimulators.com y cómo funcionan sus calculadoras de costes gratuitas y privadas para reuniones, horas de trabajo, hábitos, suscripciones, luz y viajes.'
+      description: 'Quién hace costsimulators.com y cómo funcionan sus calculadoras de costes gratuitas y privadas para reuniones, horas de trabajo, hábitos, compras, suscripciones, luz y viajes.'
     },
     privacy: {
       name: 'Política de privacidad',
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Coste por uso',
+      heading: 'Calculadora de coste por uso',
+      title: 'Calculadora de coste por uso – ¿merece la pena el precio?',
+      description: 'Calcula lo que cuesta de verdad una compra cada vez que la usas: el precio menos su valor de reventa, dividido entre cuántas veces y durante cuánto tiempo la usas.',
+      card: 'Reparte el precio de una compra entre todas las veces que la usas y mira si merece la pena.',
+      tag: 'Compras',
+      lead: 'Introduce el precio, cada cuánto vas a usar lo que compras y durante cuánto tiempo, y mira lo que cuesta de verdad cada uso.',
+      price: {
+        label: 'Precio',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Reducir precio',
+        increase: 'Aumentar precio'
+      },
+      period: {
+        label: 'Cada cuánto lo usas',
+        week: 'Por semana',
+        month: 'Por mes',
+        year: 'Por año'
+      },
+      uses: {
+        label: 'Usos',
+        unit: 'veces a la semana',
+        decrease: 'Reducir usos',
+        increase: 'Aumentar usos'
+      },
+      years: {
+        label: 'Años de uso',
+        unit: 'años',
+        chip1: '1 año',
+        chip2: '3 años',
+        chip3: '5 años',
+        decrease: 'Reducir años de uso',
+        increase: 'Aumentar años de uso'
+      },
+      resale: {
+        label: 'Valor de reventa',
+        unit: '€, opcional',
+        hint: 'Lo que esperas sacar cuando lo vendas. Déjalo en 0 si no vas a sacar nada.',
+        decrease: 'Reducir valor de reventa',
+        increase: 'Aumentar valor de reventa'
+      },
+      resultsTitle: 'Coste por uso',
+      perUse: 'Cada uso cuesta',
+      totalUses: 'Usos en total',
+      perMonth: 'Al mes',
+      perYear: 'Al año',
+      runtime: {
+        unit: {
+          week: 'veces a la semana',
+          month: 'veces al mes',
+          year: 'veces al año'
+        },
+        note: {
+          empty: 'Introduce el precio, cada cuánto lo usas y durante cuántos años. El valor de reventa tiene que ser menor que el precio.',
+          result: 'Si lo usas un año más, el coste por uso baja a {next}.'
+        }
+      },
+      about: {
+        title: 'Cómo se calcula el coste por uso',
+        paragraphs: [
+          'El coste por uso es el precio menos lo que recuperas al venderlo, dividido entre el número de veces que lo usas. El número de usos es cada cuánto lo usas × las semanas, meses o años durante los que lo usas. Una compra de 500 € que se usa 3 veces a la semana durante 3 años suma 468 usos y cuesta 1,07 € por uso.',
+          'Los costes mensual y anual reparten esa misma cantidad a lo largo del tiempo que lo tienes, así que es fácil comparar la compra con alquilar, contratar un renting o pagar una suscripción.',
+          'El coste por uso es una forma sencilla de comparar algo barato que se estropea pronto con algo caro que dura. Unos zapatos de 60 € que te pones 50 veces cuestan 1,20 € por uso; unos de 200 € que te pones 400 veces, 0,50 €.'
+        ]
+      },
+      faq: [
+        {
+          q: '¿Cómo se calcula el coste por uso?',
+          a: 'Divide el precio entre el número de veces que usas lo que has comprado. Si después lo vendes, resta antes el valor de reventa del precio. Una chaqueta de 120 € que te pones 80 veces cuesta 1,50 € cada vez que te la pones.'
+        },
+        {
+          q: '¿Qué es un buen coste por uso?',
+          a: 'Depende de lo que cueste la alternativa. Compáralo con alquilar, pedirlo prestado o pagar cada vez: si la entrada de un día al gimnasio cuesta 15 €, una cuota mensual de 40 € sale a cuenta a partir de la tercera visita al mes.'
+        },
+        {
+          q: '¿Sirve para suscripciones y cuotas?',
+          a: 'Sí. Introduce como precio el importe anual, cada cuánto lo usas y 1 año. Para una cuota de gimnasio de 40 € al mes, introduce 480 € y tus visitas por semana.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Gasto en café',
       heading: 'Calculadora del gasto en café',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: '¿La calculadora tiene en cuenta la inflación?',
           a: 'No. Las proyecciones suponen que el precio no cambia, así que muestran lo que cuesta el hábito a precios de hoy. Si los precios suben, el coste real a largo plazo es mayor.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo?',
+          a: 'El recuadro «Si lo invirtieras» muestra en cuánto se convertiría el dinero si lo invirtieras cada mes en lugar de gastarlo, con una rentabilidad del 4 % anual y capitalización mensual. Un café de 1,80 € cada día laborable son 39 € al mes, que en 10 años se convierten en unos 5720 €: 4680 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: '¿Sirve también para el tabaco de liar?',
           a: 'Sí. Introduce el precio de la bolsa como precio del paquete, el número de cigarrillos que lías con ella como tamaño del paquete y cuántos fumas al día.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo?',
+          a: 'El recuadro «Si lo invirtieras» muestra en cuánto se convertiría el dinero si lo invirtieras cada mes en lugar de gastarlo en tabaco, con una rentabilidad del 4 % anual y capitalización mensual. Medio paquete al día a 6 € el paquete son unos 91 € al mes, que en 10 años se convierten en unos 13.400 €: 10.950 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Gasto en alcohol',
+      heading: 'Calculadora del gasto en alcohol',
+      title: 'Calculadora del gasto en alcohol – lo que te cuesta beber',
+      description: 'Mira cuánto te cuestan la cerveza, el vino y otras bebidas al mes y en 1, 5 y 10 años, y en cuánto se convertiría ese dinero si lo invirtieras.',
+      card: 'Mira cuánto suman las bebidas de cada semana en uno, cinco y diez años.',
+      tag: 'Hábito',
+      lead: 'Introduce lo que cuesta una bebida y cuántas tomas a la semana para ver cuánto suma con los años.',
+      price: {
+        label: 'Precio por bebida',
+        unit: '€',
+        step: '0.1',
+        value: '3',
+        hint: '¿Bebes tanto en casa como fuera? Usa un precio medio.',
+        decrease: 'Reducir precio por bebida',
+        increase: 'Aumentar precio por bebida'
+      },
+      perWeek: {
+        label: 'Bebidas por semana',
+        unit: 'bebidas',
+        chip1: '3 a la semana',
+        chip2: '7 a la semana',
+        chip3: '14 a la semana',
+        decrease: 'Reducir bebidas por semana',
+        increase: 'Aumentar bebidas por semana'
+      },
+      resultsTitle: 'Lo que suma',
+      in10Years: 'En 10 años',
+      perMonth: 'Al mes',
+      year1: '1 año',
+      year5: '5 años',
+      runtime: {
+        note: {
+          empty: 'Introduce un precio y cuántas bebidas tomas por semana para ver los totales.',
+          result: 'Son unas {drinks} bebidas al año a {price} cada una.'
+        }
+      },
+      about: {
+        title: 'Cómo se calcula el gasto en alcohol',
+        paragraphs: [
+          'El coste anual es el precio por bebida × bebidas por semana × 52 semanas. El coste mensual es la doceava parte, y los totales a 5 y 10 años usan los precios actuales, sin inflación.',
+          'Seis cervezas a la semana a 3 € cada una suman 936 € al año y más de 9300 € en diez años. Si bebes tanto en bares como en casa, usa un precio medio, o calcula cada gasto por separado y súmalos.',
+          'El recuadro «Si lo invirtieras» muestra en cuánto se convertiría ese mismo dinero si lo invirtieras cada mes, con una rentabilidad del 4 % anual durante 10 años. La calculadora solo cuenta lo que cuestan las bebidas; los efectos sobre la salud van aparte. Si quieres beber menos, tu médico de familia o los servicios de atención a las adicciones de tu comunidad autónoma pueden ayudarte.'
+        ]
+      },
+      faq: [
+        {
+          q: '¿Cuánto gasto en alcohol al año?',
+          a: 'Multiplica el precio de una bebida por las que tomas a la semana y por 52. Seis bebidas a la semana a 3 € cada una son 936 € al año.'
+        },
+        {
+          q: '¿Cuánto ahorraría si bebiera menos?',
+          a: 'Introduce el número de bebidas al que te gustaría bajar y compara. Pasar de 6 a 3 bebidas a la semana a 3 € cada una ahorra 468 € al año y 4680 € en diez años.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo?',
+          a: 'El recuadro «Si lo invirtieras» muestra cuánto tendrías al cabo de 10 años si invirtieras el dinero cada mes en lugar de gastarlo, con una rentabilidad del 4 % anual y capitalización mensual. Seis bebidas de 3 € a la semana son 78 € al mes, que se convierten en unos 11.400 €: 9360 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotería y apuestas',
+      heading: 'Calculadora del gasto en lotería y apuestas',
+      title: 'Gasto en lotería y apuestas – lo que te cuesta el juego',
+      description: 'Mira cuánto te cuestan la lotería y las apuestas al mes y en 10 años, cuánto pierdes de media y en cuánto se convertiría lo apostado si lo invirtieras.',
+      card: 'Mira cuánto suman la lotería y las apuestas y cuánto pierdes de media.',
+      tag: 'Hábito',
+      lead: 'Introduce cuánto apuestas y cada cuánto juegas para ver lo que te cuestan la lotería y las apuestas con los años, y cuánto recuperas de media en premios.',
+      stake: {
+        label: 'Importe por jugada',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Reducir importe por jugada',
+        increase: 'Aumentar importe por jugada'
+      },
+      perWeek: {
+        label: 'Jugadas por semana',
+        unit: 'jugadas',
+        chip1: '1 vez por semana',
+        chip2: '2 veces por semana',
+        chip3: 'Todos los días',
+        decrease: 'Reducir jugadas por semana',
+        increase: 'Aumentar jugadas por semana'
+      },
+      payout: {
+        label: 'Porcentaje de retorno',
+        unit: '% devuelto',
+        chip1: 'Lotería',
+        chip2: 'Apuestas deportivas',
+        chip3: 'Casino',
+        hint: 'La parte de todo lo apostado que se devuelve en premios. Las loterías suelen devolver más o menos la mitad, y las apuestas deportivas y los juegos de casino, entre el 90 y el 97 %.',
+        decrease: 'Reducir porcentaje de retorno',
+        increase: 'Aumentar porcentaje de retorno'
+      },
+      resultsTitle: 'Lo que cuesta',
+      in10Years: 'Apostado en 10 años',
+      perMonth: 'Al mes',
+      perYear: 'Al año',
+      lossPerYear: 'Pérdida media al año',
+      runtime: {
+        note: {
+          empty: 'Introduce el importe por jugada, cuántas veces juegas a la semana y el porcentaje de retorno (0–100).',
+          result: 'De media recuperas unos {back} al año en premios, así que pierdes unos {loss} al año y {loss10} en 10 años.'
+        }
+      },
+      about: {
+        title: 'Cómo se calcula el gasto en lotería y apuestas',
+        paragraphs: [
+          'El coste anual es el importe por jugada × jugadas por semana × 52 semanas. El coste mensual es la doceava parte, y el total a 10 años usa los importes actuales.',
+          'El porcentaje de retorno es la parte de todo lo apostado que se devuelve en premios. Con un retorno del 50 %, jugar 10 € dos veces por semana son 1040 € apostados al año, de los que de media vuelven unos 520 € en premios: una pérdida media de 520 € al año. Un jugador concreto puede ganar mucho o perderlo todo, pero a lo largo de muchas jugadas el resultado se acerca a la media.',
+          'El recuadro «Si lo invirtieras» muestra en cuánto se convertiría lo apostado si lo invirtieras cada mes, con una rentabilidad del 4 % anual durante 10 años. Si te cuesta controlar el juego, tu médico de familia o los servicios de atención a las adicciones de tu comunidad autónoma pueden ayudarte.'
+        ]
+      },
+      faq: [
+        {
+          q: '¿Cuánto gasto en lotería al año?',
+          a: 'Multiplica el importe por jugada por las veces que juegas a la semana y por 52. Jugar 10 € dos veces por semana son 1040 € al año y 10.400 € en diez años.'
+        },
+        {
+          q: '¿Qué es el porcentaje de retorno?',
+          a: 'Es la parte de todo lo apostado que se devuelve a los jugadores en premios. Las loterías suelen devolver más o menos la mitad de lo apostado, y las apuestas deportivas y los juegos de casino, entre el 90 y el 97 %. El resto se lo queda el operador, y es lo que pierden de media los jugadores.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de apostarlo?',
+          a: 'El recuadro «Si lo invirtieras» muestra cuánto tendrías al cabo de 10 años si invirtieras cada mes lo que apuestas, con una rentabilidad del 4 % anual y capitalización mensual. Jugar 10 € dos veces por semana son unos 86,67 € al mes, que se convierten en unos 12.710 €: 10.400 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
         }
       ]
     },
@@ -471,6 +700,10 @@ module.exports = {
         {
           q: '¿Se guarda mi lista?',
           a: 'Tu lista solo se guarda en la dirección de la página. Añade el enlace a marcadores o compártelo para conservarla; no se guarda nada en ningún servidor ni en cookies.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo?',
+          a: 'El recuadro «Si lo invirtieras» muestra en cuánto se convertirían tus suscripciones si invirtieras esa misma cantidad cada mes, con una rentabilidad del 4 % anual y capitalización mensual. Con 50 € al mes reunirías unos 7335 € en 10 años: 6000 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
         }
       ]
     },

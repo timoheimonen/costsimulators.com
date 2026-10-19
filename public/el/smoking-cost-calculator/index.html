@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "Δωρεάν, ιδιωτικά εργαλεία που δείχνουν τι κοστίζουν πραγματικά οι συσκέψεις, οι ώρες εργασίας, ο καφές, το κάπνισμα, οι συνδρομές, το ρεύμα και τα καύσιμα. Χωρίς εγγραφή.",
+                "description": "Δωρεάν, ιδιωτικά εργαλεία που δείχνουν τι κοστίζουν πραγματικά τα πράγματα: συσκέψεις, ώρες εργασίας, συνήθειες, συνδρομές, ρεύμα, καύσιμα και κόστος ανά χρήση. Χωρίς εγγραφή.",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "Ναι. Βάλτε την τιμή του φακέλου ως τιμή πακέτου, πόσα τσιγάρα στρίβετε από αυτόν ως μέγεθος πακέτου και πόσα καπνίζετε την ημέρα."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Κι αν επένδυα τα χρήματα αντί να τα ξοδεύω;",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Το πλαίσιο «Αν επενδύατε αυτά τα χρήματα» δείχνει σε τι ποσό θα έφταναν τα χρήματα αν τα επενδύατε κάθε μήνα αντί να καπνίζετε, με ετήσια απόδοση 4% και μηνιαίο ανατοκισμό. Μισό πακέτο την ημέρα στα 4,80 € το πακέτο κάνει 73 € τον μήνα, που σε 10 χρόνια φτάνουν περίπου τα 10.700 € – τα 8.760 € είναι δικά σας χρήματα και τα υπόλοιπα αποδόσεις. Φόροι, χρεώσεις και πληθωρισμός δεν λαμβάνονται υπόψη. Είναι ένα παράδειγμα, όχι επενδυτική συμβουλή."
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"el-GR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Ο σύνδεσμος αντιγράφηκε","copyFailed":"Η αντιγραφή απέτυχε","copied":"Αντιγράφηκε!","calculatedWith":"Υπολογίστηκε με το costsimulators.com"},"workTime":{"minutes":"{m} λεπ.","hours":"{h} ώρ.","hoursMinutes":"{h} ώρ. {m} λεπ."},"note":{"empty":"Βάλτε την τιμή του πακέτου, πόσα τσιγάρα καπνίζετε την ημέρα και πόσα έχει το πακέτο για να δείτε τα σύνολα.","result":"Δηλαδή περίπου {cigarettes} τσιγάρα ({packs} πακέτα) τον χρόνο, προς {price} το ένα."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"el-GR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Ο σύνδεσμος αντιγράφηκε","copyFailed":"Η αντιγραφή απέτυχε","copied":"Αντιγράφηκε!","calculatedWith":"Υπολογίστηκε με το costsimulators.com"},"workTime":{"minutes":"{m} λεπ.","hours":"{h} ώρ.","hoursMinutes":"{h} ώρ. {m} λεπ."},"invest":{"note":"{monthly} τον μήνα για 10 χρόνια με ετήσια απόδοση {rate}: {paid} δικά σας χρήματα και {gain} από την απόδοση."},"note":{"empty":"Βάλτε την τιμή του πακέτου, πόσα τσιγάρα καπνίζετε την ημέρα και πόσα έχει το πακέτο για να δείτε τα σύνολα.","result":"Δηλαδή περίπου {cigarettes} τσιγάρα ({packs} πακέτα) τον χρόνο, προς {price} το ένα."}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/smoking.js" defer></script>
@@ -392,6 +400,17 @@ SOFTWARE.
                         <dd id="year5">0,00 €</dd>
                     </div>
                 </dl>
+
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            Αν επενδύατε αυτά τα χρήματα
+                        </span>
+                        <span class="invest-value" data-invest-value>0,00 €</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
@@ -418,6 +437,10 @@ SOFTWARE.
                 <summary>Μπορώ να το χρησιμοποιήσω για στριφτό καπνό;</summary>
                 <p>Ναι. Βάλτε την τιμή του φακέλου ως τιμή πακέτου, πόσα τσιγάρα στρίβετε από αυτόν ως μέγεθος πακέτου και πόσα καπνίζετε την ημέρα.</p>
             </details>
+            <details class="faq-item">
+                <summary>Κι αν επένδυα τα χρήματα αντί να τα ξοδεύω;</summary>
+                <p>Το πλαίσιο «Αν επενδύατε αυτά τα χρήματα» δείχνει σε τι ποσό θα έφταναν τα χρήματα αν τα επενδύατε κάθε μήνα αντί να καπνίζετε, με ετήσια απόδοση 4% και μηνιαίο ανατοκισμό. Μισό πακέτο την ημέρα στα 4,80 € το πακέτο κάνει 73 € τον μήνα, που σε 10 χρόνια φτάνουν περίπου τα 10.700 € – τα 8.760 € είναι δικά σας χρήματα και τα υπόλοιπα αποδόσεις. Φόροι, χρεώσεις και πληθωρισμός δεν λαμβάνονται υπόψη. Είναι ένα παράδειγμα, όχι επενδυτική συμβουλή.</p>
+            </details>
             </div>
         </section>
 
@@ -441,11 +464,35 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/el/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>Κόστος ανά χρήση</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/el/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
                         </span>
                         <span>Κόστος καφέ</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/el/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>Κόστος αλκοόλ</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/el/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>Λοταρία και στοίχημα</span>
                     </a>
                 </li>
                 <li>

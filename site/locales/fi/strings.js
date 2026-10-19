@@ -30,7 +30,10 @@ module.exports = {
     quickPicks: 'Pikavalinnat',
     faqTitle: 'Usein kysytyt kysymykset',
     relatedTools: 'Lisää laskureita',
-    imageAlt: 'costsimulators.com – ilmaiset laskurit arjen rahakysymyksiin'
+    imageAlt: 'costsimulators.com – ilmaiset laskurit arjen rahakysymyksiin',
+    invest: {
+      label: 'Jos sijoittaisit summan'
+    }
   },
 
   footer: {
@@ -52,12 +55,15 @@ module.exports = {
       minutes: '{m} min',
       hours: '{h} h',
       hoursMinutes: '{h} h {m} min'
+    },
+    invest: {
+      note: '{monthly} kuukaudessa 10 vuoden ajan {rate}:n vuosituotolla: omaa rahaa {paid} ja tuottoa {gain}.'
     }
   },
 
   home: {
     title: 'Ilmaiset kustannuslaskurit arkeen',
-    description: 'Ilmaiset ja yksityiset laskurit, jotka näyttävät, mitä asiat oikeasti maksavat: kokoukset, työtunnit, kahvi, tupakointi, tilaukset, sähkö ja polttoaine. Ei rekisteröitymistä.',
+    description: 'Ilmaiset ja yksityiset laskurit, jotka näyttävät, mitä asiat oikeasti maksavat: kokoukset, työtunnit, tavat, tilaukset, sähkö, polttoaine ja ostokset käyttökertaa kohden. Ei rekisteröitymistä.',
     eyebrow: 'Ilmainen · Yksityinen · Heti',
     heading: 'Pieniä työkaluja arjen <span class="accent-text">raha</span>kysymyksiin.',
     lead: 'Nopeat laskurit, jotka näyttävät, mitä asiat oikeasti maksavat. Ei rekisteröitymistä eikä seurantaa – kaikki toimii suoraan selaimessasi.',
@@ -96,7 +102,7 @@ module.exports = {
     about: {
       name: 'Tietoa',
       title: 'Tietoa costsimulators.comista – ilmaiset laskurit',
-      description: 'Kuka tekee costsimulators.comin ja miten laskurit toimivat. Ilmaiset ja yksityiset laskurit kokouksille, työtunneille, tavoille, tilauksille, sähkölle ja matkoille.'
+      description: 'Kuka tekee costsimulators.comin ja miten laskurit toimivat. Ilmaiset ja yksityiset laskurit kokouksille, työtunneille, tavoille, ostoksille, tilauksille, sähkölle ja matkoille.'
     },
     privacy: {
       name: 'Tietosuojaseloste',
@@ -161,7 +167,7 @@ module.exports = {
         title: 'Näin kokouksen hinta lasketaan',
         paragraphs: [
           'Laskuri kertoo osallistujien määrän heidän tuntihinnallaan ja kuluneella ajalla. Tunnin palaveri viidellä hengellä ja 50 euron tuntihinnalla maksaa 250 € – noin 4,17 € joka minuutti.',
-          'Käytä tuntihintana sitä, mitä työtunti oikeasti maksaa työnantajalle, ei pelkkää palkkaa. Bruttopalkan päälle tulevat työnantajan sivukulut, kuten työeläke- ja sosiaalivakuutusmaksut, jotka ovat tyypillisesti noin 20–25 % palkasta. Jos kaikkien tuntihintoja ei tiedä, tiimin keskiarvo riittää hyvin.',
+          'Käytä tuntihintana sitä, mitä työtunti oikeasti maksaa työnantajalle, ei pelkkää palkkaa. Bruttopalkan päälle tulevat työnantajan sivukulut, kuten työeläke- ja sosiaalivakuutusmaksut, jotka ovat tyypillisesti noin 20–25 % palkasta. Jos kaikkien tuntihintoja ei tiedä, tiimin keskiarvo riittää hyvin.',
           'Ajastin laskee oikein myös taustavälilehdellä, ja kertynyt summa näkyy selaimen välilehden otsikossa, joten voit seurata sitä vaikka jakaisit näyttöäsi. Kun palaveri loppuu, pysäytä ajastin ja kopioi lyhyt raportti muistioon.'
         ]
       },
@@ -271,6 +277,90 @@ module.exports = {
       ]
     },
 
+    costperuse: {
+      name: 'Käyttökerran hinta',
+      heading: 'Käyttökerran hintalaskuri',
+      title: 'Käyttökerran hinta – onko ostos hintansa arvoinen?',
+      description: 'Laske, mitä ostos oikeasti maksaa käyttökertaa kohden: hinta miinus jälleenmyyntiarvo jaettuna sillä, kuinka usein ja kuinka kauan käytät sitä.',
+      card: 'Jaa hinta kaikille käyttökerroille ja katso, onko ostos hintansa arvoinen.',
+      tag: 'Ostokset',
+      lead: 'Syötä hinta, kuinka usein käytät tavaraa ja kuinka monta vuotta, niin näet, mitä yksi käyttökerta oikeasti maksaa.',
+      price: {
+        label: 'Hinta',
+        unit: '€',
+        value: '500',
+        step: '10',
+        decrease: 'Pienennä hintaa',
+        increase: 'Suurenna hintaa'
+      },
+      period: {
+        label: 'Kuinka usein käytät',
+        week: 'Viikossa',
+        month: 'Kuukaudessa',
+        year: 'Vuodessa'
+      },
+      uses: {
+        label: 'Käyttökerrat',
+        unit: 'kertaa viikossa',
+        decrease: 'Vähennä käyttökertoja',
+        increase: 'Lisää käyttökertoja'
+      },
+      years: {
+        label: 'Käyttövuodet',
+        unit: 'vuotta',
+        chip1: '1 vuosi',
+        chip2: '3 vuotta',
+        chip3: '5 vuotta',
+        decrease: 'Vähennä käyttövuosia',
+        increase: 'Lisää käyttövuosia'
+      },
+      resale: {
+        label: 'Jälleenmyyntiarvo',
+        unit: '€, valinnainen',
+        hint: 'Summa, jonka arvelet saavasi, kun myyt tavaran. Jätä nollaksi, jos et saa siitä mitään.',
+        decrease: 'Pienennä jälleenmyyntiarvoa',
+        increase: 'Suurenna jälleenmyyntiarvoa'
+      },
+      resultsTitle: 'Käyttökerran hinta',
+      perUse: 'Yksi käyttökerta maksaa',
+      totalUses: 'Käyttökertoja yhteensä',
+      perMonth: 'Kuukaudessa',
+      perYear: 'Vuodessa',
+      runtime: {
+        unit: {
+          week: 'kertaa viikossa',
+          month: 'kertaa kuukaudessa',
+          year: 'kertaa vuodessa'
+        },
+        note: {
+          empty: 'Syötä hinta, kuinka usein käytät tavaraa ja kuinka monta vuotta. Jälleenmyyntiarvon pitää olla hintaa pienempi.',
+          result: 'Vuoden pidemmällä käytöllä yksi käyttökerta maksaisi {next}.'
+        }
+      },
+      about: {
+        title: 'Näin käyttökerran hinta lasketaan',
+        paragraphs: [
+          'Käyttökerran hinta on ostoksen hinta, josta on vähennetty myydessä takaisin saatava summa, jaettuna käyttökertojen määrällä. Käyttökertojen määrä saadaan kertomalla käyttötiheys viikoilla, kuukausilla tai vuosilla, joiden ajan tavaraa käytät. 500 euron ostos, jota käytetään 3 kertaa viikossa 3 vuoden ajan, on käytössä 468 kertaa, ja yksi käyttökerta maksaa 1,07 €.',
+          'Kuukausi- ja vuosihinta jakavat saman summan koko ajalle, jonka tavara on sinulla, joten ostamista on helppo verrata vuokraamiseen, leasingiin tai kuukausimaksulliseen palveluun.',
+          'Käyttökerran hinnalla on helppo verrata halpaa, nopeasti kuluvaa tavaraa kalliiseen ja kestävään. 60 euron kengät, joita käytät 50 kertaa, maksavat 1,20 € käyttökerralta; 200 euron kengät, joita käytät 400 kertaa, maksavat 0,50 €.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Miten käyttökerran hinta lasketaan?',
+          a: 'Jaa hinta käyttökertojen määrällä. Jos myyt tavaran myöhemmin, vähennä jälleenmyyntiarvo ensin hinnasta. 120 euron takki, jota käytät 80 kertaa, maksaa 1,50 € käyttökerralta.'
+        },
+        {
+          q: 'Mikä on hyvä käyttökerran hinta?',
+          a: 'Se riippuu siitä, mitä vaihtoehto maksaa. Vertaa vuokraamiseen, lainaamiseen tai kertamaksuun: jos kuntosalin kertamaksu on 15 €, 40 euron kuukausijäsenyys tulee edullisemmaksi jo kolmannesta käynnistä kuukaudessa.'
+        },
+        {
+          q: 'Toimiiko laskuri tilauksille ja jäsenyyksille?',
+          a: 'Toimii. Syötä hinnaksi vuosihinta, käyttötiheys ja käyttövuosiksi 1. Jos kuntosalijäsenyys maksaa 40 € kuukaudessa, syötä hinnaksi 480 € ja käyntiesi määrä viikossa.'
+        }
+      ]
+    },
+
     coffee: {
       name: 'Kahvin hinta',
       heading: 'Kahvilaskuri',
@@ -327,6 +417,10 @@ module.exports = {
         {
           q: 'Huomioiko laskuri inflaation?',
           a: 'Ei. Laskelmat olettavat hinnan pysyvän samana, joten ne näyttävät tavan hinnan tämän päivän hinnoilla. Hintojen noustessa todellinen pitkän aikavälin kustannus on suurempi.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, mihin rahat kasvaisivat, jos et käyttäisi niitä vaan sijoittaisit ne joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. Joka arkipäivä ostettu 3,50 euron kahvi tekee 75,83 € kuukaudessa, ja se kasvaa 10 vuodessa noin 11 100 euroon – siitä 9 100 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
         }
       ]
     },
@@ -394,6 +488,141 @@ module.exports = {
         {
           q: 'Toimiiko laskuri myös kääretupakalle?',
           a: 'Toimii. Syötä tupakkapussin hinta askin hinnaksi, siitä käärittävien savukkeiden määrä askin kooksi ja kuinka monta poltat päivässä.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, mihin rahat kasvaisivat, jos et polttaisi vaan sijoittaisit ne joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. Puoli askia päivässä 11 euron askihinnalla tekee noin 167 € kuukaudessa, ja se kasvaa 10 vuodessa noin 24 500 euroon – siitä 20 075 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
+        }
+      ]
+    },
+
+    alcohol: {
+      name: 'Alkoholin hinta',
+      heading: 'Alkoholilaskuri',
+      title: 'Alkoholilaskuri – paljonko juomiin kuluu rahaa?',
+      description: 'Katso, mitä oluet, viinit ja muut juomat maksavat kuukaudessa sekä 1, 5 ja 10 vuodessa – ja mihin sama raha kasvaisi sijoitettuna.',
+      card: 'Katso, mitä viikon juomat maksavat vuodessa, viidessä ja kymmenessä vuodessa.',
+      tag: 'Tapa',
+      lead: 'Syötä juoman hinta ja kuinka monta juot viikossa, niin näet, mitä se maksaa vuosien mittaan.',
+      price: {
+        label: 'Juoman hinta',
+        unit: '€',
+        step: '0.5',
+        value: '8',
+        hint: 'Juotko sekä kotona että ravintolassa? Käytä keskihintaa.',
+        decrease: 'Pienennä juoman hintaa',
+        increase: 'Suurenna juoman hintaa'
+      },
+      perWeek: {
+        label: 'Juomia viikossa',
+        unit: 'juomaa',
+        chip1: '3 viikossa',
+        chip2: '7 viikossa',
+        chip3: '14 viikossa',
+        decrease: 'Vähennä juomia viikossa',
+        increase: 'Lisää juomia viikossa'
+      },
+      resultsTitle: 'Mitä se maksaa yhteensä',
+      in10Years: '10 vuodessa',
+      perMonth: 'Kuukaudessa',
+      year1: '1 vuosi',
+      year5: '5 vuotta',
+      runtime: {
+        note: {
+          empty: 'Syötä hinta ja kuinka monta juomaa juot viikossa, niin näet summat.',
+          result: 'Se on noin {drinks} juomaa vuodessa, {price} juomalta.'
+        }
+      },
+      about: {
+        title: 'Näin alkoholin hinta lasketaan',
+        paragraphs: [
+          'Vuosihinta on juoman hinta × juomat viikossa × 52 viikkoa. Kuukausihinta on siitä kahdestoistaosa, ja 5 ja 10 vuoden summat on laskettu nykyhinnoilla ilman inflaatiota.',
+          'Kuusi 8 euron olutta viikossa tekee noin 2 500 € vuodessa ja lähes 25 000 € kymmenessä vuodessa. Jos juot sekä ravintolassa että kotona, käytä keskihintaa tai tee kummastakin oma laskelma ja laske summat yhteen.',
+          '”Jos sijoittaisit summan” -kohta näyttää, mihin sama raha kasvaisi, jos sijoittaisit sen joka kuukausi 4 %:n vuosituotolla 10 vuoden ajan. Laskuri huomioi vain juomien hinnan, ja terveysvaikutukset tulevat vielä päälle. Jos haluat vähentää juomista, apua saa omalta lääkäriltä tai terveysasemalta sekä esimerkiksi Päihdelinkki.fi-palvelusta.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Paljonko kulutan alkoholiin vuodessa?',
+          a: 'Kerro juoman hinta viikon juomien määrällä ja 52:lla. Kuusi 8 euron juomaa viikossa tekee 2 496 € vuodessa.'
+        },
+        {
+          q: 'Paljonko säästäisin juomalla vähemmän?',
+          a: 'Syötä juomamäärä, johon haluaisit vähentää, ja vertaa. Jos vähennät kuudesta juomasta kolmeen viikossa 8 euron hinnalla, säästät 1 248 € vuodessa ja 12 480 € kymmenessä vuodessa.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, paljonko sinulla olisi 10 vuoden kuluttua, jos et käyttäisi rahoja juomiin vaan sijoittaisit ne joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. Kuusi 8 euron juomaa viikossa tekee 208 € kuukaudessa, ja se kasvaa noin 30 500 euroon – siitä 24 960 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
+        }
+      ]
+    },
+
+    gambling: {
+      name: 'Lotto ja vedonlyönti',
+      heading: 'Lotto- ja vedonlyöntilaskuri',
+      title: 'Lotto- ja vedonlyöntilaskuri – paljonko pelaaminen maksaa?',
+      description: 'Katso, mitä lottorivit ja vedot maksavat kuukaudessa ja 10 vuodessa, paljonko niistä keskimäärin häviät ja mihin panokset kasvaisivat sijoitettuna.',
+      card: 'Katso, mitä lottorivit ja vedot maksavat yhteensä ja paljonko niistä keskimäärin häviät.',
+      tag: 'Tapa',
+      lead: 'Syötä panos ja kuinka usein pelaat, niin näet, mitä lotto ja vedonlyönti maksavat vuosien mittaan – ja kuinka suuri osa rahasta palautuu keskimäärin voittoina.',
+      stake: {
+        label: 'Panos kerralla',
+        unit: '€',
+        step: '1',
+        value: '10',
+        decrease: 'Pienennä panosta',
+        increase: 'Suurenna panosta'
+      },
+      perWeek: {
+        label: 'Pelikertoja viikossa',
+        unit: 'kertaa',
+        chip1: 'Kerran viikossa',
+        chip2: 'Kahdesti viikossa',
+        chip3: 'Joka päivä',
+        decrease: 'Vähennä pelikertoja viikossa',
+        increase: 'Lisää pelikertoja viikossa'
+      },
+      payout: {
+        label: 'Palautusprosentti',
+        unit: '% takaisin',
+        chip1: 'Lotto',
+        chip2: 'Vedonlyönti',
+        chip3: 'Kasino',
+        hint: 'Se osuus kaikista panoksista, joka maksetaan takaisin voittoina. Lotossa palautuu yleensä noin puolet, vedonlyönnissä ja kasinopeleissä 90–97 %.',
+        decrease: 'Pienennä palautusprosenttia',
+        increase: 'Suurenna palautusprosenttia'
+      },
+      resultsTitle: 'Mitä pelaaminen maksaa',
+      in10Years: 'Panokset 10 vuodessa',
+      perMonth: 'Kuukaudessa',
+      perYear: 'Vuodessa',
+      lossPerYear: 'Keskimääräinen tappio vuodessa',
+      runtime: {
+        note: {
+          empty: 'Syötä panos, montako kertaa viikossa pelaat ja palautusprosentti (0–100).',
+          result: 'Voittoina palautuu keskimäärin noin {back} vuodessa, joten häviät noin {loss} vuodessa ja {loss10} kymmenessä vuodessa.'
+        }
+      },
+      about: {
+        title: 'Näin lottoamisen ja vedonlyönnin hinta lasketaan',
+        paragraphs: [
+          'Vuosihinta on panos × pelikerrat viikossa × 52 viikkoa. Kuukausihinta on siitä kahdestoistaosa, ja 10 vuoden summa on laskettu nykyisillä panoksilla.',
+          'Palautusprosentti kertoo, kuinka suuri osa kaikista panoksista maksetaan takaisin voittoina. 50 %:n palautusprosentilla 10 euron panos kahdesti viikossa tekee 1 040 € vuodessa, josta voittoina palautuu keskimäärin 520 € – keskimääräinen tappio on siis 520 € vuodessa. Yksittäinen pelaaja voi voittaa paljon tai hävitä kaiken, mutta mitä enemmän pelikertoja kertyy, sitä lähemmäs keskiarvoa tulos asettuu.',
+          '”Jos sijoittaisit summan” -kohta näyttää, mihin panokset kasvaisivat, jos sijoittaisit ne sen sijaan joka kuukausi 4 %:n vuosituotolla 10 vuoden ajan. Jos pelaamista on vaikea hallita, apua saa omalta lääkäriltä tai terveysasemalta sekä rahapelihaittoihin erikoistuneesta Peluuri-palvelusta.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Paljonko lottoaminen maksaa vuodessa?',
+          a: 'Kerro panos viikon pelikertojen määrällä ja 52:lla. 10 euron panos kahdesti viikossa tekee 1 040 € vuodessa ja 10 400 € kymmenessä vuodessa.'
+        },
+        {
+          q: 'Mikä on palautusprosentti?',
+          a: 'Se on osuus kaikista panoksista, joka maksetaan pelaajille takaisin voittoina. Lotossa palautuu yleensä noin puolet panoksista, vedonlyönnissä ja kasinopeleissä 90–97 %. Loput jäävät pelinjärjestäjälle – ja juuri sen verran pelaajat keskimäärin häviävät.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, paljonko sinulla olisi 10 vuoden kuluttua, jos et pelaisi vaan sijoittaisit panokset joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. 10 euron panos kahdesti viikossa tekee 86,67 € kuukaudessa, ja se kasvaa noin 12 700 euroon – siitä 10 400 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
         }
       ]
     },
@@ -466,11 +695,15 @@ module.exports = {
         },
         {
           q: 'Onko vuositilaus halvempi kuin kuukausitilaus?',
-          a: 'Usein 15–20 %, mutta vain jos pitäisit palvelun joka tapauksessa koko vuoden. Lisää molemmat vaihtoehdot listaan ja vertaa niiden vuosihintaa.'
+          a: 'Usein 15–20 %, mutta vain jos pitäisit palvelun joka tapauksessa koko vuoden. Lisää molemmat vaihtoehdot listaan ja vertaa niiden vuosihintaa.'
         },
         {
           q: 'Tallentuuko listani?',
           a: 'Lista säilyy vain sivun osoitteessa. Tallenna linkki kirjanmerkiksi tai jaa se; mitään ei tallenneta palvelimelle eikä evästeisiin.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, mihin tilauksiin kuluva raha kasvaisi, jos sijoittaisit sen joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. 50 € kuukaudessa kasvaa 10 vuodessa noin 7 330 euroon – siitä 6 000 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
         }
       ]
     },

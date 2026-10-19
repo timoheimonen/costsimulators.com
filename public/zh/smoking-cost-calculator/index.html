@@ -134,7 +134,7 @@ SOFTWARE.
                 "@id": "https://costsimulators.com/#website",
                 "url": "https://costsimulators.com/",
                 "name": "costsimulators.com",
-                "description": "免费、保护隐私的在线计算器，帮你算清开会、喝咖啡、吸烟、订阅、用电和开车的真实花费，还能把价格换算成工作时间。无需注册，打开浏览器即可使用。",
+                "description": "免费、保护隐私的在线计算器，帮你算清开会、生活习惯、订阅、用电和油费的真实花费，还能把价格换算成工作时间、算出每次使用的成本。无需注册，打开浏览器即可使用。",
                 "inLanguage": [
                     "en",
                     "es",
@@ -224,6 +224,14 @@ SOFTWARE.
                             "@type": "Answer",
                             "text": "可以。把一袋烟丝的价格填作每包价格，把能卷出的支数填作每包支数，再填上每天抽几支即可。"
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "如果把这笔钱拿去投资会怎样？",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "“如果把这笔钱拿去投资”一栏显示的是：如果不抽烟，而是每月把这笔钱拿去投资，按年化 4% 的收益率、按月复利计算，这笔钱会增长到多少。每天半包、每包 20 元，每月约 304 元，10 年后约增长到 44,600 元——其中 36,500 元是你自己投入的本金，其余是投资收益。计算未扣除税费和手续费，也未考虑通货膨胀。这只是一个示例，不构成投资建议。"
+                        }
                     }
                 ]
             }
@@ -238,7 +246,7 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"note":{"empty":"输入每包价格、每天抽几支和每包支数，即可查看累计花费。","result":"相当于每年约 {cigarettes} 支烟（{packs} 包），每支 {price}。"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"invest":{"note":"每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。"},"note":{"empty":"输入每包价格、每天抽几支和每包支数，即可查看累计花费。","result":"相当于每年约 {cigarettes} 支烟（{packs} 包），每支 {price}。"}}}</script>
     <script src="/js/core.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/smoking.js" defer></script>
@@ -392,6 +400,17 @@ SOFTWARE.
                         <dd id="year5">¥0.00</dd>
                     </div>
                 </dl>
+
+                <div class="invest" id="invest">
+                    <div class="invest-head">
+                        <span class="invest-label">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17l6-6 4 4 7-7.5"/><path d="M15 7.5h5.5V13"/></svg>
+                            如果把这笔钱拿去投资
+                        </span>
+                        <span class="invest-value" data-invest-value>¥0.00</span>
+                    </div>
+                    <p class="invest-note" data-invest-note></p>
+                </div>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
@@ -418,6 +437,10 @@ SOFTWARE.
                 <summary>自己卷烟也能算吗？</summary>
                 <p>可以。把一袋烟丝的价格填作每包价格，把能卷出的支数填作每包支数，再填上每天抽几支即可。</p>
             </details>
+            <details class="faq-item">
+                <summary>如果把这笔钱拿去投资会怎样？</summary>
+                <p>“如果把这笔钱拿去投资”一栏显示的是：如果不抽烟，而是每月把这笔钱拿去投资，按年化 4% 的收益率、按月复利计算，这笔钱会增长到多少。每天半包、每包 20 元，每月约 304 元，10 年后约增长到 44,600 元——其中 36,500 元是你自己投入的本金，其余是投资收益。计算未扣除税费和手续费，也未考虑通货膨胀。这只是一个示例，不构成投资建议。</p>
+            </details>
             </div>
         </section>
 
@@ -441,11 +464,35 @@ SOFTWARE.
                     </a>
                 </li>
                 <li>
+                    <a class="related-tool tool--costperuse" href="/zh/cost-per-use-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6l8.1 8.1a1.6 1.6 0 0 1 0 2.3l-7.3 7.3a1.6 1.6 0 0 1-2.3 0z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                        </span>
+                        <span>单次使用成本</span>
+                    </a>
+                </li>
+                <li>
                     <a class="related-tool tool--coffee" href="/zh/coffee-cost-calculator/">
                         <span class="tool-icon" aria-hidden="true">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M4 9h12.5v5a6 6 0 0 1-6 6h-.5a6 6 0 0 1-6-6V9z"/><path d="M16.5 10.5h1.5a2.75 2.75 0 0 1 0 5.5h-1.8"/><path d="M8 2.5v3M11.5 2.5v3"/></svg>
                         </span>
                         <span>咖啡花费</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--alcohol" href="/zh/alcohol-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M7 2.5h10l.5 5a5.5 5.5 0 0 1-11 0l.5-5z"/><path d="M6.6 7.5h10.8"/><path d="M12 13v8.5M8 21.5h8"/></svg>
+                        </span>
+                        <span>饮酒花费</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="related-tool tool--gambling" href="/zh/lottery-betting-cost-calculator/">
+                        <span class="tool-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"/></svg>
+                        </span>
+                        <span>彩票与博彩花费</span>
                     </a>
                 </li>
                 <li>
