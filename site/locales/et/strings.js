@@ -408,7 +408,7 @@ module.exports = {
       faq: [
         {
           q: 'Kui palju maksab igapäevane kohv aastas?',
-          a: 'Üks tass päevas seitsmel päeval nädalas teeb 364 tassi aastas. Hinnaga 3,50 € tass on see 1274 € aastas ja 12 740 € kümne aastaga.'
+          a: 'Üks tass päevas seitsmel päeval nädalas teeb 364 tassi aastas. Kui tass maksab 3,50 €, on see 1274 € aastas ja 12 740 € kümne aastaga.'
         },
         {
           q: 'Kas kodus keedetud kohv on odavam?',
@@ -483,7 +483,7 @@ module.exports = {
         },
         {
           q: 'Kui palju säästan, kui suitsetamisest loobun?',
-          a: 'Kõik, mida see kalkulaator näitab. Sisesta, kui palju praegu suitsetad: kuu- ja aastasummad ongi see, mille loobumine sulle säästab.'
+          a: 'Kõik, mida see kalkulaator näitab. Sisesta, kui palju praegu suitsetad: kuu- ja aastasummad ongi see, mida loobumine sulle säästab.'
         },
         {
           q: 'Kas see sobib ka keeramistubaka jaoks?',
