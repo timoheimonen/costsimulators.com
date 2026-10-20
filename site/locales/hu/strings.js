@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Havonta',
       year1: '1 év',
       year5: '5 év',
+      receiptTitle: 'Cigarettablokk',
+      receiptCount: 'Dobozok',
       runtime: {
+        receiptItem: 'Doboz cigaretta',
         note: {
           empty: 'Add meg a doboz árát, azt, hogy naponta hány szálat szívsz el, és hány szál van egy dobozban, és megmutatjuk az összegeket.',
           result: 'Ez évente kb. {cigarettes} szál ({packs} doboz), szálanként {price}.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Havonta',
       year1: '1 év',
       year5: '5 év',
+      receiptTitle: 'Bárszámla',
+      receiptCount: 'Italok',
       runtime: {
+        receiptItem: 'Ital',
         note: {
           empty: 'Add meg az árat és azt, hogy hetente hány italt iszol, és megmutatjuk az összegeket.',
           result: 'Ez évente kb. {drinks} ital, italonként {price}.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Havonta',
       perYear: 'Évente',
       lossPerYear: 'Átlagos veszteség évente',
+      receiptTitle: 'Lottó- és fogadási blokk',
+      receiptCount: 'Játékok',
+      receiptBack: 'Átlagosan visszajár nyereményként',
+      receiptLoss: 'Átlagosan elveszett',
       runtime: {
+        receiptItem: 'Játék',
         note: {
           empty: 'Add meg a tétet, azt, hogy hetente hányszor játszol, és a kifizetési arányt (0–100).',
           result: 'Átlagosan évente kb. {back} jön vissza nyereményként, így a veszteséged évente kb. {loss}, 10 év alatt pedig {loss10}.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: '10 év alatt',
       breakdownLabel: 'Éves költség előfizetésenként',
       copySummary: 'Összesítés másolása',
+      receiptTitle: 'Előfizetési blokk',
+      receiptCount: 'Terhelések',
       runtime: {
+        receiptItem: 'Terhelés',
         untitled: 'Névtelen',
         remove: '{name} törlése',
         removeUnnamed: 'Előfizetés törlése',

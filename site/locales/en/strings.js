@@ -499,7 +499,10 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Cigarette receipt',
+      receiptCount: 'Packs',
       runtime: {
+        receiptItem: 'Pack of cigarettes',
         note: {
           empty: 'Enter the pack price, how many you smoke a day and the pack size to see the totals.',
           result: 'That’s about {cigarettes} cigarettes ({packs} packs) a year at {price} each.'
@@ -564,7 +567,10 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Bar tab',
+      receiptCount: 'Drinks',
       runtime: {
+        receiptItem: 'Drink',
         note: {
           empty: 'Enter a price and how many drinks you have per week to see the totals.',
           result: 'That’s about {drinks} drinks a year at {price} each.'
@@ -634,7 +640,12 @@ module.exports = {
       perMonth: 'Per month',
       perYear: 'Per year',
       lossPerYear: 'Average loss a year',
+      receiptTitle: 'Lottery & betting receipt',
+      receiptCount: 'Games',
+      receiptBack: 'Back as winnings on average',
+      receiptLoss: 'Lost on average',
       runtime: {
+        receiptItem: 'Game',
         note: {
           empty: 'Enter the stake, how many times a week you play and the payout rate (0–100).',
           result: 'On average about {back} a year comes back as winnings, so you lose about {loss} a year and {loss10} in 10 years.'
@@ -701,7 +712,10 @@ module.exports = {
       in10Years: 'In 10 years',
       breakdownLabel: 'Yearly cost per subscription',
       copySummary: 'Copy summary',
+      receiptTitle: 'Subscription receipt',
+      receiptCount: 'Charges',
       runtime: {
+        receiptItem: 'Charge',
         untitled: 'Untitled',
         remove: 'Remove {name}',
         removeUnnamed: 'Remove subscription',

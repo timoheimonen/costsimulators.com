@@ -483,7 +483,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '香烟小票',
+      receiptCount: '包数',
       runtime: {
+        receiptItem: '一包烟',
         note: {
           empty: '输入每包价格、每天抽几支和每包支数，即可查看累计花费。',
           result: '相当于每年约 {cigarettes} 支烟（{packs} 包），每支 {price}。'
@@ -548,7 +551,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '酒水账单',
+      receiptCount: '杯数',
       runtime: {
+        receiptItem: '一杯酒',
         note: {
           empty: '输入价格和每周喝几杯，即可查看累计花费。',
           result: '相当于每年约 {drinks} 杯，每杯 {price}。'
@@ -618,7 +624,12 @@ module.exports = {
       perMonth: '每月',
       perYear: '每年',
       lossPerYear: '平均每年输掉',
+      receiptTitle: '彩票与博彩小票',
+      receiptCount: '投注次数',
+      receiptBack: '平均返还奖金',
+      receiptLoss: '平均输掉',
       runtime: {
+        receiptItem: '一次投注',
         note: {
           empty: '输入每次投注额、每周投注次数和返奖率（0～100），即可查看结果。',
           result: '平均每年约有 {back} 以奖金形式返还，也就是说，你每年约输掉 {loss}，10 年约输掉 {loss10}。'
@@ -685,7 +696,10 @@ module.exports = {
       in10Years: '10 年',
       breakdownLabel: '各项订阅的年费',
       copySummary: '复制汇总',
+      receiptTitle: '订阅小票',
+      receiptCount: '扣费次数',
       runtime: {
+        receiptItem: '扣费',
         untitled: '未命名',
         remove: '删除“{name}”',
         removeUnnamed: '删除订阅',

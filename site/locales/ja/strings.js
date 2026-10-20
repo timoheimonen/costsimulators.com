@@ -482,7 +482,10 @@ module.exports = {
       perMonth: '1か月あたり',
       year1: '1年',
       year5: '5年',
+      receiptTitle: 'たばこのレシート',
+      receiptCount: '箱数',
       runtime: {
+        receiptItem: 'たばこ1箱',
         note: {
           empty: '1箱の値段、1日に吸う本数、1箱の本数を入力すると、合計が表示されます。',
           result: '年間約{cigarettes}本（{packs}箱）、1本あたり{price}で計算しています。'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: '1か月あたり',
       year1: '1年',
       year5: '5年',
+      receiptTitle: 'お酒のお会計',
+      receiptCount: '杯数',
       runtime: {
+        receiptItem: 'お酒1杯',
         note: {
           empty: '値段と週に飲む杯数を入力すると、合計が表示されます。',
           result: '年間約{drinks}杯、1杯あたり{price}で計算しています。'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: '1か月あたり',
       perYear: '1年あたり',
       lossPerYear: '年間の平均損失',
+      receiptTitle: '宝くじ・ギャンブルのレシート',
+      receiptCount: '回数',
+      receiptBack: '平均の払い戻し',
+      receiptLoss: '平均の損失',
       runtime: {
+        receiptItem: '1回分',
         note: {
           empty: '1回の賭け金、週に遊ぶ回数、還元率（0〜100）を入力すると、結果が表示されます。',
           result: '平均すると年間約{back}が払い戻されるので、損失は年間約{loss}、10年間で約{loss10}になります。'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: '10年間で',
       breakdownLabel: 'サブスクごとの年額',
       copySummary: 'まとめをコピー',
+      receiptTitle: 'サブスクのレシート',
+      receiptCount: '請求回数',
       runtime: {
+        receiptItem: '請求',
         untitled: '名称未設定',
         remove: '{name}を削除',
         removeUnnamed: 'サブスクを削除',

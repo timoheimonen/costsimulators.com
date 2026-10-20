@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Miesięcznie',
       year1: '1 rok',
       year5: '5 lat',
+      receiptTitle: 'Paragon za papierosy',
+      receiptCount: 'Paczki',
       runtime: {
+        receiptItem: 'Paczka papierosów',
         note: {
           empty: 'Wpisz cenę paczki, liczbę papierosów dziennie i rozmiar paczki, aby zobaczyć sumy.',
           result: 'Rocznie to około {cigarettes} szt. ({packs} op.), po {price} za sztukę.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Miesięcznie',
       year1: '1 rok',
       year5: '5 lat',
+      receiptTitle: 'Rachunek z baru',
+      receiptCount: 'Napoje',
       runtime: {
+        receiptItem: 'Napój',
         note: {
           empty: 'Wpisz cenę i liczbę napojów w tygodniu, aby zobaczyć sumy.',
           result: 'Rocznie to około {drinks} szt., po {price} za sztukę.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Miesięcznie',
       perYear: 'Rocznie',
       lossPerYear: 'Średnia strata rocznie',
+      receiptTitle: 'Paragon z loterii i zakładów',
+      receiptCount: 'Gry',
+      receiptBack: 'Średnio zwrócone w wygranych',
+      receiptLoss: 'Średnio przegrane',
       runtime: {
+        receiptItem: 'Gra',
         note: {
           empty: 'Wpisz stawkę, liczbę gier w tygodniu i wskaźnik wypłat (0–100).',
           result: 'W wygranych wraca średnio około {back} rocznie, więc tracisz około {loss} na rok, a w ciągu 10 lat {loss10}.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'Przez 10 lat',
       breakdownLabel: 'Koszt roczny poszczególnych subskrypcji',
       copySummary: 'Kopiuj podsumowanie',
+      receiptTitle: 'Paragon za subskrypcje',
+      receiptCount: 'Obciążenia',
       runtime: {
+        receiptItem: 'Obciążenie',
         untitled: 'Bez nazwy',
         remove: 'Usuń: {name}',
         removeUnnamed: 'Usuń subskrypcję',

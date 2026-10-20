@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Pr. måned',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Cigaretkvittering',
+      receiptCount: 'Pakker',
       runtime: {
+        receiptItem: 'Pakke cigaretter',
         note: {
           empty: 'Indtast pakkeprisen, hvor mange du ryger om dagen, og pakkestørrelsen for at se beløbene.',
           result: 'Det er ca. {cigarettes} cigaretter ({packs} pakker) om året til {price} stykket.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Pr. måned',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Barregningen',
+      receiptCount: 'Genstande',
       runtime: {
+        receiptItem: 'Genstand',
         note: {
           empty: 'Indtast en pris, og hvor mange genstande du drikker om ugen, for at se beløbene.',
           result: 'Det er ca. {drinks} genstande om året til {price} stykket.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Pr. måned',
       perYear: 'Pr. år',
       lossPerYear: 'Gennemsnitligt tab pr. år',
+      receiptTitle: 'Kvittering for lotto og betting',
+      receiptCount: 'Spil',
+      receiptBack: 'Tilbage som gevinster i snit',
+      receiptLoss: 'Tabt i snit',
       runtime: {
+        receiptItem: 'Spil',
         note: {
           empty: 'Indtast indsatsen, hvor mange gange om ugen du spiller, og tilbagebetalingsprocenten (0–100).',
           result: 'I gennemsnit kommer ca. {back} om året tilbage som gevinster, så du taber ca. {loss} om året og {loss10} på 10 år.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'På 10 år',
       breakdownLabel: 'Årlig pris pr. abonnement',
       copySummary: 'Kopiér oversigt',
+      receiptTitle: 'Abonnementskvittering',
+      receiptCount: 'Træk',
       runtime: {
+        receiptItem: 'Træk',
         untitled: 'Uden navn',
         remove: 'Fjern {name}',
         removeUnnamed: 'Fjern abonnement',

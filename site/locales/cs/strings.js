@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Za měsíc',
       year1: '1 rok',
       year5: '5 let',
+      receiptTitle: 'Účtenka za cigarety',
+      receiptCount: 'Krabičky',
       runtime: {
+        receiptItem: 'Krabička cigaret',
         note: {
           empty: 'Zadejte cenu krabičky, kolik cigaret denně vykouříte a kolik jich je v krabičce, a uvidíte součty.',
           result: 'To je zhruba {cigarettes} cigaret ({packs} krabiček) ročně po {price} za kus.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Za měsíc',
       year1: '1 rok',
       year5: '5 let',
+      receiptTitle: 'Účet z baru',
+      receiptCount: 'Nápoje',
       runtime: {
+        receiptItem: 'Nápoj',
         note: {
           empty: 'Zadejte cenu a počet nápojů týdně a uvidíte součty.',
           result: 'To je zhruba {drinks} nápojů ročně po {price}.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Za měsíc',
       perYear: 'Za rok',
       lossPerYear: 'Průměrná ztráta za rok',
+      receiptTitle: 'Účtenka za loterie a sázky',
+      receiptCount: 'Hry',
+      receiptBack: 'Průměrně vráceno na výhrách',
+      receiptLoss: 'Průměrně prohráno',
       runtime: {
+        receiptItem: 'Hra',
         note: {
           empty: 'Zadejte vklad, počet her týdně a výherní podíl (0–100).',
           result: 'V průměru se vám na výhrách vrátí zhruba {back} ročně, takže prohrajete asi {loss} ročně a {loss10} za 10 let.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'Za 10 let',
       breakdownLabel: 'Roční cena jednotlivých předplatných',
       copySummary: 'Kopírovat souhrn',
+      receiptTitle: 'Účtenka za předplatné',
+      receiptCount: 'Platby',
       runtime: {
+        receiptItem: 'Platba',
         untitled: 'Bez názvu',
         remove: 'Odebrat {name}',
         removeUnnamed: 'Odebrat předplatné',

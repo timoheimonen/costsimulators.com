@@ -483,7 +483,10 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Struk rokok',
+      receiptCount: 'Bungkus',
       runtime: {
+        receiptItem: 'Sebungkus rokok',
         note: {
           empty: 'Masukkan harga per bungkus, jumlah batang per hari, dan isi bungkus untuk melihat totalnya.',
           result: 'Itu sekitar {cigarettes} batang ({packs} bungkus) setahun dengan harga {price} per batang.'
@@ -548,7 +551,10 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Tagihan bar',
+      receiptCount: 'Minuman',
       runtime: {
+        receiptItem: 'Minuman',
         note: {
           empty: 'Masukkan harga dan jumlah minuman per minggu untuk melihat totalnya.',
           result: 'Itu sekitar {drinks} minuman setahun dengan harga {price} per minuman.'
@@ -618,7 +624,12 @@ module.exports = {
       perMonth: 'Per bulan',
       perYear: 'Per tahun',
       lossPerYear: 'Rata-rata kerugian setahun',
+      receiptTitle: 'Struk lotre & taruhan',
+      receiptCount: 'Permainan',
+      receiptBack: 'Rata-rata kembali sebagai hadiah',
+      receiptLoss: 'Rata-rata hilang',
       runtime: {
+        receiptItem: 'Permainan',
         note: {
           empty: 'Masukkan nilai taruhan, berapa kali seminggu Anda bermain, dan tingkat pengembalian (0–100).',
           result: 'Rata-rata sekitar {back} setahun kembali sebagai hadiah, jadi Anda kehilangan sekitar {loss} setahun dan {loss10} dalam 10 tahun.'
@@ -685,7 +696,10 @@ module.exports = {
       in10Years: 'Dalam 10 tahun',
       breakdownLabel: 'Biaya tahunan per langganan',
       copySummary: 'Salin ringkasan',
+      receiptTitle: 'Struk langganan',
+      receiptCount: 'Tagihan',
       runtime: {
+        receiptItem: 'Tagihan',
         untitled: 'Tanpa nama',
         remove: 'Hapus {name}',
         removeUnnamed: 'Hapus langganan',

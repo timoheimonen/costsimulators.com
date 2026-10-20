@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Ανά μήνα',
       year1: '1 χρόνος',
       year5: '5 χρόνια',
+      receiptTitle: 'Απόδειξη τσιγάρων',
+      receiptCount: 'Πακέτα',
       runtime: {
+        receiptItem: 'Πακέτο τσιγάρα',
         note: {
           empty: 'Βάλτε την τιμή του πακέτου, πόσα τσιγάρα καπνίζετε την ημέρα και πόσα έχει το πακέτο για να δείτε τα σύνολα.',
           result: 'Δηλαδή περίπου {cigarettes} τσιγάρα ({packs} πακέτα) τον χρόνο, προς {price} το ένα.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Ανά μήνα',
       year1: '1 χρόνος',
       year5: '5 χρόνια',
+      receiptTitle: 'Ο λογαριασμός του μπαρ',
+      receiptCount: 'Ποτά',
       runtime: {
+        receiptItem: 'Ποτό',
         note: {
           empty: 'Βάλτε την τιμή και πόσα ποτά πίνετε την εβδομάδα για να δείτε τα σύνολα.',
           result: 'Δηλαδή περίπου {drinks} ποτά τον χρόνο, προς {price} το ένα.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Ανά μήνα',
       perYear: 'Ανά έτος',
       lossPerYear: 'Μέση απώλεια ανά έτος',
+      receiptTitle: 'Απόδειξη λοταρίας και στοιχήματος',
+      receiptCount: 'Παιχνίδια',
+      receiptBack: 'Επιστρέφονται ως κέρδη κατά μέσο όρο',
+      receiptLoss: 'Χάνονται κατά μέσο όρο',
       runtime: {
+        receiptItem: 'Παιχνίδι',
         note: {
           empty: 'Βάλτε το ποσό, πόσες φορές την εβδομάδα παίζετε και το ποσοστό επιστροφής (0–100).',
           result: 'Κατά μέσο όρο παίρνετε πίσω περίπου {back} τον χρόνο σε κέρδη, οπότε χάνετε περίπου {loss} τον χρόνο και {loss10} σε 10 χρόνια.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'Σε 10 χρόνια',
       breakdownLabel: 'Ετήσιο κόστος ανά συνδρομή',
       copySummary: 'Αντιγραφή σύνοψης',
+      receiptTitle: 'Απόδειξη συνδρομών',
+      receiptCount: 'Χρεώσεις',
       runtime: {
+        receiptItem: 'Χρέωση',
         untitled: 'Χωρίς όνομα',
         remove: 'Αφαίρεση: {name}',
         removeUnnamed: 'Αφαίρεση συνδρομής',

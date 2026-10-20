@@ -238,8 +238,9 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"invest":{"note":"每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。"},"receipt":{"subtotal":"第 {year} 年小计","year":"第 {year} 年","unit":"meter","saved":"图片已保存"},"note":{"empty":"输入价格和每周喝几杯，即可查看累计花费。","result":"相当于每年约 {drinks} 杯，每杯 {price}。"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"zh-CN","currency":"CNY","decimals":2,"strings":{"share":{"linkCopied":"链接已复制","copyFailed":"复制失败","copied":"已复制！","calculatedWith":"使用 costsimulators.com 计算"},"workTime":{"minutes":"{m} 分钟","hours":"{h} 小时","hoursMinutes":"{h} 小时 {m} 分"},"invest":{"note":"每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。"},"receipt":{"subtotal":"第 {year} 年小计","year":"第 {year} 年","unit":"meter","saved":"图片已保存"},"receiptItem":"一杯酒","note":{"empty":"输入价格和每周喝几杯，即可查看累计花费。","result":"相当于每年约 {drinks} 杯，每杯 {price}。"}}}</script>
     <script src="/js/core.js" defer></script>
+    <script src="/js/receipt.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/alcohol.js" defer></script>
 </head>
@@ -388,9 +389,76 @@ SOFTWARE.
                     </div>
                     <p class="invest-note" data-invest-note></p>
                 </div>
+                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">打印小票</span>
+                </button>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
+
+        <dialog class="receipt-dialog tool--alcohol" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">你的小票</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="关闭">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>跳到合计</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">酒水账单</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+                            <div class="receipt-row">
+                                <dt>每杯价格</dt>
+                                <dd data-receipt-value="price"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>每周杯数</dt>
+                                <dd data-receipt-value="perWeek"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+                            <div class="receipt-row receipt-row--total">
+                                <dt>合计</dt>
+                                <dd data-receipt-total></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--count">
+                                <dt>杯数</dt>
+                                <dd data-receipt-count></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--length">
+                                <dt>小票长度</dt>
+                                <dd data-receipt-length></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--invest">
+                                <dt>如果把这笔钱拿去投资</dt>
+                                <dd data-receipt-invest></dd>
+                            </div>
+                        </dl>
+                        <p class="receipt-thanks">感谢你 10 年来的光顾！</p>
+                        <p class="receipt-small">按每行 4 毫米计算，和真正的收银小票一样。</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">分享图片</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">饮酒花费如何计算</h2>

@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Units, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
+    const { Calculators, Receipt, Units, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const URL_KEY = 's';
     const URL_SEPARATOR = '*';
@@ -47,6 +47,7 @@ SOFTWARE.
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
         invest: document.getElementById('invest'),
+        receipt: document.getElementById('receiptBtn'),
         results: {
             year: document.getElementById('year'),
             month: document.getElementById('month'),
@@ -186,6 +187,7 @@ SOFTWARE.
 
         els.panel.dataset.empty = String(!valid);
         els.copy.hidden = !valid;
+        els.receipt.disabled = !valid;
 
         if (!valid) {
             Object.values(els.results).forEach(function (element) {
@@ -214,6 +216,36 @@ SOFTWARE.
                 cost: formatCurrency(biggest.yearly),
                 percent: formatInteger((biggest.yearly / total) * 100)
             });
+    }
+
+    // What the receipt prints: every charge of a year in date order, the
+    // same year after year. A weekly charge is a line every week.
+    function readReceipt() {
+        const active = priced(collect());
+        const yearly = active.reduce(function (sum, item) {
+            return sum + item.yearly;
+        }, 0);
+        if (!(yearly > 0)) return null;
+
+        const charges = [];
+        active.forEach(function (item, order) {
+            const count = Units.BILLING_PER_YEAR[item.cycle] || 12;
+            for (let i = 0; i < count; i++) {
+                charges.push({ at: i / count, order: order, label: item.name, amount: item.price });
+            }
+        });
+        charges.sort(function (a, b) {
+            return a.at - b.at || a.order - b.order;
+        });
+
+        return {
+            item: t('receiptItem'),
+            lines: charges,
+            values: {
+                perMonth: formatCurrency(yearly / 12),
+                perYear: formatCurrency(yearly)
+            }
+        };
     }
 
     function handleChange() {
@@ -283,6 +315,8 @@ SOFTWARE.
     els.copy.addEventListener('click', function () {
         UI.copyWithFeedback(els.copy, buildSummary(), t('share.copied'));
     });
+
+    Receipt.bind({ button: els.receipt, dialog: document.getElementById('receiptDialog'), read: readReceipt });
 
     const initial = load();
     els.list.append.apply(els.list, initial.map(createRow));

@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Aylık',
       year1: '1 yıl',
       year5: '5 yıl',
+      receiptTitle: 'Sigara fişi',
+      receiptCount: 'Paket',
       runtime: {
+        receiptItem: 'Bir paket sigara',
         note: {
           empty: 'Toplamları görmek için paket fiyatını, günde kaç sigara içtiğinizi ve paketteki sigara sayısını girin.',
           result: 'Bu, yılda tanesi {price} olan yaklaşık {cigarettes} dal sigara ({packs} paket) demek.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Aylık',
       year1: '1 yıl',
       year5: '5 yıl',
+      receiptTitle: 'Bar hesabı',
+      receiptCount: 'İçki',
       runtime: {
+        receiptItem: 'İçki',
         note: {
           empty: 'Toplamları görmek için bir fiyat ve haftada kaç içki içtiğinizi girin.',
           result: 'Bu, yılda tanesi {price} olan yaklaşık {drinks} içki demek.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Aylık',
       perYear: 'Yıllık',
       lossPerYear: 'Yıllık ortalama kayıp',
+      receiptTitle: 'Piyango ve bahis fişi',
+      receiptCount: 'Oyun',
+      receiptBack: 'Ortalama ikramiye olarak geri dönen',
+      receiptLoss: 'Ortalama kayıp',
       runtime: {
+        receiptItem: 'Oyun',
         note: {
           empty: 'Oyun başına tutarı, haftada kaç kez oynadığınızı ve geri ödeme oranını (0–100) girin.',
           result: 'Yılda ortalama yaklaşık {back} ikramiye olarak geri döner; yani yılda yaklaşık {loss}, 10 yılda ise {loss10} kaybedersiniz.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: '10 yılda',
       breakdownLabel: 'Abonelik başına yıllık maliyet',
       copySummary: 'Özeti kopyala',
+      receiptTitle: 'Abonelik fişi',
+      receiptCount: 'Ödeme',
       runtime: {
+        receiptItem: 'Ödeme',
         untitled: 'Adsız',
         remove: '{name} aboneliğini kaldır',
         removeUnnamed: 'Aboneliği kaldır',

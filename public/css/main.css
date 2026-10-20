@@ -1563,6 +1563,10 @@ kbd {
     font-size: 1.0625rem;
 }
 
+.receipt-close {
+    justify-self: end;
+}
+
 .receipt-progress {
     display: flex;
     flex-wrap: wrap;

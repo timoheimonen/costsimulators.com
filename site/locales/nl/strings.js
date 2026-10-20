@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Per maand',
       year1: '1 jaar',
       year5: '5 jaar',
+      receiptTitle: 'Sigarettenbonnetje',
+      receiptCount: 'Pakjes',
       runtime: {
+        receiptItem: 'Pakje sigaretten',
         note: {
           empty: 'Vul de prijs per pakje in, hoeveel sigaretten je per dag rookt en hoeveel er in een pakje zitten om de totalen te zien.',
           result: 'Dat zijn zo’n {cigarettes} sigaretten ({packs} pakjes) per jaar à {price} per stuk.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Per maand',
       year1: '1 jaar',
       year5: '5 jaar',
+      receiptTitle: 'De barrekening',
+      receiptCount: 'Drankjes',
       runtime: {
+        receiptItem: 'Drankje',
         note: {
           empty: 'Vul een prijs in en hoeveel drankjes je per week drinkt om de totalen te zien.',
           result: 'Dat zijn zo’n {drinks} drankjes per jaar à {price}.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Per maand',
       perYear: 'Per jaar',
       lossPerYear: 'Gemiddeld verlies per jaar',
+      receiptTitle: 'Bonnetje van loterij & gokken',
+      receiptCount: 'Keren',
+      receiptBack: 'Gemiddeld terug als winst',
+      receiptLoss: 'Gemiddeld verloren',
       runtime: {
+        receiptItem: 'Inzet',
         note: {
           empty: 'Vul je inzet in, hoe vaak je per week speelt en het uitbetalingspercentage (0–100).',
           result: 'Gemiddeld komt er zo’n {back} per jaar terug als winst, dus je verliest zo’n {loss} per jaar en {loss10} in 10 jaar.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'In 10 jaar',
       breakdownLabel: 'Jaarkosten per abonnement',
       copySummary: 'Overzicht kopiëren',
+      receiptTitle: 'Abonnementenbonnetje',
+      receiptCount: 'Afschrijvingen',
       runtime: {
+        receiptItem: 'Afschrijving',
         untitled: 'Naamloos',
         remove: '{name} verwijderen',
         removeUnnamed: 'Abonnement verwijderen',

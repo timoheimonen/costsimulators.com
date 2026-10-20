@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Al mese',
       year1: '1 anno',
       year5: '5 anni',
+      receiptTitle: 'Scontrino delle sigarette',
+      receiptCount: 'Pacchetti',
       runtime: {
+        receiptItem: 'Pacchetto di sigarette',
         note: {
           empty: 'Inserisci il prezzo del pacchetto, quante sigarette fumi al giorno e quante ce ne sono in un pacchetto per vedere i totali.',
           result: 'Sono circa {cigarettes} sigarette ({packs} pacchetti) all’anno, a {price} l’una.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Al mese',
       year1: '1 anno',
       year5: '5 anni',
+      receiptTitle: 'Il conto del bar',
+      receiptCount: 'Bicchieri',
       runtime: {
+        receiptItem: 'Bicchiere',
         note: {
           empty: 'Inserisci un prezzo e quanti bicchieri bevi a settimana per vedere i totali.',
           result: 'Sono circa {drinks} bicchieri all’anno a {price} l’uno.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Al mese',
       perYear: 'All’anno',
       lossPerYear: 'Perdita media all’anno',
+      receiptTitle: 'Scontrino di lotterie e scommesse',
+      receiptCount: 'Giocate',
+      receiptBack: 'Restituito in vincite in media',
+      receiptLoss: 'Perso in media',
       runtime: {
+        receiptItem: 'Giocata',
         note: {
           empty: 'Inserisci la puntata, quante volte giochi a settimana e il payout (0–100).',
           result: 'In media ti tornano circa {back} all’anno in vincite, quindi perdi circa {loss} all’anno e {loss10} in 10 anni.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'In 10 anni',
       breakdownLabel: 'Costo annuale per abbonamento',
       copySummary: 'Copia il riepilogo',
+      receiptTitle: 'Scontrino degli abbonamenti',
+      receiptCount: 'Addebiti',
       runtime: {
+        receiptItem: 'Addebito',
         untitled: 'Senza nome',
         remove: 'Rimuovi {name}',
         removeUnnamed: 'Rimuovi abbonamento',

@@ -482,7 +482,10 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Bon de țigări',
+      receiptCount: 'Pachete',
       runtime: {
+        receiptItem: 'Pachet de țigări',
         note: {
           empty: 'Introdu prețul pachetului, câte țigări fumezi pe zi și câte țigări are pachetul ca să vezi totalurile.',
           result: 'Numărul de țigări pe an: circa {cigarettes} (pachete: {packs}), la {price} țigara.'
@@ -547,7 +550,10 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Nota de plată de la bar',
+      receiptCount: 'Băuturi',
       runtime: {
+        receiptItem: 'Băutură',
         note: {
           empty: 'Introdu un preț și câte băuturi bei pe săptămână ca să vezi totalurile.',
           result: 'Numărul de băuturi pe an: circa {drinks}, la {price} bucata.'
@@ -617,7 +623,12 @@ module.exports = {
       perMonth: 'Pe lună',
       perYear: 'Pe an',
       lossPerYear: 'Pierdere medie pe an',
+      receiptTitle: 'Bon de loto și pariuri',
+      receiptCount: 'Jocuri',
+      receiptBack: 'Returnat în câștiguri, în medie',
+      receiptLoss: 'Pierdut, în medie',
       runtime: {
+        receiptItem: 'Joc',
         note: {
           empty: 'Introdu miza, de câte ori joci pe săptămână și rata de returnare (0–100).',
           result: 'În medie, primești înapoi circa {back} pe an sub formă de câștiguri, deci pierzi circa {loss} pe an și {loss10} în 10 ani.'
@@ -684,7 +695,10 @@ module.exports = {
       in10Years: 'În 10 ani',
       breakdownLabel: 'Costul anual pe abonament',
       copySummary: 'Copiază rezumatul',
+      receiptTitle: 'Bon de abonamente',
+      receiptCount: 'Plăți',
       runtime: {
+        receiptItem: 'Plată',
         untitled: 'Fără nume',
         remove: 'Elimină {name}',
         removeUnnamed: 'Elimină abonamentul',

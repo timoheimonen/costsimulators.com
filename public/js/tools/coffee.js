@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, Receipt, UI, formatCurrency, formatInteger, formatNumber, t } = window.CostSimulators;
+    const { Calculators, Receipt, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -86,14 +86,13 @@ SOFTWARE.
     // What the receipt prints: one line per cup for 10 years.
     function readReceipt() {
         if (!current) return null;
-        const digits = Math.min(2, (String(current.perWeek).split('.')[1] || '').length);
         return {
             item: t('receiptItem'),
             price: current.price,
             perYear: Calculators.perYear(current.perWeek),
             values: {
                 price: formatCurrency(current.price),
-                perWeek: formatNumber(current.perWeek, digits)
+                perWeek: Receipt.formatSetting(current.perWeek)
             }
         };
     }

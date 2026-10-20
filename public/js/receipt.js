@@ -51,6 +51,14 @@ SOFTWARE.
     const INK = '#26241f';
     const INK_FAINT = '#7a756a';
     const PAPER = '#fffef9';
+    // How the rows under the totals line are drawn in the image, by their
+    // receipt-row--<name> class. The last one is for the other rows.
+    const FOOT_STYLES = [
+        { name: 'total', size: 32, valueSize: 42, weight: 700, height: 66 },
+        { name: 'length', size: 30, weight: 700, height: 56, highlight: true },
+        { name: 'invest', size: 24, height: 42, color: INK_FAINT },
+        { name: '', size: 26, height: 42 }
+    ];
 
     const app = global.CostSimulators;
     const reducedMotion = global.matchMedia('(prefers-reduced-motion: reduce)');
@@ -61,31 +69,91 @@ SOFTWARE.
         return app.t(key, vars);
     }
 
-    // Splits the purchases into years. Year y ends after round(perYear × y)
-    // purchases, so a habit of 4.5 cups a week still adds up.
+    // One habit bought again and again: `price` paid `perYear` times a year.
+    // Year y ends after round(perYear × y) purchases, so a habit of 4.5 cups
+    // a week still adds up. The subtotals and the total are the exact amounts
+    // the calculator shows: 15 cigarettes a day is 273.75 packs a year, which
+    // prints as 274 lines in some years and 273 in others.
+    function habitLines(state) {
+        const priceText = app.formatCurrency(state.price);
+        return {
+            yearly: state.perYear * state.price,
+            itemsBy: function (year) {
+                return Math.round(state.perYear * year);
+            },
+            amountBy: function (year) {
+                return state.perYear * year * state.price;
+            },
+            maxRows: MAX_ROWS_PER_YEAR,
+            line: function (section, k) {
+                const rest = section.items - section.rows + 1;
+                if (k === section.rows - 1 && rest > 1) {
+                    return { label: state.item + ' × ' + app.formatInteger(rest), text: app.formatCurrency(rest * state.price) };
+                }
+                return { label: state.item, text: priceText };
+            },
+            amountOf: function (section, count) {
+                return count >= section.items ? section.amount : Math.min(count * state.price, section.amount);
+            }
+        };
+    }
+
+    // Lines with their own names and prices (subscriptions): one year of
+    // them, printed again every year.
+    function listLines(state) {
+        const lines = state.lines.map(function (line) {
+            return { label: line.label, amount: line.amount, text: app.formatCurrency(line.amount) };
+        });
+        const sums = [0];
+        lines.forEach(function (line, i) {
+            sums.push(sums[i] + line.amount);
+        });
+
+        return {
+            yearly: sums[lines.length],
+            itemsBy: function (year) {
+                return lines.length * year;
+            },
+            amountBy: function (year) {
+                return sums[lines.length] * year;
+            },
+            maxRows: Infinity,
+            line: function (section, k) {
+                return lines[k];
+            },
+            amountOf: function (section, count) {
+                return sums[count];
+            }
+        };
+    }
+
     function buildModel(state) {
         const years = app.Units.INVEST_YEARS;
+        const source = state.lines ? listLines(state) : habitLines(state);
         const sections = [];
         let start = 0;
         let before = 0;
+        let amountBefore = 0;
 
         for (let year = 1; year <= years; year++) {
-            const end = Math.round(state.perYear * year);
-            const items = end - before;
-            const rows = Math.min(items, MAX_ROWS_PER_YEAR);
-            sections.push({ year: year, start: start, rows: rows, items: items, before: before });
-            start += rows + 1;
+            const end = source.itemsBy(year);
+            const section = { year: year, start: start, items: end - before, before: before, amountBefore: amountBefore };
+            section.rows = Math.min(section.items, source.maxRows);
+            section.amount = source.amountBy(year) - amountBefore;
+            sections.push(section);
+            start += section.rows + 1;
             before = end;
+            amountBefore += section.amount;
         }
 
         return {
             item: state.item,
-            price: state.price,
-            priceText: app.formatCurrency(state.price),
             values: state.values || {},
-            perYear: state.perYear,
+            source: source,
+            yearly: source.yearly,
             years: years,
             items: before,
+            total: amountBefore,
             sections: sections,
             rowCount: start
         };
@@ -106,31 +174,24 @@ SOFTWARE.
             return {
                 subtotal: true,
                 label: t('receipt.subtotal', { year: section.year }),
-                amount: app.formatCurrency(section.items * model.price)
+                text: app.formatCurrency(section.amount)
             };
         }
-
-        const rest = section.items - section.rows + 1;
-        if (k === section.rows - 1 && rest > 1) {
-            return {
-                label: model.item + ' × ' + app.formatInteger(rest),
-                amount: app.formatCurrency(rest * model.price)
-            };
-        }
-
-        return { label: model.item, amount: model.priceText };
+        return model.source.line(section, k);
     }
 
-    // Purchases and subtotal lines printed up to and including row `index`.
+    // What has been printed up to and including row `index`.
     function printedUpTo(model, index) {
-        if (index < 0) return { year: 1, items: 0, subtotals: 0 };
+        if (index < 0) return { year: 1, items: 0, subtotals: 0, amount: 0 };
 
         const section = findSection(model, index);
         const k = Math.min(index - section.start, section.rows);
+        const items = k >= section.rows - 1 ? section.items : k + 1;
         return {
             year: section.year,
-            items: section.before + (k >= section.rows - 1 ? section.items : k + 1),
-            subtotals: section.year - 1 + (k === section.rows ? 1 : 0)
+            items: section.before + items,
+            subtotals: section.year - 1 + (k === section.rows ? 1 : 0),
+            amount: section.amountBefore + model.source.amountOf(section, items)
         };
     }
 
@@ -176,7 +237,7 @@ SOFTWARE.
     }
 
     function invested(model) {
-        const monthly = (model.perYear * model.price) / 12;
+        const monthly = model.yearly / 12;
         return app.Calculators.investedMonthly(monthly, app.Units.INVEST_RATE, model.years);
     }
 
@@ -187,7 +248,7 @@ SOFTWARE.
         const label = document.createElement('span');
         label.textContent = row.label;
         const amount = document.createElement('span');
-        amount.textContent = row.amount;
+        amount.textContent = row.text;
 
         line.append(label, amount);
         return line;
@@ -220,13 +281,13 @@ SOFTWARE.
 
         const done = viewBottom >= model.rowCount * LINE_PX;
         const printed = done
-            ? { year: model.years, items: model.items, subtotals: model.years }
+            ? { year: model.years, items: model.items, subtotals: model.years, amount: model.total }
             : printedUpTo(model, Math.floor(viewBottom / LINE_PX) - 1);
         const mm = done ? totalLengthMm(model) : (HEAD_LINES + printed.items + printed.subtotals) * LINE_MM;
 
         setText(view.progress.year, t('receipt.year', { year: printed.year }));
         setText(view.progress.length, formatLength(mm));
-        setText(view.progress.amount, app.formatCurrency(printed.items * model.price));
+        setText(view.progress.amount, app.formatCurrency(printed.amount));
     }
 
     function scheduleRender(view) {
@@ -241,11 +302,14 @@ SOFTWARE.
         const model = view.model;
         const dialog = view.dialog;
 
+        const values = typeof model.values === 'function'
+            ? model.values({ total: model.total, items: model.items })
+            : model.values;
         dialog.querySelectorAll('[data-receipt-value]').forEach(function (element) {
-            element.textContent = model.values[element.dataset.receiptValue] || '';
+            element.textContent = values[element.dataset.receiptValue] || '';
         });
         dialog.querySelector('[data-receipt-dates]').textContent = formatDates(model.years);
-        dialog.querySelector('[data-receipt-total]').textContent = app.formatCurrency(model.items * model.price);
+        dialog.querySelector('[data-receipt-total]').textContent = app.formatCurrency(model.total);
         dialog.querySelector('[data-receipt-count]').textContent = app.formatInteger(model.items);
         dialog.querySelector('[data-receipt-length]').textContent = formatLength(totalLengthMm(model));
         dialog.querySelector('[data-receipt-invest]').textContent = app.formatCurrency(invested(model));
@@ -314,7 +378,13 @@ SOFTWARE.
             ops.push({
                 height: height,
                 draw: function (x, y) {
-                    setFont(size, weight);
+                    // A long title gets smaller before it gets cut.
+                    let fontSize = size;
+                    setFont(fontSize, weight);
+                    while (fontSize > size * 0.6 && ctx.measureText(value).width > inner) {
+                        fontSize -= 2;
+                        setFont(fontSize, weight);
+                    }
                     ctx.fillStyle = color;
                     ctx.textAlign = 'center';
                     ctx.fillText(fit(value, inner), x + inner / 2, y + height / 2);
@@ -377,18 +447,25 @@ SOFTWARE.
         });
         rule(false);
 
-        const shown = Math.min(3, model.items);
-        for (let i = 0; i < shown; i++) row(model.item, model.priceText, { size: 28 });
+        const first = model.sections[0];
+        const shown = Math.min(3, first.rows);
+        for (let k = 0; k < shown; k++) {
+            const line = model.source.line(first, k);
+            row(line.label, line.text, { size: 28 });
+        }
         const rest = model.items - shown;
         if (rest > 0) {
-            row(model.item + ' × ' + app.formatInteger(rest), app.formatCurrency(rest * model.price), { size: 28 });
+            const restAmount = model.total - model.source.amountOf(first, shown);
+            row(model.item + ' × ' + app.formatInteger(rest), app.formatCurrency(restAmount), { size: 28 });
         }
         rule(true);
 
-        row(text('.receipt-row--total dt'), text('[data-receipt-total]'), { size: 32, valueSize: 42, weight: 700, height: 66 });
-        row(text('.receipt-row--count dt'), text('[data-receipt-count]'), { size: 26, height: 42 });
-        row(text('.receipt-row--length dt'), text('[data-receipt-length]'), { size: 30, weight: 700, height: 56, highlight: true });
-        row(text('.receipt-row--invest dt'), text('[data-receipt-invest]'), { size: 24, height: 42, color: INK_FAINT });
+        dialog.querySelectorAll('.receipt-foot .receipt-row').forEach(function (element) {
+            const style = FOOT_STYLES.find(function (entry) {
+                return element.classList.contains('receipt-row--' + entry.name);
+            }) || FOOT_STYLES[FOOT_STYLES.length - 1];
+            row(element.querySelector('dt').textContent.trim(), element.querySelector('dd').textContent.trim(), style);
+        });
         rule(false);
         center(text('.receipt-thanks'), 26, 700, INK, 46);
 
@@ -475,8 +552,11 @@ SOFTWARE.
     }
 
     // options.read returns what to print, or null when the calculator has no
-    // result: { item, price, perYear, values }. `values` fills the
-    // [data-receipt-value] fields of the receipt head.
+    // result. A habit is { item, price, perYear }: the same purchase again and
+    // again. A list is { item, lines }: one year of { label, amount } lines.
+    // `item` names the purchases ("Coffee × 2,077"). `values` fills the
+    // [data-receipt-value] fields; it can be a function of the receipt's
+    // { total, items }.
     function bind(options) {
         const dialog = options.dialog;
         if (!options.button || !dialog) return;
@@ -543,5 +623,11 @@ SOFTWARE.
         });
     }
 
-    app.Receipt = { bind: bind };
+    // A setting as the person typed it: 4, 4.5 or 4.25 cups a week.
+    function formatSetting(value) {
+        const digits = Math.min(2, (String(value).split('.')[1] || '').length);
+        return app.formatNumber(value, digits);
+    }
+
+    app.Receipt = { bind: bind, formatSetting: formatSetting };
 })(window);

@@ -14,7 +14,7 @@ A simple web application to help you see how much money you are spending.
 - **Subscriptions calculator** - List recurring payments and see the monthly, yearly and 10-year total
 - **Electricity cost calculator** - See what running a device costs from its wattage, usage and electricity price
 - **Trip cost calculator** - Fuel cost per trip, per person and per year, in metric or US units
-- Habit receipt - the coffee calculator prints 10 years of cups as a till receipt that is as long as the real one would be, and makes a shareable image of it
+- Habit receipts - the coffee, smoking, alcohol, lottery and subscription calculators print 10 years of purchases as a till receipt that is as long as the real one would be, and make a shareable image of it
 - Invested instead - the coffee, smoking, alcohol, lottery and subscription calculators show what the same money would grow to if it were invested every month at a 4% yearly return for 10 years
 - Light and dark theme - follows your operating system by default, your choice is remembered
 - Shareable links - tool settings are kept in the URL
