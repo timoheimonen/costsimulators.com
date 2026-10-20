@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
+    const { Calculators, Receipt, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -36,6 +36,7 @@ SOFTWARE.
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
         invest: document.getElementById('invest'),
+        receipt: document.getElementById('receiptBtn'),
         results: {
             year10: document.getElementById('year10'),
             month: document.getElementById('month'),
@@ -44,6 +45,8 @@ SOFTWARE.
         }
     };
 
+    let current = null;
+
     function update() {
         const packPrice = UI.readNumber(els.packPrice);
         const perDay = UI.readNumber(els.perDay);
@@ -51,6 +54,8 @@ SOFTWARE.
         const valid = packPrice >= 0.01 && perDay > 0 && perPack >= 1;
 
         els.panel.dataset.empty = String(!valid);
+        els.receipt.disabled = !valid;
+        current = valid ? { packPrice: packPrice, perDay: perDay, perPack: perPack } : null;
 
         if (!valid) {
             Object.values(els.results).forEach(function (element) {
@@ -83,8 +88,24 @@ SOFTWARE.
         });
     }
 
+    // What the receipt prints: one line per pack for 10 years.
+    function readReceipt() {
+        if (!current) return null;
+        return {
+            item: t('receiptItem'),
+            price: current.packPrice,
+            perYear: Calculators.perYearDaily(current.perDay) / current.perPack,
+            values: {
+                packPrice: formatCurrency(current.packPrice),
+                perDay: Receipt.formatSetting(current.perDay),
+                perPack: Receipt.formatSetting(current.perPack)
+            }
+        };
+    }
+
     UI.bindSteppers(document);
     const urlState = UI.bindURLState({ packPrice: 'price', perDay: 'pd', perPack: 'pp' }, update);
     UI.bindShare(document.getElementById('shareBtn'), urlState.flush);
     UI.bindPresets(document);
+    Receipt.bind({ button: els.receipt, dialog: document.getElementById('receiptDialog'), read: readReceipt });
 })();

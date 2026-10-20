@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – ilmaiset laskurit arjen rahakysymyksiin',
     invest: {
       label: 'Jos sijoittaisit summan'
+    },
+    receipt: {
+      open: 'Tulosta kuitti',
+      title: 'Kuittisi',
+      close: 'Sulje',
+      skip: 'Siirry loppusummaan',
+      total: 'Yhteensä',
+      length: 'Kuitin pituus',
+      thanks: 'Kiitos 10 vuoden kanta-asiakkuudesta!',
+      image: 'Jaa kuvana'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} kuukaudessa 10 vuoden ajan {rate}:n vuosituotolla: omaa rahaa {paid} ja tuottoa {gain}.'
+    },
+    receipt: {
+      subtotal: 'Välisumma, vuosi {year}',
+      year: 'Vuosi {year}',
+      unit: 'meter',
+      saved: 'Kuva tallennettu'
     }
   },
 
@@ -391,11 +407,14 @@ module.exports = {
       perMonth: 'Kuukaudessa',
       year1: '1 vuosi',
       year5: '5 vuotta',
+      receiptTitle: 'Kahvikuitti',
+      receiptCount: 'Kuppeja',
       runtime: {
         note: {
           empty: 'Syötä hinta ja kuinka monta kuppia juot viikossa, niin näet summat.',
           result: 'Se on noin {cups} kuppia vuodessa, {price} kupilta.'
-        }
+        },
+        receiptItem: 'Kahvi'
       },
       about: {
         title: 'Näin kahvin hinta lasketaan',
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: 'Kuukaudessa',
       year1: '1 vuosi',
       year5: '5 vuotta',
+      receiptTitle: 'Tupakkakuitti',
+      receiptCount: 'Askeja',
       runtime: {
+        receiptItem: 'Tupakka-aski',
         note: {
           empty: 'Syötä askin hinta, montako savuketta poltat päivässä ja askin koko, niin näet summat.',
           result: 'Se on noin {cigarettes} savuketta ({packs} askia) vuodessa, {price} savukkeelta.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: 'Kuukaudessa',
       year1: '1 vuosi',
       year5: '5 vuotta',
+      receiptTitle: 'Baarilasku',
+      receiptCount: 'Juomia',
       runtime: {
+        receiptItem: 'Juoma',
         note: {
           empty: 'Syötä hinta ja kuinka monta juomaa juot viikossa, niin näet summat.',
           result: 'Se on noin {drinks} juomaa vuodessa, {price} juomalta.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: 'Kuukaudessa',
       perYear: 'Vuodessa',
       lossPerYear: 'Keskimääräinen tappio vuodessa',
+      receiptTitle: 'Lotto- ja vedonlyöntikuitti',
+      receiptCount: 'Pelikertoja',
+      receiptBack: 'Takaisin voittoina keskimäärin',
+      receiptLoss: 'Hävitty keskimäärin',
       runtime: {
+        receiptItem: 'Pelikerta',
         note: {
           empty: 'Syötä panos, montako kertaa viikossa pelaat ja palautusprosentti (0–100).',
           result: 'Voittoina palautuu keskimäärin noin {back} vuodessa, joten häviät noin {loss} vuodessa ja {loss10} kymmenessä vuodessa.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: '10 vuodessa',
       breakdownLabel: 'Vuosihinta tilauksittain',
       copySummary: 'Kopioi yhteenveto',
+      receiptTitle: 'Tilauskuitti',
+      receiptCount: 'Veloituksia',
       runtime: {
+        receiptItem: 'Veloitus',
         untitled: 'Nimetön',
         remove: 'Poista {name}',
         removeUnnamed: 'Poista tilaus',

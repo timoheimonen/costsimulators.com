@@ -273,8 +273,9 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"pl-PL","currency":"PLN","decimals":2,"strings":{"share":{"linkCopied":"Link skopiowany","copyFailed":"Nie udało się skopiować","copied":"Skopiowano!","calculatedWith":"Obliczono w costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} miesięcznie przez 10 lat przy stopie zwrotu {rate} rocznie: łącznie wpłacasz {paid}, a zysk wynosi {gain}."},"note":{"empty":"Wpisz cenę i liczbę kaw w tygodniu, aby zobaczyć sumy.","result":"Kupujesz kawę około {cups} razy w roku, po {price} za każdą."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"pl-PL","currency":"PLN","decimals":2,"strings":{"share":{"linkCopied":"Link skopiowany","copyFailed":"Nie udało się skopiować","copied":"Skopiowano!","calculatedWith":"Obliczono w costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} miesięcznie przez 10 lat przy stopie zwrotu {rate} rocznie: łącznie wpłacasz {paid}, a zysk wynosi {gain}."},"receipt":{"subtotal":"Suma częściowa, rok {year}","year":"Rok {year}","unit":"meter","saved":"Obraz zapisany"},"note":{"empty":"Wpisz cenę i liczbę kaw w tygodniu, aby zobaczyć sumy.","result":"Kupujesz kawę około {cups} razy w roku, po {price} za każdą."},"receiptItem":"Kawa"}}</script>
     <script src="/js/core.js" defer></script>
+    <script src="/js/receipt.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/coffee.js" defer></script>
 </head>
@@ -431,9 +432,75 @@ SOFTWARE.
                     </div>
                     <p class="invest-note" data-invest-note></p>
                 </div>
+                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">Drukuj paragon</span>
+                </button>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
+
+        <dialog class="receipt-dialog tool--coffee" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">Twój paragon</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="Zamknij">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>Przejdź do sumy</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">Paragon za kawę</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+                            <div class="receipt-row">
+                                <dt>Cena jednej kawy</dt>
+                                <dd data-receipt-value="price"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>Kawy w tygodniu</dt>
+                                <dd data-receipt-value="perWeek"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+                            <div class="receipt-row receipt-row--total">
+                                <dt>Suma</dt>
+                                <dd data-receipt-total></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--count">
+                                <dt>Filiżanki</dt>
+                                <dd data-receipt-count></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--length">
+                                <dt>Długość paragonu</dt>
+                                <dd data-receipt-length></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--invest">
+                                <dt>Gdyby te pieniądze zainwestować</dt>
+                                <dd data-receipt-invest></dd>
+                            </div>
+                        </dl>
+                        <p class="receipt-thanks">Dziękujemy za 10 lat lojalności!</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">Udostępnij obraz</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Jak liczony jest koszt kawy</h2>

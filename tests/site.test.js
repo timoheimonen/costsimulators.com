@@ -337,7 +337,7 @@ test('old addresses redirect to existing pages', () => {
 test('every string the page scripts ask for exists in every language', () => {
   const jsDir = path.join(publicDir, 'js');
   const keysIn = file => [...fs.readFileSync(file, 'utf8').matchAll(/\bt\('([\w.]*\w)'/g)].map(match => match[1]);
-  const shared = ['core.js', 'ui.js'].flatMap(file => keysIn(path.join(jsDir, file)));
+  const shared = ['core.js', 'ui.js', 'receipt.js'].flatMap(file => keysIn(path.join(jsDir, file)));
 
   for (const { lang, strings } of locales) {
     for (const key of shared) {

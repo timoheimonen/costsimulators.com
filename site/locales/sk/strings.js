@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – bezplatné kalkulačky na každodenné otázky o peniazoch',
     invest: {
       label: 'Keby ste peniaze namiesto toho investovali'
+    },
+    receipt: {
+      open: 'Vytlačiť bloček',
+      title: 'Váš bloček',
+      close: 'Zavrieť',
+      skip: 'Prejsť na súčet',
+      total: 'Spolu',
+      length: 'Dĺžka bločku',
+      thanks: 'Ďakujeme za 10 rokov vernosti!',
+      image: 'Zdieľať ako obrázok'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} mesačne počas 10 rokov pri zhodnotení {rate} ročne: vložíte spolu {paid} a výnos bude {gain}.'
+    },
+    receipt: {
+      subtotal: 'Medzisúčet, rok {year}',
+      year: 'Rok {year}',
+      unit: 'meter',
+      saved: 'Obrázok uložený'
     }
   },
 
@@ -391,7 +407,10 @@ module.exports = {
       perMonth: 'Za mesiac',
       year1: '1 rok',
       year5: '5 rokov',
+      receiptTitle: 'Bloček za kávu',
+      receiptCount: 'Šálky',
       runtime: {
+        receiptItem: 'Káva',
         note: {
           empty: 'Zadajte cenu a počet šálok týždenne a uvidíte súčty.',
           result: 'To je zhruba {cups} šálok ročne po {price}.'
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: 'Za mesiac',
       year1: '1 rok',
       year5: '5 rokov',
+      receiptTitle: 'Bloček za cigarety',
+      receiptCount: 'Škatuľky',
       runtime: {
+        receiptItem: 'Škatuľka cigariet',
         note: {
           empty: 'Zadajte cenu škatuľky, koľko cigariet denne vyfajčíte a koľko ich je v škatuľke, a uvidíte súčty.',
           result: 'To je zhruba {cigarettes} cigariet ({packs} škatuliek) ročne po {price} za kus.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: 'Za mesiac',
       year1: '1 rok',
       year5: '5 rokov',
+      receiptTitle: 'Účet z baru',
+      receiptCount: 'Nápoje',
       runtime: {
+        receiptItem: 'Nápoj',
         note: {
           empty: 'Zadajte cenu a počet nápojov týždenne a uvidíte súčty.',
           result: 'To je zhruba {drinks} nápojov ročne po {price}.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: 'Za mesiac',
       perYear: 'Za rok',
       lossPerYear: 'Priemerná strata za rok',
+      receiptTitle: 'Bloček za lotérie a stávky',
+      receiptCount: 'Hry',
+      receiptBack: 'Priemerne vrátené na výhrach',
+      receiptLoss: 'Priemerne prehraté',
       runtime: {
+        receiptItem: 'Hra',
         note: {
           empty: 'Zadajte vklad, počet hier týždenne a výherný podiel (0–100).',
           result: 'V priemere sa vám na výhrach vráti zhruba {back} ročne, takže prehráte asi {loss} ročne a {loss10} za 10 rokov.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: 'Za 10 rokov',
       breakdownLabel: 'Ročná cena jednotlivých predplatných',
       copySummary: 'Kopírovať súhrn',
+      receiptTitle: 'Bloček za predplatné',
+      receiptCount: 'Platby',
       runtime: {
+        receiptItem: 'Platba',
         untitled: 'Bez názvu',
         remove: 'Odstrániť {name}',
         removeUnnamed: 'Odstrániť predplatné',

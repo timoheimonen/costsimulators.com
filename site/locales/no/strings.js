@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – gratis kalkulatorer for hverdagens pengespørsmål',
     invest: {
       label: 'Hvis du investerte pengene i stedet'
+    },
+    receipt: {
+      open: 'Skriv ut kvittering',
+      title: 'Kvitteringen din',
+      close: 'Lukk',
+      skip: 'Til summen',
+      total: 'Totalt',
+      length: 'Kvitteringens lengde',
+      thanks: 'Takk for 10 års troskap!',
+      image: 'Del som bilde'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} i måneden i 10 år med {rate} årlig avkastning: {paid} i egne innskudd og {gain} i avkastning.'
+    },
+    receipt: {
+      subtotal: 'Delsum, år {year}',
+      year: 'År {year}',
+      unit: 'meter',
+      saved: 'Bildet er lagret'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: 'Per måned',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Kaffekvittering',
+      receiptCount: 'Kopper',
       runtime: {
         note: {
           empty: 'Skriv inn en pris og hvor mange kopper du drikker i uken for å se summene.',
           result: 'Det blir omtrent {cups} kopper i året til {price} koppen.'
-        }
+        },
+        receiptItem: 'Kaffe'
       },
       about: {
         title: 'Slik beregnes kaffekostnaden',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Per måned',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Sigarettkvittering',
+      receiptCount: 'Pakker',
       runtime: {
+        receiptItem: 'Pakke sigaretter',
         note: {
           empty: 'Skriv inn pakkeprisen, hvor mange du røyker om dagen og pakkestørrelsen for å se summene.',
           result: 'Det blir omtrent {cigarettes} sigaretter ({packs} pakker) i året til {price} stykket.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Per måned',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Barregningen',
+      receiptCount: 'Glass',
       runtime: {
+        receiptItem: 'Glass',
         note: {
           empty: 'Skriv inn en pris og hvor mange glass du drikker i uken for å se summene.',
           result: 'Det blir omtrent {drinks} glass i året til {price} glasset.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Per måned',
       perYear: 'Per år',
       lossPerYear: 'Gjennomsnittlig tap per år',
+      receiptTitle: 'Kvittering for lotto og betting',
+      receiptCount: 'Spill',
+      receiptBack: 'Tilbake som gevinster i snitt',
+      receiptLoss: 'Tapt i snitt',
       runtime: {
+        receiptItem: 'Spill',
         note: {
           empty: 'Skriv inn innsatsen, hvor mange ganger i uken du spiller og tilbakebetalingsprosenten (0–100).',
           result: 'I snitt kommer omtrent {back} i året tilbake som gevinster, så du taper omtrent {loss} i året og {loss10} på 10 år.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'På 10 år',
       breakdownLabel: 'Årskostnad per abonnement',
       copySummary: 'Kopier oppsummering',
+      receiptTitle: 'Abonnementskvittering',
+      receiptCount: 'Trekk',
       runtime: {
+        receiptItem: 'Trekk',
         untitled: 'Uten navn',
         remove: 'Fjern {name}',
         removeUnnamed: 'Fjern abonnement',

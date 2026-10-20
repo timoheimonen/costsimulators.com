@@ -273,8 +273,9 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"bg-BG","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Връзката е копирана","copyFailed":"Копирането не успя","copied":"Копирано!","calculatedWith":"Изчислено с costsimulators.com"},"workTime":{"minutes":"{m} мин","hours":"{h} ч","hoursMinutes":"{h} ч {m} мин"},"invest":{"note":"{monthly} на месец в продължение на 10 години при годишна доходност {rate}: внасяте {paid}, а доходността е {gain}."},"untitled":"Без име","remove":"Премахване: {name}","removeUnnamed":"Премахване на абонамента","breakdown":"{cost} / година · {percent}%","cycle":{"monthly":"месец","yearly":"година","weekly":"седмица"},"note":{"empty":"Добавете абонамент с цена, за да видите сумите.","single":"Това са {cost} годишно за „{name}“.","biggest":"Най-големият ви разход е „{name}“ – {cost} годишно, или {percent}% от общата сума."},"summary":{"item":"{name} – {price} / {cycle}","total":"Общо: {month} на месец, {year} на година"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"bg-BG","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Връзката е копирана","copyFailed":"Копирането не успя","copied":"Копирано!","calculatedWith":"Изчислено с costsimulators.com"},"workTime":{"minutes":"{m} мин","hours":"{h} ч","hoursMinutes":"{h} ч {m} мин"},"invest":{"note":"{monthly} на месец в продължение на 10 години при годишна доходност {rate}: внасяте {paid}, а доходността е {gain}."},"receipt":{"subtotal":"Междинна сума, година {year}","year":"Година {year}","unit":"meter","saved":"Изображението е запазено"},"receiptItem":"Плащане","untitled":"Без име","remove":"Премахване: {name}","removeUnnamed":"Премахване на абонамента","breakdown":"{cost} / година · {percent}%","cycle":{"monthly":"месец","yearly":"година","weekly":"седмица"},"note":{"empty":"Добавете абонамент с цена, за да видите сумите.","single":"Това са {cost} годишно за „{name}“.","biggest":"Най-големият ви разход е „{name}“ – {cost} годишно, или {percent}% от общата сума."},"summary":{"item":"{name} – {price} / {cycle}","total":"Общо: {month} на месец, {year} на година"}}}</script>
     <script src="/js/core.js" defer></script>
+    <script src="/js/receipt.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/subscriptions.js" defer></script>
 </head>
@@ -433,6 +434,10 @@ SOFTWARE.
                     </div>
                     <p class="invest-note" data-invest-note></p>
                 </div>
+                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">Отпечатай бележка</span>
+                </button>
 
                 <ol class="breakdown" id="breakdown" aria-label="Годишна цена по абонаменти"></ol>
 
@@ -446,6 +451,68 @@ SOFTWARE.
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
+
+        <dialog class="receipt-dialog tool--subscriptions" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">Вашата бележка</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="Затвори">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>Към общата сума</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">Бележка за абонаменти</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+                            <div class="receipt-row">
+                                <dt>На месец</dt>
+                                <dd data-receipt-value="perMonth"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>На година</dt>
+                                <dd data-receipt-value="perYear"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+                            <div class="receipt-row receipt-row--total">
+                                <dt>Общо</dt>
+                                <dd data-receipt-total></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--count">
+                                <dt>Плащания</dt>
+                                <dd data-receipt-count></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--length">
+                                <dt>Дължина на бележката</dt>
+                                <dd data-receipt-length></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--invest">
+                                <dt>Ако вместо това инвестирате парите</dt>
+                                <dd data-receipt-invest></dd>
+                            </div>
+                        </dl>
+                        <p class="receipt-thanks">Благодарим ви за 10 години лоялност!</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">Сподели като изображение</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Как се изчислява общата сума за абонаменти</h2>

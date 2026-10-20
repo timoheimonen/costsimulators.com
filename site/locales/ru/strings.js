@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com — бесплатные калькуляторы расходов для повседневных денежных вопросов',
     invest: {
       label: 'Если бы вы инвестировали эти деньги'
+    },
+    receipt: {
+      open: 'Распечатать чек',
+      title: 'Ваш чек',
+      close: 'Закрыть',
+      skip: 'К итогу',
+      total: 'Итого',
+      length: 'Длина чека',
+      thanks: 'Спасибо за 10 лет верности!',
+      image: 'Поделиться изображением'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} в месяц в течение 10 лет под {rate} годовых: вы внесете {paid}, а доход составит {gain}.'
+    },
+    receipt: {
+      subtotal: 'Промежуточный итог, год {year}',
+      year: 'Год {year}',
+      unit: 'meter',
+      saved: 'Изображение сохранено'
     }
   },
 
@@ -391,7 +407,10 @@ module.exports = {
       perMonth: 'В месяц',
       year1: '1 год',
       year5: '5 лет',
+      receiptTitle: 'Чек за кофе',
+      receiptCount: 'Чашек',
       runtime: {
+        receiptItem: 'Кофе',
         note: {
           empty: 'Введите цену и число чашек в неделю, чтобы увидеть итоги.',
           result: 'Чашек в год: около {cups}, по {price} за каждую.'
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: 'В месяц',
       year1: '1 год',
       year5: '5 лет',
+      receiptTitle: 'Чек за сигареты',
+      receiptCount: 'Пачек',
       runtime: {
+        receiptItem: 'Пачка сигарет',
         note: {
           empty: 'Введите цену пачки, сколько сигарет вы выкуриваете в день и размер пачки, чтобы увидеть итоги.',
           result: 'Сигарет в год: около {cigarettes} (пачек: {packs}), по {price} за штуку.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: 'В месяц',
       year1: '1 год',
       year5: '5 лет',
+      receiptTitle: 'Счёт из бара',
+      receiptCount: 'Напитков',
       runtime: {
+        receiptItem: 'Напиток',
         note: {
           empty: 'Введите цену и число напитков в неделю, чтобы увидеть итоги.',
           result: 'Напитков в год: около {drinks}, по {price} за каждый.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: 'В месяц',
       perYear: 'В год',
       lossPerYear: 'Средний проигрыш в год',
+      receiptTitle: 'Чек лотерей и ставок',
+      receiptCount: 'Игр',
+      receiptBack: 'Вернулось выигрышами в среднем',
+      receiptLoss: 'Проиграно в среднем',
       runtime: {
+        receiptItem: 'Игра',
         note: {
           empty: 'Введите ставку, сколько раз в неделю вы играете и процент выплат (0–100).',
           result: 'В среднем около {back} в год возвращается выигрышами, так что вы теряете около {loss} в год и {loss10} за 10 лет.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: 'За 10 лет',
       breakdownLabel: 'Расходы за год по каждой подписке',
       copySummary: 'Копировать сводку',
+      receiptTitle: 'Чек за подписки',
+      receiptCount: 'Списаний',
       runtime: {
+        receiptItem: 'Списание',
         untitled: 'Без названия',
         remove: 'Удалить: {name}',
         removeUnnamed: 'Удалить подписку',

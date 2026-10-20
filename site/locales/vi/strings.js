@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – công cụ tính chi phí miễn phí cho những câu hỏi tiền bạc hằng ngày',
     invest: {
       label: 'Nếu đem số tiền này đi đầu tư'
+    },
+    receipt: {
+      open: 'In hóa đơn',
+      title: 'Hóa đơn của bạn',
+      close: 'Đóng',
+      skip: 'Đến tổng cộng',
+      total: 'Tổng cộng',
+      length: 'Chiều dài hóa đơn',
+      thanks: 'Cảm ơn bạn đã gắn bó suốt 10 năm!',
+      image: 'Chia sẻ ảnh'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} mỗi tháng trong 10 năm với lợi nhuận {rate} mỗi năm: {paid} tiền gốc bạn bỏ ra và {gain} tiền lãi.'
+    },
+    receipt: {
+      subtotal: 'Tạm tính, năm thứ {year}',
+      year: 'Năm thứ {year}',
+      unit: 'meter',
+      saved: 'Đã lưu ảnh'
     }
   },
 
@@ -392,7 +408,10 @@ module.exports = {
       perMonth: 'Mỗi tháng',
       year1: '1 năm',
       year5: '5 năm',
+      receiptTitle: 'Hóa đơn cà phê',
+      receiptCount: 'Số ly',
       runtime: {
+        receiptItem: 'Cà phê',
         note: {
           empty: 'Nhập giá và số ly bạn uống mỗi tuần để xem tổng chi phí.',
           result: 'Tức khoảng {cups} ly mỗi năm, mỗi ly {price}.'
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Mỗi tháng',
       year1: '1 năm',
       year5: '5 năm',
+      receiptTitle: 'Hóa đơn thuốc lá',
+      receiptCount: 'Số bao',
       runtime: {
+        receiptItem: 'Bao thuốc lá',
         note: {
           empty: 'Nhập giá mỗi bao, số điếu bạn hút mỗi ngày và số điếu trong một bao để xem tổng chi phí.',
           result: 'Tức khoảng {cigarettes} điếu ({packs} bao) mỗi năm, mỗi điếu {price}.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Mỗi tháng',
       year1: '1 năm',
       year5: '5 năm',
+      receiptTitle: 'Hóa đơn quán bar',
+      receiptCount: 'Số ly',
       runtime: {
+        receiptItem: 'Ly đồ uống',
         note: {
           empty: 'Nhập giá và số ly bạn uống mỗi tuần để xem tổng chi phí.',
           result: 'Tức khoảng {drinks} ly mỗi năm, mỗi ly {price}.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Mỗi tháng',
       perYear: 'Mỗi năm',
       lossPerYear: 'Mất trung bình mỗi năm',
+      receiptTitle: 'Hóa đơn xổ số và cá cược',
+      receiptCount: 'Số lần chơi',
+      receiptBack: 'Trung bình được trả lại',
+      receiptLoss: 'Trung bình bị mất',
       runtime: {
+        receiptItem: 'Lần chơi',
         note: {
           empty: 'Nhập tiền chơi mỗi lần, số lần chơi mỗi tuần và tỷ lệ trả thưởng (0–100).',
           result: 'Trung bình khoảng {back} mỗi năm quay lại dưới dạng tiền thưởng, nên bạn mất khoảng {loss} mỗi năm và {loss10} trong 10 năm.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'Trong 10 năm',
       breakdownLabel: 'Chi phí mỗi năm của từng gói đăng ký',
       copySummary: 'Sao chép bản tóm tắt',
+      receiptTitle: 'Hóa đơn gói đăng ký',
+      receiptCount: 'Số lần thanh toán',
       runtime: {
+        receiptItem: 'Khoản thanh toán',
         untitled: 'Chưa đặt tên',
         remove: 'Xóa {name}',
         removeUnnamed: 'Xóa gói đăng ký',

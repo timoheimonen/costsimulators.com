@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, t } = window.CostSimulators;
+    const { Calculators, Receipt, UI, formatCurrency, formatPercent, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
     const TEN_YEARS = 10;
@@ -37,6 +37,7 @@ SOFTWARE.
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
         invest: document.getElementById('invest'),
+        receipt: document.getElementById('receiptBtn'),
         results: {
             year10: document.getElementById('year10'),
             month: document.getElementById('month'),
@@ -45,6 +46,8 @@ SOFTWARE.
         }
     };
 
+    let current = null;
+
     function update() {
         const stake = UI.readNumber(els.stake);
         const perWeek = UI.readNumber(els.perWeek);
@@ -52,6 +55,8 @@ SOFTWARE.
         const valid = stake >= 0.01 && perWeek > 0 && payout >= 0 && payout <= 100;
 
         els.panel.dataset.empty = String(!valid);
+        els.receipt.disabled = !valid;
+        current = valid ? { stake: stake, perWeek: perWeek, payout: payout } : null;
 
         if (!valid) {
             Object.values(els.results).forEach(function (element) {
@@ -86,8 +91,30 @@ SOFTWARE.
         });
     }
 
+    // What the receipt prints: one line per game for 10 years, and what
+    // comes back as winnings on average.
+    function readReceipt() {
+        if (!current) return null;
+        const share = current.payout / 100;
+        return {
+            item: t('receiptItem'),
+            price: current.stake,
+            perYear: Calculators.perYear(current.perWeek),
+            values: function (receipt) {
+                return {
+                    stake: formatCurrency(current.stake),
+                    perWeek: Receipt.formatSetting(current.perWeek),
+                    payout: formatPercent(share),
+                    receiptBack: formatCurrency(receipt.total * share),
+                    receiptLoss: formatCurrency(receipt.total * (1 - share))
+                };
+            }
+        };
+    }
+
     UI.bindSteppers(document);
     const urlState = UI.bindURLState({ stake: 'st', perWeek: 'pw', payout: 'pr' }, update);
     UI.bindShare(document.getElementById('shareBtn'), urlState.flush);
     UI.bindPresets(document);
+    Receipt.bind({ button: els.receipt, dialog: document.getElementById('receiptDialog'), read: readReceipt });
 })();

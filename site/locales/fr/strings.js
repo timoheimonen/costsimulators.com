@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – calculateurs de coûts gratuits pour les questions d’argent du quotidien',
     invest: {
       label: 'Si vous investissiez plutôt cet argent'
+    },
+    receipt: {
+      open: 'Imprimer le ticket',
+      title: 'Votre ticket',
+      close: 'Fermer',
+      skip: 'Aller au total',
+      total: 'Total',
+      length: 'Longueur du ticket',
+      thanks: 'Merci pour 10 ans de fidélité !',
+      image: 'Partager l’image'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement.'
+    },
+    receipt: {
+      subtotal: 'Sous-total, année {year}',
+      year: 'Année {year}',
+      unit: 'meter',
+      saved: 'Image enregistrée'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: 'Par mois',
       year1: '1 an',
       year5: '5 ans',
+      receiptTitle: 'Ticket café',
+      receiptCount: 'Tasses',
       runtime: {
         note: {
           empty: 'Indiquez un prix et le nombre de cafés que vous prenez par semaine pour voir les totaux.',
           result: 'Soit environ {cups} cafés par an, à {price} l’unité.'
-        }
+        },
+        receiptItem: 'Café'
       },
       about: {
         title: 'Comment le coût du café est calculé',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Par mois',
       year1: '1 an',
       year5: '5 ans',
+      receiptTitle: 'Ticket tabac',
+      receiptCount: 'Paquets',
       runtime: {
+        receiptItem: 'Paquet de cigarettes',
         note: {
           empty: 'Indiquez le prix du paquet, le nombre de cigarettes par jour et la taille du paquet pour voir les totaux.',
           result: 'Soit environ {cigarettes} cigarettes ({packs} paquets) par an, à {price} la cigarette.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Par mois',
       year1: '1 an',
       year5: '5 ans',
+      receiptTitle: 'L’addition du bar',
+      receiptCount: 'Verres',
       runtime: {
+        receiptItem: 'Verre',
         note: {
           empty: 'Indiquez un prix et le nombre de verres que vous buvez par semaine pour voir les totaux.',
           result: 'Soit environ {drinks} verres par an, à {price} le verre.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Par mois',
       perYear: 'Par an',
       lossPerYear: 'Perte moyenne par an',
+      receiptTitle: 'Ticket loterie et paris',
+      receiptCount: 'Parties',
+      receiptBack: 'Rendu en gains en moyenne',
+      receiptLoss: 'Perdu en moyenne',
       runtime: {
+        receiptItem: 'Partie',
         note: {
           empty: 'Indiquez la mise, le nombre de parties par semaine et le taux de retour aux joueurs (0–100).',
           result: 'En moyenne, vous récupérez environ {back} par an sous forme de gains : vous perdez donc environ {loss} par an et {loss10} en 10 ans.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'En 10 ans',
       breakdownLabel: 'Coût annuel par abonnement',
       copySummary: 'Copier le récapitulatif',
+      receiptTitle: 'Ticket des abonnements',
+      receiptCount: 'Prélèvements',
       runtime: {
+        receiptItem: 'Prélèvement',
         untitled: 'Sans nom',
         remove: 'Supprimer {name}',
         removeUnnamed: 'Supprimer l’abonnement',

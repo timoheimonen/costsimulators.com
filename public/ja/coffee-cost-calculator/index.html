@@ -273,8 +273,9 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"ja-JP","currency":"JPY","decimals":0,"strings":{"share":{"linkCopied":"リンクをコピーしました","copyFailed":"コピーできませんでした","copied":"コピーしました！","calculatedWith":"costsimulators.comで計算しました"},"workTime":{"minutes":"{m}分","hours":"{h}時間","hoursMinutes":"{h}時間{m}分"},"invest":{"note":"毎月{monthly}を年率{rate}で10年間積み立てると、元本{paid}に対して運用益は{gain}です。"},"note":{"empty":"値段と週に飲む杯数を入力すると、合計が表示されます。","result":"年間約{cups}杯、1杯あたり{price}で計算しています。"}}}</script>
+    <script type="application/json" id="i18n">{"locale":"ja-JP","currency":"JPY","decimals":0,"strings":{"share":{"linkCopied":"リンクをコピーしました","copyFailed":"コピーできませんでした","copied":"コピーしました！","calculatedWith":"costsimulators.comで計算しました"},"workTime":{"minutes":"{m}分","hours":"{h}時間","hoursMinutes":"{h}時間{m}分"},"invest":{"note":"毎月{monthly}を年率{rate}で10年間積み立てると、元本{paid}に対して運用益は{gain}です。"},"receipt":{"subtotal":"{year}年目 小計","year":"{year}年目","unit":"meter","saved":"画像を保存しました"},"note":{"empty":"値段と週に飲む杯数を入力すると、合計が表示されます。","result":"年間約{cups}杯、1杯あたり{price}で計算しています。"},"receiptItem":"コーヒー"}}</script>
     <script src="/js/core.js" defer></script>
+    <script src="/js/receipt.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/coffee.js" defer></script>
 </head>
@@ -431,9 +432,75 @@ SOFTWARE.
                     </div>
                     <p class="invest-note" data-invest-note></p>
                 </div>
+                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">レシートを印刷</span>
+                </button>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
+
+        <dialog class="receipt-dialog tool--coffee" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">あなたのレシート</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="閉じる">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>合計へ移動</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">コーヒーのレシート</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+                            <div class="receipt-row">
+                                <dt>1杯の値段</dt>
+                                <dd data-receipt-value="price"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>週の杯数</dt>
+                                <dd data-receipt-value="perWeek"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+                            <div class="receipt-row receipt-row--total">
+                                <dt>合計</dt>
+                                <dd data-receipt-total></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--count">
+                                <dt>杯数</dt>
+                                <dd data-receipt-count></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--length">
+                                <dt>レシートの長さ</dt>
+                                <dd data-receipt-length></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--invest">
+                                <dt>そのお金を投資に回したら</dt>
+                                <dd data-receipt-invest></dd>
+                            </div>
+                        </dl>
+                        <p class="receipt-thanks">10年間のご愛顧ありがとうございました！</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">画像で共有</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">コーヒー代の計算方法</h2>

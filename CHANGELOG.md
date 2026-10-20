@@ -4,6 +4,10 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ## 2026-10-20
 
+### Added
+
+- Habit receipts, in every language, on the coffee, smoking, alcohol, lottery and subscription calculators: "Print receipt" prints the next 10 years as a till receipt with one line per purchase (a cup, a pack, a drink, a game or a subscription charge in date order), a subtotal for every year, the total, the invested amount and how long the receipt would be at 4 mm a line (in feet in US English). The receipt is as long as the habit, so it takes a while to scroll; "Skip to total" jumps to the end. "Share image" makes a picture of the receipt for social media on the device and opens the share sheet on phones or saves the image elsewhere. The lottery receipt also shows what comes back as winnings and what is lost on average. The subtotals and the total are the same amounts the calculator shows
+
 ### Changed
 
 - The home page tagline puts privacy first: Private · Free · Instant, in every language
