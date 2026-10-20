@@ -52,12 +52,20 @@ SOFTWARE.
         return Number.isFinite(value) ? value : fallback;
     }
 
+    // A step past min or max stops at the limit, unless the limit has more
+    // decimals than the step and the value: min="0.01" would otherwise turn
+    // a 50 yen price into 0.01 and the next step into 50.01.
     function stepInput(input, delta) {
         const current = readNumber(input);
         const precision = Math.max(decimals(delta), decimals(current));
         const min = readLimit(input, 'min', -Infinity);
         const max = readLimit(input, 'max', Infinity);
-        const next = Math.min(max, Math.max(min, Number((current + delta).toFixed(precision))));
+        let next = Number((current + delta).toFixed(precision));
+
+        if (next < min || next > max) {
+            const limit = next < min ? min : max;
+            next = decimals(limit) > precision ? current : limit;
+        }
 
         if (String(next) === input.value) return;
         input.value = String(next);

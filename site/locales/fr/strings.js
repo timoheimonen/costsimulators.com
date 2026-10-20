@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Calculateurs de coûts gratuits pour le quotidien',
     description: 'Des calculateurs gratuits et privés qui montrent ce que les choses coûtent vraiment : réunions, heures de travail, habitudes, abonnements, électricité, carburant et coût par utilisation.',
-    eyebrow: 'Gratuit · Privé · Instantané',
+    eyebrow: 'Privé · Gratuit · Instantané',
     heading: 'De petits outils pour les questions d’<span class="accent-text">argent</span> du quotidien.',
     lead: 'Des calculateurs rapides qui montrent ce que les choses coûtent vraiment. Sans inscription, sans pistage – tout fonctionne directement dans votre navigateur.',
     toolsTitle: 'Outils',

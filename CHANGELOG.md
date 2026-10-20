@@ -2,6 +2,30 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-10-20
+
+### Changed
+
+- The home page tagline puts privacy first: Private · Free · Instant, in every language
+
+### Fixed
+
+- The − button no longer turns a price into 0.01 at the bottom of its range, which then made the + button give prices such as 50.01 yen or 1000.01 rupiah. A price that cannot go one more step lower now stays where it is.
+
+## 2026-10-19b
+
+### Added
+
+- Regional versions, each with its own currency, typical local prices and wording:
+  - **English (UK)** (`/en-gb/`) – prices in pounds, British terms such as petrol, return journeys, National Insurance and the electricity unit rate in pence, and help with entering UK mpg in the trip calculator
+  - **Español (México)** (`/es-mx/`) – Mexican Spanish, with prices in Mexican pesos
+- 7 more languages, each with local currency, number formatting, typical local default prices, examples recalculated in that currency and translated about, privacy and terms pages: Vietnamese (`/vi/`, dong), Ukrainian (`/uk/`, hryvnias), Russian (`/ru/`, rubles), Slovak (`/sk/`, euros), Croatian (`/hr/`, euros), Bulgarian (`/bg/`, euros) and Estonian (`/et/`, euros)
+- English pages open the UK version in browsers set to English for the UK, and the Mexican version in browsers set to Spanish for Mexico or another Spanish-speaking country in Latin America
+
+### Changed
+
+- The language menu names the versions of English and Spanish: English (US), English (UK), Español (España) and Español (México)
+
 ## 2026-10-19
 
 ### Added

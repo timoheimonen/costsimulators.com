@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Gratis kostnadskalkulatorer for hverdagen',
     description: 'Gratis og private kalkulatorer som viser hva ting egentlig koster: møter, arbeidstimer, vaner, abonnementer, strøm, drivstoff og kostnad per bruk. Ingen registrering, alt skjer i nettleseren.',
-    eyebrow: 'Gratis · Privat · Lynraskt',
+    eyebrow: 'Privat · Gratis · Lynraskt',
     heading: 'Små verktøy for hverdagens <span class="accent-text">penge</span>spørsmål.',
     lead: 'Raske kalkulatorer som viser hva ting egentlig koster. Ingen registrering, ingen sporing – alt kjører rett i nettleseren din.',
     toolsTitle: 'Verktøy',

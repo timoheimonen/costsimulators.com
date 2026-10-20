@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Darmowe kalkulatory kosztów na co dzień',
     description: 'Darmowe, prywatne kalkulatory: ile naprawdę kosztują spotkania, nawyki, subskrypcje, prąd i paliwo, ile godzin pracy kosztuje zakup i ile każde jego użycie. Bez rejestracji, w przeglądarce.',
-    eyebrow: 'Za darmo · Prywatnie · Od razu',
+    eyebrow: 'Prywatnie · Za darmo · Od razu',
     heading: 'Małe narzędzia na codzienne pytania o <span class="accent-text">pieniądze</span>.',
     lead: 'Szybkie kalkulatory, które pokazują, ile naprawdę kosztują różne rzeczy. Bez rejestracji i śledzenia – wszystko działa bezpośrednio w Twojej przeglądarce.',
     toolsTitle: 'Narzędzia',

@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Kalkulator Biaya Gratis untuk Kebutuhan Sehari-hari',
     description: 'Kalkulator gratis dan privat yang menunjukkan biaya sebenarnya: rapat, jam kerja, kebiasaan, langganan, listrik, bensin, dan biaya per pemakaian. Tanpa daftar, langsung di browser Anda.',
-    eyebrow: 'Gratis · Privat · Instan',
+    eyebrow: 'Privat · Gratis · Instan',
     heading: 'Alat kecil untuk urusan <span class="accent-text">uang</span> sehari-hari.',
     lead: 'Kalkulator cepat yang menunjukkan berapa biaya sebenarnya. Tanpa daftar, tanpa pelacakan – semuanya berjalan langsung di browser Anda.',
     toolsTitle: 'Pilih kalkulator',
