@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – besplatni kalkulatori troškova za svakodnevna pitanja o novcu',
     invest: {
       label: 'Da ste novac umjesto toga uložili'
+    },
+    receipt: {
+      open: 'Ispiši račun',
+      title: 'Vaš račun',
+      close: 'Zatvori',
+      skip: 'Idi na ukupno',
+      total: 'Ukupno',
+      length: 'Duljina računa',
+      thanks: 'Hvala na 10 godina vjernosti!',
+      image: 'Podijeli kao sliku'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} mjesečno tijekom 10 godina uz prinos od {rate} godišnje: uplaćeno {paid}, a prinos iznosi {gain}.'
+    },
+    receipt: {
+      subtotal: 'Međuzbroj, godina {year}',
+      year: 'Godina {year}',
+      unit: 'meter',
+      saved: 'Slika je spremljena'
     }
   },
 
@@ -392,7 +408,10 @@ module.exports = {
       perMonth: 'Mjesečno',
       year1: '1 godina',
       year5: '5 godina',
+      receiptTitle: 'Račun za kavu',
+      receiptCount: 'Šalice',
       runtime: {
+        receiptItem: 'Kava',
         note: {
           empty: 'Unesite cijenu i broj šalica tjedno da biste vidjeli zbrojeve.',
           result: 'To je oko {cups} šalica godišnje, svaka po {price}.'
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Mjesečno',
       year1: '1 godina',
       year5: '5 godina',
+      receiptTitle: 'Račun za cigarete',
+      receiptCount: 'Kutije',
       runtime: {
+        receiptItem: 'Kutija cigareta',
         note: {
           empty: 'Unesite cijenu kutije, koliko cigareta dnevno popušite i koliko ih je u kutiji da biste vidjeli zbrojeve.',
           result: 'To je oko {cigarettes} cigareta ({packs} kutija) godišnje, a jedna cigareta košta {price}.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Mjesečno',
       year1: '1 godina',
       year5: '5 godina',
+      receiptTitle: 'Račun iz bara',
+      receiptCount: 'Pića',
       runtime: {
+        receiptItem: 'Piće',
         note: {
           empty: 'Unesite cijenu i broj pića tjedno da biste vidjeli zbrojeve.',
           result: 'To je oko {drinks} pića godišnje, svako po {price}.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Mjesečno',
       perYear: 'Godišnje',
       lossPerYear: 'Prosječni gubitak godišnje',
+      receiptTitle: 'Račun za lutriju i klađenje',
+      receiptCount: 'Igre',
+      receiptBack: 'Prosječno vraćeno kao dobitak',
+      receiptLoss: 'Prosječno izgubljeno',
       runtime: {
+        receiptItem: 'Igra',
         note: {
           empty: 'Unesite ulog, koliko puta tjedno igrate i stopu isplate (0–100).',
           result: 'U prosjeku vam se oko {back} godišnje vrati kao dobitak, pa gubite oko {loss} godišnje i {loss10} za 10 godina.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'Za 10 godina',
       breakdownLabel: 'Godišnji trošak po pretplati',
       copySummary: 'Kopiraj sažetak',
+      receiptTitle: 'Račun za pretplate',
+      receiptCount: 'Terećenja',
       runtime: {
+        receiptItem: 'Terećenje',
         untitled: 'Bez naziva',
         remove: 'Ukloni: {name}',
         removeUnnamed: 'Ukloni pretplatu',

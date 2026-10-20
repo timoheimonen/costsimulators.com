@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – безплатни калкулатори за ежедневните въпроси за парите',
     invest: {
       label: 'Ако вместо това инвестирате парите'
+    },
+    receipt: {
+      open: 'Отпечатай бележка',
+      title: 'Вашата бележка',
+      close: 'Затвори',
+      skip: 'Към общата сума',
+      total: 'Общо',
+      length: 'Дължина на бележката',
+      thanks: 'Благодарим ви за 10 години лоялност!',
+      image: 'Сподели като изображение'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} на месец в продължение на 10 години при годишна доходност {rate}: внасяте {paid}, а доходността е {gain}.'
+    },
+    receipt: {
+      subtotal: 'Междинна сума, година {year}',
+      year: 'Година {year}',
+      unit: 'meter',
+      saved: 'Изображението е запазено'
     }
   },
 
@@ -392,7 +408,10 @@ module.exports = {
       perMonth: 'На месец',
       year1: '1 година',
       year5: '5 години',
+      receiptTitle: 'Бележка за кафе',
+      receiptCount: 'Кафета',
       runtime: {
+        receiptItem: 'Кафе',
         note: {
           empty: 'Въведете цена и колко кафета пиете седмично, за да видите сумите.',
           result: 'Това са около {cups} кафета годишно по {price} всяко.'
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'На месец',
       year1: '1 година',
       year5: '5 години',
+      receiptTitle: 'Бележка за цигари',
+      receiptCount: 'Кутии',
       runtime: {
+        receiptItem: 'Кутия цигари',
         note: {
           empty: 'Въведете цената на кутия, колко цигари пушите на ден и колко са в кутия, за да видите сумите.',
           result: 'Това са около {cigarettes} цигари ({packs} кутии) годишно по {price} всяка.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'На месец',
       year1: '1 година',
       year5: '5 години',
+      receiptTitle: 'Сметка от бара',
+      receiptCount: 'Напитки',
       runtime: {
+        receiptItem: 'Напитка',
         note: {
           empty: 'Въведете цена и колко напитки пиете седмично, за да видите сумите.',
           result: 'Това са около {drinks} напитки годишно по {price} всяка.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'На месец',
       perYear: 'На година',
       lossPerYear: 'Средна загуба годишно',
+      receiptTitle: 'Бележка за лотарии и залози',
+      receiptCount: 'Игри',
+      receiptBack: 'Връщат се като печалби средно',
+      receiptLoss: 'Губят се средно',
       runtime: {
+        receiptItem: 'Игра',
         note: {
           empty: 'Въведете залога, колко пъти седмично играете и процента на изплащане (0–100).',
           result: 'Средно около {back} годишно се връщат като печалби, така че губите около {loss} годишно и {loss10} за 10 години.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'За 10 години',
       breakdownLabel: 'Годишна цена по абонаменти',
       copySummary: 'Копиране на обобщението',
+      receiptTitle: 'Бележка за абонаменти',
+      receiptCount: 'Плащания',
       runtime: {
+        receiptItem: 'Плащане',
         untitled: 'Без име',
         remove: 'Премахване: {name}',
         removeUnnamed: 'Премахване на абонамента',

@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – kostenlose Kostenrechner für Geldfragen im Alltag',
     invest: {
       label: 'Wenn du das Geld stattdessen anlegst'
+    },
+    receipt: {
+      open: 'Kassenbon drucken',
+      title: 'Dein Kassenbon',
+      close: 'Schließen',
+      skip: 'Zur Summe',
+      total: 'Summe',
+      length: 'Länge des Bons',
+      thanks: 'Danke für 10 Jahre Treue!',
+      image: 'Als Bild teilen'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} pro Monat über 10 Jahre bei {rate} Rendite im Jahr: {paid} eingezahlt und {gain} an Erträgen.'
+    },
+    receipt: {
+      subtotal: 'Zwischensumme, Jahr {year}',
+      year: 'Jahr {year}',
+      unit: 'meter',
+      saved: 'Bild gespeichert'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: 'Pro Monat',
       year1: '1 Jahr',
       year5: '5 Jahre',
+      receiptTitle: 'Kaffee-Kassenbon',
+      receiptCount: 'Tassen',
       runtime: {
         note: {
           empty: 'Gib einen Preis ein und wie viele Tassen du pro Woche trinkst, um die Summen zu sehen.',
           result: 'Das sind rund {cups} Tassen im Jahr zu je {price}.'
-        }
+        },
+        receiptItem: 'Kaffee'
       },
       about: {
         title: 'So werden die Kaffeekosten berechnet',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Pro Monat',
       year1: '1 Jahr',
       year5: '5 Jahre',
+      receiptTitle: 'Zigaretten-Kassenbon',
+      receiptCount: 'Packungen',
       runtime: {
+        receiptItem: 'Packung Zigaretten',
         note: {
           empty: 'Gib den Packungspreis ein, wie viele Zigaretten du am Tag rauchst und wie viele in einer Packung sind, um die Summen zu sehen.',
           result: 'Das sind rund {cigarettes} Zigaretten ({packs} Packungen) im Jahr zu je {price}.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Pro Monat',
       year1: '1 Jahr',
       year5: '5 Jahre',
+      receiptTitle: 'Deine Barrechnung',
+      receiptCount: 'Getränke',
       runtime: {
+        receiptItem: 'Getränk',
         note: {
           empty: 'Gib einen Preis ein und wie viele Getränke du pro Woche trinkst, um die Summen zu sehen.',
           result: 'Das sind rund {drinks} Getränke im Jahr zu je {price}.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Pro Monat',
       perYear: 'Pro Jahr',
       lossPerYear: 'Durchschnittsverlust pro Jahr',
+      receiptTitle: 'Lotto- und Wettbon',
+      receiptCount: 'Spiele',
+      receiptBack: 'Im Schnitt als Gewinn zurück',
+      receiptLoss: 'Im Schnitt verloren',
       runtime: {
+        receiptItem: 'Spiel',
         note: {
           empty: 'Gib deinen Einsatz, die Zahl der Spiele pro Woche und die Ausschüttungsquote (0–100) ein.',
           result: 'Im Schnitt fließen rund {back} im Jahr als Gewinne zurück – du verlierst also rund {loss} im Jahr und {loss10} in 10 Jahren.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'In 10 Jahren',
       breakdownLabel: 'Jahreskosten pro Abo',
       copySummary: 'Übersicht kopieren',
+      receiptTitle: 'Abo-Kassenbon',
+      receiptCount: 'Abbuchungen',
       runtime: {
+        receiptItem: 'Abbuchung',
         untitled: 'Ohne Namen',
         remove: '{name} entfernen',
         removeUnnamed: 'Abo entfernen',

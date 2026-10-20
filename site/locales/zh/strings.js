@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com——免费在线计算器，算清日常开销',
     invest: {
       label: '如果把这笔钱拿去投资'
+    },
+    receipt: {
+      open: '打印小票',
+      title: '你的小票',
+      close: '关闭',
+      skip: '跳到合计',
+      total: '合计',
+      length: '小票长度',
+      thanks: '感谢你 10 年来的光顾！',
+      image: '分享图片'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。'
+    },
+    receipt: {
+      subtotal: '第 {year} 年小计',
+      year: '第 {year} 年',
+      unit: 'meter',
+      saved: '图片已保存'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '咖啡小票',
+      receiptCount: '杯数',
       runtime: {
         note: {
           empty: '输入价格和每周喝几杯，即可查看累计花费。',
           result: '相当于每年约 {cups} 杯，每杯 {price}。'
-        }
+        },
+        receiptItem: '咖啡'
       },
       about: {
         title: '咖啡花费如何计算',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '香烟小票',
+      receiptCount: '包数',
       runtime: {
+        receiptItem: '一包烟',
         note: {
           empty: '输入每包价格、每天抽几支和每包支数，即可查看累计花费。',
           result: '相当于每年约 {cigarettes} 支烟（{packs} 包），每支 {price}。'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '酒水账单',
+      receiptCount: '杯数',
       runtime: {
+        receiptItem: '一杯酒',
         note: {
           empty: '输入价格和每周喝几杯，即可查看累计花费。',
           result: '相当于每年约 {drinks} 杯，每杯 {price}。'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: '每月',
       perYear: '每年',
       lossPerYear: '平均每年输掉',
+      receiptTitle: '彩票与博彩小票',
+      receiptCount: '投注次数',
+      receiptBack: '平均返还奖金',
+      receiptLoss: '平均输掉',
       runtime: {
+        receiptItem: '一次投注',
         note: {
           empty: '输入每次投注额、每周投注次数和返奖率（0～100），即可查看结果。',
           result: '平均每年约有 {back} 以奖金形式返还，也就是说，你每年约输掉 {loss}，10 年约输掉 {loss10}。'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: '10 年',
       breakdownLabel: '各项订阅的年费',
       copySummary: '复制汇总',
+      receiptTitle: '订阅小票',
+      receiptCount: '扣费次数',
       runtime: {
+        receiptItem: '扣费',
         untitled: '未命名',
         remove: '删除“{name}”',
         removeUnnamed: '删除订阅',

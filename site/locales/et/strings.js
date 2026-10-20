@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – tasuta kalkulaatorid igapäevastele rahaküsimustele',
     invest: {
       label: 'Kui investeeriksid selle raha'
+    },
+    receipt: {
+      open: 'Prindi tšekk',
+      title: 'Sinu tšekk',
+      close: 'Sulge',
+      skip: 'Mine kogusummani',
+      total: 'Kokku',
+      length: 'Tšeki pikkus',
+      thanks: 'Aitäh 10 aasta truuduse eest!',
+      image: 'Jaga pildina'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} kuus 10 aasta jooksul {rate} aastase tootlusega: oma raha {paid} ja tootlust {gain}.'
+    },
+    receipt: {
+      subtotal: 'Vahesumma, {year}. aasta',
+      year: '{year}. aasta',
+      unit: 'meter',
+      saved: 'Pilt salvestatud'
     }
   },
 
@@ -391,7 +407,10 @@ module.exports = {
       perMonth: 'Kuus',
       year1: '1 aasta',
       year5: '5 aastat',
+      receiptTitle: 'Kohvitšekk',
+      receiptCount: 'Tasse',
       runtime: {
+        receiptItem: 'Kohv',
         note: {
           empty: 'Sisesta hind ja mitu tassi nädalas jood, et näha kogusummasid.',
           result: 'See on umbes {cups} tassi aastas, {price} tassi kohta.'
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: 'Kuus',
       year1: '1 aasta',
       year5: '5 aastat',
+      receiptTitle: 'Sigaretitšekk',
+      receiptCount: 'Pakke',
       runtime: {
+        receiptItem: 'Pakk sigarette',
         note: {
           empty: 'Sisesta paki hind, mitu sigaretti päevas suitsetad ja paki suurus, et näha kogusummasid.',
           result: 'See on umbes {cigarettes} sigaretti ({packs} pakki) aastas, {price} sigareti kohta.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: 'Kuus',
       year1: '1 aasta',
       year5: '5 aastat',
+      receiptTitle: 'Baariarve',
+      receiptCount: 'Jooke',
       runtime: {
+        receiptItem: 'Jook',
         note: {
           empty: 'Sisesta hind ja mitu jooki nädalas jood, et näha kogusummasid.',
           result: 'See on umbes {drinks} jooki aastas, {price} joogi kohta.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: 'Kuus',
       perYear: 'Aastas',
       lossPerYear: 'Keskmine kaotus aastas',
+      receiptTitle: 'Loto- ja kihlveotšekk',
+      receiptCount: 'Mänge',
+      receiptBack: 'Keskmiselt võitudena tagasi',
+      receiptLoss: 'Keskmiselt kaotatud',
       runtime: {
+        receiptItem: 'Mäng',
         note: {
           empty: 'Sisesta panus, mitu korda nädalas mängid ja tagastusprotsent (0–100).',
           result: 'Keskmiselt tuleb võitudena tagasi umbes {back} aastas, nii et kaotad umbes {loss} aastas ja {loss10} kümne aastaga.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: '10 aastaga',
       breakdownLabel: 'Aastahind tellimuste kaupa',
       copySummary: 'Kopeeri kokkuvõte',
+      receiptTitle: 'Tellimuste tšekk',
+      receiptCount: 'Makseid',
       runtime: {
+        receiptItem: 'Makse',
         untitled: 'Nimetu',
         remove: 'Eemalda {name}',
         removeUnnamed: 'Eemalda tellimus',

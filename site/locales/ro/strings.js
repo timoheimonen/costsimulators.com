@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – calculatoare gratuite pentru întrebările de zi cu zi despre bani',
     invest: {
       label: 'Dacă ai investi banii în schimb'
+    },
+    receipt: {
+      open: 'Tipărește bonul',
+      title: 'Bonul tău',
+      close: 'Închide',
+      skip: 'Mergi la total',
+      total: 'Total',
+      length: 'Lungimea bonului',
+      thanks: 'Mulțumim pentru 10 ani de fidelitate!',
+      image: 'Distribuie imaginea'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} pe lună timp de 10 ani, la {rate} pe an: ai depus {paid}, iar randamentul adaugă {gain}.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, anul {year}',
+      year: 'Anul {year}',
+      unit: 'meter',
+      saved: 'Imagine salvată'
     }
   },
 
@@ -391,11 +407,14 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Bon de cafea',
+      receiptCount: 'Cești',
       runtime: {
         note: {
           empty: 'Introdu un preț și câte cești bei pe săptămână ca să vezi totalurile.',
           result: 'Numărul de cești pe an: circa {cups}, la {price} ceașca.'
-        }
+        },
+        receiptItem: 'Cafea'
       },
       about: {
         title: 'Cum se calculează costul cafelei',
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Bon de țigări',
+      receiptCount: 'Pachete',
       runtime: {
+        receiptItem: 'Pachet de țigări',
         note: {
           empty: 'Introdu prețul pachetului, câte țigări fumezi pe zi și câte țigări are pachetul ca să vezi totalurile.',
           result: 'Numărul de țigări pe an: circa {cigarettes} (pachete: {packs}), la {price} țigara.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Nota de plată de la bar',
+      receiptCount: 'Băuturi',
       runtime: {
+        receiptItem: 'Băutură',
         note: {
           empty: 'Introdu un preț și câte băuturi bei pe săptămână ca să vezi totalurile.',
           result: 'Numărul de băuturi pe an: circa {drinks}, la {price} bucata.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: 'Pe lună',
       perYear: 'Pe an',
       lossPerYear: 'Pierdere medie pe an',
+      receiptTitle: 'Bon de loto și pariuri',
+      receiptCount: 'Jocuri',
+      receiptBack: 'Returnat în câștiguri, în medie',
+      receiptLoss: 'Pierdut, în medie',
       runtime: {
+        receiptItem: 'Joc',
         note: {
           empty: 'Introdu miza, de câte ori joci pe săptămână și rata de returnare (0–100).',
           result: 'În medie, primești înapoi circa {back} pe an sub formă de câștiguri, deci pierzi circa {loss} pe an și {loss10} în 10 ani.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: 'În 10 ani',
       breakdownLabel: 'Costul anual pe abonament',
       copySummary: 'Copiază rezumatul',
+      receiptTitle: 'Bon de abonamente',
+      receiptCount: 'Plăți',
       runtime: {
+        receiptItem: 'Plată',
         untitled: 'Fără nume',
         remove: 'Elimină {name}',
         removeUnnamed: 'Elimină abonamentul',

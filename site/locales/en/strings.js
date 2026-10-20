@@ -15,6 +15,9 @@
 //   in cents, 1 when it is entered in whole currency units
 // - tools.meetings.pulseEvery: the running meeting cost pulses every time it
 //   passes a multiple of this amount
+//
+// runtime.receipt.unit is the unit of the habit receipt's length: 'foot' or
+// 'meter'.
 
 module.exports = {
   meta: {
@@ -47,6 +50,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – free cost calculators for everyday money questions',
     invest: {
       label: 'If you invested it instead'
+    },
+    receipt: {
+      open: 'Print receipt',
+      title: 'Your receipt',
+      close: 'Close',
+      skip: 'Skip to total',
+      total: 'Total',
+      length: 'Receipt length',
+      thanks: 'Thank you for 10 years of loyalty!',
+      image: 'Share image'
     }
   },
 
@@ -72,6 +85,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} a month for 10 years at {rate} a year: {paid} paid in and {gain} in returns.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, year {year}',
+      year: 'Year {year}',
+      unit: 'foot',
+      saved: 'Image saved'
     }
   },
 
@@ -405,11 +424,14 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Coffee receipt',
+      receiptCount: 'Cups',
       runtime: {
         note: {
           empty: 'Enter a price and how many cups you have per week to see the totals.',
           result: 'That’s about {cups} cups a year at {price} each.'
-        }
+        },
+        receiptItem: 'Coffee'
       },
       about: {
         title: 'How the coffee cost is calculated',
@@ -476,7 +498,10 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Cigarette receipt',
+      receiptCount: 'Packs',
       runtime: {
+        receiptItem: 'Pack of cigarettes',
         note: {
           empty: 'Enter the pack price, how many you smoke a day and the pack size to see the totals.',
           result: 'That’s about {cigarettes} cigarettes ({packs} packs) a year at {price} each.'
@@ -541,7 +566,10 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Bar tab',
+      receiptCount: 'Drinks',
       runtime: {
+        receiptItem: 'Drink',
         note: {
           empty: 'Enter a price and how many drinks you have per week to see the totals.',
           result: 'That’s about {drinks} drinks a year at {price} each.'
@@ -611,7 +639,12 @@ module.exports = {
       perMonth: 'Per month',
       perYear: 'Per year',
       lossPerYear: 'Average loss a year',
+      receiptTitle: 'Lottery & betting receipt',
+      receiptCount: 'Games',
+      receiptBack: 'Back as winnings on average',
+      receiptLoss: 'Lost on average',
       runtime: {
+        receiptItem: 'Game',
         note: {
           empty: 'Enter the stake, how many times a week you play and the payout rate (0–100).',
           result: 'On average about {back} a year comes back as winnings, so you lose about {loss} a year and {loss10} in 10 years.'
@@ -678,7 +711,10 @@ module.exports = {
       in10Years: 'In 10 years',
       breakdownLabel: 'Yearly cost per subscription',
       copySummary: 'Copy summary',
+      receiptTitle: 'Subscription receipt',
+      receiptCount: 'Charges',
       runtime: {
+        receiptItem: 'Charge',
         untitled: 'Untitled',
         remove: 'Remove {name}',
         removeUnnamed: 'Remove subscription',

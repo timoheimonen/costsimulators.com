@@ -33,6 +33,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – 일상 속 돈 고민을 풀어 주는 무료 비용 계산기',
     invest: {
       label: '그 돈을 투자했다면'
+    },
+    receipt: {
+      open: '영수증 출력',
+      title: '내 영수증',
+      close: '닫기',
+      skip: '합계로 이동',
+      total: '합계',
+      length: '영수증 길이',
+      thanks: '10년 동안 이용해 주셔서 감사합니다!',
+      image: '이미지로 공유'
     }
   },
 
@@ -58,6 +68,12 @@ module.exports = {
     },
     invest: {
       note: '매달 {monthly}씩 10년 동안 연 {rate} 수익률로 투자하면 원금 {paid}, 수익 {gain}이에요.'
+    },
+    receipt: {
+      subtotal: '{year}년 차 소계',
+      year: '{year}년 차',
+      unit: 'meter',
+      saved: '이미지를 저장했어요'
     }
   },
 
@@ -391,11 +407,14 @@ module.exports = {
       perMonth: '한 달',
       year1: '1년',
       year5: '5년',
+      receiptTitle: '커피 영수증',
+      receiptCount: '잔 수',
       runtime: {
         note: {
           empty: '가격과 주당 잔 수를 입력하면 합계를 볼 수 있어요.',
           result: '한 잔에 {price}, 1년에 약 {cups}잔이에요.'
-        }
+        },
+        receiptItem: '커피'
       },
       about: {
         title: '커피값은 이렇게 계산해요',
@@ -462,7 +481,10 @@ module.exports = {
       perMonth: '한 달',
       year1: '1년',
       year5: '5년',
+      receiptTitle: '담배 영수증',
+      receiptCount: '갑 수',
       runtime: {
+        receiptItem: '담배 한 갑',
         note: {
           empty: '한 갑 가격, 하루 흡연량, 갑당 개비 수를 입력하면 합계를 볼 수 있어요.',
           result: '한 개비에 {price}, 1년에 약 {cigarettes}개비({packs}갑)예요.'
@@ -527,7 +549,10 @@ module.exports = {
       perMonth: '한 달',
       year1: '1년',
       year5: '5년',
+      receiptTitle: '술값 계산서',
+      receiptCount: '잔 수',
       runtime: {
+        receiptItem: '술 한 잔',
         note: {
           empty: '한 잔 가격과 일주일에 마시는 잔 수를 입력하면 합계를 볼 수 있어요.',
           result: '한 잔에 {price}, 1년에 약 {drinks}잔이에요.'
@@ -597,7 +622,12 @@ module.exports = {
       perMonth: '한 달',
       perYear: '1년',
       lossPerYear: '1년 평균 손실',
+      receiptTitle: '복권·베팅 영수증',
+      receiptCount: '횟수',
+      receiptBack: '평균 당첨금 환급',
+      receiptLoss: '평균 손실',
       runtime: {
+        receiptItem: '1회',
         note: {
           empty: '1회 금액, 일주일에 하는 횟수, 환급률(0–100)을 입력하세요.',
           result: '평균적으로 1년에 {back} 정도가 당첨금으로 돌아오므로, 1년에 {loss} 정도, 10년이면 {loss10} 정도를 잃어요.'
@@ -664,7 +694,10 @@ module.exports = {
       in10Years: '10년 동안',
       breakdownLabel: '구독별 연간 비용',
       copySummary: '요약 복사',
+      receiptTitle: '구독 영수증',
+      receiptCount: '결제 횟수',
       runtime: {
+        receiptItem: '결제',
         untitled: '이름 없음',
         remove: '{name} 삭제',
         removeUnnamed: '구독 삭제',

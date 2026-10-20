@@ -41,16 +41,27 @@ const LANGUAGE_TAGS = { 'en-gb': 'en-GB', 'es-mx': 'es-MX', 'zh-hant': 'zh-Hant'
 
 // Slugs stay in English in every language, so a page has the same path in
 // every language apart from the language prefix. `legacy` is the old address
-// that now redirects to the page.
+// that now redirects to the page. `receipt` gives a tool the habit receipt:
+// `head` names the settings shown at the top (their `label`, or the string
+// itself) and `foot` extra strings shown with the totals.
 const TOOLS = [
   { key: 'meetings', slug: 'meeting-cost-calculator', legacy: 'meetings/meetings', scripts: ['timer'] },
   { key: 'workhours', slug: 'work-hours-calculator', legacy: 'workhours/workhours' },
   { key: 'costperuse', slug: 'cost-per-use-calculator' },
-  { key: 'coffee', slug: 'coffee-cost-calculator', legacy: 'coffee/coffee' },
-  { key: 'smoking', slug: 'smoking-cost-calculator', legacy: 'smoking/smoking' },
-  { key: 'alcohol', slug: 'alcohol-cost-calculator' },
-  { key: 'gambling', slug: 'lottery-betting-cost-calculator' },
-  { key: 'subscriptions', slug: 'subscription-cost-calculator', legacy: 'subscriptions/subscriptions' },
+  { key: 'coffee', slug: 'coffee-cost-calculator', legacy: 'coffee/coffee', receipt: { head: ['price', 'perWeek'] } },
+  { key: 'smoking', slug: 'smoking-cost-calculator', legacy: 'smoking/smoking', receipt: { head: ['packPrice', 'perDay', 'perPack'] } },
+  { key: 'alcohol', slug: 'alcohol-cost-calculator', receipt: { head: ['price', 'perWeek'] } },
+  {
+    key: 'gambling',
+    slug: 'lottery-betting-cost-calculator',
+    receipt: { head: ['stake', 'perWeek', 'payout'], foot: ['receiptBack', 'receiptLoss'] }
+  },
+  {
+    key: 'subscriptions',
+    slug: 'subscription-cost-calculator',
+    legacy: 'subscriptions/subscriptions',
+    receipt: { head: ['perMonth', 'perYear'] }
+  },
   { key: 'electricity', slug: 'electricity-cost-calculator', legacy: 'electricity/electricity' },
   { key: 'trip', slug: 'trip-cost-calculator', legacy: 'trip/trip' }
 ];
@@ -74,7 +85,8 @@ const NOT_FOUND = { key: 'notFound', slug: '', template: 'not-found', file: '404
 // Keys the build adds to every template context. Language files must not use them.
 const GENERATED_KEYS = [
   'lang', 'url', 'current', 'tool', 'page', 'icon', 'head', 'i18nScript', 'scripts',
-  'langMenu', 'main', 'content', 'toolCards', 'toolCount', 'toolInfo', 'homeFaq'
+  'langMenu', 'main', 'content', 'toolCards', 'toolCount', 'toolInfo', 'homeFaq',
+  'receipt', 'receiptButton'
 ];
 
 function escapeHtml(value) {
@@ -384,7 +396,7 @@ function renderRuntime(locale, page) {
 
 function renderScripts(page) {
   if (!page.tool) return '';
-  const scripts = ['core', ...(page.scripts || []), 'ui', `tools/${page.key}`];
+  const scripts = ['core', ...(page.scripts || []), ...(page.receipt ? ['receipt'] : []), 'ui', `tools/${page.key}`];
   return scripts.map(name => `    <script src="/js/${name}.js" defer></script>`).join('\n');
 }
 
@@ -455,6 +467,81 @@ ${related}
         </nav>`;
 }
 
+function receiptRow(label, value, modifier) {
+  return `                            <div class="receipt-row${modifier ? ` receipt-row--${modifier}` : ''}">
+                                <dt>${escapeHtml(label)}</dt>
+                                <dd ${value}></dd>
+                            </div>`;
+}
+
+// The button that opens the habit receipt, at the end of the results.
+function renderReceiptButton(locale, page) {
+  if (!page.receipt) return '';
+  return `                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">${escapeHtml(locale.strings.common.receipt.open)}</span>
+                </button>`;
+}
+
+// The habit receipt dialog. js/receipt.js fills in the values and the
+// purchase lines when it opens.
+function renderReceipt(locale, page) {
+  if (!page.receipt) return '';
+  const s = locale.strings;
+  const r = s.common.receipt;
+  const t = s.tools[page.key];
+  const label = key => (typeof t[key] === 'string' ? t[key] : t[key].label);
+  const head = page.receipt.head.map(key => receiptRow(label(key), `data-receipt-value="${key}"`)).join('\n');
+  const extra = (page.receipt.foot || []).map(key => receiptRow(t[key], `data-receipt-value="${key}"`));
+  const foot = [
+    receiptRow(r.total, 'data-receipt-total', 'total'),
+    receiptRow(t.receiptCount, 'data-receipt-count', 'count'),
+    ...extra,
+    receiptRow(r.length, 'data-receipt-length', 'length'),
+    receiptRow(s.common.invest.label, 'data-receipt-invest', 'invest')
+  ].join('\n');
+
+  return `        <dialog class="receipt-dialog tool--${page.key}" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">${escapeHtml(r.title)}</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="${escapeHtml(r.close)}">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>${escapeHtml(r.skip)}</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">${escapeHtml(t.receiptTitle)}</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+${head}
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+${foot}
+                        </dl>
+                        <p class="receipt-thanks">${escapeHtml(r.thanks)}</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">${escapeHtml(r.image)}</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>`;
+}
+
 const iconCache = new Map();
 function readIcon(key) {
   if (!iconCache.has(key)) iconCache.set(key, readSite(`icons/${key}.svg`).trim());
@@ -479,6 +566,8 @@ function renderPage(layout, locales, locale, page) {
     toolCards: page.key === 'home' ? renderToolCards(locale, lang) : '',
     toolCount: TOOLS.length,
     toolInfo: page.tool ? renderToolInfo(locale, page) : '',
+    receipt: renderReceipt(locale, page),
+    receiptButton: renderReceiptButton(locale, page),
     homeFaq: page.key === 'home' ? renderFaq(s.common.faqTitle, strings.faq) : ''
   };
 

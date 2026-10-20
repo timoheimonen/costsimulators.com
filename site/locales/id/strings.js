@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com – kalkulator biaya gratis untuk urusan uang sehari-hari',
     invest: {
       label: 'Jika uangnya diinvestasikan'
+    },
+    receipt: {
+      open: 'Cetak struk',
+      title: 'Struk Anda',
+      close: 'Tutup',
+      skip: 'Lompat ke total',
+      total: 'Total',
+      length: 'Panjang struk',
+      thanks: 'Terima kasih atas kesetiaan Anda selama 10 tahun!',
+      image: 'Bagikan gambar'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} per bulan selama 10 tahun dengan imbal hasil {rate} per tahun: {paid} uang Anda sendiri dan {gain} hasil investasi.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, tahun ke-{year}',
+      year: 'Tahun ke-{year}',
+      unit: 'meter',
+      saved: 'Gambar tersimpan'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Struk kopi',
+      receiptCount: 'Cangkir',
       runtime: {
         note: {
           empty: 'Masukkan harga dan jumlah gelas per minggu untuk melihat totalnya.',
           result: 'Itu sekitar {cups} gelas setahun dengan harga {price} per gelas.'
-        }
+        },
+        receiptItem: 'Kopi'
       },
       about: {
         title: 'Cara menghitung biaya kopi',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Struk rokok',
+      receiptCount: 'Bungkus',
       runtime: {
+        receiptItem: 'Sebungkus rokok',
         note: {
           empty: 'Masukkan harga per bungkus, jumlah batang per hari, dan isi bungkus untuk melihat totalnya.',
           result: 'Itu sekitar {cigarettes} batang ({packs} bungkus) setahun dengan harga {price} per batang.'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Tagihan bar',
+      receiptCount: 'Minuman',
       runtime: {
+        receiptItem: 'Minuman',
         note: {
           empty: 'Masukkan harga dan jumlah minuman per minggu untuk melihat totalnya.',
           result: 'Itu sekitar {drinks} minuman setahun dengan harga {price} per minuman.'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: 'Per bulan',
       perYear: 'Per tahun',
       lossPerYear: 'Rata-rata kerugian setahun',
+      receiptTitle: 'Struk lotre & taruhan',
+      receiptCount: 'Permainan',
+      receiptBack: 'Rata-rata kembali sebagai hadiah',
+      receiptLoss: 'Rata-rata hilang',
       runtime: {
+        receiptItem: 'Permainan',
         note: {
           empty: 'Masukkan nilai taruhan, berapa kali seminggu Anda bermain, dan tingkat pengembalian (0–100).',
           result: 'Rata-rata sekitar {back} setahun kembali sebagai hadiah, jadi Anda kehilangan sekitar {loss} setahun dan {loss10} dalam 10 tahun.'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: 'Dalam 10 tahun',
       breakdownLabel: 'Biaya tahunan per langganan',
       copySummary: 'Salin ringkasan',
+      receiptTitle: 'Struk langganan',
+      receiptCount: 'Tagihan',
       runtime: {
+        receiptItem: 'Tagihan',
         untitled: 'Tanpa nama',
         remove: 'Hapus {name}',
         removeUnnamed: 'Hapus langganan',

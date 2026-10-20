@@ -34,6 +34,16 @@ module.exports = {
     imageAlt: 'costsimulators.com：免費算清日常花費的小工具',
     invest: {
       label: '如果把這筆錢拿去投資'
+    },
+    receipt: {
+      open: '列印收據',
+      title: '你的收據',
+      close: '關閉',
+      skip: '跳到合計',
+      total: '合計',
+      length: '收據長度',
+      thanks: '感謝你 10 年來的光顧！',
+      image: '分享圖片'
     }
   },
 
@@ -59,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '每月投入 {monthly}，以年報酬率 {rate} 持續 10 年：累積投入本金 {paid}，投資報酬 {gain}。'
+    },
+    receipt: {
+      subtotal: '第 {year} 年小計',
+      year: '第 {year} 年',
+      unit: 'meter',
+      saved: '圖片已儲存'
     }
   },
 
@@ -392,11 +408,14 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '咖啡收據',
+      receiptCount: '杯數',
       runtime: {
         note: {
           empty: '輸入價格和每週喝幾杯，就能看到總花費。',
           result: '一年約 {cups} 杯，每杯 {price}。'
-        }
+        },
+        receiptItem: '咖啡'
       },
       about: {
         title: '咖啡花費怎麼算',
@@ -463,7 +482,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '香菸收據',
+      receiptCount: '包數',
       runtime: {
+        receiptItem: '一包菸',
         note: {
           empty: '輸入每包價格、每天抽幾根和每包根數，就能看到總花費。',
           result: '一年約 {cigarettes} 根（{packs} 包），每根約 {price}。'
@@ -528,7 +550,10 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '酒水帳單',
+      receiptCount: '杯數',
       runtime: {
+        receiptItem: '一杯酒',
         note: {
           empty: '輸入價格和每週喝幾杯，就能看到總花費。',
           result: '一年約 {drinks} 杯，每杯 {price}。'
@@ -598,7 +623,12 @@ module.exports = {
       perMonth: '每月',
       perYear: '每年',
       lossPerYear: '平均每年輸掉',
+      receiptTitle: '彩券與博弈收據',
+      receiptCount: '下注次數',
+      receiptBack: '平均返還獎金',
+      receiptLoss: '平均輸掉',
       runtime: {
+        receiptItem: '一次下注',
         note: {
           empty: '輸入每次下注金額、每週下注次數和返還率（0～100），就能看到結果。',
           result: '平均每年約有 {back} 以獎金形式回到你手上，所以每年約輸掉 {loss}，10 年約輸掉 {loss10}。'
@@ -665,7 +695,10 @@ module.exports = {
       in10Years: '10 年累計',
       breakdownLabel: '各項訂閱的年費',
       copySummary: '複製摘要',
+      receiptTitle: '訂閱收據',
+      receiptCount: '扣款次數',
       runtime: {
+        receiptItem: '扣款',
         untitled: '未命名',
         remove: '移除「{name}」',
         removeUnnamed: '移除訂閱',

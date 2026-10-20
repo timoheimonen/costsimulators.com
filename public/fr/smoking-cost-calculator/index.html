@@ -273,8 +273,9 @@ SOFTWARE.
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme.js"></script>
     <script src="/js/lang.js"></script>
-    <script type="application/json" id="i18n">{"locale":"fr-FR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Lien copié","copyFailed":"Échec de la copie","copied":"Copié !","calculatedWith":"Calculé avec costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement."},"note":{"empty":"Indiquez le prix du paquet, le nombre de cigarettes par jour et la taille du paquet pour voir les totaux.","result":"Soit environ {cigarettes} cigarettes ({packs} paquets) par an, à {price} la cigarette."}}}</script>
+    <script type="application/json" id="i18n">{"locale":"fr-FR","currency":"EUR","decimals":2,"strings":{"share":{"linkCopied":"Lien copié","copyFailed":"Échec de la copie","copied":"Copié !","calculatedWith":"Calculé avec costsimulators.com"},"workTime":{"minutes":"{m} min","hours":"{h} h","hoursMinutes":"{h} h {m} min"},"invest":{"note":"{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement."},"receipt":{"subtotal":"Sous-total, année {year}","year":"Année {year}","unit":"meter","saved":"Image enregistrée"},"receiptItem":"Paquet de cigarettes","note":{"empty":"Indiquez le prix du paquet, le nombre de cigarettes par jour et la taille du paquet pour voir les totaux.","result":"Soit environ {cigarettes} cigarettes ({packs} paquets) par an, à {price} la cigarette."}}}</script>
     <script src="/js/core.js" defer></script>
+    <script src="/js/receipt.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/tools/smoking.js" defer></script>
 </head>
@@ -447,9 +448,79 @@ SOFTWARE.
                     </div>
                     <p class="invest-note" data-invest-note></p>
                 </div>
+                <button type="button" class="btn btn-secondary receipt-open" id="receiptBtn" aria-haspopup="dialog">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+                    <span class="btn-label">Imprimer le ticket</span>
+                </button>
                 <p class="result-note" id="resultNote" aria-live="polite"></p>
             </section>
         </div>
+
+        <dialog class="receipt-dialog tool--smoking" id="receiptDialog" aria-labelledby="receiptTitle">
+            <div class="receipt-bar">
+                <h2 class="receipt-bar-title" id="receiptTitle">Votre ticket</h2>
+                <button type="button" class="icon-btn receipt-close" data-receipt-close aria-label="Fermer">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+                <p class="receipt-progress" aria-hidden="true">
+                    <span data-receipt-progress="year"></span>
+                    <span data-receipt-progress="length"></span>
+                    <strong data-receipt-progress="amount"></strong>
+                </p>
+                <button type="button" class="btn btn-secondary receipt-skip" data-receipt-skip>Aller au total</button>
+            </div>
+            <div class="receipt-scroll" data-receipt-scroll>
+                <div class="receipt">
+                    <div class="receipt-head">
+                        <p class="receipt-brand">costsimulators.com</p>
+                        <p class="receipt-title">Ticket tabac</p>
+                        <p class="receipt-dates" data-receipt-dates></p>
+                        <dl>
+                            <div class="receipt-row">
+                                <dt>Prix du paquet</dt>
+                                <dd data-receipt-value="packPrice"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>Cigarettes par jour</dt>
+                                <dd data-receipt-value="perDay"></dd>
+                            </div>
+                            <div class="receipt-row">
+                                <dt>Cigarettes par paquet</dt>
+                                <dd data-receipt-value="perPack"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="receipt-lines" data-receipt-lines aria-hidden="true"></div>
+                    <div class="receipt-foot" data-receipt-foot tabindex="-1">
+                        <dl>
+                            <div class="receipt-row receipt-row--total">
+                                <dt>Total</dt>
+                                <dd data-receipt-total></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--count">
+                                <dt>Paquets</dt>
+                                <dd data-receipt-count></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--length">
+                                <dt>Longueur du ticket</dt>
+                                <dd data-receipt-length></dd>
+                            </div>
+                            <div class="receipt-row receipt-row--invest">
+                                <dt>Si vous investissiez plutôt cet argent</dt>
+                                <dd data-receipt-invest></dd>
+                            </div>
+                        </dl>
+                        <p class="receipt-thanks">Merci pour 10 ans de fidélité !</p>
+                    </div>
+                </div>
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-primary" data-receipt-image>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+                        <span class="btn-label">Partager l’image</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
 
         <section class="info-section info-prose reveal" aria-labelledby="aboutTitle">
             <h2 class="info-title" id="aboutTitle">Comment le coût du tabac est calculé</h2>
