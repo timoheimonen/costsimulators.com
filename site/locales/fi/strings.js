@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Siirry loppusummaan',
       total: 'Yhteensä',
       length: 'Kuitin pituus',
-      lengthNote: '4 mm riviltä, kuten oikeassa kassakuitissa.',
       thanks: 'Kiitos 10 vuoden kanta-asiakkuudesta!',
       image: 'Jaa kuvana'
     }

@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Zur Summe',
       total: 'Summe',
       length: 'Länge des Bons',
-      lengthNote: 'Bei 4 mm pro Zeile, wie ein echter Kassenbon.',
       thanks: 'Danke für 10 Jahre Treue!',
       image: 'Als Bild teilen'
     }

@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Till summan',
       total: 'Totalt',
       length: 'Kvittots längd',
-      lengthNote: 'Med 4 mm per rad, som ett riktigt kassakvitto.',
       thanks: 'Tack för 10 års trohet!',
       image: 'Dela som bild'
     }

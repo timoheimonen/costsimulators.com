@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Mergi la total',
       total: 'Total',
       length: 'Lungimea bonului',
-      lengthNote: 'La 4 mm pe rând, ca un bon fiscal adevărat.',
       thanks: 'Mulțumim pentru 10 ani de fidelitate!',
       image: 'Distribuie imaginea'
     }

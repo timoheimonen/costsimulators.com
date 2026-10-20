@@ -41,7 +41,6 @@ module.exports = {
       skip: '合計へ移動',
       total: '合計',
       length: 'レシートの長さ',
-      lengthNote: '1行4 mmで計算。本物のレシートと同じです。',
       thanks: '10年間のご愛顧ありがとうございました！',
       image: '画像で共有'
     }

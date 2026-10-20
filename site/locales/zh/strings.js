@@ -42,7 +42,6 @@ module.exports = {
       skip: '跳到合计',
       total: '合计',
       length: '小票长度',
-      lengthNote: '按每行 4 毫米计算，和真正的收银小票一样。',
       thanks: '感谢你 10 年来的光顾！',
       image: '分享图片'
     }

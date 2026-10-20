@@ -35,7 +35,7 @@ SOFTWARE.
     // Lines above and below the purchases (store name, dates, totals),
     // counted into the printed length.
     const HEAD_LINES = 8;
-    const FOOT_LINES = 10;
+    const FOOT_LINES = 9;
     // At most this many purchase lines a year. A bigger year ends in one
     // "Coffee × 1,234" line, so the receipt stays within what browsers scroll.
     const MAX_ROWS_PER_YEAR = 20000;

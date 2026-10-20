@@ -1643,8 +1643,7 @@ kbd {
 .receipt-brand,
 .receipt-title,
 .receipt-dates,
-.receipt-thanks,
-.receipt-small {
+.receipt-thanks {
     text-align: center;
     text-wrap: balance;
 }
@@ -1660,8 +1659,7 @@ kbd {
     font-weight: 700;
 }
 
-.receipt-dates,
-.receipt-small {
+.receipt-dates {
     color: var(--paper-faint);
     font-size: 0.8125rem;
 }
@@ -1756,11 +1754,6 @@ kbd {
     padding-top: 12px;
     border-top: 1px dashed var(--paper-faint);
     font-weight: 700;
-}
-
-.receipt-small {
-    margin-top: 4px;
-    font-size: 0.75rem;
 }
 
 .receipt-actions {

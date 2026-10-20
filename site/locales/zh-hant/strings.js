@@ -42,7 +42,6 @@ module.exports = {
       skip: '跳到合計',
       total: '合計',
       length: '收據長度',
-      lengthNote: '以每行 4 公釐計算，和真正的收據一樣。',
       thanks: '感謝你 10 年來的光顧！',
       image: '分享圖片'
     }

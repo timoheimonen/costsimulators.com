@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Naar het totaal',
       total: 'Totaal',
       length: 'Lengte van het bonnetje',
-      lengthNote: 'Bij 4 mm per regel, zoals een echt kassabonnetje.',
       thanks: 'Bedankt voor 10 jaar trouw!',
       image: 'Delen als afbeelding'
     }

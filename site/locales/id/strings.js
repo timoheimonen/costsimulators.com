@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Lompat ke total',
       total: 'Total',
       length: 'Panjang struk',
-      lengthNote: 'Dengan 4 mm per baris, seperti struk kasir sungguhan.',
       thanks: 'Terima kasih atas kesetiaan Anda selama 10 tahun!',
       image: 'Bagikan gambar'
     }

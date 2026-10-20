@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Til summen',
       total: 'Totalt',
       length: 'Kvitteringens lengde',
-      lengthNote: 'Med 4 mm per linje, som en ekte kassalapp.',
       thanks: 'Takk for 10 års troskap!',
       image: 'Del som bilde'
     }

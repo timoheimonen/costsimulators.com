@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Přejít na součet',
       total: 'Celkem',
       length: 'Délka účtenky',
-      lengthNote: 'Při 4 mm na řádek, jako skutečná účtenka.',
       thanks: 'Děkujeme za 10 let věrnosti!',
       image: 'Sdílet jako obrázek'
     }

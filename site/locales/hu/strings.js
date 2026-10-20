@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Ugrás a végösszeghez',
       total: 'Végösszeg',
       length: 'A blokk hossza',
-      lengthNote: 'Soronként 4 mm-rel, mint egy igazi blokk.',
       thanks: 'Köszönjük a 10 év hűséget!',
       image: 'Megosztás képként'
     }

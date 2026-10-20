@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Vai al totale',
       total: 'Totale',
       length: 'Lunghezza dello scontrino',
-      lengthNote: 'A 4 mm per riga, come un vero scontrino.',
       thanks: 'Grazie per 10 anni di fedeltà!',
       image: 'Condividi immagine'
     }

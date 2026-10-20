@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Ir para o total',
       total: 'Total',
       length: 'Comprimento do cupom',
-      lengthNote: 'Com 4 mm por linha, como um cupom fiscal de verdade.',
       thanks: 'Obrigado por 10 anos de fidelidade!',
       image: 'Compartilhar imagem'
     }

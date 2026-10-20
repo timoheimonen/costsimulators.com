@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Toplama git',
       total: 'Toplam',
       length: 'Fiş uzunluğu',
-      lengthNote: 'Satır başına 4 mm, gerçek bir kasa fişi gibi.',
       thanks: '10 yıllık sadakatiniz için teşekkürler!',
       image: 'Görsel olarak paylaş'
     }

@@ -530,7 +530,6 @@ ${head}
 ${foot}
                         </dl>
                         <p class="receipt-thanks">${escapeHtml(r.thanks)}</p>
-                        <p class="receipt-small">${escapeHtml(r.lengthNote)}</p>
                     </div>
                 </div>
                 <div class="receipt-actions">

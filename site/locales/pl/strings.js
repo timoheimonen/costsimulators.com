@@ -41,7 +41,6 @@ module.exports = {
       skip: 'Przejdź do sumy',
       total: 'Suma',
       length: 'Długość paragonu',
-      lengthNote: 'Przy 4 mm na wiersz, jak prawdziwy paragon.',
       thanks: 'Dziękujemy za 10 lat lojalności!',
       image: 'Udostępnij obraz'
     }

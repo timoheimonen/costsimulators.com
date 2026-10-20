@@ -58,7 +58,6 @@ module.exports = {
       skip: 'Skip to total',
       total: 'Total',
       length: 'Receipt length',
-      lengthNote: 'At 4 mm (1/6 in) a line, like a real register receipt.',
       thanks: 'Thank you for 10 years of loyalty!',
       image: 'Share image'
     }

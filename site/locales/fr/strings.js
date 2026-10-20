@@ -42,7 +42,6 @@ module.exports = {
       skip: 'Aller au total',
       total: 'Total',
       length: 'Longueur du ticket',
-      lengthNote: 'À 4 mm par ligne, comme un vrai ticket de caisse.',
       thanks: 'Merci pour 10 ans de fidélité !',
       image: 'Partager l’image'
     }

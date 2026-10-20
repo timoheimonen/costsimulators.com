@@ -41,7 +41,6 @@ module.exports = {
       skip: '합계로 이동',
       total: '합계',
       length: '영수증 길이',
-      lengthNote: '한 줄에 4mm로, 실제 영수증처럼 계산했어요.',
       thanks: '10년 동안 이용해 주셔서 감사합니다!',
       image: '이미지로 공유'
     }
