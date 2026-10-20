@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Bezplatné kalkulačky nákladov na každý deň',
     description: 'Bezplatné a súkromné kalkulačky, ktoré ukážu, koľko veci naozaj stoja: porady, hodiny práce, zvyky, predplatné, elektrina, palivo a cena za použitie. Bez registrácie, priamo v prehliadači.',
-    eyebrow: 'Zadarmo · Súkromne · Okamžite',
+    eyebrow: 'Súkromne · Zadarmo · Okamžite',
     heading: 'Malé nástroje na každodenné otázky o <span class="accent-text">peniazoch</span>.',
     lead: 'Rýchle kalkulačky, ktoré ukážu, koľko veci naozaj stoja. Bez registrácie a bez sledovania – všetko beží priamo vo vašom prehliadači.',
     toolsTitle: 'Nástroje',

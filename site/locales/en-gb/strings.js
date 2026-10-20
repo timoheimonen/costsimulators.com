@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Free Cost Calculators for Everyday Life',
     description: 'Free, private calculators that show what things really cost: meetings, work hours, habits, subscriptions, electricity, petrol and cost per use. No sign-up, runs in your browser.',
-    eyebrow: 'Free · Private · Instant',
+    eyebrow: 'Private · Free · Instant',
     heading: 'Small tools for everyday <span class="accent-text">money</span> questions.',
     lead: 'Quick calculators that show what things really cost. No sign-up, no tracking – everything runs right in your browser.',
     toolsTitle: 'Tools',

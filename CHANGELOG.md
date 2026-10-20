@@ -4,6 +4,10 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ## 2026-10-20
 
+### Changed
+
+- The home page tagline puts privacy first: Private · Free · Instant, in every language
+
 ### Fixed
 
 - The − button no longer turns a price into 0.01 at the bottom of its range, which then made the + button give prices such as 50.01 yen or 1000.01 rupiah. A price that cannot go one more step lower now stays where it is.

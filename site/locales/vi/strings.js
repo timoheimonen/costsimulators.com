@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Công cụ tính chi phí miễn phí cho cuộc sống hằng ngày',
     description: 'Công cụ tính miễn phí, riêng tư cho thấy cái giá thật của mọi thứ: cuộc họp, giờ làm việc, thói quen, gói đăng ký, tiền điện, tiền xăng và chi phí mỗi lần dùng. Không cần đăng ký.',
-    eyebrow: 'Miễn phí · Riêng tư · Tức thì',
+    eyebrow: 'Riêng tư · Miễn phí · Tức thì',
     heading: 'Những công cụ nhỏ cho các câu hỏi <span class="accent-text">tiền bạc</span> hằng ngày.',
     lead: 'Các công cụ tính nhanh cho thấy mọi thứ thực sự tốn bao nhiêu. Không cần đăng ký, không theo dõi – mọi phép tính đều chạy ngay trong trình duyệt của bạn.',
     toolsTitle: 'Công cụ',

@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Besplatni kalkulatori troškova za svaki dan',
     description: 'Besplatni i privatni kalkulatori koji pokazuju koliko stvari zapravo koštaju: sastanci, radni sati, navike, pretplate, struja, gorivo i cijena po korištenju. Bez registracije, u pregledniku.',
-    eyebrow: 'Besplatno · Privatno · Odmah',
+    eyebrow: 'Privatno · Besplatno · Odmah',
     heading: 'Mali alati za svakodnevna pitanja o <span class="accent-text">novcu</span>.',
     lead: 'Brzi kalkulatori koji pokazuju koliko stvari zapravo koštaju. Bez registracije i bez praćenja – sve radi izravno u vašem pregledniku.',
     toolsTitle: 'Kalkulatori',

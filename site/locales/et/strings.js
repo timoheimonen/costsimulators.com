@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Tasuta kulukalkulaatorid igapäevaeluks',
     description: 'Tasuta ja privaatsed kalkulaatorid, mis näitavad, mida asjad tegelikult maksavad: koosolekud, töötunnid, harjumused, tellimused, elekter, kütus ja kasutuskorra hind. Ilma registreerimiseta.',
-    eyebrow: 'Tasuta · Privaatne · Kohe',
+    eyebrow: 'Privaatne · Tasuta · Kohe',
     heading: 'Väikesed tööriistad igapäevastele <span class="accent-text">raha</span>küsimustele.',
     lead: 'Kiired kalkulaatorid, mis näitavad, mida asjad tegelikult maksavad. Ilma registreerimise ja jälgimiseta – kõik töötab otse sinu brauseris.',
     toolsTitle: 'Tööriistad',

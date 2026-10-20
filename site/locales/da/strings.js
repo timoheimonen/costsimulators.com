@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Gratis beregnere til hverdagens udgifter',
     description: 'Gratis og private beregnere, der viser, hvad ting reelt koster: møder, arbejdstimer, vaner, abonnementer, el, brændstof og pris pr. brug. Uden login – alt kører i din browser.',
-    eyebrow: 'Gratis · Privat · Lynhurtigt',
+    eyebrow: 'Privat · Gratis · Lynhurtigt',
     heading: 'Små værktøjer til hverdagens <span class="accent-text">penge</span>spørgsmål.',
     lead: 'Hurtige beregnere, der viser, hvad ting reelt koster. Ingen tilmelding, ingen sporing – alt kører direkte i din browser.',
     toolsTitle: 'Værktøjer',

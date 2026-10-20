@@ -65,7 +65,7 @@ module.exports = {
   home: {
     title: 'Calculadoras de custo grátis para o dia a dia',
     description: 'Calculadoras grátis e privadas que mostram quanto as coisas custam de verdade: reuniões, horas de trabalho, hábitos, assinaturas, energia, combustível e custo por uso. Sem cadastro.',
-    eyebrow: 'Grátis · Privado · Instantâneo',
+    eyebrow: 'Privado · Grátis · Instantâneo',
     heading: 'Pequenas ferramentas para as questões de <span class="accent-text">dinheiro</span> do dia a dia.',
     lead: 'Calculadoras rápidas que mostram quanto as coisas custam de verdade. Sem cadastro, sem rastreamento – tudo funciona direto no seu navegador.',
     toolsTitle: 'Ferramentas',

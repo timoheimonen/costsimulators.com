@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Ingyenes költségkalkulátorok a mindennapokhoz',
     description: 'Ingyenes, privát kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok: meetingek, munkaórák, szokások, előfizetések, áram, benzin és használatonkénti költség. Regisztráció nélkül.',
-    eyebrow: 'Ingyenes · Privát · Azonnali',
+    eyebrow: 'Privát · Ingyenes · Azonnali',
     heading: 'Kis eszközök a hétköznapi <span class="accent-text">pénz</span>ügyekhez.',
     lead: 'Gyors kalkulátorok, amelyek megmutatják, mibe kerülnek valójában a dolgok. Nincs regisztráció, nincs követés – minden közvetlenül a böngésződben fut.',
     toolsTitle: 'Eszközök',
