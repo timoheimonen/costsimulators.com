@@ -81,7 +81,7 @@ module.exports = {
   home: {
     title: 'Kostenrechner für den Alltag – kostenlos und privat',
     description: 'Kostenlose, private Rechner, die zeigen, was Dinge wirklich kosten: Meetings, Arbeitszeit, Gewohnheiten, Abos, Strom, Sprit und Kosten pro Nutzung. Ohne Anmeldung, direkt im Browser.',
-    eyebrow: 'Kostenlos · Privat · Sofort',
+    eyebrow: 'Privat · Kostenlos · Sofort',
     heading: 'Kleine Rechner für alltägliche <span class="accent-text">Geld</span>fragen.',
     lead: 'Schnelle Rechner, die zeigen, was Dinge wirklich kosten. Ohne Anmeldung, ohne Tracking – alles läuft direkt in deinem Browser.',
     toolsTitle: 'Rechner',

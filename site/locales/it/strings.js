@@ -80,7 +80,7 @@ module.exports = {
   home: {
     title: 'Calcolatori di costi gratuiti per la vita di tutti i giorni',
     description: 'Calcolatori gratuiti e privati che mostrano quanto costano davvero le cose: riunioni, ore di lavoro, abitudini, abbonamenti, elettricità, benzina e costo per utilizzo. Senza registrazione.',
-    eyebrow: 'Gratis · Privato · Immediato',
+    eyebrow: 'Privato · Gratis · Immediato',
     heading: 'Piccoli strumenti per fare i <span class="accent-text">conti</span> di tutti i giorni.',
     lead: 'Calcolatori rapidi che mostrano quanto costano davvero le cose. Nessuna registrazione, nessun tracciamento: tutto funziona direttamente nel tuo browser.',
     toolsTitle: 'Strumenti',

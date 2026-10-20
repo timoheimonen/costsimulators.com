@@ -80,7 +80,7 @@ module.exports = {
   home: {
     title: 'Kalkulačky nákladů zdarma pro každý den',
     description: 'Bezplatné a soukromé kalkulačky, které ukážou, kolik věci doopravdy stojí: porady, hodiny práce, zvyky, předplatné, elektřina, benzín a cena za použití. Bez registrace, přímo v prohlížeči.',
-    eyebrow: 'Zdarma · Soukromě · Okamžitě',
+    eyebrow: 'Soukromě · Zdarma · Okamžitě',
     heading: 'Malé nástroje na každodenní otázky kolem <span class="accent-text">peněz</span>.',
     lead: 'Rychlé kalkulačky, které ukážou, kolik věci doopravdy stojí. Bez registrace a bez sledování – všechno běží přímo ve vašem prohlížeči.',
     toolsTitle: 'Nástroje',

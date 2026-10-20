@@ -6,7 +6,29 @@ All notable changes to costsimulators.com are listed here, newest first. Changes
 
 ### Added
 
-- Habit receipts, in every language, on the coffee, smoking, alcohol, lottery and subscription calculators: "Print receipt" prints the next 10 years as a till receipt with one line per purchase (a cup, a pack, a drink, a game or a subscription charge in date order), a subtotal for every year, the total, the invested amount and how long the receipt would be at 4 mm a line (in feet in English). The receipt is as long as the habit, so it takes a while to scroll; "Skip to total" jumps to the end. "Share image" makes a picture of the receipt for social media on the device and opens the share sheet on phones or saves the image elsewhere. The lottery receipt also shows what comes back as winnings and what is lost on average. The subtotals and the total are the same amounts the calculator shows
+- Habit receipts, in every language, on the coffee, smoking, alcohol, lottery and subscription calculators: "Print receipt" prints the next 10 years as a till receipt with one line per purchase (a cup, a pack, a drink, a game or a subscription charge in date order), a subtotal for every year, the total, the invested amount and how long the receipt would be at 4 mm a line (in feet in US English). The receipt is as long as the habit, so it takes a while to scroll; "Skip to total" jumps to the end. "Share image" makes a picture of the receipt for social media on the device and opens the share sheet on phones or saves the image elsewhere. The lottery receipt also shows what comes back as winnings and what is lost on average. The subtotals and the total are the same amounts the calculator shows
+
+### Changed
+
+- The home page tagline puts privacy first: Private · Free · Instant, in every language
+
+### Fixed
+
+- The − button no longer turns a price into 0.01 at the bottom of its range, which then made the + button give prices such as 50.01 yen or 1000.01 rupiah. A price that cannot go one more step lower now stays where it is.
+
+## 2026-10-19b
+
+### Added
+
+- Regional versions, each with its own currency, typical local prices and wording:
+  - **English (UK)** (`/en-gb/`) – prices in pounds, British terms such as petrol, return journeys, National Insurance and the electricity unit rate in pence, and help with entering UK mpg in the trip calculator
+  - **Español (México)** (`/es-mx/`) – Mexican Spanish, with prices in Mexican pesos
+- 7 more languages, each with local currency, number formatting, typical local default prices, examples recalculated in that currency and translated about, privacy and terms pages: Vietnamese (`/vi/`, dong), Ukrainian (`/uk/`, hryvnias), Russian (`/ru/`, rubles), Slovak (`/sk/`, euros), Croatian (`/hr/`, euros), Bulgarian (`/bg/`, euros) and Estonian (`/et/`, euros)
+- English pages open the UK version in browsers set to English for the UK, and the Mexican version in browsers set to Spanish for Mexico or another Spanish-speaking country in Latin America
+
+### Changed
+
+- The language menu names the versions of English and Spanish: English (US), English (UK), Español (España) and Español (México)
 
 ## 2026-10-19
 

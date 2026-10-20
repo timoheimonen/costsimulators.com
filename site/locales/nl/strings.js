@@ -80,7 +80,7 @@ module.exports = {
   home: {
     title: 'Gratis calculators voor alledaagse kosten',
     description: 'Gratis, privacyvriendelijke calculators die laten zien wat dingen echt kosten: vergaderingen, werkuren, gewoontes, abonnementen, stroom, brandstof en kosten per gebruik. Zonder account, in je browser.',
-    eyebrow: 'Gratis · Privé · Direct',
+    eyebrow: 'Privé · Gratis · Direct',
     heading: 'Kleine tools voor alledaagse vragen over <span class="accent-text">geld</span>.',
     lead: 'Snelle calculators die laten zien wat dingen echt kosten. Geen account, geen tracking – alles werkt gewoon in je browser.',
     toolsTitle: 'Tools',

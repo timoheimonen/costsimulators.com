@@ -81,7 +81,7 @@ module.exports = {
   home: {
     title: 'Gratis kostnadsräknare för vardagen',
     description: 'Gratis och privata räknare som visar vad saker egentligen kostar: möten, arbetstimmar, vanor, prenumerationer, el, bensin och kostnad per användning. Ingen registrering, allt körs i webbläsaren.',
-    eyebrow: 'Gratis · Privat · Direkt',
+    eyebrow: 'Privat · Gratis · Direkt',
     heading: 'Små verktyg för vardagens <span class="accent-text">pengafrågor</span>.',
     lead: 'Snabba räknare som visar vad saker egentligen kostar. Ingen registrering, ingen spårning – allt körs direkt i din webbläsare.',
     toolsTitle: 'Verktyg',

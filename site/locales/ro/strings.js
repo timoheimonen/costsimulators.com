@@ -80,7 +80,7 @@ module.exports = {
   home: {
     title: 'Calculatoare de costuri gratuite pentru viața de zi cu zi',
     description: 'Calculatoare gratuite și private care arată cât costă de fapt lucrurile: ședințe, ore de muncă, obiceiuri, abonamente, curent, benzină și cost pe utilizare. Fără cont, direct în browser.',
-    eyebrow: 'Gratuit · Privat · Instant',
+    eyebrow: 'Privat · Gratuit · Instant',
     heading: 'Instrumente mici pentru întrebările de zi cu zi despre <span class="accent-text">bani</span>.',
     lead: 'Calculatoare rapide care arată cât costă de fapt lucrurile. Fără cont, fără urmărire – totul rulează direct în browserul tău.',
     toolsTitle: 'Instrumente',
