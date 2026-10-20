@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – kostenlose Kostenrechner für Geldfragen im Alltag',
     invest: {
       label: 'Wenn du das Geld stattdessen anlegst'
+    },
+    receipt: {
+      open: 'Kassenbon drucken',
+      title: 'Dein Kassenbon',
+      close: 'Schließen',
+      skip: 'Zur Summe',
+      total: 'Summe',
+      length: 'Länge des Bons',
+      lengthNote: 'Bei 4 mm pro Zeile, wie ein echter Kassenbon.',
+      thanks: 'Danke für 10 Jahre Treue!',
+      image: 'Als Bild teilen'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} pro Monat über 10 Jahre bei {rate} Rendite im Jahr: {paid} eingezahlt und {gain} an Erträgen.'
+    },
+    receipt: {
+      subtotal: 'Zwischensumme, Jahr {year}',
+      year: 'Jahr {year}',
+      unit: 'meter',
+      saved: 'Bild gespeichert'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: 'Pro Monat',
       year1: '1 Jahr',
       year5: '5 Jahre',
+      receiptTitle: 'Kaffee-Kassenbon',
+      receiptCount: 'Tassen',
       runtime: {
         note: {
           empty: 'Gib einen Preis ein und wie viele Tassen du pro Woche trinkst, um die Summen zu sehen.',
           result: 'Das sind rund {cups} Tassen im Jahr zu je {price}.'
-        }
+        },
+        receiptItem: 'Kaffee'
       },
       about: {
         title: 'So werden die Kaffeekosten berechnet',

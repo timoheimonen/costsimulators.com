@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – kalkulator biaya gratis untuk urusan uang sehari-hari',
     invest: {
       label: 'Jika uangnya diinvestasikan'
+    },
+    receipt: {
+      open: 'Cetak struk',
+      title: 'Struk Anda',
+      close: 'Tutup',
+      skip: 'Lompat ke total',
+      total: 'Total',
+      length: 'Panjang struk',
+      lengthNote: 'Dengan 4 mm per baris, seperti struk kasir sungguhan.',
+      thanks: 'Terima kasih atas kesetiaan Anda selama 10 tahun!',
+      image: 'Bagikan gambar'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} per bulan selama 10 tahun dengan imbal hasil {rate} per tahun: {paid} uang Anda sendiri dan {gain} hasil investasi.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, tahun ke-{year}',
+      year: 'Tahun ke-{year}',
+      unit: 'meter',
+      saved: 'Gambar tersimpan'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: 'Per bulan',
       year1: '1 tahun',
       year5: '5 tahun',
+      receiptTitle: 'Struk kopi',
+      receiptCount: 'Cangkir',
       runtime: {
         note: {
           empty: 'Masukkan harga dan jumlah gelas per minggu untuk melihat totalnya.',
           result: 'Itu sekitar {cups} gelas setahun dengan harga {price} per gelas.'
-        }
+        },
+        receiptItem: 'Kopi'
       },
       about: {
         title: 'Cara menghitung biaya kopi',

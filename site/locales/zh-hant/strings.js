@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com：免費算清日常花費的小工具',
     invest: {
       label: '如果把這筆錢拿去投資'
+    },
+    receipt: {
+      open: '列印收據',
+      title: '你的收據',
+      close: '關閉',
+      skip: '跳到合計',
+      total: '合計',
+      length: '收據長度',
+      lengthNote: '以每行 4 公釐計算，和真正的收據一樣。',
+      thanks: '感謝你 10 年來的光顧！',
+      image: '分享圖片'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '每月投入 {monthly}，以年報酬率 {rate} 持續 10 年：累積投入本金 {paid}，投資報酬 {gain}。'
+    },
+    receipt: {
+      subtotal: '第 {year} 年小計',
+      year: '第 {year} 年',
+      unit: 'meter',
+      saved: '圖片已儲存'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '咖啡收據',
+      receiptCount: '杯數',
       runtime: {
         note: {
           empty: '輸入價格和每週喝幾杯，就能看到總花費。',
           result: '一年約 {cups} 杯，每杯 {price}。'
-        }
+        },
+        receiptItem: '咖啡'
       },
       about: {
         title: '咖啡花費怎麼算',

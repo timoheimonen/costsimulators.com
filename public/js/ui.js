@@ -408,6 +408,7 @@ SOFTWARE.
         bindPresets: bindPresets,
         bindShare: bindShare,
         copyWithFeedback: copyWithFeedback,
+        flashLabel: flashLabel,
         resetLabel: resetLabel,
         animateNumber: animateNumber,
         clearNumber: clearNumber,

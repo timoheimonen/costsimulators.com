@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – darmowe kalkulatory do codziennych pytań o pieniądze',
     invest: {
       label: 'Gdyby te pieniądze zainwestować'
+    },
+    receipt: {
+      open: 'Drukuj paragon',
+      title: 'Twój paragon',
+      close: 'Zamknij',
+      skip: 'Przejdź do sumy',
+      total: 'Suma',
+      length: 'Długość paragonu',
+      lengthNote: 'Przy 4 mm na wiersz, jak prawdziwy paragon.',
+      thanks: 'Dziękujemy za 10 lat lojalności!',
+      image: 'Udostępnij obraz'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} miesięcznie przez 10 lat przy stopie zwrotu {rate} rocznie: łącznie wpłacasz {paid}, a zysk wynosi {gain}.'
+    },
+    receipt: {
+      subtotal: 'Suma częściowa, rok {year}',
+      year: 'Rok {year}',
+      unit: 'meter',
+      saved: 'Obraz zapisany'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Miesięcznie',
       year1: '1 rok',
       year5: '5 lat',
+      receiptTitle: 'Paragon za kawę',
+      receiptCount: 'Filiżanki',
       runtime: {
         note: {
           empty: 'Wpisz cenę i liczbę kaw w tygodniu, aby zobaczyć sumy.',
           result: 'Kupujesz kawę około {cups} razy w roku, po {price} za każdą.'
-        }
+        },
+        receiptItem: 'Kawa'
       },
       about: {
         title: 'Jak liczony jest koszt kawy',

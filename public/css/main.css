@@ -64,6 +64,9 @@ SOFTWARE.
     --costperuse-soft: #edf3dc;
     --gambling: #c2410c;
     --gambling-soft: #fdece4;
+    --paper: #fffef9;
+    --paper-text: #26241f;
+    --paper-faint: #7a756a;
     --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05);
     --shadow-md: 0 1px 2px rgb(16 24 40 / 0.04), 0 12px 32px -12px rgb(16 24 40 / 0.18);
 
@@ -119,6 +122,9 @@ SOFTWARE.
         --costperuse-soft: rgb(191 219 106 / 0.14);
         --gambling: #ff8f66;
         --gambling-soft: rgb(255 143 102 / 0.14);
+        --paper: #e4dfd3;
+        --paper-text: #1f1d19;
+        --paper-faint: #6b665b;
         --shadow-sm: none;
         --shadow-md: 0 16px 40px -16px rgb(0 0 0 / 0.7);
     }
@@ -166,6 +172,9 @@ SOFTWARE.
     --costperuse-soft: rgb(191 219 106 / 0.14);
     --gambling: #ff8f66;
     --gambling-soft: rgb(255 143 102 / 0.14);
+    --paper: #e4dfd3;
+    --paper-text: #1f1d19;
+    --paper-faint: #6b665b;
     --shadow-sm: none;
     --shadow-md: 0 16px 40px -16px rgb(0 0 0 / 0.7);
 }
@@ -1498,6 +1507,279 @@ kbd {
 
 .panel--result[data-empty="true"] .invest-value {
     color: var(--text-faint);
+}
+
+/* Habit receipt */
+
+.receipt-open {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.receipt-open:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+:root:has(.receipt-dialog[open]) {
+    overflow: hidden;
+}
+
+.receipt-dialog {
+    width: min(100% - 32px, 480px);
+    height: min(100% - 48px, 920px);
+    max-width: none;
+    max-height: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-2);
+    color: var(--text);
+    box-shadow: var(--shadow-md);
+}
+
+.receipt-dialog[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+}
+
+.receipt-dialog::backdrop {
+    background: rgb(12 14 18 / 0.6);
+}
+
+.receipt-bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 14px 14px 12px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.receipt-bar-title {
+    font-size: 1.0625rem;
+}
+
+.receipt-progress {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 12px;
+    min-width: 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.receipt-progress strong {
+    color: var(--tool);
+    font-size: 1rem;
+}
+
+.receipt-skip {
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 0.8125rem;
+}
+
+.receipt-scroll {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 28px 16px 32px;
+}
+
+.receipt {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 22px 20px 26px;
+    background: var(--paper);
+    color: var(--paper-text);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.receipt-dialog[open] .receipt {
+    animation: receipt-print 0.7s var(--ease-out) both;
+}
+
+@keyframes receipt-print {
+    from {
+        opacity: 0;
+        transform: translateY(-32px);
+    }
+}
+
+/* Torn zigzag edges, one triangle every 16px. */
+.receipt::before,
+.receipt::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-repeat: repeat-x;
+    background-size: 16px 8px;
+}
+
+.receipt::before {
+    bottom: calc(100% - 1px);
+    background-image: conic-gradient(from 135deg at 50% 0, var(--paper) 90deg, transparent 0);
+}
+
+.receipt::after {
+    top: calc(100% - 1px);
+    background-image: conic-gradient(from -45deg at 50% 100%, var(--paper) 90deg, transparent 0);
+}
+
+.receipt-brand,
+.receipt-title,
+.receipt-dates,
+.receipt-thanks,
+.receipt-small {
+    text-align: center;
+    text-wrap: balance;
+}
+
+.receipt-brand {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.receipt-title {
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+.receipt-dates,
+.receipt-small {
+    color: var(--paper-faint);
+    font-size: 0.8125rem;
+}
+
+.receipt-head dl {
+    margin-top: 12px;
+    padding: 10px 0;
+    border-block: 1px dashed var(--paper-faint);
+}
+
+.receipt-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.receipt-row dt {
+    min-width: 0;
+}
+
+.receipt-row dd {
+    flex: none;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.receipt-lines {
+    position: relative;
+    margin-top: 8px;
+}
+
+.receipt-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.receipt-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    height: var(--line-h);
+    line-height: var(--line-h);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.receipt-line span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.receipt-line--sub {
+    border-top: 1px dashed var(--paper-faint);
+    font-weight: 700;
+    line-height: calc(var(--line-h) - 1px);
+}
+
+.receipt-foot {
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 3px double var(--paper-text);
+}
+
+.receipt-foot:focus {
+    outline: none;
+}
+
+.receipt-row--total {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.receipt-row--length {
+    margin: 6px -6px 0;
+    padding: 2px 6px;
+    background: color-mix(in srgb, var(--tool) 22%, transparent);
+    font-weight: 700;
+}
+
+.receipt-row--invest {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--paper-faint);
+    color: var(--paper-faint);
+}
+
+.receipt-thanks {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--paper-faint);
+    font-weight: 700;
+}
+
+.receipt-small {
+    margin-top: 4px;
+    font-size: 0.75rem;
+}
+
+.receipt-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+@media (max-width: 559px) {
+    .receipt-dialog {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .receipt-bar {
+        padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    }
+
+    .receipt-scroll {
+        padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+    }
 }
 
 .site-footer {

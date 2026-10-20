@@ -46,7 +46,7 @@ const TOOLS = [
   { key: 'meetings', slug: 'meeting-cost-calculator', legacy: 'meetings/meetings', scripts: ['timer'] },
   { key: 'workhours', slug: 'work-hours-calculator', legacy: 'workhours/workhours' },
   { key: 'costperuse', slug: 'cost-per-use-calculator' },
-  { key: 'coffee', slug: 'coffee-cost-calculator', legacy: 'coffee/coffee' },
+  { key: 'coffee', slug: 'coffee-cost-calculator', legacy: 'coffee/coffee', scripts: ['receipt'] },
   { key: 'smoking', slug: 'smoking-cost-calculator', legacy: 'smoking/smoking' },
   { key: 'alcohol', slug: 'alcohol-cost-calculator' },
   { key: 'gambling', slug: 'lottery-betting-cost-calculator' },

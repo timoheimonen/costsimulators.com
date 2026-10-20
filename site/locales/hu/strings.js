@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – ingyenes költségkalkulátorok a hétköznapi pénzügyekhez',
     invest: {
       label: 'Ha inkább befektetnéd'
+    },
+    receipt: {
+      open: 'Blokk nyomtatása',
+      title: 'A blokkod',
+      close: 'Bezárás',
+      skip: 'Ugrás a végösszeghez',
+      total: 'Végösszeg',
+      length: 'A blokk hossza',
+      lengthNote: 'Soronként 4 mm-rel, mint egy igazi blokk.',
+      thanks: 'Köszönjük a 10 év hűséget!',
+      image: 'Megosztás képként'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: 'Havi {monthly} 10 éven át, évi {rate} hozammal: ebből {paid} a befizetés, {gain} a hozam.'
+    },
+    receipt: {
+      subtotal: 'Részösszeg, {year}. év',
+      year: '{year}. év',
+      unit: 'meter',
+      saved: 'Kép elmentve'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Havonta',
       year1: '1 év',
       year5: '5 év',
+      receiptTitle: 'Kávéblokk',
+      receiptCount: 'Csészék',
       runtime: {
         note: {
           empty: 'Add meg az árat és azt, hogy hetente hány csésze kávét iszol, és megmutatjuk az összegeket.',
           result: 'Ez évente kb. {cups} csésze, csészénként {price}.'
-        }
+        },
+        receiptItem: 'Kávé'
       },
       about: {
         title: 'Így számoljuk a kávé költségét',

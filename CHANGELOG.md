@@ -2,6 +2,12 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-10-20
+
+### Added
+
+- Habit receipt on the coffee calculator, in every language: "Print receipt" prints the next 10 years of coffee as a till receipt with one line per cup, a subtotal for every year, the total, the invested amount and how long the receipt would be at 4 mm a line (in feet in English). The receipt is as long as the habit, so it takes a while to scroll; "Skip to total" jumps to the end. "Share image" makes a picture of the receipt for social media on the device and opens the share sheet on phones or saves the image elsewhere
+
 ## 2026-10-19
 
 ### Added

@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – calculadoras de custo grátis para as contas do dia a dia',
     invest: {
       label: 'Se você investisse esse dinheiro'
+    },
+    receipt: {
+      open: 'Imprimir cupom',
+      title: 'Seu cupom',
+      close: 'Fechar',
+      skip: 'Ir para o total',
+      total: 'Total',
+      length: 'Comprimento do cupom',
+      lengthNote: 'Com 4 mm por linha, como um cupom fiscal de verdade.',
+      thanks: 'Obrigado por 10 anos de fidelidade!',
+      image: 'Compartilhar imagem'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} por mês durante 10 anos, a {rate} ao ano: {paid} em aportes e {gain} de rendimento.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, ano {year}',
+      year: 'Ano {year}',
+      unit: 'meter',
+      saved: 'Imagem salva'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: 'Por mês',
       year1: '1 ano',
       year5: '5 anos',
+      receiptTitle: 'Cupom do café',
+      receiptCount: 'Xícaras',
       runtime: {
         note: {
           empty: 'Informe um preço e quantas xícaras você toma por semana para ver os totais.',
           result: 'São cerca de {cups} xícaras por ano, a {price} cada.'
-        }
+        },
+        receiptItem: 'Café'
       },
       about: {
         title: 'Como o gasto com café é calculado',

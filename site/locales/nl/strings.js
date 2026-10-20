@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – gratis calculators voor alledaagse vragen over geld',
     invest: {
       label: 'Als je het geld zou beleggen'
+    },
+    receipt: {
+      open: 'Bonnetje printen',
+      title: 'Je bonnetje',
+      close: 'Sluiten',
+      skip: 'Naar het totaal',
+      total: 'Totaal',
+      length: 'Lengte van het bonnetje',
+      lengthNote: 'Bij 4 mm per regel, zoals een echt kassabonnetje.',
+      thanks: 'Bedankt voor 10 jaar trouw!',
+      image: 'Delen als afbeelding'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} per maand, 10 jaar lang, tegen {rate} per jaar: {paid} ingelegd en {gain} aan rendement.'
+    },
+    receipt: {
+      subtotal: 'Subtotaal, jaar {year}',
+      year: 'Jaar {year}',
+      unit: 'meter',
+      saved: 'Afbeelding opgeslagen'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Per maand',
       year1: '1 jaar',
       year5: '5 jaar',
+      receiptTitle: 'Koffiebonnetje',
+      receiptCount: 'Kopjes',
       runtime: {
         note: {
           empty: 'Vul een prijs in en hoeveel kopjes je per week drinkt om de totalen te zien.',
           result: 'Dat zijn zo’n {cups} kopjes per jaar à {price}.'
-        }
+        },
+        receiptItem: 'Koffie'
       },
       about: {
         title: 'Zo worden de koffiekosten berekend',

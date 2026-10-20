@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – günlük para soruları için ücretsiz maliyet hesaplama araçları',
     invest: {
       label: 'Harcamak yerine yatırım yapsaydınız'
+    },
+    receipt: {
+      open: 'Fişi yazdır',
+      title: 'Fişiniz',
+      close: 'Kapat',
+      skip: 'Toplama git',
+      total: 'Toplam',
+      length: 'Fiş uzunluğu',
+      lengthNote: 'Satır başına 4 mm, gerçek bir kasa fişi gibi.',
+      thanks: '10 yıllık sadakatiniz için teşekkürler!',
+      image: 'Görsel olarak paylaş'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '10 yıl boyunca ayda {monthly}, yıllık {rate} getiriyle: {paid} sizin paranız, {gain} getiri.'
+    },
+    receipt: {
+      subtotal: 'Ara toplam, {year}. yıl',
+      year: '{year}. yıl',
+      unit: 'meter',
+      saved: 'Görsel kaydedildi'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Aylık',
       year1: '1 yıl',
       year5: '5 yıl',
+      receiptTitle: 'Kahve fişi',
+      receiptCount: 'Fincan',
       runtime: {
         note: {
           empty: 'Toplamları görmek için bir fiyat ve haftada kaç fincan içtiğinizi girin.',
           result: 'Bu, yılda tanesi {price} olan yaklaşık {cups} fincan kahve demek.'
-        }
+        },
+        receiptItem: 'Kahve'
       },
       about: {
         title: 'Kahve maliyeti nasıl hesaplanıyor?',

@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com——免费在线计算器，算清日常开销',
     invest: {
       label: '如果把这笔钱拿去投资'
+    },
+    receipt: {
+      open: '打印小票',
+      title: '你的小票',
+      close: '关闭',
+      skip: '跳到合计',
+      total: '合计',
+      length: '小票长度',
+      lengthNote: '按每行 4 毫米计算，和真正的收银小票一样。',
+      thanks: '感谢你 10 年来的光顾！',
+      image: '分享图片'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '每月投入 {monthly}，按年化收益率 {rate} 坚持 10 年：累计投入本金 {paid}，投资收益 {gain}。'
+    },
+    receipt: {
+      subtotal: '第 {year} 年小计',
+      year: '第 {year} 年',
+      unit: 'meter',
+      saved: '图片已保存'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: '每月',
       year1: '1 年',
       year5: '5 年',
+      receiptTitle: '咖啡小票',
+      receiptCount: '杯数',
       runtime: {
         note: {
           empty: '输入价格和每周喝几杯，即可查看累计花费。',
           result: '相当于每年约 {cups} 杯，每杯 {price}。'
-        }
+        },
+        receiptItem: '咖啡'
       },
       about: {
         title: '咖啡花费如何计算',

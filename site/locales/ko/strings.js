@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – 일상 속 돈 고민을 풀어 주는 무료 비용 계산기',
     invest: {
       label: '그 돈을 투자했다면'
+    },
+    receipt: {
+      open: '영수증 출력',
+      title: '내 영수증',
+      close: '닫기',
+      skip: '합계로 이동',
+      total: '합계',
+      length: '영수증 길이',
+      lengthNote: '한 줄에 4mm로, 실제 영수증처럼 계산했어요.',
+      thanks: '10년 동안 이용해 주셔서 감사합니다!',
+      image: '이미지로 공유'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '매달 {monthly}씩 10년 동안 연 {rate} 수익률로 투자하면 원금 {paid}, 수익 {gain}이에요.'
+    },
+    receipt: {
+      subtotal: '{year}년 차 소계',
+      year: '{year}년 차',
+      unit: 'meter',
+      saved: '이미지를 저장했어요'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: '한 달',
       year1: '1년',
       year5: '5년',
+      receiptTitle: '커피 영수증',
+      receiptCount: '잔 수',
       runtime: {
         note: {
           empty: '가격과 주당 잔 수를 입력하면 합계를 볼 수 있어요.',
           result: '한 잔에 {price}, 1년에 약 {cups}잔이에요.'
-        }
+        },
+        receiptItem: '커피'
       },
       about: {
         title: '커피값은 이렇게 계산해요',

@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – calculateurs de coûts gratuits pour les questions d’argent du quotidien',
     invest: {
       label: 'Si vous investissiez plutôt cet argent'
+    },
+    receipt: {
+      open: 'Imprimer le ticket',
+      title: 'Votre ticket',
+      close: 'Fermer',
+      skip: 'Aller au total',
+      total: 'Total',
+      length: 'Longueur du ticket',
+      lengthNote: 'À 4 mm par ligne, comme un vrai ticket de caisse.',
+      thanks: 'Merci pour 10 ans de fidélité !',
+      image: 'Partager l’image'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} par mois pendant 10 ans à {rate} par an : {paid} versés et {gain} de rendement.'
+    },
+    receipt: {
+      subtotal: 'Sous-total, année {year}',
+      year: 'Année {year}',
+      unit: 'meter',
+      saved: 'Image enregistrée'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: 'Par mois',
       year1: '1 an',
       year5: '5 ans',
+      receiptTitle: 'Ticket café',
+      receiptCount: 'Tasses',
       runtime: {
         note: {
           empty: 'Indiquez un prix et le nombre de cafés que vous prenez par semaine pour voir les totaux.',
           result: 'Soit environ {cups} cafés par an, à {price} l’unité.'
-        }
+        },
+        receiptItem: 'Café'
       },
       about: {
         title: 'Comment le coût du café est calculé',

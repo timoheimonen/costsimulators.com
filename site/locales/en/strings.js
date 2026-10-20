@@ -15,6 +15,9 @@
 //   in cents, 1 when it is entered in whole currency units
 // - tools.meetings.pulseEvery: the running meeting cost pulses every time it
 //   passes a multiple of this amount
+//
+// runtime.receipt.unit is the unit of the habit receipt's length: 'foot' or
+// 'meter'.
 
 module.exports = {
   meta: {
@@ -47,6 +50,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – free cost calculators for everyday money questions',
     invest: {
       label: 'If you invested it instead'
+    },
+    receipt: {
+      open: 'Print receipt',
+      title: 'Your receipt',
+      close: 'Close',
+      skip: 'Skip to total',
+      total: 'Total',
+      length: 'Receipt length',
+      lengthNote: 'At 4 mm (1/6 in) a line, like a real register receipt.',
+      thanks: 'Thank you for 10 years of loyalty!',
+      image: 'Share image'
     }
   },
 
@@ -72,6 +86,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} a month for 10 years at {rate} a year: {paid} paid in and {gain} in returns.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, year {year}',
+      year: 'Year {year}',
+      unit: 'foot',
+      saved: 'Image saved'
     }
   },
 
@@ -405,11 +425,14 @@ module.exports = {
       perMonth: 'Per month',
       year1: '1 year',
       year5: '5 years',
+      receiptTitle: 'Coffee receipt',
+      receiptCount: 'Cups',
       runtime: {
         note: {
           empty: 'Enter a price and how many cups you have per week to see the totals.',
           result: 'That’s about {cups} cups a year at {price} each.'
-        }
+        },
+        receiptItem: 'Coffee'
       },
       about: {
         title: 'How the coffee cost is calculated',

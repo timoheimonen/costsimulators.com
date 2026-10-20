@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com：身近なお金の疑問に答える無料の計算ツール',
     invest: {
       label: 'そのお金を投資に回したら'
+    },
+    receipt: {
+      open: 'レシートを印刷',
+      title: 'あなたのレシート',
+      close: '閉じる',
+      skip: '合計へ移動',
+      total: '合計',
+      length: 'レシートの長さ',
+      lengthNote: '1行4 mmで計算。本物のレシートと同じです。',
+      thanks: '10年間のご愛顧ありがとうございました！',
+      image: '画像で共有'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '毎月{monthly}を年率{rate}で10年間積み立てると、元本{paid}に対して運用益は{gain}です。'
+    },
+    receipt: {
+      subtotal: '{year}年目 小計',
+      year: '{year}年目',
+      unit: 'meter',
+      saved: '画像を保存しました'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: '1か月あたり',
       year1: '1年',
       year5: '5年',
+      receiptTitle: 'コーヒーのレシート',
+      receiptCount: '杯数',
       runtime: {
         note: {
           empty: '値段と週に飲む杯数を入力すると、合計が表示されます。',
           result: '年間約{cups}杯、1杯あたり{price}で計算しています。'
-        }
+        },
+        receiptItem: 'コーヒー'
       },
       about: {
         title: 'コーヒー代の計算方法',

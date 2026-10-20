@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – bezplatné kalkulačky pro každodenní otázky kolem peněz',
     invest: {
       label: 'Kdybyste peníze místo toho investovali'
+    },
+    receipt: {
+      open: 'Vytisknout účtenku',
+      title: 'Vaše účtenka',
+      close: 'Zavřít',
+      skip: 'Přejít na součet',
+      total: 'Celkem',
+      length: 'Délka účtenky',
+      lengthNote: 'Při 4 mm na řádek, jako skutečná účtenka.',
+      thanks: 'Děkujeme za 10 let věrnosti!',
+      image: 'Sdílet jako obrázek'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} měsíčně po dobu 10 let při zhodnocení {rate} ročně: vložíte celkem {paid} a výnos bude {gain}.'
+    },
+    receipt: {
+      subtotal: 'Mezisoučet, rok {year}',
+      year: 'Rok {year}',
+      unit: 'meter',
+      saved: 'Obrázek uložen'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Za měsíc',
       year1: '1 rok',
       year5: '5 let',
+      receiptTitle: 'Účtenka za kávu',
+      receiptCount: 'Šálky',
       runtime: {
         note: {
           empty: 'Zadejte cenu a počet šálků týdně a uvidíte součty.',
           result: 'To je zhruba {cups} šálků ročně po {price}.'
-        }
+        },
+        receiptItem: 'Káva'
       },
       about: {
         title: 'Jak se počítá cena kávy',

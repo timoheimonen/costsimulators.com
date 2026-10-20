@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – calculatoare gratuite pentru întrebările de zi cu zi despre bani',
     invest: {
       label: 'Dacă ai investi banii în schimb'
+    },
+    receipt: {
+      open: 'Tipărește bonul',
+      title: 'Bonul tău',
+      close: 'Închide',
+      skip: 'Mergi la total',
+      total: 'Total',
+      length: 'Lungimea bonului',
+      lengthNote: 'La 4 mm pe rând, ca un bon fiscal adevărat.',
+      thanks: 'Mulțumim pentru 10 ani de fidelitate!',
+      image: 'Distribuie imaginea'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} pe lună timp de 10 ani, la {rate} pe an: ai depus {paid}, iar randamentul adaugă {gain}.'
+    },
+    receipt: {
+      subtotal: 'Subtotal, anul {year}',
+      year: 'Anul {year}',
+      unit: 'meter',
+      saved: 'Imagine salvată'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Pe lună',
       year1: '1 an',
       year5: '5 ani',
+      receiptTitle: 'Bon de cafea',
+      receiptCount: 'Cești',
       runtime: {
         note: {
           empty: 'Introdu un preț și câte cești bei pe săptămână ca să vezi totalurile.',
           result: 'Numărul de cești pe an: circa {cups}, la {price} ceașca.'
-        }
+        },
+        receiptItem: 'Cafea'
       },
       about: {
         title: 'Cum se calculează costul cafelei',

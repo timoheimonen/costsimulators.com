@@ -25,7 +25,7 @@ SOFTWARE.
 (function () {
     'use strict';
 
-    const { Calculators, UI, formatCurrency, formatInteger, t } = window.CostSimulators;
+    const { Calculators, Receipt, UI, formatCurrency, formatInteger, formatNumber, t } = window.CostSimulators;
 
     const EMPTY_VALUE = '—';
 
@@ -35,6 +35,7 @@ SOFTWARE.
         panel: document.getElementById('resultPanel'),
         note: document.getElementById('resultNote'),
         invest: document.getElementById('invest'),
+        receipt: document.getElementById('receiptBtn'),
         results: {
             year10: document.getElementById('year10'),
             month: document.getElementById('month'),
@@ -43,12 +44,16 @@ SOFTWARE.
         }
     };
 
+    let current = null;
+
     function update() {
         const price = UI.readNumber(els.price);
         const perWeek = UI.readNumber(els.perWeek);
         const valid = price >= 0.01 && perWeek >= 1;
 
         els.panel.dataset.empty = String(!valid);
+        els.receipt.disabled = !valid;
+        current = valid ? { price: price, perWeek: perWeek } : null;
 
         if (!valid) {
             Object.values(els.results).forEach(function (element) {
@@ -78,8 +83,24 @@ SOFTWARE.
         });
     }
 
+    // What the receipt prints: one line per cup for 10 years.
+    function readReceipt() {
+        if (!current) return null;
+        const digits = Math.min(2, (String(current.perWeek).split('.')[1] || '').length);
+        return {
+            item: t('receiptItem'),
+            price: current.price,
+            perYear: Calculators.perYear(current.perWeek),
+            values: {
+                price: formatCurrency(current.price),
+                perWeek: formatNumber(current.perWeek, digits)
+            }
+        };
+    }
+
     UI.bindSteppers(document);
     const urlState = UI.bindURLState({ coffeePrice: 'price', perWeek: 'pw' }, update);
     UI.bindShare(document.getElementById('shareBtn'), urlState.flush);
     UI.bindPresets(document);
+    Receipt.bind({ button: els.receipt, dialog: document.getElementById('receiptDialog'), read: readReceipt });
 })();

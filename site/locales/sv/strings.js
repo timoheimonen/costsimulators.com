@@ -34,6 +34,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – gratis kostnadsräknare för vardagens pengafrågor',
     invest: {
       label: 'Om du investerade pengarna i stället'
+    },
+    receipt: {
+      open: 'Skriv ut kvitto',
+      title: 'Ditt kvitto',
+      close: 'Stäng',
+      skip: 'Till summan',
+      total: 'Totalt',
+      length: 'Kvittots längd',
+      lengthNote: 'Med 4 mm per rad, som ett riktigt kassakvitto.',
+      thanks: 'Tack för 10 års trohet!',
+      image: 'Dela som bild'
     }
   },
 
@@ -59,6 +70,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} per månad i 10 år med {rate} årlig avkastning: {paid} i insättningar och {gain} i avkastning.'
+    },
+    receipt: {
+      subtotal: 'Delsumma, år {year}',
+      year: 'År {year}',
+      unit: 'meter',
+      saved: 'Bilden har sparats'
     }
   },
 
@@ -392,11 +409,14 @@ module.exports = {
       perMonth: 'Per månad',
       year1: '1 år',
       year5: '5 år',
+      receiptTitle: 'Kaffekvitto',
+      receiptCount: 'Koppar',
       runtime: {
         note: {
           empty: 'Ange ett pris och hur många koppar du dricker i veckan för att se summorna.',
           result: 'Det blir cirka {cups} koppar om året för {price} styck.'
-        }
+        },
+        receiptItem: 'Kaffe'
       },
       about: {
         title: 'Så räknas kaffekostnaden ut',

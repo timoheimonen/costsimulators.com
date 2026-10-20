@@ -33,6 +33,17 @@ module.exports = {
     imageAlt: 'costsimulators.com – calcolatori gratuiti per fare i conti con le spese di tutti i giorni',
     invest: {
       label: 'Se invece lo investissi'
+    },
+    receipt: {
+      open: 'Stampa lo scontrino',
+      title: 'Il tuo scontrino',
+      close: 'Chiudi',
+      skip: 'Vai al totale',
+      total: 'Totale',
+      length: 'Lunghezza dello scontrino',
+      lengthNote: 'A 4 mm per riga, come un vero scontrino.',
+      thanks: 'Grazie per 10 anni di fedeltà!',
+      image: 'Condividi immagine'
     }
   },
 
@@ -58,6 +69,12 @@ module.exports = {
     },
     invest: {
       note: '{monthly} al mese per 10 anni al {rate} annuo: {paid} versati e {gain} di rendimento.'
+    },
+    receipt: {
+      subtotal: 'Subtotale, anno {year}',
+      year: 'Anno {year}',
+      unit: 'meter',
+      saved: 'Immagine salvata'
     }
   },
 
@@ -391,11 +408,14 @@ module.exports = {
       perMonth: 'Al mese',
       year1: '1 anno',
       year5: '5 anni',
+      receiptTitle: 'Scontrino del caffè',
+      receiptCount: 'Tazzine',
       runtime: {
         note: {
           empty: 'Inserisci un prezzo e quanti caffè prendi a settimana per vedere i totali.',
           result: 'Sono circa {cups} caffè all’anno a {price} l’uno.'
-        }
+        },
+        receiptItem: 'Caffè'
       },
       about: {
         title: 'Come si calcola la spesa per il caffè',
