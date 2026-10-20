@@ -96,6 +96,27 @@ function sameSpaces(text) {
   return text.replace(/[\s\u00a0\u202f]/g, ' ');
 }
 
+// Runs js/ui.js on a stepper field with the given value, step and limits,
+// presses the arrow keys and returns the value shown after each press.
+function stepThrough({ value, step, min = null, max = null }, keys) {
+  const listeners = {};
+  const limits = { min, max };
+  const input = {
+    value,
+    getAttribute: name => limits[name],
+    addEventListener(type, listener) { listeners[type] = listener; },
+    dispatchEvent() {}
+  };
+  const stepper = { dataset: { step }, querySelector: () => input, querySelectorAll: () => [] };
+  const window = { matchMedia: () => ({ matches: false }) };
+  vm.runInNewContext(fs.readFileSync(path.join(publicDir, 'js', 'ui.js'), 'utf8'), { window, Event });
+  window.CostSimulators.UI.bindSteppers({ querySelectorAll: () => [stepper] });
+  return keys.map(key => {
+    listeners.keydown({ key, shiftKey: false, preventDefault() {} });
+    return input.value;
+  });
+}
+
 function localAssetPath(url) {
   const clean = url.split(/[?#]/)[0];
   const file = path.join(publicDir, clean);
@@ -372,4 +393,15 @@ test('the sitemap lists every page in every language', () => {
       );
     }
   }
+});
+
+test('steppers stop at a limit without adding decimals to the value', () => {
+  const down = ['ArrowDown', 'ArrowDown', 'ArrowUp'];
+  // Whole-number steps (yen, won) on a price field with min="0.01" stay whole.
+  assert.deepEqual(stepThrough({ value: '5000', step: '5000', min: '0.01' }, down), ['5000', '5000', '10000']);
+  assert.deepEqual(stepThrough({ value: '0.2', step: '0.1', min: '0.01' }, down), ['0.1', '0.1', '0.2']);
+  // A value with cents can still go down to the lowest price.
+  assert.deepEqual(stepThrough({ value: '0.58', step: '0.5', min: '0.01' }, down), ['0.08', '0.01', '0.51']);
+  assert.deepEqual(stepThrough({ value: '1', step: '5', min: '0' }, down), ['0', '0', '5']);
+  assert.deepEqual(stepThrough({ value: '22.5', step: '1', max: '24' }, ['ArrowUp', 'ArrowUp']), ['23.5', '24']);
 });
