@@ -24,9 +24,10 @@ SOFTWARE.
 
 // Loaded in <head> after the hreflang links. English pages open in the
 // visitor's own language: a language picked from the menu earlier wins,
-// otherwise the first browser language the site has a page for. The
-// supported languages are read from the page's hreflang links, so adding a
-// language needs no change here.
+// otherwise the first browser language the site has a page for, in the
+// version for the browser's region when there is one (English for the UK,
+// Spanish for Mexico). The supported languages are read from the page's
+// hreflang links, so adding a language needs no change here.
 (function () {
     'use strict';
 
@@ -53,21 +54,32 @@ SOFTWARE.
         return document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
     }
 
-    // The hreflang of the site version for a browser language such as
-    // "de-AT" or "zh-TW". Norwegian Bokmål and Nynorsk share the Norwegian
-    // version; Chinese in Taiwan, Hong Kong and Macau, or written in
-    // traditional characters, gets the traditional Chinese version.
-    function siteLang(tag) {
+    // Spanish-speaking countries of Latin America. Spanish for one of them,
+    // or for Latin America as a whole (es-419), gets the Mexican version,
+    // whose Spanish is closer to theirs than the version for Spain.
+    const LATIN_AMERICA = ['419', 'ar', 'bo', 'cl', 'co', 'cr', 'cu', 'do', 'ec', 'gt', 'hn', 'mx', 'ni', 'pa', 'pe', 'py', 'sv', 'uy', 've'];
+
+    // The hreflang values of the site versions for a browser language such as
+    // "de-AT", "en-GB" or "zh-TW", best first: the version for the region if
+    // the site has one (en-GB), then the version for the language. Norwegian
+    // Bokmål and Nynorsk share the Norwegian version; Chinese in Taiwan, Hong
+    // Kong and Macau, or written in traditional characters, gets the
+    // traditional Chinese version.
+    function siteLangs(tag) {
         const parts = String(tag).toLowerCase().split(/[-_]/);
         const code = parts[0];
+        const region = parts.slice(1).find(function (part) {
+            return /^([a-z]{2}|\d{3})$/.test(part);
+        });
 
-        if (code === 'nb' || code === 'nn') return 'no';
+        if (code === 'nb' || code === 'nn') return ['no'];
         if (code === 'zh') {
             const traditional = parts.indexOf('hant') !== -1 || (parts.indexOf('hans') === -1 &&
-                (parts.indexOf('tw') !== -1 || parts.indexOf('hk') !== -1 || parts.indexOf('mo') !== -1));
-            return traditional ? 'zh-Hant' : 'zh';
+                (region === 'tw' || region === 'hk' || region === 'mo'));
+            return [traditional ? 'zh-Hant' : 'zh'];
         }
-        return code;
+        if (code === 'es' && LATIN_AMERICA.indexOf(region) !== -1) return ['es-MX', 'es'];
+        return region ? [code + '-' + region.toUpperCase(), code] : [code];
     }
 
     function browserLang() {
@@ -76,8 +88,10 @@ SOFTWARE.
             : [navigator.language || 'en'];
 
         for (let i = 0; i < preferred.length; i++) {
-            const code = siteLang(preferred[i]);
-            if (code === 'en' || alternate(code)) return code;
+            const langs = siteLangs(preferred[i]);
+            for (let j = 0; j < langs.length; j++) {
+                if (langs[j] === 'en' || alternate(langs[j])) return langs[j];
+            }
         }
         return null;
     }

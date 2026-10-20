@@ -19,7 +19,9 @@ All calculators are free, need no account and run entirely in the browser. Nothi
 
 ## Languages
 
-- Español: https://costsimulators.com/es/
+- English (UK): https://costsimulators.com/en-gb/
+- Español (España): https://costsimulators.com/es/
+- Español (México): https://costsimulators.com/es-mx/
 - Français: https://costsimulators.com/fr/
 - Deutsch: https://costsimulators.com/de/
 - Italiano: https://costsimulators.com/it/
@@ -40,6 +42,13 @@ All calculators are free, need no account and run entirely in the browser. Nothi
 - Română: https://costsimulators.com/ro/
 - Magyar: https://costsimulators.com/hu/
 - Ελληνικά: https://costsimulators.com/el/
+- Tiếng Việt: https://costsimulators.com/vi/
+- Українська: https://costsimulators.com/uk/
+- Русский: https://costsimulators.com/ru/
+- Slovenčina: https://costsimulators.com/sk/
+- Hrvatski: https://costsimulators.com/hr/
+- Български: https://costsimulators.com/bg/
+- Eesti: https://costsimulators.com/et/
 
 ## About
 

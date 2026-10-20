@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Ilmaiset kustannuslaskurit arkeen',
     description: 'Ilmaiset ja yksityiset laskurit, jotka näyttävät, mitä asiat oikeasti maksavat: kokoukset, työtunnit, tavat, tilaukset, sähkö, polttoaine ja ostokset käyttökertaa kohden. Ei rekisteröitymistä.',
-    eyebrow: 'Ilmainen · Yksityinen · Heti',
+    eyebrow: 'Yksityinen · Ilmainen · Heti',
     heading: 'Pieniä työkaluja arjen <span class="accent-text">raha</span>kysymyksiin.',
     lead: 'Nopeat laskurit, jotka näyttävät, mitä asiat oikeasti maksavat. Ei rekisteröitymistä eikä seurantaa – kaikki toimii suoraan selaimessasi.',
     toolsTitle: 'Työkalut',

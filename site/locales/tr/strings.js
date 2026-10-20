@@ -64,7 +64,7 @@ module.exports = {
   home: {
     title: 'Günlük hayat için ücretsiz maliyet hesaplama araçları',
     description: 'Toplantı, çalışma saati, alışkanlıklar, abonelikler, elektrik, yakıt ve kullanım başına maliyet için ücretsiz hesaplama araçları. Üyelik gerekmez, her şey tarayıcınızda hesaplanır.',
-    eyebrow: 'Ücretsiz · Gizlilik dostu · Anında',
+    eyebrow: 'Gizlilik dostu · Ücretsiz · Anında',
     heading: 'Günlük <span class="accent-text">para</span> soruları için küçük araçlar.',
     lead: 'Bir şeyin size gerçekte kaça mal olduğunu hızlıca gösteren hesaplama araçları. Üyelik yok, takip yok – her şey doğrudan tarayıcınızda çalışır.',
     toolsTitle: 'Araçlar',
