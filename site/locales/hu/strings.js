@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nem, csak az üzemanyaggal számol. Az autó kopása, a biztosítás, a parkolás és az útdíjak (például az autópálya-matrica) még erre jönnek, így a vezetés teljes költsége ennél magasabb.'
         }
       ]
+    },
+
+    car: {
+      name: 'Autófenntartás',
+      heading: 'Autófenntartás-kalkulátor',
+      title: 'Autófenntartás-kalkulátor – mennyibe kerül egy autó?',
+      description: 'Számold ki egy autó fenntartását havonta, évente, kilométerenként és 10 év alatt: futásteljesítményből számolt üzemanyag, értékcsökkenés, biztosítás, szerviz.',
+      card: 'Számold ki, mennyibe kerül valójában egy autó fenntartása havonta, évente és kilométerenként.',
+      tag: 'Utazás',
+      lead: 'Add meg az éves futásteljesítményt, a fogyasztást, az üzemanyagárat és az autód többi költségét, és nézd meg, mennyibe kerül valójában az autótartás havonta, évente, kilométerenként és 10 év alatt.',
+      unit: {
+        label: 'Mértékegység',
+        metric: 'Kilométer és liter',
+        us: 'Mérföld és gallon'
+      },
+      distance: {
+        label: 'Éves futásteljesítmény',
+        unit: 'km / év',
+        decrease: 'Éves futásteljesítmény csökkentése',
+        increase: 'Éves futásteljesítmény növelése'
+      },
+      consumption: {
+        label: 'Fogyasztás',
+        unit: 'l/100 km',
+        hint: 'Elektromos autód van? Add meg a fogyasztást kWh/100 km-ben és a kilowattóránkénti árat.',
+        decrease: 'Fogyasztás csökkentése',
+        increase: 'Fogyasztás növelése'
+      },
+      fuelPrice: {
+        label: 'Üzemanyagár',
+        unit: 'Ft / liter',
+        value: '600',
+        step: '5',
+        usStep: '20',
+        decrease: 'Üzemanyagár csökkentése',
+        increase: 'Üzemanyagár növelése'
+      },
+      depreciation: {
+        label: 'Értékcsökkenés vagy törlesztőrészlet',
+        unit: 'Ft / hó',
+        value: '80000',
+        step: '5000',
+        hint: 'Amennyit az autó havonta veszít az értékéből, vagy a havi hitel- és lízingdíj.',
+        decrease: 'Értékcsökkenés csökkentése',
+        increase: 'Értékcsökkenés növelése'
+      },
+      insurance: {
+        label: 'Biztosítás és adók',
+        unit: 'Ft / év',
+        value: '160000',
+        step: '10000',
+        decrease: 'Biztosítás és adók csökkentése',
+        increase: 'Biztosítás és adók növelése'
+      },
+      maintenance: {
+        label: 'Szerviz és gumik',
+        unit: 'Ft / év',
+        value: '180000',
+        hint: 'Időszakos szerviz, gumicsere, műszaki vizsga és váratlan javítások.',
+        decrease: 'Szervizköltség csökkentése',
+        increase: 'Szervizköltség növelése'
+      },
+      parking: {
+        label: 'Parkolás és útdíjak',
+        unit: 'Ft / hó',
+        value: '15000',
+        hint: 'Parkolási díj, garázs, autópálya-matrica és autómosás.',
+        decrease: 'Parkolási költség csökkentése',
+        increase: 'Parkolási költség növelése'
+      },
+      resultsTitle: 'Autófenntartás összesen',
+      perMonth: 'Havonta',
+      perYear: 'Évente',
+      perDistance: 'Kilométerenként',
+      in10Years: '10 év alatt',
+      breakdownLabel: 'Éves költség kategóriánként',
+      copySummary: 'Összesítés másolása',
+      receiptTitle: 'Autófenntartási blokk',
+      receiptCount: 'Tételek',
+      runtime: {
+        receiptItem: 'Kiadás',
+        fuelName: 'Üzemanyag vagy töltés',
+        unit: {
+          metric: {
+            distance: 'km / év',
+            consumption: 'l/100 km',
+            price: 'Ft / liter',
+            perLabel: 'Kilométerenként',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mérföld / év',
+            consumption: 'mpg',
+            price: 'Ft / gallon',
+            perLabel: 'Mérföldenként',
+            perDistance: 'mérföld'
+          }
+        },
+        breakdown: '{cost} / év · {percent}%',
+        note: {
+          empty: 'Adj meg legalább egy autós költséget, és megmutatjuk az összegeket.',
+          single: 'A teljes éves költség ({cost}) erre megy el: {name}, ez naponta kb. {day}.',
+          biggest: 'A legnagyobb kiadásod: {name}, évente {cost} (a teljes összeg {percent}%-a), összességében naponta kb. {day}.'
+        },
+        summary: {
+          item: '{name} – {cost} / év ({percent}%)',
+          total: 'Összesen: havonta {month}, évente {year}, 10 év alatt {year10}',
+          perDistance: 'Költség / {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Így számoljuk az autófenntartás költségét',
+        paragraphs: [
+          'Az éves üzemanyag- vagy töltési költséget az éves futásteljesítményből, a fogyasztásból és az üzemanyagárból számoljuk (távolság × fogyasztás ÷ 100 × literenkénti ár, amerikai mértékegységnél távolság ÷ mpg × gallononkénti ár), így a megtett kilométerek módosítása azonnal frissíti a havi és éves összeget. A havi állandó tételeket (értékcsökkenés vagy törlesztőrészlet és parkolás) 12-vel megszorozzuk, majd hozzáadjuk az éves biztosításhoz, adókhoz és szervizköltséghez.',
+          'A legtöbb autós csak az üzemanyagárakra figyel, és alábecsüli a többi kiadást. Évi 15 000 km-rel, 6,5 l/100 km-es fogyasztással és 600 Ft-os literenkénti árral az üzemanyag évi 585 000 Ft. Ha ehhez hozzáadjuk a havi 80 000 Ft értékcsökkenést, az évi 160 000 Ft biztosítást és adót, a 180 000 Ft szervizt és a havi 15 000 Ft parkolást, az autó évente 2 065 000 Ft-ba kerül – ez havonta 172 083 Ft, kilométerenként kb. 138 Ft és 10 év alatt 20 650 000 Ft.',
+          'Az értékcsökkenés sokszor a legnagyobb tétel még akkor is, ha az autót már kifizetted: egy 7 000 000 Ft-os autó, amely öt év múlva 2 200 000 Ft-ot ér, évente 960 000 Ft-ot – vagyis havonta 80 000 Ft-ot – veszít az értékéből akkor is, ha csak a ház előtt áll. Mértékegység-váltáskor a távolság, a fogyasztás és az üzemanyagár automatikusan átszámolódik.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Mennyibe kerül valójában egy autó fenntartása havonta és évente?',
+          a: 'Add össze az éves üzemanyagköltséget (az éves futásteljesítményből, fogyasztásból és üzemanyagárból), a biztosítást, az adókat és a szervizt a havi értékcsökkenés vagy törlesztőrészlet és a parkolás 12-szeresével, majd oszd el 12-vel. A magyarországi alapértelmezett adatokkal az autó valódi költsége havonta 172 083 Ft, vagyis évente 2 065 000 Ft.'
+        },
+        {
+          q: 'Hogyan becsüljem meg az autó havi értékcsökkenését?',
+          a: 'Vond ki az autó vételárából azt az összeget, amennyiért várhatóan később el tudod adni, majd oszd el azzal, hány hónapig tervezed használni. Ha egy autót 7 000 000 Ft-ért veszel, és 5 év (60 hónap) múlva 2 200 000 Ft-ért adsz el, az értékcsökkenés havi 80 000 Ft. Lízingnél vagy hitelnél megadhatod a havi törlesztőrészletet is.'
+        },
+        {
+          q: 'Elektromos autóhoz is használható a kalkulátor?',
+          a: 'Igen. Metrikus mértékegységnél add meg a fogyasztás mezőben az autó energiafogyasztását kWh/100 km-ben (például 18), az üzemanyagár mezőben pedig az átlagos töltési árat Ft/kWh-ban. A villanyautók energia- és rutinszerviz-költsége gyakran alacsonyabb, de a biztosítás, a gumik és az értékcsökkenés így is jelentős összeg.'
+        },
+        {
+          q: 'Mi lenne, ha inkább befektetném a pénzt?',
+          a: 'A „Ha inkább befektetnéd” doboz azt mutatja, mekkora összegre nőne az autóra költött pénz, ha ugyanannyit minden hónapban befektetnél, évi 4%-os hozammal, havi tőkésítéssel. Havi 172 083 Ft 10 év alatt kb. 25 240 000 Ft-ra nő – ebből 20 650 000 Ft a saját befizetésed, a többi hozam. Az adókkal, a költségekkel és az inflációval nem számolunk. Ez csak egy példa, nem befektetési tanács.'
+        }
+      ]
     }
   }
 };

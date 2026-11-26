@@ -63,7 +63,8 @@ const TOOLS = [
     receipt: { head: ['perMonth', 'perYear'] }
   },
   { key: 'electricity', slug: 'electricity-cost-calculator', legacy: 'electricity/electricity' },
-  { key: 'trip', slug: 'trip-cost-calculator', legacy: 'trip/trip' }
+  { key: 'trip', slug: 'trip-cost-calculator', legacy: 'trip/trip' },
+  { key: 'car', slug: 'car-cost-calculator', receipt: { head: ['perMonth', 'perYear'] } }
 ];
 
 const DOCUMENTS = [

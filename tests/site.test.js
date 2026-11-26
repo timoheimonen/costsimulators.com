@@ -201,7 +201,16 @@ test('currency-dependent settings are positive numbers', () => {
       'electricity.kwhPrice.step': t.electricity.kwhPrice.step,
       'electricity.kwhPrice.divisor': t.electricity.kwhPrice.divisor,
       'trip.fuelPrice.step': t.trip.fuelPrice.step,
-      'trip.fuelPrice.usStep': t.trip.fuelPrice.usStep
+      'trip.fuelPrice.usStep': t.trip.fuelPrice.usStep,
+      'car.fuelPrice.step': t.car.fuelPrice.step,
+      'car.fuelPrice.usStep': t.car.fuelPrice.usStep,
+      'car.fuelPrice.value': t.car.fuelPrice.value,
+      'car.depreciation.step': t.car.depreciation.step,
+      'car.depreciation.value': t.car.depreciation.value,
+      'car.insurance.step': t.car.insurance.step,
+      'car.insurance.value': t.car.insurance.value,
+      'car.maintenance.value': t.car.maintenance.value,
+      'car.parking.value': t.car.parking.value
     };
     for (const [key, value] of Object.entries(settings)) {
       assert.match(value, /^\d+(\.\d+)?$/, `${lang}: ${key}`);

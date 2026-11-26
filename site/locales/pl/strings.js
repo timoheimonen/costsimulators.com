@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nie, liczy tylko paliwo. Eksploatacja auta (serwis, opony), ubezpieczenie, parkowanie i opłaty za autostrady dochodzą do tego, więc pełny koszt jazdy jest wyższy.'
         }
       ]
+    },
+
+    car: {
+      name: 'Koszt samochodu',
+      heading: 'Kalkulator kosztów utrzymania samochodu',
+      title: 'Koszt utrzymania samochodu – ile naprawdę kosztuje auto?',
+      description: 'Oblicz, ile naprawdę kosztuje utrzymanie samochodu miesięcznie, rocznie, za kilometr i przez 10 lat – utrata wartości, paliwo, ubezpieczenie, serwis i parkowanie.',
+      card: 'Sprawdź, ile naprawdę kosztuje posiadanie auta miesięcznie, rocznie i za kilometr.',
+      tag: 'Podróże',
+      lead: 'Wpisz roczny przebieg, spalanie i cenę paliwa oraz utratę wartości, ubezpieczenie, serwis i parkowanie, aby zobaczyć, ile naprawdę kosztuje Cię samochód.',
+      unit: {
+        label: 'Jednostki',
+        metric: 'Kilometry i litry',
+        us: 'Mile i galony'
+      },
+      distance: {
+        label: 'Przebieg roczny',
+        unit: 'km rocznie',
+        decrease: 'Zmniejsz przebieg roczny',
+        increase: 'Zwiększ przebieg roczny'
+      },
+      consumption: {
+        label: 'Spalanie',
+        unit: 'l/100 km',
+        hint: 'Jeździsz autem elektrycznym? Wpisz kWh/100 km i cenę za kWh.',
+        decrease: 'Zmniejsz spalanie',
+        increase: 'Zwiększ spalanie'
+      },
+      fuelPrice: {
+        label: 'Cena paliwa',
+        unit: 'zł za litr',
+        value: '6',
+        step: '0.05',
+        usStep: '0.2',
+        decrease: 'Zmniejsz cenę paliwa',
+        increase: 'Zwiększ cenę paliwa'
+      },
+      depreciation: {
+        label: 'Utrata wartości',
+        unit: 'zł miesięcznie',
+        value: '900',
+        step: '50',
+        hint: 'Ile auto traci na wartości każdego miesiąca albo Twoja miesięczna rata kredytu lub leasingu.',
+        decrease: 'Zmniejsz utratę wartości',
+        increase: 'Zwiększ utratę wartości'
+      },
+      insurance: {
+        label: 'Ubezpieczenie OC i AC',
+        unit: 'zł rocznie',
+        value: '2400',
+        step: '200',
+        decrease: 'Zmniejsz koszt ubezpieczenia',
+        increase: 'Zwiększ koszt ubezpieczenia'
+      },
+      maintenance: {
+        label: 'Serwis i naprawy',
+        unit: 'zł rocznie',
+        value: '2200',
+        hint: 'Przeglądy, badanie techniczne, opony, hamulce i nieprzewidziane naprawy w skali roku.',
+        decrease: 'Zmniejsz koszt serwisu',
+        increase: 'Zwiększ koszt serwisu'
+      },
+      parking: {
+        label: 'Parkowanie i opłaty',
+        unit: 'zł miesięcznie',
+        value: '200',
+        hint: 'Miejsce postojowe, garaż, płatne parkowanie, autostrady i myjnia.',
+        decrease: 'Zmniejsz koszt parkowania',
+        increase: 'Zwiększ koszt parkowania'
+      },
+      resultsTitle: 'Koszt samochodu',
+      perMonth: 'Miesięcznie',
+      perYear: 'Rocznie',
+      perDistance: 'Za km',
+      in10Years: 'Przez 10 lat',
+      breakdownLabel: 'Koszt roczny według kategorii',
+      copySummary: 'Kopiuj podsumowanie',
+      receiptTitle: 'Paragon za samochód',
+      receiptCount: 'Wydatki',
+      runtime: {
+        receiptItem: 'Wydatek na auto',
+        fuelName: 'Paliwo lub ładowanie',
+        unit: {
+          metric: {
+            distance: 'km rocznie',
+            consumption: 'l/100 km',
+            price: 'zł za litr',
+            perLabel: 'Za km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mil rocznie',
+            consumption: 'mpg',
+            price: 'zł za galon',
+            perLabel: 'Za milę',
+            perDistance: 'milę'
+          }
+        },
+        breakdown: '{cost} / rok · {percent}%',
+        note: {
+          empty: 'Wpisz co najmniej jeden wydatek, aby zobaczyć koszt samochodu miesięcznie, rocznie i przez 10 lat.',
+          single: '{name} – to cały roczny koszt samochodu ({cost}), czyli {day} dziennie.',
+          biggest: 'Największy wydatek to {name}: {cost} rocznie ({percent}% całości), a łącznie auto kosztuje {day} dziennie.'
+        },
+        summary: {
+          item: '{name} – {cost} / rok ({percent}%)',
+          total: 'Razem: {month} miesięcznie, {year} rocznie ({year10} przez 10 lat)',
+          perDistance: 'Za {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Jak liczony jest koszt utrzymania samochodu',
+        paragraphs: [
+          'Roczny koszt paliwa lub ładowania obliczany jest na podstawie przebiegu rocznego, spalania i ceny paliwa (przebieg × spalanie ÷ 100 × cena za litr w jednostkach metrycznych albo przebieg ÷ mpg × cena za galon w milach i galonach), więc zmiana przebiegu od razu aktualizuje koszty miesięczne i roczne. Stałe opłaty miesięczne, takie jak utrata wartości i parkowanie, mnożone są przez 12, a wydatki roczne – ubezpieczenie oraz serwis – dodawane bez zmian. Sumę roczną dzielimy przez 12 (koszt miesięczny), przez 365 (koszt dzienny) i przez przebieg roczny (koszt kilometra lub mili).',
+          'Przy przykładowych wartościach – 15 000 km rocznie przy spalaniu 6,5 l/100 km i cenie 6 zł za litr (5850 zł rocznie na paliwo), 900 zł utraty wartości i 200 zł parkowania miesięcznie oraz 2400 zł ubezpieczenia i 2200 zł serwisu rocznie – auto kosztuje 23 650 zł rocznie, czyli około 1971 zł miesięcznie, 1,58 zł za kilometr i 236 500 zł w ciągu dziesięciu lat. Sama utrata wartości stanowi 46% całości, mimo że nie widać jej co miesiąc na wyciągu z konta.',
+          'Zestawienie porządkuje kategorie od największej do najmniejszej, dzięki czemu od razu widać, na co idzie najwięcej pieniędzy. Przełączenie między kilometrami i litrami a milami i galonami automatycznie przelicza przebieg, spalanie i cenę paliwa. Wszystkie liczby pozostają w przeglądarce i zapisują się w adresie strony, więc obliczenie można łatwo zapisać w zakładkach albo udostępnić linkiem.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Ile naprawdę kosztuje utrzymanie samochodu miesięcznie?',
+          a: 'Dodaj roczny koszt paliwa (z przebiegu, spalania i ceny paliwa), ubezpieczenie oraz serwis do 12-krotności miesięcznej utraty wartości i parkowania, a wynik podziel przez 12. Przy przykładowych kwotach w kalkulatorze łączny koszt to 23 650 zł rocznie, czyli około 1971 zł miesięcznie.'
+        },
+        {
+          q: 'Jak oszacować miesięczną utratę wartości samochodu?',
+          a: 'Odejmij od ceny zakupu kwotę, za którą spodziewasz się sprzedać auto, i podziel różnicę przez liczbę miesięcy, przez które zamierzasz nim jeździć. Samochód za 90 000 zł sprzedany po 5 latach (60 miesiącach) za 36 000 zł traci średnio 900 zł miesięcznie. Przy leasingu lub wynajmie długoterminowym wpisz tu po prostu swoją ratę miesięczną.'
+        },
+        {
+          q: 'Czy kalkulator sprawdzi się przy aucie elektrycznym lub z LPG?',
+          a: 'Tak. W jednostkach metrycznych wpisz przy aucie elektrycznym zużycie energii w kWh/100 km (na przykład 18) i średnią cenę ładowania za kWh, a przy LPG – spalanie i cenę autogazu. Auta elektryczne często mają niższe koszty energii i serwisu, ale utrata wartości, opony i ubezpieczenie nadal stanowią dużą część całkowitego kosztu.'
+        },
+        {
+          q: 'A gdyby zamiast tego zainwestować te pieniądze?',
+          a: 'Ramka „Gdyby te pieniądze zainwestować” pokazuje, do jakiej kwoty urosłyby pieniądze, gdyby co miesiąc inwestować tyle, ile kosztuje utrzymanie auta, przy rocznej stopie zwrotu 4% i miesięcznej kapitalizacji. Przy około 1971 zł miesięcznie po 10 latach uzbiera się około 289 100 zł – z czego 236 500 zł to Twoje wpłaty, a reszta to zysk. Pomijamy podatki, opłaty i inflację. To tylko przykład, a nie porada inwestycyjna.'
+        }
+      ]
     }
   }
 };

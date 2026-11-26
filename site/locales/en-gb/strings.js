@@ -926,6 +926,142 @@ module.exports = {
           a: 'No, it counts fuel only. Wear and tear, insurance, road tax, parking and tolls come on top, so the full cost of driving is higher.'
         }
       ]
+    },
+
+    car: {
+      name: 'Car cost',
+      heading: 'Car ownership cost calculator',
+      title: 'Car Running Cost Calculator – True Yearly & Monthly Cost',
+      description: 'Work out the true cost of owning a car per month, per year, per km and over 10 years: depreciation, petrol or charging, insurance, servicing, MOT and parking.',
+      card: 'Add up depreciation, fuel, insurance, servicing and parking to see what your car really costs.',
+      tag: 'Travel',
+      lead: 'Enter your annual distance, fuel consumption and fuel price, plus depreciation, insurance, servicing and parking, to see what your car really costs.',
+      unit: {
+        label: 'Units',
+        metric: 'Kilometres & litres',
+        us: 'Miles & US gallons'
+      },
+      distance: {
+        label: 'Distance per year',
+        unit: 'km per year',
+        decrease: 'Decrease yearly distance',
+        increase: 'Increase yearly distance'
+      },
+      consumption: {
+        label: 'Fuel consumption',
+        unit: 'l/100 km',
+        hint: 'Know your mpg? Divide 282.5 by it for l/100 km. Driving electric? Enter kWh/100 km and the price per kWh.',
+        decrease: 'Decrease fuel consumption',
+        increase: 'Increase fuel consumption'
+      },
+      fuelPrice: {
+        label: 'Fuel price',
+        unit: '£ per litre',
+        value: '1.4',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Decrease fuel price',
+        increase: 'Increase fuel price'
+      },
+      depreciation: {
+        label: 'Depreciation or finance',
+        unit: '£ per month',
+        value: '250',
+        step: '10',
+        hint: 'Monthly finance or lease payment, or the value your car loses each month if you own it outright.',
+        decrease: 'Decrease depreciation or finance',
+        increase: 'Increase depreciation or finance'
+      },
+      insurance: {
+        label: 'Insurance',
+        unit: '£ per year',
+        value: '750',
+        step: '50',
+        decrease: 'Decrease insurance',
+        increase: 'Increase insurance'
+      },
+      maintenance: {
+        label: 'Servicing & tax',
+        unit: '£ per year',
+        value: '600',
+        hint: 'Servicing, repairs, tyres, MOT and road tax (VED).',
+        decrease: 'Decrease servicing and tax',
+        increase: 'Increase servicing and tax'
+      },
+      parking: {
+        label: 'Parking & tolls',
+        unit: '£ per month',
+        value: '50',
+        hint: 'Parking permits, car parks, tolls, congestion charges and car washes.',
+        decrease: 'Decrease parking and tolls',
+        increase: 'Increase parking and tolls'
+      },
+      resultsTitle: 'True cost of owning a car',
+      perMonth: 'Per month',
+      perYear: 'Per year',
+      perDistance: 'Per km',
+      in10Years: 'In 10 years',
+      breakdownLabel: 'Yearly cost by category',
+      copySummary: 'Copy summary',
+      receiptTitle: 'Car cost receipt',
+      receiptCount: 'Payments',
+      runtime: {
+        receiptItem: 'Car expense',
+        fuelName: 'Fuel or charging',
+        unit: {
+          metric: {
+            distance: 'km per year',
+            consumption: 'l/100 km',
+            price: '£ per litre',
+            perLabel: 'Per km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miles per year',
+            consumption: 'US mpg',
+            price: '£ per US gallon',
+            perLabel: 'Per mile',
+            perDistance: 'mile'
+          }
+        },
+        breakdown: '{cost} / year · {percent}%',
+        note: {
+          empty: 'Enter at least one car cost above zero to see the totals.',
+          single: 'All {cost} of your yearly cost goes to {name} – about {day} a day.',
+          biggest: 'Your biggest cost is {name} at {cost} a year ({percent}% of the total) – about {day} a day in all.'
+        },
+        summary: {
+          item: '{name}: {cost} / year ({percent}%)',
+          total: 'Total: {month} per month, {year} per year, {year10} in 10 years',
+          perDistance: 'Cost per {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'How the car ownership cost is calculated',
+        paragraphs: [
+          'Annual fuel or charging cost is calculated from your yearly distance, consumption and fuel price (distance × consumption ÷ 100 × price per litre in metric units, or distance ÷ US mpg × price per US gallon in miles), so changing how far you drive updates your totals straight away. Monthly fixed costs (depreciation or finance, and parking) are multiplied by 12 and added to yearly insurance, servicing, tyres, MOT and road tax.',
+          'Most drivers focus on petrol prices and underestimate everything else. With typical UK figures – 15,000 km a year at 6.5 l/100 km and £1.40 a litre (£1,365 a year for fuel), plus £250 a month in depreciation or finance, £750 a year for insurance, £600 for servicing, tyres, MOT and road tax, and £50 a month for parking and tolls – owning a car comes to £6,315 a year, or £526.25 a month. That works out to £0.42 a km and £63,150 over ten years.',
+          'Depreciation is often the single biggest cost even when you own the car outright: an £18,000 car sold five years later for £7,500 loses £2,100 a year, or £175 every month. If you know your car’s UK mpg, divide 282.5 by it to get l/100 km (45 mpg is about 6.3 l/100 km); switching to Miles & US gallons converts your figures automatically.'
+        ]
+      },
+      faq: [
+        {
+          q: 'How much does it cost to run a car per month and per kilometre?',
+          a: 'Add your yearly fuel cost (calculated from annual distance, consumption and fuel price), insurance, servicing, tyres, MOT and road tax to 12 times your monthly depreciation or finance and parking, then divide by 12. With the default UK figures, the true cost is £526.25 a month, or £6,315 a year – about £0.42 per kilometre over 15,000 km.'
+        },
+        {
+          q: 'What should I enter for depreciation if I own my car outright?',
+          a: 'Estimate what your car is worth today, subtract what you expect to sell it for in a few years, and divide by the number of months in between. For example, a car that drops from £18,000 to £7,500 over five years costs £175 a month in depreciation even without monthly finance payments. If you only want out-of-pocket running costs, set depreciation to 0.'
+        },
+        {
+          q: 'Does this calculator work for electric cars (EVs)?',
+          a: 'Yes. In kilometres and litres, enter your car’s energy consumption in kWh/100 km (for example 18) and your average charging cost per kWh (such as £0.26 at home). EVs often cost less to power and service, though insurance, tyres and depreciation still add up.'
+        },
+        {
+          q: 'What if I invested the money instead?',
+          a: 'The “If you invested it instead” box shows what the same monthly sum would grow to over 10 years at a 4% yearly return compounded monthly. Putting £526.25 a month into investments instead grows to about £77,200 – £63,150 of your own money and the rest returns. Tax, fees and inflation are left out. It is an example, not investment advice.'
+        }
+      ]
     }
   }
 };

@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nej, den tæller kun brændstof. Slid, forsikring, parkering og broafgifter kommer oveni, så den samlede pris for at køre bil er højere.'
         }
       ]
+    },
+
+    car: {
+      name: 'Biludgifter',
+      heading: 'Biludgiftsberegner',
+      title: 'Biludgiftsberegner – hvad koster det at have bil?',
+      description: 'Beregn, hvad bilen reelt koster pr. måned, pr. år, pr. kilometer og på 10 år – med værditab, brændstof, forsikring, ejerafgift, service og parkering.',
+      card: 'Se, hvad det reelt koster at have bil pr. måned, pr. år og pr. kilometer.',
+      tag: 'Transport',
+      lead: 'Indtast dit årlige kørselsbehov, brændstofforbrug og brændstofpris samt værditab, forsikring, service og parkering, og se, hvad bilen reelt koster dig.',
+      unit: {
+        label: 'Enheder',
+        metric: 'Kilometer og liter',
+        us: 'Miles og gallons'
+      },
+      distance: {
+        label: 'Kørselsbehov',
+        unit: 'km pr. år',
+        decrease: 'Færre kilometer pr. år',
+        increase: 'Flere kilometer pr. år'
+      },
+      consumption: {
+        label: 'Brændstofforbrug',
+        unit: 'l/100 km',
+        hint: 'Kender du kun bilens km/l? Så er l/100 km = 100 ÷ km/l. Elbil? Indtast kWh/100 km og prisen pr. kWh.',
+        decrease: 'Sænk forbruget',
+        increase: 'Øg forbruget'
+      },
+      fuelPrice: {
+        label: 'Brændstofpris',
+        unit: 'kr. pr. liter',
+        value: '13.5',
+        step: '0.1',
+        usStep: '0.5',
+        decrease: 'Sænk brændstofprisen',
+        increase: 'Hæv brændstofprisen'
+      },
+      depreciation: {
+        label: 'Værditab',
+        unit: 'kr. pr. måned',
+        value: '2200',
+        step: '100',
+        hint: 'Hvor meget bilen taber i værdi hver måned, eller din månedlige betaling til billån eller leasing.',
+        decrease: 'Sænk værditabet',
+        increase: 'Hæv værditabet'
+      },
+      insurance: {
+        label: 'Forsikring og ejerafgift',
+        unit: 'kr. pr. år',
+        value: '6000',
+        step: '500',
+        decrease: 'Sænk forsikring og ejerafgift',
+        increase: 'Hæv forsikring og ejerafgift'
+      },
+      maintenance: {
+        label: 'Service og vedligeholdelse',
+        unit: 'kr. pr. år',
+        value: '5500',
+        hint: 'Serviceeftersyn, syn, dæk, bremser og uforudsete reparationer fordelt over året.',
+        decrease: 'Sænk udgiften til service',
+        increase: 'Hæv udgiften til service'
+      },
+      parking: {
+        label: 'Parkering og afgifter',
+        unit: 'kr. pr. måned',
+        value: '600',
+        hint: 'Parkeringslicens, garage, broafgifter og bilvask.',
+        decrease: 'Sænk udgiften til parkering',
+        increase: 'Hæv udgiften til parkering'
+      },
+      resultsTitle: 'Biludgifter',
+      perMonth: 'Pr. måned',
+      perYear: 'Pr. år',
+      perDistance: 'Pr. km',
+      in10Years: 'På 10 år',
+      breakdownLabel: 'Årlig udgift pr. kategori',
+      copySummary: 'Kopiér oversigt',
+      receiptTitle: 'Bilkvittering',
+      receiptCount: 'Udgifter',
+      runtime: {
+        receiptItem: 'Biludgift',
+        fuelName: 'Brændstof eller opladning',
+        unit: {
+          metric: {
+            distance: 'km pr. år',
+            consumption: 'l/100 km',
+            price: 'kr. pr. liter',
+            perLabel: 'Pr. km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miles pr. år',
+            consumption: 'mpg',
+            price: 'kr. pr. gallon',
+            perLabel: 'Pr. mile',
+            perDistance: 'mile'
+          }
+        },
+        breakdown: '{cost} / år · {percent} %',
+        note: {
+          empty: 'Indtast mindst én udgift for at se, hvad bilen koster pr. måned, pr. år og på 10 år.',
+          single: '{name} udgør hele den årlige udgift på {cost}, svarende til {day} om dagen.',
+          biggest: 'Din største udgift er {name} med {cost} om året ({percent} % af det samlede beløb), og i alt koster bilen {day} om dagen.'
+        },
+        summary: {
+          item: '{name} – {cost} / år ({percent} %)',
+          total: 'I alt: {month} om måneden, {year} om året ({year10} på 10 år)',
+          perDistance: 'Pr. {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Sådan beregnes udgifterne til bil',
+        paragraphs: [
+          'Den årlige udgift til brændstof eller opladning beregnes ud fra dit årlige kørselsbehov, forbrug og brændstofpris (afstand × forbrug ÷ 100 × literpris i metriske enheder, eller afstand ÷ mpg × pris pr. gallon i miles og gallons), så ændringer i kørselsbehovet straks opdaterer måneds- og årsudgiften. Faste månedlige udgifter som værditab og parkering ganges med 12, mens årlige udgifter som forsikring, ejerafgift og service lægges direkte til. Den årlige sum divideres derefter med 12 for udgiften pr. måned, med 365 for udgiften pr. dag og med kørselsbehovet for prisen pr. kilometer eller mile.',
+          'Med eksempeltallene – 15.000 km om året ved 6,5 l/100 km og 13,50 kr. pr. liter (13.162,50 kr. om året i brændstof), 2.200 kr. i værditab og 600 kr. i parkering pr. måned samt 6.000 kr. i forsikring og ejerafgift og 5.500 kr. i service om året – koster bilen 58.262,50 kr. om året, eller ca. 4.855 kr. om måneden, 3,88 kr. pr. kilometer og 582.625 kr. på ti år. Værditabet alene står for 45 % af det hele, selvom det sjældent fremgår af det månedlige kontoudtog.',
+          'Oversigten sorterer posterne fra den største til den mindste, så du tydeligt ser, hvor pengene forsvinder hen. Skifter du mellem kilometer og liter eller miles og gallons, omregnes kørselsbehov, forbrug og brændstofpris automatisk. Dine tal bliver i din browser og gemmes i sidens adresse, så du kan bogmærke eller dele beregningen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hvad koster det reelt at have bil om måneden?',
+          a: 'Læg den årlige brændstofudgift (fra kørselsbehov, forbrug og brændstofpris), forsikring, ejerafgift og service sammen med 12 måneders værditab og parkering, og divider med 12. Med beregnerens eksempeltal bliver den samlede udgift 58.262,50 kr. om året, altså ca. 4.855 kr. om måneden.'
+        },
+        {
+          q: 'Hvordan beregner jeg bilens værditab pr. måned?',
+          a: 'Tag købsprisen minus det beløb, du forventer at få ved salg, og divider med antallet af måneder, du regner med at beholde bilen. En bil til 220.000 kr., der sælges efter 5 år (60 måneder) for 90.000 kr., taber ca. 2.167 kr. i værdi om måneden. Privatleaser du, kan du i stedet indtaste den månedlige leasingydelse her.'
+        },
+        {
+          q: 'Virker beregneren også til elbil?',
+          a: 'Ja. Med kilometer og liter indtaster du bilens elforbrug i kWh/100 km (for eksempel 18) og din gennemsnitlige elpris pr. kWh. En elbil har ofte lavere udgifter til energi, ejerafgift og service, mens værditab, dæk og forsikring stadig fylder meget i det samlede regnskab.'
+        },
+        {
+          q: 'Hvad hvis jeg investerede pengene i stedet?',
+          a: 'Feltet »Hvis du investerede pengene i stedet« viser, hvad pengene kunne vokse til, hvis du i stedet investerede biludgifterne hver måned, med et afkast på 4 % om året og månedlig rentes rente. Ca. 4.855 kr. om måneden vokser på 10 år til ca. 712.200 kr. – heraf er 582.625 kr. dine egne penge og resten afkast. Skat, gebyrer og inflation er ikke medregnet. Det er et eksempel, ikke investeringsrådgivning.'
+        }
+      ]
     }
   }
 };

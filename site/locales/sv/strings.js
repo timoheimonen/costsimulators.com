@@ -923,6 +923,142 @@ module.exports = {
           a: 'Nej, räknaren tar bara med bränslet. Slitage, försäkring, parkering, trängselskatt och broavgifter kommer ovanpå, så den verkliga kostnaden för att köra bil är högre.'
         }
       ]
+    },
+
+    car: {
+      name: 'Bilkostnad',
+      heading: 'Bilkostnadskalkylator',
+      title: 'Bilkostnadskalkylator – vad kostar det att äga bil?',
+      description: 'Räkna ut vad bilen verkligen kostar per månad, per år, per kilometer och på 10 år – med värdeminskning, bränsle, försäkring, service och parkering.',
+      card: 'Se vad det verkligen kostar att äga bil per månad, per år och per kilometer.',
+      tag: 'Resor',
+      lead: 'Ange din årliga körsträcka, bränsleförbrukning och bränslepris tillsammans med värdeminskning, försäkring, service och parkering för att se vad bilen verkligen kostar dig.',
+      unit: {
+        label: 'Enheter',
+        metric: 'Kilometer och liter',
+        us: 'Miles och gallon'
+      },
+      distance: {
+        label: 'Körsträcka',
+        unit: 'km per år',
+        decrease: 'Kortare körsträcka',
+        increase: 'Längre körsträcka'
+      },
+      consumption: {
+        label: 'Bränsleförbrukning',
+        unit: 'l/100 km',
+        hint: 'Kör du elbil? Ange kWh/100 km och elpriset per kWh.',
+        decrease: 'Sänk förbrukningen',
+        increase: 'Höj förbrukningen'
+      },
+      fuelPrice: {
+        label: 'Bränslepris',
+        unit: 'kr per liter',
+        value: '17',
+        step: '0.1',
+        usStep: '0.5',
+        decrease: 'Sänk bränslepriset',
+        increase: 'Höj bränslepriset'
+      },
+      depreciation: {
+        label: 'Värdeminskning',
+        unit: 'kr per månad',
+        value: '2800',
+        step: '100',
+        hint: 'Vad bilen tappar i värde varje månad, eller din månadskostnad för billån eller leasing.',
+        decrease: 'Sänk värdeminskningen',
+        increase: 'Höj värdeminskningen'
+      },
+      insurance: {
+        label: 'Försäkring och skatt',
+        unit: 'kr per år',
+        value: '7000',
+        step: '500',
+        decrease: 'Sänk försäkring och skatt',
+        increase: 'Höj försäkring och skatt'
+      },
+      maintenance: {
+        label: 'Service och reparationer',
+        unit: 'kr per år',
+        value: '7000',
+        hint: 'Service, besiktning, däck, bromsar och oväntade reparationer utslaget på ett år.',
+        decrease: 'Sänk servicekostnaden',
+        increase: 'Höj servicekostnaden'
+      },
+      parking: {
+        label: 'Parkering och avgifter',
+        unit: 'kr per månad',
+        value: '700',
+        hint: 'Parkeringsplats, garage, trängselskatt, broavgifter och biltvätt.',
+        decrease: 'Sänk parkeringskostnaden',
+        increase: 'Höj parkeringskostnaden'
+      },
+      resultsTitle: 'Bilkostnad',
+      perMonth: 'Per månad',
+      perYear: 'Per år',
+      perDistance: 'Per km',
+      in10Years: 'På 10 år',
+      breakdownLabel: 'Årskostnad per kategori',
+      copySummary: 'Kopiera sammanställning',
+      receiptTitle: 'Bilkvitto',
+      receiptCount: 'Utgifter',
+      runtime: {
+        receiptItem: 'Bilutgift',
+        fuelName: 'Bränsle eller el',
+        unit: {
+          metric: {
+            distance: 'km per år',
+            consumption: 'l/100 km',
+            price: 'kr per liter',
+            perLabel: 'Per km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miles per år',
+            consumption: 'mpg',
+            price: 'kr per gallon',
+            perLabel: 'Per mile',
+            perDistance: 'mile'
+          }
+        },
+        breakdown: '{cost} / år · {percent} %',
+        note: {
+          empty: 'Ange minst en kostnad för att se vad bilen kostar per månad, per år och på 10 år.',
+          single: '{name} står för hela årskostnaden på {cost}, vilket blir {day} om dagen.',
+          biggest: 'Din största kostnad är {name} med {cost} om året ({percent} % av totalen), och totalt kostar bilen {day} om dagen.'
+        },
+        summary: {
+          item: '{name} – {cost} / år ({percent} %)',
+          total: 'Totalt: {month} per månad, {year} per år ({year10} på 10 år)',
+          perDistance: 'Per {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Så räknas bilkostnaden ut',
+        paragraphs: [
+          'Den årliga bränsle- eller laddkostnaden räknas ut från din årliga körsträcka, förbrukning och bränslepris (körsträcka × förbrukning ÷ 100 × literpris i metriska enheter, eller körsträcka ÷ mpg × gallonpris i miles och gallon), så att en ändring av körsträckan genast slår igenom i månads- och årskostnaden. Fasta månadskostnader som värdeminskning och parkering multipliceras med 12, och årskostnader som försäkring, fordonsskatt och service läggs till direkt. Årskostnaden delas sedan med 12 för månadskostnaden, med 365 för dagskostnaden och med körsträckan för kostnaden per kilometer eller mile.',
+          'Med exempelvärdena – 15 000 km (1 500 mil) om året vid 6,5 l/100 km och 17 kr per liter (16 575 kr i bränsle per år), 2 800 kr i värdeminskning och 700 kr i parkering per månad samt 7 000 kr i försäkring och skatt och 7 000 kr i service per år – kostar bilen 72 575 kr om året, eller cirka 6 048 kr i månaden, 4,84 kr per kilometer (drygt 48 kr per mil) och 725 750 kr på tio år. Värdeminskningen står ensam för 46 % av totalen, trots att den sällan syns på kontoutdraget varje månad.',
+          'Fördelningen sorterar kostnaderna från störst till minst så att du ser vart pengarna faktiskt tar vägen. Byter du mellan kilometer och liter eller miles och gallon räknas körsträcka, förbrukning och bränslepris om automatiskt. Dina siffror stannar i webbläsaren och sparas i sidans adress om du vill bokmärka eller dela uträkningen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Vad kostar det egentligen att äga en bil per månad?',
+          a: 'Lägg ihop den årliga bränslekostnaden (från körsträcka, förbrukning och bränslepris), försäkring, skatt och service med 12 månaders värdeminskning och parkering, och dela med 12. Med räknarens exempelvärden blir totalkostnaden 72 575 kr om året, alltså cirka 6 048 kr i månaden.'
+        },
+        {
+          q: 'Hur räknar jag ut bilens värdeminskning per månad?',
+          a: 'Ta inköpspriset minus vad du räknar med att få när du säljer bilen, och dela med antalet månader du planerar att äga den. En bil för 250 000 kr som säljs efter 5 år (60 månader) för 100 000 kr har en värdeminskning på 2 500 kr i månaden. Privatleasar du kan du ange månadsavgiften här i stället.'
+        },
+        {
+          q: 'Fungerar räknaren för elbil?',
+          a: 'Ja. Med kilometer och liter anger du bilens elförbrukning i kWh/100 km (till exempel 18) och ditt genomsnittliga elpris per kWh. En elbil har ofta lägre energi- och servicekostnad samt låg fordonsskatt, medan värdeminskning, däck och försäkring fortfarande utgör en stor del av totalen.'
+        },
+        {
+          q: 'Vad skulle pengarna bli om jag investerade dem i stället?',
+          a: 'Rutan ”Om du investerade pengarna i stället” visar vad pengarna skulle växa till om du investerade bilkostnaden varje månad i stället, med 4 % årlig avkastning och ränta på ränta varje månad. Cirka 6 048 kr i månaden växer på 10 år till cirka 887 000 kr – varav 725 750 kr är dina egna pengar och resten avkastning. Skatt, avgifter och inflation är inte medräknade. Det är ett exempel, inte investeringsrådgivning.'
+        }
+      ]
     }
   }
 };

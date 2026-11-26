@@ -923,6 +923,142 @@ module.exports = {
           a: 'Nein, der Rechner zählt nur den Kraftstoff. Verschleiß, Versicherung, Parkgebühren und Maut kommen noch hinzu, die tatsächlichen Kosten des Autofahrens sind also höher.'
         }
       ]
+    },
+
+    car: {
+      name: 'Autokosten',
+      heading: 'Autokosten-Rechner',
+      title: 'Autokosten-Rechner – echte Kosten pro Monat, Jahr & km',
+      description: 'Berechne die echten Kosten deines Autos pro Monat, Jahr, Kilometer und in 10 Jahren: Wertverlust, Sprit oder Laden, Versicherung, Wartung, Steuer und Parken.',
+      card: 'Rechne Wertverlust, Sprit, Versicherung, Wartung und Parken zusammen und sieh, was dein Auto wirklich kostet.',
+      tag: 'Unterwegs',
+      lead: 'Gib deine Jahresfahrleistung, deinen Verbrauch und den Spritpreis sowie Wertverlust, Versicherung, Wartung und Parken ein – und sieh, was dein Auto wirklich kostet.',
+      unit: {
+        label: 'Einheiten',
+        metric: 'Kilometer & Liter',
+        us: 'Meilen & Gallonen'
+      },
+      distance: {
+        label: 'Fahrleistung pro Jahr',
+        unit: 'km pro Jahr',
+        decrease: 'Jahresfahrleistung verringern',
+        increase: 'Jahresfahrleistung erhöhen'
+      },
+      consumption: {
+        label: 'Verbrauch',
+        unit: 'l/100 km',
+        hint: 'Fährst du elektrisch? Gib kWh/100 km und den Strompreis pro kWh ein.',
+        decrease: 'Verbrauch senken',
+        increase: 'Verbrauch erhöhen'
+      },
+      fuelPrice: {
+        label: 'Spritpreis',
+        unit: '€ pro Liter',
+        value: '1.7',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Spritpreis senken',
+        increase: 'Spritpreis erhöhen'
+      },
+      depreciation: {
+        label: 'Wertverlust oder Finanzierung',
+        unit: '€ pro Monat',
+        value: '280',
+        step: '10',
+        hint: 'Monatliche Kredit- oder Leasingrate – oder der Wert, den dein Auto pro Monat verliert, wenn es dir gehört.',
+        decrease: 'Wertverlust oder Finanzierung senken',
+        increase: 'Wertverlust oder Finanzierung erhöhen'
+      },
+      insurance: {
+        label: 'Versicherung',
+        unit: '€ pro Jahr',
+        value: '750',
+        step: '50',
+        decrease: 'Versicherung senken',
+        increase: 'Versicherung erhöhen'
+      },
+      maintenance: {
+        label: 'Wartung & Steuer',
+        unit: '€ pro Jahr',
+        value: '700',
+        hint: 'Inspektion, Reparaturen, Reifen, HU/TÜV und Kfz-Steuer.',
+        decrease: 'Wartung und Steuer senken',
+        increase: 'Wartung und Steuer erhöhen'
+      },
+      parking: {
+        label: 'Parken & Maut',
+        unit: '€ pro Monat',
+        value: '60',
+        hint: 'Stellplatz, Garage, Parkgebühren, Maut und Autowäsche.',
+        decrease: 'Park- und Mautkosten senken',
+        increase: 'Park- und Mautkosten erhöhen'
+      },
+      resultsTitle: 'Echte Autokosten',
+      perMonth: 'Pro Monat',
+      perYear: 'Pro Jahr',
+      perDistance: 'Pro km',
+      in10Years: 'In 10 Jahren',
+      breakdownLabel: 'Jahreskosten nach Kategorie',
+      copySummary: 'Übersicht kopieren',
+      receiptTitle: 'Autokosten-Kassenbon',
+      receiptCount: 'Zahlungen',
+      runtime: {
+        receiptItem: 'Autoausgabe',
+        fuelName: 'Sprit oder Laden',
+        unit: {
+          metric: {
+            distance: 'km pro Jahr',
+            consumption: 'l/100 km',
+            price: '€ pro Liter',
+            perLabel: 'Pro km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'Meilen pro Jahr',
+            consumption: 'mpg',
+            price: '€ pro Gallone',
+            perLabel: 'Pro Meile',
+            perDistance: 'Meile'
+          }
+        },
+        breakdown: '{cost} / Jahr · {percent} %',
+        note: {
+          empty: 'Gib mindestens eine Ausgabe über null ein, um die Gesamtkosten zu sehen.',
+          single: 'Deine gesamten Jahreskosten von {cost} entfallen auf {name} – das sind rund {day} am Tag.',
+          biggest: 'Dein größter Posten ist {name} mit {cost} im Jahr ({percent} % der Gesamtkosten) – insgesamt kostet das Auto rund {day} am Tag.'
+        },
+        summary: {
+          item: '{name}: {cost} / Jahr ({percent} %)',
+          total: 'Gesamt: {month} pro Monat, {year} pro Jahr, {year10} in 10 Jahren',
+          perDistance: 'Kosten pro {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'So werden die Autokosten berechnet',
+        paragraphs: [
+          'Die jährlichen Sprit- oder Ladekosten werden aus Jahresfahrleistung, Verbrauch und Kraftstoffpreis berechnet (Strecke × Verbrauch ÷ 100 × Literpreis in metrischen Einheiten, oder Strecke ÷ mpg × Gallonenpreis bei Meilen) – änderst du deine Fahrleistung, passen sich Monats- und Jahreskosten sofort an. Monatliche Fixkosten (Wertverlust oder Finanzierung sowie Parken) werden mit 12 multipliziert und zu den jährlichen Kosten für Versicherung, Wartung, Reifen, HU/TÜV und Kfz-Steuer addiert.',
+          'Viele schauen nur auf den Spritpreis und unterschätzen den Rest. Bei typischen Werten in Deutschland – 15.000 km im Jahr bei 6,5 l/100 km und 1,70 € pro Liter (1.657,50 € im Jahr für Sprit), dazu 280 € im Monat für Wertverlust, 750 € im Jahr für die Versicherung, 700 € für Wartung, Reifen, HU/TÜV und Kfz-Steuer sowie 60 € im Monat für Parken und Maut – kostet ein Auto 7.187,50 € im Jahr: 598,96 € im Monat, 0,48 € pro Kilometer und 71.875 € in zehn Jahren.',
+          'Der Wertverlust ist oft der größte einzelne Posten, selbst wenn das Auto längst bezahlt ist: Ein Auto für 25.000 €, das nach fünf Jahren noch 10.000 € wert ist, verliert 3.000 € im Jahr – also 250 € jeden Monat. Beim Wechsel der Einheiten werden Fahrleistung, Verbrauch und Spritpreis automatisch umgerechnet.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Was kostet ein Auto pro Monat und pro Kilometer?',
+          a: 'Addiere die jährlichen Spritkosten (aus Jahresfahrleistung, Verbrauch und Literpreis), Versicherung, Wartung und Kfz-Steuer zum Zwölffachen von monatlichem Wertverlust oder Rate und Parkkosten und teile durch 12. Bei den typischen Werten für Deutschland liegen die echten Kosten bei 598,96 € im Monat oder 7.187,50 € im Jahr – rund 0,48 € pro Kilometer bei 15.000 km.'
+        },
+        {
+          q: 'Was trage ich beim Wertverlust ein, wenn mein Auto schon bezahlt ist?',
+          a: 'Schätze den heutigen Wert deines Autos, zieh den voraussichtlichen Verkaufspreis in ein paar Jahren ab und teile den Unterschied durch die Monate dazwischen. Ein Auto, das in fünf Jahren von 25.000 € auf 10.000 € fällt, kostet 250 € Wertverlust im Monat – auch ohne Kreditrate. Wenn du nur laufende Ausgaben aus dem Portemonnaie sehen willst, setz den Wertverlust auf 0.'
+        },
+        {
+          q: 'Funktioniert der Rechner auch für Elektroautos?',
+          a: 'Ja. Gib bei Kilometer & Liter den Stromverbrauch in kWh/100 km (zum Beispiel 18) und deinen durchschnittlichen Ladepreis pro kWh ein (etwa 0,38 € zu Hause). E-Autos sind bei Energie und laufender Wartung oft günstiger, doch Versicherung, Reifen und Wertverlust fallen weiter ins Gewicht.'
+        },
+        {
+          q: 'Was wäre, wenn ich das Geld stattdessen anlegen würde?',
+          a: 'Der Kasten „Wenn du das Geld stattdessen anlegst“ zeigt, was aus demselben monatlichen Betrag in 10 Jahren würde, wenn du ihn jeden Monat anlegst – bei einer Rendite von 4 % im Jahr mit monatlichem Zinseszins. 598,96 € im Monat werden zu rund 87.900 € – 71.875 € davon sind dein eigenes Geld, der Rest sind Erträge. Steuern, Gebühren und Inflation sind nicht berücksichtigt. Das ist ein Beispiel, keine Anlageberatung.'
+        }
+      ]
     }
   }
 };

@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nee, alleen met brandstof. Slijtage, verzekering, wegenbelasting, parkeerkosten en eventuele tol komen er nog bij, dus de totale kosten van autorijden liggen hoger.'
         }
       ]
+    },
+
+    car: {
+      name: 'Autokosten',
+      heading: 'Autokostencalculator',
+      title: 'Autokosten berekenen – wat kost een auto per maand?',
+      description: 'Bereken wat een auto je echt kost per maand, per jaar, per kilometer en in 10 jaar – inclusief afschrijving, brandstof, verzekering, onderhoud en parkeren.',
+      card: 'Zie wat een auto bezitten je echt kost per maand, per jaar en per kilometer.',
+      tag: 'Reizen',
+      lead: 'Vul je jaarlijkse kilometers, verbruik en brandstofprijs in, samen met afschrijving, verzekering, onderhoud en parkeren, en zie wat je auto je echt kost.',
+      unit: {
+        label: 'Eenheden',
+        metric: 'Kilometers en liters',
+        us: 'Mijlen en gallons'
+      },
+      distance: {
+        label: 'Kilometers per jaar',
+        unit: 'km per jaar',
+        decrease: 'Minder kilometers per jaar',
+        increase: 'Meer kilometers per jaar'
+      },
+      consumption: {
+        label: 'Verbruik',
+        unit: 'l/100 km',
+        hint: 'Rijd je elektrisch? Vul kWh/100 km en de prijs per kWh in.',
+        decrease: 'Verbruik verlagen',
+        increase: 'Verbruik verhogen'
+      },
+      fuelPrice: {
+        label: 'Brandstofprijs',
+        unit: '€ per liter',
+        value: '1.95',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Brandstofprijs verlagen',
+        increase: 'Brandstofprijs verhogen'
+      },
+      depreciation: {
+        label: 'Afschrijving',
+        unit: '€ per maand',
+        value: '260',
+        step: '10',
+        hint: 'Wat de auto elke maand minder waard wordt, of je maandbedrag voor autofinanciering of private lease.',
+        decrease: 'Afschrijving verlagen',
+        increase: 'Afschrijving verhogen'
+      },
+      insurance: {
+        label: 'Verzekering en wegenbelasting',
+        unit: '€ per jaar',
+        value: '750',
+        step: '50',
+        decrease: 'Verzekering en wegenbelasting verlagen',
+        increase: 'Verzekering en wegenbelasting verhogen'
+      },
+      maintenance: {
+        label: 'Onderhoud en reparaties',
+        unit: '€ per jaar',
+        value: '650',
+        hint: 'Onderhoudsbeurten, apk, banden, remmen en onverwachte reparaties op jaarbasis.',
+        decrease: 'Onderhoudskosten verlagen',
+        increase: 'Onderhoudskosten verhogen'
+      },
+      parking: {
+        label: 'Parkeren en tol',
+        unit: '€ per maand',
+        value: '100',
+        hint: 'Parkeervergunning, parkeergarage, tolwegen en de wasstraat.',
+        decrease: 'Parkeerkosten verlagen',
+        increase: 'Parkeerkosten verhogen'
+      },
+      resultsTitle: 'Autokosten',
+      perMonth: 'Per maand',
+      perYear: 'Per jaar',
+      perDistance: 'Per km',
+      in10Years: 'In 10 jaar',
+      breakdownLabel: 'Jaarkosten per kostenpost',
+      copySummary: 'Overzicht kopiëren',
+      receiptTitle: 'Autobonnetje',
+      receiptCount: 'Uitgaven',
+      runtime: {
+        receiptItem: 'Autokosten',
+        fuelName: 'Brandstof of laden',
+        unit: {
+          metric: {
+            distance: 'km per jaar',
+            consumption: 'l/100 km',
+            price: '€ per liter',
+            perLabel: 'Per km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mijl per jaar',
+            consumption: 'mpg',
+            price: '€ per gallon',
+            perLabel: 'Per mijl',
+            perDistance: 'mijl'
+          }
+        },
+        breakdown: '{cost} / jaar · {percent}%',
+        note: {
+          empty: 'Vul minstens één kostenpost in om te zien wat je auto kost per maand, per jaar en in 10 jaar.',
+          single: '{name} vormt de volledige jaarkosten van {cost}, dat is {day} per dag.',
+          biggest: 'Je grootste kostenpost is {name}: {cost} per jaar ({percent}% van het totaal), en in totaal kost de auto {day} per dag.'
+        },
+        summary: {
+          item: '{name} – {cost} / jaar ({percent}%)',
+          total: 'Totaal: {month} per maand, {year} per jaar ({year10} in 10 jaar)',
+          perDistance: 'Per {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Zo worden de autokosten berekend',
+        paragraphs: [
+          'De jaarlijkse kosten voor brandstof of laden worden berekend uit je kilometers per jaar, het verbruik en de brandstofprijs (afstand × verbruik ÷ 100 × literprijs in metrische eenheden, of afstand ÷ mpg × gallonprijs in mijlen en gallons), zodat een wijziging in je jaarkilometers meteen je maand- en jaartotaal bijwerkt. Vaste maandkosten zoals afschrijving en parkeren worden vermenigvuldigd met 12, en jaarlijkse kosten zoals verzekering, wegenbelasting en onderhoud worden direct opgeteld. Het jaartotaal wordt gedeeld door 12 voor de kosten per maand, door 365 voor de kosten per dag en door de jaarlijkse afstand voor de kilometerprijs.',
+          'Met de voorbeeldbedragen – 15.000 km per jaar bij 6,5 l/100 km en € 1,95 per liter (€ 1.901,25 per jaar aan brandstof), plus € 260 afschrijving en € 100 parkeren per maand, € 750 aan verzekering en wegenbelasting en € 650 aan onderhoud per jaar – kost de auto € 7.621,25 per jaar, oftewel € 635,10 per maand, € 0,51 per kilometer en € 76.212,50 in tien jaar. Afschrijving alleen al is goed voor 41% van het totaal, terwijl je die post niet elke maand op je bankafschrift ziet.',
+          'Het overzicht zet je kostenposten van groot naar klein, zodat je meteen ziet waar het meeste geld naartoe gaat. Wissel je tussen kilometers en liters of mijlen en gallons, dan worden de jaarlijkse afstand, het verbruik en de brandstofprijs automatisch omgerekend. Je gegevens blijven in je browser en staan in het adres van de pagina als je de berekening wilt opslaan of delen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Wat kost een auto echt per maand?',
+          a: 'Tel je jaarlijkse brandstofkosten (uit afstand, verbruik en brandstofprijs), verzekering, wegenbelasting en onderhoud op bij 12 keer je maandelijkse afschrijving en parkeerkosten, en deel door 12. Met de voorbeeldwaarden in deze calculator kom je uit op € 7.621,25 per jaar, oftewel € 635,10 per maand.'
+        },
+        {
+          q: 'Hoe bereken ik de maandelijkse afschrijving van mijn auto?',
+          a: 'Trek de verwachte restwaarde bij verkoop af van de aanschafprijs en deel het verschil door het aantal maanden dat je de auto wilt rijden. Koop je een auto van € 25.000 die na 5 jaar (60 maanden) nog € 10.000 waard is, dan schrijf je € 250 per maand af. Rijd je private lease, vul dan het maandbedrag in dit veld in.'
+        },
+        {
+          q: 'Werkt deze calculator ook voor elektrische auto’s?',
+          a: 'Ja. Vul bij kilometers en liters het energieverbruik in kWh/100 km in (bijvoorbeeld 18) en je gemiddelde laadtarief per kWh. Elektrische auto’s zijn vaak voordeliger in energie en onderhoud, terwijl afschrijving, banden, verzekering en wegenbelasting nog steeds een groot deel van de totale kosten vormen.'
+        },
+        {
+          q: 'Wat als ik het geld in plaats daarvan zou beleggen?',
+          a: 'Het blok ‘Als je het geld zou beleggen’ laat zien hoeveel je zou hebben als je je autokosten elke maand zou beleggen in plaats van uit te geven, tegen een rendement van 4% per jaar met maandelijkse rente-op-rente. € 635,10 per maand groeit in 10 jaar uit tot zo’n € 93.200 – € 76.212,50 daarvan is je eigen geld, de rest is rendement. Belasting, kosten en inflatie zijn niet meegerekend. Het is een voorbeeld, geen beleggingsadvies.'
+        }
+      ]
     }
   }
 };

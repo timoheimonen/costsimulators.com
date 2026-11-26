@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nie, počíta len palivo. Opotrebenie auta, poistenie, parkovanie a diaľničná známka sú navyše, takže celkové náklady na jazdu autom sú vyššie.'
         }
       ]
+    },
+
+    car: {
+      name: 'Náklady na auto',
+      heading: 'Kalkulačka nákladov na auto',
+      title: 'Kalkulačka nákladov na auto – koľko stojí vlastniť auto',
+      description: 'Vypočítajte skutočné náklady na auto za mesiac, rok, kilometer aj 10 rokov: palivo podľa nájazdu, pokles hodnoty, poistenie, servis a parkovanie.',
+      card: 'Vypočítajte skutočné náklady na auto: pokles hodnoty, palivo, poistenie, servis aj parkovanie.',
+      tag: 'Cestovanie',
+      lead: 'Zadajte ročný nájazd, spotrebu a cenu paliva spolu s ostatnými výdavkami na auto a uvidíte, koľko vás vlastníctvo auta skutočne stojí za mesiac, za rok, na kilometer aj za 10 rokov.',
+      unit: {
+        label: 'Jednotky',
+        metric: 'Kilometre a litre',
+        us: 'Míle a galóny'
+      },
+      distance: {
+        label: 'Ročný nájazd',
+        unit: 'km za rok',
+        decrease: 'Znížiť ročný nájazd',
+        increase: 'Zvýšiť ročný nájazd'
+      },
+      consumption: {
+        label: 'Spotreba paliva',
+        unit: 'l/100 km',
+        hint: 'Jazdíte elektromobilom? Zadajte kWh/100 km a cenu za kWh.',
+        decrease: 'Znížiť spotrebu',
+        increase: 'Zvýšiť spotrebu'
+      },
+      fuelPrice: {
+        label: 'Cena paliva',
+        unit: '€ za liter',
+        value: '1.6',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Znížiť cenu paliva',
+        increase: 'Zvýšiť cenu paliva'
+      },
+      depreciation: {
+        label: 'Pokles hodnoty alebo splátka',
+        unit: '€ mesačne',
+        value: '210',
+        step: '10',
+        hint: 'Koľko auto mesačne stráca na hodnote, alebo mesačná splátka úveru či lízingu.',
+        decrease: 'Znížiť pokles hodnoty',
+        increase: 'Zvýšiť pokles hodnoty'
+      },
+      insurance: {
+        label: 'Poistenie a dane',
+        unit: '€ ročne',
+        value: '550',
+        step: '50',
+        decrease: 'Znížiť poistenie a dane',
+        increase: 'Zvýšiť poistenie a dane'
+      },
+      maintenance: {
+        label: 'Servis a pneumatiky',
+        unit: '€ ročne',
+        value: '550',
+        hint: 'Pravidelný servis, prezutie a pneumatiky, STK, EK a opravy.',
+        decrease: 'Znížiť náklady na servis',
+        increase: 'Zvýšiť náklady na servis'
+      },
+      parking: {
+        label: 'Parkovanie a poplatky',
+        unit: '€ mesačne',
+        value: '40',
+        hint: 'Parkovné, garáž, diaľničná známka, mýto a umývanie auta.',
+        decrease: 'Znížiť náklady na parkovanie',
+        increase: 'Zvýšiť náklady na parkovanie'
+      },
+      resultsTitle: 'Skutočné náklady na auto',
+      perMonth: 'Za mesiac',
+      perYear: 'Za rok',
+      perDistance: 'Za km',
+      in10Years: 'Za 10 rokov',
+      breakdownLabel: 'Ročné náklady podľa kategórií',
+      copySummary: 'Kopírovať súhrn',
+      receiptTitle: 'Bloček za auto',
+      receiptCount: 'Položky',
+      runtime: {
+        receiptItem: 'Výdavok',
+        fuelName: 'Palivo alebo nabíjanie',
+        unit: {
+          metric: {
+            distance: 'km za rok',
+            consumption: 'l/100 km',
+            price: '€ za liter',
+            perLabel: 'Za km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'míľ za rok',
+            consumption: 'mpg',
+            price: '€ za galón',
+            perLabel: 'Za míľu',
+            perDistance: 'míľu'
+          }
+        },
+        breakdown: '{cost} / rok · {percent} %',
+        note: {
+          empty: 'Zadajte aspoň jeden výdavok spojený s autom a uvidíte celkové náklady.',
+          single: 'Položka {name} tvorí celé ročné náklady {cost}, teda asi {day} denne.',
+          biggest: 'Najväčší podiel má položka {name}: {cost} ročne ({percent} % z celku), celkovo asi {day} denne.'
+        },
+        summary: {
+          item: '{name} – {cost} / rok ({percent} %)',
+          total: 'Spolu: {month} mesačne, {year} ročne, {year10} za 10 rokov',
+          perDistance: 'Cena za {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Ako sa počítajú náklady na auto',
+        paragraphs: [
+          'Ročné výdavky na palivo alebo nabíjanie sa počítajú z ročného nájazdu, spotreby a ceny paliva (nájazd × spotreba ÷ 100 × cena za liter, v amerických jednotkách nájazd ÷ mpg × cena za galón), takže zmena nájazdu hneď upraví mesačný aj ročný súčet. Mesačné fixné položky (pokles hodnoty alebo splátka a parkovanie) sa násobia 12 a pripočítajú sa k ročnému poisteniu, daniam a servisu.',
+          'Väčšina vodičov sleduje najmä cenu benzínu a zvyšok podceňuje. Pri 15 000 km ročne, spotrebe 6,5 l/100 km a cene 1,60 € za liter vyjde palivo na 1 560 € ročne. S poklesom hodnoty 210 € mesačne, poistením 550 € a servisom 550 € ročne a parkovaním 40 € mesačne stojí auto celkovo 5 660 € ročne – teda 471,67 € mesačne, 0,38 € za kilometer a 56 600 € za desať rokov.',
+          'Pokles hodnoty býva pri väčšine áut najväčšou jednotlivou položkou, aj keď už je vozidlo splatené: auto kúpené za 20 000 €, ktoré má o päť rokov hodnotu 7 400 €, stráca 2 520 € ročne, teda 210 € každý mesiac. Prepnutie jednotiek automaticky prepočíta nájazd, spotrebu aj cenu paliva.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Koľko stojí prevádzka auta za mesiac a za rok?',
+          a: 'Sčítajte ročné výdavky na palivo (z ročného nájazdu, spotreby a ceny paliva), poistenie, dane a servis s dvanásťnásobkom mesačného poklesu hodnoty či splátky a parkovania, a výsledok vydeľte 12. Pri predvolených hodnotách pre Slovensko vyjde auto na 471,67 € mesačne, teda 5 660 € ročne.'
+        },
+        {
+          q: 'Ako odhadnúť mesačný pokles hodnoty auta?',
+          a: 'Odčítajte od kúpnej ceny auta sumu, za ktorú ho očakávate predať, a vydeľte to počtom mesiacov, počas ktorých si ho necháte. Ak kúpite auto za 20 000 € a o 5 rokov (60 mesiacov) ho predáte za 7 400 €, pokles hodnoty je 210 € mesačne. Pri operatívnom lízingu zadajte mesačnú splátku.'
+        },
+        {
+          q: 'Funguje kalkulačka aj pre elektromobily?',
+          a: 'Áno. V metrických jednotkách zadajte do spotreby spotrebu elektriny v kWh/100 km (napríklad 18) a do ceny paliva priemernú cenu nabíjania za kWh (napríklad 0,17 €). Elektromobily mávajú nižšie náklady na energiu aj bežný servis, ale poistenie, pneumatiky a pokles hodnoty sa stále nazbierajú.'
+        },
+        {
+          q: 'Čo ak budem peniaze namiesto toho investovať?',
+          a: 'Rámček „Keby ste peniaze namiesto toho investovali“ ukazuje, na koľko by narástli výdavky za auto, keby ste rovnakú sumu každý mesiac investovali s ročným zhodnotením 4 % pri mesačnom úročení. Suma 471,67 € mesačne za 10 rokov narastie zhruba na 69 200 € – z toho 56 600 € sú vaše vlastné peniaze a zvyšok tvorí výnos. Dane, poplatky ani inflácia sa nezapočítavajú. Ide len o príklad, nie o investičné poradenstvo.'
+        }
+      ]
     }
   }
 };

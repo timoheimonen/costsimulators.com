@@ -16,6 +16,7 @@ All calculators are free, need no account and run entirely in the browser. Nothi
 - [Subscription cost calculator](https://costsimulators.com/subscription-cost-calculator/): Add up streaming, gym, phone and every other subscription. See your total per month, per year and over 10 years, and which subscription costs the most.
 - [Electricity cost calculator](https://costsimulators.com/electricity-cost-calculator/): Calculate what a device costs to run per day, month and year from its wattage, hours of use and electricity price. Free kWh cost calculator.
 - [Trip fuel cost calculator](https://costsimulators.com/trip-cost-calculator/): Calculate the fuel cost of a trip or daily commute and split it between passengers. Works in miles and gallons or kilometers and liters.
+- [Car ownership cost calculator](https://costsimulators.com/car-cost-calculator/): Calculate the true cost of owning a car per month, per year, per mile or km and over 10 years, including fuel from your mileage, depreciation, insurance and upkeep.
 
 ## Languages
 

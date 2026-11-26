@@ -923,6 +923,142 @@ module.exports = {
           a: 'Non, il ne compte que le carburant. L’usure, l’assurance, le stationnement et les péages s’y ajoutent, donc le coût total de la voiture est plus élevé.'
         }
       ]
+    },
+
+    car: {
+      name: 'Coût d’une voiture',
+      heading: 'Calculateur du coût réel d’une voiture',
+      title: 'Calculateur du coût d’une voiture – budget réel par mois',
+      description: 'Calculez le vrai coût d’une voiture par mois, par an, au km et sur 10 ans : décote, carburant ou recharge, assurance, entretien, pneus et stationnement.',
+      card: 'Additionnez décote, carburant, assurance, entretien et stationnement pour connaître le vrai coût de votre voiture.',
+      tag: 'Déplacements',
+      lead: 'Indiquez votre kilométrage annuel, votre consommation et le prix du carburant, ainsi que la décote, l’assurance, l’entretien et le stationnement, pour voir ce que coûte vraiment votre voiture.',
+      unit: {
+        label: 'Unités',
+        metric: 'Kilomètres et litres',
+        us: 'Miles et gallons'
+      },
+      distance: {
+        label: 'Distance par an',
+        unit: 'km par an',
+        decrease: 'Diminuer la distance annuelle',
+        increase: 'Augmenter la distance annuelle'
+      },
+      consumption: {
+        label: 'Consommation',
+        unit: 'l/100 km',
+        hint: 'Voiture électrique ? Indiquez des kWh/100 km et le prix du kWh.',
+        decrease: 'Diminuer la consommation',
+        increase: 'Augmenter la consommation'
+      },
+      fuelPrice: {
+        label: 'Prix du carburant',
+        unit: '€ par litre',
+        value: '1.75',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Diminuer le prix du carburant',
+        increase: 'Augmenter le prix du carburant'
+      },
+      depreciation: {
+        label: 'Décote ou financement',
+        unit: '€ par mois',
+        value: '250',
+        step: '10',
+        hint: 'Mensualité de crédit auto ou de LOA, ou perte de valeur mensuelle si la voiture est déjà payée.',
+        decrease: 'Diminuer la décote ou le financement',
+        increase: 'Augmenter la décote ou le financement'
+      },
+      insurance: {
+        label: 'Assurance',
+        unit: '€ par an',
+        value: '700',
+        step: '50',
+        decrease: 'Diminuer l’assurance',
+        increase: 'Augmenter l’assurance'
+      },
+      maintenance: {
+        label: 'Entretien et taxes',
+        unit: '€ par an',
+        value: '600',
+        hint: 'Révisions, réparations, pneus, contrôle technique et frais annexes.',
+        decrease: 'Diminuer l’entretien et les taxes',
+        increase: 'Augmenter l’entretien et les taxes'
+      },
+      parking: {
+        label: 'Stationnement et péages',
+        unit: '€ par mois',
+        value: '60',
+        hint: 'Parking, box, stationnement en ville, péages d’autoroute et lavage.',
+        decrease: 'Diminuer le stationnement et les péages',
+        increase: 'Augmenter le stationnement et les péages'
+      },
+      resultsTitle: 'Coût réel de la voiture',
+      perMonth: 'Par mois',
+      perYear: 'Par an',
+      perDistance: 'Par km',
+      in10Years: 'En 10 ans',
+      breakdownLabel: 'Coût annuel par poste',
+      copySummary: 'Copier le récapitulatif',
+      receiptTitle: 'Ticket des frais auto',
+      receiptCount: 'Paiements',
+      runtime: {
+        receiptItem: 'Dépense auto',
+        fuelName: 'Carburant ou recharge',
+        unit: {
+          metric: {
+            distance: 'km par an',
+            consumption: 'l/100 km',
+            price: '€ par litre',
+            perLabel: 'Par km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miles par an',
+            consumption: 'mpg',
+            price: '€ par gallon',
+            perLabel: 'Par mile',
+            perDistance: 'mile'
+          }
+        },
+        breakdown: '{cost} / an · {percent} %',
+        note: {
+          empty: 'Indiquez au moins une dépense supérieure à zéro pour voir les totaux.',
+          single: 'L’ensemble de votre coût annuel ({cost}) correspond au poste {name}, soit environ {day} par jour.',
+          biggest: 'Votre plus grosse dépense : {name}, à {cost} par an ({percent} % du total), pour un coût total d’environ {day} par jour.'
+        },
+        summary: {
+          item: '{name} : {cost} / an ({percent} %)',
+          total: 'Total : {month} par mois, {year} par an, {year10} en 10 ans',
+          perDistance: 'Coût par {distance} : {cost}'
+        }
+      },
+      about: {
+        title: 'Comment le coût réel d’une voiture est calculé',
+        paragraphs: [
+          'Le coût annuel de carburant ou de recharge est calculé à partir de votre distance annuelle, de votre consommation et du prix du carburant (distance × consommation ÷ 100 × prix au litre en unités métriques, ou distance ÷ mpg × prix au gallon en miles) : modifier votre kilométrage met aussitôt à jour vos totaux. Les frais fixes mensuels (décote ou financement et stationnement) sont multipliés par 12 puis ajoutés à l’assurance et à l’entretien annuels.',
+          'La plupart des conducteurs regardent surtout le prix à la pompe et sous-estiment le reste. Avec des chiffres courants en France – 15 000 km par an à 6,5 l/100 km et 1,75 € le litre (1 706,25 € par an de carburant), plus 250 € par mois de décote, 700 € par an d’assurance, 600 € d’entretien, pneus et contrôle technique, et 60 € par mois de stationnement et péages – une voiture revient à 6 726,25 € par an, soit 560,52 € par mois, 0,45 € du kilomètre et 67 262,50 € sur dix ans.',
+          'La décote représente souvent le premier poste de dépense même lorsque la voiture est déjà payée : une voiture achetée 22 000 € et revendue 10 000 € cinq ans plus tard perd 2 400 € par an, soit 200 € chaque mois. Changer d’unités convertit automatiquement la distance, la consommation et le prix du carburant afin de comparer kilomètres et litres avec miles et gallons.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Combien coûte une voiture par mois et au kilomètre ?',
+          a: 'Additionnez votre budget carburant annuel (calculé selon le kilométrage, la consommation et le prix au litre), l’assurance, l’entretien et les taxes, plus 12 fois votre décote ou mensualité et votre stationnement, puis divisez par 12. Avec les chiffres par défaut pour la France, le coût réel est de 560,52 € par mois, soit 6 726,25 € par an (environ 0,45 € par kilomètre pour 15 000 km).'
+        },
+        {
+          q: 'Que saisir en décote si ma voiture est déjà payée ?',
+          a: 'Estimez la valeur actuelle de votre voiture, soustrayez le prix auquel vous pensez la revendre dans quelques années et divisez par le nombre de mois entre les deux. Par exemple, une voiture qui passe de 22 000 € à 10 000 € en cinq ans coûte 200 € par mois de décote même sans crédit. Si vous ne voulez voir que vos dépenses courantes, mettez la décote à 0.'
+        },
+        {
+          q: 'Ce calculateur fonctionne-t-il pour les voitures électriques ?',
+          a: 'Oui. En kilomètres et litres, indiquez la consommation en kWh/100 km (par exemple 18) et votre prix moyen du kWh (comme 0,20 € à domicile). Les voitures électriques coûtent souvent moins cher en énergie et en entretien courant, mais l’assurance, les pneus et la décote pèsent toujours dans le budget.'
+        },
+        {
+          q: 'Et si j’investissais plutôt cet argent ?',
+          a: 'L’encadré « Si vous investissiez plutôt cet argent » montre ce que deviendrait la même somme mensuelle au bout de 10 ans si vous l’investissiez chaque mois, avec un rendement de 4 % par an capitalisé mensuellement. 560,52 € par mois deviennent environ 82 200 € – dont 67 262,50 € de votre propre argent, le reste provenant du rendement. Les impôts, les frais et l’inflation ne sont pas pris en compte. Il s’agit d’un exemple, pas d’un conseil en investissement.'
+        }
+      ]
     }
   }
 };

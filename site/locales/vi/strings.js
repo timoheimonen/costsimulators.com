@@ -927,6 +927,142 @@ module.exports = {
           a: 'Không, công cụ chỉ tính tiền xăng. Hao mòn và bảo dưỡng xe, bảo hiểm, phí gửi xe và phí cầu đường chưa được tính, nên tổng chi phí đi lại thực tế sẽ cao hơn.'
         }
       ]
+    },
+
+    car: {
+      name: 'Chi phí nuôi ô tô',
+      heading: 'Công cụ tính chi phí nuôi ô tô',
+      title: 'Tính chi phí nuôi ô tô – Tổng chi phí theo tháng và năm',
+      description: 'Tính chi phí nuôi ô tô thực tế mỗi tháng, mỗi năm, mỗi km và 10 năm: tiền xăng từ quãng đường chạy, khấu hao hoặc trả góp, bảo hiểm, bảo dưỡng và gửi xe.',
+      card: 'Cộng khấu hao, xăng dầu, bảo hiểm, bảo dưỡng và gửi xe để biết chi phí nuôi xe thật sự.',
+      tag: 'Đi lại',
+      lead: 'Nhập quãng đường chạy mỗi năm, mức tiêu hao nhiên liệu và giá xăng, cùng khấu hao hoặc trả góp, bảo hiểm, bảo dưỡng và gửi xe để xem nuôi ô tô thực sự tốn bao nhiêu.',
+      unit: {
+        label: 'Đơn vị',
+        metric: 'Km và lít',
+        us: 'Dặm và gallon'
+      },
+      distance: {
+        label: 'Quãng đường mỗi năm',
+        unit: 'km mỗi năm',
+        decrease: 'Giảm quãng đường mỗi năm',
+        increase: 'Tăng quãng đường mỗi năm'
+      },
+      consumption: {
+        label: 'Mức tiêu hao nhiên liệu',
+        unit: 'l/100 km',
+        hint: 'Đi ô tô điện? Hãy nhập kWh/100 km và giá điện mỗi kWh.',
+        decrease: 'Giảm mức tiêu hao nhiên liệu',
+        increase: 'Tăng mức tiêu hao nhiên liệu'
+      },
+      fuelPrice: {
+        label: 'Giá xăng',
+        unit: '₫ mỗi lít',
+        value: '22000',
+        step: '500',
+        usStep: '2000',
+        decrease: 'Giảm mức giá xăng',
+        increase: 'Tăng mức giá xăng'
+      },
+      depreciation: {
+        label: 'Khấu hao hoặc trả góp',
+        unit: '₫ mỗi tháng',
+        value: '6000000',
+        step: '500000',
+        hint: 'Mức mất giá hằng tháng của xe, hoặc tiền trả góp và thuê xe hằng tháng.',
+        decrease: 'Giảm khấu hao hoặc trả góp',
+        increase: 'Tăng khấu hao hoặc trả góp'
+      },
+      insurance: {
+        label: 'Bảo hiểm & thuế phí',
+        unit: '₫ mỗi năm',
+        value: '12000000',
+        step: '1000000',
+        decrease: 'Giảm bảo hiểm và thuế phí',
+        increase: 'Tăng bảo hiểm và thuế phí'
+      },
+      maintenance: {
+        label: 'Bảo dưỡng & lốp xe',
+        unit: '₫ mỗi năm',
+        value: '10000000',
+        hint: 'Bảo dưỡng định kỳ, thay dầu, sửa chữa, lốp xe và đăng kiểm trong năm.',
+        decrease: 'Giảm chi phí bảo dưỡng và lốp xe',
+        increase: 'Tăng chi phí bảo dưỡng và lốp xe'
+      },
+      parking: {
+        label: 'Gửi xe & cầu đường',
+        unit: '₫ mỗi tháng',
+        value: '1500000',
+        hint: 'Tiền gửi xe tháng, đỗ xe theo lượt, phí cao tốc và rửa xe.',
+        decrease: 'Giảm phí gửi xe và cầu đường',
+        increase: 'Tăng phí gửi xe và cầu đường'
+      },
+      resultsTitle: 'Chi phí nuôi ô tô',
+      perMonth: 'Mỗi tháng',
+      perYear: 'Mỗi năm',
+      perDistance: 'Mỗi km',
+      in10Years: 'Trong 10 năm',
+      breakdownLabel: 'Chi phí ô tô mỗi năm theo từng hạng mục',
+      copySummary: 'Sao chép bản tóm tắt',
+      receiptTitle: 'Hóa đơn chi phí ô tô',
+      receiptCount: 'Khoản chi',
+      runtime: {
+        receiptItem: 'Chi phí ô tô',
+        fuelName: 'Xăng dầu hoặc sạc điện',
+        unit: {
+          metric: {
+            distance: 'km mỗi năm',
+            consumption: 'l/100 km',
+            price: '₫ mỗi lít',
+            perLabel: 'Mỗi km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'dặm mỗi năm',
+            consumption: 'mpg',
+            price: '₫ mỗi gallon',
+            perLabel: 'Mỗi dặm',
+            perDistance: 'dặm'
+          }
+        },
+        breakdown: '{cost} / năm · {percent}%',
+        note: {
+          empty: 'Nhập ít nhất một khoản chi phí lớn hơn 0 để xem tổng chi phí.',
+          single: '{name} chiếm toàn bộ chi phí năm là {cost}, tương đương khoảng {day} mỗi ngày.',
+          biggest: 'Khoản tốn nhiều nhất là {name} với {cost} mỗi năm ({percent}% tổng chi phí), tính chung khoảng {day} mỗi ngày.'
+        },
+        summary: {
+          item: '{name} – {cost} / năm ({percent}%)',
+          total: 'Tổng: {month} mỗi tháng, {year} mỗi năm, {year10} trong 10 năm',
+          perDistance: 'Mỗi {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Cách tính chi phí nuôi ô tô',
+        paragraphs: [
+          'Chi phí xăng dầu hoặc sạc điện mỗi năm được tính từ quãng đường chạy hằng năm, mức tiêu hao nhiên liệu và giá xăng (quãng đường × mức tiêu hao ÷ 100 × giá theo hệ mét, hoặc quãng đường ÷ mpg × giá theo hệ Mỹ), nên thay đổi quãng đường chạy sẽ cập nhật ngay tổng chi phí tháng và năm. Các khoản cố định hằng tháng như khấu hao hoặc trả góp và gửi xe, cầu đường được nhân 12 rồi cộng với bảo hiểm, thuế phí và bảo dưỡng theo năm.',
+          'Nhiều người chỉ để ý giá xăng mà đánh giá thấp phần còn lại. Với các con số mặc định – chạy 15.000 km mỗi năm, tiêu hao 6,5 l/100 km, giá xăng 22.000 ₫/lít (tiền xăng 21.450.000 ₫/năm) – cộng thêm khấu hao 6.000.000 ₫/tháng, bảo hiểm và thuế phí 12.000.000 ₫/năm, bảo dưỡng và lốp 10.000.000 ₫/năm cùng gửi xe và cầu đường 1.500.000 ₫/tháng, tổng chi phí lên tới 133.450.000 ₫ mỗi năm – tương đương 11.120.833 ₫ mỗi tháng, khoảng 365.616 ₫ mỗi ngày, 8.897 ₫ mỗi km và 1,33 tỷ đồng sau 10 năm.',
+          'Khấu hao thường là khoản tốn kém lớn nhất ngay cả khi xe đã trả hết – ở ví dụ trên chiếm khoảng 54% tổng chi phí. Bảng chi tiết sắp xếp các hạng mục từ cao xuống thấp để bạn thấy rõ tiền đi đâu nhiều nhất, và khi chuyển đổi giữa hệ mét và hệ Mỹ, quãng đường, mức tiêu hao và giá xăng đều tự động được quy đổi.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Nuôi một chiếc ô tô tốn bao nhiêu tiền mỗi năm?',
+          a: 'Cộng tiền xăng dầu hằng năm (tính từ quãng đường chạy, mức tiêu hao và giá xăng), bảo hiểm, thuế phí và bảo dưỡng với 12 lần tiền khấu hao hoặc trả góp và gửi xe hằng tháng, rồi chia 12 để ra chi phí mỗi tháng. Với ví dụ mặc định (15.000 km/năm, 6,5 l/100 km, 22.000 ₫/lít cho tiền xăng 21.450.000 ₫/năm, cùng khấu hao, bảo hiểm, bảo dưỡng và gửi xe), tổng chi phí là 133.450.000 ₫ mỗi năm, khoảng 11,12 triệu đồng mỗi tháng.'
+        },
+        {
+          q: 'Tính tiền khấu hao ô tô như thế nào?',
+          a: 'Lấy giá mua xe trừ đi giá bán lại dự kiến, rồi chia cho số tháng bạn định sử dụng xe. Ví dụ, một chiếc xe giá 700 triệu đồng sau 5 năm bán lại được 340 triệu đồng sẽ mất giá 360 triệu đồng, tức 6.000.000 ₫ mỗi tháng. Nếu bạn đang trả góp hoặc thuê xe, hãy nhập tiền trả hằng tháng vào ô này và không tính trùng cả hai.'
+        },
+        {
+          q: 'Công cụ này có dùng được cho ô tô điện không?',
+          a: 'Có. Ở hệ mét, hãy nhập mức tiêu thụ điện của xe theo kWh/100 km (ví dụ 18) vào ô mức tiêu hao nhiên liệu và giá sạc điện trung bình mỗi kWh (ví dụ 3.500 ₫) vào ô giá xăng. Ô tô điện thường tiết kiệm chi phí năng lượng và bảo dưỡng định kỳ hơn, trong khi bảo hiểm, lốp xe và khấu hao vẫn cần tính đủ.'
+        },
+        {
+          q: 'Nếu tôi đem số tiền này đi đầu tư thì sao?',
+          a: 'Ô “Nếu đem số tiền này đi đầu tư” cho thấy sau 10 năm bạn sẽ có bao nhiêu nếu mỗi tháng đem số tiền nuôi xe đi đầu tư, với lợi nhuận 4% mỗi năm, lãi kép theo tháng. Khoản 11.120.833 ₫ mỗi tháng sau 10 năm tăng lên khoảng 1,63 tỷ đồng – trong đó khoảng 1,33 tỷ đồng là tiền của chính bạn, phần còn lại là tiền lãi. Thuế, phí và lạm phát không được tính. Đây chỉ là ví dụ, không phải lời khuyên đầu tư.'
+        }
+      ]
     }
   }
 };
