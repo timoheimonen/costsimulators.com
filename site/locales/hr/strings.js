@@ -923,6 +923,142 @@ module.exports = {
           a: 'Ne, računa samo gorivo. Trošenje vozila, osiguranje, parkiranje i cestarina dolaze povrh toga, pa je ukupni trošak vožnje veći.'
         }
       ]
+    },
+
+    car: {
+      name: 'Trošak automobila',
+      heading: 'Kalkulator troška automobila',
+      title: 'Kalkulator troška automobila – koliko zapravo košta auto',
+      description: 'Izračunajte stvarni trošak posjedovanja automobila mjesečno, godišnje, po kilometru i za 10 godina: gorivo iz kilometraže, pad vrijednosti, osiguranje i servis.',
+      card: 'Izračunajte stvarni trošak automobila mjesečno, godišnje i po kilometru sa svim izdacima.',
+      tag: 'Putovanje',
+      lead: 'Unesite godišnju kilometražu, potrošnju i cijenu goriva te ostale troškove vozila da biste vidjeli koliko vas posjedovanje automobila zapravo košta mjesečno, godišnje, po kilometru i za 10 godina.',
+      unit: {
+        label: 'Jedinice',
+        metric: 'Kilometri i litre',
+        us: 'Milje i galoni'
+      },
+      distance: {
+        label: 'Godišnja kilometraža',
+        unit: 'km godišnje',
+        decrease: 'Smanji godišnju kilometražu',
+        increase: 'Povećaj godišnju kilometražu'
+      },
+      consumption: {
+        label: 'Potrošnja goriva',
+        unit: 'l/100 km',
+        hint: 'Vozite električni auto? Unesite kWh/100 km i cijenu po kWh.',
+        decrease: 'Smanji potrošnju',
+        increase: 'Povećaj potrošnju'
+      },
+      fuelPrice: {
+        label: 'Cijena goriva',
+        unit: '€ po litri',
+        value: '1.5',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Smanji cijenu goriva',
+        increase: 'Povećaj cijenu goriva'
+      },
+      depreciation: {
+        label: 'Pad vrijednosti ili rata',
+        unit: '€ mjesečno',
+        value: '200',
+        step: '10',
+        hint: 'Koliko auto mjesečno gubi na vrijednosti ili mjesečna rata kredita odnosno leasinga.',
+        decrease: 'Smanji pad vrijednosti',
+        increase: 'Povećaj pad vrijednosti'
+      },
+      insurance: {
+        label: 'Osiguranje i porezi',
+        unit: '€ godišnje',
+        value: '500',
+        step: '50',
+        decrease: 'Smanji osiguranje i poreze',
+        increase: 'Povećaj osiguranje i poreze'
+      },
+      maintenance: {
+        label: 'Servis i gume',
+        unit: '€ godišnje',
+        value: '500',
+        hint: 'Redoviti servis, gume, tehnički pregled i neočekivani popravci.',
+        decrease: 'Smanji trošak servisa',
+        increase: 'Povećaj trošak servisa'
+      },
+      parking: {
+        label: 'Parkiranje i cestarine',
+        unit: '€ mjesečno',
+        value: '40',
+        hint: 'Parkirne karte, garaža, cestarina i pranje automobila.',
+        decrease: 'Smanji trošak parkiranja',
+        increase: 'Povećaj trošak parkiranja'
+      },
+      resultsTitle: 'Ukupni trošak automobila',
+      perMonth: 'Mjesečno',
+      perYear: 'Godišnje',
+      perDistance: 'Po km',
+      in10Years: 'Za 10 godina',
+      breakdownLabel: 'Godišnji trošak po kategorijama',
+      copySummary: 'Kopiraj sažetak',
+      receiptTitle: 'Račun za automobil',
+      receiptCount: 'Stavke',
+      runtime: {
+        receiptItem: 'Trošak',
+        fuelName: 'Gorivo ili punjenje',
+        unit: {
+          metric: {
+            distance: 'km godišnje',
+            consumption: 'l/100 km',
+            price: '€ po litri',
+            perLabel: 'Po km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'milja godišnje',
+            consumption: 'mpg',
+            price: '€ po galonu',
+            perLabel: 'Po milji',
+            perDistance: 'milji'
+          }
+        },
+        breakdown: '{cost} / godina · {percent} %',
+        note: {
+          empty: 'Unesite barem jedan trošak automobila da biste vidjeli ukupne iznose.',
+          single: 'Stavka {name} čini cijeli godišnji trošak od {cost}, odnosno oko {day} dnevno.',
+          biggest: 'Najveći vam je trošak {name}: {cost} godišnje ({percent} % ukupnog iznosa), što ukupno iznosi oko {day} dnevno.'
+        },
+        summary: {
+          item: '{name} – {cost} / godina ({percent} %)',
+          total: 'Ukupno: {month} mjesečno, {year} godišnje, {year10} za 10 godina',
+          perDistance: 'Trošak po {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Kako se izračunava stvarni trošak automobila',
+        paragraphs: [
+          'Godišnji trošak goriva ili punjenja izračunava se iz godišnje kilometraže, potrošnje i cijene goriva (kilometraža × potrošnja ÷ 100 × cijena po litri u metričkim jedinicama, ili udaljenost ÷ mpg × cijena po galonu u američkim jedinicama), pa promjena kilometraže odmah ažurira mjesečni i godišnji zbroj. Mjesečni fiksni troškovi (pad vrijednosti ili rata i parkiranje) množe se s 12 i zbrajaju s godišnjim osiguranjem, porezima i servisom.',
+          'Većina vozača gleda samo cijenu goriva i podcjenjuje ostale izdatke. Uz 15.000 km godišnje, potrošnju od 6,5 l/100 km i cijenu goriva od 1,50 € po litri, na gorivo odlazi 1.462,50 € godišnje. Dodate li 200 € mjesečno za pad vrijednosti, 500 € godišnje za osiguranje i poreze, 500 € za servis i gume te 40 € mjesečno za parkiranje i cestarine, automobil košta 5.342,50 € godišnje – odnosno 445,21 € mjesečno, 0,36 € po kilometru i 53.425 € za deset godina.',
+          'Pad vrijednosti često je najveći pojedinačni trošak čak i kad je automobil otplaćen: auto od 18.000 € koji nakon pet godina vrijedi 6.000 € gubi 2.400 € godišnje, odnosno 200 € svakog mjeseca, samo stojeći na parkiralištu. Promjenom jedinica kilometraža, potrošnja i cijena goriva automatski se preračunavaju.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Koliko zapravo košta posjedovanje automobila mjesečno i godišnje?',
+          a: 'Zbrojite godišnji trošak goriva (iz godišnje kilometraže, potrošnje i cijene goriva), osiguranje, poreze i servis s dvanaesterostrukim mjesečnim padom vrijednosti ili ratom i parkiranjem, pa podijelite s 12. S početnim vrijednostima za Hrvatsku stvarni trošak iznosi 445,21 € mjesečno, odnosno 5.342,50 € godišnje.'
+        },
+        {
+          q: 'Kako procijeniti mjesečni pad vrijednosti automobila?',
+          a: 'Od kupovne cijene automobila oduzmite iznos za koji ga očekujete prodati pa podijelite s brojem mjeseci koliko ćete ga voziti. Kupite li auto za 18.000 € i nakon 5 godina (60 mjeseci) prodate ga za 6.000 €, pad vrijednosti iznosi 200 € mjesečno. Kod operativnog leasinga unesite mjesečnu ratu.'
+        },
+        {
+          q: 'Radi li kalkulator i za električne automobile?',
+          a: 'Da. U metričkim jedinicama u polje potrošnje unesite potrošnju energije u kWh/100 km (primjerice 18), a u polje cijene goriva prosječnu cijenu punjenja po kWh (primjerice 0,15 €). Električni automobili često imaju niže troškove energije i redovitog servisa, no osiguranje, gume i pad vrijednosti i dalje se zbrajaju.'
+        },
+        {
+          q: 'Što ako novac umjesto toga uložim?',
+          a: 'Okvir „Da ste novac umjesto toga uložili” pokazuje koliko bi narastao novac koji trošite na automobil da isti iznos svaki mjesec ulažete, uz godišnji prinos od 4 % i mjesečnu kapitalizaciju. Iznos od 445,21 € mjesečno za 10 godina naraste na oko 65.300 € – od toga je 53.425 € vaš novac, a ostatak je prinos. Porezi, naknade i inflacija nisu uračunati. Ovo je primjer, a ne investicijski savjet.'
+        }
+      ]
     }
   }
 };

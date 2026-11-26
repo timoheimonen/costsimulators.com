@@ -922,6 +922,142 @@ module.exports = {
           a: 'No, solo cuenta el combustible. El desgaste del coche, el seguro, el aparcamiento y los peajes van aparte, así que el coste total de conducir es mayor.'
         }
       ]
+    },
+
+    car: {
+      name: 'Coste del coche',
+      heading: 'Calculadora del coste de tener coche',
+      title: 'Calculadora de coste de coche – cuánto cuesta tener coche',
+      description: 'Calcula el coste real de tener coche al mes, al año, por km y en 10 años: depreciación, combustible, seguro, mantenimiento, ITV y aparcamiento.',
+      card: 'Suma depreciación, combustible, seguro, mantenimiento y aparcamiento para ver lo que cuesta tu coche.',
+      tag: 'Viajes',
+      lead: 'Introduce cuántos kilómetros haces al año, el consumo y el precio del combustible, junto con depreciación, seguro, mantenimiento y aparcamiento, para ver lo que cuesta de verdad tu coche.',
+      unit: {
+        label: 'Unidades',
+        metric: 'Kilómetros y litros',
+        us: 'Millas y galones'
+      },
+      distance: {
+        label: 'Distancia al año',
+        unit: 'km al año',
+        decrease: 'Reducir distancia anual',
+        increase: 'Aumentar distancia anual'
+      },
+      consumption: {
+        label: 'Consumo',
+        unit: 'l/100 km',
+        hint: '¿Conduces un eléctrico? Introduce kWh/100 km y el precio del kWh.',
+        decrease: 'Reducir consumo',
+        increase: 'Aumentar consumo'
+      },
+      fuelPrice: {
+        label: 'Precio del combustible',
+        unit: '€ por litro',
+        value: '1.55',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Reducir precio del combustible',
+        increase: 'Aumentar precio del combustible'
+      },
+      depreciation: {
+        label: 'Depreciación o financiación',
+        unit: '€ al mes',
+        value: '220',
+        step: '10',
+        hint: 'Tu cuota mensual del préstamo o renting, o el valor que pierde el coche cada mes si ya está pagado.',
+        decrease: 'Reducir depreciación o financiación',
+        increase: 'Aumentar depreciación o financiación'
+      },
+      insurance: {
+        label: 'Seguro',
+        unit: '€ al año',
+        value: '550',
+        step: '50',
+        decrease: 'Reducir seguro',
+        increase: 'Aumentar seguro'
+      },
+      maintenance: {
+        label: 'Mantenimiento e impuestos',
+        unit: '€ al año',
+        value: '550',
+        hint: 'Revisiones, reparaciones, neumáticos, ITV e impuesto de circulación.',
+        decrease: 'Reducir mantenimiento e impuestos',
+        increase: 'Aumentar mantenimiento e impuestos'
+      },
+      parking: {
+        label: 'Aparcamiento y peajes',
+        unit: '€ al mes',
+        value: '50',
+        hint: 'Plaza de garaje, zona azul, parkings, peajes y lavados.',
+        decrease: 'Reducir aparcamiento y peajes',
+        increase: 'Aumentar aparcamiento y peajes'
+      },
+      resultsTitle: 'Coste real del coche',
+      perMonth: 'Al mes',
+      perYear: 'Al año',
+      perDistance: 'Por km',
+      in10Years: 'En 10 años',
+      breakdownLabel: 'Coste anual por partida',
+      copySummary: 'Copiar resumen',
+      receiptTitle: 'Ticket de gastos del coche',
+      receiptCount: 'Pagos',
+      runtime: {
+        receiptItem: 'Gasto del coche',
+        fuelName: 'Combustible o carga',
+        unit: {
+          metric: {
+            distance: 'km al año',
+            consumption: 'l/100 km',
+            price: '€ por litro',
+            perLabel: 'Por km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'millas al año',
+            consumption: 'mpg',
+            price: '€ por galón',
+            perLabel: 'Por milla',
+            perDistance: 'milla'
+          }
+        },
+        breakdown: '{cost} / año · {percent} %',
+        note: {
+          empty: 'Introduce al menos un gasto del coche mayor que cero para ver los totales.',
+          single: 'Todo el gasto anual ({cost}) corresponde a {name}, unos {day} al día.',
+          biggest: 'Tu mayor gasto es {name}, con {cost} al año ({percent} % del total), y el coche te cuesta unos {day} al día.'
+        },
+        summary: {
+          item: '{name}: {cost} / año ({percent} %)',
+          total: 'Total: {month} al mes, {year} al año, {year10} en 10 años',
+          perDistance: 'Coste por {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Cómo se calcula el coste real del coche',
+        paragraphs: [
+          'El gasto anual en combustible o carga se calcula a partir de la distancia anual, el consumo y el precio del combustible (distancia × consumo ÷ 100 × precio por litro en unidades métricas, o distancia ÷ mpg × precio por galón en millas), así que cambiar los kilómetros anuales actualiza al instante los totales. Los gastos fijos mensuales (depreciación o financiación y aparcamiento) se multiplican por 12 y se suman al seguro, al mantenimiento, a la ITV y al impuesto de circulación anuales.',
+          'La mayoría de los conductores se fija en el precio de la gasolina y subestima el resto. Con cifras habituales en España – 15.000 km al año con un consumo de 6,5 l/100 km y el litro a 1,55 € (1511,25 € al año en combustible), más 220 € al mes de depreciación, 550 € al año de seguro, 550 € de mantenimiento, neumáticos, ITV e impuestos y 50 € al mes de aparcamiento y peajes – tener coche sale por 5851,25 € al año: 487,60 € al mes, 0,39 € por kilómetro y 58.512,50 € en diez años.',
+          'La depreciación suele ser la partida más alta incluso cuando el coche ya está pagado: un coche comprado por 20.000 € que se vende cinco años después por 8000 € pierde 2400 € al año, es decir, 200 € cada mes. Al cambiar de unidades se convierten automáticamente la distancia, el consumo y el precio del combustible para comparar kilómetros y litros con millas y galones.'
+        ]
+      },
+      faq: [
+        {
+          q: '¿Cuánto cuesta mantener un coche al mes y por kilómetro?',
+          a: 'Suma el gasto anual en combustible (calculado a partir de los kilómetros anuales, el consumo y el precio por litro), el seguro, el mantenimiento, la ITV y los impuestos a 12 veces la depreciación o cuota mensual y el aparcamiento, y divide entre 12. Con las cifras por defecto para España, el coste real es de 487,60 € al mes, o 5851,25 € al año (unos 0,39 € por kilómetro recorriendo 15.000 km).'
+        },
+        {
+          q: '¿Qué debo poner en depreciación si el coche ya está pagado?',
+          a: 'Calcula cuánto vale hoy tu coche, resta lo que esperas sacar al venderlo dentro de unos años y divide la diferencia entre los meses que hay en medio. Por ejemplo, un coche que pasa de 20.000 € a 8000 € en cinco años supone 200 € al mes de depreciación aunque no pagues ninguna cuota. Si solo quieres ver tus gastos corrientes de bolsillo, déjala en 0.'
+        },
+        {
+          q: '¿Sirve esta calculadora para coches eléctricos?',
+          a: 'Sí. En kilómetros y litros, introduce el consumo en kWh/100 km (por ejemplo, 18) y el precio medio de carga por kWh (como 0,15 € en casa). Los coches eléctricos suelen tener un coste menor de energía y mantenimiento rutinario, pero el seguro, los neumáticos y la depreciación siguen sumando.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo en el coche?',
+          a: 'El recuadro «Si lo invirtieras» muestra en cuánto se convertiría esa misma cantidad mensual en 10 años si la invirtieras cada mes, con una rentabilidad del 4 % anual y capitalización mensual. Con 487,60 € al mes reunirías unos 71.500 €: 58.512,50 € los pones tú y el resto son rendimientos. No se tienen en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
+        }
+      ]
     }
   }
 };

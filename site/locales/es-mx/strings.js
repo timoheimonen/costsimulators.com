@@ -926,6 +926,142 @@ module.exports = {
           a: 'No, solo cuenta el combustible. El desgaste del auto, el seguro, el estacionamiento y las casetas van aparte, así que el costo total de manejar es mayor.'
         }
       ]
+    },
+
+    car: {
+      name: 'Costo del auto',
+      heading: 'Calculadora del costo de tener auto',
+      title: 'Calculadora de costo de auto – cuánto cuesta tener un auto',
+      description: 'Calcula el costo real de tener auto al mes, al año, por km y en 10 años: depreciación, gasolina, seguro, mantenimiento, tenencia y estacionamiento.',
+      card: 'Suma depreciación, gasolina, seguro, mantenimiento y estacionamiento para ver lo que cuesta tu auto.',
+      tag: 'Viajes',
+      lead: 'Ingresa cuántos kilómetros manejas al año, el consumo y el precio del combustible, además de depreciación, seguro, mantenimiento y estacionamiento, para ver cuánto cuesta realmente tu auto.',
+      unit: {
+        label: 'Unidades',
+        metric: 'Kilómetros y litros',
+        us: 'Millas y galones'
+      },
+      distance: {
+        label: 'Distancia al año',
+        unit: 'km al año',
+        decrease: 'Reducir distancia anual',
+        increase: 'Aumentar distancia anual'
+      },
+      consumption: {
+        label: 'Consumo',
+        unit: 'l/100 km',
+        hint: '¿Sabes cuántos km/l rinde tu auto? Divide 100 entre ese número. ¿Es eléctrico? Ingresa kWh/100 km y el precio del kWh.',
+        decrease: 'Reducir consumo',
+        increase: 'Aumentar consumo'
+      },
+      fuelPrice: {
+        label: 'Precio del combustible',
+        unit: '$ por litro',
+        value: '24',
+        step: '0.5',
+        usStep: '2',
+        decrease: 'Reducir precio del combustible',
+        increase: 'Aumentar precio del combustible'
+      },
+      depreciation: {
+        label: 'Depreciación o mensualidad',
+        unit: '$ al mes',
+        value: '4500',
+        step: '200',
+        hint: 'Tu mensualidad del crédito o arrendamiento, o el valor que pierde el auto cada mes si ya es tuyo.',
+        decrease: 'Reducir depreciación o mensualidad',
+        increase: 'Aumentar depreciación o mensualidad'
+      },
+      insurance: {
+        label: 'Seguro',
+        unit: '$ al año',
+        value: '14000',
+        step: '1000',
+        decrease: 'Reducir seguro',
+        increase: 'Aumentar seguro'
+      },
+      maintenance: {
+        label: 'Mantenimiento e impuestos',
+        unit: '$ al año',
+        value: '10000',
+        hint: 'Servicios, reparaciones, llantas, tenencia o refrendo y verificación.',
+        decrease: 'Reducir mantenimiento e impuestos',
+        increase: 'Aumentar mantenimiento e impuestos'
+      },
+      parking: {
+        label: 'Estacionamiento y casetas',
+        unit: '$ al mes',
+        value: '1000',
+        hint: 'Pensión, estacionamientos, parquímetros, casetas y lavado.',
+        decrease: 'Reducir estacionamiento y casetas',
+        increase: 'Aumentar estacionamiento y casetas'
+      },
+      resultsTitle: 'Costo real del auto',
+      perMonth: 'Al mes',
+      perYear: 'Al año',
+      perDistance: 'Por km',
+      in10Years: 'En 10 años',
+      breakdownLabel: 'Costo anual por concepto',
+      copySummary: 'Copiar resumen',
+      receiptTitle: 'Ticket de gastos del auto',
+      receiptCount: 'Pagos',
+      runtime: {
+        receiptItem: 'Gasto del auto',
+        fuelName: 'Gasolina o carga',
+        unit: {
+          metric: {
+            distance: 'km al año',
+            consumption: 'l/100 km',
+            price: '$ por litro',
+            perLabel: 'Por km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'millas al año',
+            consumption: 'mpg',
+            price: '$ por galón',
+            perLabel: 'Por milla',
+            perDistance: 'milla'
+          }
+        },
+        breakdown: '{cost} / año · {percent}%',
+        note: {
+          empty: 'Ingresa al menos un gasto del auto mayor que cero para ver los totales.',
+          single: 'Todo el gasto anual ({cost}) corresponde a {name}, unos {day} al día.',
+          biggest: 'Tu mayor gasto es {name}, con {cost} al año ({percent}% del total), y el auto te cuesta unos {day} al día.'
+        },
+        summary: {
+          item: '{name}: {cost} / año ({percent}%)',
+          total: 'Total: {month} al mes, {year} al año, {year10} en 10 años',
+          perDistance: 'Costo por {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Cómo se calcula el costo real del auto',
+        paragraphs: [
+          'El gasto anual de gasolina o carga se calcula a partir de tu distancia anual, el consumo y el precio del combustible (distancia × consumo ÷ 100 × precio por litro en unidades métricas, o distancia ÷ mpg × precio por galón en millas), así que cambiar cuántos kilómetros manejas actualiza al instante los totales. Los gastos fijos mensuales (depreciación o mensualidad y estacionamiento) se multiplican por 12 y se suman al seguro, los servicios, las llantas, la tenencia y la verificación anuales.',
+          'La mayoría de los conductores se fija en el precio de la gasolina y subestima lo demás. Con cifras comunes en México – 15,000 km al año con un consumo de 6.5 l/100 km y gasolina a $24 el litro ($23,400 al año de combustible), más $4,500 al mes de depreciación o mensualidad, $14,000 al año de seguro, $10,000 de servicios, llantas, tenencia y verificación, y $1,000 al mes de estacionamiento y casetas – tener auto cuesta $113,400 al año: $9,450 al mes, $7.56 por kilómetro y $1,134,000 en diez años.',
+          'La depreciación suele ser el gasto más grande incluso cuando ya terminaste de pagar el auto: un auto de $360,000 que se vende cinco años después en $150,000 pierde $42,000 al año, es decir, $3,500 cada mes. Si conoces el rendimiento de tu auto en km/l, divide 100 entre esa cifra para obtener los l/100 km; al cambiar de unidades se convierten automáticamente la distancia, el consumo y el precio del combustible.'
+        ]
+      },
+      faq: [
+        {
+          q: '¿Cuánto cuesta mantener un auto al mes y por kilómetro?',
+          a: 'Suma tu gasto anual de combustible (calculado con la distancia anual, el consumo y el precio por litro), el seguro, el mantenimiento y los impuestos a 12 veces la depreciación o mensualidad y el estacionamiento, y divide entre 12. Con las cifras predeterminadas para México, el costo real es de $9,450 al mes, o $113,400 al año ($7.56 por kilómetro en 15,000 km).'
+        },
+        {
+          q: '¿Qué debo poner en depreciación si mi auto ya está pagado?',
+          a: 'Estima cuánto vale hoy tu auto, resta lo que esperas recibir al venderlo en unos años y divide la diferencia entre los meses que hay en medio. Por ejemplo, un auto que baja de $360,000 a $150,000 en cinco años cuesta $3,500 al mes en depreciación aunque ya no pagues mensualidad. Si solo quieres ver tus gastos de bolsillo mes a mes, déjala en 0.'
+        },
+        {
+          q: '¿Esta calculadora funciona para autos eléctricos?',
+          a: 'Sí. En kilómetros y litros, ingresa el consumo de tu auto en kWh/100 km (por ejemplo, 18) y el precio promedio de carga por kWh (como $2 en casa). Los autos eléctricos suelen costar menos en energía y mantenimiento rutinario, pero el seguro, las llantas y la depreciación siguen sumando.'
+        },
+        {
+          q: '¿Y si invirtiera el dinero en lugar de gastarlo en el auto?',
+          a: 'El recuadro “Si lo invirtieras” muestra en cuánto se convertiría esa misma cantidad mensual en 10 años si la invirtieras cada mes, con un rendimiento del 4% anual y capitalización mensual. Con $9,450 al mes reunirías unos $1,386,300: $1,134,000 los pones tú y el resto son rendimientos. No se toman en cuenta impuestos, comisiones ni inflación. Es un ejemplo, no una recomendación de inversión.'
+        }
+      ]
     }
   }
 };

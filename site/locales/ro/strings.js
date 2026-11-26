@@ -922,6 +922,142 @@ module.exports = {
           a: 'Nu, ia în calcul doar carburantul. Uzura mașinii, asigurarea RCA, parcarea, rovinieta și taxele de pod vin pe deasupra, așa că în realitate condusul costă mai mult.'
         }
       ]
+    },
+
+    car: {
+      name: 'Costul mașinii',
+      heading: 'Calculator pentru costul real al mașinii',
+      title: 'Calculator cost mașină – cât te costă de fapt o mașină',
+      description: 'Calculează cât te costă de fapt o mașină pe lună, pe an, pe kilometru și în 10 ani: carburant din kilometraj, depreciere, asigurare, întreținere și parcare.',
+      card: 'Află cât te costă de fapt mașina pe lună, pe an și pe kilometru, cu toate cheltuielile.',
+      tag: 'Călătorii',
+      lead: 'Introdu kilometrajul anual, consumul și prețul carburantului, plus deprecierea, asigurările, întreținerea și parcarea, ca să vezi cât te costă de fapt mașina.',
+      unit: {
+        label: 'Unități',
+        metric: 'Kilometri și litri',
+        us: 'Mile și galoane'
+      },
+      distance: {
+        label: 'Distanță anuală',
+        unit: 'km pe an',
+        decrease: 'Scade distanța anuală',
+        increase: 'Crește distanța anuală'
+      },
+      consumption: {
+        label: 'Consum de carburant',
+        unit: 'l/100 km',
+        hint: 'Ai mașină electrică? Introdu kWh/100 km și prețul pe kWh.',
+        decrease: 'Scade consumul',
+        increase: 'Crește consumul'
+      },
+      fuelPrice: {
+        label: 'Prețul carburantului',
+        unit: 'lei pe litru',
+        value: '7.5',
+        step: '0.05',
+        usStep: '0.2',
+        decrease: 'Scade prețul carburantului',
+        increase: 'Crește prețul carburantului'
+      },
+      depreciation: {
+        label: 'Depreciere sau rată',
+        unit: 'lei pe lună',
+        value: '1000',
+        step: '50',
+        hint: 'Cât pierde mașina din valoare lunar, ori rata lunară la credit sau leasing.',
+        decrease: 'Scade deprecierea',
+        increase: 'Crește deprecierea'
+      },
+      insurance: {
+        label: 'Asigurări și taxe',
+        unit: 'lei pe an',
+        value: '2500',
+        step: '200',
+        decrease: 'Scade asigurările și taxele',
+        increase: 'Crește asigurările și taxele'
+      },
+      maintenance: {
+        label: 'Întreținere și anvelope',
+        unit: 'lei pe an',
+        value: '2500',
+        hint: 'Revizii, anvelope, ITP și reparații neprevăzute.',
+        decrease: 'Scade costul de întreținere',
+        increase: 'Crește costul de întreținere'
+      },
+      parking: {
+        label: 'Parcare și taxe de drum',
+        unit: 'lei pe lună',
+        value: '200',
+        hint: 'Loc de parcare, garaj, rovinietă, taxe de pod și spălătorie.',
+        decrease: 'Scade costul de parcare',
+        increase: 'Crește costul de parcare'
+      },
+      resultsTitle: 'Costul real al mașinii',
+      perMonth: 'Pe lună',
+      perYear: 'Pe an',
+      perDistance: 'Pe km',
+      in10Years: 'În 10 ani',
+      breakdownLabel: 'Costul anual pe categorii',
+      copySummary: 'Copiază rezumatul',
+      receiptTitle: 'Bon de costuri auto',
+      receiptCount: 'Cheltuieli',
+      runtime: {
+        receiptItem: 'Cheltuială',
+        fuelName: 'Carburant sau încărcare',
+        unit: {
+          metric: {
+            distance: 'km pe an',
+            consumption: 'l/100 km',
+            price: 'lei pe litru',
+            perLabel: 'Pe km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mile pe an',
+            consumption: 'mpg',
+            price: 'lei pe galon',
+            perLabel: 'Pe milă',
+            perDistance: 'milă'
+          }
+        },
+        breakdown: '{cost} / an · {percent} %',
+        note: {
+          empty: 'Introdu cel puțin o cheltuială legată de mașină ca să vezi totalurile.',
+          single: 'Categoria {name} reprezintă întregul cost anual de {cost}, adică circa {day} pe zi.',
+          biggest: 'Cea mai mare cheltuială este {name}: {cost} pe an ({percent} % din total), adică circa {day} pe zi în total.'
+        },
+        summary: {
+          item: '{name} – {cost} / an ({percent} %)',
+          total: 'Total: {month} pe lună, {year} pe an, {year10} în 10 ani',
+          perDistance: 'Cost pe {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Cum se calculează costul real al mașinii',
+        paragraphs: [
+          'Costul anual cu carburantul sau încărcarea se calculează din distanța anuală, consum și prețul carburantului (distanță × consum ÷ 100 × preț pe litru în unități metrice, sau distanță ÷ mpg × preț pe galon în unități americane), astfel că modificarea kilometrajului actualizează imediat totalurile lunare și anuale. Cheltuielile lunare fixe (deprecierea sau rata și parcarea) se înmulțesc cu 12 și se adună cu asigurările, taxele și întreținerea anuale.',
+          'Majoritatea șoferilor se uită la prețul de la pompă și subestimează restul cheltuielilor. La 15.000 km pe an cu un consum de 6,5 l/100 km și carburant la 7,50 lei pe litru (7.312,50 lei pe an pentru carburant), plus 1.000 de lei pe lună depreciere, 2.500 de lei pe an pentru asigurări și taxe, 2.500 de lei pentru întreținere și anvelope și 200 de lei pe lună pentru parcare și taxe de drum, mașina ajunge la 26.712,50 lei pe an – adică 2.226,04 lei pe lună, 1,78 lei pe kilometru și 267.125 de lei în zece ani.',
+          'Deprecierea este adesea cea mai mare cheltuială chiar și când mașina este achitată integral: o mașină de 90.000 de lei care valorează 30.000 de lei după cinci ani pierde 12.000 de lei pe an, adică 1.000 de lei în fiecare lună, doar stând în parcare. Schimbarea unităților convertește automat distanța, consumul și prețul carburantului.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Cât costă de fapt întreținerea unei mașini pe lună și pe an?',
+          a: 'Adună costul anual al carburantului (din distanța anuală, consum și prețul carburantului), asigurările, taxele și întreținerea cu de 12 ori deprecierea sau rata lunară și parcarea, apoi împarte la 12. Cu valorile implicite pentru România, costul real este de 2.226,04 lei pe lună, adică 26.712,50 lei pe an.'
+        },
+        {
+          q: 'Cum estimez deprecierea lunară a mașinii?',
+          a: 'Scade din prețul de achiziție suma pe care estimezi că o vei primi la revânzare și împarte la numărul de luni în care o vei folosi. Dacă cumperi o mașină cu 90.000 de lei și o vinzi după 5 ani (60 de luni) cu 30.000 de lei, deprecierea este de 1.000 de lei pe lună. Dacă ai leasing operațional, introdu rata lunară.'
+        },
+        {
+          q: 'Funcționează calculatorul și pentru mașini electrice?',
+          a: 'Da. În unități metrice, introdu la consum consumul de energie al mașinii în kWh/100 km (de exemplu 18) și la prețul carburantului prețul mediu al energiei pe kWh (de exemplu 1,30 lei). Mașinile electrice au adesea costuri mai mici cu energia și reviziile, dar asigurarea, anvelopele și deprecierea se adună în continuare.'
+        },
+        {
+          q: 'Cât aș avea dacă aș investi banii în schimb?',
+          a: 'Caseta „Dacă ai investi banii în schimb” arată cât ar deveni banii cheltuiți pe mașină dacă ai investi aceeași sumă în fiecare lună, cu un randament de 4 % pe an, capitalizat lunar. 2.226,04 lei pe lună ajung la circa 326.550 de lei în 10 ani – din care 267.125 de lei sunt banii tăi, iar restul vine din randament. Impozitele, comisioanele și inflația nu sunt luate în calcul. Este un exemplu, nu un sfat de investiții.'
+        }
+      ]
     }
   }
 };

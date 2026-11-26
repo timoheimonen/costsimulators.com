@@ -922,6 +922,142 @@ module.exports = {
           a: 'Eivät, laskuri laskee vain polttoaineen. Auton kuluminen, vakuutukset, pysäköinti ja tiemaksut tulevat päälle, joten ajamisen kokonaishinta on suurempi.'
         }
       ]
+    },
+
+    car: {
+      name: 'Autoilun hinta',
+      heading: 'Auton kustannuslaskuri',
+      title: 'Auton kustannuslaskuri – mitä auton omistaminen maksaa?',
+      description: 'Laske auton omistamisen todelliset kulut kuukaudessa, vuodessa, kilometriltä ja 10 vuodessa: polttoaine ajomäärästä, arvonalenema, vakuutus, huollot ja pysäköinti.',
+      card: 'Katso, mitä auton omistaminen oikeasti maksaa kuukaudessa, vuodessa ja kilometriltä.',
+      tag: 'Matkat',
+      lead: 'Syötä vuosittainen ajomäärä, kulutus, polttoaineen hinta sekä muut autokulut, niin näet, mitä auton omistaminen oikeasti maksaa kuukaudessa, vuodessa ja kymmenessä vuodessa.',
+      unit: {
+        label: 'Yksiköt',
+        metric: 'Kilometrit ja litrat',
+        us: 'Mailit ja gallonat'
+      },
+      distance: {
+        label: 'Ajomäärä vuodessa',
+        unit: 'km / vuosi',
+        decrease: 'Vähennä vuosittaista ajomäärää',
+        increase: 'Lisää vuosittaista ajomäärää'
+      },
+      consumption: {
+        label: 'Kulutus',
+        unit: 'l/100 km',
+        hint: 'Ajatko sähköautolla? Syötä kWh/100 km ja sähkön hinta kilowattitunnilta.',
+        decrease: 'Pienennä kulutusta',
+        increase: 'Suurenna kulutusta'
+      },
+      fuelPrice: {
+        label: 'Polttoaineen hinta',
+        unit: '€ / litra',
+        value: '1.85',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Pienennä polttoaineen hintaa',
+        increase: 'Suurenna polttoaineen hintaa'
+      },
+      depreciation: {
+        label: 'Arvonalenema tai kuukausierä',
+        unit: '€ / kk',
+        value: '250',
+        step: '10',
+        hint: 'Autolainan tai leasingin kuukausierä tai oman auton arvon lasku kuukaudessa.',
+        decrease: 'Pienennä arvonalenemaa tai kuukausierää',
+        increase: 'Suurenna arvonalenemaa tai kuukausierää'
+      },
+      insurance: {
+        label: 'Vakuutukset ja verot',
+        unit: '€ / vuosi',
+        value: '800',
+        step: '50',
+        decrease: 'Pienennä vakuutuksia ja veroja',
+        increase: 'Suurenna vakuutuksia ja veroja'
+      },
+      maintenance: {
+        label: 'Huollot ja renkaat',
+        unit: '€ / vuosi',
+        value: '700',
+        hint: 'Määräaikaishuollot, korjaukset, renkaat ja katsastus vuodelle jaettuna.',
+        decrease: 'Pienennä huolto- ja rengaskuluja',
+        increase: 'Suurenna huolto- ja rengaskuluja'
+      },
+      parking: {
+        label: 'Pysäköinti, pesut ja tietullit',
+        unit: '€ / kk',
+        value: '60',
+        hint: 'Autopaikka, pysäköintimaksut, autopesut ja mahdolliset tietullit.',
+        decrease: 'Pienennä pysäköinti-, pesu- ja tietullikuluja',
+        increase: 'Suurenna pysäköinti-, pesu- ja tietullikuluja'
+      },
+      resultsTitle: 'Autoilun kokonaiskulut',
+      perMonth: 'Kuukaudessa',
+      perYear: 'Vuodessa',
+      perDistance: 'Kilometriltä',
+      in10Years: '10 vuodessa',
+      breakdownLabel: 'Vuosikulut kuluerittäin',
+      copySummary: 'Kopioi yhteenveto',
+      receiptTitle: 'Autoilukuitti',
+      receiptCount: 'Kulueriä',
+      runtime: {
+        receiptItem: 'Autokulu',
+        fuelName: 'Polttoaine tai lataus',
+        unit: {
+          metric: {
+            distance: 'km / vuosi',
+            consumption: 'l/100 km',
+            price: '€ / litra',
+            perLabel: 'Kilometriltä',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mailia / vuosi',
+            consumption: 'mpg',
+            price: '€ / gallona',
+            perLabel: 'Maililta',
+            perDistance: 'maili'
+          }
+        },
+        breakdown: '{cost} / vuosi · {percent} %',
+        note: {
+          empty: 'Syötä vähintään yksi nollaa suurempi autokulu, niin näet kokonaishinnan.',
+          single: '{name} muodostaa koko {cost} vuosikulun – noin {day} päivässä.',
+          biggest: 'Suurin kulusi on {name}, {cost} vuodessa ({percent} % kokonaissummasta) – yhteensä noin {day} päivässä.'
+        },
+        summary: {
+          item: '{name} – {cost} / vuosi ({percent} %)',
+          total: 'Yhteensä: {month} kuukaudessa, {year} vuodessa ({year10} 10 vuodessa)',
+          perDistance: 'Hinta / {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Näin auton omistamisen hinta lasketaan',
+        paragraphs: [
+          'Vuoden polttoaine- tai latauskulu lasketaan ajomäärän, kulutuksen ja polttoaineen hinnan perusteella (ajomäärä × kulutus ÷ 100 × litrahinta), joten ajomäärän muuttaminen päivittää heti kuukausi- ja vuosisummat. Kuukausittaiset kiinteät kulut (arvonalenema tai kuukausierä sekä pysäköinti) kerrotaan 12:lla ja lisätään vuosittaisiin vakuutuksiin, veroihin ja huoltoihin.',
+          'Moni katsoo vain bensan hintaa ja aliarvioi muut kulut. 15 000 kilometrin vuosittaisella ajolla, 6,5 l/100 km kulutuksella ja 1,85 euron litrahinnalla polttoaineeseen kuluu noin 1 804 € vuodessa. Kun mukaan lasketaan 250 € kuukaudessa arvonalenemaan, 800 € vuodessa vakuutuksiin ja veroihin, 700 € huoltoihin ja renkaisiin sekä 60 € kuukaudessa pysäköintiin ja pesuihin, kokonaishinta on noin 7 024 € vuodessa – 585 € kuukaudessa, 0,47 € kilometriltä ja yli 70 200 € kymmenessä vuodessa.',
+          'Arvonalenema on usein suurin yksittäinen kulu, vaikka auto olisi maksettu kokonaan: 25 000 euron auto, josta saa viiden vuoden kuluttua 10 000 €, menettää arvoaan 3 000 € vuodessa eli 250 € joka kuukausi pelkästään pihassa seistessään. Yksikön vaihto muuntaa ajomäärän, kulutuksen ja polttoaineen hinnan automaattisesti.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Paljonko auton omistaminen maksaa kuukaudessa?',
+          a: 'Laske yhteen vuosittainen polttoainekulu (ajomäärä × kulutus × litrahinta), vakuutukset, verot, huollot ja renkaat sekä 12 kuukauden arvonalenema tai kuukausierä ja pysäköinti, ja jaa summa 12:lla. Laskurin oletusluvuilla todellinen hinta on noin 585 € kuukaudessa eli 7 024 € vuodessa.'
+        },
+        {
+          q: 'Mitä syötän arvonalenemaksi, jos auto on oma?',
+          a: 'Arvioi auton nykyarvo, vähennä siitä arvioitu myyntihinta muutaman vuoden päästä ja jaa erotus kuukausien määrällä. Jos esimerkiksi 15 000 euron auton arvo laskee kolmessa vuodessa 9 600 euroon, arvonalenema on 150 € kuukaudessa ilman autolainaakin.'
+        },
+        {
+          q: 'Toimiiko laskuri myös sähköautolle?',
+          a: 'Toimii. Syötä kulutukseksi kWh/100 km (esimerkiksi 18) ja polttoaineen hinnaksi keskimääräinen lataussähkön hinta kilowattitunnilta (esimerkiksi 0,15 €). Sähköauton käyttövoima ja huollot ovat usein halvempia, mutta vakuutukset, renkaat ja arvonalenema vaikuttavat silti paljon.'
+        },
+        {
+          q: 'Entä jos sijoittaisin rahat?',
+          a: '”Jos sijoittaisit summan” -kohta näyttää, mihin rahat kasvaisivat, jos et käyttäisi niitä autoon vaan sijoittaisit ne joka kuukausi 4 %:n vuosituotolla ja kuukausittaisella koronkorolla. 585 € kuukaudessa kasvaa 10 vuodessa noin 85 900 euroon – siitä noin 70 200 € on omaa rahaasi ja loput tuottoa. Verot, kulut ja inflaatio on jätetty huomiotta. Kyse on esimerkistä, ei sijoitusneuvonnasta.'
+        }
+      ]
     }
   }
 };

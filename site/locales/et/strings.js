@@ -922,6 +922,142 @@ module.exports = {
           a: 'Ei, see arvestab ainult kütust. Auto kulumine, hooldus, kindlustus ja parkimine tulevad lisaks, nii et autoga sõitmise tegelik hind on suurem.'
         }
       ]
+    },
+
+    car: {
+      name: 'Autokulud',
+      heading: 'Autokulude kalkulaator',
+      title: 'Autokulude kalkulaator – mida auto tegelikult maksab?',
+      description: 'Arvuta, mida auto tegelikult maksab kuus, aastas, kilomeetri kohta ja 10 aastaga – koos väärtuse languse, kütuse, kindlustuse, hoolduse ja parkimisega.',
+      card: 'Vaata, mida auto omamine tegelikult maksab kuus, aastas ja kilomeetri kohta.',
+      tag: 'Reisimine',
+      lead: 'Sisesta aastane läbisõit, kütusekulu ja kütuse hind ning väärtuse langus, kindlustus, hooldus ja parkimine, et näha, mida auto sulle tegelikult maksab.',
+      unit: {
+        label: 'Ühikud',
+        metric: 'Kilomeetrid ja liitrid',
+        us: 'Miilid ja gallonid'
+      },
+      distance: {
+        label: 'Aastane läbisõit',
+        unit: 'km aastas',
+        decrease: 'Vähenda aastast läbisõitu',
+        increase: 'Suurenda aastast läbisõitu'
+      },
+      consumption: {
+        label: 'Kütusekulu',
+        unit: 'l/100 km',
+        hint: 'Sõidad elektriautoga? Sisesta kWh/100 km ja elektri hind kilovatt-tunni kohta.',
+        decrease: 'Vähenda kütusekulu',
+        increase: 'Suurenda kütusekulu'
+      },
+      fuelPrice: {
+        label: 'Kütuse hind',
+        unit: '€ liitri kohta',
+        value: '1.65',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Vähenda kütuse hinda',
+        increase: 'Suurenda kütuse hinda'
+      },
+      depreciation: {
+        label: 'Väärtuse langus',
+        unit: '€ kuus',
+        value: '220',
+        step: '10',
+        hint: 'Kui palju auto iga kuu väärtust kaotab, või sinu igakuine liisingu- või autolaenumakse.',
+        decrease: 'Vähenda väärtuse langust',
+        increase: 'Suurenda väärtuse langust'
+      },
+      insurance: {
+        label: 'Kindlustus ja automaks',
+        unit: '€ aastas',
+        value: '550',
+        step: '50',
+        decrease: 'Vähenda kindlustuse ja automaksu kulu',
+        increase: 'Suurenda kindlustuse ja automaksu kulu'
+      },
+      maintenance: {
+        label: 'Hooldus ja remont',
+        unit: '€ aastas',
+        value: '550',
+        hint: 'Hooldused, tehnoülevaatus, rehvid, pidurid ja ootamatud remondid aasta peale jaotatuna.',
+        decrease: 'Vähenda hoolduskulu',
+        increase: 'Suurenda hoolduskulu'
+      },
+      parking: {
+        label: 'Parkimine ja muud tasud',
+        unit: '€ kuus',
+        value: '40',
+        hint: 'Parkimiskoht, garaaž, tasuline parkimine ja autopesu.',
+        decrease: 'Vähenda parkimiskulu',
+        increase: 'Suurenda parkimiskulu'
+      },
+      resultsTitle: 'Autokulud',
+      perMonth: 'Kuus',
+      perYear: 'Aastas',
+      perDistance: 'Kilomeetri kohta',
+      in10Years: '10 aastaga',
+      breakdownLabel: 'Aastakulu kategooriate kaupa',
+      copySummary: 'Kopeeri kokkuvõte',
+      receiptTitle: 'Autokulude tšekk',
+      receiptCount: 'Kulusid',
+      runtime: {
+        receiptItem: 'Autokulu',
+        fuelName: 'Kütus või laadimine',
+        unit: {
+          metric: {
+            distance: 'km aastas',
+            consumption: 'l/100 km',
+            price: '€ liitri kohta',
+            perLabel: 'Kilomeetri kohta',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miili aastas',
+            consumption: 'mpg',
+            price: '€ galloni kohta',
+            perLabel: 'Miili kohta',
+            perDistance: 'miil'
+          }
+        },
+        breakdown: '{cost} / aasta · {percent}%',
+        note: {
+          empty: 'Sisesta vähemalt üks kulu, et näha, mida auto maksab kuus, aastas ja 10 aastaga.',
+          single: '{name} moodustab kogu aastakulu {cost} ehk {day} päevas.',
+          biggest: 'Sinu suurim kulu on {name}: {cost} aastas ({percent}% kogukulust), kokku {day} päevas.'
+        },
+        summary: {
+          item: '{name} – {cost} / aasta ({percent}%)',
+          total: 'Kokku: {month} kuus, {year} aastas ({year10} 10 aastaga)',
+          perDistance: 'Läbisõidu järgi: {cost} / {distance}'
+        }
+      },
+      about: {
+        title: 'Kuidas autokulusid arvutatakse',
+        paragraphs: [
+          'Aastane kütuse- või laadimiskulu arvutatakse aastase läbisõidu, kütusekulu ja kütuse hinna põhjal (läbisõit × kütusekulu ÷ 100 × liitri hind meetermõõdustikus või läbisõit ÷ mpg × galloni hind miilide ja gallonite puhul), nii et läbisõidu muutmine uuendab kohe nii kuu- kui ka aastakulu. Igakuised püsikulud nagu väärtuse langus ja parkimine korrutatakse 12-ga ning aastased kulud nagu kindlustus, automaks ja hooldus liidetakse otse juurde. Aasta kogusumma jagatakse seejärel 12-ga kuukuluks, 365-ga päevakuluks ja aastase läbisõiduga kilomeetri või miili hinnaks.',
+          'Näidisväärtustega – 15 000 km aastas, 6,5 l/100 km ja 1,65 € liitrist (1608,75 € aastas kütusele), 220 € väärtuse langust ja 40 € parkimist kuus ning 550 € kindlustuse ja automaksu ning 550 € hoolduse peale aastas – maksab auto 5828,75 € aastas ehk 485,73 € kuus, 0,39 € kilomeetri kohta ja 58 287,50 € kümne aastaga. Ainuüksi väärtuse langus moodustab 45% kogukulust, kuigi seda ei näe iga kuu pangaväljavõttel.',
+          'Jaotus järjestab kulud suurimast väikseimani, nii et näed selgelt, kuhu kõige rohkem raha läheb. Kilomeetrite ja liitrite ning miilide ja gallonite vahel vahetamine teisendab läbisõidu, kütusekulu ja kütuse hinna automaatselt. Kõik arvutused toimuvad sinu brauseris ja seaded salvestuvad lehe aadressi, nii et saad tulemuse järjehoidjasse lisada või lingiga jagada.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Kui palju auto omamine tegelikult kuus maksab?',
+          a: 'Liida aastane kütusekulu (läbisõidust, kütusekulust ja kütuse hinnast), kindlustus, automaks ja hooldus 12 kuu väärtuse languse ja parkimisega ning jaga 12-ga. Kalkulaatori näidisväärtustega on kogukulu 5828,75 € aastas ehk 485,73 € kuus.'
+        },
+        {
+          q: 'Kuidas arvutada auto igakuist väärtuse langust?',
+          a: 'Lahuta ostuhinnast summa, mille loodad autot müües tagasi saada, ja jaga see kuude arvuga, mille jooksul autot kasutad. Näiteks 20 000-eurone auto, mille müüd 5 aasta (60 kuu) pärast 8000 € eest, kaotab väärtust 200 € kuus. Liisingu puhul võid siia sisestada oma kuumakse.'
+        },
+        {
+          q: 'Kas see kalkulaator sobib ka elektriautole?',
+          a: 'Jah. Kilomeetrite ja liitrite režiimis sisesta kütusekulu asemele elektriauto energiatarve kWh/100 km (näiteks 18) ja hinnaks keskmine laadimise hind kilovatt-tunni kohta. Elektriautol on sageli väiksemad energia- ja hoolduskulud, kuid väärtuse langus, rehvid ja kindlustus moodustavad ikkagi olulise osa kogukulust.'
+        },
+        {
+          q: 'Mis siis, kui investeeriksin selle raha?',
+          a: 'Plokk „Kui investeeriksid selle raha“ näitab, milliseks summaks autole kuluv raha kasvaks, kui investeeriksid sama summa iga kuu 4% aastase tootlusega ja igakuise liitintressiga. 485,73 € kuus kasvab 10 aastaga umbes 71 300 euroni – sellest 58 287,50 € on sinu enda raha ja ülejäänu tootlus. Maksud, tasud ja inflatsioon on arvestamata. See on näide, mitte investeerimisnõuanne.'
+        }
+      ]
     }
   }
 };

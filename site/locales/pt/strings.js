@@ -923,6 +923,142 @@ module.exports = {
           a: 'Não, ela considera só o combustível. Desgaste do carro, seguro, estacionamento e pedágio se somam a isso, então o custo total de dirigir é maior.'
         }
       ]
+    },
+
+    car: {
+      name: 'Custo do carro',
+      heading: 'Calculadora do custo real de ter um carro',
+      title: 'Quanto custa ter um carro – calculadora mensal e por km',
+      description: 'Calcule o custo real de ter um carro por mês, por ano, por km e em 10 anos: desvalorização, combustível, seguro, IPVA, manutenção, estacionamento e pedágios.',
+      card: 'Descubra quanto manter um carro realmente custa por mês, por ano, por km e em 10 anos.',
+      tag: 'Viagem',
+      lead: 'Informe quantos quilômetros você roda por ano, o consumo e o preço do combustível, além de desvalorização, seguro, IPVA, manutenção e estacionamento, para ver quanto o seu carro custa de verdade.',
+      unit: {
+        label: 'Unidades',
+        metric: 'Quilômetros e litros',
+        us: 'Milhas e galões'
+      },
+      distance: {
+        label: 'Distância por ano',
+        unit: 'km / ano',
+        decrease: 'Diminuir distância por ano',
+        increase: 'Aumentar distância por ano'
+      },
+      consumption: {
+        label: 'Consumo',
+        unit: 'l/100 km',
+        hint: 'Sabe o consumo em km/l? Divida 100 por ele (12 km/l ≈ 8,3 l/100 km). Carro elétrico? Use kWh/100 km e o preço do kWh.',
+        decrease: 'Diminuir consumo',
+        increase: 'Aumentar consumo'
+      },
+      fuelPrice: {
+        label: 'Preço do combustível',
+        unit: 'R$ por litro',
+        value: '6.30',
+        step: '0.1',
+        usStep: '0.5',
+        decrease: 'Diminuir preço do combustível',
+        increase: 'Aumentar preço do combustível'
+      },
+      depreciation: {
+        label: 'Desvalorização ou financiamento',
+        unit: 'R$ / mês',
+        value: '1200',
+        step: '50',
+        hint: 'Quanto o carro perde de valor por mês, ou o valor da parcela do financiamento ou assinatura.',
+        decrease: 'Diminuir desvalorização ou financiamento',
+        increase: 'Aumentar desvalorização ou financiamento'
+      },
+      insurance: {
+        label: 'Seguro, IPVA e licenciamento',
+        unit: 'R$ / ano',
+        value: '3600',
+        step: '200',
+        decrease: 'Diminuir seguro e impostos',
+        increase: 'Aumentar seguro e impostos'
+      },
+      maintenance: {
+        label: 'Manutenção e pneus',
+        unit: 'R$ / ano',
+        value: '2400',
+        hint: 'Revisões, trocas de óleo, pneus, freios e consertos.',
+        decrease: 'Diminuir manutenção e pneus',
+        increase: 'Aumentar manutenção e pneus'
+      },
+      parking: {
+        label: 'Estacionamento, pedágios e lavagem',
+        unit: 'R$ / mês',
+        value: '300',
+        hint: 'Garagem, estacionamento, pedágios, tag e lavagens.',
+        decrease: 'Diminuir estacionamento e pedágios',
+        increase: 'Aumentar estacionamento e pedágios'
+      },
+      resultsTitle: 'Custo total do carro',
+      perMonth: 'Por mês',
+      perYear: 'Por ano',
+      perDistance: 'Por km',
+      in10Years: 'Em 10 anos',
+      breakdownLabel: 'Custo anual por categoria',
+      copySummary: 'Copiar resumo',
+      receiptTitle: 'Cupom do carro',
+      receiptCount: 'Despesas',
+      runtime: {
+        receiptItem: 'Despesa do carro',
+        fuelName: 'Combustível ou recarga',
+        unit: {
+          metric: {
+            distance: 'km / ano',
+            consumption: 'l/100 km',
+            price: 'R$ por litro',
+            perLabel: 'Por km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'milhas / ano',
+            consumption: 'mpg',
+            price: 'R$ por galão',
+            perLabel: 'Por milha',
+            perDistance: 'milha'
+          }
+        },
+        breakdown: '{cost} / ano · {percent}%',
+        note: {
+          empty: 'Informe pelo menos um custo do carro para ver os totais.',
+          single: '{name} responde por todo o custo de {cost} por ano – cerca de {day} por dia.',
+          biggest: 'Seu maior gasto é {name}: {cost} por ano ({percent}% do total), ou cerca de {day} por dia no total.'
+        },
+        summary: {
+          item: '{name} – {cost} / ano ({percent}%)',
+          total: 'Total: {month} por mês, {year} por ano, {year10} em 10 anos',
+          perDistance: 'Custo por {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Como o custo real do carro é calculado',
+        paragraphs: [
+          'O gasto anual com combustível ou recarga é calculado a partir da distância anual, do consumo e do preço do combustível (distância × consumo ÷ 100 × preço em unidades métricas, ou distância ÷ mpg × preço em milhas e galões), então alterar a quilometragem atualiza na hora os totais mensal e anual. Os custos fixos mensais (desvalorização ou parcela e estacionamento) são multiplicados por 12 e somados a seguro, IPVA e manutenção anuais.',
+          'Muita gente olha só para o preço na bomba e subestima o resto. Rodando 15.000 km por ano a 6,5 l/100 km (cerca de 15,4 km/l) e R$ 6,30 por litro (R$ 6.142,50 por ano em combustível), mais R$ 1.200 por mês de desvalorização ou financiamento, R$ 3.600 por ano de seguro e IPVA, R$ 2.400 de manutenção e pneus e R$ 300 por mês de estacionamento e pedágios, o carro soma R$ 30.142,50 por ano – R$ 2.511,88 por mês, R$ 2,01 por km e R$ 301.425 em dez anos.',
+          'A desvalorização costuma ser o maior custo de ter um carro, mesmo quando ele já está quitado: um veículo de R$ 100.000 que vale R$ 58.000 depois de cinco anos perde R$ 8.400 por ano, ou R$ 700 por mês, só ficando na garagem. Trocar de unidade converte distância, consumo e preço do combustível automaticamente para você comparar números métricos e americanos.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto custa manter um carro por mês e por ano?',
+          a: 'Some o gasto anual com combustível (distância anual × consumo ÷ 100 × preço por litro), seguro, IPVA e manutenção a 12 vezes a desvalorização mensal ou parcela e o estacionamento, e divida por 12. Com os valores padrão da calculadora, o custo real é de R$ 2.511,88 por mês, ou R$ 30.142,50 por ano.'
+        },
+        {
+          q: 'O que devo informar em desvalorização se o carro já está quitado?',
+          a: 'Estime quanto o carro vale hoje, subtraia o valor pelo qual espera vendê-lo daqui a alguns anos e divida pelo número de meses nesse período. Por exemplo, um carro que cai de R$ 100.000 para R$ 58.000 em cinco anos (60 meses) custa R$ 700 por mês em desvalorização, mesmo sem parcela de financiamento.'
+        },
+        {
+          q: 'A calculadora funciona para carros elétricos?',
+          a: 'Sim. Em unidades métricas, informe o consumo do veículo em kWh/100 km (por exemplo, 18) e o preço médio da recarga por kWh (por exemplo, R$ 0,90 em casa). Carros elétricos costumam ter menor custo de energia e manutenção de rotina, embora seguro, IPVA, pneus e desvalorização continuem pesando no total.'
+        },
+        {
+          q: 'E se eu investisse o dinheiro em vez de gastar com o carro?',
+          a: 'O quadro “Se você investisse esse dinheiro” mostra quanto você teria depois de 10 anos se investisse o custo mensal do carro todo mês, a 4% ao ano com juros compostos mensais. Com R$ 2.511,88 por mês, seriam cerca de R$ 368.500 em 10 anos – R$ 301.425 saídos do seu bolso e o resto de rendimento. Impostos, taxas e inflação ficam de fora. É um exemplo, não uma recomendação de investimento.'
+        }
+      ]
     }
   }
 };

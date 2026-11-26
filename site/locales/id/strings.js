@@ -923,6 +923,142 @@ module.exports = {
           a: 'Tidak, yang dihitung hanya BBM. Biaya tol, parkir, asuransi, dan keausan kendaraan belum termasuk, jadi biaya berkendara sebenarnya lebih tinggi.'
         }
       ]
+    },
+
+    car: {
+      name: 'Biaya mobil',
+      heading: 'Kalkulator biaya kepemilikan mobil',
+      title: 'Kalkulator Biaya Mobil – Total Biaya Kepemilikan Mobil',
+      description: 'Hitung biaya sebenarnya memiliki mobil per bulan, per tahun, per km, dan dalam 10 tahun: BBM dari jarak tempuh, penyusutan atau cicilan, asuransi, perawatan, dan parkir.',
+      card: 'Jumlahkan penyusutan, BBM, asuransi, perawatan, dan parkir untuk melihat biaya mobil sebenarnya.',
+      tag: 'Perjalanan',
+      lead: 'Masukkan jarak tempuh tahunan, konsumsi dan harga BBM, serta penyusutan atau cicilan, asuransi dan pajak, perawatan, dan parkir untuk melihat biaya sebenarnya memiliki mobil.',
+      unit: {
+        label: 'Satuan',
+        metric: 'Kilometer & liter',
+        us: 'Mil & galon'
+      },
+      distance: {
+        label: 'Jarak tempuh per tahun',
+        unit: 'km per tahun',
+        decrease: 'Kurangi jarak tempuh per tahun',
+        increase: 'Tambah jarak tempuh per tahun'
+      },
+      consumption: {
+        label: 'Konsumsi BBM',
+        unit: 'l/100 km',
+        hint: 'Terbiasa dengan km/l? Hitung 100 ÷ km/l, misalnya 12 km/l ≈ 8,3 l/100 km. Mobil listrik: isi kWh/100 km dan tarif per kWh.',
+        decrease: 'Kurangi konsumsi BBM',
+        increase: 'Tambah konsumsi BBM'
+      },
+      fuelPrice: {
+        label: 'Harga BBM',
+        unit: 'Rp per liter',
+        value: '10000',
+        step: '100',
+        usStep: '500',
+        decrease: 'Kurangi harga BBM',
+        increase: 'Tambah harga BBM'
+      },
+      depreciation: {
+        label: 'Penyusutan atau cicilan',
+        unit: 'Rp per bulan',
+        value: '3000000',
+        step: '100000',
+        hint: 'Penurunan nilai mobil per bulan, atau cicilan kredit maupun biaya sewa bulanan.',
+        decrease: 'Kurangi penyusutan atau cicilan',
+        increase: 'Tambah penyusutan atau cicilan'
+      },
+      insurance: {
+        label: 'Asuransi & pajak',
+        unit: 'Rp per tahun',
+        value: '5000000',
+        step: '500000',
+        decrease: 'Kurangi biaya asuransi dan pajak',
+        increase: 'Tambah biaya asuransi dan pajak'
+      },
+      maintenance: {
+        label: 'Perawatan & ban',
+        unit: 'Rp per tahun',
+        value: '5000000',
+        hint: 'Servis berkala, ganti oli, perbaikan, ban, dan suku cadang dalam setahun.',
+        decrease: 'Kurangi biaya perawatan dan ban',
+        increase: 'Tambah biaya perawatan dan ban'
+      },
+      parking: {
+        label: 'Parkir & tol',
+        unit: 'Rp per bulan',
+        value: '500000',
+        hint: 'Parkir bulanan, parkir harian, tarif tol, dan cuci mobil.',
+        decrease: 'Kurangi biaya parkir dan tol',
+        increase: 'Tambah biaya parkir dan tol'
+      },
+      resultsTitle: 'Biaya kepemilikan mobil',
+      perMonth: 'Per bulan',
+      perYear: 'Per tahun',
+      perDistance: 'Per km',
+      in10Years: 'Dalam 10 tahun',
+      breakdownLabel: 'Biaya mobil tahunan per kategori',
+      copySummary: 'Salin ringkasan',
+      receiptTitle: 'Struk biaya mobil',
+      receiptCount: 'Pengeluaran',
+      runtime: {
+        receiptItem: 'Biaya mobil',
+        fuelName: 'BBM atau pengisian daya',
+        unit: {
+          metric: {
+            distance: 'km per tahun',
+            consumption: 'l/100 km',
+            price: 'Rp per liter',
+            perLabel: 'Per km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mil per tahun',
+            consumption: 'mpg',
+            price: 'Rp per galon',
+            perLabel: 'Per mil',
+            perDistance: 'mil'
+          }
+        },
+        breakdown: '{cost} / tahun · {percent}%',
+        note: {
+          empty: 'Masukkan setidaknya satu biaya mobil di atas nol untuk melihat totalnya.',
+          single: '{name} mencakup seluruh biaya tahunan sebesar {cost}, atau sekitar {day} per hari.',
+          biggest: 'Biaya terbesar adalah {name}, yaitu {cost} setahun ({percent}% dari total), dengan total sekitar {day} per hari.'
+        },
+        summary: {
+          item: '{name} – {cost} / tahun ({percent}%)',
+          total: 'Total: {month} per bulan, {year} per tahun, {year10} dalam 10 tahun',
+          perDistance: 'Per {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Cara menghitung biaya kepemilikan mobil',
+        paragraphs: [
+          'Biaya BBM atau pengisian daya tahunan dihitung otomatis dari jarak tempuh tahunan, konsumsi BBM, dan harga BBM (jarak × konsumsi ÷ 100 × harga pada satuan metrik, atau jarak ÷ mpg × harga pada satuan AS), sehingga mengubah jarak tempuh langsung memperbarui total bulanan dan tahunan. Biaya tetap bulanan seperti penyusutan atau cicilan serta parkir dan tol dikalikan 12, lalu dijumlahkan dengan asuransi, pajak tahunan STNK, dan perawatan.',
+          'Banyak pengemudi hanya fokus pada harga bensin dan meremehkan biaya lainnya. Dengan angka bawaan – 15.000 km setahun, konsumsi 6,5 l/100 km, dan harga BBM Rp 10.000 per liter (BBM Rp 9.750.000 setahun) – ditambah penyusutan Rp 3.000.000/bulan, asuransi dan pajak Rp 5.000.000/tahun, perawatan Rp 5.000.000/tahun, serta parkir dan tol Rp 500.000/bulan, totalnya mencapai Rp 61.750.000 per tahun – setara Rp 5.145.833 per bulan, sekitar Rp 169.178 per hari, Rp 4.117 per km, dan Rp 617.500.000 dalam 10 tahun.',
+          'Penyusutan nilai kendaraan sering kali menjadi biaya tersembunyi terbesar bahkan untuk mobil yang sudah lunas – pada contoh di atas mencapai sekitar 58% dari total pengeluaran. Rincian mengurutkan kategori dari yang terbesar ke terkecil agar Anda mudah melihat pos terbesar, dan saat satuan diganti antara metrik dan AS, jarak tempuh, konsumsi BBM, dan harga BBM ikut dikonversi otomatis.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Berapa biaya memiliki mobil per tahun?',
+          a: 'Jumlahkan biaya BBM tahunan (dihitung dari jarak tempuh, konsumsi, dan harga BBM), asuransi, pajak, dan perawatan dengan 12 kali penyusutan atau cicilan serta parkir bulanan, lalu bagi 12 untuk biaya bulanan. Dengan angka bawaan (15.000 km/tahun, 6,5 l/100 km, Rp 10.000/liter sehingga BBM Rp 9.750.000/tahun, ditambah penyusutan, asuransi, perawatan, dan parkir), totalnya Rp 61.750.000 per tahun atau Rp 5.145.833 per bulan.'
+        },
+        {
+          q: 'Bagaimana cara menghitung penyusutan mobil?',
+          a: 'Kurangi harga beli mobil dengan perkiraan harga jual kembalinya, lalu bagi dengan jumlah bulan Anda berencana memakainya. Misalnya, mobil seharga Rp 300 juta yang diperkirakan terjual Rp 120 juta setelah 5 tahun menyusut Rp 180 juta, atau Rp 3.000.000 per bulan. Jika Anda membayar cicilan atau sewa bulanan, masukkan jumlah cicilan itu saja agar tidak terhitung dua kali.'
+        },
+        {
+          q: 'Apakah kalkulator ini bisa dipakai untuk mobil listrik?',
+          a: 'Bisa. Pada satuan metrik, masukkan konsumsi energi mobil listrik dalam kWh/100 km (misalnya 18) di kolom konsumsi BBM dan tarif pengisian daya per kWh (misalnya Rp 1.700) di kolom harga BBM. Mobil listrik biasanya lebih hemat biaya energi dan servis rutin, meski asuransi, ban, dan penyusutan tetap perlu diperhitungkan.'
+        },
+        {
+          q: 'Bagaimana jika uangnya saya investasikan?',
+          a: 'Kotak “Jika uangnya diinvestasikan” menunjukkan berapa hasilnya setelah 10 tahun jika biaya mobil yang sama Anda investasikan setiap bulan, dengan imbal hasil 4% per tahun yang dihitung majemuk setiap bulan. Rp 5.145.833 sebulan tumbuh menjadi sekitar Rp 754,9 juta dalam 10 tahun – Rp 617,5 juta dari uang Anda sendiri dan sisanya hasil investasi. Pajak, biaya, dan inflasi tidak diperhitungkan. Ini hanya contoh, bukan nasihat investasi.'
+        }
+      ]
     }
   }
 };

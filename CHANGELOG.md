@@ -2,6 +2,13 @@
 
 All notable changes to costsimulators.com are listed here, newest first. Changes are marked by release date instead of version numbers.
 
+## 2026-11-26
+
+### Added
+
+- New tool, in every language:
+  - **Car ownership cost calculator** (`/car-cost-calculator/`) – calculates fuel or charging cost from annual distance, consumption and fuel price and combines it with depreciation or loan payments, insurance and taxes, maintenance and tires, and parking, tolls and washes to show the true cost of owning a car per month, per year, per kilometer or mile and over 10 years, with a cost breakdown, copyable summary, "If you invested it instead" comparison, 10-year receipt and metric/US unit conversion
+
 ## 2026-10-20
 
 ### Added

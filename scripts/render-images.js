@@ -29,7 +29,8 @@ const TOOL_COLORS = {
   gambling: '255 143 102',
   subscriptions: '180 156 255',
   electricity: '247 204 74',
-  trip: '95 208 228'
+  trip: '95 208 228',
+  car: '90 212 157'
 };
 
 function loadPlaywright() {

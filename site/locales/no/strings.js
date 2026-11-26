@@ -923,6 +923,142 @@ module.exports = {
           a: 'Nei, kalkulatoren regner bare med drivstoff. Slitasje, forsikring, parkering, bompenger og ferjer kommer i tillegg, så den totale kostnaden ved å kjøre er høyere.'
         }
       ]
+    },
+
+    car: {
+      name: 'Bilkostnad',
+      heading: 'Bilkostnadskalkulator',
+      title: 'Bilkostnadskalkulator – hva koster det å eie bil?',
+      description: 'Regn ut hva bilen egentlig koster per måned, per år, per kilometer og over 10 år – med verditap, drivstoff, forsikring, service, parkering og bompenger.',
+      card: 'Se hva det egentlig koster å eie bil per måned, per år og per kilometer.',
+      tag: 'Reise',
+      lead: 'Skriv inn årlig kjørelengde, drivstofforbruk og drivstoffpris sammen med verditap, forsikring, vedlikehold og parkering for å se hva bilen egentlig koster deg.',
+      unit: {
+        label: 'Enheter',
+        metric: 'Kilometer og liter',
+        us: 'Miles og gallon'
+      },
+      distance: {
+        label: 'Kjørelengde',
+        unit: 'km per år',
+        decrease: 'Kortere kjørelengde',
+        increase: 'Lengre kjørelengde'
+      },
+      consumption: {
+        label: 'Drivstofforbruk',
+        unit: 'l/100 km',
+        hint: 'Kjører du elbil? Skriv inn kWh/100 km og strømprisen per kWh.',
+        decrease: 'Lavere forbruk',
+        increase: 'Høyere forbruk'
+      },
+      fuelPrice: {
+        label: 'Drivstoffpris',
+        unit: 'kr per liter',
+        value: '21',
+        step: '0.1',
+        usStep: '0.5',
+        decrease: 'Senk drivstoffprisen',
+        increase: 'Øk drivstoffprisen'
+      },
+      depreciation: {
+        label: 'Verditap',
+        unit: 'kr per måned',
+        value: '3200',
+        step: '100',
+        hint: 'Hvor mye bilen faller i verdi hver måned, eller månedskostnaden for billån eller leasing.',
+        decrease: 'Senk verditapet',
+        increase: 'Øk verditapet'
+      },
+      insurance: {
+        label: 'Forsikring og avgifter',
+        unit: 'kr per år',
+        value: '8500',
+        step: '500',
+        decrease: 'Senk forsikring og avgifter',
+        increase: 'Øk forsikring og avgifter'
+      },
+      maintenance: {
+        label: 'Service og vedlikehold',
+        unit: 'kr per år',
+        value: '8000',
+        hint: 'Service, EU-kontroll, dekk, bremser og uforutsette reparasjoner fordelt over året.',
+        decrease: 'Senk vedlikeholdskostnaden',
+        increase: 'Øk vedlikeholdskostnaden'
+      },
+      parking: {
+        label: 'Parkering og bompenger',
+        unit: 'kr per måned',
+        value: '900',
+        hint: 'Parkeringsplass, garasje, bompenger, ferjer og bilvask.',
+        decrease: 'Senk parkeringskostnaden',
+        increase: 'Øk parkeringskostnaden'
+      },
+      resultsTitle: 'Bilkostnad',
+      perMonth: 'Per måned',
+      perYear: 'Per år',
+      perDistance: 'Per km',
+      in10Years: 'På 10 år',
+      breakdownLabel: 'Årskostnad per kategori',
+      copySummary: 'Kopier oppsummering',
+      receiptTitle: 'Bilkvittering',
+      receiptCount: 'Utgifter',
+      runtime: {
+        receiptItem: 'Bilutgift',
+        fuelName: 'Drivstoff eller lading',
+        unit: {
+          metric: {
+            distance: 'km per år',
+            consumption: 'l/100 km',
+            price: 'kr per liter',
+            perLabel: 'Per km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miles per år',
+            consumption: 'mpg',
+            price: 'kr per gallon',
+            perLabel: 'Per mile',
+            perDistance: 'mile'
+          }
+        },
+        breakdown: '{cost} / år · {percent} %',
+        note: {
+          empty: 'Skriv inn minst én utgift for å se hva bilen koster per måned, per år og på 10 år.',
+          single: '{name} står for hele årskostnaden på {cost}, som tilsvarer {day} om dagen.',
+          biggest: 'Den største utgiften din er {name} med {cost} i året ({percent} % av totalen), og totalt koster bilen {day} om dagen.'
+        },
+        summary: {
+          item: '{name} – {cost} / år ({percent} %)',
+          total: 'Totalt: {month} per måned, {year} per år ({year10} på 10 år)',
+          perDistance: 'Per {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Slik beregnes bilkostnaden',
+        paragraphs: [
+          'Den årlige kostnaden til drivstoff eller lading regnes ut fra årlig kjørelengde, forbruk og drivstoffpris (kjørelengde × forbruk ÷ 100 × literpris i metriske enheter, eller kjørelengde ÷ mpg × pris per gallon i miles og gallon), så endrer du kjørelengden, oppdateres måneds- og årskostnaden med én gang. Månedlige faste poster som verditap og parkering ganges med 12, mens årlige poster som forsikring, trafikkforsikringsavgift og vedlikehold legges til direkte. Årskostnaden deles deretter på 12 for månedskostnaden, på 365 for dagskostnaden og på kjørelengden for prisen per kilometer eller mile.',
+          'Med eksempelverdiene – 15 000 km i året med 6,5 l/100 km og 21 kr per liter (20 475 kr i drivstoff i året), 3 200 kr i verditap og 900 kr i parkering og bompenger per måned, pluss 8 500 kr i forsikring og avgifter og 8 000 kr i service og vedlikehold i året – koster bilen 86 175 kr i året, eller 7 181,25 kr i måneden, 5,75 kr per kilometer og 861 750 kr på ti år. Verditapet alene står for 45 % av totalkostnaden, selv om det sjelden merkes på månedens kontoutskrift.',
+          'Oversikten sorterer utgiftene fra størst til minst, så du ser hvor pengene faktisk går. Bytter du mellom kilometer og liter eller miles og gallon, regnes kjørelengde, forbruk og drivstoffpris om automatisk. Tallene blir værende i nettleseren din og ligger i sideadressen, så du kan bokmerke eller dele beregningen.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Hva koster det egentlig å eie bil i måneden?',
+          a: 'Legg sammen den årlige drivstoffkostnaden (fra kjørelengde, forbruk og drivstoffpris), forsikring, avgifter og vedlikehold med 12 ganger månedlig verditap og parkering, og del på 12. Med eksempelverdiene i kalkulatoren blir totalkostnaden 86 175 kr i året, altså 7 181,25 kr i måneden.'
+        },
+        {
+          q: 'Hvordan regner jeg ut verditap per måned?',
+          a: 'Ta kjøpsprisen minus det du regner med å få når du selger bilen, og del på antall måneder du planlegger å eie den. En bil til 350 000 kr som selges etter 5 år (60 måneder) for 160 000 kr, har et verditap på omtrent 3 167 kr i måneden. Leaser du bil, kan du legge inn den månedlige leieprisen her i stedet.'
+        },
+        {
+          q: 'Fungerer kalkulatoren for elbil?',
+          a: 'Ja. Med kilometer og liter skriver du inn strømforbruket i kWh/100 km (for eksempel 18) og gjennomsnittlig strømpris per kWh. Elbiler har ofte lavere utgifter til energi, bompenger og service, mens verditap, dekk og forsikring fortsatt utgjør en stor del av totalen.'
+        },
+        {
+          q: 'Hva om jeg investerte pengene i stedet?',
+          a: 'Boksen «Hvis du investerte pengene i stedet» viser hva pengene kunne vokst til om du investerte bilkostnaden hver måned i stedet, med 4 % årlig avkastning og månedlig rentes rente. 7 181,25 kr i måneden vokser til omtrent 1 053 500 kr på 10 år – 861 750 kr av dine egne penger og resten avkastning. Skatt, gebyrer og inflasjon er ikke regnet med. Dette er et eksempel, ikke investeringsråd.'
+        }
+      ]
     }
   }
 };

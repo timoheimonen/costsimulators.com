@@ -922,6 +922,142 @@ module.exports = {
           a: 'No, considera solo il carburante. Usura, assicurazione, parcheggio e pedaggi autostradali vanno aggiunti, quindi il costo complessivo dell’auto è più alto.'
         }
       ]
+    },
+
+    car: {
+      name: 'Costo dell’auto',
+      heading: 'Calcolatore dei costi di mantenimento auto',
+      title: 'Calcolo costi auto – spesa reale al mese, all’anno e al km',
+      description: 'Calcola il vero costo di mantenere un’auto al mese, all’anno, al km e in 10 anni: svalutazione, carburante, assicurazione, manutenzione, bollo e parcheggio.',
+      card: 'Somma svalutazione, carburante, assicurazione, manutenzione e parcheggio per vedere quanto ti costa davvero l’auto.',
+      tag: 'Viaggi',
+      lead: 'Inserisci i chilometri annui, il consumo e il prezzo del carburante, insieme a svalutazione, assicurazione, manutenzione e parcheggio, per vedere quanto ti costa davvero l’auto.',
+      unit: {
+        label: 'Unità',
+        metric: 'Chilometri e litri',
+        us: 'Miglia e galloni'
+      },
+      distance: {
+        label: 'Chilometri all’anno',
+        unit: 'km all’anno',
+        decrease: 'Diminuisci i chilometri all’anno',
+        increase: 'Aumenta i chilometri all’anno'
+      },
+      consumption: {
+        label: 'Consumo di carburante',
+        unit: 'l/100 km',
+        hint: 'Guidi un’auto elettrica? Inserisci i kWh/100 km e il prezzo al kWh.',
+        decrease: 'Diminuisci il consumo',
+        increase: 'Aumenta il consumo'
+      },
+      fuelPrice: {
+        label: 'Prezzo del carburante',
+        unit: '€ al litro',
+        value: '1.75',
+        step: '0.05',
+        usStep: '0.1',
+        decrease: 'Diminuisci il prezzo del carburante',
+        increase: 'Aumenta il prezzo del carburante'
+      },
+      depreciation: {
+        label: 'Svalutazione o rata',
+        unit: '€ al mese',
+        value: '230',
+        step: '10',
+        hint: 'Rata mensile di finanziamento o noleggio, oppure il valore che l’auto perde ogni mese se è già di proprietà.',
+        decrease: 'Diminuisci svalutazione o rata',
+        increase: 'Aumenta svalutazione o rata'
+      },
+      insurance: {
+        label: 'Assicurazione',
+        unit: '€ all’anno',
+        value: '650',
+        step: '50',
+        decrease: 'Diminuisci l’assicurazione',
+        increase: 'Aumenta l’assicurazione'
+      },
+      maintenance: {
+        label: 'Manutenzione e bollo',
+        unit: '€ all’anno',
+        value: '600',
+        hint: 'Tagliandi, riparazioni, gomme, revisione e bollo auto.',
+        decrease: 'Diminuisci manutenzione e bollo',
+        increase: 'Aumenta manutenzione e bollo'
+      },
+      parking: {
+        label: 'Parcheggio e pedaggi',
+        unit: '€ al mese',
+        value: '60',
+        hint: 'Box, abbonamento parcheggio, strisce blu, pedaggi autostradali e lavaggio.',
+        decrease: 'Diminuisci parcheggio e pedaggi',
+        increase: 'Aumenta parcheggio e pedaggi'
+      },
+      resultsTitle: 'Costo reale dell’auto',
+      perMonth: 'Al mese',
+      perYear: 'All’anno',
+      perDistance: 'Al km',
+      in10Years: 'In 10 anni',
+      breakdownLabel: 'Costo annuale per voce di spesa',
+      copySummary: 'Copia il riepilogo',
+      receiptTitle: 'Scontrino dei costi auto',
+      receiptCount: 'Pagamenti',
+      runtime: {
+        receiptItem: 'Spesa auto',
+        fuelName: 'Carburante o ricarica',
+        unit: {
+          metric: {
+            distance: 'km all’anno',
+            consumption: 'l/100 km',
+            price: '€ al litro',
+            perLabel: 'Al km',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'miglia all’anno',
+            consumption: 'mpg',
+            price: '€ al gallone',
+            perLabel: 'Al miglio',
+            perDistance: 'miglio'
+          }
+        },
+        breakdown: '{cost} / anno · {percent}%',
+        note: {
+          empty: 'Inserisci almeno una spesa dell’auto superiore a zero per vedere i totali.',
+          single: 'L’intero costo annuale di {cost} riguarda {name}, cioè circa {day} al giorno.',
+          biggest: 'La spesa più alta è {name}, con {cost} all’anno ({percent}% del totale), per un costo complessivo di circa {day} al giorno.'
+        },
+        summary: {
+          item: '{name}: {cost} / anno ({percent}%)',
+          total: 'Totale: {month} al mese, {year} all’anno, {year10} in 10 anni',
+          perDistance: 'Costo al {distance}: {cost}'
+        }
+      },
+      about: {
+        title: 'Come si calcola il costo reale dell’auto',
+        paragraphs: [
+          'La spesa annuale per carburante o ricarica viene calcolata da chilometri annui, consumo e prezzo del carburante (distanza × consumo ÷ 100 × prezzo al litro in unità metriche, oppure distanza ÷ mpg × prezzo al gallone in miglia), così cambiare la percorrenza aggiorna subito i totali. Le spese fisse mensili (svalutazione o rata e parcheggio) vengono moltiplicate per 12 e sommate ad assicurazione, tagliandi, gomme, revisione e bollo annuali.',
+          'Molti automobilisti guardano solo al prezzo alla pompa e sottovalutano il resto. Con valori tipici in Italia – 15.000 km all’anno con un consumo di 6,5 l/100 km e carburante a 1,75 € al litro (1.706,25 € all’anno di carburante), più 230 € al mese di svalutazione, 650 € all’anno di assicurazione, 600 € di tagliandi, gomme, revisione e bollo, e 60 € al mese tra parcheggio e pedaggi – mantenere un’auto costa 6.436,25 € all’anno: 536,35 € al mese, 0,43 € al chilometro e 64.362,50 € in dieci anni.',
+          'La svalutazione è spesso la voce più pesante anche quando l’auto è già pagata: un’auto comprata a 21.000 € e rivenduta dopo cinque anni a 9.000 € perde 2.400 € all’anno, cioè 200 € ogni mese. Cambiando unità vengono convertiti automaticamente distanza, consumo e prezzo del carburante per confrontare chilometri e litri con miglia e galloni.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Quanto costa mantenere un’auto al mese e al chilometro?',
+          a: 'Somma il costo annuale del carburante (calcolato da chilometri annui, consumo e prezzo al litro), assicurazione, manutenzione e bollo a 12 volte la svalutazione o rata mensile e il parcheggio, poi dividi per 12. Con i valori predefiniti per l’Italia, il costo reale è di 536,35 € al mese, o 6.436,25 € all’anno (circa 0,43 € al chilometro su 15.000 km).'
+        },
+        {
+          q: 'Cosa devo inserire come svalutazione se l’auto è già pagata?',
+          a: 'Stima quanto vale oggi la tua auto, sottrai quanto prevedi di ricavare rivendendola tra qualche anno e dividi la differenza per i mesi intermedi. Per esempio, un’auto che scende da 21.000 € a 9.000 € in cinque anni costa 200 € al mese di svalutazione anche senza rate mensili. Se vuoi vedere solo le spese vive, imposta la svalutazione a 0.'
+        },
+        {
+          q: 'Questo calcolatore funziona anche per le auto elettriche?',
+          a: 'Sì. In chilometri e litri, inserisci il consumo in kWh/100 km (per esempio 18) e il prezzo medio di ricarica al kWh (come 0,30 € a casa). Le auto elettriche hanno spesso costi inferiori per energia e manutenzione ordinaria, ma assicurazione, gomme e svalutazione incidono comunque molto.'
+        },
+        {
+          q: 'E se invece investissi quei soldi?',
+          a: 'Il riquadro «Se invece lo investissi» mostra quanto avresti dopo 10 anni se investissi ogni mese la stessa cifra, con un rendimento del 4% annuo e capitalizzazione mensile. Con 536,35 € al mese, in 10 anni arriveresti a circa 78.700 €: 64.362,50 € di tasca tua e il resto di rendimento. Tasse, commissioni e inflazione non sono considerate. È solo un esempio, non una consulenza sugli investimenti.'
+        }
+      ]
     }
   }
 };

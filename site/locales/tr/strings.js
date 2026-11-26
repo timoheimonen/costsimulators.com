@@ -922,6 +922,142 @@ module.exports = {
           a: 'Hayır, yalnızca yakıt hesaplanır. Yıpranma, sigorta, otopark ve köprü-otoyol geçiş ücretleri bunun üstüne eklenir, yani araç kullanmanın toplam maliyeti daha yüksektir.'
         }
       ]
+    },
+
+    car: {
+      name: 'Araç maliyeti',
+      heading: 'Araç sahipliği maliyeti hesaplama',
+      title: 'Araç maliyeti hesaplama – arabanın gerçek aylık gideri',
+      description: 'Araba sahibi olmanın aylık, yıllık, km başı ve 10 yıllık gerçek maliyetini hesaplayın: değer kaybı, yakıt, kasko, MTV, bakım, lastik, otopark ve geçiş ücretleri.',
+      card: 'Bir arabanın aylık, yıllık, km başı ve 10 yıllık gerçek maliyetini tüm giderleriyle görün.',
+      tag: 'Yolculuk',
+      lead: 'Yıllık mesafenizi, yakıt tüketimini ve litre fiyatını; değer kaybı, sigorta, MTV, bakım ve otopark giderleriyle birlikte girin, aracınızın gerçek maliyetini görün.',
+      unit: {
+        label: 'Birimler',
+        metric: 'Kilometre ve litre',
+        us: 'Mil ve galon'
+      },
+      distance: {
+        label: 'Yıllık mesafe',
+        unit: 'km / yıl',
+        decrease: 'Yıllık mesafeyi azalt',
+        increase: 'Yıllık mesafeyi artır'
+      },
+      consumption: {
+        label: 'Yakıt tüketimi',
+        unit: 'l/100 km',
+        hint: 'Elektrikli araç mı kullanıyorsunuz? kWh/100 km değerini ve kWh fiyatını girin.',
+        decrease: 'Yakıt tüketimini azalt',
+        increase: 'Yakıt tüketimini artır'
+      },
+      fuelPrice: {
+        label: 'Yakıt fiyatı',
+        unit: 'TL/litre',
+        value: '55',
+        step: '0.5',
+        usStep: '2',
+        decrease: 'Yakıt fiyatını azalt',
+        increase: 'Yakıt fiyatını artır'
+      },
+      depreciation: {
+        label: 'Değer kaybı veya taksit',
+        unit: 'TL / ay',
+        value: '10000',
+        step: '500',
+        hint: 'Aracın her ay kaybettiği değer ya da aylık kredi veya kiralama ödemesi.',
+        decrease: 'Değer kaybını azalt',
+        increase: 'Değer kaybını artır'
+      },
+      insurance: {
+        label: 'Sigorta, kasko ve MTV',
+        unit: 'TL / yıl',
+        value: '28000',
+        step: '2000',
+        decrease: 'Sigorta ve vergi giderini azalt',
+        increase: 'Sigorta ve vergi giderini artır'
+      },
+      maintenance: {
+        label: 'Bakım, muayene ve lastik',
+        unit: 'TL / yıl',
+        value: '20000',
+        hint: 'Periyodik bakım, yağ, lastik, fren, muayene ve onarımlar.',
+        decrease: 'Bakım giderini azalt',
+        increase: 'Bakım giderini artır'
+      },
+      parking: {
+        label: 'Otopark, köprü-otoyol ve yıkama',
+        unit: 'TL / ay',
+        value: '2000',
+        hint: 'Otopark, garaj, köprü ve otoyol geçiş ücretleri ile oto yıkama.',
+        decrease: 'Otopark ve geçiş giderini azalt',
+        increase: 'Otopark ve geçiş giderini artır'
+      },
+      resultsTitle: 'Toplam araç maliyeti',
+      perMonth: 'Aylık',
+      perYear: 'Yıllık',
+      perDistance: 'Km başı',
+      in10Years: '10 yılda',
+      breakdownLabel: 'Kategoriye göre yıllık maliyet',
+      copySummary: 'Özeti kopyala',
+      receiptTitle: 'Araç masraf fişi',
+      receiptCount: 'Ödeme',
+      runtime: {
+        receiptItem: 'Araç gideri',
+        fuelName: 'Yakıt veya şarj',
+        unit: {
+          metric: {
+            distance: 'km / yıl',
+            consumption: 'l/100 km',
+            price: 'TL/litre',
+            perLabel: 'Km başı',
+            perDistance: 'km'
+          },
+          us: {
+            distance: 'mil / yıl',
+            consumption: 'mpg',
+            price: 'TL/galon',
+            perLabel: 'Mil başı',
+            perDistance: 'mil'
+          }
+        },
+        breakdown: '{cost} / yıl · %{percent}',
+        note: {
+          empty: 'Toplamları görmek için en az bir araç gideri girin.',
+          single: '{name}, yıllık {cost} tutarındaki maliyetin tamamını oluşturuyor – günde yaklaşık {day}.',
+          biggest: 'En büyük gideriniz yılda {cost} (%{percent}) ile {name}; toplamda günde yaklaşık {day}.'
+        },
+        summary: {
+          item: '{name} – {cost} / yıl (%{percent})',
+          total: 'Toplam: ayda {month}, yılda {year}, 10 yılda {year10}',
+          perDistance: '{distance} başına maliyet: {cost}'
+        }
+      },
+      about: {
+        title: 'Araç sahipliği maliyeti nasıl hesaplanıyor?',
+        paragraphs: [
+          'Yıllık yakıt veya şarj maliyeti; yıllık mesafe, tüketim ve yakıt fiyatından hesaplanır (metrik birimlerde mesafe × tüketim ÷ 100 × litre fiyatı; mil ve galonda mesafe ÷ mpg × galon fiyatı). Bu yüzden yılda kaç kilometre yaptığınızı değiştirdiğinizde aylık ve yıllık toplamlar anında güncellenir. Aylık sabit giderler (değer kaybı veya taksit ile otopark) 12 ile çarpılır; yıllık sigorta, kasko, MTV ve bakım giderlerine eklenir.',
+          'Çoğu sürücü yalnızca akaryakıt fiyatlarına odaklanır ve diğer giderleri hafife alır. Yılda 15.000 km yol, 6,5 l/100 km tüketim ve 55 TL litre fiyatıyla (yılda 53.625 TL yakıt), üzerine ayda 10.000 TL değer kaybı veya taksit, yılda 28.000 TL sigorta, kasko ve MTV, 20.000 TL bakım ve lastik ile ayda 2.000 TL otopark ve geçiş ücreti eklendiğinde toplam maliyet yılda 245.625 TL eder – ayda 20.468,75 TL, km başına 16,38 TL ve on yılda 2.456.250 TL.',
+          'Değer kaybı, araç tamamen ödenmiş olsa bile çoğu zaman tek başına en büyük maliyet kalemidir: 1.200.000 TL’ye alınan ve beş yıl sonra 600.000 TL eden bir araç, yalnızca durduğu yerde yılda 120.000 TL, yani her ay 10.000 TL değer kaybeder. Birim değiştirdiğinizde yıllık mesafe, yakıt tüketimi ve yakıt fiyatı otomatik olarak dönüştürülür; böylece metrik ve ABD sistemindeki değerleri kolayca karşılaştırabilirsiniz.'
+        ]
+      },
+      faq: [
+        {
+          q: 'Bir arabanın aylık ve yıllık maliyeti ne kadar tutar?',
+          a: 'Yıllık yakıt maliyetini (yıllık mesafe × tüketim ÷ 100 × litre fiyatı), sigorta, kasko, MTV ve bakımı; aylık değer kaybı veya taksit ile otopark giderinin 12 katıyla toplayıp 12’ye bölün. Varsayılan değerlerle aracın gerçek maliyeti ayda 20.468,75 TL, yani yılda 245.625 TL’dir.'
+        },
+        {
+          q: 'Aracım tamamen ödenmişse değer kaybı alanına ne girmeliyim?',
+          a: 'Aracınızın bugünkü değerini tahmin edin, birkaç yıl sonra satabileceğiniz tutarı çıkarın ve aradaki ay sayısına bölün. Örneğin beş yıl (60 ay) içinde 1.200.000 TL’den 600.000 TL’ye düşen bir araç, hiç kredi taksiti olmasa da ayda 10.000 TL değer kaybına yol açar.'
+        },
+        {
+          q: 'Bu hesaplama aracı elektrikli araçlar için de çalışır mı?',
+          a: 'Evet. Metrik birimlerde aracınızın enerji tüketimini kWh/100 km olarak (örneğin 18) ve kWh başına ortalama şarj fiyatını (örneğin evde 3 TL) girin. Elektrikli araçlarda enerji ve periyodik bakım masrafları genelde daha düşüktür; ancak sigorta, lastik ve değer kaybı toplam maliyette yine önemli yer tutar.'
+        },
+        {
+          q: 'Bu parayı yatırsaydım ne olurdu?',
+          a: '“Harcamak yerine yatırım yapsaydınız” kutusu, aracın aylık maliyetini her ay yatırıma yönlendirseydiniz 10 yıl sonra ne kadarınız olacağını gösterir; hesap, yıllık %4 getiri ve aylık bileşik getiriyle yapılır. Ayda 20.468,75 TL, 10 yılda yaklaşık 3.003.000 TL’ye ulaşır – bunun 2.456.250 TL’si sizin paranız, gerisi getiridir. Vergiler, masraflar ve enflasyon hesaba katılmaz. Bu bir örnektir, yatırım tavsiyesi değildir.'
+        }
+      ]
     }
   }
 };

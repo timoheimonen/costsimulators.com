@@ -64,6 +64,8 @@ SOFTWARE.
     --costperuse-soft: #edf3dc;
     --gambling: #c2410c;
     --gambling-soft: #fdece4;
+    --car: #13734a;
+    --car-soft: #e0f4eb;
     --paper: #fffef9;
     --paper-text: #26241f;
     --paper-faint: #7a756a;
@@ -122,6 +124,8 @@ SOFTWARE.
         --costperuse-soft: rgb(191 219 106 / 0.14);
         --gambling: #ff8f66;
         --gambling-soft: rgb(255 143 102 / 0.14);
+        --car: #5ad49d;
+        --car-soft: rgb(90 212 157 / 0.14);
         --paper: #e4dfd3;
         --paper-text: #1f1d19;
         --paper-faint: #6b665b;
@@ -172,6 +176,8 @@ SOFTWARE.
     --costperuse-soft: rgb(191 219 106 / 0.14);
     --gambling: #ff8f66;
     --gambling-soft: rgb(255 143 102 / 0.14);
+    --car: #5ad49d;
+    --car-soft: rgb(90 212 157 / 0.14);
     --paper: #e4dfd3;
     --paper-text: #1f1d19;
     --paper-faint: #6b665b;
@@ -740,6 +746,11 @@ h3 {
 .tool--gambling {
     --tool: var(--gambling);
     --tool-soft: var(--gambling-soft);
+}
+
+.tool--car {
+    --tool: var(--car);
+    --tool-soft: var(--car-soft);
 }
 
 .page {
